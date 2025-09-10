@@ -3,7 +3,7 @@ import { useLocation, Link, useParams } from 'react-router-dom';
 import { syllabusStructure, findSyllabusItemByPath } from '../services/syllabusData';
 import { SyllabusItem } from '../types';
 import QuizComponent from '../components/QuizComponent'; 
-import GlossaryBot from '../components/GlossaryBot';
+// GlossaryBot temporarily removed
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggleButton from '../components/LanguageToggleButton';
 import AudioPlayer from '../components/AudioPlayer';
@@ -222,11 +222,7 @@ const GenericPage: React.FC = () => {
         </section>
       </article>
 
-      {item.id === 'glossary' && (
-        <section className="mt-10 pt-8 border-t border-gray-300 dark:border-gray-600">
-          <GlossaryBot />
-        </section>
-      )}
+      {/* GlossaryBot temporarily removed */}
 
       {item.quiz && (
         <section className="mt-10 pt-8 border-t border-gray-300 dark:border-gray-600">
