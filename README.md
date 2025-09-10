@@ -46,3 +46,4 @@ This is an interactive study hub for IGCSE Music students, featuring syllabus co
    ```
    vercel --prod
    ```
+# IGCSE Music Study Hub - Production Ready
