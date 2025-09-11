@@ -17,7 +17,7 @@ export const widerListeningPage: SyllabusItem = {
     *   Listen for the classic Concerto Grosso setup: the smaller **concertino** (two violins and cello) in dialogue with the larger **ripieno** (string orchestra).
     *   Pay special attention to the final movement, the **Pastorale**, which is meant to sound like the music of shepherds, fitting for Christmas.
     
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4yP0hdKOZPNshxUOjY0P2v?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2dZCu97Sgs5gsgJxKebd5f?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 *   **J.S. Bach – Orchestral Suite No. 3 in D major, BWV 1068**
     *   This is a set of dances. Notice the grand **French Overture** at the beginning, with its slow, dotted rhythms followed by a fast, fugal section.
@@ -45,7 +45,7 @@ export const widerListeningPage: SyllabusItem = {
     *   注意经典的大协奏曲设置：较小的**主奏部**（两把小提琴和一把大提琴）与较大的**协奏部**（弦乐团）之间的对话。
     *   特别注意最后的乐章，即**田园曲**，其意在模仿牧羊人的音乐，非常适合圣诞节。
     
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4yP0hdKOZPNshxUOjY0P2v?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2dZCu97Sgs5gsgJxKebd5f?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 *   **J.S. 巴赫 – D大调第三管弦乐组曲，BWV 1068**
     *   这是一套舞曲。注意开头的宏伟**法国序曲**，其慢速附点节奏后跟着一个快速的赋格段落。
