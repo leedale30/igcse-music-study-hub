@@ -79,6 +79,12 @@ const Breadcrumbs: React.FC<{ currentItem: SyllabusItem }> = ({ currentItem }) =
 
 const renderFormattedText = (text: string): React.ReactNode => {
   if (!text) return null;
+  
+  // Check if the text contains HTML iframe elements
+  if (text.includes('<iframe')) {
+    return <div dangerouslySetInnerHTML={{ __html: text }} />;
+  }
+  
   const parts = text.split(/(\*\*.*?\*\*)/g); 
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
@@ -114,11 +120,20 @@ const renderDescriptionBlock = (block: string, keyPrefix: string): React.ReactNo
                 currentListItemsContent = [];
             }
             if (line.trim()) {
-                elements.push(
-                    <p key={`${keyPrefix}-para-${lineIndex}`} className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
-                        {renderFormattedText(line.trim())}
-                    </p>
-                );
+                // Check if the line contains HTML content (like iframe)
+                if (line.trim().includes('<iframe')) {
+                    elements.push(
+                        <div key={`${keyPrefix}-html-${lineIndex}`} className="mb-4">
+                            {renderFormattedText(line.trim())}
+                        </div>
+                    );
+                } else {
+                    elements.push(
+                        <p key={`${keyPrefix}-para-${lineIndex}`} className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
+                            {renderFormattedText(line.trim())}
+                        </p>
+                    );
+                }
             }
         }
     });
