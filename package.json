@@ -10,7 +10,6 @@
     "vercel-build": "vite build"
   },
   "dependencies": {
-    "@google/genai": "latest",
     "@music-i18n/musicxml-player": "github:infojunkie/musicxml-player",
     "html-midi-player": "^1.6.0",
     "midi-parser-js": "^4.0.4",
