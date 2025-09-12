@@ -1,4 +1,8 @@
 import { SyllabusItem } from '../../types';
+import { popSongIntroductionPage } from './aos4_3a/introduction';
+import { popSongMelodyPage } from './aos4_3a/melody';
+import { popSongStructurePage } from './aos4_3a/structure';
+import { popSongTempoPage } from './aos4_3a/tempo';
 
 export const popSongAoS: SyllabusItem = {
   id: 'aos4-3a-pop-song',
@@ -58,53 +62,9 @@ This area of study will examine how pop songs balance artistic expression with c
 
 本学习领域将检查流行歌曲如何平衡艺术表达与商业考虑，以及它们如何使用熟悉的音乐语言与广大听众交流，同时仍然创造难忘和有意义的音乐体验。`,
   children: [
-    {
-      id: 'aos4-3a-introduction',
-      title: 'Introduction to Pop Song',
-      title_zh: '流行歌曲简介',
-      path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/introduction',
-      content: 'An overview of popular music as a form of musical expression combining words and music.',
-      content_zh: '流行音乐作为结合文字和音乐的音乐表达形式的概述。'
-    },
-    {
-      id: 'aos4-3a-key-features',
-      title: 'Key Features of Pop Songs',
-      title_zh: '流行歌曲的关键特征',
-      path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/key-features',
-      content: 'Essential musical and lyrical characteristics that define pop songs.',
-      content_zh: '定义流行歌曲的基本音乐和歌词特征。'
-    },
-    {
-      id: 'aos4-3a-focus-work-1',
-      title: 'Focus Work 1: Pop Song Analysis',
-      title_zh: '重点作品一：流行歌曲分析',
-      path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/focus-work-1',
-      content: 'Detailed analysis of a specific pop song demonstrating key features.',
-      content_zh: '对展示关键特征的特定流行歌曲的详细分析。'
-    },
-    {
-      id: 'aos4-3a-focus-work-2',
-      title: 'Focus Work 2: Contemporary Pop Analysis',
-      title_zh: '重点作品二：当代流行音乐分析',
-      path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/focus-work-2',
-      content: 'Analysis of a contemporary pop song showing modern production techniques.',
-      content_zh: '展示现代制作技术的当代流行歌曲分析。'
-    },
-    {
-      id: 'aos4-3a-wider-listening',
-      title: 'Wider Listening: Pop Song Examples',
-      title_zh: '扩展聆听：流行歌曲范例',
-      path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/wider-listening',
-      content: 'A collection of pop songs demonstrating different styles and eras.',
-      content_zh: '展示不同风格和时代的流行歌曲集合。'
-    },
-    {
-      id: 'aos4-3a-final-exam',
-      title: 'Final Exam Preparation: Pop Song',
-      title_zh: '期末考试准备：流行歌曲',
-      path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/final-exam',
-      content: 'Comprehensive review and exam preparation for the Pop Song focus area.',
-      content_zh: '流行歌曲重点领域的综合复习和考试准备。'
-    }
+    popSongIntroductionPage,
+    popSongMelodyPage,
+    popSongStructurePage,
+    popSongTempoPage
   ]
 };

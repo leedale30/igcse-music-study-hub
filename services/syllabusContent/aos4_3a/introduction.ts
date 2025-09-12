@@ -1,19 +1,67 @@
 import { SyllabusItem } from '../../../types';
 
 const popSongIntroductionQuiz = {
-  title: "Introduction to Pop Song Quiz",
+  title: "Introduction to Popular Song Quiz",
   questions: [
     {
       id: 'ps4iq1',
-      text: "What is the primary goal of pop songs?",
+      text: "What is the primary characteristic that defines popular music?",
       options: [
-        { id: 'ps4iq1a1', text: 'To showcase complex musical techniques' },
-        { id: 'ps4iq1a2', text: 'To appeal to the broadest possible audience and achieve commercial success' },
-        { id: 'ps4iq1a3', text: 'To preserve traditional folk melodies' },
-        { id: 'ps4iq1a4', text: 'To demonstrate advanced vocal techniques' },
+        { id: 'ps4iq1a1', text: 'Complex harmonic progressions' },
+        { id: 'ps4iq1a2', text: 'Mass appeal and commercial success' },
+        { id: 'ps4iq1a3', text: 'Classical instrumentation' },
+        { id: 'ps4iq1a4', text: 'Extended song forms' },
       ],
       correctAnswerId: 'ps4iq1a2',
-      explanation: "Pop songs are designed to appeal to the broadest possible audience and achieve commercial success, unlike art songs which target more specialized audiences."
+      explanation: "Popular music is primarily defined by its mass appeal and commercial success, designed to reach the widest possible audience."
+    },
+    {
+      id: 'ps4iq2',
+      text: "Which time period saw the emergence of modern popular music?",
+      options: [
+        { id: 'ps4iq2a1', text: '18th century' },
+        { id: 'ps4iq2a2', text: '19th century' },
+        { id: 'ps4iq2a3', text: 'Early 20th century' },
+        { id: 'ps4iq2a4', text: 'Late 20th century' },
+      ],
+      correctAnswerId: 'ps4iq2a3',
+      explanation: "Modern popular music emerged in the early 20th century with the development of recording technology and mass media."
+    },
+    {
+      id: 'ps4iq3',
+      text: "What role does technology play in popular music?",
+      options: [
+        { id: 'ps4iq3a1', text: 'It is rarely used' },
+        { id: 'ps4iq3a2', text: 'It is fundamental to production and distribution' },
+        { id: 'ps4iq3a3', text: 'It only affects live performance' },
+        { id: 'ps4iq3a4', text: 'It is only used for classical music' },
+      ],
+      correctAnswerId: 'ps4iq3a2',
+      explanation: "Technology is fundamental to popular music, affecting everything from recording and production to distribution and consumption."
+    },
+    {
+      id: 'ps4iq4',
+      text: "Which of these is a typical characteristic of popular song structure?",
+      options: [
+        { id: 'ps4iq4a1', text: 'Through-composed form' },
+        { id: 'ps4iq4a2', text: 'Verse-chorus structure' },
+        { id: 'ps4iq4a3', text: 'Fugal structure' },
+        { id: 'ps4iq4a4', text: 'Sonata form' },
+      ],
+      correctAnswerId: 'ps4iq4a2',
+      explanation: "Verse-chorus structure is the most common form in popular music, providing familiarity and memorability."
+    },
+    {
+      id: 'ps4iq5',
+      text: "What is the typical length of a popular song?",
+      options: [
+        { id: 'ps4iq5a1', text: '1-2 minutes' },
+        { id: 'ps4iq5a2', text: '3-5 minutes' },
+        { id: 'ps4iq5a3', text: '8-10 minutes' },
+        { id: 'ps4iq5a4', text: '15-20 minutes' },
+      ],
+      correctAnswerId: 'ps4iq5a2',
+      explanation: "Popular songs are typically 3-5 minutes long, a length that suits radio play and listener attention spans."
     }
   ]
 };
@@ -25,33 +73,39 @@ export const popSongIntroductionPage: SyllabusItem = {
   path: '/areas-of-study/aos4-music-and-words/aos4-3a-pop-song/introduction',
   content: 'An overview of popular music as a form of musical expression combining words and music.',
   content_zh: '流行音乐作为结合文字和音乐的音乐表达形式的概述。',
-  longDescription: `**Introduction to Pop Song**
+  longDescription: `**Introduction to Popular Song**
 
-Pop song represents one of the most influential and commercially successful forms of music that combines words and music. Unlike art songs, which are typically written for trained classical singers and sophisticated audiences, pop songs are designed to appeal to the broadest possible audience and achieve commercial success.
+Popular song represents one of the most significant and influential areas of music study within the "Music and Words" focus area. This genre encompasses the vast landscape of commercially successful music that has shaped culture, society, and musical expression from the early 20th century to the present day.
 
-**What Defines a Pop Song?**
+**What is Popular Music?**
 
-Pop songs are characterized by several key features that distinguish them from other forms of vocal music:
+Popular music, often shortened to "pop music," refers to music that is designed for mass appeal and commercial success. Unlike art music, which is typically created for aesthetic or artistic purposes, popular music is specifically crafted to reach the widest possible audience and achieve commercial viability.
 
-**Commercial Orientation:**
-*   Written with mass market appeal in mind
-*   Designed to be memorable and easily singable by ordinary people
-*   Structured for radio play (typically 3-5 minutes)
-*   Often follow proven formulas for success
-*   Created with specific target demographics in mind
+**Key Defining Characteristics:**
 
-**Accessibility:**
-*   Use familiar musical languages and structures
-*   Employ chord progressions that sound "right" to most listeners
-*   Feature vocal melodies within comfortable singing ranges
-*   Use clear, understandable lyrics in everyday language
-*   Incorporate repetitive elements that aid memorability
+**1. Mass Appeal and Accessibility**
+*   Written to be easily understood and enjoyed by diverse audiences
+*   Uses familiar musical languages and conventions
+*   Avoids overly complex musical structures or techniques
+*   Designed for immediate impact and memorability
 
-**Cultural Relevance:**
-*   Reflect contemporary social issues, trends, and experiences
-*   Often become anthems for particular generations or movements
-*   Influence and are influenced by fashion, technology, and social media
-*   Serve as a soundtrack to people's lives and memories
+**2. Commercial Viability**
+*   Created with market success as a primary consideration
+*   Follows industry standards for length, structure, and production
+*   Distributed through mass media channels (radio, television, streaming)
+*   Often involves collaboration between artists, producers, and record labels
+
+**3. Cultural Relevance**
+*   Reflects contemporary social issues, trends, and experiences
+*   Appeals to specific demographic groups and generations
+*   Influences and is influenced by fashion, technology, and social movements
+*   Serves as a soundtrack to cultural moments and historical periods
+
+**4. Technological Integration**
+*   Heavily dependent on recording technology and production techniques
+*   Utilizes amplification, electronic instruments, and digital effects
+*   Distributed through evolving media formats (vinyl, CD, digital, streaming)
+*   Production quality is often as important as songwriting
 
 **Historical Development of Pop Song**
 
