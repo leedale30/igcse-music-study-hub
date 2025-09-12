@@ -1,6 +1,7 @@
 
 import { SyllabusItem } from '../../types';
 import { artSongQuiz } from '../quizData';
+import { popSongAoS } from './aos4_3a_PopSong';
 
 export const musicAndWordsAoS: SyllabusItem = {
   id: 'aos4-music-and-words',
@@ -245,6 +246,7 @@ A song cycle for double choir and piano that showcases a vast range of textures 
 *   **声乐技巧：** 可以包括**说唱**（一种有节奏、口语化的声乐表达方式）和**表现技巧**，如声乐即兴、滑音和花腔，以创造动态的表演。
 *   **表演与发行：** 歌曲在**现场音乐会**上表演，并通过**广播媒体**如音乐电视（如MTV）和数字流媒体（如YouTube、Spotify）发行。`,
           children: [
+            ...popSongAoS.children,
             {
               id: 'aos4-songwriting',
               title: 'Songwriting',

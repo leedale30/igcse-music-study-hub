@@ -31,7 +31,6 @@ export const syllabusStructure: SyllabusItem[] = [
       classicalMusicAoS,
       romanticMusicAoS,
       musicAndWordsAoS,
-      popSongAoS,
       musicForDanceAoS,
       smallEnsembleAoS,
       stageAndScreenAoS,
