@@ -1,5 +1,22 @@
 import { SyllabusItem } from '../../../types';
-import { popSongWiderListeningQuiz } from '../../quizzes/aos4_3a/widerListening';
+
+const popSongWiderListeningQuiz = {
+  title: "Pop Song Wider Listening Quiz",
+  questions: [
+    {
+      id: 'ps4wlq1',
+      text: "What makes \"Yesterday\" by The Beatles a good example of classic pop?",
+      options: [
+        { id: 'ps4wlq1a1', text: 'Complex electronic production' },
+        { id: 'ps4wlq1a2', text: 'Simple but effective melody with string arrangement' },
+        { id: 'ps4wlq1a3', text: 'Heavy use of auto-tune' },
+        { id: 'ps4wlq1a4', text: 'Rap verses' },
+      ],
+      correctAnswerId: 'ps4wlq1a2',
+      explanation: "\"Yesterday\" exemplifies classic pop with its simple but effective melody, emotional lyrics, and sophisticated string quartet arrangement."
+    }
+  ]
+};
 
 export const popSongWiderListeningPage: SyllabusItem = {
   id: 'aos4-3a-wider-listening',

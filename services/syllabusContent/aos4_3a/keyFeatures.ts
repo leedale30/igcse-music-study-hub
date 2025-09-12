@@ -1,5 +1,22 @@
 import { SyllabusItem } from '../../../types';
-import { popSongKeyFeaturesQuiz } from '../../quizzes/aos4_3a/keyFeatures';
+
+const popSongKeyFeaturesQuiz = {
+  title: "Key Features of Pop Songs Quiz",
+  questions: [
+    {
+      id: 'ps4kfq1',
+      text: "What is the most common structural pattern in pop songs?",
+      options: [
+        { id: 'ps4kfq1a1', text: 'Intro-Verse-Chorus-Verse-Chorus-Bridge-Chorus-Outro' },
+        { id: 'ps4kfq1a2', text: 'Verse-Verse-Verse-Chorus' },
+        { id: 'ps4kfq1a3', text: 'Chorus-Verse-Chorus-Verse' },
+        { id: 'ps4kfq1a4', text: 'Bridge-Verse-Bridge-Verse' },
+      ],
+      correctAnswerId: 'ps4kfq1a1',
+      explanation: "The most common pop song structure is Intro-Verse-Chorus-Verse-Chorus-Bridge-Chorus-Outro, which provides familiarity while building energy."
+    }
+  ]
+};
 
 export const popSongKeyFeaturesPage: SyllabusItem = {
   id: 'aos4-3a-key-features',

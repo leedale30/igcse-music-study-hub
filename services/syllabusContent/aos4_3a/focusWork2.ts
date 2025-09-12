@@ -1,5 +1,22 @@
 import { SyllabusItem } from '../../../types';
-import { popSongFocusWork2Quiz } from '../../quizzes/aos4_3a/focusWork2';
+
+const popSongFocusWork2Quiz = {
+  title: "Contemporary Pop Analysis Quiz",
+  questions: [
+    {
+      id: 'ps4fw2q1',
+      text: "What is a key characteristic of contemporary pop production?",
+      options: [
+        { id: 'ps4fw2q1a1', text: 'Only acoustic instruments' },
+        { id: 'ps4fw2q1a2', text: 'Digital recording and electronic elements' },
+        { id: 'ps4fw2q1a3', text: 'No use of technology' },
+        { id: 'ps4fw2q1a4', text: 'Only live recording' },
+      ],
+      correctAnswerId: 'ps4fw2q1a2',
+      explanation: "Contemporary pop heavily uses digital recording, electronic instruments, auto-tune, and various digital effects."
+    }
+  ]
+};
 
 export const popSongFocusWork2Page: SyllabusItem = {
   id: 'aos4-3a-focus-work-2',

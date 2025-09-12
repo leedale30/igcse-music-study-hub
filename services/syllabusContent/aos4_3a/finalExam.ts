@@ -1,5 +1,22 @@
 import { SyllabusItem } from '../../../types';
-import { popSongFinalExamQuiz } from '../../quizzes/aos4_3a/finalExam';
+
+const popSongFinalExamQuiz = {
+  title: "Pop Song Final Exam Preparation Quiz",
+  questions: [
+    {
+      id: 'ps4feq1',
+      text: "What should you focus on when analyzing the structure of a pop song in an exam?",
+      options: [
+        { id: 'ps4feq1a1', text: 'Only the chord progressions' },
+        { id: 'ps4feq1a2', text: 'Identifying sections and how they serve commercial and artistic goals' },
+        { id: 'ps4feq1a3', text: 'Only the lyrics' },
+        { id: 'ps4feq1a4', text: 'Only the production effects' },
+      ],
+      correctAnswerId: 'ps4feq1a2',
+      explanation: "When analyzing structure, identify the sections (verse, chorus, bridge) and explain how they serve both commercial appeal and artistic expression."
+    }
+  ]
+};
 
 export const popSongFinalExamPage: SyllabusItem = {
   id: 'aos4-3a-final-exam',

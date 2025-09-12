@@ -1,5 +1,22 @@
 import { SyllabusItem } from '../../../types';
-import { popSongIntroductionQuiz } from '../../quizzes/aos4_3a/introduction';
+
+const popSongIntroductionQuiz = {
+  title: "Introduction to Pop Song Quiz",
+  questions: [
+    {
+      id: 'ps4iq1',
+      text: "What is the primary goal of pop songs?",
+      options: [
+        { id: 'ps4iq1a1', text: 'To showcase complex musical techniques' },
+        { id: 'ps4iq1a2', text: 'To appeal to the broadest possible audience and achieve commercial success' },
+        { id: 'ps4iq1a3', text: 'To preserve traditional folk melodies' },
+        { id: 'ps4iq1a4', text: 'To demonstrate advanced vocal techniques' },
+      ],
+      correctAnswerId: 'ps4iq1a2',
+      explanation: "Pop songs are designed to appeal to the broadest possible audience and achieve commercial success, unlike art songs which target more specialized audiences."
+    }
+  ]
+};
 
 export const popSongIntroductionPage: SyllabusItem = {
   id: 'aos4-3a-introduction',

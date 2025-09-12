@@ -1,5 +1,22 @@
 import { SyllabusItem } from '../../../types';
-import { popSongFocusWork1Quiz } from '../../quizzes/aos4_3a/focusWork1';
+
+const popSongFocusWork1Quiz = {
+  title: "Pop Song Focus Work 1 Quiz",
+  questions: [
+    {
+      id: 'ps4fw1q1',
+      text: "When analyzing a pop song's structure, what should you identify first?",
+      options: [
+        { id: 'ps4fw1q1a1', text: 'The chord progressions' },
+        { id: 'ps4fw1q1a2', text: 'The verse, chorus, bridge, and other sections' },
+        { id: 'ps4fw1q1a3', text: 'The production effects' },
+        { id: 'ps4fw1q1a4', text: 'The target audience' },
+      ],
+      correctAnswerId: 'ps4fw1q1a2',
+      explanation: "When analyzing structure, first identify the main sections (verse, chorus, bridge) to understand how the song is organized."
+    }
+  ]
+};
 
 export const popSongFocusWork1Page: SyllabusItem = {
   id: 'aos4-3a-focus-work-1',
