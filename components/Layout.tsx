@@ -50,7 +50,7 @@ const Layout: React.FC = () => {
       <Header onMenuClick={() => setIsSidebarOpen(true)} />
       <div className="flex flex-1 container mx-auto my-4 max-w-screen-xl w-full px-2 sm:px-4">
         <Sidebar structure={syllabusStructure} isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-        <main className="flex-1 p-3 sm:p-6 bg-white dark:bg-slate-800 shadow-lg lg:rounded-r-lg overflow-y-auto w-full lg:ml-72">
+        <main className="flex-1 p-3 sm:p-6 bg-white dark:bg-slate-800 shadow-lg lg:rounded-r-lg overflow-y-auto w-full">
           <Outlet />
         </main>
       </div>
