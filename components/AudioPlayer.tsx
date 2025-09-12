@@ -133,19 +133,25 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
     setIsLoading(false);
   };
 
-  // Validate audio sources on mount
+  // Validate audio sources and reset state when sources change
   useEffect(() => {
-    console.log('AudioPlayer: Validating sources:', sources);
+    // Reset all states when sources change
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setHasError(false);
+    setErrorMessage(null);
+    setIsLoading(false);
+    
+    // Cancel any ongoing animation
+    if(animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+    
     const validation = validateAudioSources(sources);
     if (!validation.success) {
-      console.error('AudioPlayer: Validation failed:', validation.error);
       setHasError(true);
       setErrorMessage(validation.error || 'Invalid audio sources');
       handleError(new Error(validation.error || 'Invalid audio sources'), 'audio source validation');
-    } else {
-      console.log('AudioPlayer: Validation passed');
-      setHasError(false);
-      setErrorMessage(null);
     }
   }, [sources, handleError]);
 
