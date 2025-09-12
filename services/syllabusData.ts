@@ -7,6 +7,7 @@ import { baroqueMusicAoS } from './syllabusContent/aos1_Baroque';
 import { classicalMusicAoS } from './syllabusContent/aos2_Classical';
 import { romanticMusicAoS } from './syllabusContent/aos3_Romantic';
 import { musicAndWordsAoS } from './syllabusContent/aos4_MusicAndWords';
+import { popSongAoS } from './syllabusContent/aos4_3a_PopSong';
 import { musicForDanceAoS } from './syllabusContent/aos5_MusicForDance';
 import { smallEnsembleAoS } from './syllabusContent/aos6_SmallEnsemble';
 import { stageAndScreenAoS } from './syllabusContent/aos7_StageAndScreen';
@@ -30,6 +31,7 @@ export const syllabusStructure: SyllabusItem[] = [
       classicalMusicAoS,
       romanticMusicAoS,
       musicAndWordsAoS,
+      popSongAoS,
       musicForDanceAoS,
       smallEnsembleAoS,
       stageAndScreenAoS,
