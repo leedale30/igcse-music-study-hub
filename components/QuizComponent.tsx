@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Quiz, Question, AnswerOption } from '../types';
+import { validateQuizSubmission } from '../utils/validation';
+import { useErrorHandler } from './ErrorBoundary';
 
 interface QuizProps {
   quizData: Quiz;
@@ -32,6 +34,9 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const [studentName, setStudentName] = useState('');
   const [showSubmissionPrep, setShowSubmissionPrep] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [validationError, setValidationError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { handleError } = useErrorHandler();
 
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
@@ -70,7 +75,33 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   };
 
   const handlePrepareSubmission = () => {
-    setShowSubmissionPrep(true);
+    setValidationError(null);
+    setIsSubmitting(true);
+    
+    try {
+      const submissionData = {
+        studentName: studentName.trim(),
+        selectedAnswers,
+        quizTitle: quizData.title,
+        score: (score / quizData.questions.length) * 100,
+        totalQuestions: quizData.questions.length
+      };
+      
+      const validation = validateQuizSubmission(submissionData);
+      
+      if (!validation.success) {
+        setValidationError(validation.error || 'Invalid submission data');
+        setIsSubmitting(false);
+        return;
+      }
+      
+      setShowSubmissionPrep(true);
+    } catch (error) {
+      handleError(error as Error, 'quiz submission preparation');
+      setValidationError('An unexpected error occurred while preparing submission');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   const handleBackToResults = () => {
@@ -119,10 +150,24 @@ Date: ${date}
               type="text"
               id="studentName"
               value={studentName}
-              onChange={(e) => setStudentName(e.target.value)}
+              onChange={(e) => {
+                setStudentName(e.target.value);
+                if (validationError) setValidationError(null);
+              }}
               placeholder="Enter your full name"
-              className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm dark:bg-slate-700 dark:border-slate-600 dark:text-white dark:placeholder-gray-400"
+              aria-describedby={validationError ? "name-error" : undefined}
+              aria-invalid={validationError ? "true" : "false"}
+              className={`mt-1 block w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 sm:text-sm dark:bg-slate-700 dark:text-white dark:placeholder-gray-400 ${
+                validationError 
+                  ? 'border-red-500 focus:ring-red-500 focus:border-red-500 dark:border-red-400' 
+                  : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600'
+              }`}
             />
+            {validationError && (
+              <p id="name-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
+                {validationError}
+              </p>
+            )}
           </div>
 
           {/* Screenshot-friendly score report card */}
@@ -242,10 +287,18 @@ Date: ${date}
           </button>
           <button
             onClick={handlePrepareSubmission}
-            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+            disabled={isSubmitting}
+            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
           >
-            Prepare Score for Teacher
+            {isSubmitting ? 'Preparing...' : 'Prepare Score for Teacher'}
           </button>
+          {validationError && (
+            <div className="w-full text-center">
+              <p className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 p-3 rounded-md border border-red-200 dark:border-red-800" role="alert">
+                {validationError}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     );

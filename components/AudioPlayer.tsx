@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useErrorHandler } from './ErrorBoundary';
+import { validateAudioSources } from '../utils/validation';
 
 // Icons
 const PlayIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -39,12 +41,16 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressBarRef = useRef<HTMLInputElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
+  const { handleError } = useErrorHandler();
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   
   const formatTime = (time: number): string => {
     if (isNaN(time) || !isFinite(time)) return '00:00';
@@ -53,12 +59,27 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
-  const togglePlayPause = () => {
+  const togglePlayPause = async () => {
+    if (hasError) return;
+    
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
+    
     if (!prevValue) {
-      audioRef.current?.play();
-      animationRef.current = requestAnimationFrame(whilePlaying);
+      try {
+        setIsLoading(true);
+        await audioRef.current?.play();
+        animationRef.current = requestAnimationFrame(whilePlaying);
+        setHasError(false);
+        setErrorMessage(null);
+      } catch (error) {
+        setIsPlaying(false);
+        setHasError(true);
+        setErrorMessage('Failed to play audio. Please check your connection and try again.');
+        handleError(error as Error, 'audio playback');
+      } finally {
+        setIsLoading(false);
+      }
     } else {
       audioRef.current?.pause();
       if(animationRef.current) cancelAnimationFrame(animationRef.current);
@@ -93,6 +114,50 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
     setCurrentTime(0);
     if(animationRef.current) cancelAnimationFrame(animationRef.current);
   };
+
+  const handleAudioError = (error: Event) => {
+    setIsPlaying(false);
+    setHasError(true);
+    setErrorMessage('Audio file could not be loaded. Please try again later.');
+    handleError(new Error('Audio loading failed'), 'audio loading');
+    if(animationRef.current) cancelAnimationFrame(animationRef.current);
+  };
+
+  const handleLoadStart = () => {
+    setIsLoading(true);
+    setHasError(false);
+    setErrorMessage(null);
+  };
+
+  const handleCanPlay = () => {
+    setIsLoading(false);
+  };
+
+  // Validate audio sources on mount
+  useEffect(() => {
+    const validation = validateAudioSources(sources);
+    if (!validation.success) {
+      setHasError(true);
+      setErrorMessage(validation.error || 'Invalid audio sources');
+      handleError(new Error(validation.error || 'Invalid audio sources'), 'audio source validation');
+    }
+  }, [sources, handleError]);
+
+  // Add event listeners for audio events
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.addEventListener('error', handleAudioError);
+    audio.addEventListener('loadstart', handleLoadStart);
+    audio.addEventListener('canplay', handleCanPlay);
+
+    return () => {
+       audio.removeEventListener('error', handleAudioError);
+       audio.removeEventListener('loadstart', handleLoadStart);
+       audio.removeEventListener('canplay', handleCanPlay);
+     };
+   }, []);
   
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseFloat(e.target.value);
