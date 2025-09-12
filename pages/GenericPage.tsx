@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useParams } from 'react-router-dom';
 import { syllabusStructure, findSyllabusItemByPath } from '../services/syllabusData';
 import { SyllabusItem } from '../types';
@@ -153,10 +153,40 @@ const renderDescriptionBlock = (block: string, keyPrefix: string): React.ReactNo
 const GenericPage: React.FC = () => {
   const location = useLocation();
   const { language } = useLanguage();
+  const [isPresentationMode, setIsPresentationMode] = useState(false);
   
   let currentPath = location.pathname;
   
   const item = findSyllabusItemByPath(currentPath);
+  
+  // Check if this is the Baroque introduction page
+  const isBaroqueIntroPage = currentPath === '/areas-of-study/aos1-baroque-music/introduction';
+  
+  // Handle keyboard shortcuts for presentation mode
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isBaroqueIntroPage) return;
+      
+      if (event.key === 'F11') {
+        event.preventDefault();
+        setIsPresentationMode(!isPresentationMode);
+      } else if (event.key === 'Escape' && isPresentationMode) {
+        setIsPresentationMode(false);
+      }
+    };
+    
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isPresentationMode, isBaroqueIntroPage]);
+  
+  // Handle fullscreen API
+  useEffect(() => {
+    if (isPresentationMode) {
+      document.documentElement.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  }, [isPresentationMode]);
 
   if (!item) {
     return (
@@ -206,14 +236,74 @@ const GenericPage: React.FC = () => {
     );
   };
 
+  // Presentation mode component
+  const PresentationModeButton = () => (
+    <button
+      onClick={() => setIsPresentationMode(!isPresentationMode)}
+      className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      title="Toggle Presentation Mode (F11)"
+    >
+      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+      </svg>
+      {isPresentationMode ? 'Exit Presentation' : 'Presentation Mode'}
+    </button>
+  );
+
+  if (isPresentationMode && isBaroqueIntroPage) {
+    return (
+      <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-y-auto z-50">
+        <div className="min-h-screen p-8 flex flex-col">
+          {/* Presentation Header */}
+          <header className="mb-8 text-center">
+            <div className="flex justify-between items-center mb-6">
+              <div className="flex items-center space-x-4">
+                <LanguageToggleButton />
+                <PresentationModeButton />
+              </div>
+              <div className="text-sm text-blue-200">
+                Press F11 or Escape to exit • Use scroll to navigate
+              </div>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+              {displayTitle}
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-200 font-light">
+              {item.content}
+            </p>
+          </header>
+
+          {/* Audio Player in Presentation Mode */}
+          {currentAudioSources && currentAudioSources.length > 0 && (
+            <div className="mb-8 flex justify-center">
+              <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-blue-500/30">
+                <AudioPlayer key={audioPlayerKey} sources={currentAudioSources} credit={audioCreditText} />
+              </div>
+            </div>
+          )}
+
+          {/* Content in Presentation Mode */}
+          <main className="flex-1 max-w-6xl mx-auto">
+            <div className="prose prose-xl prose-invert max-w-none prose-headings:text-blue-200 prose-p:text-gray-100 prose-li:text-gray-100 prose-strong:text-blue-200">
+              {renderContent()}
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="p-0 sm:p-2 md:p-4">
       <Breadcrumbs currentItem={item} />
       <article>
         <header className="mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
-          <LanguageToggleButton />
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100">{displayTitle}</h1>
-            {item.isTerm && <p className="text-sky-600 dark:text-sky-400 text-sm mt-1">Musical Term / 音乐术语</p>}
+          <div className="flex justify-between items-center mb-4">
+            <LanguageToggleButton />
+            {isBaroqueIntroPage && <PresentationModeButton />}
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100">{displayTitle}</h1>
+          {item.isTerm && <p className="text-sky-600 dark:text-sky-400 text-sm mt-1">Musical Term / 音乐术语</p>}
         </header>
 
         {currentAudioSources && currentAudioSources.length > 0 && (
