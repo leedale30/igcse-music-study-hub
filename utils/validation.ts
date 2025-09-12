@@ -33,7 +33,13 @@ export const quizSubmissionSchema = z.object({
 
 // Audio player validation
 export const audioSourceSchema = z.object({
-  url: z.string().url('Invalid audio URL'),
+  url: z.string().min(1, 'Audio URL is required').refine(
+    (url) => {
+      // Allow relative paths (starting with /) or full URLs
+      return url.startsWith('/') || /^https?:\/\/.+/.test(url);
+    },
+    { message: 'Invalid audio URL - must be a relative path or valid URL' }
+  ),
   type: z.string().min(1, 'Audio type is required')
 });
 
