@@ -174,6 +174,13 @@ const GenericPage: React.FC = () => {
   const currentAudioSources = language === 'en-zh' ? (item.audioSources_zh || item.audioSources) : item.audioSources;
   // Create a unique key to force AudioPlayer re-render when language changes
   const audioPlayerKey = `${item.id}-${language}-${currentAudioSources?.[0]?.url || 'no-audio'}`;
+  
+  // Debug logging for audio sources
+  console.log('GenericPage: Language:', language);
+  console.log('GenericPage: item.audioSources:', item.audioSources);
+  console.log('GenericPage: item.audioSources_zh:', item.audioSources_zh);
+  console.log('GenericPage: currentAudioSources:', currentAudioSources);
+  console.log('GenericPage: audioPlayerKey:', audioPlayerKey);
 
   const renderContent = () => {
     if (language === 'en-zh' && item.longDescription_zh) {

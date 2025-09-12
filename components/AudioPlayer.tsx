@@ -135,11 +135,17 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
 
   // Validate audio sources on mount
   useEffect(() => {
+    console.log('AudioPlayer: Validating sources:', sources);
     const validation = validateAudioSources(sources);
     if (!validation.success) {
+      console.error('AudioPlayer: Validation failed:', validation.error);
       setHasError(true);
       setErrorMessage(validation.error || 'Invalid audio sources');
       handleError(new Error(validation.error || 'Invalid audio sources'), 'audio source validation');
+    } else {
+      console.log('AudioPlayer: Validation passed');
+      setHasError(false);
+      setErrorMessage(null);
     }
   }, [sources, handleError]);
 
