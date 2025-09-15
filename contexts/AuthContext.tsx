@@ -44,6 +44,52 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       };
       existingUsers.push(demoTeacher);
       
+      // Create Grade 9 student accounts
+      const grade9Students = [
+        {
+          id: 'student-emily-chan-001',
+          email: 'emily.chan@school.com',
+          password: 'emily123',
+          name: 'Emily Chan',
+          firstName: 'Emily',
+          lastName: 'Chan',
+          nickname: 'EMILY',
+          role: 'student' as const,
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-christina-wang-001',
+          email: 'christina.wang@school.com',
+          password: 'christina123',
+          name: 'Christina Wang',
+          firstName: 'Jue',
+          lastName: 'Wang',
+          nickname: 'CHRISTINA',
+          role: 'student' as const,
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-steven-zhang-001',
+          email: 'steven.zhang@school.com',
+          password: 'steven123',
+          name: 'Steven Zhang',
+          firstName: 'Jiaxin',
+          lastName: 'Zhang',
+          nickname: 'STEVEN',
+          role: 'student' as const,
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        }
+      ];
+      
+      // Add Grade 9 students to existing users
+      existingUsers.push(...grade9Students);
+      
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
       
       // Create sample progress data for demo user
@@ -130,6 +176,31 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         };
         localStorage.setItem('igcse-progress-demo-user-001', JSON.stringify(sampleProgress));
       }
+      
+      // Create initial progress data for Grade 9 students
+      const grade9StudentIds = [
+        'student-emily-chan-001',
+        'student-christina-wang-001', 
+        'student-steven-zhang-001'
+      ];
+      
+      grade9StudentIds.forEach(studentId => {
+        const progressExists = localStorage.getItem(`igcse-progress-${studentId}`);
+        if (!progressExists) {
+          const initialProgress = {
+            userId: studentId,
+            totalQuizzesCompleted: 0,
+            totalPagesVisited: 0,
+            averageQuizScore: 0,
+            totalStudyTime: 0,
+            quizResults: [],
+            pageProgress: [],
+            badges: [],
+            lastUpdated: new Date()
+          };
+          localStorage.setItem(`igcse-progress-${studentId}`, JSON.stringify(initialProgress));
+        }
+      });
     }
     
     // Load saved user
