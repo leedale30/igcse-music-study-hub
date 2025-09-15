@@ -29,6 +29,91 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       };
       existingUsers.push(demoUser);
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
+      
+      // Create sample progress data for demo user
+      const demoProgressExists = localStorage.getItem('igcse-progress-demo-user-001');
+      if (!demoProgressExists) {
+        const sampleProgress = {
+          userId: 'demo-user-001',
+          totalQuizzesCompleted: 3,
+          totalPagesVisited: 8,
+          averageQuizScore: 85.7,
+          totalStudyTime: 2340, // 39 minutes
+          quizResults: [
+            {
+              quizId: 'quiz-baroque-music-introduction',
+              quizTitle: 'Baroque Music Introduction',
+              score: 8,
+              totalQuestions: 10,
+              percentage: 80,
+              completedAt: new Date('2024-12-01T10:30:00'),
+              timeSpent: 420
+            },
+            {
+              quizId: 'quiz-classical-period-overview',
+              quizTitle: 'Classical Period Overview',
+              score: 9,
+              totalQuestions: 10,
+              percentage: 90,
+              completedAt: new Date('2024-12-02T14:15:00'),
+              timeSpent: 380
+            },
+            {
+              quizId: 'quiz-romantic-composers',
+              quizTitle: 'Romantic Composers',
+              score: 9,
+              totalQuestions: 12,
+              percentage: 87.5,
+              completedAt: new Date('2024-12-03T16:45:00'),
+              timeSpent: 520
+            }
+          ],
+          pageProgress: [
+            {
+              pageId: 'baroque-introduction',
+              pageTitle: 'Baroque Music Introduction',
+              visitedAt: new Date('2024-12-01T10:00:00'),
+              timeSpent: 600,
+              completed: true
+            },
+            {
+              pageId: 'classical-overview',
+              pageTitle: 'Classical Period Overview',
+              visitedAt: new Date('2024-12-02T14:00:00'),
+              timeSpent: 720,
+              completed: true
+            }
+          ],
+          badges: [
+            {
+              id: 'first-quiz',
+              name: 'First Steps',
+              description: 'Completed your first quiz!',
+              icon: '🎯',
+              earnedAt: new Date('2024-12-01T10:30:00'),
+              category: 'quiz'
+            },
+            {
+              id: 'perfect-classical-period-overview',
+              name: 'Perfect Score',
+              description: 'Got 100% on Classical Period Overview!',
+              icon: '⭐',
+              earnedAt: new Date('2024-12-02T14:15:00'),
+              category: 'achievement'
+            },
+            {
+              id: 'high-achiever',
+              name: 'High Achiever',
+              description: 'Maintained an average score above 80%!',
+              icon: '🌟',
+              earnedAt: new Date('2024-12-03T16:45:00'),
+              category: 'achievement'
+            }
+          ],
+          lastUpdated: new Date()
+        };
+        localStorage.setItem('igcse-progress-demo-user-001', JSON.stringify(sampleProgress));
+      }
     }
     
     // Load saved user
