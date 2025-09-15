@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { User, StudentProgress, StudentSummary, QuizResult, Badge } from '../types';
+import { User, StudentProgress, StudentSummary, QuizResult, Badge, IGCSEAssessment } from '../types';
 import LanguageToggleButton from '../components/LanguageToggleButton';
 import ThemeToggleButton from '../components/ThemeToggleButton';
+import IGCSEAssessmentManager from '../components/IGCSEAssessmentManager';
+import { calculateOverallIGCSEGrade, getGradeColor, getGradeBadgeColor } from '../utils/igcseGrading';
 
 const AdminDashboardPage: React.FC = () => {
   const { user, logout } = useAuth();
@@ -11,8 +13,10 @@ const AdminDashboardPage: React.FC = () => {
   const [students, setStudents] = useState<StudentSummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedStudent, setSelectedStudent] = useState<StudentSummary | null>(null);
-  const [sortBy, setSortBy] = useState<'name' | 'score' | 'activity' | 'quizzes'>('name');
+  const [sortBy, setSortBy] = useState<'name' | 'score' | 'activity' | 'quizzes' | 'igcse'>('name');
   const [filterBy, setFilterBy] = useState<'all' | 'active' | 'inactive'>('all');
+  const [showAssessmentManager, setShowAssessmentManager] = useState(false);
+  const [assessmentStudent, setAssessmentStudent] = useState<StudentSummary | null>(null);
 
   // Redirect if not teacher
   useEffect(() => {
@@ -86,6 +90,24 @@ const AdminDashboardPage: React.FC = () => {
         
         const recentQuizzes = progress.quizResults.slice(-3).reverse();
         
+        // Load IGCSE assessments for this student
+        const igcseAssessmentsData = localStorage.getItem(`igcse-assessments-${studentUser.id}`);
+        let igcseAssessments: IGCSEAssessment[] = [];
+        
+        if (igcseAssessmentsData) {
+          try {
+            igcseAssessments = JSON.parse(igcseAssessmentsData).map((assessment: any) => ({
+              ...assessment,
+              dateAssessed: new Date(assessment.dateAssessed)
+            }));
+          } catch (error) {
+            console.error('Error parsing IGCSE assessments:', error);
+          }
+        }
+        
+        // Calculate overall IGCSE grade
+        const overallGrade = calculateOverallIGCSEGrade(igcseAssessments);
+        
         return {
           user: studentUser,
           progress,
@@ -94,7 +116,10 @@ const AdminDashboardPage: React.FC = () => {
           averageScore: progress.averageQuizScore,
           totalStudyTime: totalStudyTimeStr,
           recentQuizzes,
-          badges: progress.badges
+          badges: progress.badges,
+          igcseAssessments,
+          overallIGCSEGrade: overallGrade.grade,
+          overallIGCSEPercentage: overallGrade.percentage
         };
       });
       
@@ -104,6 +129,40 @@ const AdminDashboardPage: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // IGCSE Assessment Management Functions
+  const handleAssessmentAdded = (assessment: IGCSEAssessment) => {
+    const existingAssessments = JSON.parse(localStorage.getItem(`igcse-assessments-${assessment.studentId}`) || '[]');
+    existingAssessments.push(assessment);
+    localStorage.setItem(`igcse-assessments-${assessment.studentId}`, JSON.stringify(existingAssessments));
+    loadStudentData(); // Refresh data
+  };
+
+  const handleAssessmentUpdated = (assessment: IGCSEAssessment) => {
+    const existingAssessments = JSON.parse(localStorage.getItem(`igcse-assessments-${assessment.studentId}`) || '[]');
+    const updatedAssessments = existingAssessments.map((a: IGCSEAssessment) => 
+      a.id === assessment.id ? assessment : a
+    );
+    localStorage.setItem(`igcse-assessments-${assessment.studentId}`, JSON.stringify(updatedAssessments));
+    loadStudentData(); // Refresh data
+  };
+
+  const handleAssessmentDeleted = (assessmentId: string, studentId: string) => {
+    const existingAssessments = JSON.parse(localStorage.getItem(`igcse-assessments-${studentId}`) || '[]');
+    const filteredAssessments = existingAssessments.filter((a: IGCSEAssessment) => a.id !== assessmentId);
+    localStorage.setItem(`igcse-assessments-${studentId}`, JSON.stringify(filteredAssessments));
+    loadStudentData(); // Refresh data
+  };
+
+  const openAssessmentManager = (student: StudentSummary) => {
+    setAssessmentStudent(student);
+    setShowAssessmentManager(true);
+  };
+
+  const closeAssessmentManager = () => {
+    setShowAssessmentManager(false);
+    setAssessmentStudent(null);
   };
 
   const getSortedAndFilteredStudents = () => {
@@ -129,6 +188,10 @@ const AdminDashboardPage: React.FC = () => {
           return b.lastActivity.getTime() - a.lastActivity.getTime();
         case 'quizzes':
           return b.totalQuizzes - a.totalQuizzes;
+        case 'igcse':
+          const aGrade = a.overallIGCSEPercentage || 0;
+          const bGrade = b.overallIGCSEPercentage || 0;
+          return bGrade - aGrade;
         default:
           return 0;
       }
@@ -305,6 +368,7 @@ const AdminDashboardPage: React.FC = () => {
                 <option value="score">Average Score</option>
                 <option value="activity">Last Activity</option>
                 <option value="quizzes">Quiz Count</option>
+                <option value="igcse">IGCSE Grade</option>
               </select>
             </div>
 
@@ -384,10 +448,31 @@ const AdminDashboardPage: React.FC = () => {
                               </div>
                               
                               <div className="text-center">
+                                <p className="text-sm font-medium text-slate-600 dark:text-slate-400">IGCSE Grade</p>
+                                {student.overallIGCSEGrade ? (
+                                  <p className={`text-lg font-bold ${getGradeColor(student.overallIGCSEGrade)}`}>
+                                    {student.overallIGCSEGrade}
+                                  </p>
+                                ) : (
+                                  <p className="text-sm text-slate-400 dark:text-slate-500">No data</p>
+                                )}
+                              </div>
+                              
+                              <div className="text-center">
                                 <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Last Active</p>
                                 <p className={`text-sm font-medium ${activityStatus.color}`}>
                                   {activityStatus.text}
                                 </p>
+                              </div>
+                              
+                              <div className="text-center">
+                                <button
+                                  onClick={() => openAssessmentManager(student)}
+                                  className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
+                                  title="Manage IGCSE Assessments"
+                                >
+                                  Assessments
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -438,6 +523,36 @@ const AdminDashboardPage: React.FC = () => {
             </div>
           )}
         </div>
+        
+        {/* IGCSE Assessment Manager Modal */}
+        {showAssessmentManager && assessmentStudent && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                  IGCSE Assessment Manager
+                </h2>
+                <button
+                  onClick={closeAssessmentManager}
+                  className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div className="p-6">
+                <IGCSEAssessmentManager
+                  student={assessmentStudent.user}
+                  assessments={assessmentStudent.igcseAssessments}
+                  onAssessmentAdded={handleAssessmentAdded}
+                  onAssessmentUpdated={handleAssessmentUpdated}
+                  onAssessmentDeleted={(assessmentId) => handleAssessmentDeleted(assessmentId, assessmentStudent.user.id)}
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );

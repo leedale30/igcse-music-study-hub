@@ -56,6 +56,40 @@ export interface User {
   lastLoginAt: Date;
 }
 
+// IGCSE Assessment Types
+export interface IGCSEComponent {
+  id: string;
+  name: string;
+  maxMarks: number;
+  weighting: number; // percentage of total grade
+}
+
+export interface IGCSEAssessment {
+  id: string;
+  studentId: string;
+  componentId: string;
+  componentName: string;
+  marks: number;
+  maxMarks: number;
+  percentage: number;
+  grade: string;
+  dateAssessed: Date;
+  assessmentType: 'mock' | 'coursework' | 'final';
+  notes?: string;
+}
+
+export interface IGCSEGradeBoundaries {
+  astar: number;
+  a: number;
+  b: number;
+  c: number;
+  d: number;
+  e: number;
+  f: number;
+  g: number;
+  // U is anything below G
+}
+
 // Admin/Teacher Types
 export interface StudentSummary {
   user: User;
@@ -66,6 +100,9 @@ export interface StudentSummary {
   totalStudyTime: string;
   recentQuizzes: QuizResult[];
   badges: Badge[];
+  igcseAssessments: IGCSEAssessment[];
+  overallIGCSEGrade?: string;
+  overallIGCSEPercentage?: number;
 }
 
 // Progress Tracking Types
