@@ -47,6 +47,10 @@ export interface User {
   id: string;
   email: string;
   name: string;
+  firstName?: string;
+  lastName?: string;
+  nickname?: string;
+  profileCompleted: boolean;
   createdAt: Date;
   lastLoginAt: Date;
 }
@@ -96,6 +100,7 @@ export interface AuthContextType {
   user: User | null;
   login: (email: string, password: string) => Promise<boolean>;
   signup: (email: string, password: string, name: string) => Promise<boolean>;
+  updateProfile: (profileData: Partial<User>) => Promise<boolean>;
   logout: () => void;
   isLoading: boolean;
   error: string | null;

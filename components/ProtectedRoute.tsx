@@ -27,7 +27,12 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
-  // If authenticated, render the protected content
+  // If authenticated but profile not completed, redirect to profile setup
+  if (user && !user.profileCompleted && location.pathname !== '/profile-setup') {
+    return <Navigate to="/profile-setup" replace />;
+  }
+
+  // If authenticated and profile completed, render the protected content
   return <>{children}</>;
 };
 

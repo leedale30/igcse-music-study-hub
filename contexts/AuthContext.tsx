@@ -25,7 +25,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         password: 'demo123',
         name: 'Demo Student',
         createdAt: new Date('2024-01-01'),
-        lastLoginAt: new Date()
+        lastLoginAt: new Date(),
+        profileCompleted: true
       };
       existingUsers.push(demoUser);
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
@@ -204,6 +205,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         email,
         password, // In a real app, this would be hashed
         name,
+        profileCompleted: false,
         createdAt: new Date(),
         lastLoginAt: new Date()
       };
@@ -227,6 +229,36 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const updateProfile = async (profileData: Partial<User>): Promise<boolean> => {
+    if (!user) return false;
+    
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      // Update user object
+      const updatedUser = { ...user, ...profileData };
+      
+      // Update in users list
+      const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
+      const updatedUsers = existingUsers.map((u: any) => 
+        u.id === user.id ? { ...u, ...profileData } : u
+      );
+      localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
+      
+      // Update current user
+      setUser(updatedUser);
+      localStorage.setItem('igcse-music-user', JSON.stringify(updatedUser));
+      
+      return true;
+    } catch (error) {
+      setError('Failed to update profile. Please try again.');
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const logout = () => {
     setUser(null);
     localStorage.removeItem('igcse-music-user');
@@ -237,6 +269,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     user,
     login,
     signup,
+    updateProfile,
     logout,
     isLoading,
     error

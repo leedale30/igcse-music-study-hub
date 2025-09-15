@@ -14,6 +14,7 @@ import GenericPage from './pages/GenericPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
+import ProfileSetupPage from './pages/ProfileSetupPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
                 {/* Public authentication routes (no protection) */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
+                <Route path="/profile-setup" element={<ProfileSetupPage />} />
                 
                 {/* Protected routes - require authentication */}
                 <Route path="/dashboard" element={
