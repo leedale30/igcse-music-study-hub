@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Quiz, Question, AnswerOption } from '../types';
 import { validateQuizSubmission } from '../utils/validation';
 import { useErrorHandler } from './ErrorBoundary';
+import { useAuth } from '../contexts/AuthContext';
+import { useProgress } from '../contexts/ProgressContext';
+import { Link } from 'react-router-dom';
 
 interface QuizProps {
   quizData: Quiz;
@@ -36,7 +39,17 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const [copied, setCopied] = useState(false);
   const [validationError, setValidationError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [quizStartTime, setQuizStartTime] = useState<Date>(new Date());
+  const [progressSaved, setProgressSaved] = useState(false);
+  
   const { handleError } = useErrorHandler();
+  const { user } = useAuth();
+  const { addQuizResult } = useProgress();
+
+  // Initialize quiz start time
+  useEffect(() => {
+    setQuizStartTime(new Date());
+  }, [quizData.title]);
 
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
@@ -62,6 +75,27 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
       }
     });
     setScore(currentScore);
+    
+    // Save progress for logged-in users
+    if (user && !progressSaved) {
+      const quizEndTime = new Date();
+      const timeSpent = Math.floor((quizEndTime.getTime() - quizStartTime.getTime()) / 1000); // in seconds
+      const percentage = (currentScore / quizData.questions.length) * 100;
+      
+      try {
+        addQuizResult({
+          quizId: `quiz-${quizData.title.toLowerCase().replace(/\s+/g, '-')}`,
+          quizTitle: quizData.title,
+          score: currentScore,
+          totalQuestions: quizData.questions.length,
+          percentage,
+          timeSpent
+        });
+        setProgressSaved(true);
+      } catch (error) {
+        console.error('Failed to save quiz progress:', error);
+      }
+    }
   };
 
   const handleTryAgain = () => {
@@ -72,6 +106,9 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
     setStudentName('');
     setScore(0);
     setCopied(false);
+    setProgressSaved(false);
+    setQuizStartTime(new Date());
+    setValidationError(null);
   };
 
   const handlePrepareSubmission = () => {
@@ -230,9 +267,58 @@ Date: ${date}
     return (
       <div className="mt-8 p-4 sm:p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow-md">
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-200 mb-6 text-center">Quiz Results</h2>
-        <p className="text-lg sm:text-xl text-center text-gray-800 dark:text-gray-200 mb-8">
+        <p className="text-lg sm:text-xl text-center text-gray-800 dark:text-gray-200 mb-6">
           You scored <span className="font-bold text-sky-600 dark:text-sky-400">{score}</span> out of <span className="font-bold text-sky-600 dark:text-sky-400">{quizData.questions.length}</span>!
         </p>
+        
+        {/* Progress tracking notifications */}
+        {user && progressSaved && (
+          <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+            <div className="flex items-center">
+              <CheckCircleIcon className="text-green-600 dark:text-green-400 mr-3" />
+              <div>
+                <p className="text-green-800 dark:text-green-200 font-medium">Progress Saved!</p>
+                <p className="text-green-700 dark:text-green-300 text-sm">Your quiz result has been added to your learning progress.</p>
+              </div>
+            </div>
+            <div className="mt-3">
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center text-green-700 dark:text-green-300 hover:text-green-800 dark:hover:text-green-200 text-sm font-medium hover:underline"
+              >
+                View Dashboard →
+              </Link>
+            </div>
+          </div>
+        )}
+        
+        {!user && (
+          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+            <div className="flex items-center">
+              <svg className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <div>
+                <p className="text-blue-800 dark:text-blue-200 font-medium">Track Your Progress</p>
+                <p className="text-blue-700 dark:text-blue-300 text-sm">Sign in to save your quiz results and track your learning progress.</p>
+              </div>
+            </div>
+            <div className="mt-3 flex gap-3">
+              <Link
+                to="/login"
+                className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/signup"
+                className="inline-flex items-center px-3 py-1.5 border border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-sm font-medium rounded-md transition-colors"
+              >
+                Create Account
+              </Link>
+            </div>
+          </div>
+        )}
         <ul className="space-y-6">
           {quizData.questions.map((q, index) => {
             const userAnswerId = selectedAnswers[q.id];

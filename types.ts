@@ -41,3 +41,62 @@ export interface SyllabusItem {
 export interface ProcessedSyllabusItem extends SyllabusItem {
   level: number;
 }
+
+// User Authentication Types
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  createdAt: Date;
+  lastLoginAt: Date;
+}
+
+// Progress Tracking Types
+export interface QuizResult {
+  quizId: string;
+  quizTitle: string;
+  score: number;
+  totalQuestions: number;
+  percentage: number;
+  completedAt: Date;
+  timeSpent: number; // in seconds
+}
+
+export interface PageProgress {
+  pageId: string;
+  pageTitle: string;
+  visitedAt: Date;
+  timeSpent: number; // in seconds
+  completed: boolean;
+}
+
+export interface Badge {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  earnedAt: Date;
+  category: 'quiz' | 'progress' | 'achievement';
+}
+
+export interface StudentProgress {
+  userId: string;
+  totalQuizzesCompleted: number;
+  totalPagesVisited: number;
+  averageQuizScore: number;
+  totalStudyTime: number; // in seconds
+  quizResults: QuizResult[];
+  pageProgress: PageProgress[];
+  badges: Badge[];
+  lastUpdated: Date;
+}
+
+// Authentication Context Types
+export interface AuthContextType {
+  user: User | null;
+  login: (email: string, password: string) => Promise<boolean>;
+  signup: (email: string, password: string, name: string) => Promise<boolean>;
+  logout: () => void;
+  isLoading: boolean;
+  error: string | null;
+}
