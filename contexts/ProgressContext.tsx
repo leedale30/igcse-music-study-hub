@@ -99,9 +99,21 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
       lastUpdated: new Date()
     };
 
-    // Recalculate average score
-    const totalScore = updatedProgress.quizResults.reduce((sum, quiz) => sum + quiz.percentage, 0);
-    updatedProgress.averageQuizScore = totalScore / updatedProgress.quizResults.length;
+    // Recalculate average score using only the latest attempt for each quiz
+    const latestQuizResults = new Map<string, QuizResult>();
+    
+    // Group by quizId and keep only the most recent attempt for each quiz
+    updatedProgress.quizResults.forEach(quiz => {
+      const existing = latestQuizResults.get(quiz.quizId);
+      if (!existing || quiz.completedAt > existing.completedAt) {
+        latestQuizResults.set(quiz.quizId, quiz);
+      }
+    });
+    
+    // Calculate average using only latest attempts
+    const latestResults = Array.from(latestQuizResults.values());
+    const totalScore = latestResults.reduce((sum, quiz) => sum + quiz.percentage, 0);
+    updatedProgress.averageQuizScore = latestResults.length > 0 ? totalScore / latestResults.length : 0;
 
     // Add total time spent on quiz
     updatedProgress.totalStudyTime += result.timeSpent;
@@ -228,7 +240,21 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
   };
 
   const getAverageScore = (): number => {
-    return progress?.averageQuizScore || 0;
+    if (!progress || progress.quizResults.length === 0) return 0;
+    
+    // Calculate average using only the latest attempt for each quiz
+    const latestQuizResults = new Map<string, QuizResult>();
+    
+    progress.quizResults.forEach(quiz => {
+      const existing = latestQuizResults.get(quiz.quizId);
+      if (!existing || quiz.completedAt > existing.completedAt) {
+        latestQuizResults.set(quiz.quizId, quiz);
+      }
+    });
+    
+    const latestResults = Array.from(latestQuizResults.values());
+    const totalScore = latestResults.reduce((sum, quiz) => sum + quiz.percentage, 0);
+    return latestResults.length > 0 ? totalScore / latestResults.length : 0;
   };
 
   const getTotalStudyTime = (): string => {
