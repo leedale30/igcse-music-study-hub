@@ -22,6 +22,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import { ProgressProvider } from './contexts/ProgressContext';
+import { RPGProvider } from './contexts/RPGContext';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => {
@@ -30,7 +31,8 @@ const App: React.FC = () => {
       <ThemeProvider>
         <LanguageProvider>
           <AuthProvider>
-            <ProgressProvider>
+          <ProgressProvider>
+            <RPGProvider>
               <Routes>
                 {/* Public authentication routes (no protection) */}
                 <Route path="/login" element={<LoginPage />} />
@@ -73,8 +75,9 @@ const App: React.FC = () => {
                   <Route path="*" element={<GenericPage />} />
                 </Route>
               </Routes>
-            </ProgressProvider>
-          </AuthProvider>
+            </RPGProvider>
+          </ProgressProvider>
+        </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>

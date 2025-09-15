@@ -3,6 +3,7 @@ import { StudentProgress, QuizResult, PageProgress, Badge } from '../types';
 import { EnhancedBadge, Achievement, BadgeStats } from '../types/badges';
 import { useAuth } from './AuthContext';
 import { badgeManager } from '../utils/badgeManager';
+import { useRPG } from './RPGContext';
 
 interface ProgressContextType {
   progress: StudentProgress | null;
@@ -37,6 +38,14 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
   const [achievements, setAchievements] = useState<Achievement[]>([]);
   const [badgeStats, setBadgeStats] = useState<BadgeStats | null>(null);
   const [newBadgeIds, setNewBadgeIds] = useState<string[]>([]);
+  
+  // Get RPG context (will be null if RPG is not enabled)
+  let rpgContext: any = null;
+  try {
+    rpgContext = useRPG();
+  } catch {
+    // RPG context not available, continue without RPG integration
+  }
 
   // Load progress when user changes
   useEffect(() => {
@@ -180,6 +189,15 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
         setNewBadgeIds(prev => [...prev, ...newBadges.map(b => b.id)]);
       }
     }, 100); // Small delay to ensure state is updated
+    
+    // Process quiz result through RPG system if enabled
+    if (rpgContext?.isRPGEnabled) {
+      try {
+        rpgContext.processQuizResult(newResult);
+      } catch (error) {
+        console.error('Error processing quiz result in RPG system:', error);
+      }
+    }
   };
 
   const addPageProgress = (pageId: string, pageTitle: string, timeSpent: number, completed = true) => {

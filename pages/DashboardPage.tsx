@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useProgress } from '../contexts/ProgressContext';
+import { useRPG } from '../contexts/RPGContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggleButton from '../components/LanguageToggleButton';
 import ThemeToggleButton from '../components/ThemeToggleButton';
+import RPGToggle from '../components/RPGToggle';
+import { ParticleEffects } from '../components/RPGVisualEffects';
 
 const DashboardPage: React.FC = () => {
   const { user, logout } = useAuth();
   const { progress, getQuizHistory, getAverageScore, getTotalStudyTime, getBadgesByCategory } = useProgress();
+  const { gameState, isRPGEnabled } = useRPG();
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -78,6 +82,7 @@ const DashboardPage: React.FC = () => {
             <div className="flex items-center space-x-4">
               <LanguageToggleButton />
               <ThemeToggleButton />
+              <RPGToggle />
               <div className="flex items-center space-x-3">
                 <div className="text-right">
                   <p className="text-sm font-medium text-slate-900 dark:text-slate-100">{user.name}</p>
@@ -244,6 +249,37 @@ const DashboardPage: React.FC = () => {
           </div>
         </div>
 
+        {/* RPG Mode Section */}
+        {isRPGEnabled && (
+          <div className="mt-8 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+            <div className="p-6 border-b border-slate-200 dark:border-slate-700">
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 flex items-center space-x-2">
+                <span>🎭</span>
+                <span>RPG Adventure Mode</span>
+              </h2>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                   <div className="text-4xl mb-2">⚔️</div>
+                   <h3 className="font-semibold text-slate-900 dark:text-slate-100">Level {gameState?.character?.level || 1}</h3>
+                   <p className="text-sm text-slate-500 dark:text-slate-400">Current Level</p>
+                 </div>
+                 <div className="text-center">
+                   <div className="text-4xl mb-2">✨</div>
+                   <h3 className="font-semibold text-slate-900 dark:text-slate-100">{gameState?.character?.experience || 0} XP</h3>
+                   <p className="text-sm text-slate-500 dark:text-slate-400">Experience Points</p>
+                 </div>
+                 <div className="text-center">
+                   <div className="text-4xl mb-2">🏆</div>
+                   <h3 className="font-semibold text-slate-900 dark:text-slate-100">{gameState?.completedChallenges?.length || 0}</h3>
+                   <p className="text-sm text-slate-500 dark:text-slate-400">Achievements</p>
+                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Quick Actions */}
         <div className="mt-8 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6">
           <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">Quick Actions</h2>
@@ -311,6 +347,9 @@ const DashboardPage: React.FC = () => {
           </div>
         </div>
       </main>
+      
+      {/* Particle Effects */}
+      {isRPGEnabled && <ParticleEffects />}
     </div>
   );
 };
