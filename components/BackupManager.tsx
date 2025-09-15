@@ -87,8 +87,9 @@ const BackupManager: React.FC<BackupManagerProps> = ({ onClose }) => {
       
       if (userId) {
         data = dataBackupManager.exportStudentData(userId);
-        const user = Object.values(backupStatus).find((s: BackupStatusItem) => s.user?.id === userId)?.user;
-        filename = `student-backup-${user?.name.replace(/\s+/g, '-')}-${new Date().toISOString().split('T')[0]}.json`;
+        const statusItem = (Object.values(backupStatus) as BackupStatusItem[]).find((s: BackupStatusItem) => s.user?.id === userId);
+        const user = statusItem?.user;
+        filename = `student-backup-${user?.name?.replace(/\s+/g, '-') || 'unknown'}-${new Date().toISOString().split('T')[0]}.json`;
       } else {
         data = dataBackupManager.exportSystemData();
         filename = `system-backup-${new Date().toISOString().split('T')[0]}.json`;
