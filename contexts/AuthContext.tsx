@@ -55,6 +55,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           lastName: 'Chan',
           nickname: 'EMILY',
           role: 'student' as const,
+          group: 'Grade 9',
           profileCompleted: true,
           createdAt: new Date('2024-01-01'),
           lastLoginAt: new Date()
@@ -68,6 +69,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           lastName: 'Wang',
           nickname: 'CHRISTINA',
           role: 'student' as const,
+          group: 'Grade 9',
           profileCompleted: true,
           createdAt: new Date('2024-01-01'),
           lastLoginAt: new Date()
@@ -81,6 +83,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           lastName: 'Zhang',
           nickname: 'STEVEN',
           role: 'student' as const,
+          group: 'Grade 9',
           profileCompleted: true,
           createdAt: new Date('2024-01-01'),
           lastLoginAt: new Date()
@@ -89,6 +92,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       
       // Add Grade 9 students to existing users
       existingUsers.push(...grade9Students);
+      
+      // Create placeholder for Grade 10 group (empty for now)
+      // This ensures Grade 10 shows up in the admin dashboard even when empty
       
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
       

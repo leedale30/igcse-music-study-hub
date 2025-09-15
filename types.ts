@@ -51,6 +51,7 @@ export interface User {
   lastName?: string;
   nickname?: string;
   role: 'student' | 'teacher';
+  group?: string; // Grade level or class group (e.g., 'Grade 9', 'Grade 10')
   profileCompleted: boolean;
   createdAt: Date;
   lastLoginAt: Date;

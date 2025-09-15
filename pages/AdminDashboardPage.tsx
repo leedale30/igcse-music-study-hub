@@ -198,6 +198,39 @@ const AdminDashboardPage: React.FC = () => {
     });
   };
 
+  const getStudentsByGroup = () => {
+    const sortedStudents = getSortedAndFilteredStudents();
+    const groups: { [key: string]: typeof sortedStudents } = {
+      'Grade 9': [],
+      'Grade 10': []
+    };
+    
+    sortedStudents.forEach(student => {
+      const group = student.user.group || 'Unassigned';
+      if (!groups[group]) {
+        groups[group] = [];
+      }
+      groups[group].push(student);
+    });
+    
+    // Sort groups to show Grade 9, Grade 10, then others
+    const sortedGroups: { [key: string]: typeof sortedStudents } = {};
+    ['Grade 9', 'Grade 10'].forEach(grade => {
+      if (groups[grade]) {
+        sortedGroups[grade] = groups[grade];
+      }
+    });
+    
+    // Add other groups
+    Object.keys(groups).forEach(group => {
+      if (group !== 'Grade 9' && group !== 'Grade 10') {
+        sortedGroups[group] = groups[group];
+      }
+    });
+    
+    return sortedGroups;
+  };
+
   const getScoreColor = (percentage: number) => {
     if (percentage >= 90) return 'text-green-600 dark:text-green-400';
     if (percentage >= 70) return 'text-yellow-600 dark:text-yellow-400';
@@ -395,24 +428,50 @@ const AdminDashboardPage: React.FC = () => {
           </button>
         </div>
 
-        {/* Student List */}
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-          <div className="p-6 border-b border-slate-200 dark:border-slate-700">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-              Student Progress ({sortedStudents.length} students)
-            </h2>
-          </div>
-          
-          {sortedStudents.length === 0 ? (
-            <div className="p-8 text-center">
-              <svg className="w-12 h-12 text-slate-400 dark:text-slate-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-              </svg>
-              <p className="text-slate-500 dark:text-slate-400">No students found</p>
-            </div>
-          ) : (
-            <div className="divide-y divide-slate-200 dark:divide-slate-700">
-              {sortedStudents.map((student) => {
+        {/* Student List by Groups */}
+        <div className="space-y-6">
+          {(() => {
+            const studentGroups = getStudentsByGroup();
+            const totalStudents = Object.values(studentGroups).flat().length;
+            
+            if (totalStudents === 0) {
+              return (
+                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                  <div className="p-8 text-center">
+                    <svg className="w-12 h-12 text-slate-400 dark:text-slate-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                    </svg>
+                    <p className="text-slate-500 dark:text-slate-400">No students found</p>
+                  </div>
+                </div>
+              );
+            }
+            
+            return Object.entries(studentGroups).map(([groupName, groupStudents]) => (
+              <div key={groupName} className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                <div className="p-6 border-b border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                      {groupName} ({groupStudents.length} students)
+                    </h2>
+                    {groupName === 'Grade 10' && groupStudents.length === 0 && (
+                      <span className="text-sm text-slate-500 dark:text-slate-400 italic">
+                        Ready for new students
+                      </span>
+                    )}
+                  </div>
+                </div>
+                
+                {groupStudents.length === 0 ? (
+                  <div className="p-8 text-center">
+                    <svg className="w-8 h-8 text-slate-400 dark:text-slate-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                    </svg>
+                    <p className="text-slate-500 dark:text-slate-400">No students in this group yet</p>
+                  </div>
+                ) : (
+                  <div className="divide-y divide-slate-200 dark:divide-slate-700">
+                     {groupStudents.map((student) => {
                 const activityStatus = getActivityStatus(student.lastActivity);
                 return (
                   <div key={student.user.id} className="p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
@@ -520,9 +579,12 @@ const AdminDashboardPage: React.FC = () => {
                   </div>
                 );
               })}
-            </div>
-          )}
-        </div>
+                   </div>
+                 )}
+               </div>
+             ));
+           })()}
+         </div>
         
         {/* IGCSE Assessment Manager Modal */}
         {showAssessmentManager && assessmentStudent && (
