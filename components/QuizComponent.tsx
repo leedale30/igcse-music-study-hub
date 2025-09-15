@@ -34,11 +34,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
-  const [studentName, setStudentName] = useState('');
-  const [showSubmissionPrep, setShowSubmissionPrep] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [validationError, setValidationError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [quizStartTime, setQuizStartTime] = useState<Date>(new Date());
   const [progressSaved, setProgressSaved] = useState(false);
   
@@ -54,7 +50,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
   const handleAnswerSelect = (questionId: string, answerId: string) => {
-    if (showResults && !showSubmissionPrep) return; 
+    if (showResults) return; 
     setSelectedAnswers(prev => ({ ...prev, [questionId]: answerId }));
   };
 
@@ -102,72 +98,13 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
     setCurrentQuestionIndex(0);
     setSelectedAnswers({});
     setShowResults(false);
-    setShowSubmissionPrep(false);
-    setStudentName('');
     setScore(0);
-    setCopied(false);
     setProgressSaved(false);
     setQuizStartTime(new Date());
     setValidationError(null);
   };
 
-  const handlePrepareSubmission = () => {
-    setValidationError(null);
-    setIsSubmitting(true);
-    
-    try {
-      const submissionData = {
-        studentName: studentName.trim(),
-        selectedAnswers,
-        quizTitle: quizData.title,
-        score: (score / quizData.questions.length) * 100,
-        totalQuestions: quizData.questions.length
-      };
-      
-      const validation = validateQuizSubmission(submissionData);
-      
-      if (!validation.success) {
-        setValidationError(validation.error || 'Invalid submission data');
-        setIsSubmitting(false);
-        return;
-      }
-      
-      setShowSubmissionPrep(true);
-    } catch (error) {
-      handleError(error as Error, 'quiz submission preparation');
-      setValidationError('An unexpected error occurred while preparing submission');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  
-  const handleBackToResults = () => {
-    setShowSubmissionPrep(false);
-    setCopied(false);
-  };
 
-  const generateScoreSummary = () => {
-    const date = new Date().toLocaleDateString();
-    return `QUIZ SCORE REPORT
--------------------------
-Student: ${studentName || 'N/A'}
-Quiz: ${quizData.title}
-Score: ${score} / ${quizData.questions.length}
-Date: ${date}
--------------------------`;
-  };
-
-  const handleCopyToClipboard = async () => {
-    const summary = generateScoreSummary();
-    try {
-      await navigator.clipboard.writeText(summary);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset copied status after 2 seconds
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-      alert('Failed to copy text. Please try manually selecting and copying.');
-    }
-  };
 
 
   if (!quizData || quizData.questions.length === 0) {
@@ -175,95 +112,6 @@ Date: ${date}
   }
 
   if (showResults) {
-    if (showSubmissionPrep) {
-      return (
-        <div className="mt-8 p-4 sm:p-6 bg-slate-100 dark:bg-slate-900 rounded-lg shadow-md">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4 text-center">Quiz Score Report</h3>
-          <div className="mb-6">
-            <label htmlFor="studentName" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
-              Enter Your Name:
-            </label>
-            <input
-              type="text"
-              id="studentName"
-              value={studentName}
-              onChange={(e) => {
-                setStudentName(e.target.value);
-                if (validationError) setValidationError(null);
-              }}
-              placeholder="Enter your full name"
-              aria-describedby={validationError ? "name-error" : undefined}
-              aria-invalid={validationError ? "true" : "false"}
-              className={`mt-1 block w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 sm:text-sm dark:bg-slate-700 dark:text-white dark:placeholder-gray-400 ${
-                validationError 
-                  ? 'border-red-500 focus:ring-red-500 focus:border-red-500 dark:border-red-400' 
-                  : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600'
-              }`}
-            />
-            {validationError && (
-              <p id="name-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
-                {validationError}
-              </p>
-            )}
-          </div>
-
-          {/* Screenshot-friendly score report card */}
-          <div id="score-report" className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-lg border-2 border-slate-300 dark:border-slate-600 shadow-inner mb-6">
-            <div className="text-center mb-4">
-              <h4 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-100">Score Summary</h4>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">IGCSE Music Study Hub</p>
-            </div>
-            <div className="space-y-3 text-sm sm:text-base text-slate-900 dark:text-slate-200 font-mono">
-              <div className="flex flex-col text-center sm:flex-row sm:justify-between border-b pb-2 dark:border-slate-700">
-                <span className="font-semibold text-slate-600 dark:text-slate-400">Student:</span>
-                <span>{studentName || 'N/A'}</span>
-              </div>
-              <div className="flex flex-col text-center sm:flex-row sm:justify-between border-b pb-2 dark:border-slate-700">
-                <span className="font-semibold text-slate-600 dark:text-slate-400">Quiz:</span>
-                <span className="text-center sm:text-right">{quizData.title}</span>
-              </div>
-              <div className="flex flex-col text-center sm:flex-row sm:justify-between border-b pb-2 dark:border-slate-700">
-                <span className="font-semibold text-slate-600 dark:text-slate-400">Score:</span>
-                <span className="font-bold">{score} / {quizData.questions.length}</span>
-              </div>
-              <div className="flex flex-col text-center sm:flex-row sm:justify-between pt-1">
-                <span className="font-semibold text-slate-600 dark:text-slate-400">Date:</span>
-                <span>{new Date().toLocaleDateString()}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-6 text-center">
-            <button
-              onClick={handleCopyToClipboard}
-              className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-            >
-              <ClipboardIcon className="mr-2" /> {copied ? 'Copied!' : 'Copy Text to Clipboard'}
-            </button>
-          </div>
-
-          <p className="text-sm text-slate-600 dark:text-slate-300 mb-6 bg-sky-50 dark:bg-sky-900/50 p-3 rounded-md border border-sky-200 dark:border-sky-800 text-center">
-            <strong>Instructions:</strong> Take a screenshot of the report card above, or copy the text, and send it to your teacher.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-             <button
-              onClick={handleBackToResults}
-              className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 w-full sm:w-auto"
-            >
-              Back to Results
-            </button>
-            <button
-              onClick={handleTryAgain}
-              className="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50 w-full sm:w-auto"
-            >
-              Try Quiz Again
-            </button>
-          </div>
-        </div>
-      );
-    }
-
     return (
       <div className="mt-8 p-4 sm:p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow-md">
         <h2 className="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-200 mb-6 text-center">Quiz Results</h2>
@@ -364,27 +212,13 @@ Date: ${date}
             );
           })}
         </ul>
-        <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div className="mt-8 flex justify-center">
           <button
             onClick={handleTryAgain}
-            className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50"
+            className="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50"
           >
             Try Again
           </button>
-          <button
-            onClick={handlePrepareSubmission}
-            disabled={isSubmitting}
-            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-          >
-            {isSubmitting ? 'Preparing...' : 'Prepare Score for Teacher'}
-          </button>
-          {validationError && (
-            <div className="w-full text-center">
-              <p className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 p-3 rounded-md border border-red-200 dark:border-red-800" role="alert">
-                {validationError}
-              </p>
-            </div>
-          )}
         </div>
       </div>
     );
@@ -404,7 +238,7 @@ Date: ${date}
             <button
               key={option.id}
               onClick={() => handleAnswerSelect(currentQuestion.id, option.id)}
-              disabled={showResults && !showSubmissionPrep}
+              disabled={showResults}
               aria-pressed={selectedAnswers[currentQuestion.id] === option.id}
               className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-150 
                 ${selectedAnswers[currentQuestion.id] === option.id 
@@ -423,7 +257,7 @@ Date: ${date}
       <div className="mt-8 text-center">
         <button
           onClick={handleNextQuestion}
-          disabled={!selectedAnswers[currentQuestion.id] || (showResults && !showSubmissionPrep)}
+          disabled={!selectedAnswers[currentQuestion.id] || showResults}
           className="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-150 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50 disabled:bg-gray-400 disabled:cursor-not-allowed dark:disabled:bg-slate-600"
         >
           {currentQuestionIndex < quizData.questions.length - 1 ? 'Next Question' : 'Show Results'}
