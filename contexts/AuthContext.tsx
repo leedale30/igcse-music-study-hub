@@ -24,11 +24,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         email: 'demo@student.com',
         password: 'demo123',
         name: 'Demo Student',
+        role: 'student' as const,
         createdAt: new Date('2024-01-01'),
         lastLoginAt: new Date(),
         profileCompleted: true
       };
       existingUsers.push(demoUser);
+      
+      // Create demo teacher account
+      const demoTeacher = {
+        id: 'teacher-001',
+        email: 'teacher@school.com',
+        password: 'teacher123',
+        name: 'Music Teacher',
+        role: 'teacher' as const,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date(),
+        profileCompleted: true
+      };
+      existingUsers.push(demoTeacher);
+      
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
       
       // Create sample progress data for demo user
@@ -205,6 +220,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         email,
         password, // In a real app, this would be hashed
         name,
+        role: 'student' as const,
         profileCompleted: false,
         createdAt: new Date(),
         lastLoginAt: new Date()

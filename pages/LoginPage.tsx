@@ -24,7 +24,11 @@ const LoginPage: React.FC = () => {
   // Redirect if already logged in
   useEffect(() => {
     if (user) {
-      navigate(from, { replace: true });
+      if (user.role === 'teacher') {
+        navigate('/admin', { replace: true });
+      } else {
+        navigate(from, { replace: true });
+      }
     }
   }, [user, navigate, from]);
 
@@ -60,7 +64,7 @@ const LoginPage: React.FC = () => {
 
     const success = await login(formData.email, formData.password);
     if (success) {
-      navigate(from, { replace: true });
+      // The useEffect will handle the redirect based on user role
     }
   };
 
@@ -201,14 +205,28 @@ const LoginPage: React.FC = () => {
         {/* Demo Account Info */}
         <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
           <h3 className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
-            Demo Account
+            Demo Accounts
           </h3>
-          <p className="text-sm text-blue-700 dark:text-blue-300 mb-2">
+          <p className="text-sm text-blue-700 dark:text-blue-300 mb-3">
             Try the system with these demo credentials:
           </p>
-          <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
-            <p>Email: demo@student.com</p>
-            <p>Password: demo123</p>
+          
+          <div className="space-y-3">
+            <div>
+              <p className="text-xs font-medium text-blue-800 dark:text-blue-200 mb-1">Student Account:</p>
+              <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
+                <p>Email: demo@student.com</p>
+                <p>Password: demo123</p>
+              </div>
+            </div>
+            
+            <div>
+              <p className="text-xs font-medium text-blue-800 dark:text-blue-200 mb-1">Teacher Account:</p>
+              <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
+                <p>Email: teacher@school.com</p>
+                <p>Password: teacher123</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -50,9 +50,22 @@ export interface User {
   firstName?: string;
   lastName?: string;
   nickname?: string;
+  role: 'student' | 'teacher';
   profileCompleted: boolean;
   createdAt: Date;
   lastLoginAt: Date;
+}
+
+// Admin/Teacher Types
+export interface StudentSummary {
+  user: User;
+  progress: StudentProgress;
+  lastActivity: Date;
+  totalQuizzes: number;
+  averageScore: number;
+  totalStudyTime: string;
+  recentQuizzes: QuizResult[];
+  badges: Badge[];
 }
 
 // Progress Tracking Types
