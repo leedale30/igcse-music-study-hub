@@ -4,6 +4,7 @@ import { EnhancedBadge, Achievement, BadgeStats } from '../types/badges';
 import { useAuth } from './AuthContext';
 import { badgeManager } from '../utils/badgeManager';
 import { useRPG } from './RPGContext';
+import { dataBackupManager } from '../utils/dataBackup';
 
 interface ProgressContextType {
   progress: StudentProgress | null;
@@ -173,6 +174,11 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
 
     setProgress(updatedProgress);
     saveProgress(updatedProgress);
+
+    // Create backup after quiz completion
+    if (user?.id && user.role === 'student') {
+      dataBackupManager.createStudentBackup(user.id);
+    }
 
     // Check for new badges (legacy system)
     checkForNewBadges(updatedProgress);

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User, AuthContextType } from '../types';
+import { dataBackupManager } from '../utils/dataBackup';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -343,6 +344,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setUser(updatedUser);
       localStorage.setItem('igcse-music-user', JSON.stringify(updatedUser));
       
+      // Create backup after profile update
+      if (user.role === 'student') {
+        dataBackupManager.createStudentBackup(user.id);
+      }
+      
       return true;
     } catch (error) {
       setError('Failed to update profile. Please try again.');
@@ -374,6 +380,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         u.id === user.id ? { ...u, password: newPassword } : u
       );
       localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
+      
+      // Create backup after password update
+      if (user.role === 'student') {
+        dataBackupManager.createStudentBackup(user.id);
+      }
       
       return true;
     } catch (error) {
