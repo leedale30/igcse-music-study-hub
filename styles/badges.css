@@ -1,0 +1,355 @@
+/* Badge System Animations and Styles */
+
+/* Keyframe Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+@keyframes badge-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Classes */
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-badge-bounce {
+  animation: badge-bounce 1s ease-in-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 8s linear infinite;
+}
+
+/* Badge Rarity Shadows */
+.shadow-common {
+  box-shadow: 0 4px 6px -1px rgba(107, 114, 128, 0.3), 0 2px 4px -1px rgba(107, 114, 128, 0.2);
+}
+
+.shadow-uncommon {
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3), 0 2px 4px -1px rgba(16, 185, 129, 0.2),
+              0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.shadow-rare {
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3), 0 2px 4px -1px rgba(59, 130, 246, 0.2),
+              0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.shadow-epic {
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3), 0 2px 4px -1px rgba(139, 92, 246, 0.2),
+              0 0 25px rgba(139, 92, 246, 0.4), 0 0 35px rgba(139, 92, 246, 0.2);
+}
+
+.shadow-legendary {
+  box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3), 0 2px 4px -1px rgba(245, 158, 11, 0.2),
+              0 0 30px rgba(245, 158, 11, 0.4), 0 0 40px rgba(245, 158, 11, 0.3),
+              0 0 50px rgba(245, 158, 11, 0.2);
+}
+
+/* Badge Shape Utilities */
+.badge-shape-shield {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.badge-shape-star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.badge-shape-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.badge-shape-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.badge-shape-crown {
+  clip-path: polygon(0% 100%, 20% 60%, 40% 80%, 50% 40%, 60% 80%, 80% 60%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+/* Gradient Patterns */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+.bg-dotted {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Badge Container Styles */
+.badge-container {
+  position: relative;
+  display: inline-block;
+}
+
+.badge-container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.badge-container:hover::before {
+  opacity: 1;
+}
+
+/* Progress Bar Animations */
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Badge Notification Styles */
+.badge-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 300px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #10b981;
+  padding: 16px;
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.badge-notification.legendary {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+}
+
+.badge-notification.epic {
+  border-left-color: #8b5cf6;
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+}
+
+.badge-notification.rare {
+  border-left-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+}
+
+/* Achievement Card Styles */
+.achievement-card {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.achievement-card:hover::before {
+  left: 100%;
+}
+
+.achievement-card.completed {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-color: #10b981;
+}
+
+.achievement-card.locked {
+  opacity: 0.6;
+  filter: grayscale(50%);
+}
+
+/* Badge Grid Responsive */
+.badge-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+@media (min-width: 640px) {
+  .badge-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .badge-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .badge-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .badge-notification {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .badge-notification.legendary {
+    background: linear-gradient(135deg, #451a03, #78350f);
+  }
+  
+  .badge-notification.epic {
+    background: linear-gradient(135deg, #3c1361, #581c87);
+  }
+  
+  .badge-notification.rare {
+    background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  }
+  
+  .achievement-card.completed {
+    background: linear-gradient(135deg, #064e3b, #065f46);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-shimmer,
+  .animate-glow,
+  .animate-badge-bounce,
+  .animate-slide-in-right,
+  .animate-float,
+  .animate-rotate-slow {
+    animation: none;
+  }
+  
+  .badge-container::before,
+  .progress-bar::after,
+  .achievement-card::before {
+    display: none;
+  }
+}
+
+/* Focus States for Accessibility */
+.badge-container:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.achievement-card:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .badge-container {
+    border: 2px solid currentColor;
+  }
+  
+  .achievement-card {
+    border: 2px solid currentColor;
+  }
+}

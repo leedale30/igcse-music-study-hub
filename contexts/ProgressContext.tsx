@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { StudentProgress, QuizResult, PageProgress, Badge } from '../types';
+import { EnhancedBadge, Achievement, BadgeStats } from '../types/badges';
 import { useAuth } from './AuthContext';
+import { badgeManager } from '../utils/badgeManager';
 
 interface ProgressContextType {
   progress: StudentProgress | null;
@@ -12,6 +14,14 @@ interface ProgressContextType {
   getTotalStudyTime: () => string;
   getBadgesByCategory: (category: Badge['category']) => Badge[];
   resetProgress: () => void;
+  // Enhanced badge system
+  enhancedBadges: EnhancedBadge[];
+  achievements: Achievement[];
+  badgeStats: BadgeStats | null;
+  newBadgeIds: string[];
+  checkForNewAchievements: () => void;
+  markBadgesAsSeen: (badgeIds: string[]) => void;
+  getNextAchievableBadges: (limit?: number) => Achievement[];
 }
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
@@ -23,15 +33,49 @@ interface ProgressProviderProps {
 export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) => {
   const { user } = useAuth();
   const [progress, setProgress] = useState<StudentProgress | null>(null);
+  const [enhancedBadges, setEnhancedBadges] = useState<EnhancedBadge[]>([]);
+  const [achievements, setAchievements] = useState<Achievement[]>([]);
+  const [badgeStats, setBadgeStats] = useState<BadgeStats | null>(null);
+  const [newBadgeIds, setNewBadgeIds] = useState<string[]>([]);
 
   // Load progress when user changes
   useEffect(() => {
     if (user) {
       loadUserProgress(user.id);
+      loadEnhancedBadges(user.id);
     } else {
       setProgress(null);
+      setEnhancedBadges([]);
+      setAchievements([]);
+      setBadgeStats(null);
+      setNewBadgeIds([]);
     }
   }, [user]);
+
+  const loadEnhancedBadges = (userId: string) => {
+    const savedBadges = localStorage.getItem(`enhanced-badges-${userId}`);
+    if (savedBadges) {
+      try {
+        const badges = JSON.parse(savedBadges).map((badge: any) => ({
+          ...badge,
+          earnedAt: new Date(badge.earnedAt)
+        }));
+        setEnhancedBadges(badges);
+      } catch (error) {
+        console.error('Error loading enhanced badges:', error);
+        setEnhancedBadges([]);
+      }
+    } else {
+      setEnhancedBadges([]);
+    }
+  };
+
+  // Check for new achievements when progress changes
+  useEffect(() => {
+    if (progress && user) {
+      checkForNewAchievements();
+    }
+  }, [progress?.totalQuizzesCompleted, progress?.averageQuizScore, progress?.totalStudyTime]);
 
   const loadUserProgress = (userId: string) => {
     const savedProgress = localStorage.getItem(`igcse-progress-${userId}`);
@@ -121,8 +165,21 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
     setProgress(updatedProgress);
     saveProgress(updatedProgress);
 
-    // Check for new badges
+    // Check for new badges (legacy system)
     checkForNewBadges(updatedProgress);
+    
+    // Check for new achievements (enhanced system)
+    setTimeout(() => {
+      const newBadges = badgeManager.checkForNewBadges(updatedProgress, enhancedBadges, { latestQuiz: newResult });
+      if (newBadges.length > 0) {
+        setEnhancedBadges(prev => {
+          const updated = [...prev, ...newBadges];
+          localStorage.setItem(`enhanced-badges-${user?.id}`, JSON.stringify(updated));
+          return updated;
+        });
+        setNewBadgeIds(prev => [...prev, ...newBadges.map(b => b.id)]);
+      }
+    }, 100); // Small delay to ensure state is updated
   };
 
   const addPageProgress = (pageId: string, pageTitle: string, timeSpent: number, completed = true) => {
@@ -280,6 +337,36 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
     initializeProgress(user.id);
   };
 
+  // Enhanced badge system methods
+  const checkForNewAchievements = () => {
+    if (!progress) return;
+    
+    const newBadges = badgeManager.checkForNewBadges(progress, enhancedBadges);
+    if (newBadges.length > 0) {
+      setEnhancedBadges(prev => [...prev, ...newBadges]);
+      setNewBadgeIds(prev => [...prev, ...newBadges.map(b => b.id)]);
+      
+      // Save enhanced badges to localStorage
+      localStorage.setItem(`enhanced-badges-${user?.id}`, JSON.stringify([...enhancedBadges, ...newBadges]));
+    }
+    
+    // Update achievements and stats
+    const updatedAchievements = badgeManager.generateAchievements(progress, [...enhancedBadges, ...newBadges]);
+    const updatedStats = badgeManager.calculateBadgeStats([...enhancedBadges, ...newBadges]);
+    
+    setAchievements(updatedAchievements);
+    setBadgeStats(updatedStats);
+  };
+
+  const markBadgesAsSeen = (badgeIds: string[]) => {
+    setNewBadgeIds(prev => prev.filter(id => !badgeIds.includes(id)));
+  };
+
+  const getNextAchievableBadges = (limit: number = 5): Achievement[] => {
+    if (!progress) return [];
+    return badgeManager.getNextAchievableBadges(progress, enhancedBadges, limit);
+  };
+
   const value: ProgressContextType = {
     progress,
     addQuizResult,
@@ -289,7 +376,14 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
     getAverageScore,
     getTotalStudyTime,
     getBadgesByCategory,
-    resetProgress
+    resetProgress,
+    enhancedBadges,
+    achievements,
+    badgeStats,
+    newBadgeIds,
+    checkForNewAchievements,
+    markBadgesAsSeen,
+    getNextAchievableBadges
   };
 
   return (
