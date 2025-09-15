@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { z } from 'zod';
 
@@ -17,6 +17,7 @@ const signupSchema = z.object({
 const SignupPage: React.FC = () => {
   const { signup, isLoading, error, user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({ 
     name: '', 
     email: '', 
@@ -27,12 +28,15 @@ const SignupPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // Get the intended destination from location state
+  const from = location.state?.from?.pathname || '/';
+
   // Redirect if already logged in
   useEffect(() => {
     if (user) {
-      navigate('/dashboard');
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -66,7 +70,7 @@ const SignupPage: React.FC = () => {
 
     const success = await signup(formData.email, formData.password, formData.name);
     if (success) {
-      navigate('/dashboard');
+      navigate(from, { replace: true });
     }
   };
 

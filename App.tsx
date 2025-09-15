@@ -14,6 +14,7 @@ import GenericPage from './pages/GenericPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
+import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
@@ -28,13 +29,23 @@ const App: React.FC = () => {
           <AuthProvider>
             <ProgressProvider>
               <Routes>
-                {/* Authentication routes (no layout) */}
+                {/* Public authentication routes (no protection) */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
                 
-                {/* Main app routes (with layout) */}
-                <Route path="/" element={<Layout />}>
+                {/* Protected routes - require authentication */}
+                <Route path="/dashboard" element={
+                  <ProtectedRoute>
+                    <DashboardPage />
+                  </ProtectedRoute>
+                } />
+                
+                {/* Main app routes (with layout and protection) */}
+                <Route path="/" element={
+                  <ProtectedRoute>
+                    <Layout />
+                  </ProtectedRoute>
+                }>
                   <Route index element={<HomePage />} />
                   <Route path="test" element={<TestPage />} />
                   <Route path="tools/metronome" element={<MetronomePage />} />

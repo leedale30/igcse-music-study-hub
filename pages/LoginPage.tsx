@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { validateQuizSubmission } from '../utils/validation';
 import { z } from 'zod';
@@ -13,16 +13,20 @@ const loginSchema = z.object({
 const LoginPage: React.FC = () => {
   const { login, isLoading, error, user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const [showPassword, setShowPassword] = useState(false);
 
+  // Get the intended destination from location state
+  const from = location.state?.from?.pathname || '/';
+
   // Redirect if already logged in
   useEffect(() => {
     if (user) {
-      navigate('/dashboard');
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -56,7 +60,7 @@ const LoginPage: React.FC = () => {
 
     const success = await login(formData.email, formData.password);
     if (success) {
-      navigate('/dashboard');
+      navigate(from, { replace: true });
     }
   };
 
