@@ -346,6 +346,38 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const updatePassword = async (currentPassword: string, newPassword: string): Promise<boolean> => {
+    if (!user) return false;
+    
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      // Get existing users from localStorage
+      const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
+      
+      // Find current user and verify password
+      const currentUser = existingUsers.find((u: any) => u.id === user.id);
+      if (!currentUser || currentUser.password !== currentPassword) {
+        setError('Current password is incorrect');
+        return false;
+      }
+      
+      // Update password in users list
+      const updatedUsers = existingUsers.map((u: any) => 
+        u.id === user.id ? { ...u, password: newPassword } : u
+      );
+      localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
+      
+      return true;
+    } catch (error) {
+      setError('Failed to update password. Please try again.');
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const logout = () => {
     setUser(null);
     localStorage.removeItem('igcse-music-user');
@@ -357,6 +389,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     login,
     signup,
     updateProfile,
+    updatePassword,
     logout,
     isLoading,
     error

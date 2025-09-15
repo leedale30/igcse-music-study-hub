@@ -151,6 +151,7 @@ export interface AuthContextType {
   login: (email: string, password: string) => Promise<boolean>;
   signup: (email: string, password: string, name: string) => Promise<boolean>;
   updateProfile: (profileData: Partial<User>) => Promise<boolean>;
+  updatePassword: (currentPassword: string, newPassword: string) => Promise<boolean>;
   logout: () => void;
   isLoading: boolean;
   error: string | null;
