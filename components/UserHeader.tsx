@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggleButton from './LanguageToggleButton';
 import ThemeToggleButton from './ThemeToggleButton';
 
-const UserHeader: React.FC = () => {
+interface UserHeaderProps {
+  onMenuClick?: () => void;
+}
+
+const UserHeader: React.FC<UserHeaderProps> = ({ onMenuClick }) => {
   const { user, logout } = useAuth();
+  const { language } = useLanguage();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -20,22 +26,47 @@ const UserHeader: React.FC = () => {
     return '/dashboard';
   };
 
+  const glossaryTitle = language === 'en-zh' ? 'Glossary / 词汇表' : 'Glossary';
+
   if (!user) {
     return null;
   }
 
   return (
-    <header className="bg-white dark:bg-slate-800 shadow-sm border-b border-slate-200 dark:border-slate-700 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14">
-          {/* Left side - Site title */}
-          <div className="flex items-center">
+    <header className="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Left side - Site title and navigation */}
+          <div className="flex items-center space-x-4">
+            {/* Mobile menu button */}
+            {onMenuClick && (
+              <button 
+                onClick={onMenuClick} 
+                className="lg:hidden p-1 text-gray-300 hover:text-sky-400" 
+                aria-label="Open menu"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            )}
+            
             <Link 
               to="/" 
-              className="text-xl font-bold text-slate-800 dark:text-slate-100 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+              className="text-xl sm:text-2xl font-bold tracking-tight hover:text-sky-400 transition-colors"
             >
-              IGCSE Music Hub
+              IGCSE Music 2026 Hub
             </Link>
+            
+            {/* Glossary link */}
+            <nav className="hidden md:flex">
+              <NavLink 
+                to="/glossary" 
+                className={({isActive}) => `text-sm px-2 ${isActive ? 'text-sky-400 font-semibold' : 'text-gray-300 hover:text-sky-400'} transition-colors`}
+              >
+                {glossaryTitle}
+              </NavLink>
+            </nav>
           </div>
 
           {/* Right side - User info and controls */}
@@ -47,20 +78,20 @@ const UserHeader: React.FC = () => {
             </div>
 
             {/* User info and actions */}
-            <div className="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-600">
+            <div className="flex items-center space-x-3 pl-4 border-l border-slate-600">
               {/* Welcome message */}
               <div className="hidden sm:block text-right">
-                <p className="text-sm text-slate-600 dark:text-slate-400">
+                <p className="text-xs text-gray-400">
                   Welcome back,
                 </p>
-                <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                <p className="text-sm font-medium text-white">
                   {user.nickname || user.firstName || user.name}
                 </p>
               </div>
 
               {/* Mobile - just show nickname */}
               <div className="sm:hidden">
-                <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                <p className="text-sm font-medium text-white">
                   {user.nickname || user.firstName || user.name}
                 </p>
               </div>
@@ -79,7 +110,7 @@ const UserHeader: React.FC = () => {
               {/* Logout button */}
               <button
                 onClick={handleLogout}
-                className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center space-x-1"
+                className="bg-slate-700 hover:bg-slate-600 text-gray-300 hover:text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center space-x-1"
                 title="Sign out"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
