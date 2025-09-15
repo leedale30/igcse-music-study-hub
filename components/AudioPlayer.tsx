@@ -63,9 +63,10 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
     if (hasError) return;
     
     const prevValue = isPlaying;
-    setIsPlaying(!prevValue);
     
     if (!prevValue) {
+      // Starting to play
+      setIsPlaying(true);
       try {
         setIsLoading(true);
         await audioRef.current?.play();
@@ -81,8 +82,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
         setIsLoading(false);
       }
     } else {
+      // Pausing
+      setIsPlaying(false);
       audioRef.current?.pause();
-      if(animationRef.current) cancelAnimationFrame(animationRef.current);
+      if(animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = undefined;
+      }
     }
   };
 
@@ -160,14 +166,21 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ sources, credit }) => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
     audio.addEventListener('error', handleAudioError);
     audio.addEventListener('loadstart', handleLoadStart);
     audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('pause', handlePause);
 
     return () => {
        audio.removeEventListener('error', handleAudioError);
        audio.removeEventListener('loadstart', handleLoadStart);
        audio.removeEventListener('canplay', handleCanPlay);
+       audio.removeEventListener('play', handlePlay);
+       audio.removeEventListener('pause', handlePause);
      };
    }, []);
   
