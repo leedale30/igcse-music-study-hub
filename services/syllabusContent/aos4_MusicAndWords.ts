@@ -401,7 +401,471 @@ A song cycle for double choir and piano that showcases a vast range of textures 
 *   一部为双重合唱团和钢琴而作的声乐套曲。注意不同声乐织体的运用，从《七月的回应》中的主音和对唱效果，到《啊，向日葵！》中复杂的八部卡农。还要注意在最后的乐章《敲响吧，野钟》中的音画法。
 
 *   **流行歌曲与音乐剧：** **本吉·帕塞克和贾斯汀·保罗 – 《一百万个梦想》（来自《马戏之王》）**
-*   这首歌兼具两种体裁的共同特征。它有清晰的主歌-前副歌-副歌结构和流行民谣典型的飙升旋律。它还使用管弦乐队通过钹滚奏和增加混响等手段来营造戏剧性，这是音乐剧中的常用技巧。`
-    }
+*   这首歌兼具两种体裁的共同特征。它有清晰的主歌-前副歌-副歌结构和流行民谣典型的飙升旋律。它还使用管弦乐队通过钹滚奏和增加混响等手段来营造戏剧性，这是音乐剧中的常用技巧。`,
+      children: [
+        {
+          id: 'aos4-pop-song-analysis',
+          title: 'Pop Song Analysis',
+          title_zh: '流行歌曲分析',
+          path: '/areas-of-study/aos4-music-and-words/starting-points/pop-song-analysis',
+          content: 'Detailed analysis of popular songs demonstrating key musical features.',
+          content_zh: '流行歌曲的详细分析，展示关键音乐特征。',
+          longDescription: `# Pop Song Analysis
+
+## Understanding Popular Music Through Analysis
+
+Analysing popular songs helps us understand how composers and songwriters use musical elements to create memorable, emotionally engaging music. This section provides detailed analysis of representative popular songs, examining their structure, melody, harmony, rhythm, and production techniques.
+
+## Key Analytical Approaches
+
+### 1. Structural Analysis
+**Identifying Song Sections:**
+- **Intro**: Sets the mood and introduces key musical elements
+- **Verse**: Tells the story, usually with changing lyrics
+- **Pre-Chorus**: Builds tension and anticipation
+- **Chorus**: The memorable hook with repeated lyrics
+- **Bridge**: Provides contrast and fresh perspective
+- **Outro**: Brings the song to a satisfying conclusion
+
+**Common Structures:**
+- **Verse-Chorus Form**: Most common in pop music
+- **AABA Form**: Traditional popular song structure
+- **Through-Composed**: Continuously evolving without repetition
+
+### 2. Melodic Analysis
+**Melody Characteristics:**
+- **Range**: Typically within an octave for singability
+- **Contour**: Shape of the melody (ascending, descending, static)
+- **Intervals**: Steps and leaps that create melodic interest
+- **Hooks**: Short, memorable melodic phrases
+- **Vocal Style**: Delivery technique and expression
+
+**Melodic Techniques:**
+- **Repetition**: Creates familiarity and memorability
+- **Sequence**: Repeated patterns at different pitch levels
+- **Call and Response**: Musical conversation between parts
+- **Melisma**: Multiple notes on a single syllable
+
+### 3. Harmonic Analysis
+**Chord Progressions:**
+- **I-V-vi-IV**: The most popular progression in modern pop
+- **vi-IV-I-V**: Alternative arrangement of the same chords
+- **ii-V-I**: Jazz-influenced progression
+- **Modal Progressions**: Using modes for different colours
+
+**Harmonic Rhythm:**
+- **Rate of Change**: How often chords change
+- **Cadences**: Points of harmonic resolution
+- **Modulation**: Key changes for dramatic effect
+- **Non-Chord Tones**: Added colour and tension
+
+### 4. Rhythmic Analysis
+**Rhythmic Elements:**
+- **Time Signature**: Usually 4/4 in popular music
+- **Tempo**: Speed and energy level
+- **Syncopation**: Off-beat accents for interest
+- **Groove**: The overall rhythmic feel
+
+**Rhythmic Techniques:**
+- **Backbeat**: Emphasis on beats 2 and 4
+- **Cross-Rhythm**: Conflicting rhythmic patterns
+- **Polyrhythm**: Multiple rhythms simultaneously
+- **Rhythmic Displacement**: Shifting patterns
+
+### 5. Production Analysis
+**Instrumentation:**
+- **Core Elements**: Drums, bass, guitar, keyboards, vocals
+- **Layering**: Building texture through multiple parts
+- **Arrangement**: How instruments are combined
+- **Sonic Palette**: Choice of sounds and timbres
+
+**Production Techniques:**
+- **Effects**: Reverb, delay, chorus, distortion
+- **Dynamics**: Volume changes and compression
+- **Panning**: Stereo placement of instruments
+- **Automation**: Changes over time
+
+## Sample Analysis: "Shape of You" by Ed Sheeran
+
+### Structure
+**Form**: Verse-Pre-Chorus-Chorus-Verse-Pre-Chorus-Chorus-Bridge-Chorus-Outro
+- **Intro** (0:00-0:08): Marimba-like synth establishes the main riff
+- **Verse 1** (0:08-0:25): Conversational melody, storytelling lyrics
+- **Pre-Chorus** (0:25-0:33): Building tension with "Come on now"
+- **Chorus** (0:33-0:50): Memorable hook "I'm in love with the shape of you"
+- **Verse 2** (0:50-1:07): Continues the narrative
+- **Pre-Chorus** (1:07-1:15): Repeated build-up
+- **Chorus** (1:15-1:32): Hook repetition
+- **Bridge** (1:32-1:49): Contrasting section with different melody
+- **Chorus** (1:49-2:06): Final statement
+- **Outro** (2:06-2:24): Fade with vocal ad-libs
+
+### Melody
+**Range**: Approximately one octave (comfortable for most singers)
+**Contour**: Mostly stepwise with occasional leaps
+**Hook**: "Shape of you" - simple, repetitive, memorable
+**Vocal Style**: Conversational, intimate delivery
+
+### Harmony
+**Key**: C# minor
+**Main Progression**: i-VI-III-VII (C#m-A-E-B)
+**Harmonic Rhythm**: One chord per bar in most sections
+**Modality**: Natural minor with occasional major VII chord
+
+### Rhythm
+**Time Signature**: 4/4
+**Tempo**: 96 BPM (moderate dance tempo)
+**Groove**: Dancehall-influenced with syncopated percussion
+**Backbeat**: Strong emphasis on beats 2 and 4
+
+### Production
+**Instrumentation**: Marimba synth, drums, bass, vocals, minimal guitar
+**Texture**: Relatively sparse, allowing each element to be clearly heard
+**Effects**: Subtle reverb on vocals, compression for punch
+**Arrangement**: Builds gradually, adding elements in each section
+
+### Lyrical Analysis
+**Theme**: Romance and attraction
+**Perspective**: First person narrative
+**Imagery**: Physical and visual descriptions
+**Rhyme Scheme**: ABAB in verses, AABA in chorus
+**Word-Painting**: "Shape of you" emphasizes the visual theme
+
+## Sample Analysis: "Someone Like You" by Adele
+
+### Structure
+**Form**: Verse-Chorus-Verse-Chorus-Bridge-Chorus-Outro
+- **Intro** (0:00-0:18): Solo piano establishes key and mood
+- **Verse 1** (0:18-0:47): Intimate storytelling over simple accompaniment
+- **Chorus** (0:47-1:17): Emotional climax with soaring melody
+- **Verse 2** (1:17-1:46): Continues the narrative
+- **Chorus** (1:46-2:16): Repeated emotional peak
+- **Bridge** (2:16-2:31): Contrasting section with different harmony
+- **Chorus** (2:31-3:16): Extended final chorus with vocal embellishments
+- **Outro** (3:16-4:45): Piano solo with vocal ad-libs
+
+### Melody
+**Range**: Wide range showcasing Adele's vocal ability
+**Contour**: Ascending phrases in chorus for emotional impact
+**Intervals**: Large leaps in "Never mind, I'll find" for drama
+**Vocal Style**: Powerful, soulful delivery with melismatic passages
+
+### Harmony
+**Key**: A major
+**Main Progression**: I-V-vi-IV (A-E-F#m-D)
+**Harmonic Rhythm**: Slow, allowing for emotional weight
+**Cadences**: Strong resolution points for structural clarity
+
+### Rhythm
+**Time Signature**: 4/4
+**Tempo**: 67 BPM (slow ballad)
+**Feel**: Straight eighth notes, no syncopation
+**Accompaniment**: Simple arpeggiated piano pattern
+
+### Production
+**Instrumentation**: Piano, vocals, subtle strings in later sections
+**Texture**: Sparse, focusing attention on voice and lyrics
+**Effects**: Natural reverb, minimal processing
+**Dynamics**: Builds from intimate to powerful
+
+### Lyrical Analysis
+**Theme**: Lost love and acceptance
+**Perspective**: Direct address to former lover
+**Emotion**: Vulnerability and strength
+**Structure**: Narrative verses, universal chorus
+**Word-Painting**: Melodic peaks on emotional words
+
+## Analysis Techniques for Students
+
+### Listening Strategies
+1. **Multiple Listens**: Focus on different elements each time
+2. **Active Listening**: Take notes while listening
+3. **Comparative Analysis**: Compare similar songs
+4. **Score Following**: Use lead sheets or chord charts
+5. **Technology**: Use software to slow down or isolate parts
+
+### Analytical Framework
+1. **First Impression**: Overall style and mood
+2. **Structure Mapping**: Identify and time each section
+3. **Element Analysis**: Examine melody, harmony, rhythm separately
+4. **Integration**: How elements work together
+5. **Context**: Historical and cultural significance
+
+### Writing Analysis
+1. **Clear Organization**: Structure your analysis logically
+2. **Musical Terminology**: Use precise vocabulary
+3. **Specific Examples**: Reference exact moments in the song
+4. **Objective Description**: Focus on what you hear, not personal taste
+5. **Synthesis**: Draw connections between different elements
+
+## Common Features in Pop Song Analysis
+
+### Structural Patterns
+- **Verse-Chorus Dominance**: Most popular songs use this form
+- **Pre-Chorus Usage**: Increasingly common for building tension
+- **Bridge Placement**: Usually after second chorus
+- **Intro/Outro Balance**: Often related musically
+
+### Melodic Conventions
+- **Singable Range**: Usually within an octave and a half
+- **Hook Placement**: Most memorable melody in chorus
+- **Verse-Chorus Contrast**: Different melodic characters
+- **Repetition**: Key to memorability
+
+### Harmonic Tendencies
+- **Diatonic Harmony**: Staying within the key
+- **Circle Progressions**: Moving by fifths
+- **Modal Interchange**: Borrowing from parallel modes
+- **Pedal Points**: Sustained bass notes
+
+### Production Characteristics
+- **Clarity**: Each element clearly audible
+- **Balance**: Appropriate mix levels
+- **Stereo Image**: Effective use of panning
+- **Dynamics**: Contrast between sections
+
+## Conclusion
+
+Analysing popular songs reveals the sophisticated craft behind seemingly simple music. By understanding these techniques, students can better appreciate the artistry involved in popular music and apply these insights to their own musical understanding and creation.
+
+**Key Takeaways:**
+- Popular songs use sophisticated musical techniques within accessible frameworks
+- Structure, melody, harmony, rhythm, and production all contribute to a song's impact
+- Analysis skills improve through practice and systematic approach
+- Understanding popular music enhances appreciation for all musical genres
+
+---
+
+**Next Steps**: Apply these analytical techniques to songs you enjoy, focusing on one element at a time before synthesizing your observations into a complete analysis.`,
+          longDescription_zh: `# 流行歌曲分析
+
+## 通过分析理解流行音乐
+
+分析流行歌曲帮助我们理解作曲家和歌曲作者如何使用音乐元素来创造令人难忘、情感引人的音乐。本节提供代表性流行歌曲的详细分析，检查它们的结构、旋律、和声、节奏和制作技巧。
+
+## 关键分析方法
+
+### 1. 结构分析
+**识别歌曲段落：**
+- **前奏**：设定情绪并引入关键音乐元素
+- **主歌**：讲述故事，通常歌词在变化
+- **预副歌**：建立张力和期待
+- **副歌**：难忘的钩子，歌词重复
+- **桥段**：提供对比和新鲜视角
+- **尾奏**：将歌曲带到令人满意的结论
+
+**常见结构：**
+- **主歌-副歌形式**：流行音乐中最常见
+- **AABA形式**：传统流行歌曲结构
+- **通谱式**：持续演变，无重复
+
+### 2. 旋律分析
+**旋律特征：**
+- **音域**：通常在一个八度内以便演唱
+- **轮廓**：旋律的形状（上升、下降、静态）
+- **音程**：创造旋律兴趣的级进和跳跃
+- **钩子**：短小、难忘的旋律短语
+- **声乐风格**：传达技巧和表达
+
+**旋律技巧：**
+- **重复**：创造熟悉感和记忆性
+- **序列**：在不同音高水平的重复模式
+- **呼应**：声部间的音乐对话
+- **花腔**：单个音节上的多个音符
+
+### 3. 和声分析
+**和弦进行：**
+- **I-V-vi-IV**：现代流行音乐中最受欢迎的进行
+- **vi-IV-I-V**：相同和弦的替代排列
+- **ii-V-I**：受爵士影响的进行
+- **调式进行**：使用调式获得不同色彩
+
+**和声节奏：**
+- **变化速度**：和弦变化的频率
+- **终止式**：和声解决点
+- **转调**：为戏剧效果的调性变化
+- **非和弦音**：增加色彩和张力
+
+### 4. 节奏分析
+**节奏元素：**
+- **拍号**：流行音乐中通常是4/4
+- **速度**：速度和能量水平
+- **切分音**：为兴趣的反拍重音
+- **律动**：整体节奏感觉
+
+**节奏技巧：**
+- **反拍**：强调第2和第4拍
+- **交叉节奏**：冲突的节奏模式
+- **多节奏**：同时的多个节奏
+- **节奏位移**：移动模式
+
+### 5. 制作分析
+**乐器配置：**
+- **核心元素**：鼓、贝斯、吉他、键盘、人声
+- **分层**：通过多个声部构建织体
+- **编排**：乐器如何组合
+- **音色调色板**：声音和音色的选择
+
+**制作技巧：**
+- **效果**：混响、延迟、合唱、失真
+- **动态**：音量变化和压缩
+- **声像**：乐器的立体声位置
+- **自动化**：随时间的变化
+
+## 样本分析：Ed Sheeran的《Shape of You》
+
+### 结构
+**形式**：主歌-预副歌-副歌-主歌-预副歌-副歌-桥段-副歌-尾奏
+- **前奏** (0:00-0:08)：马林巴式合成器建立主要即兴段
+- **主歌1** (0:08-0:25)：对话式旋律，叙事歌词
+- **预副歌** (0:25-0:33)：用"Come on now"建立张力
+- **副歌** (0:33-0:50)：难忘钩子"I'm in love with the shape of you"
+- **主歌2** (0:50-1:07)：继续叙事
+- **预副歌** (1:07-1:15)：重复构建
+- **副歌** (1:15-1:32)：钩子重复
+- **桥段** (1:32-1:49)：不同旋律的对比段落
+- **副歌** (1:49-2:06)：最终陈述
+- **尾奏** (2:06-2:24)：人声即兴淡出
+
+### 旋律
+**音域**：约一个八度（大多数歌手舒适）
+**轮廓**：主要级进，偶尔跳跃
+**钩子**："Shape of you" - 简单、重复、难忘
+**声乐风格**：对话式、亲密传达
+
+### 和声
+**调性**：C#小调
+**主要进行**：i-VI-III-VII (C#m-A-E-B)
+**和声节奏**：大多数段落每小节一个和弦
+**调式性**：自然小调，偶尔大七和弦
+
+### 节奏
+**拍号**：4/4
+**速度**：96 BPM（适中舞蹈速度）
+**律动**：受舞厅音乐影响，切分打击乐
+**反拍**：第2和第4拍强调
+
+### 制作
+**乐器配置**：马林巴合成器、鼓、贝斯、人声、最少吉他
+**织体**：相对稀疏，允许每个元素清晰听到
+**效果**：人声微妙混响，压缩增强冲击力
+**编排**：逐渐构建，每个段落添加元素
+
+### 歌词分析
+**主题**：浪漫和吸引
+**视角**：第一人称叙事
+**意象**：身体和视觉描述
+**韵律方案**：主歌ABAB，副歌AABA
+**音画法**："Shape of you"强调视觉主题
+
+## 样本分析：Adele的《Someone Like You》
+
+### 结构
+**形式**：主歌-副歌-主歌-副歌-桥段-副歌-尾奏
+- **前奏** (0:00-0:18)：独奏钢琴建立调性和情绪
+- **主歌1** (0:18-0:47)：简单伴奏上的亲密叙事
+- **副歌** (0:47-1:17)：飙升旋律的情感高潮
+- **主歌2** (1:17-1:46)：继续叙事
+- **副歌** (1:46-2:16)：重复情感高峰
+- **桥段** (2:16-2:31)：不同和声的对比段落
+- **副歌** (2:31-3:16)：声乐装饰的扩展最终副歌
+- **尾奏** (3:16-4:45)：钢琴独奏配人声即兴
+
+### 旋律
+**音域**：宽音域展示Adele的声乐能力
+**轮廓**：副歌中上升短语产生情感冲击
+**音程**："Never mind, I'll find"中的大跳跃产生戏剧性
+**声乐风格**：强有力、充满灵魂的传达，花腔段落
+
+### 和声
+**调性**：A大调
+**主要进行**：I-V-vi-IV (A-E-F#m-D)
+**和声节奏**：缓慢，允许情感重量
+**终止式**：结构清晰的强解决点
+
+### 节奏
+**拍号**：4/4
+**速度**：67 BPM（慢民谣）
+**感觉**：直八分音符，无切分音
+**伴奏**：简单琶音钢琴模式
+
+### 制作
+**乐器配置**：钢琴、人声，后段微妙弦乐
+**织体**：稀疏，将注意力集中在声音和歌词上
+**效果**：自然混响，最少处理
+**动态**：从亲密构建到强有力
+
+### 歌词分析
+**主题**：失去的爱和接受
+**视角**：直接对前恋人说话
+**情感**：脆弱和力量
+**结构**：叙事主歌，普遍副歌
+**音画法**：情感词汇上的旋律高峰
+
+## 学生分析技巧
+
+### 聆听策略
+1. **多次聆听**：每次专注于不同元素
+2. **主动聆听**：聆听时做笔记
+3. **比较分析**：比较相似歌曲
+4. **乐谱跟随**：使用主旋律谱或和弦图
+5. **技术**：使用软件减慢或隔离声部
+
+### 分析框架
+1. **第一印象**：整体风格和情绪
+2. **结构映射**：识别并计时每个段落
+3. **元素分析**：分别检查旋律、和声、节奏
+4. **整合**：元素如何协同工作
+5. **语境**：历史和文化意义
+
+### 写作分析
+1. **清晰组织**：逻辑地构建你的分析
+2. **音乐术语**：使用精确词汇
+3. **具体例子**：引用歌曲中的确切时刻
+4. **客观描述**：专注于你听到的，而非个人品味
+5. **综合**：在不同元素间建立联系
+
+## 流行歌曲分析中的常见特征
+
+### 结构模式
+- **主歌-副歌主导**：大多数流行歌曲使用这种形式
+- **预副歌使用**：为建立张力越来越常见
+- **桥段位置**：通常在第二个副歌后
+- **前奏/尾奏平衡**：通常在音乐上相关
+
+### 旋律惯例
+- **可唱音域**：通常在一个半八度内
+- **钩子位置**：副歌中最难忘的旋律
+- **主歌-副歌对比**：不同的旋律特征
+- **重复**：记忆性的关键
+
+### 和声倾向
+- **自然音阶和声**：保持在调内
+- **圆圈进行**：按五度移动
+- **调式交换**：从平行调式借用
+- **持续音**：持续的贝斯音符
+
+### 制作特征
+- **清晰度**：每个元素清晰可听
+- **平衡**：适当的混音水平
+- **立体声像**：有效使用声像
+- **动态**：段落间的对比
+
+## 结论
+
+分析流行歌曲揭示了看似简单音乐背后的复杂工艺。通过理解这些技巧，学生可以更好地欣赏流行音乐中涉及的艺术性，并将这些见解应用到他们自己的音乐理解和创作中。
+
+**关键要点：**
+- 流行歌曲在易接受的框架内使用复杂的音乐技巧
+- 结构、旋律、和声、节奏和制作都对歌曲的冲击力有贡献
+- 分析技能通过练习和系统方法得到改善
+- 理解流行音乐增强对所有音乐体裁的欣赏
+
+---
+
+**下一步**：将这些分析技巧应用到你喜欢的歌曲上，一次专注于一个元素，然后将你的观察综合成完整的分析。`
+         }
+       ]
+     }
   ]
 };
