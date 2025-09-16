@@ -85,6 +85,33 @@ const renderFormattedText = (text: string): React.ReactNode => {
     return <div dangerouslySetInnerHTML={{ __html: text }} />;
   }
   
+  // Handle Markdown headings
+  if (text.startsWith('#')) {
+    const headingMatch = text.match(/^(#{1,6})\s+(.+)$/);
+    if (headingMatch) {
+      const level = headingMatch[1].length;
+      const content = headingMatch[2];
+      const headingClasses = {
+        1: 'text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 mt-8',
+        2: 'text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 mt-6',
+        3: 'text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 mt-5',
+        4: 'text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 mt-4',
+        5: 'text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-2 mt-3',
+        6: 'text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2 mt-2'
+      };
+      
+      switch(level) {
+        case 1: return <h1 className={headingClasses[1]}>{content}</h1>;
+        case 2: return <h2 className={headingClasses[2]}>{content}</h2>;
+        case 3: return <h3 className={headingClasses[3]}>{content}</h3>;
+        case 4: return <h4 className={headingClasses[4]}>{content}</h4>;
+        case 5: return <h5 className={headingClasses[5]}>{content}</h5>;
+        case 6: return <h6 className={headingClasses[6]}>{content}</h6>;
+        default: return <h6 className={headingClasses[6]}>{content}</h6>;
+      }
+    }
+  }
+  
   const parts = text.split(/(\*\*.*?\*\*)/g); 
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
