@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { validateQuizSubmission } from '../utils/validation';
+import { resetAuthData, checkAuthData } from '../utils/resetAuth';
 import { z } from 'zod';
 
 // Validation schema for login form
@@ -227,6 +228,46 @@ const LoginPage: React.FC = () => {
                 <p>Password: teacher123</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Troubleshooting Section */}
+        <div className="mt-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+          <h3 className="text-sm font-medium text-yellow-800 dark:text-yellow-200 mb-2">
+            🔧 Login Issues?
+          </h3>
+          <p className="text-sm text-yellow-700 dark:text-yellow-300 mb-3">
+            If you can't log in with the teacher account, try resetting the authentication data:
+          </p>
+          
+          <div className="flex space-x-2">
+            <button
+              onClick={() => {
+                const result = resetAuthData();
+                if (result) {
+                  alert('✅ Authentication data reset! You can now log in with teacher@school.com / teacher123');
+                  window.location.reload();
+                } else {
+                  alert('❌ Failed to reset authentication data. Please try refreshing the page.');
+                }
+              }}
+              className="bg-yellow-600 hover:bg-yellow-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
+            >
+              🔄 Reset Auth Data
+            </button>
+            
+            <button
+              onClick={() => {
+                const { users, teacher } = checkAuthData();
+                const message = teacher 
+                  ? `✅ Teacher account found!\nTotal users: ${users.length}\nTeacher: ${teacher.name} (${teacher.email})`
+                  : `❌ Teacher account not found!\nTotal users: ${users.length}\nPlease click 'Reset Auth Data' to fix this.`;
+                alert(message);
+              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
+            >
+              🔍 Check Status
+            </button>
           </div>
         </div>
       </div>
