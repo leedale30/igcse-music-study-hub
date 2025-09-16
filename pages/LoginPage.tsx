@@ -217,7 +217,6 @@ const LoginPage: React.FC = () => {
               <p className="text-xs font-medium text-blue-800 dark:text-blue-200 mb-1">Student Account:</p>
               <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
                 <p>Email: demo@student.com</p>
-                <p>Password: demo123</p>
               </div>
             </div>
             
@@ -225,7 +224,6 @@ const LoginPage: React.FC = () => {
               <p className="text-xs font-medium text-blue-800 dark:text-blue-200 mb-1">Teacher Account:</p>
               <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
                 <p>Email: teacher@school.com</p>
-                <p>Password: teacher123</p>
               </div>
             </div>
           </div>
