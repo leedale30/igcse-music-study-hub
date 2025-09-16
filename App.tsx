@@ -18,6 +18,7 @@ import ProfileSetupPage from './pages/ProfileSetupPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import AchievementsPage from './pages/AchievementsPage';
 import AccountSettingsPage from './pages/AccountSettingsPage';
+import PresentationPage from './pages/PresentationPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -59,6 +60,11 @@ const App: React.FC = () => {
                 <Route path="/account-settings" element={
                   <ProtectedRoute>
                     <AccountSettingsPage />
+                  </ProtectedRoute>
+                } />
+                <Route path="/presentations" element={
+                  <ProtectedRoute>
+                    <PresentationPage />
                   </ProtectedRoute>
                 } />
                 

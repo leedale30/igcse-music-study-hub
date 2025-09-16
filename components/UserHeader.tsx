@@ -119,6 +119,20 @@ const UserHeader: React.FC<UserHeaderProps> = ({ onMenuClick }) => {
                 <span className="hidden sm:inline">Badges</span>
               </Link>
 
+              {/* Presentations button - only for teachers */}
+              {user?.role === 'teacher' && (
+                <Link
+                  to="/presentations"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center space-x-1"
+                  title="Create and manage presentations"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1h4zM9 3v1h6V3H9zm-4 3v12h14V6H5zm2 2h10v2H7V8zm0 4h10v2H7v-2z" />
+                  </svg>
+                  <span className="hidden sm:inline">Presentations</span>
+                </Link>
+              )}
+
               {/* Account Settings button */}
               <Link
                 to="/account-settings"
