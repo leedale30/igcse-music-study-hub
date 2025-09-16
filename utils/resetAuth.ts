@@ -72,6 +72,91 @@ export const resetAuthData = () => {
         profileCompleted: true,
         createdAt: new Date('2024-01-01'),
         lastLoginAt: new Date()
+      },
+      // Grade 10 students
+      {
+        id: 'student-ziyao-dong-001',
+        email: 'ziyao.dong@school.com',
+        password: 'ella123',
+        name: 'Ziyao Dong',
+        firstName: 'Ziyao',
+        lastName: 'Dong',
+        nickname: 'ELLA',
+        role: 'student' as const,
+        group: 'Grade 10',
+        profileCompleted: true,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date()
+      },
+      {
+        id: 'student-yixin-huang-001',
+        email: 'yixin.huang@school.com',
+        password: 'azrael123',
+        name: 'Yixin Huang',
+        firstName: 'Yixin',
+        lastName: 'Huang',
+        nickname: 'AZRAEL',
+        role: 'student' as const,
+        group: 'Grade 10',
+        profileCompleted: true,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date()
+      },
+      {
+        id: 'student-yibo-liu-001',
+        email: 'yibo.liu@school.com',
+        password: 'jackson123',
+        name: 'Yibo Liu',
+        firstName: 'Yibo',
+        lastName: 'Liu',
+        nickname: 'JACKSON',
+        role: 'student' as const,
+        group: 'Grade 10',
+        profileCompleted: true,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date()
+      },
+      {
+        id: 'student-shengchen-ma-001',
+        email: 'shengchen.ma@school.com',
+        password: 'mark123',
+        name: 'Shengchen Ma',
+        firstName: 'Shengchen',
+        lastName: 'Ma',
+        nickname: 'MARK',
+        role: 'student' as const,
+        group: 'Grade 10',
+        profileCompleted: true,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date()
+      },
+      {
+        id: 'student-yucan-wang-001',
+        email: 'yucan.wang@school.com',
+        password: 'justin123',
+        name: 'Yucan Wang',
+        firstName: 'Yucan',
+        lastName: 'Wang',
+        nickname: 'JUSTIN',
+        role: 'student' as const,
+        group: 'Grade 10',
+        profileCompleted: true,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date()
+      },
+      {
+        id: 'student-junhao-xu-001',
+        email: 'junhao.xu@school.com',
+        password: 'simon123',
+        name: 'Junhao Xu',
+        firstName: 'Junhao',
+        lastName: 'Xu',
+        nickname: 'SIMON',
+        role: 'student' as const,
+        group: 'Grade 10',
+        profileCompleted: true,
+        createdAt: new Date('2024-01-01'),
+        lastLoginAt: new Date()
       }
     ];
     
@@ -81,6 +166,8 @@ export const resetAuthData = () => {
     console.log('✅ Authentication data reset successfully!');
     console.log('📧 Teacher login: teacher@school.com / teacher123');
     console.log('👨‍🎓 Demo student: demo@student.com / demo123');
+    console.log('🎓 Grade 9: 3 students added');
+    console.log('🎓 Grade 10: 6 students added');
     
     return true;
   } catch (error) {

@@ -94,8 +94,96 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Add Grade 9 students to existing users
       existingUsers.push(...grade9Students);
       
-      // Create placeholder for Grade 10 group (empty for now)
-      // This ensures Grade 10 shows up in the admin dashboard even when empty
+      // Create Grade 10 student accounts
+      const grade10Students = [
+        {
+          id: 'student-ziyao-dong-001',
+          email: 'ziyao.dong@school.com',
+          password: 'ella123',
+          name: 'Ziyao Dong',
+          firstName: 'Ziyao',
+          lastName: 'Dong',
+          nickname: 'ELLA',
+          role: 'student' as const,
+          group: 'Grade 10',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-yixin-huang-001',
+          email: 'yixin.huang@school.com',
+          password: 'azrael123',
+          name: 'Yixin Huang',
+          firstName: 'Yixin',
+          lastName: 'Huang',
+          nickname: 'AZRAEL',
+          role: 'student' as const,
+          group: 'Grade 10',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-yibo-liu-001',
+          email: 'yibo.liu@school.com',
+          password: 'jackson123',
+          name: 'Yibo Liu',
+          firstName: 'Yibo',
+          lastName: 'Liu',
+          nickname: 'JACKSON',
+          role: 'student' as const,
+          group: 'Grade 10',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-shengchen-ma-001',
+          email: 'shengchen.ma@school.com',
+          password: 'mark123',
+          name: 'Shengchen Ma',
+          firstName: 'Shengchen',
+          lastName: 'Ma',
+          nickname: 'MARK',
+          role: 'student' as const,
+          group: 'Grade 10',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-yucan-wang-001',
+          email: 'yucan.wang@school.com',
+          password: 'justin123',
+          name: 'Yucan Wang',
+          firstName: 'Yucan',
+          lastName: 'Wang',
+          nickname: 'JUSTIN',
+          role: 'student' as const,
+          group: 'Grade 10',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        },
+        {
+          id: 'student-junhao-xu-001',
+          email: 'junhao.xu@school.com',
+          password: 'simon123',
+          name: 'Junhao Xu',
+          firstName: 'Junhao',
+          lastName: 'Xu',
+          nickname: 'SIMON',
+          role: 'student' as const,
+          group: 'Grade 10',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
+        }
+      ];
+      
+      // Add Grade 10 students to existing users
+      existingUsers.push(...grade10Students);
       
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
       
@@ -192,6 +280,34 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       ];
       
       grade9StudentIds.forEach(studentId => {
+        const progressExists = localStorage.getItem(`igcse-progress-${studentId}`);
+        if (!progressExists) {
+          const initialProgress = {
+            userId: studentId,
+            totalQuizzesCompleted: 0,
+            totalPagesVisited: 0,
+            averageQuizScore: 0,
+            totalStudyTime: 0,
+            quizResults: [],
+            pageProgress: [],
+            badges: [],
+            lastUpdated: new Date()
+          };
+          localStorage.setItem(`igcse-progress-${studentId}`, JSON.stringify(initialProgress));
+        }
+      });
+      
+      // Create initial progress data for Grade 10 students
+      const grade10StudentIds = [
+        'student-ziyao-dong-001',
+        'student-yixin-huang-001',
+        'student-yibo-liu-001',
+        'student-shengchen-ma-001',
+        'student-yucan-wang-001',
+        'student-junhao-xu-001'
+      ];
+      
+      grade10StudentIds.forEach(studentId => {
         const progressExists = localStorage.getItem(`igcse-progress-${studentId}`);
         if (!progressExists) {
           const initialProgress = {
