@@ -35,12 +35,7 @@ export const courseworkComposing: SyllabusItem = {
         longDescription: `For your second composition, you need to choose a "brief". A brief is an idea or purpose for your music, like writing a song, music for a dance, or music for a film scene. This brief should relate to Area of Study 4, 5, 6, or 7. You need to submit a recording and either a score (in any suitable notation for the style) or a written commentary explaining your music.`,
         longDescription_zh: `对于您的第二首作曲，您需要选择一个"主题"。主题是您音乐的一个想法或目的，比如写一首歌、为舞蹈配乐或为电影场景配乐。这个主题应与学习领域4、5、6或7相关。您需要提交一份录音，以及一份乐谱（以适合该风格的任何记谱法）或一份解释您音乐的书面评论。`,
         children: [
-          popularSongwritingOverview,
-          popularSongwritingFundamentals,
-          popularSongwritingStructure,
-          ...popularSongwritingMelodyItems,
-          ...popularSongwritingHarmonyItems,
-          ...popularSongwritingProductionItems
+          popularSongwritingOverview
         ]
       },
       { 

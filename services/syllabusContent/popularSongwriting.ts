@@ -1,175 +1,10 @@
 import { SyllabusItem } from '../../types';
 import { popularSongwritingQuiz } from '../quizzes/popularSongwriting';
+import { popularSongwritingMelody, popularSongwritingLyrics } from './popularSongwritingMelody';
+import { popularSongwritingHarmony, popularSongwritingRhythm } from './popularSongwritingHarmony';
+import { popularSongwritingProduction, popularSongwritingPractice } from './popularSongwritingProduction';
 
-export const popularSongwritingOverview: SyllabusItem = {
-  id: 'popular-songwriting-overview',
-  title: 'Popular Songwriting for IGCSE',
-  title_zh: 'IGCSE流行歌曲创作',
-  path: '/coursework/composing/composition-2',
-  content: 'Master the art of writing compelling popular songs for your IGCSE Music coursework.',
-  content_zh: '掌握为IGCSE音乐课程作业创作引人入胜的流行歌曲的艺术。',
-  longDescription: `# Popular Songwriting for IGCSE Music
-
-**Welcome to the comprehensive guide for Popular Songwriting in IGCSE Music coursework.** This section will take you through every aspect of creating compelling popular songs, from initial concept to final production.
-
-## What You'll Learn
-
-### 🎵 **Core Songwriting Elements**
-- **Song Structure**: Master the ABABCB form and other popular structures
-- **Melody Writing**: Create catchy, memorable melodies with hooks and riffs
-- **Lyric Crafting**: Write honest, specific, and emotionally resonant lyrics
-- **Harmonic Development**: Use chord progressions effectively
-- **Rhythmic Foundation**: Understand tempo, meter, and syncopation
-
-### 🎹 **Technical Skills**
-- **Arrangement Techniques**: Instrumentation and production considerations
-- **Technology Integration**: DAWs, effects, and modern production
-- **Vocal Techniques**: Including rap, melisma, and expressive delivery
-
-### 📚 **Academic Requirements**
-- **Assessment Standards**: Understanding Cambridge IGCSE Music 0410/0978 expectations
-- **Analysis Skills**: Studying successful popular songs
-- **Creative Process**: From conception to completion
-
-## Course Structure
-
-This comprehensive guide is organized into eight main sections:
-
-1. **[Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals)**
-2. **[Song Structure & Form](/coursework/composing/composition-2/structure)**
-3. **[Melody Composition](/coursework/composing/composition-2/melody)**
-4. **[Lyric Writing](/coursework/composing/composition-2/lyrics)**
-5. **[Harmony & Chord Progressions](/coursework/composing/composition-2/harmony)**
-6. **[Rhythm & Tempo](/coursework/composing/composition-2/rhythm)**
-7. **[Arrangement & Production](/coursework/composing/composition-2/production)**
-8. **[Case Studies & Exercises](/coursework/composing/composition-2/practice)**
-
-## Assessment Focus
-
-**What You NEED to Know:**
-- Musical elements and techniques used in popular songs from the 1990s onward
-- Structural components and their functions
-- Melodic, harmonic, and rhythmic characteristics
-- Lyrical devices and content approaches
-- Production techniques and technology
-
-**What You DON'T Need to Know:**
-- Specific composers or performers
-- Exact time periods of extracts
-- Instruments not found in other areas of study
-
-## Getting Started
-
-**Popular song** is defined as music with vocals that has achieved widespread appeal, primarily from the 1990s onwards. It's engineered for entertainment and emotional connection, often reflecting contemporary social and cultural trends.
-
-**Key Characteristics:**
-- **Accessibility**: Easy to understand and remember
-- **Emotional Impact**: Designed to make listeners feel something
-- **Commercial Appeal**: Structured for radio play and mass consumption
-- **Contemporary Relevance**: Reflects current culture and technology
-
-## Learning Approach
-
-This course combines:
-- **Theoretical Understanding**: Learn the principles behind effective songwriting
-- **Practical Application**: Write your own songs using proven techniques
-- **Analysis**: Study successful examples to understand what works
-- **Creative Expression**: Develop your unique voice as a songwriter
-
----
-
-**Ready to begin your songwriting journey?** Start with the [Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals) to build your foundation, or jump to any section that interests you most.
-
-*Remember: Great songwriting combines craft with creativity. Master the techniques, then use them to express your unique artistic vision.*`,
-  
-  longDescription_zh: `# IGCSE音乐流行歌曲创作
-
-**欢迎来到IGCSE音乐课程作业中流行歌曲创作的综合指南。** 本节将带您了解创作引人入胜的流行歌曲的各个方面，从最初的概念到最终的制作。
-
-## 您将学到什么
-
-### 🎵 **核心歌曲创作元素**
-- **歌曲结构**：掌握ABABCB形式和其他流行结构
-- **旋律创作**：创作朗朗上口、令人难忘的旋律，包含钩子和即兴段
-- **歌词创作**：写出诚实、具体且情感共鸣的歌词
-- **和声发展**：有效使用和弦进行
-- **节奏基础**：理解速度、拍子和切分音
-
-### 🎹 **技术技能**
-- **编曲技巧**：乐器配置和制作考虑
-- **技术整合**：DAW、效果和现代制作
-- **声乐技巧**：包括说唱、花腔和表现力传达
-
-### 📚 **学术要求**
-- **评估标准**：理解剑桥IGCSE音乐0410/0978期望
-- **分析技能**：研究成功的流行歌曲
-- **创作过程**：从构思到完成
-
-## 课程结构
-
-这个综合指南分为八个主要部分：
-
-1. **[流行歌曲基础](/coursework/composing/composition-2/fundamentals)**
-2. **[歌曲结构与形式](/coursework/composing/composition-2/structure)**
-3. **[旋律创作](/coursework/composing/composition-2/melody)**
-4. **[歌词创作](/coursework/composing/composition-2/lyrics)**
-5. **[和声与和弦进行](/coursework/composing/composition-2/harmony)**
-6. **[节奏与速度](/coursework/composing/composition-2/rhythm)**
-7. **[编曲与制作](/coursework/composing/composition-2/production)**
-8. **[案例研究与练习](/coursework/composing/composition-2/practice)**`,
-  
-  quiz: popularSongwritingQuiz,
-  children: [
-    {
-      id: 'popular-songwriting-fundamentals',
-      title: 'Fundamentals',
-      path: '/coursework/composing/composition-2/fundamentals',
-      content: 'Core principles of popular music'
-    },
-    {
-      id: 'popular-songwriting-structure',
-      title: 'Song Structure',
-      path: '/coursework/composing/composition-2/structure',
-      content: 'Architectural elements of songs'
-    },
-    {
-      id: 'popular-songwriting-melody',
-      title: 'Melody Composition',
-      path: '/coursework/composing/composition-2/melody',
-      content: 'Creating memorable melodies'
-    },
-    {
-      id: 'popular-songwriting-lyrics',
-      title: 'Lyric Writing',
-      path: '/coursework/composing/composition-2/lyrics',
-      content: 'Crafting compelling lyrics'
-    },
-    {
-      id: 'popular-songwriting-harmony',
-      title: 'Harmony & Chords',
-      path: '/coursework/composing/composition-2/harmony',
-      content: 'Chord progressions and harmonic development'
-    },
-    {
-      id: 'popular-songwriting-rhythm',
-      title: 'Rhythm & Tempo',
-      path: '/coursework/composing/composition-2/rhythm',
-      content: 'Rhythmic foundations and tempo'
-    },
-    {
-      id: 'popular-songwriting-production',
-      title: 'Arrangement & Production',
-      path: '/coursework/composing/composition-2/production',
-      content: 'Modern production techniques'
-    },
-    {
-      id: 'popular-songwriting-practice',
-      title: 'Case Studies & Practice',
-      path: '/coursework/composing/composition-2/practice',
-      content: 'Examples and practical exercises'
-    }
-  ]
-};
+// Overview will be defined at the end after all individual items
 
 export const popularSongwritingFundamentals: SyllabusItem = {
   id: 'popular-songwriting-fundamentals',
@@ -597,6 +432,137 @@ Write lyrics for ABABCB structure:
 ---
 
 **Next Steps**: With structure mastered, explore [Melody Composition](/coursework/composing/composition-2/melody) to learn how to create memorable and emotionally compelling melodies.`
+};
+
+// Define overview at the end after all individual items are defined
+export const popularSongwritingOverview: SyllabusItem = {
+  id: 'popular-songwriting-overview',
+  title: 'Popular Songwriting for IGCSE',
+  title_zh: 'IGCSE流行歌曲创作',
+  path: '/coursework/composing/composition-2',
+  content: 'Master the art of writing compelling popular songs for your IGCSE Music coursework.',
+  content_zh: '掌握为IGCSE音乐课程作业创作引人入胜的流行歌曲的艺术。',
+  longDescription: `# Popular Songwriting for IGCSE Music
+
+**Welcome to the comprehensive guide for Popular Songwriting in IGCSE Music coursework.** This section will take you through every aspect of creating compelling popular songs, from initial concept to final production.
+
+## What You'll Learn
+
+### 🎵 **Core Songwriting Elements**
+- **Song Structure**: Master the ABABCB form and other popular structures
+- **Melody Writing**: Create catchy, memorable melodies with hooks and riffs
+- **Lyric Crafting**: Write honest, specific, and emotionally resonant lyrics
+- **Harmonic Development**: Use chord progressions effectively
+- **Rhythmic Foundation**: Understand tempo, meter, and syncopation
+
+### 🎹 **Technical Skills**
+- **Arrangement Techniques**: Instrumentation and production considerations
+- **Technology Integration**: DAWs, effects, and modern production
+- **Vocal Techniques**: Including rap, melisma, and expressive delivery
+
+### 📚 **Academic Requirements**
+- **Assessment Standards**: Understanding Cambridge IGCSE Music 0410/0978 expectations
+- **Analysis Skills**: Studying successful popular songs
+- **Creative Process**: From conception to completion
+
+## Course Structure
+
+This comprehensive guide is organized into eight main sections:
+
+1. **[Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals)**
+2. **[Song Structure & Form](/coursework/composing/composition-2/structure)**
+3. **[Melody Composition](/coursework/composing/composition-2/melody)**
+4. **[Lyric Writing](/coursework/composing/composition-2/lyrics)**
+5. **[Harmony & Chord Progressions](/coursework/composing/composition-2/harmony)**
+6. **[Rhythm & Tempo](/coursework/composing/composition-2/rhythm)**
+7. **[Arrangement & Production](/coursework/composing/composition-2/production)**
+8. **[Case Studies & Exercises](/coursework/composing/composition-2/practice)**
+
+## Assessment Focus
+
+**What You NEED to Know:**
+- Musical elements and techniques used in popular songs from the 1990s onward
+- Structural components and their functions
+- Melodic, harmonic, and rhythmic characteristics
+- Lyrical devices and content approaches
+- Production techniques and technology
+
+**What You DON'T Need to Know:**
+- Specific composers or performers
+- Exact time periods of extracts
+- Instruments not found in other areas of study
+
+## Getting Started
+
+**Popular song** is defined as music with vocals that has achieved widespread appeal, primarily from the 1990s onwards. It's engineered for entertainment and emotional connection, often reflecting contemporary social and cultural trends.
+
+**Key Characteristics:**
+- **Accessibility**: Easy to understand and remember
+- **Emotional Impact**: Designed to make listeners feel something
+- **Commercial Appeal**: Structured for radio play and mass consumption
+- **Contemporary Relevance**: Reflects current culture and technology
+
+## Learning Approach
+
+This course combines:
+- **Theoretical Understanding**: Learn the principles behind effective songwriting
+- **Practical Application**: Write your own songs using proven techniques
+- **Analysis**: Study successful examples to understand what works
+- **Creative Expression**: Develop your unique voice as a songwriter
+
+---
+
+**Ready to begin your songwriting journey?** Start with the [Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals) to build your foundation, or jump to any section that interests you most.
+
+*Remember: Great songwriting combines craft with creativity. Master the techniques, then use them to express your unique artistic vision.*`,
+  
+  longDescription_zh: `# IGCSE音乐流行歌曲创作
+
+**欢迎来到IGCSE音乐课程作业中流行歌曲创作的综合指南。** 本节将带您了解创作引人入胜的流行歌曲的各个方面，从最初的概念到最终的制作。
+
+## 您将学到什么
+
+### 🎵 **核心歌曲创作元素**
+- **歌曲结构**：掌握ABABCB形式和其他流行结构
+- **旋律创作**：创作朗朗上口、令人难忘的旋律，包含钩子和即兴段
+- **歌词创作**：写出诚实、具体且情感共鸣的歌词
+- **和声发展**：有效使用和弦进行
+- **节奏基础**：理解速度、拍子和切分音
+
+### 🎹 **技术技能**
+- **编曲技巧**：乐器配置和制作考虑
+- **技术整合**：DAW、效果和现代制作
+- **声乐技巧**：包括说唱、花腔和表现力传达
+
+### 📚 **学术要求**
+- **评估标准**：理解剑桥IGCSE音乐0410/0978期望
+- **分析技能**：研究成功的流行歌曲
+- **创作过程**：从构思到完成
+
+## 课程结构
+
+这个综合指南分为八个主要部分：
+
+1. **[流行歌曲基础](/coursework/composing/composition-2/fundamentals)**
+2. **[歌曲结构与形式](/coursework/composing/composition-2/structure)**
+3. **[旋律创作](/coursework/composing/composition-2/melody)**
+4. **[歌词创作](/coursework/composing/composition-2/lyrics)**
+5. **[和声与和弦进行](/coursework/composing/composition-2/harmony)**
+6. **[节奏与速度](/coursework/composing/composition-2/rhythm)**
+7. **[编曲与制作](/coursework/composing/composition-2/production)**
+8. **[案例研究与练习](/coursework/composing/composition-2/practice)**`,
+  
+  quiz: popularSongwritingQuiz,
+  children: [
+    popularSongwritingFundamentals,
+    popularSongwritingStructure,
+    popularSongwritingMelody,
+    popularSongwritingLyrics,
+    popularSongwritingHarmony,
+    popularSongwritingRhythm,
+    popularSongwritingProduction,
+    popularSongwritingPractice
+  ]
 };
 
 // Export all items for use in the main syllabus
