@@ -13,6 +13,10 @@ import { smallEnsembleAoS } from './syllabusContent/aos6_SmallEnsemble';
 import { stageAndScreenAoS } from './syllabusContent/aos7_StageAndScreen';
 import { courseworkPerforming } from './syllabusContent/courseworkPerforming';
 import { courseworkComposing } from './syllabusContent/courseworkComposing';
+import { popularSongwritingOverview, popularSongwritingFundamentals, popularSongwritingStructure } from './syllabusContent/popularSongwriting';
+import { popularSongwritingMelodyItems } from './syllabusContent/popularSongwritingMelody';
+import { popularSongwritingHarmonyItems } from './syllabusContent/popularSongwritingHarmony';
+import { popularSongwritingProductionItems } from './syllabusContent/popularSongwritingProduction';
 import { musicalGlossaryPage } from './syllabusContent/musicalGlossary';
 
 export const syllabusStructure: SyllabusItem[] = [
