@@ -6,7 +6,7 @@ import QuizComponent from '../components/QuizComponent';
 // GlossaryBot temporarily removed
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggleButton from '../components/LanguageToggleButton';
-import AudioPlayer from '../components/AudioPlayer';
+import ImprovedAudioPlayer from '../components/ImprovedAudioPlayer';
 
 const Breadcrumbs: React.FC<{ currentItem: SyllabusItem }> = ({ currentItem }) => {
   const { language } = useLanguage();
@@ -245,7 +245,7 @@ const GenericPage: React.FC = () => {
 
         {currentAudioSources && currentAudioSources.length > 0 && (
           <div className="my-6">
-            <AudioPlayer key={audioPlayerKey} sources={currentAudioSources} credit={audioCreditText} />
+            <ImprovedAudioPlayer key={audioPlayerKey} sources={currentAudioSources} credit={audioCreditText} />
           </div>
         )}
 
