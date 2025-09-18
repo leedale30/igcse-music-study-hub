@@ -19,6 +19,7 @@ import AdminDashboardPage from './pages/AdminDashboardPage';
 import AchievementsPage from './pages/AchievementsPage';
 import AccountSettingsPage from './pages/AccountSettingsPage';
 import PresentationPage from './pages/PresentationPage';
+import AudioPlayerTestPage from './pages/AudioPlayerTestPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -76,6 +77,7 @@ const App: React.FC = () => {
                 }>
                   <Route index element={<HomePage />} />
                   <Route path="test" element={<TestPage />} />
+                  <Route path="audio-test" element={<AudioPlayerTestPage />} />
                   <Route path="tools/metronome" element={<MetronomePage />} />
                   <Route path="tools/virtual-piano" element={<VirtualPianoPage />} />
                   <Route path="tools/ear-training" element={<EarTrainingPage />} />
