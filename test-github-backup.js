@@ -8,8 +8,8 @@ console.log('==============================');
 const testGitHubBackup = async () => {
   console.log('🚀 Starting GitHub backup test...');
   
-  // Check environment variables
-  const token = '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'; // Your token from .env.local
+  // Check environment variables (replace with your actual values)
+  const token = 'YOUR_GITHUB_TOKEN_HERE'; // Replace with your token from .env.local
   const repo = 'leedale30/igcse-music-backups';
   
   if (!token || !repo) {
@@ -136,7 +136,7 @@ const testGitHubBackup = async () => {
 const testRepositoryAccess = async () => {
   console.log('\n🔍 Testing repository access...');
   
-  const token = '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';
+  const token = 'YOUR_GITHUB_TOKEN_HERE'; // Replace with your actual token
   const repo = 'leedale30/igcse-music-backups';
   
   try {
