@@ -153,6 +153,83 @@
 - Follow GDPR guidelines for any user data collection
 - Ensure secure handling of student progress data
 
+## Backend Architecture (HIGH PRIORITY)
+
+### Recommended Stack for Vercel/GitHub Deployment
+- **Primary Choice**: Railway + PostgreSQL (seamless Vercel integration)
+- **Alternative**: Supabase (PostgreSQL + Auth + Real-time)
+- **Enterprise**: AWS/GCP with auto-scaling
+- **Database**: PostgreSQL with encryption at rest
+- **Authentication**: JWT with refresh tokens + bcrypt password hashing
+- **File Storage**: AWS S3 or Cloudinary for audio/MIDI files
+- **Caching**: Redis for session management and performance
+
+### Backend Implementation Phases
+- **Phase 1**: Hybrid architecture (client + secure API)
+- **Phase 2**: Full backend migration with real-time sync
+- **Phase 3**: Enterprise features (SSO, multi-tenant, analytics)
+
+### API Design Principles
+- RESTful endpoints with proper HTTP status codes
+- Input validation using Zod schemas
+- Rate limiting and CORS policies
+- Comprehensive error handling and logging
+- API versioning for backward compatibility
+
+### Database Schema Requirements
+- User authentication with role-based access control
+- Encrypted storage for sensitive student data
+- Audit trails for all data modifications
+- Proper indexing for quiz and progress queries
+- Foreign key constraints for data integrity
+
+## Data Backup and Recovery (CRITICAL REQUIREMENT)
+
+### Automated Backup Strategy
+- **Daily automated backups** of all student data, grades, and progress
+- **Real-time backup** after each quiz completion or grade update
+- **Multi-location storage** (primary database + cloud backup)
+- **Versioned backups** with 30-day retention minimum
+- **Encrypted backup files** with secure key management
+
+### Student Data Protection
+- **Grade Data**: All quiz scores, averages, and progress metrics
+- **User Profiles**: Account information, preferences, and settings
+- **Learning Progress**: Page visits, study time, and achievement data
+- **Assessment Records**: IGCSE assessments and teacher evaluations
+- **Badge/Achievement Data**: All earned badges and milestone tracking
+
+### Backup Implementation Requirements
+- Automated daily system-wide backups using `dataBackupManager`
+- Individual student backups after each significant data change
+- Export functionality for data portability (GDPR compliance)
+- Backup integrity verification and corruption detection
+- Disaster recovery procedures with RTO < 4 hours
+
+### Data Synchronization Rules
+- **Real-time sync** between client and server for grade updates
+- **Conflict resolution** for simultaneous updates
+- **Offline capability** with sync when connection restored
+- **Data validation** on both client and server sides
+- **Audit logging** for all data modifications with timestamps
+
+## Security and Privacy (ENHANCED)
+
+### Backend Security Requirements
+- **Password Security**: bcrypt hashing with salt rounds ≥ 12
+- **Session Management**: JWT tokens with secure refresh mechanism
+- **Data Encryption**: AES-256 encryption for sensitive data at rest
+- **Transport Security**: HTTPS/TLS 1.3 for all communications
+- **Input Validation**: Server-side validation for all user inputs
+- **SQL Injection Prevention**: Parameterized queries and ORM usage
+
+### Compliance and Governance
+- **GDPR Compliance**: Data protection, right to erasure, data portability
+- **FERPA Compliance**: Educational record protection and access controls
+- **Audit Requirements**: Comprehensive logging of all data access
+- **Data Retention**: Configurable retention policies for student records
+- **Access Controls**: Role-based permissions (student/teacher/admin)
+
 ## Testing Standards
 
 - Write unit tests for critical educational logic
@@ -160,8 +237,26 @@
 - Ensure cross-browser compatibility for educational content
 - Test audio/MIDI functionality across different devices
 - Implement proper error boundary testing
+- **Backend Testing**: API endpoint testing with automated test suites
+- **Database Testing**: Data integrity and backup/restore procedures
+- **Security Testing**: Penetration testing and vulnerability assessments
+
+## Deployment and DevOps
+
+### Vercel Integration
+- **Frontend**: Continue using Vercel for static site deployment
+- **API Routes**: Utilize Vercel serverless functions for lightweight endpoints
+- **Environment Variables**: Secure configuration management
+- **Preview Deployments**: Automatic staging environments for testing
+
+### Backend Deployment
+- **Railway**: Recommended for PostgreSQL + Node.js backend
+- **Database Migrations**: Version-controlled schema changes
+- **Health Monitoring**: Uptime monitoring and alerting
+- **Performance Monitoring**: Response time and error rate tracking
 
 ---
 
-*Last Updated: Based on Phase 1 implementation (commit f52d3ce)*
+*Last Updated: Backend architecture and data backup requirements added*
 *Reference: Modern Web Development Guidelines adapted for IGCSE Music Study Hub*
+*Backend Security Assessment: docs/backend-security-assessment.md*
