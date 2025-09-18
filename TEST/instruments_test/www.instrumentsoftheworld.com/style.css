@@ -1,0 +1,701 @@
+html, body, p, ul, li, h1, h2, h3, h4, h5, h6, hr, img, table, form, fieldset, pre, code, dl, dt, dd , a, div{margin: 0; padding: 0; border: none;}
+/* body{background:#faeed1 url("images/noel2.jpg") no-repeat fixed;} */
+body {background:#faeed1;font-family:sans-serif;font-size:10px;color:#666;width:100%;}
+a span{display: none;}
+span.italic {font-style:italic;padding-left:40px;}
+#xiti{width:100%;text-align:center;clear:both;margin-top:10px;}
+#pub,#pub-familles,#pub-az,#pub-instrument{width:100%;height:90px;z-index:15;margin:-240px 0 0 0;text-align:center;}
+#pub-familles{margin:-160px 0 0 0;}
+#pub-instrument{margin:-92px 0 0 0;}
+#pub-az{margin:10px 0;float:left;}
+
+#pub-carre,#pub-carre2,#pub-carre3,#pub-carre4,#pub-carre5,#pub-mobile,#pub-mobile2,#pub-mobile3,#pub-mobile-familles,
+#pub-mobile-az,#pub-mobile1-familles,#pub-mobile2-familles,#pub-mobile1-az,#pub-mobile2-az,#pub-mobile3-az,#pub-mobile4-az,
+#pub-mobile3-familles,#pub-mobile2-instrument,#pub-mobile3-instrument,#pubvertical-mobile,#pubvertical-mobile-familles,
+#pubvertical-mobile-instrument,#pub-mobile-instrument{display:none;}
+
+#pubvertical,#pubvertical2 {float:left;z-index:2;width:20%;height:auto;text-align:center;margin:20px 0 0 10px;}
+#pubverticalliste {float:left;z-index:2;margin:228px 0 0 140px;}
+#page {width:100%;background:#faeed0;}
+#contenu{background:#faeed0;width:100%;margin:0 auto;}
+#entete{margin:0;padding:0;width:100%;height:235px;margin:0 auto;background:#faeed0 url("images/bandeau_titre.gif") repeat-x top left;}
+#utile{height:auto;width:100%;margin:0 auto;}
+#piedpage{width:100%;height:15px;clear:both;border-top: 1px solid #aaa;border-bottom: 1px solid #aaa;margin-top:10px;}
+#bottom{height:15px;width:100%;padding:0;margin:0 auto;}
+#bottom a{display:block;height:15px;width:99.8%;color:#aa7955;text-decoration:none;float:left;margin:0 auto;text-align:center;line-height:15px;}
+#bottom a:hover{text-decoration:underline;}
+/* Menu + Titre */
+#bandeau{width:100%;height:117px;background:#faeed0 url("images/bandeau_titre.gif") repeat-x top left;z-index:1;margin-top:37px;}
+#titre{width:100%;margin:0 auto;}
+#logo a{display:block;height:153px;width:168px;background:#faeed0 url("images/top.jpg") no-repeat;background-position: 0 -59px ;
+		z-index:10;margin-top:-153px;margin-left:2px;}
+#logo a.lang {display:block;height:30px;width:48px;background:#faeed0 url(images/anglais.png) no-repeat;}
+#logo_bas a{display:block;height:49px;width:168px;margin-top:-2px;margin-left:2px;background:transparent url("images/logo_bas.png") no-repeat;
+		z-index:10;position:absolute;}
+#titrage a{display:block;height:73px;width:56%;background:transparent url("images/titrage.jpg") no-repeat top right;
+		z-index:2;margin:-102px 0 0 0;}
+#bandeau_photo{width:94%;height:95px;background:transparent url("images/photos.jpg") no-repeat top right;
+		z-index:1;margin:-84px 0 19px 0;}
+div.logo p{color:#414141;font:bold 11px Arial;margin:0;z-index:2;width:93.5%;margin:-18px 0 3px 0;text-align:right;}
+#partition{width: 100%;height: 140px;
+			z-index:1;
+			text-align:center;}
+/* Crée un masque Overlay */
+/*#header div{    width:990px;    height:140px;    background: #faeed0 url(overlay.png) no-repeat scroll left top;}*/
+/* Vertically position header text and style it*/
+/*#header h1{    padding-top:125px;    font-family: Arial, "MS Trebuchet", sans-serif;    color:white;}*/
+#menu{height:47px;width:100%;font:bold 16px Arial;line-height:44px;text-align:center;cursor:pointer;margin-top:20px;}
+#menu a {display:block;width: 16.66%;height:47px;background: #cfbd8e;text-decoration: none; color: #414141;float: left;}
+#menu a:hover {color: #ffe; font-weight: bold;background: #630;}
+#video_accueil{float:left;margin-bottom:10px;}
+#video_accueil{display:inline-block;width:100%;position:relative;}
+#video_accueil::after{display:block;padding-top:75%;content: '';}
+#video_accueil iframe{width:100%;height:100%;position:absolute;}
+#nouveau{width:44%;height:100%;margin:20px 0 0 20px;}
+#nouveau h1{font-size:2.2em;color:#f00;text-align:center;}
+#nouveau h2{font-size:1.8em;text-align:center;margin-bottom:10px;}
+
+/* Encart de message ou définition */
+#msg {	width: 52%;
+		float:left;
+		background: #faeed0 url("images/fonds.png") repeat-y;
+		margin: 0 0 10px 20px;
+		line-height: 22px;
+		color: #333;
+		font-size: 18px;}
+#msg a{color: #652e09;}
+#msg p.p1 {padding: 12px 20px 10px 25px; text-align: justify; text-indent: 20px;}
+#msg p.p2 {padding: 5px 30px;}
+#msg p:first-letter{font-size:26px;color:#652e09;}
+#ombre{width:650px;height:9px;background:#faeed0 url(images/ombre.png) no-repeat;}
+#choixliste ul{margin-left: 200px;list-style: url("images/puceviolon.gif"); font-size: 16px; color: #111;line-height: 24px;}
+
+/* INSTRUMENT */
+#instrument{margin:0;}
+#instrument h1{width: 100%; margin: 10px 0 150px 12px; font-size: 48px; font-weight: bold; color: #5a2c08; text-align: center;}
+#son {width: 35%; height: 28px;text-align:center;float:left;margin-top:-130px;margin-left:10px;}
+#son audio {background:#cc6600;}
+#recherche {width:35%;text-align:center;margin-top:-140px;float:right;margin-right:10px;}
+#recherche form {width:240px;margin:0 auto;}
+#recherche fieldset{border:1px solid #846a40;padding-left:4px;}
+#recherche legend {font-size: 13px; color: #652e09;}
+#recherche input {background: #f3e0b9;}
+#recherche input[type=submit]{background: #faeed0 url("images/search.gif");padding:0;width:32px;height:32px;border:0;cursor:pointer;}
+#choix{width:100%;float:left;text-align:center;margin-top:-60px;}
+#precedent {float:left;margin-left:50px;}
+#suivant{float:right;margin-right:50px;}
+#instrument p.descri {width:98%;float:left;border-top: 1px solid #846a40;border-bottom: 1px solid #846a40;
+					background: #faeed0 url("images/fonds.png") repeat-y;
+					background-position: -330px 0; padding:0.5%; margin-top:0;
+					font-size: 14px; text-align: justify; line-height: 18px; color: #000;}
+#instrument p:first-letter{font-size:26px;color:#5a2c08;}
+#instrument h4{font-size:12px;}
+#notes {width: 19%; min-height: 460px; margin:5px 0;background:#eedfbc; float: left;border:1px solid #dda;}
+#notes a{color:#414141;text-decoration: none;}
+#notes a:hover{text-decoration: underline;}
+#notes table {padding-top: 10px;}
+td.intitule{ font-family: Georgia; font-size: 16px; color: #5a2c08; padding-left: 10px;}
+td.content{ font-family: Arial; font-size: 13px; color: #333; padding: 0 18px 0 18px;}
+#notes2{display:none;width: 970px; margin: 0 0 0 12px; background-color: #faeed0; padding: 2px; float: left;}
+#photo {width: 40%; height: auto;text-align:center;margin-top:5px;background:#faeed0;
+		float:left;border:1px solid #dda;}
+#photo img {max-width: 100%; height: auto;}
+#instrument_suite {width: 40%; height: auto;float:left;border:1px solid #dda;text-align:center;margin-top:5px;}
+#instrument_suite img {max-width: 100%; height: auto;}
+#container-video{width:50%;font-size:1.2em;}
+#video{float:left;font-size:1.2em;}
+#video{display:inline-block;width:100%;position:relative;margin-bottom:10px;}
+#video::after{display:block;padding-top:75%;content: '';}
+#video iframe{width:100%;height:100%;position:absolute;}
+#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5
+	{width:48%;height:90px;z-index:15;text-align:center;float:right;margin:10px;}
+#pub-instrument1-mobile,#pub-instrument2-mobile,#pub-instrument3-mobile,#pub-instrument4-mobile,#pub-instrument5-mobile{display:none;}
+#container-video2{float:left;width:40%;font-size:1.2em;margin:5px 0 0 5px;}
+#video2{float:left;font-size:1.2em;}
+#video2{display:inline-block;width:100%;position:relative;}
+#video2::after{display:block;padding-top:75%;content: '';}
+#video2 iframe{width:100%;height:100%;position:absolute;}
+#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{width:100%;height:90px;z-index:15;text-align:center;float:left;margin:10px 0;}
+#pub-instrument7{width:100%;}
+#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11{width:40%;}
+#pub-instrument6-mobile,#pub-instrument7-mobile,#pub-instrument8-mobile,#pub-instrument9-mobile,#pub-instrument10-mobile,#pub-instrument11-mobile,#pub-instrument12-mobile
+{display:none;}
+
+/* DE A à Z */
+#az{width: 100%; height: auto;margin:6px 0 0 10px;float:left;}
+#az2 {width: 100%; height: auto; margin: 10px 0 10px 10px;float:left;}
+#alphabet{width:100%;margin:0 auto;}
+#az a,#az2 a{display:block; width:7.45%;min-height:40px;background:#e3d3ac;border: 1px solid #cfbd8e;float:left;
+	font-size:18px;color:#5a2c08;	text-decoration:none;	text-align:center;	line-height:40px;}
+#az a:hover,#az2 a:hover{background:#faeed0;}
+#az p, #az2 p {width: 20px; float: left;}
+#tri{width: 100%;float:left;}
+#tri table{float:left;width: 50%; padding:4px;}
+#tri td{border: 1px solid #e3d3ac;}
+#tri p{width:100%;margin: 20px 0 10px 0;font-size: 14px;font-weight:bold; color: #5a2c08; text-align: center;}
+#tri p span.noinstr{font-size: 18px;}
+#tri a{display:block;background: #cfbd8e;text-decoration: none; color: #5a2c08;min-height:20px;font-size: 14px;
+		font-weight:bold;line-height:20px; text-align: center;}
+#tri a.thumb{height:32px;}
+#tri a:hover{background: #630;color:#ffe;}
+#tri a.thumb:hover{background: #cfbd8e;color:#ffe;}
+#tri h1{width:100%;margin:20px 0 20px 0;font-size: 34px; color: #5a2c08;text-align:center;}
+
+/* FAMILLE ET ENSEMBLE */
+#famille,#ensemble {margin-top: 20px;width:77%;float:left;}
+#famille div.fond ,#ensemble div.fond{background: #faeed0 url("images/fonds.png") repeat-y;background-position: 0 0;min-height:70px;margin-bottom:10px;padding:5px;}
+#ensemble div.fond{min-height:122px;}
+#famille a, #ensemble a {display:block; color: #652e09;float:left;margin-right:10px;}
+#famille h2, #ensemble h2 {display:block;margin-bottom:5px;font-size: 22px;}
+#famille p, #ensemble p {font-size: 16px;color:#333;margin-top:10px;text-align:justify;}
+.bois,.clavier,.corde,.cuivre,.percussion{display:block;height:70px;width:100px;margin:0 auto;background:#faeed0 url("family/images/familles.jpg") no-repeat;}
+.bois{background-position: 0 0 ;}
+.clavier{background-position: 0 -80px ;}
+.corde{background-position: 0 -160px ;}
+.cuivre{background-position: 0 -240px ;}
+.percussion{background-position: 0 -320px ;}
+a.orchestre,a.chambre,a.vent,a.rock,a.jazz,a.steel,a.gamelan{display:block;margin:0 auto; width: 152px; }
+a.orchestre {background:transparent url("ensemble/images/orchestre.jpg") no-repeat;height: 97px; }
+a.chambre {background:transparent url("ensemble/images/chambre.jpg") no-repeat;height: 99px; }
+a.vent {background:transparent url("ensemble/images/vent.jpg") no-repeat;height: 99px; }
+a.rock {background:transparent url("ensemble/images/rock.jpg") no-repeat;height: 98px; }
+a.jazz {background:transparent url("ensemble/images/jazz.jpg") no-repeat;height: 122px; }
+a.steel {background:transparent url("ensemble/images/steel.jpg") no-repeat;height: 112px; }
+a.gamelan {background:transparent url("ensemble/images/gamelan.jpg") no-repeat;height: 91px; }
+#ensembles,#familles{border: 1px solid #846a40;
+ 				width: 97%;
+				float:left;
+				background: #faeed0 url("images/fonds.png") repeat-y;
+				margin: 10px 10px 0 10px;
+				padding:10px;
+				text-align:justify;
+				line-height: 22px;
+				color: #333;
+				font-family: Arial; color: #333; font-size: 18px;}
+#ensembles p:first-letter,#familles p:first-letter{font-size:26px;color:#652e09;}				
+
+/* LIEU */
+h1.monde{display:block;max-width:1600px;text-align:center;margin:10px 0;font-size:30px;}
+#carte{width:100%;float:left;text-align:center;position:relative;}
+#carte div.fondcarte{max-width:100%;height:auto;position:absolute;z-index:1;}
+div.fondcarte img{max-width:100%;height:auto;}
+#interactive{max-width:1600px;position:relative;z-index:1;}
+.cls-1 {
+fill: none;
+}
+.cls-2-bis {
+fill: rgba(114,30,2,1);
+}
+.cls-2 {
+fill: rgba(114,30,2,0.1);
+}
+.cls-2:hover {
+fill: rgba(222,69,2,0.5);
+}
+.cls-4 {
+fill: rgba(252,17,8,1);
+}
+.cls-5 {
+fill: rgba(252,17,8,0.1);
+}
+.cls-5:hover {
+fill: rgba(255,221,0,0.5);
+}
+.cls-6-bis {
+fill: rgba(96,89,1,1);
+}
+.cls-6 {
+fill: rgba(96,89,1,0.1);
+}
+.cls-6:hover {
+fill: rgba(204,194,0,0.5);
+}
+.cls-7 {
+fill: rgba(32,127,254,1);
+}
+.cls-8 {
+fill: rgba(32,127,254,0.1);
+}
+.cls-8:hover {
+fill: rgba(74,232,255,0.5);
+}
+.cls-10 {
+fill: rgba(205,56,214,1);
+}
+.cls-11 {
+fill: rgba(205,56,214,0.1);
+}
+.cls-11:hover {
+fill: rgba(253,109,254,0.5);
+}
+.cls-12 {
+fill: rgba(45,58,252,1);
+}
+.cls-13 {
+fill: rgba(45,58,252,0.1);
+}
+.cls-13:hover {
+fill: rgba(94,125,255,0.5);
+}
+.cls-14 {
+fill: rgba(32,224,92,1);
+}
+.cls-15 {
+fill: rgba(32,224,92,0.1);
+}
+.cls-15:hover{
+fill: rgba(0,254,167,0.5);
+}
+.cls-16 {
+fill: rgba(54,191,214,1);
+}
+.cls-17 {
+fill: rgba(54,191,214,0.1);
+}
+.cls-17:hover {
+fill: rgba(109,252,254,0.5);
+}
+.cls-19 {
+fill: rgba(23,81,5,1);
+}
+.cls-20 {
+fill: rgba(23,81,5,0.1);
+}
+.cls-20:hover {
+fill: rgba(46,178,4,0.5);
+}
+
+.cls-21 {
+fill: #1d1d1b;
+}
+
+
+/* MENTIONS LEGALES */
+#mention {
+		float:left;
+		width: 100%;
+		height: auto;
+		background: #faeed0 url(images/fond-message.png) repeat-y top center;
+		font-family: Arial; color: #333;font-size: 30px;}
+#mention h5{width: 100%;margin: 30px 0 10px 0;text-align: center;font-size: 1em;line-height:1em; color: #333;}
+#mention a,#mention p.marron{display:block;text-decoration: none;width: 100%;text-align: center;font-size: 0.6em;font-weight: bold; color: #652e09;}
+
+/* PLAN DU SITE */
+#plansite{width: 600px; background: #faeed0 url(images/fond-message.png) repeat-y;background-position: -150px 0;
+			margin: 120px auto 10px auto; color:#333; font-size: 11px;list-style: url("images/puceviolon.gif");}
+#plansite a{color:#652e09;text-decoration: none;}
+#plansite ul.indent{list-style: circle;}
+#plansite li.decal{margin:5px 0 8px 0; font-weight: bold;}
+
+/* CONTACT */
+#contact {
+		float:left;
+		width: 100%;
+		height: auto;
+		margin-top:10px;
+		font-family: Arial; color: #333;font-size: 18px;text-align:center;}
+.contenant{
+	width:98%;
+	margin-left:10px;
+	margin-bottom:10px;
+	padding:10px;
+	}
+.form1,.contact{width:99%;text-align:center;margin:0 auto;}
+.contact{width:98%;}
+.message textarea{width:98%;}
+
+/* Demande autorisation cookies */
+
+.cookie-alert {
+   position: fixed;
+   top: 0;
+   left:0;
+   padding-bottom:10px;
+   background:rgba(33,19,1,0.8);
+   color:#fff;
+   width:100%;
+   z-index:100;
+}
+.cookie-alert p{
+   font-size:1.6em;
+   text-align:justify;
+   padding:10px 10px;
+}
+.cookie-alert a { 
+   display:block;
+   width:10%;
+   text-align: center;
+   padding:5px 10px;
+   margin:8px auto 0 auto;
+   background:transparent;
+   border: 2px solid #fc0;
+   color:#fc0;
+   font-size:1.6em;
+   transition: all .3s ease;
+}
+   .cookie-alert a:hover {
+      background: #fc0;
+      color:#211301;
+   }
+
+
+/*								MEDIA QUERIES                             */
+
+
+@media screen and (max-width: 320px)
+{
+#titrage a{width:100%;margin:-102px 0 0 0;background:transparent url("images/titrage720.jpg") no-repeat top center;}
+#logo a{display:none;}
+#logo_bas a{display:none;}
+#bandeau{margin-top:0;}
+#bandeau_photo{opacity:0;}
+div.logo p{font:bold 11px Arial;margin:0;z-index:2;width:100%;margin:-18px 0 3px 0;text-align:center;}
+#partition{background: #faeed0 url("images/partition320.jpg") repeat-y scroll;}
+#pub,#pub-familles,#pub-az,#pub-mobile2-az{display:none;}
+#pub-mobile1-familles,#pub-mobile-az{display:block;width:99%;height:100px;z-index:15;margin:-220px 0 0 0;text-align:center;}
+#pub-mobile-instrument{display:block;width:100%;height:100px;z-index:15;margin:-210px 0 0 0;text-align:center;}
+#pub-mobile2-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile3-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile1-az,#pub-mobile3-az{display:block;width:100%;height:100px;z-index:15;text-align:center;float:left;margin-bottom:5px;}
+#pub-mobile3-az{margin-top:5px;}
+#pubvertical,#pubvertical-mobile-familles{display:none;}
+#nouveau{width:100%;margin:20px 0 0 2px;}
+#pub-mobile{display:block;width:100%;height:100px;z-index:15;margin:-320px 0 0 0;text-align:center;}
+#menu{width:100%;height:102px;font:bold 16px Arial;line-height:44px;margin-top:22px;}
+#menu a {width: 32.5%;height:49px;border:1px solid #faeed0;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#choixliste ul{margin-left: 60px;}
+#ensembles,#familles{width: 87%;}
+#famille,#ensemble {width:99%;}
+#famille p, #ensemble p {font-size: 18px;}
+#az,#az2{margin-left:1px;}
+#az a,#az2 a{width:10.4%;}
+#tri a{line-height:20px;overflow:hidden;text-overflow:ellipsis;}
+#mention {font-size: 20px;}
+a.orchestre,a.chambre,a.vent,a.rock,a.jazz,a.steel,a.gamelan{width: 100%;background-position:top center;}
+#ensemble div.fond a{clear:both;width: 100%;text-align:center;}
+#notes {width: 99%;min-height:auto;}
+#container-video{width:100%;float:right;margin-bottom:10px;}
+#container-video2{width:100%;float:right;margin-bottom:10px;}
+#pub-instrument,#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#photo {width: 99%; height: 380px;margin-bottom:10px;}
+#instrument_suite {width: 99%; height: auto;float:right;}
+#pub-mobile2-instrument{display:block;float:left;width:99%;margin-bottom:2px;text-align:center;}
+#son{width:100%;text-align:center;float:rigth;margin-left:0;}
+#recherche{width:100%;text-align:center;float:left;margin-top:-90px;}
+#choix {margin-top:0;}
+#precedent {margin-left:20px;}
+#suivant{margin-right:20px;}
+#instrument p.descri {width:97%;margin-top:10px;}
+.contenant{margin-left:0;padding:2px;}
+
+}
+
+@media screen and (max-width: 480px) and (min-width: 321px)
+{
+#titrage a{width:100%;margin:-102px 0 0 0;background:transparent url("images/titrage.jpg") no-repeat top center;}
+#logo a{display:none;}
+#logo_bas a{display:none;}
+#bandeau{margin-top:0;}
+#bandeau_photo{opacity:0;}
+div.logo p{font:bold 13px Arial;margin:0;z-index:2;width:100%;margin:-18px 0 3px 0;text-align:center;}
+#partition{background: #faeed0 url("images/partition480.jpg") repeat-y scroll;}
+#pub,#pub-familles,#pub-az,#pub-mobile2-az{display:none;}
+#pub-mobile2{display:none;}
+#pub-mobile1-familles,#pub-mobile-az{display:block;width:100%;height:100px;z-index:15;margin:-220px 0 0 0;text-align:center;}
+#pub-mobile-instrument{display:block;width:100%;height:100px;z-index:15;margin:-210px 0 0 0;text-align:center;}
+#pub-mobile2-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile3-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile1-az{display:block;width:100%;height:100px;z-index:15;text-align:center;float:left;margin-bottom:5px;}
+#pub-mobile3-az{display:block;width:100%;height:100px;z-index:15;text-align:center;float:left;margin-bottom:5px;}
+#pub-mobile3-az{margin-top:5px;}
+#pubvertical,#pubvertical-mobile-familles{display:none;}
+#nouveau{width:100%;margin:20px 0 0 2px;}
+#pub-mobile{display:block;width:100%;height:100px;z-index:15;margin:-310px 0 0 0;text-align:center;}
+#pub-apres-video{display:block;width:100%;height:100%;z-index:15;text-align:center;}
+#menu{width:100%;height:102px;font:bold 20px Arial;line-height:48px;margin-top:22px;}
+#menu a {width: 32.5%;height:49px;border:1px solid #faeed0;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#choixliste ul{margin-left: 100px;}
+#ensembles,#familles{width: 92%;}
+#famille,#ensemble {width:99%;}
+#famille p, #ensemble p {font-size: 18px;}
+#az,#az2{margin-left:1px;}
+#az a,#az2 a{width:10.4%;}
+#tri a{line-height:20px;overflow:hidden;text-overflow:ellipsis;}
+#mention {font-size: 20px;}
+a.orchestre,a.chambre,a.vent,a.rock,a.jazz,a.steel,a.gamelan{width: 100%;background-position:top center;}
+#ensemble div.fond a{clear:both;width: 100%;text-align:center;}
+#notes {width: 99%;min-height:auto;}
+#container-video{width:100%;float:right;margin-bottom:10px;}
+#container-video2{width:100%;float:right;margin-bottom:10px;}
+#pub-instrument,#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#photo {width: 99%; height: 380px;margin-bottom:10px;}
+#instrument_suite {width: 99%; height: auto;float:right;}
+#pub-mobile2-instrument{display:block;float:left;width:99%;margin-bottom:2px;text-align:center;}
+#son{width:100%;text-align:center;float:right;}
+#recherche{width:100%;text-align:center;float:left;margin-top:-90px;margin-right:0;}
+#choix {margin-top:0;}
+#precedent {margin-left:20px;}
+#suivant{margin-right:20px;}
+#instrument p.descri {width:97%;margin-top:10px;}
+
+}
+
+@media screen and (max-width: 600px) and (min-width: 481px)
+{
+#titrage a{width:99%;margin:-102px 0 0 0;}
+#bandeau_photo{opacity:0;}
+div.logo p{display:none;}
+#partition{background: #faeed0 url("images/partition600.jpg") repeat-y scroll;}
+#pub,#pub-familles,#pub-az,#pub-mobile2-az{display:none;}
+#pub-mobile{display:block;width:100%;height:100px;z-index:15;margin:-340px 0 0 0;text-align:center;}
+#pub-mobile2{display:block;float:left;width:50%;margin-left:10px;margin-bottom:2px;text-align:center;}
+#pub-mobile3{display:block;float:left;width:50%;margin-left:10px;margin-bottom:10px;text-align:center;}
+#pub-mobile1-familles,#pub-mobile-az{display:block;width:100%;height:100px;z-index:15;margin:-220px 0 0 0;text-align:center;}
+#pub-mobile-instrument{display:block;width:100%;height:100px;z-index:15;margin:-210px 0 0 0;text-align:center;}
+#pub-mobile2-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile3-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile1-az{display:block;width:100%;height:100px;z-index:15;text-align:center;float:left;margin-bottom:5px;}
+#pubvertical,#pubvertical-mobile-familles{display:none;}
+#nouveau{width:40%;margin:20px 0 0 2px;}
+#menu{width:100%;height:102px;font:bold 20px Arial;line-height:48px;margin-top:22px;}
+#menu a {width: 32.8%;height:49px;border:1px solid #faeed0;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#choixliste ul{margin-left: 100px;}
+#ensembles,#familles{width: 94%;}
+#famille,#ensemble {width:99%;}
+#famille p, #ensemble p {font-size: 18px;}
+#az,#az2{margin-left:2px;}
+#az a,#az2 a{width:7.25%;}
+#tri a{line-height:20px;overflow:hidden;text-overflow:ellipsis;}
+#mention h5{font-size: 0.7em;line-height:1em;}
+#mention a,#mention p.marron{font-size: 0.4em;}
+#notes {width: 99%;min-height:auto;}
+#recherche{margin-right:50px;}
+#container-video{width:100%;float:right;margin-bottom:10px;}
+#container-video2{width:100%;float:right;margin-bottom:10px;}
+#pub-instrument,#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#photo {width: 99%; height: 380px;margin-bottom:10px;}
+#instrument_suite {width: 99%; height: auto;float:right;}
+#pub-mobile2-instrument{display:block;float:left;width:99%;margin-bottom:2px;text-align:center;}
+
+}
+
+@media screen and (max-width: 620px) and (min-width: 601px)
+{
+#titrage a{width:95%;margin:-102px 0 0 0;}
+#bandeau_photo{opacity:0;}
+div.logo p{display:none;}
+#partition{background: #faeed0 url("images/partition720.jpg") repeat-y scroll;}
+#pub,#pub-familles,#pub-az,#pub-mobile2-az{display:none;}
+#pub-mobile{display:block;width:85%;height:100px;z-index:15;margin:-310px 0 0 0;text-align:right;}
+#pub-mobile2{display:block;float:left;width:50%;margin-left:10px;margin-bottom:2px;text-align:center;}
+#pub-mobile3{display:block;float:left;width:50%;margin-left:10px;margin-bottom:10px;text-align:center;}
+#pub-mobile1-familles,#pub-mobile-az{display:block;width:100%;height:100px;z-index:15;margin:-220px 0 0 0;text-align:center;}
+#pub-mobile-instrument{display:block;width:100%;height:100px;z-index:15;margin:-210px 0 0 0;text-align:center;}
+#pub-mobile2-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile3-familles{display:block;float:left;width:100%;margin:10px 0 0 0;text-align:center;}
+#pub-mobile1-az{display:block;width:100%;height:100px;z-index:15;text-align:center;float:left;margin-bottom:5px;}
+#pubvertical,#pubvertical-mobile-familles{display:none;}
+#menu{height:102px;font:bold 20px Arial;line-height:48px;margin-top:22px;}
+#menu a {width: 32.8%;height:49px;border:1px solid #faeed0;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#choixliste ul{margin-left: 150px;}
+#ensembles,#familles{width: 94%;}
+#famille,#ensemble {width:99%;}
+#famille p, #ensemble p {font-size: 18px;}
+#az,#az2{margin-left:2px;}
+#az a,#az2 a{width:7.3%;}
+#mention h5{font-size: 0.75em;line-height:1em;}
+#mention a,#mention p.marron{font-size: 0.45em;}
+#notes {width: 99%;min-height:auto;}
+#recherche{margin-right:40px;}
+#container-video{width:100%;float:right;margin-bottom:10px;}
+#container-video2{width:100%;float:right;margin-bottom:10px;}
+#pub-instrument,#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#photo {width: 99%; height: 380px;margin-bottom:10px;}
+#instrument_suite {width: 99%; height: auto;float:right;}
+#pub-mobile2-instrument{display:block;float:left;width:99%;margin-bottom:2px;text-align:center;}
+
+}
+
+@media screen and (max-width: 720px) and (min-width: 621px)
+{
+#titrage a{width:93%;margin:-102px 0 0 0;}
+#bandeau_photo{opacity:0;}
+div.logo p{display:none;}
+#partition{background: #faeed0 url("images/partition720.jpg") repeat-y scroll;}
+#pub,#pub-familles,#pub-az{display:none;}
+#pub-mobile-instrument{display:block;width:100%;height:100px;z-index:15;margin:-210px 0 0 0;text-align:center;}
+#pub-mobile{display:block;width:85%;height:100px;z-index:15;margin:-310px 0 0 0;text-align:right;}
+#pub-mobile2{display:block;float:left;width:50%;margin-left:10px;margin-bottom:2px;text-align:center;}
+#pub-mobile3{display:block;float:left;width:50%;margin-left:10px;margin-bottom:10px;text-align:center;}
+#pub-mobile1-az,#pub-mobile2-az{display:block;width:49%;height:100px;z-index:15;text-align:center;float:left;margin-bottom:5px;}
+#pub-mobile1-familles,#pub-mobile-az{display:block;width:100%;height:100px;z-index:15;margin:-220px 0 0 0;text-align:center;}
+#pubvertical{display:none;}
+#pubvertical-mobile-familles{float:left;z-index:2;width:20%;height:auto;text-align:center;margin:20px 0 0 10px;}
+#menu{height:102px;font:bold 20px Arial;line-height:48px;margin-top:22px;}
+#menu a {width: 33%;height:49px;border:1px solid #faeed0;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#ensembles,#familles{width: 94%;}
+#famille,#ensemble {width:76%;}
+#famille p, #ensemble p {font-size: 18px;}
+#az,#az2{margin-left:2px;}
+#az a,#az2 a{width:7.35%;}
+#mention h5{font-size: 0.75em;line-height:1em;}
+#mention a,#mention p.marron{font-size: 0.45em;}
+#notes {width: 99%;min-height:auto;}
+#container-video{width:100%;float:right;margin-bottom:10px;}
+#container-video2{width:100%;float:right;margin-bottom:10px;}
+#pub-instrument,#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#photo {width: 99%; height: 380px;margin-bottom:10px;}
+#instrument_suite {width: 99%; height: auto;float:right;}
+#pub-mobile2-instrument,#pub-mobile3-instrument{display:block;float:left;width:49%;margin-bottom:2px;text-align:center;}
+
+}
+
+@media screen and (max-width: 800px) and (min-width: 721px)
+{
+#titrage a{width:85%;margin:-102px 0 0 0;}
+#bandeau_photo{opacity:0;}
+div.logo p{display:none;}
+#partition{background: #faeed0 url("images/partition800.jpg") repeat-y scroll;}
+#pub,#pub-familles{display:none;}
+#pub-mobile{display:block;width:100%;height:100px;z-index:15;margin:-260px 0 0 0;text-align:center;}
+#pub-mobile-instrument{display:block;width:100%;height:100px;z-index:15;margin:-160px 0 0 0;text-align:center;}
+#pub-mobile1-familles,#pub-mobile-az{display:block;width:100%;height:100px;z-index:15;margin:-170px 0 0 0;text-align:center;}
+#pub-carre {display:block;float:left;width:50%;margin-left:10px;margin-bottom:10px;text-align:center;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#ensembles,#familles{width: 95%;}
+#famille,#ensemble {width:56%;}
+#az,#az2{margin-left:3px;}
+#az a,#az2 a{width:7.35%;}
+#mention h5{font-size: 0.8em;line-height:1em;}
+#mention a,#mention p.marron{font-size: 0.5em;}
+#notes {width: 20%;min-height:auto;}
+#container-video{width:100%;float:right;margin-bottom:10px;}
+#container-video2{width:79%;float:right;margin-bottom:10px;}
+#pub-carre5{display:block;float:left;width:79%;height:auto;margin:15px 0 0 0;text-align: center;}
+#pub-instrument,#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument1-mobile{display:block;text-align:center;width:100%;height:100px;clear:both;margin-bottom:10px;}
+#pub-instrument7-mobile{width:100%;}
+#pub-instrument12-mobile{width:100%;height:90px;display:block;float:left;text-align:center;}
+#photo {width: 79%; height: 380px;margin-bottom:10px;}
+#instrument_suite {width: 79%; height: auto;float:right;}
+
+}
+
+@media screen and (max-width: 960px) and (min-width: 801px)
+{
+#titrage a{width:63%;margin:-102px 0 0 0;}
+#bandeau_photo{width:99%;background:transparent url("images/photos960.jpg") no-repeat center right;}
+div.logo p{width:98.5%;}
+#partition{background: #faeed0 url("images/partition960.jpg") repeat-y scroll;}
+#pub-carre {display:block;float:left;width:52%;margin-left:10px;margin-bottom:10px;text-align:center;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#ensembles,#familles{width: 95%;}
+#famille,#ensemble {width:61%;}
+#az,#az2{margin-left:5px;}
+#az a,#az2 a{width:7.4%;}
+#mention h5{font-size: 0.8em;line-height:1em;}
+#mention a,#mention p.marron{font-size: 0.5em;}
+#notes {width: 50%;min-height:auto;}
+#container-video2{width:49%;float:right;margin-bottom:10px;}
+#pub-carre2,#pub-carre4{display:block;float:left;width:49%;height:auto;margin:5px 0 0 5px;text-align: center;}
+#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#pub-instrument12-mobile{width:100%;height:90px;display:block;float:left;text-align:center;}
+#photo {width: 49%; height: 380px;}
+#instrument_suite {width: 49%; height: auto;float:right;}
+#pub-instrument1{display:block;width:100%;float:left;}
+
+}
+
+@media screen and (max-width: 1024px) and (min-width: 961px)
+{
+#partition{background: #faeed0 url("images/partition1024.jpg") repeat-y scroll;}
+#pub-carre {display:block;float:left;width:52%;margin-left:10px;margin-bottom:50px;text-align:center;}
+#msg {margin: 0;width:99%;margin-bottom:10px;}
+#ensembles,#familles{width: 96%;}
+#famille,#ensemble {width:67%;}
+#az,#az2{margin-left:5px;}
+#az a,#az2 a{width:7.4%;}
+#mention h5{font-size: 0.9em;line-height:1em;}
+#mention a,#mention p.marron{font-size: 0.55em;}
+#notes {width: 50%;min-height:auto;}
+#container-video2{width:49%;}
+#pub-carre2,#pub-carre4{display:block;float:left;width:49%;height:auto;margin:5px 0 0 10px;text-align: center;}
+#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument6,#pub-instrument7,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument7-mobile{width:100%;}
+#pub-instrument12-mobile{width:100%;height:90px;display:block;float:left;text-align:center;}
+#photo {width: 49%; height: 380px;}
+#instrument_suite {width: 49%; height: auto;float:right;}
+#pub-instrument1{display:block;width:100%;float:left;}
+
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1025px)
+{
+#logo a{margin-left:32px;}
+#logo_bas a{margin-left:32px;}
+#partition{width:100%;background: #faeed0 url("images/partition1280.jpg") repeat-y scroll;}
+#famille,#ensemble {width:72%;}
+#az,#az2{margin-left:7px;}
+#pub-carre3{display:block;float:left;width:48%;height:auto;margin-left:10px;text-align: center;}
+#pub-instrument1,#pub-instrument2,#pub-instrument3,#pub-instrument4,#pub-instrument5,#pub-instrument8,#pub-instrument9,#pub-instrument10,#pub-instrument11
+{display:none;}
+#pub-instrument8-mobile,#pub-instrument9-mobile,#pub-instrument10-mobile,#pub-instrument11-mobile
+{display:block;width:80%;height:90px;z-index:15;text-align:center;float:left;margin:10px 0;}
+#pub-instrument7-mobile{width:100%;}
+#pub-instrument8-mobile,#pub-instrument9-mobile,#pub-instrument10-mobile,#pub-instrument11-mobile
+{width:40%;}
+
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1281px)
+{
+#logo a{margin-left:102px;}
+#logo_bas a{margin-left:102px;}
+#partition{background: #faeed0 url("images/partition1600.jpg") repeat-y scroll;}
+}
+
+@media screen and (min-width: 1601px)
+{
+#logo a{margin-left:102px;}
+#logo_bas a{margin-left:102px;}
+#partition{background: #faeed0 url("images/partition1600.jpg") repeat-y scroll;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
