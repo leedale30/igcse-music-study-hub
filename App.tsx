@@ -46,6 +46,9 @@ const App: React.FC = () => {
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/profile-setup" element={<ProfileSetupPage />} />
                 
+                {/* Public test routes (no protection) */}
+                <Route path="/supabase-test" element={<SupabaseTestPage />} />
+                
                 {/* Protected routes - require authentication */}
                 <Route path="/dashboard" element={
                   <ProtectedRoute>
@@ -82,7 +85,6 @@ const App: React.FC = () => {
                   <Route index element={<HomePage />} />
                   <Route path="test" element={<TestPage />} />
                   <Route path="audio-test" element={<AudioPlayerTestPage />} />
-                  <Route path="supabase-test" element={<SupabaseTestPage />} />
                   <Route path="tools/metronome" element={<MetronomePage />} />
                   <Route path="tools/virtual-piano" element={<VirtualPianoPage />} />
                   <Route path="tools/ear-training" element={<EarTrainingPage />} />
