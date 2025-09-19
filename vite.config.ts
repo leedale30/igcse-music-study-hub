@@ -9,12 +9,25 @@ export default defineConfig(({ mode }) => {
         }
       },
       build: {
-        chunkSizeWarningLimit: 1000,
+        chunkSizeWarningLimit: 2000, // Increase limit to reduce warnings for large chunks
         rollupOptions: {
           output: {
             manualChunks: {
-              vendor: ['react', 'react-dom', 'react-router-dom']
+              vendor: ['react', 'react-dom', 'react-router-dom'],
+              // Separate music libraries into their own chunks
+              music: ['tone', '@magenta/music'],
+              midi: ['html-midi-player'],
+              // UI libraries
+              ui: ['@iconify/react']
             }
+          },
+          // Suppress eval warnings from third-party libraries
+          onwarn(warning, warn) {
+            // Suppress eval warnings from protobufjs (third-party dependency)
+            if (warning.code === 'EVAL' && warning.id?.includes('protobufjs')) {
+              return;
+            }
+            warn(warning);
           }
         }
       }

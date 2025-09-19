@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import 'html-midi-player';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface HtmlMidiPlayerProps {
   midiUrl: string;
@@ -18,11 +17,63 @@ const HtmlMidiPlayer: React.FC<HtmlMidiPlayerProps> = ({
 }) => {
   const playerRef = useRef<HTMLElement>(null);
   const visualizerId = `visualizer-${Math.random().toString(36).substr(2, 9)}`;
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // The html-midi-player library automatically handles the custom elements
-    // No additional setup needed
-  }, []);
+    let isMounted = true;
+
+    const loadMidiPlayer = async () => {
+      if (isLoaded || isLoading) return;
+      
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        // Dynamic import to avoid bundling html-midi-player and its dependencies initially
+        await import('html-midi-player');
+        
+        if (isMounted) {
+          setIsLoaded(true);
+          setIsLoading(false);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError('Failed to load MIDI player');
+          setIsLoading(false);
+        }
+      }
+    };
+
+    loadMidiPlayer();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isLoaded, isLoading]);
+
+  if (error) {
+    return (
+      <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg shadow-md border border-red-200 dark:border-red-700">
+        <div className="text-red-800 dark:text-red-200 text-center">
+          <p className="font-medium">MIDI Player Error</p>
+          <p className="text-sm mt-1">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLoading || !isLoaded) {
+    return (
+      <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-4 rounded-lg shadow-md border border-green-200 dark:border-green-700">
+        <div className="flex items-center justify-center space-x-2">
+          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-600 dark:border-green-400"></div>
+          <span className="text-green-800 dark:text-green-200">Loading MIDI Player...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-4 rounded-lg shadow-md border border-green-200 dark:border-green-700">

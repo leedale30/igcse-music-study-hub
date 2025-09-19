@@ -83,7 +83,7 @@ export class GitHubBackupService {
         },
         body: JSON.stringify({
           message: `Automated backup: ${triggerEvent} - ${new Date().toLocaleString()}`,
-          content: btoa(JSON.stringify(backupData, null, 2))
+          content: btoa(unescape(encodeURIComponent(JSON.stringify(backupData, null, 2))))
         })
       });
       

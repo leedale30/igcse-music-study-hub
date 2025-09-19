@@ -20,6 +20,9 @@ import AchievementsPage from './pages/AchievementsPage';
 import AccountSettingsPage from './pages/AccountSettingsPage';
 import PresentationPage from './pages/PresentationPage';
 import AudioPlayerTestPage from './pages/AudioPlayerTestPage';
+import InstrumentsPage from './pages/InstrumentsPage';
+import InstrumentDetailPage from './pages/InstrumentDetailPage';
+import FamilyPage from './pages/FamilyPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -27,6 +30,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ProgressProvider } from './contexts/ProgressContext';
 import { RPGProvider } from './contexts/RPGContext';
 import ErrorBoundary from './components/ErrorBoundary';
+import { SupabaseTestPage } from './components/SupabaseTestPage';
 
 const App: React.FC = () => {
   return (
@@ -78,6 +82,7 @@ const App: React.FC = () => {
                   <Route index element={<HomePage />} />
                   <Route path="test" element={<TestPage />} />
                   <Route path="audio-test" element={<AudioPlayerTestPage />} />
+                  <Route path="supabase-test" element={<SupabaseTestPage />} />
                   <Route path="tools/metronome" element={<MetronomePage />} />
                   <Route path="tools/virtual-piano" element={<VirtualPianoPage />} />
                   <Route path="tools/ear-training" element={<EarTrainingPage />} />
@@ -85,6 +90,9 @@ const App: React.FC = () => {
                   <Route path="tools/bemol-ear-training" element={<BemolEarTrainingPage />} />
                   <Route path="tools/sight-reading" element={<SightReadingPage />} />
                   <Route path="links" element={<LinksPage />} />
+                  <Route path="instruments" element={<InstrumentsPage />} />
+                  <Route path="instruments/:instrumentId" element={<InstrumentDetailPage />} />
+                  <Route path="instruments/family/:familyId" element={<FamilyPage />} />
                   <Route path="term/:termId" element={<GenericPage />} />
                   <Route path="*" element={<GenericPage />} />
                 </Route>

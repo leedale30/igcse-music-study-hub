@@ -1,5 +1,4 @@
-import React from 'react';
-import HtmlMidiPlayer from '../components/HtmlMidiPlayer';
+import React, { Suspense } from 'react';
 import SheetMusicDisplay from '../components/SheetMusicDisplay';
 import Metronome from '../components/Metronome';
 import VirtualPiano from '../components/VirtualPiano';
@@ -8,6 +7,9 @@ import CircleOfFifths from '../components/CircleOfFifths';
 import SightReadingTrainer from '../components/SightReadingTrainer';
 import FallingNotesTrainer from '../components/FallingNotesTrainer';
 import { useLanguage } from '../contexts/LanguageContext';
+
+// Lazy load HtmlMidiPlayer to reduce initial bundle size
+const HtmlMidiPlayer = React.lazy(() => import('../components/HtmlMidiPlayer'));
 
 const TestPage: React.FC = () => {
   const { language } = useLanguage();
@@ -47,13 +49,22 @@ const TestPage: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                 {language === 'en-zh' ? 'Sample: C Major Scale / 示例：C 大调音阶' : 'Sample: C Major Scale'}
               </h3>
-              <HtmlMidiPlayer 
-                midiUrl="/midi/C_Major_Scale.mid" 
-                title={language === 'en-zh' ? 'C Major Scale / C 大调音阶' : 'C Major Scale'}
-                credit={language === 'en-zh' ? 'Powered by Google Magenta.js / 由 Google Magenta.js 驱动' : 'Powered by Google Magenta.js'}
-                showVisualizer={true}
-                visualizerType="piano-roll"
-              />
+              <Suspense fallback={
+                <div className="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-4 rounded-lg shadow-md border border-green-200 dark:border-green-700">
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-green-600 dark:border-green-400"></div>
+                    <span className="text-green-800 dark:text-green-200">Loading MIDI Player...</span>
+                  </div>
+                </div>
+              }>
+                <HtmlMidiPlayer 
+                  midiUrl="/midi/C_Major_Scale.mid" 
+                  title={language === 'en-zh' ? 'C Major Scale / C 大调音阶' : 'C Major Scale'}
+                  credit={language === 'en-zh' ? 'Powered by Google Magenta.js / 由 Google Magenta.js 驱动' : 'Powered by Google Magenta.js'}
+                  showVisualizer={true}
+                  visualizerType="piano-roll"
+                />
+              </Suspense>
             </div>
             
             <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-200 dark:border-green-800">

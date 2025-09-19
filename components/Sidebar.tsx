@@ -108,6 +108,20 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                 {structure.filter(item => !(item.isTerm && item.path.includes(':termId'))).map(item => (
                     <SidebarItem key={item.id} item={item} level={0} />
                 ))}
+                <li className="mt-4 pt-4 border-t border-slate-700">
+                    <NavLink
+                        to="/instruments"
+                        className={({ isActive }) =>
+                            `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${
+                            isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                            }`
+                        }
+                        style={{ paddingLeft: '1rem' }}
+                        title="Instruments"
+                    >
+                        Instruments
+                    </NavLink>
+                </li>
                 </ul>
             </nav>
             </aside>
