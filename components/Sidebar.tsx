@@ -122,6 +122,20 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                         Instruments
                     </NavLink>
                 </li>
+                <li className="mb-1">
+                    <NavLink
+                        to="/listening-exams"
+                        className={({ isActive }) =>
+                            `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${
+                            isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                            }`
+                        }
+                        style={{ paddingLeft: '1rem' }}
+                        title="Listening Exams"
+                    >
+                        Listening Exams
+                    </NavLink>
+                </li>
                 </ul>
             </nav>
             </aside>

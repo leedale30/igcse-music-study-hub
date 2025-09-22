@@ -1,0 +1,568 @@
+{
+  "exportedAt": "2025-09-19T05:53:34.057Z",
+  "totalEntries": 81,
+  "summary": {
+    "errors": 2,
+    "warnings": 8,
+    "info": 71
+  },
+  "entries": [
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "System",
+      "level": "info",
+      "message": "Starting all tests..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "System",
+      "level": "info",
+      "message": "Button clicked - runAllTests function called"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "System",
+      "level": "info",
+      "message": "Test results reset"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "System",
+      "level": "info",
+      "message": "Running connection test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Starting Supabase connection test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Supabase URL: https://lbvfzztemmvluxchhcgg.supabase.co"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Supabase Key exists: true"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.403Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Testing Supabase client connection..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "System",
+      "level": "info",
+      "message": "Starting all tests..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "System",
+      "level": "info",
+      "message": "Button clicked - runAllTests function called"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "System",
+      "level": "info",
+      "message": "Test results reset"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "System",
+      "level": "info",
+      "message": "Running connection test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Starting Supabase connection test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Supabase URL: https://lbvfzztemmvluxchhcgg.supabase.co"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Supabase Key exists: true"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.404Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Testing Supabase client connection..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.406Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Session query completed",
+      "details": {
+        "session": false,
+        "sessionError": null
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.406Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Testing database connection..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.407Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Session query completed",
+      "details": {
+        "session": false,
+        "sessionError": null
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:47:27.407Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Testing database connection..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:28.886Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Database query completed",
+      "details": {
+        "data": null,
+        "error": {
+          "code": "42P17",
+          "details": null,
+          "hint": null,
+          "message": "infinite recursion detected in policy for relation \"users\""
+        }
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:47:28.886Z",
+      "test": "Connection",
+      "level": "warning",
+      "message": "Database query failed (expected if no tables exist)",
+      "details": "infinite recursion detected in policy for relation \"users\""
+    },
+    {
+      "timestamp": "2025-09-19T05:47:28.886Z",
+      "test": "System",
+      "level": "info",
+      "message": "Running authentication test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:28.886Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Testing authentication..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:28.886Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Original user: none"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:28.886Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Testing signup with: test@example.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.291Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Database query completed",
+      "details": {
+        "data": null,
+        "error": {
+          "code": "42P17",
+          "details": null,
+          "hint": null,
+          "message": "infinite recursion detected in policy for relation \"users\""
+        }
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.291Z",
+      "test": "Connection",
+      "level": "warning",
+      "message": "Database query failed (expected if no tables exist)",
+      "details": "infinite recursion detected in policy for relation \"users\""
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.291Z",
+      "test": "System",
+      "level": "info",
+      "message": "Running authentication test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.291Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Testing authentication..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.291Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Original user: none"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.291Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Testing signup with: test@example.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.888Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Signup completed",
+      "details": {
+        "success": false
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:47:29.888Z",
+      "test": "Authentication",
+      "level": "warning",
+      "message": "Signup failed, testing with demo login..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:30.293Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Signup completed",
+      "details": {
+        "success": false
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:47:30.293Z",
+      "test": "Authentication",
+      "level": "warning",
+      "message": "Signup failed, testing with demo login..."
+    },
+    {
+      "timestamp": "2025-09-19T05:47:30.890Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Demo login successful"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:30.890Z",
+      "test": "System",
+      "level": "warning",
+      "message": "No authenticated user, skipping user-dependent tests"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:30.890Z",
+      "test": "System",
+      "level": "info",
+      "message": "All tests completed"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:31.295Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Demo login successful"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:31.295Z",
+      "test": "System",
+      "level": "warning",
+      "message": "No authenticated user, skipping user-dependent tests"
+    },
+    {
+      "timestamp": "2025-09-19T05:47:31.295Z",
+      "test": "System",
+      "level": "info",
+      "message": "All tests completed"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:19.757Z",
+      "test": "Login",
+      "level": "info",
+      "message": "Testing login with provided credentials: teacher@school.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:20.760Z",
+      "test": "Login",
+      "level": "info",
+      "message": "Login attempt completed",
+      "details": {
+        "success": true
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:20.760Z",
+      "test": "Login",
+      "level": "info",
+      "message": "Login test passed"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "System",
+      "level": "info",
+      "message": "Starting all tests..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "System",
+      "level": "info",
+      "message": "Button clicked - runAllTests function called"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "System",
+      "level": "info",
+      "message": "Test results reset"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "System",
+      "level": "info",
+      "message": "Running connection test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Starting Supabase connection test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Supabase URL: https://lbvfzztemmvluxchhcgg.supabase.co"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Supabase Key exists: true"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.263Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Testing Supabase client connection..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.270Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Session query completed",
+      "details": {
+        "session": false,
+        "sessionError": null
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.270Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Testing database connection..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.828Z",
+      "test": "Connection",
+      "level": "info",
+      "message": "Database query completed",
+      "details": {
+        "data": null,
+        "error": {
+          "code": "42P17",
+          "details": null,
+          "hint": null,
+          "message": "infinite recursion detected in policy for relation \"users\""
+        }
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.828Z",
+      "test": "Connection",
+      "level": "warning",
+      "message": "Database query failed (expected if no tables exist)",
+      "details": "infinite recursion detected in policy for relation \"users\""
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.828Z",
+      "test": "System",
+      "level": "info",
+      "message": "Running authentication test..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.828Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Testing authentication..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.828Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Original user: teacher@school.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:23.828Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Testing signup with: test@example.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:24.830Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Signup completed",
+      "details": {
+        "success": false
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:24.830Z",
+      "test": "Authentication",
+      "level": "warning",
+      "message": "Signup failed, testing with demo login..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:25.832Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Demo login successful"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:25.832Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Restoring original user session..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:26.833Z",
+      "test": "Authentication",
+      "level": "info",
+      "message": "Restored teacher session"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:26.833Z",
+      "test": "System",
+      "level": "info",
+      "message": "User is authenticated, running additional tests..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:26.834Z",
+      "test": "Progress Service",
+      "level": "info",
+      "message": "Testing progress service for user: teacher@school.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:26.834Z",
+      "test": "Progress Service",
+      "level": "info",
+      "message": "Attempting to save quiz progress..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.541Z",
+      "test": "Progress Service",
+      "level": "info",
+      "message": "Save progress completed",
+      "details": {
+        "success": false
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.541Z",
+      "test": "Progress Service",
+      "level": "error",
+      "message": "Progress test failed: Could not save progress"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.541Z",
+      "test": "Realtime Service",
+      "level": "info",
+      "message": "Testing realtime service for user: teacher@school.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.541Z",
+      "test": "Realtime Service",
+      "level": "info",
+      "message": "Attempting to subscribe to user progress changes..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.544Z",
+      "test": "Realtime Service",
+      "level": "info",
+      "message": "Subscription created successfully",
+      "details": {
+        "subscriptionStatus": "active"
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.544Z",
+      "test": "Realtime Service",
+      "level": "info",
+      "message": "Realtime service test passed"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.544Z",
+      "test": "Storage Service",
+      "level": "info",
+      "message": "Testing storage service for user: teacher@school.com"
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.544Z",
+      "test": "Storage Service",
+      "level": "info",
+      "message": "Creating test file..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.544Z",
+      "test": "Storage Service",
+      "level": "info",
+      "message": "Test file created",
+      "details": {
+        "name": "test.txt",
+        "size": 12,
+        "type": "text/plain"
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:27.545Z",
+      "test": "Storage Service",
+      "level": "info",
+      "message": "Attempting to upload file to test-files bucket..."
+    },
+    {
+      "timestamp": "2025-09-19T05:53:28.678Z",
+      "test": "Storage Service",
+      "level": "error",
+      "message": "Storage service test exception",
+      "details": {
+        "name": "StorageApiError",
+        "message": "new row violates row-level security policy",
+        "status": 400,
+        "statusCode": "403"
+      }
+    },
+    {
+      "timestamp": "2025-09-19T05:53:28.678Z",
+      "test": "System",
+      "level": "info",
+      "message": "All tests completed"
+    }
+  ]
+}
