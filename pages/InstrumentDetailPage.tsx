@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import Layout from '../components/Layout'
 import { getInstrumentById, getInstrumentFamily } from '../data/instruments'
 
 const InstrumentDetailPage: React.FC = () => {
@@ -10,22 +9,19 @@ const InstrumentDetailPage: React.FC = () => {
 
   if (!instrument || !family) {
     return (
-      <Layout>
-        <div className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold text-red-600">Instrument not found</h1>
-          <p className="mt-4">The instrument you are looking for does not exist or has been removed.</p>
-          <div className="text-center mt-4">
-            <Link to="/instruments" className="text-[var(--primary-500)] hover:underline">
-              Return to Instruments Page
-            </Link>
-          </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-red-600">Instrument not found</h1>
+        <p className="mt-4">The instrument you are looking for does not exist or has been removed.</p>
+        <div className="text-center mt-4">
+          <Link to="/instruments" className="text-[var(--primary-500)] hover:underline">
+            Return to Instruments Page
+          </Link>
         </div>
-      </Layout>
+      </div>
     )
   }
 
   return (
-    <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/instruments" className="text-[var(--primary-500)] hover:underline inline-flex items-center">
@@ -138,7 +134,6 @@ const InstrumentDetailPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </Layout>
   )
 }
 

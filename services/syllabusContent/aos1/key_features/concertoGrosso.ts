@@ -11,6 +11,16 @@ export const concertoGrossoTerm: SyllabusItem = {
   content_zh: '一种以一小组独奏者（主奏部）与一个较大的管弦乐队（协奏部）对置为特色的器乐形式。',
   longDescription: `A **BAROQUE CONCERTO GROSSO** is an instrumental form involving two groups of performers: the **CONCERTINO** (a small group of soloists) accompanied by a larger orchestral group called the **RIPIENO**. This form was popular from around 1600 to 1750 and was a showcase for musical contrast.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CAmHWpVAk4M" title="What Is Concerto Grosso In Baroque Music? - Classical Serenade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*What Is Concerto Grosso In Baroque Music? - Classical Serenade*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VtS5kkndrS4" title="MUS 110 - Concerto Grosso (and Ritornello Form) Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*MUS 110 - Concerto Grosso (and Ritornello Form) Explained*
+
 **Form and Structure**
 
 A Concerto Grosso is typically in **THREE MOVEMENTS**, with contrasting speeds and moods.

@@ -28,7 +28,17 @@ You can hear pedal notes frequently in the works of J.S. Bach:
 *   **Toccata and Fugue in D minor, BWV 565:** This famous organ work uses pedal notes extensively to create drama and grandeur.
 *   **Preludes:** A dominant pedal is often used near the end of a prelude to prepare for the start of the fugue in the tonic key.
 
-Though named after the organ, pedal notes are used by all instruments, from string orchestras to harpsichords (by repeatedly playing the note). It is a powerful harmonic tool that has been used by composers for centuries.`,
+Though named after the organ, pedal notes are used by all instruments, from string orchestras to harpsichords (by repeatedly playing the note). It is a powerful harmonic tool that has been used by composers for centuries.
+
+**Educational Videos**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WjMO4hb7sQM" title="How Does a Pedal Point Work? - Music Theory" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*This video by Music Matters provides a clear explanation of how pedal points work in music theory, demonstrating their harmonic function and effect.*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3aiq-sd7CgU" title="Lesson 4.5.5: NCTs - The Pedal Point" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*Mr. Clark Music Theory delivers a comprehensive lesson on pedal points as non-chord tones, explaining their theoretical foundation and practical application.*`,
     longDescription_zh: `**持续音：综合指南**
 
 **持续音**（也称为**踏板音**）是一个长时间保持或连续重复的音符，最常出现在低音区。当这个单音持续时，上方的和声会发生变化，常常与持续音形成不协和音，然后解决。
@@ -48,6 +58,16 @@ Though named after the organ, pedal notes are used by all instruments, from stri
 *   **d小调托卡塔与赋格，BWV 565：** 这部著名的管风琴作品广泛使用持续音来创造戏剧性和宏伟感。
 *   **前奏曲：** 属音持续音常用于前奏曲的结尾附近，为赋格曲在主调上的开始做准备。
 
-尽管以管风琴命名，但持续音被所有乐器使用，从弦乐团到羽管键琴（通过重复演奏音符）。这是一个强大的和声工具，几个世纪以来一直被作曲家使用。`,
+尽管以管风琴命名，但持续音被所有乐器使用，从弦乐团到羽管键琴（通过重复演奏音符）。这是一个强大的和声工具，几个世纪以来一直被作曲家使用。
+
+**教育视频**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WjMO4hb7sQM" title="How Does a Pedal Point Work? - Music Theory" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*Music Matters的这个视频清楚地解释了踏板音在音乐理论中的工作原理，展示了它们的和声功能和效果。*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3aiq-sd7CgU" title="Lesson 4.5.5: NCTs - The Pedal Point" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*Mr. Clark Music Theory提供了关于踏板音作为非和弦音的全面课程，解释了它们的理论基础和实际应用。*`,
     quiz: pedalNoteTermQuiz
 };

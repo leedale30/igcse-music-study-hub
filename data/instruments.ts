@@ -41,7 +41,7 @@ export const instrumentFamilies: InstrumentFamily[] = [
     id: 'brass',
     name: 'Brass Instruments',
     description: 'Brass instruments produce sound when the player buzzes their lips into a cup-shaped mouthpiece. They are typically made of brass or other metals. Known for their powerful, bright sound, brass instruments are essential in orchestras, concert bands, and jazz ensembles.',
-    imagePath: '/images/families/brasses.jpg'
+    imagePath: '/images/families/brass.jpg'
   },
   {
     id: 'percussion',
@@ -117,6 +117,17 @@ export const instruments: Instrument[] = [
     material: 'Copper bowl, calfskin or synthetic head',
     origin: 'Middle East, introduced to Europe in the 13th century',
     classification: 'Pitched percussion instrument'
+  },
+  {
+    id: 'bassoon',
+    name: 'Bassoon',
+    description: 'The bassoon is a woodwind instrument in the double reed family that typically plays music written in the bass and tenor clefs, and occasionally the treble. Appearing in its modern form in the 19th century, the bassoon figures prominently in orchestral, concert band, and chamber music literature.',
+    familyId: 'woodwinds',
+    imagePath: '/images/instruments/Bassoon.jpg',
+    range: 'Bb1 to Eb5',
+    material: 'Maple wood with metal keys and bocal',
+    origin: 'Italy, 16th century, modern form developed in 19th century',
+    classification: 'Double-reed woodwind instrument'
   },
   {
     id: 'koto',

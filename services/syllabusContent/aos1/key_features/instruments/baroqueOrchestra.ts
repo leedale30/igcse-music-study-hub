@@ -10,6 +10,16 @@ export const baroqueOrchestraPage: SyllabusItem = {
     content_zh: '巴洛克管弦乐队的乐器与结构概述。',
     longDescription: `The Baroque orchestra was a dynamic and evolving ensemble that formed the backbone of instrumental music in the era. Unlike the rigidly defined modern orchestra, the Baroque orchestra was more flexible, but it was built around a strong and consistent core. Its unique sound came from its specific instrumentation and performance practices.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jzAhdzWeTv0" title="What is the Baroque Orchestra? - Music Appreciation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*What is the Baroque Orchestra? - Music Appreciation by Music Matters - An overview of the baroque orchestra and its characteristics*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M07ikGErJs8" title="Baroque Instrumentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Baroque Instrumentation by professorimprov - Detailed explanation of baroque orchestral instruments and their roles*
+
 **The String Section: The Heart of the Orchestra**
 The string family was the undisputed foundation of the Baroque orchestra. This section was typically the largest and carried most of the melodic and harmonic weight.
 *   **Instruments:** It included violins (divided into first and second sections), violas, cellos, and double basses.
@@ -32,6 +42,16 @@ Brass and percussion were used more sparingly, typically for grand, festive, or 
 **Size and Leadership**
 Baroque orchestras were generally smaller than modern ones, ranging from 15 to 25 players. There was no conductor with a baton; instead, the ensemble was led from within, usually by the **harpsichordist** or the **principal violinist**.`,
     longDescription_zh: `巴洛克管弦乐队是一个充满活力且不断演变的合奏团，构成了那个时代器乐音乐的骨干。与严格定义的现代管弦乐队不同，巴洛克管弦乐队更具灵活性，但它围绕着一个强大而一致的核心构建。其独特的声音来自其特定的配器和演奏实践。
+
+**📺 视频资源：**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jzAhdzWeTv0" title="What is the Baroque Orchestra? - Music Appreciation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*什么是巴洛克管弦乐队？- 音乐欣赏 by Music Matters - 巴洛克管弦乐队及其特征概述*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M07ikGErJs8" title="Baroque Instrumentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*巴洛克配器 by professorimprov - 巴洛克管弦乐器及其作用的详细解释*
 
 **弦乐部分：管弦乐队的心脏**
 弦乐家族是巴洛克管弦乐队无可争议的基础。这个部分通常是最大的，承担了大部分的旋律和和声重任。

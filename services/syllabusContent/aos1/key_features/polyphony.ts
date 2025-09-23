@@ -26,7 +26,17 @@ To understand polyphony, it's useful to contrast it with **homophony**. Homophon
 *   **Imitation:** A core technique of counterpoint where one voice or instrument copies a melodic idea from another, often starting a few beats later. This creates a "chasing" or conversational effect.
 *   **The Fugue:** The fugue is the most complex and highly developed form of contrapuntal composition from the Baroque era. It is built around a main theme called a **subject**, which is introduced by one voice and then imitated by the other voices in succession. Master composers like **J.S. Bach** were renowned for their incredibly intricate and beautiful fugues. Handel's Concerto Grosso Op. 6, No. 5 (2nd movement) is a great example of a fugue.
 
-Listening to Baroque music, especially works by Bach, requires paying attention to the different melodic lines and how they interact. It's a rewarding experience that reveals the incredible skill and artistry of the composers.`,
+Listening to Baroque music, especially works by Bach, requires paying attention to the different melodic lines and how they interact. It's a rewarding experience that reveals the incredible skill and artistry of the composers.
+
+**Educational Videos:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/teh22szdnRQ" title="Musical Texture (Definition of Monophonic, Homophonic, Polyphonic, Heterophonic Textures)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This video by Alisha Nypaver provides a comprehensive overview of different musical textures, including polyphonic texture, with clear examples and explanations.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TwPn47Ad_sE" title="Counterpoint is easy, if you let it be..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This video by Implied Music offers an accessible introduction to counterpoint, showing how to create multi-part polyphony with practical examples and techniques.`,
     longDescription_zh: `**复音与对位织体：综合指南**
 
 在巴洛克时代，织体——即不同音乐层次的组合方式——是作曲的一个关键要素。最负盛名和最复杂的织体是**复音**。
@@ -44,6 +54,16 @@ Listening to Baroque music, especially works by Bach, requires paying attention 
 *   **模仿：** 对位法的一种核心技巧，其中一个声部或乐器模仿另一个声部的旋律思想，通常晚几个节拍开始。这创造了一种“追逐”或对话的效果。
 *   **赋格曲：** 赋格曲是巴洛克时代最复杂和最高度发展的对位作曲形式。它围绕一个称为**主题**的主要旋律构建，由一个声部引入，然后由其他声部相继模仿。像**J.S. 巴赫**这样的大师以其极其复杂和优美的赋格曲而闻名。亨德尔的大协奏曲作品6第五号（第二乐章）是赋格曲的一个很好的例子。
 
-聆听巴洛克音乐，特别是巴赫的作品，需要注意不同的旋律线条以及它们如何相互作用。这是一种有益的体验，揭示了作曲家们不可思议的技巧和艺术才华。`,
+聆听巴洛克音乐，特别是巴赫的作品，需要注意不同的旋律线条以及它们如何相互作用。这是一种有益的体验，揭示了作曲家们不可思议的技巧和艺术才华。
+
+**教育视频：**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/teh22szdnRQ" title="Musical Texture (Definition of Monophonic, Homophonic, Polyphonic, Heterophonic Textures)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+这个由Alisha Nypaver制作的视频全面介绍了不同的音乐织体，包括复音织体，提供了清晰的例子和解释。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TwPn47Ad_sE" title="Counterpoint is easy, if you let it be..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+这个由Implied Music制作的视频提供了对位法的易懂介绍，展示了如何通过实际例子和技巧创造多声部复音。`,
     quiz: polyphonyTermQuiz
 };

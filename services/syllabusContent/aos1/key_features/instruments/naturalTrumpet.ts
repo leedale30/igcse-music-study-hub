@@ -13,6 +13,16 @@ export const naturalTrumpetTerm: SyllabusItem = {
 
 The natural trumpet was the standard form of the trumpet during the Baroque era. Its brilliant, piercing sound was reserved for music of a majestic, festive, or military character.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BMxti2j6al4" title="Teaching Tool: The Natural Trumpet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Teaching Tool: The Natural Trumpet - Understanding the natural trumpet and its role in baroque music*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d18E4h_A-po" title="How Is a Baroque Trumpet Played?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How Is a Baroque Trumpet Played? - Demonstration of baroque trumpet playing techniques*
+
 **Key Feature: No Valves**
 The defining characteristic of the natural trumpet is its lack of valves. Modern trumpets use valves to change the length of the tubing, allowing them to play all the notes of the chromatic scale. The natural trumpet could only produce the notes of the natural **harmonic series** of its fundamental pitch (e.g., C, G, C, E, G, Bb, C...).
 

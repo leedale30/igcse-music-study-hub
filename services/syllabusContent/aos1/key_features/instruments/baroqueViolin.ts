@@ -13,6 +13,16 @@ export const baroqueViolinTerm: SyllabusItem = {
 
 While recognizable as a violin, the Baroque instrument had several key differences from its modern counterpart, resulting in a distinctly different sound and playing style.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K4SbVKA5JHw" title="How To Play Violin In One Minute" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How To Play Violin In One Minute - Basic violin playing fundamentals*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_FYCCL5UrQo" title="How I Would Learn the Violin ?? (If I Could Start Over)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How I Would Learn the Violin ?? (If I Could Start Over) - Advanced violin learning techniques*
+
 **Physical Characteristics:**
 *   **Strings:** The strings were made of **gut** (from animal intestines), not steel. Gut strings have a warmer, richer, and less brilliant tone, with a more pronounced "chiff" or articulation at the start of the note.
 *   **Bow:** The Baroque bow was typically shorter, lighter, and **convex** (curved outwards), unlike the modern concave bow. This shape resulted in a lighter, more agile stroke, with a natural decay in sound, making it perfect for articulating the dance rhythms and gestures of Baroque music.

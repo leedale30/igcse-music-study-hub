@@ -13,6 +13,20 @@ export const continuoPage: SyllabusItem = {
 
 The Basso Continuo, or just 'continuo', is arguably the single most important and defining feature of Baroque music. It served as the foundation—the "engine room"—for nearly every genre of the era, from a solo sonata to a grand opera. It consists of two main components played by at least two musicians:
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kxqbHflQZ7g" title="How Do You Figure? A Guide To Figured Bass" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How Do You Figure? A Guide To Figured Bass by 12tone*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i74k_bz-_FM" title="Basso Continuo Explained: A Guide to Figured Bass Symbols" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Basso Continuo Explained: A Guide to Figured Bass Symbols by Alice M. Chuaqui Baldwin, harpsichordist*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XEHg-3tVJAo" title="How to Play Basso Continuo: The 15 Things Every Beginner Needs to Know" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How to Play Basso Continuo: The 15 Things Every Beginner Needs to Know by Alice M. Chuaqui Baldwin, harpsichordist*
+
 **1. The Bass Line Instrument(s):**
 This performer plays the written bass line of the music. Their role is to provide a solid, low-pitched foundation.
 *   **Common Instruments:** Cello, viola da gamba (a fretted, viol-family instrument), or bassoon. In larger orchestral works, a double bass might also play the part, often an octave lower.

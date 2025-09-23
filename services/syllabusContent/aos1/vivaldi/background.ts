@@ -33,7 +33,13 @@ Vivaldi's music is often:
 **Later Life and Rediscovery:**
 Even though Vivaldi was very famous during his life, after he died, his music was forgotten for a long time. It wasn't until the 1900s that musicians and scholars rediscovered his amazing work. Now, he's one of the most popular Baroque composers, and you can hear his music everywhere!
 
-Learning about Vivaldi's life helps us understand why he wrote the music he did and how he became such an important figure in the history of music.`,
+Learning about Vivaldi's life helps us understand why he wrote the music he did and how he became such an important figure in the history of music.
+
+**Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3sR8QI9ugx4?start=274" title="Who Was Antonio Vivaldi?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+This engaging video explores Vivaldi's dramatic life and enduring legacy as "The Red Priest." Discover how he rose to fame in Baroque Venice, his impact on concertos and program music, and how his music—including The Four Seasons—was nearly lost to history before being rediscovered in the 20th century.`,
     longDescription_zh: `安东尼奥·维瓦尔第是来自意大利的超级著名音乐家，生活在很久以前，从1678年到1741年。那是在音乐的巴洛克时期，一个以其华丽和充满活力的风格而闻名的时代！
 
 **红发神父：**
@@ -58,6 +64,12 @@ Learning about Vivaldi's life helps us understand why he wrote the music he did 
 **晚年与再发现：**
 尽管维瓦尔第生前非常有名，但在他去世后，他的音乐被遗忘了很长一段时间。直到20世纪，音乐家和学者们才重新发现了他的惊人作品。现在，他是最受欢迎的巴洛克作曲家之一，你到处都能听到他的音乐！
 
-了解维瓦尔第的生平有助于我们理解他为何创作那样的音乐，以及他如何成为音乐史上一位如此重要的人物。`,
+了解维瓦尔第的生平有助于我们理解他为何创作那样的音乐，以及他如何成为音乐史上一位如此重要的人物。
+
+**视频资源：**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3sR8QI9ugx4?start=274" title="Who Was Antonio Vivaldi?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+这个引人入胜的视频探索了维瓦尔第作为"红发神父"的戏剧性生活和持久遗产。了解他如何在巴洛克威尼斯崛起成名，他对协奏曲和标题音乐的影响，以及他的音乐——包括《四季》——如何几乎在历史中失传，直到20世纪才被重新发现。`,
     quiz: vivaldiQuiz
 };

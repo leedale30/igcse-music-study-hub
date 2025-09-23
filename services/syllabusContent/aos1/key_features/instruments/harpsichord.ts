@@ -13,6 +13,12 @@ export const harpsichordTerm: SyllabusItem = {
 
 The harpsichord was the quintessential keyboard instrument of the Baroque era, central to both solo and ensemble music. Its bright, plucked sound is one of the most recognizable timbres of the period.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5FYnRK_Mrds" title="How to Play the Harpsichord: Basic Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How to Play the Harpsichord: Basic Technique - Harpsichord playing fundamentals and technique*
+
 **How it Works:**
 Unlike a modern piano which uses hammers to strike the strings, the harpsichord uses a mechanism where pressing a key causes a small plectrum (originally made from a bird's quill, now often from plastic) to pluck the string. This gives it a sharp attack and a quick decay.
 

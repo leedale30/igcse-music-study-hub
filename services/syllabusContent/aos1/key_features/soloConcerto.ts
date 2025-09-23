@@ -11,6 +11,16 @@ export const soloConcertoTerm: SyllabusItem = {
   content_zh: '一种为单一独奏乐器和管弦乐队创作的器乐形式，在巴洛克时期变得突出。',
   longDescription: `The **SOLO CONCERTO** became increasingly popular after the Baroque period, eventually replacing the Concerto Grosso. It was developed by Classical composers for a single solo instrument with more difficult and technically demanding solo parts (**VIRTUOSIC**), accompanied by a now, much larger and more developed, orchestra. Understanding its features helps contrast it with Baroque forms.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BJH8LVIf2WE" title="What Is A Solo Concerto? - Classical Serenade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*What Is A Solo Concerto? - Classical Serenade*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FoZsDxYR3_A" title="IGCSE Baroque Music Concerto Grosso and the Solo Concerto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*IGCSE Baroque Music Concerto Grosso and the Solo Concerto - by Wilna Liebenberg*
+
 **Form and Structure**
 
 A Classical Solo Concerto is typically in **THREE MOVEMENTS**, with contrasting tempi and moods.

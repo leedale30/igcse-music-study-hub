@@ -1,7 +1,6 @@
 
 import { SyllabusItem } from '../../../../types';
 import { vivaldiSpringMvt1Quiz } from '../../../quizzes/aos1/vivaldi';
-import { tonalityTerm } from './tonality';
 
 export const vivaldiSpringMvt1Page: SyllabusItem = {
     id: 'aos1-vivaldi-spring-mvt1', 
@@ -10,34 +9,115 @@ export const vivaldiSpringMvt1Page: SyllabusItem = {
     path: '/areas-of-study/aos1-baroque-music/vivaldi/spring/movement-1',
     content: 'Context of "The Four Seasons" and details of "Spring," Movement 1.',
     content_zh: '《四季》的背景及《春》第一乐章的详细信息。',
-    longDescription: `**"The Four Seasons" (Le quattro stagioni): An Overview**
+    longDescription: `# Movement 1 (Allegro) - Detailed Analysis
 
-Vivaldi's "The Four Seasons" is a set of four violin concertos, each representing a season of the year. It was published in 1725 as the first four concertos in a larger collection of twelve called **"Il cimento dell'armonia e dell'inventione"** (The Contest Between Harmony and Invention), Op. 8.
+## 🎥 Performance Video
 
-These concertos are prime examples of **programme music** – music that aims to describe a story, scene, or idea. Vivaldi took this a step further by providing a **sonnet** (a type of poem, possibly written by himself) for each season. He even marked specific lines from the poems directly into the musical score, so performers and listeners would know exactly which part of the "story" the music was depicting. This was quite revolutionary for its time!
+Watch this beautiful performance of Vivaldi's Spring Movement 1 by the Classical Concert Chamber Orchestra:
 
-Each of the four concertos follows a typical three-movement structure:
-*   **Fast** movement
-*   **Slow** movement
-*   **Fast** movement
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e3nSvIiBNFo?start=34" title="Vivaldi, The Four Seasons, Spring (La Primavera), 1st movement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-The solo instrument is the violin, accompanied by a string orchestra (violins, violas, cellos) and **basso continuo** (typically harpsichord or organ, and cello or bassoon).
+---
 
-**"Spring" (La Primavera) – Concerto No. 1 in E major, Op. 8, RV 269**
+## 🏗️ Structure / Form
 
-The first concerto, "Spring," is in the bright and cheerful key of E major, perfectly capturing the optimistic mood of the season.
+As would be expected in a Baroque solo concerto first fast movement, the structure is **ritornello form**. This is when varied restatements of a ritornello theme, in different keys and scored for the full orchestra, alternate with episodes, in which the soloist often dominates playing new ideas.
 
-**Movement 1: Allegro (Fast)**
+Vivaldi's ritornello statements usually **get shorter during a movement**, as repetitions of bars or even whole groups of bars are omitted. In this concerto Vivaldi combines the poems with ritornello form, so the constant elements of the poem are usually incorporated into the returning ritornello theme, while the episodes depict the changing elements.
 
-This movement joyfully announces the arrival of Spring. Vivaldi masterfully uses the orchestra and solo violin to paint vivid musical pictures:
+**Vivaldi sets the first five lines of the poem in this movement.**
 
-*   **The Arrival of Spring:** The opening **ritornello** (main theme played by the full orchestra) is full of energy and celebration, representing Spring's arrival.
-*   **Birdsong:** The solo violins imitate the cheerful songs of birds with trills, rapid repeated notes, and high-pitched, decorative passages.
-*   **Murmuring Streams:** Gentle, flowing melodies in the strings depict the sound of streams and brooks.
-*   **Thunder and Lightning:** Suddenly, the mood changes. Tremolos (rapidly repeated notes) in the lower strings and fast, rushing scales create the sound of a spring thunderstorm. The music often shifts to a minor key during this section to add to the drama.
-*   **Return of Birdsong:** After the storm passes, the birds resume their joyful singing, and the sunny ritornello theme returns.
+### Detailed Structure Analysis:
 
-This movement is a wonderful example of how Vivaldi used **ritornello form**, where the main orchestral theme alternates with contrasting solo episodes that depict the specific scenes from the accompanying sonnet. You'll notice the clear contrast between the full orchestra (tutti/ripieno) and the solo violin (or small group of solo violins).`,
+- **Ritornello 1** bars 0 to 13³
+- **Episode 1** bars 13³ to 27³  
+- **Ritornello 2** bars 27⁴ to 30¹ (a shortened statement of the ritornello theme, taken from bars 6⁴ to 10¹)
+- **Episode 2** bars 31 to 40³
+- **Ritornello 3** bars 40⁴ to 43 (a shortened statement, as in ritornello 2)
+- **Episode 3** bars 44 to 55³
+- **Ritornello 4** bars 55⁴ to 58
+- **Episode 4** bars 59 to 75 (this episode includes a tutti interruption, based on the first half of the ritornello theme. It also has many similarities to Episode 1, since both episodes refer to birdsong)
+- **Ritornello 5** bars 76 to 82 (this is longer than ritornellos 2, 3 and 4, but still not as long as ritornello 1. It is the second half of ritornello 1, which is then repeated)
+
+---
+
+## 🎵 Tonality / Keys
+
+As with most Baroque works, Vivaldi modulates to a variety of keys in the movement, but all closely related to the tonic. The first movement is in **E major**, a bright, joyful key, appropriate for the happy arrival of spring.
+
+### Key Structure:
+- The movement remains in **E major** for some time
+- **Episode 2** ends on the dominant chord (B major), but the music has not really modulated at this point
+- However, the **ritornello** which immediately follows is in the **dominant** – the A sharps and perfect cadence in the dominant linking the ritornello and following episode show this
+- At the end of **Episode 3** the music modulates from the dominant (B major) to the **relative minor (C# minor)**
+- **Ritornello 4** and **Episode 4** are both in the relative minor, but at the end of Episode 4 there is a modulation back to **E major** for the final ritornello
+
+The **second movement** of the concerto is in the relative minor (C# minor) and the **final movement** returns to E major.
+
+---
+
+## 🎼 Harmony
+
+Vivaldi's harmony is **diatonic** (using notes from the key) and **functional** (with chords having a specific role in moving the music forward). There is much use of **tonic and dominant chords**, with **perfect and imperfect cadences**.
+
+### Harmonic Analysis:
+- The **opening ritornello** is very firmly based on the **tonic chord**, with a rhythmicised tonic pedal in the continuo
+- **Bars 3 and 6** contain an **imperfect cadence**
+- **Bars 9–10 and 12–13** form a **perfect cadence**
+- Interestingly, **Episode 1** is based entirely on the **tonic chord**, with no change of harmony
+- When **Episode 4** is accompanied by the continuo (unlike the corresponding section about birds in Episode 1), it is by a **tonic pedal** (C# as the music is in C# minor at this point) played by the cello (**Tasto solo** in the score means that the rest of the continuo do not play)
+
+---
+
+## 🎶 Melody
+
+The **ritornello sections** have a memorable melody with a **range of a 9th** and making use of mostly **stepwise movement** or **leaps of a third**. The **episodes** are less 'melodic' using **repeated notes, scales and arpeggios**.
+
+### Melodic Features:
+- The episodes also feature **ornamentation**, including **inverted mordents and trills**
+- Although most melodic material is **diatonic**, there is **ascending chromatic movement** in the bass in Episode 3, helping the music to modulate from B major to C# minor
+
+---
+
+## 🥁 Rhythm
+
+This movement uses a **wide range of note values**, from the crotchets, quavers and occasional semiquavers in the ritornello, to the **demisemiquavers, triplet semiquavers and dotted notes** in the episodes. This is another way in which Vivaldi creates **contrast between the sections**.
+
+### Rhythmic Features:
+- **Bar 73-4** features **syncopation**, used frequently in the following bars
+
+---
+
+## 🔊 Dynamics
+
+Baroque composers often did not write dynamic markings into their scores. This was because they were either leading the performances and could tell the instrumentalists how to play or because musicians at the time knew the expected conventions.
+
+### Terraced Dynamics:
+Baroque music is famous for using **terraced dynamics**, where there are sudden changes from loud to quiet or vice versa. There is an example of this right at the start of the movement, where Vivaldi marks the repeat of the opening material to be played **piano**, followed by a return to **forte** at the end of bar 6, etc.
+
+Different performances will offer their own interpretation of the music, particularly with regard to dynamics and learners could compare the different versions.
+
+---
+
+## 🎭 Texture
+
+Baroque music is often associated with **polyphonic or contrapuntal textures** and there are examples in this movement such as **Episode 1**. This also makes use of **imitation**, with the solo 1st violin imitating the soloist two bars later. However, the **opening of the movement is homophonic**. There are also moments of **monophony**, such as bars 47 and 50.
+
+### Textural Variety:
+- The **episodes** usually feature **fewer instruments** – just the three solo violins in Episode 1, three solo violins and cello in Episode 4
+- However, **Episode 2** uses the **whole orchestra** (with the soloist doubling the 1st violin part)
+- **Episode 3** alternates soloist and orchestra, before they come together
+
+---
+
+## 🎻 Performance Techniques
+
+The solo violinist and the orchestra make use of a range of techniques, including:
+- **Tremolo** (bar 44)
+- Significant use of **ornamentation**, as frequently found in Baroque music; here it is used to suggest birdsong
+- Throughout the concerto the **solo part is much more virtuosic** than that of the orchestra and is generally at a **higher pitch**
+
+`,
     longDescription_zh: `**《四季》(Le quattro stagioni): 概述**
 
 维瓦尔第的《四季》是一套四首小提琴协奏曲，每首都代表一年中的一个季节。它于1725年出版，作为一套名为**《和声与创意的较量》(Il cimento dell'armonia e dell'inventione)**，作品8的十二首协奏曲集中的前四首。
@@ -67,7 +147,5 @@ This movement is a wonderful example of how Vivaldi used **ritornello form**, wh
 
 这个乐章是维瓦尔第如何运用**利都奈罗曲式**的绝佳范例，其中主要的管弦乐主题与描绘伴随十四行诗中特定场景的对比性独奏插段交替出现。你会注意到整个管弦乐队（全体/协奏部）与独奏小提琴（或一小组独奏小提琴）之间的清晰对比。`,
     quiz: vivaldiSpringMvt1Quiz,
-    children: [
-        tonalityTerm,
-    ]
+    children: []
 };

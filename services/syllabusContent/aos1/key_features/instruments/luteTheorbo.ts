@@ -13,6 +13,16 @@ export const luteTheorboTerm: SyllabusItem = {
 
 The lute family of instruments, with their delicate, plucked sound, played a significant role in the Baroque era, especially in chamber music and as continuo instruments.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dC4AWu8IT58" title="Learning the Lute!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Learning the Lute! - Introduction to lute playing and techniques*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7Nwg8gfVBUo" title="The Theorbo in 60 Seconds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*The Theorbo in 60 Seconds - Quick introduction to the theorbo*
+
 **The Lute:**
 The lute is a plucked string instrument with a deep, rounded back (like a halved pear), a fretted neck, and a distinctive pegbox bent back at an angle. It was a highly respected instrument, with a rich history stretching back through the Renaissance. In the Baroque period, it was used for both intricate solo music and for accompanying singers.
 

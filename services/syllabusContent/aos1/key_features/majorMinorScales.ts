@@ -47,7 +47,17 @@ The minor scale is often described as sounding **sad, serious, or dramatic**. Th
         *   **Descending:** A-**G**-**F**-E-D-C-B-A (same as natural minor)
 
 **Why was this important in the Baroque Era?**
-The clear distinction between major and minor scales allowed composers to create strong emotional contrasts (see **Doctrine of Affections**). The system of keys, built on these scales, provided a logical framework for harmony and modulation, allowing for the construction of large, coherent musical forms like concertos, fugues, and operas. The development of the harmonic minor scale, in particular, was vital for creating the strong tonic-dominant relationships that drive Baroque music forward.`,
+The clear distinction between major and minor scales allowed composers to create strong emotional contrasts (see **Doctrine of Affections**). The system of keys, built on these scales, provided a logical framework for harmony and modulation, allowing for the construction of large, coherent musical forms like concertos, fugues, and operas. The development of the harmonic minor scale, in particular, was vital for creating the strong tonic-dominant relationships that drive Baroque music forward.
+
+**Educational Videos**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cEpviZfJ1os" title="Major And Minor Scales Simply Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*This video by Roger Simon provides a clear and simple explanation of major and minor scales, perfect for understanding the fundamental differences between these two essential scale types.*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rxaNn1gXg-E" title="Minor Scales - Everything You Need To Know In 7 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*Brad Harrison Music delivers a comprehensive overview of minor scales in just 7 minutes, covering natural, harmonic, and melodic minor scales with clear examples.*`,
     longDescription_zh: `**大调与小调音阶：综合指南**
 
 巴洛克时期是一个关键时期，**大小调体系**成为组织音乐的主要方式，逐渐取代了旧的教会调式体系。这个体系的基石是大调和小调音阶。理解它们是理解巴洛克和声与旋律的关键。
@@ -86,6 +96,16 @@ The clear distinction between major and minor scales allowed composers to create
         *   **下行：** A-**G**-**F**-E-D-C-B-A（与自然小调相同）
 
 **为什么这在巴洛克时期很重要？**
-大调和小调音阶之间的清晰区别使作曲家能够创造强烈的情感对比（见**情感论**）。建立在这些音阶上的调性体系为和声和转调提供了逻辑框架，允许构建像协奏曲、赋格曲和歌剧这样的大型、连贯的音乐形式。特别是和声小调音阶的发展，对于创造驱动巴洛克音乐前进的强烈主-属关系至关重要。`,
+大调和小调音阶之间的清晰区别使作曲家能够创造强烈的情感对比（见**情感论**）。建立在这些音阶上的调性体系为和声和转调提供了逻辑框架，允许构建像协奏曲、赋格曲和歌剧这样的大型、连贯的音乐形式。特别是和声小调音阶的发展，对于创造驱动巴洛克音乐前进的强烈主-属关系至关重要。
+
+**Educational Videos**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cEpviZfJ1os" title="Major And Minor Scales Simply Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*This video by Roger Simon provides a clear and simple explanation of major and minor scales, perfect for understanding the fundamental differences between these two essential scale types.*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rxaNn1gXg-E" title="Minor Scales - Everything You Need To Know In 7 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*Brad Harrison Music delivers a comprehensive overview of minor scales in just 7 minutes, covering natural, harmonic, and melodic minor scales with clear examples.*`,
     quiz: majorMinorScalesQuiz
 };

@@ -30,7 +30,17 @@ Suspensions are named by the numeric intervals formed between the suspended note
 *   **2-3 Suspension (Bass Suspension):** This is a less common type where the dissonant note is in the bass and resolves *upwards* by step.
 
 **Why are they so important in Baroque music?**
-Composers like Bach and Handel used suspensions constantly. They are a fundamental part of the contrapuntal language of the era. They add emotional depth, highlight important words in vocal music (word-painting), and create a smooth, flowing harmonic progression. Listening for suspensions is a key way to appreciate the intricate beauty and emotional power of Baroque harmony.`,
+Composers like Bach and Handel used suspensions constantly. They are a fundamental part of the contrapuntal language of the era. They add emotional depth, highlight important words in vocal music (word-painting), and create a smooth, flowing harmonic progression. Listening for suspensions is a key way to appreciate the intricate beauty and emotional power of Baroque harmony.
+
+**Educational Videos:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/et76eSnkCP8" title="Music Theory Tip: Suspensions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This video by Deciphering Guitar and Music Theory provides a clear explanation of how suspensions work in music theory, demonstrating the three-step process and their emotional impact.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LmdTdM1gHks" title="Suspension or Appoggiatura? - Music Theory" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This video by Music Matters explores the difference between suspensions and appoggiaturas, helping you understand these related but distinct harmonic devices.`,
     longDescription_zh: `**悬留音：综合指南**
 
 **悬留音**是巴洛克音乐中最常见和最具表现力的和声手法之一。它是一种不协和音，能创造一个紧张的瞬间，然后以令人满意的方式解决，通常产生一种“渴望”或凄美的声音。一个真正的悬留音总是遵循一个三步模式：
@@ -52,6 +62,16 @@ Composers like Bach and Handel used suspensions constantly. They are a fundament
 *   **2-3 悬留音（低音悬留音）：** 这是一种较不常见的类型，其中不协和音符在低音部，并*向上*级进解决。
 
 **为什么它们在巴洛克音乐中如此重要？**
-像巴赫和亨德尔这样的作曲家经常使用悬留音。它们是那个时代对位语言的基本组成部分。它们增加了情感深度，在声乐中突出了重要的词语（音画法），并创造了平滑、流动的和声进行。聆听悬留音是欣赏巴洛克和声错综复杂之美和情感力量的关键方式。`,
+像巴赫和亨德尔这样的作曲家经常使用悬留音。它们是那个时代对位语言的基本组成部分。它们增加了情感深度，在声乐中突出了重要的词语（音画法），并创造了平滑、流动的和声进行。聆听悬留音是欣赏巴洛克和声错综复杂之美和情感力量的关键方式。
+
+**教学视频：**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/et76eSnkCP8" title="Music Theory Tip: Suspensions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+这个由Deciphering Guitar and Music Theory制作的视频清楚地解释了悬留音在音乐理论中的工作原理，演示了三步过程及其情感影响。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LmdTdM1gHks" title="Suspension or Appoggiatura? - Music Theory" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+这个由Music Matters制作的视频探讨了悬留音和倚音之间的区别，帮助您理解这些相关但不同的和声手法。`,
     quiz: suspensionTermQuiz
 };

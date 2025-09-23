@@ -20,6 +20,16 @@ export const introductionPage: SyllabusItem = {
 
 The Baroque period, spanning roughly from 1600 to 1750, was a time of immense artistic, scientific, and social change in Europe. Its music is known for its grandeur, drama, and elaborate ornamentation. The word "Baroque" itself comes from the Portuguese "barroco," meaning an irregularly shaped pearl, initially used to describe the ornate and sometimes extravagant art and architecture of the time.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/otpFHNpC290" title="The Baroque Period | Music History Video Lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*The Baroque Period | Music History Video Lesson - Liberty Park Music*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MfhScDOZ9wU" title="Introduction to Baroque Music! | Kids Music Lessons | Music History" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Introduction to Baroque Music! | Kids Music Lessons | Music History - Music with Meg*
+
 **Historical Context: A World in Transition**
 
 Understanding Baroque music is enhanced by knowing what else was happening:

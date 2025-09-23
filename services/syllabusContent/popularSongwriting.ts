@@ -3,6 +3,7 @@ import { popularSongwritingQuiz } from '../quizzes/popularSongwriting';
 import { popularSongwritingMelody, popularSongwritingLyrics } from './popularSongwritingMelody';
 import { popularSongwritingHarmony, popularSongwritingRhythm } from './popularSongwritingHarmony';
 import { popularSongwritingProduction, popularSongwritingPractice } from './popularSongwritingProduction';
+import { popularSongwritingPlanning } from './popularSongwritingPlanning';
 
 // Overview will be defined at the end after all individual items
 
@@ -879,16 +880,17 @@ export const popularSongwritingOverview: SyllabusItem = {
 
 ## Course Structure
 
-This comprehensive guide is organized into eight main sections:
+This comprehensive guide is organized into nine main sections:
 
-1. **[Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals)**
-2. **[Song Structure & Form](/coursework/composing/composition-2/structure)**
-3. **[Melody Composition](/coursework/composing/composition-2/melody)**
-4. **[Lyric Writing](/coursework/composing/composition-2/lyrics)**
-5. **[Harmony & Chord Progressions](/coursework/composing/composition-2/harmony)**
-6. **[Rhythm & Tempo](/coursework/composing/composition-2/rhythm)**
-7. **[Arrangement & Production](/coursework/composing/composition-2/production)**
-8. **[Case Studies & Exercises](/coursework/composing/composition-2/practice)**
+1. **[Planning for your Song](/coursework/composing/composition-2/planning)**
+2. **[Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals)**
+3. **[Song Structure & Form](/coursework/composing/composition-2/structure)**
+4. **[Melody Composition](/coursework/composing/composition-2/melody)**
+5. **[Lyric Writing](/coursework/composing/composition-2/lyrics)**
+6. **[Harmony & Chord Progressions](/coursework/composing/composition-2/harmony)**
+7. **[Rhythm & Tempo](/coursework/composing/composition-2/rhythm)**
+8. **[Arrangement & Production](/coursework/composing/composition-2/production)**
+9. **[Case Studies & Exercises](/coursework/composing/composition-2/practice)**
 
 ## Assessment Focus
 
@@ -924,7 +926,7 @@ This course combines:
 
 ---
 
-**Ready to begin your songwriting journey?** Start with the [Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals) to build your foundation, or jump to any section that interests you most.
+**Ready to begin your songwriting journey?** Start with [Planning for your Song](/coursework/composing/composition-2/planning) to organize your timeline and approach, then move to the [Fundamentals of Popular Song](/coursework/composing/composition-2/fundamentals) to build your foundation, or jump to any section that interests you most.
 
 *Remember: Great songwriting combines craft with creativity. Master the techniques, then use them to express your unique artistic vision.*`,
   
@@ -953,19 +955,21 @@ This course combines:
 
 ## 课程结构
 
-这个综合指南分为八个主要部分：
+这个综合指南分为九个主要部分：
 
-1. **[流行歌曲基础](/coursework/composing/composition-2/fundamentals)**
-2. **[歌曲结构与形式](/coursework/composing/composition-2/structure)**
-3. **[旋律创作](/coursework/composing/composition-2/melody)**
-4. **[歌词创作](/coursework/composing/composition-2/lyrics)**
-5. **[和声与和弦进行](/coursework/composing/composition-2/harmony)**
-6. **[节奏与速度](/coursework/composing/composition-2/rhythm)**
-7. **[编曲与制作](/coursework/composing/composition-2/production)**
-8. **[案例研究与练习](/coursework/composing/composition-2/practice)**`,
+1. **[歌曲规划](/coursework/composing/composition-2/planning)**
+2. **[流行歌曲基础](/coursework/composing/composition-2/fundamentals)**
+3. **[歌曲结构与形式](/coursework/composing/composition-2/structure)**
+4. **[旋律创作](/coursework/composing/composition-2/melody)**
+5. **[歌词创作](/coursework/composing/composition-2/lyrics)**
+6. **[和声与和弦进行](/coursework/composing/composition-2/harmony)**
+7. **[节奏与速度](/coursework/composing/composition-2/rhythm)**
+8. **[编曲与制作](/coursework/composing/composition-2/production)**
+9. **[案例研究与练习](/coursework/composing/composition-2/practice)**`,
   
   quiz: popularSongwritingQuiz,
   children: [
+    popularSongwritingPlanning,
     popularSongwritingFundamentals,
     popularSongwritingStructure,
     popularSongwritingMelody,

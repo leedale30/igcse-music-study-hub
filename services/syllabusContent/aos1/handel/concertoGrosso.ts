@@ -11,7 +11,86 @@ export const handelConcertoGrossoPage: SyllabusItem = {
     content_zh: '学习亨德尔的大协奏曲，作品6第五号。',
     longDescription: `**Handel: Concerto Grosso in D major, Op. 6, No. 5, HWV 323 – A Comprehensive Guide**
 
-Handel's Concerto Grosso Op. 6, No. 5 in D major is a vibrant example of this important Baroque genre. Published in 1739 as part of a set of twelve, these concertos were written rapidly, showcasing Handel's fluency and mastery. They follow the Corellian model of a **concertino** (small group of soloists – typically two violins and a cello) contrasting with the **ripieno** (the main orchestral body – strings and continuo).
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4ISLEvMU9jY?si=abc123&start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Watch this performance of Handel's Concerto Grosso Op. 6 No. 5 to hear the interplay between the concertino and ripieno groups, and observe the characteristic Baroque style and ornamentation.*
+
+## About Handel (1685–1759)
+
+Born in Germany, Handel moved to England in 1712 and became one of the most celebrated Baroque composers. He is known for works in a wide variety of genres including operas, oratorios and concertos. His works show both German and Italian influences, creating a distinctive cosmopolitan style that made him hugely popular in London society.
+
+## The Concerto Grosso Genre
+
+The Baroque concerto grosso preceded the solo concerto and contrasts a group of soloists (known as the **concertino**) with the accompanying ensemble (referred to as the **ripieno** or **tutti**). A concerto grosso usually has four or more movements, sometimes including fugal writing, ternary, binary and ritornello form.
+
+## Concerti Grossi Op. 6 (HWV 319–330)
+
+Handel's set of 12 concerti grossi were written to be played during performances of his oratorios and other larger works and incorporate a wide variety of musical styles in the different movements. The music was composed during the autumn of 1739, but as was common in the Baroque era, Handel reused some material from earlier works in the concertos. The concertos follow the model of Corelli.
+
+## Concerto Grosso in D major Op. 6, No. 5 (HWV 323)
+
+### Instrumentation
+This concerto is scored for:
+- **Concertino**: Two solo violins and solo cello
+- **Ripieno**: Strings and continuo
+- **Additional**: Two oboes and bassoon (used only in some movements)
+
+As in solo concertos, the soloists sometimes play with the ensemble and sometimes separately. Unlike Vivaldi's concerto, the solo lines are not particularly virtuosic, though the solo cello does play high enough to be notated in the tenor clef in some editions (in the Largo fourth movement).
+
+### Movement 1: Larghetto e staccato
+
+This first movement was based on the opening movement of Handel's overture for the *Ode to St Cecilia's Day*. It is in the style of a **Baroque French overture**, incorporating the stereotypical features including a slow, majestic opening section, with dotted rhythms, followed by a faster main section in fugal style (here this is the second movement).
+
+**Key Features:**
+- **Texture**: After an unusual monophonic opening from the concertino 1st violin, the two solo violinists play with the ripieno 1st violins while the solo cello doubles the bass line, giving a homophonic texture throughout
+- **Melody**: Features many scalic passages and ornaments (trills are notated; other ornaments may be added in performance)
+- **Harmony**: From the tonic key of D major modulates to the dominant (A major) at bar 16
+- **Rhythm**: Dotted rhythms characteristic of French overture style. Bars 22–23 are a **hemiola**, where the notated two groups of three beats are felt as three groups of two beats
+- **Cadences**: Bars 23–24 are a perfect cadence using the Ic-V-I progression and include an anticipation for the final note in the solo and 1st violins
+- **Pedal**: Since the movement ends in A major, the pedal note heard in bars 19–21 is a dominant pedal (the note E)
+
+### Movement 2: Allegro
+
+This movement is the expected second part of the French overture, in **fugal style**.
+
+**Structure and Texture:**
+- **Subject**: The four-bar subject is introduced by the solo 1st ripieno 1st violins monophonically
+- **Answer**: At bar 5 the solo and ripieno 2nd violins enter with the answer (the music of the subject repeated a fourth lower in the dominant) while the 1st violins play a countersubject, creating a two-part polyphonic texture
+- **Development**: At bar 9 the solo cello and violas have the subject again, sometimes in unison, sometimes an octave apart with the violins playing polyphonically and the continuo playing a simplified version of the subject
+- **Solo Sections**: At bar 15 the texture reduces to just soloists and continuo cello (Tasto solo indicates that the harpsichord does not play), taking bar 3 of the subject and playing it in imitation half a bar apart
+- **Alternation**: This alternation of solo and tutti sections continues throughout the movement. At times the writing is more homophonic, with the violins playing in thirds over a bass line (e.g. bars 35–36)
+
+**Musical Elements:**
+- **Rhythm and Tempo**: Remains at the expected fast tempo throughout, which together with the fast-moving semiquavers and syncopation, drive the music forward
+- **Tonality**: With the preceding movement ending in the dominant key of A major, this movement returns immediately to the tonic, but with frequent modulations to related keys, many to the dominant but also to E minor at bar 31, E major at bar 34 and B minor at bar 44
+- **Harmony**: The mainly polyphonic texture keeps the movement flowing, but there are frequent perfect cadences and an imperfect cadence in bar 14. Examples of suspensions (e.g. 1st violin bars 18–20) and pedal notes (e.g. bar 14 onwards)
+- **Melody**: Much of the melodic material is derived from the opening four-bar subject, which involves a great deal of stepwise movement. Although the treble melodies do not really feature sequences, there is a descending sequence in the bass in bars 11–12
+
+### Movement 4: Largo
+
+This slow movement includes the oboes and bassoon and alternates between solo and tutti passages.
+
+**Key Features:**
+- **Instrumentation**: In tutti passages the 1st and 2nd oboe and 1st and 2nd solo violins double the 1st and 2nd ripieno violins
+- **Texture**: Frequent examples of imitation (e.g. bars 1–2 between the solo violins), giving a polyphonic texture, but also homophonic and monophonic textures (e.g. bars 14–16)
+- **Rhythm**: In this triple time movement, there are examples of hemiola before most cadences
+- **Character**: The generally descending line in the violins (in contrary motion with the bass) adds to the air of sadness created by the slower tempo and the minor key (the relative minor of B minor) and the use of suspensions
+- **Ornamentation**: Trills are frequently indicated
+- **Ending**: At the end of the movement there is striking use of silence. The movement ends with a **Phrygian cadence**: an imperfect cadence where the bass descends by a semitone. The two chords involved are IVb–V. This was common in Baroque movements in a minor key and linked one movement and the next
+
+### Movement 6: Menuet – un poco larghetto
+
+It is thought that this movement was added to the concerto just before publication.
+
+**Characteristics:**
+- **Form**: Exhibits many typical features of a minuet: triple time, a moderately fast tempo and sections which are repeated (though there are more than frequently found in such movements)
+- **Instrumentation**: The wind are still present (both oboes doubling the 1st violins) and the key has returned to the tonic of D major
+- **Texture**: It is tutti throughout, with no separate parts for the concertino
+- **Dynamics**: Terraced dynamics are indicated in the score
+
+## Performance Practice
+
+In performances learners may notice that the dotted notes are played 'double dotted', as would have been done in the Baroque period. The notated dotted crotchet followed by a demisemiquaver rest also creates the idea of double dotting. Ornamentation is not always marked on the score and the fast tempo means that there is not always time to add it, but some performances may do soists – typically two violins and a cello) contrasting with the **ripieno** (the main orchestral body – strings and continuo).
 
 **Overall Characteristics:**
 *   **Key:** D major, a bright and often festive key in the Baroque, suitable for strings and often associated with trumpets (though none are used here).
@@ -63,6 +142,10 @@ Handel's Concerto Grosso Op. 6, No. 5 in D major is a vibrant example of this im
     *   Homophonic texture.
     *   The movement provides a light and courtly conclusion to the concerto.`,
     longDescription_zh: `**亨德尔：D大调大协奏曲，作品6第五号，HWV 323 – 综合指南**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4ISLEvMU9jY?si=abc123&start=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*观看这场亨德尔大协奏曲作品6第五号的演出，聆听主奏部与协奏部之间的相互作用，并观察巴洛克风格的特色和装饰音。*
 
 亨德尔的D大调大协奏曲作品6第五号是这一重要巴洛克体裁的生动范例。这套十二首协奏曲于1739年出版，创作速度极快，展示了亨德尔的流畅与精湛技艺。它们遵循科雷利的模式，即一个**主奏部**（一小组独奏者——通常是两把小提琴和一把大提琴）与**协奏部**（主要的管弦乐队——弦乐和通奏低音）形成对比。
 

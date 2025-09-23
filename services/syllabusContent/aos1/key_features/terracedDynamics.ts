@@ -29,7 +29,17 @@ Composers used several techniques to create terraced dynamics:
 
 **Examples in Focus Works:**
 *   **Vivaldi's "Spring," Mvt. 1:** Listen for the contrast between the loud tutti sections playing the main "Spring" theme and the softer solo episodes depicting birdsong or murmuring streams.
-*   **Handel's Concerto Grosso Op. 6, No. 5:** The entire structure is built on the dynamic contrast between the loud ripieno and the softer concertino.`,
+*   **Handel's Concerto Grosso Op. 6, No. 5:** The entire structure is built on the dynamic contrast between the loud ripieno and the softer concertino.
+
+**Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vvauDflFuv0" title="What Is Terraced Dynamics? - Classical Serenade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*What Is Terraced Dynamics? - Classical Serenade - Understanding sudden dynamic changes in Baroque compositions*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RyRlNXY1YQM" title="How to Utilize Terraced Dynamics in Piano Playing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How to Utilize Terraced Dynamics in Piano Playing - Practical application of terraced dynamics in performance*`,
     longDescription_zh: `**阶梯式力度：综合指南**
 
 **什么是阶梯式力度？**

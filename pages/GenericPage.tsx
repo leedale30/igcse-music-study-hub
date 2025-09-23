@@ -85,6 +85,32 @@ const renderFormattedText = (text: string): React.ReactNode => {
     return <div dangerouslySetInnerHTML={{ __html: text }} />;
   }
   
+  // Handle horizontal dividers (---)
+  // Note: This is now handled at block level in renderDescriptionBlock
+  
+  // Handle Markdown checkboxes
+  // Note: Block-level handling is done in renderDescriptionBlock
+  const checkboxMatch = text.match(/^(\s*)-\s*\[\s*\]\s*(.*)$/);
+  if (checkboxMatch) {
+    const indent = checkboxMatch[1];
+    const content = checkboxMatch[2];
+    const indentLevel = Math.floor(indent.length / 2); // 2 spaces = 1 indent level
+    const marginLeft = indentLevel * 1.5; // 1.5rem per indent level
+    
+    return (
+      <div className="flex items-start gap-2 mb-2" style={{ marginLeft: `${marginLeft}rem` }}>
+        <input 
+          type="checkbox" 
+          disabled 
+          className="mt-1 h-4 w-4 text-sky-600 border-gray-300 rounded focus:ring-sky-500 dark:border-gray-600 dark:bg-gray-700" 
+        />
+        <span className="text-base text-gray-700 dark:text-gray-300">
+          {renderFormattedText(content)}
+        </span>
+      </div>
+    );
+  }
+  
   // Handle Markdown headings
   if (text.startsWith('#')) {
     const headingMatch = text.match(/^(#{1,6})\s+(.+)$/);
@@ -101,21 +127,23 @@ const renderFormattedText = (text: string): React.ReactNode => {
       };
       
       switch(level) {
-        case 1: return <h1 className={headingClasses[1]}>{content}</h1>;
-        case 2: return <h2 className={headingClasses[2]}>{content}</h2>;
-        case 3: return <h3 className={headingClasses[3]}>{content}</h3>;
-        case 4: return <h4 className={headingClasses[4]}>{content}</h4>;
-        case 5: return <h5 className={headingClasses[5]}>{content}</h5>;
-        case 6: return <h6 className={headingClasses[6]}>{content}</h6>;
-        default: return <h6 className={headingClasses[6]}>{content}</h6>;
+        case 1: return <h1 className={headingClasses[1]}>{renderFormattedText(content)}</h1>;
+        case 2: return <h2 className={headingClasses[2]}>{renderFormattedText(content)}</h2>;
+        case 3: return <h3 className={headingClasses[3]}>{renderFormattedText(content)}</h3>;
+        case 4: return <h4 className={headingClasses[4]}>{renderFormattedText(content)}</h4>;
+        case 5: return <h5 className={headingClasses[5]}>{renderFormattedText(content)}</h5>;
+        case 6: return <h6 className={headingClasses[6]}>{renderFormattedText(content)}</h6>;
+        default: return <h6 className={headingClasses[6]}>{renderFormattedText(content)}</h6>;
       }
     }
   }
   
-  const parts = text.split(/(\*\*.*?\*\*)/g); 
+  // Improved bold text handling with better regex
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, index) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={index}>{part.substring(2, part.length - 2)}</strong>;
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+      const boldContent = part.substring(2, part.length - 2);
+      return <strong key={index}>{boldContent}</strong>;
     }
     return part; 
   });
@@ -147,17 +175,38 @@ const renderDescriptionBlock = (block: string, keyPrefix: string): React.ReactNo
                 currentListItemsContent = [];
             }
             if (line.trim()) {
-                // Check if the line contains HTML content (like iframe)
-                if (line.trim().includes('<iframe')) {
+                // Check if the line is a header (starts with #)
+                const trimmedLine = line.trim();
+                if (trimmedLine.match(/^#{1,6}\s/)) {
+                    // Render header directly without wrapping in <p>
+                    elements.push(
+                        <div key={`${keyPrefix}-header-${lineIndex}`} className="mb-4">
+                            {renderFormattedText(trimmedLine)}
+                        </div>
+                    );
+                } else if (trimmedLine === '---') {
+                    // Handle horizontal dividers at block level to avoid nesting in <p>
+                    elements.push(
+                        <hr key={`${keyPrefix}-divider-${lineIndex}`} className="my-6 border-gray-300 dark:border-gray-600" />
+                    );
+                } else if (trimmedLine.startsWith('- [ ]')) {
+                    // Handle checkboxes at block level to avoid nesting in <p>
+                    elements.push(
+                        <div key={`${keyPrefix}-checkbox-${lineIndex}`} className="mb-4">
+                            {renderFormattedText(trimmedLine)}
+                        </div>
+                    );
+                } else if (trimmedLine.includes('<iframe')) {
+                    // Check if the line contains HTML content (like iframe)
                     elements.push(
                         <div key={`${keyPrefix}-html-${lineIndex}`} className="mb-4">
-                            {renderFormattedText(line.trim())}
+                            {renderFormattedText(trimmedLine)}
                         </div>
                     );
                 } else {
                     elements.push(
                         <p key={`${keyPrefix}-para-${lineIndex}`} className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
-                            {renderFormattedText(line.trim())}
+                            {renderFormattedText(trimmedLine)}
                         </p>
                     );
                 }

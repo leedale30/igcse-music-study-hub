@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import Layout from '../components/Layout'
 import { getInstrumentFamily, getInstrumentsByFamily } from '../data/instruments'
 
 const FamilyPage: React.FC = () => {
@@ -10,22 +9,19 @@ const FamilyPage: React.FC = () => {
 
   if (!family) {
     return (
-      <Layout>
-        <div className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold text-center">Family not found</h1>
-          <div className="text-center mt-4">
-            <Link to="/instruments" className="text-[var(--primary-500)] hover:underline">
-              Return to Instruments Page
-            </Link>
-          </div>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-center">Family not found</h1>
+        <div className="text-center mt-4">
+          <Link to="/instruments" className="text-[var(--primary-500)] hover:underline">
+            Return to Instruments Page
+          </Link>
         </div>
-      </Layout>
+      </div>
     )
   }
 
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Link to="/instruments" className="text-[var(--primary-500)] hover:underline inline-flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
@@ -83,7 +79,6 @@ const FamilyPage: React.FC = () => {
           </div>
         )}
       </div>
-    </Layout>
   )
 }
 

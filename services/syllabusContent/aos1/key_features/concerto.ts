@@ -16,6 +16,20 @@ export const concertoTerm: SyllabusItem = {
 
 The concerto was arguably the most important and popular instrumental genre of the Baroque era. Its development was driven by the **concertato principle**, which is the idea of contrasting different groups of instruments. A concerto is essentially a musical conversation or friendly competition between a soloist or a small group of soloists and a larger orchestra.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ej6Ql-Ej6Ql" title="Concerto - Baroque Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Concerto - Baroque Music - Understanding the concerto form*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/concerto-grosso-explained" title="Concerto Grosso Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Concerto Grosso Explained - The large concerto form*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/solo-concerto-baroque" title="Solo Concerto in Baroque Period" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Solo Concerto in Baroque Period - Single instrument concertos*
+
 There were two main types of concerto in the Baroque period:
 
 **1. The Solo Concerto**

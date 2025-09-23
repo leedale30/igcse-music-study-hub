@@ -13,6 +13,12 @@ export const violaDaGambaTerm: SyllabusItem = {
 
 The viola da gamba, or simply 'viol', is a family of bowed, fretted string instruments that were popular during the Renaissance and Baroque periods. While they may resemble the modern cello, they belong to a separate family with distinct characteristics.
 
+**📺 Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tloRQ0fhl-4" title="Viola da Gamba Tutorial No. 1: Relaxed Bow-Hold | with Sam Stadlen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Viola da Gamba Tutorial No. 1: Relaxed Bow-Hold | with Sam Stadlen - Basic technique for playing the viola da gamba*
+
 **Physical Characteristics:**
 *   **Holding Position:** The name "viola da gamba" is Italian for "viol for the leg." The instruments are held upright on the lap or between the legs.
 *   **Frets:** Unlike instruments of the violin family, viols have frets (like a guitar) made of gut tied around the neck. This gives the notes a clearer, more precise starting point.

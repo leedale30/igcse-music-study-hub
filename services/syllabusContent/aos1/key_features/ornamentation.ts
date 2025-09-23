@@ -32,7 +32,17 @@ Ornamentation was a vital and expected part of Baroque performance practice. It 
 
 *   **Acciaccatura ("Crushed note"):** A very fast, crushed note played as quickly as possible before the main note. It is often indicated by a small grace note with a slash through it. It adds a sharp accent.
 
-Understanding and recognizing these ornaments is crucial for appreciating the detailed and expressive surface of Baroque music.`,
+Understanding and recognizing these ornaments is crucial for appreciating the detailed and expressive surface of Baroque music.
+
+**Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eTunVO6TuJ4" title="How to Play Ornaments on the Piano - Music Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How to Play Ornaments on the Piano - Music Performance by Music Matters - A comprehensive guide to playing ornaments including trills, turns, mordents, appoggiaturas, and acciaccaturas*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kekPyeLa8tM" title="Baroque Ornamentation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Baroque Ornamentation Tutorial by Bridget Mermikides - Practical demonstration of Baroque ornamentation techniques using Bach's Aria from Goldberg Variations*`,
     longDescription_zh: `**装饰音：综合指南**
 
 装饰音是巴洛克时期演奏实践中至关重要且被期待的一部分。它指的是用各种音型来装饰或修饰旋律线条的过程，为音乐增添风采、表现力和技巧性。虽然有些装饰音由作曲家写入乐谱，但许多是由演奏者即兴创作的，他们被期望了解该风格的惯例。
@@ -56,6 +66,16 @@ Understanding and recognizing these ornaments is crucial for appreciating the de
 
 *   **短倚音（“碎音”）：** 在主音前尽可能快地演奏的一个非常快速的碎音。它通常用一个带有斜线的小装饰音符表示。它增加了一个尖锐的重音。
 
-理解和识别这些装饰音对于欣赏巴洛克音乐细致且富有表现力的表面至关重要。`,
+理解和识别这些装饰音对于欣赏巴洛克音乐细致且富有表现力的表面至关重要。
+
+**视频资源：**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eTunVO6TuJ4" title="How to Play Ornaments on the Piano - Music Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*钢琴装饰音演奏方法 - 音乐表演 by Music Matters - 包括颤音、回音、波音、倚音和短倚音的综合演奏指南*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kekPyeLa8tM" title="Baroque Ornamentation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*巴洛克装饰音教程 by Bridget Mermikides - 使用巴赫《哥德堡变奏曲》咏叹调的巴洛克装饰音技巧实践演示*`,
     quiz: ornamentationTermQuiz
 };

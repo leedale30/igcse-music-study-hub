@@ -116,7 +116,17 @@ Vivaldi's "Spring" first movement is a classic example of Ritornello Form integr
     *   **Instrumental Riffs/Hooks:** A distinctive and recurring instrumental phrase (e.g., a guitar riff in a rock song, a synth hook in an electronic piece) that appears at the beginning, end, or between sections can function like a very concise ritornello, providing a recognizable point of return. Example: The main guitar riff in "Smoke on the Water" by Deep Purple.
 
 **Conclusion:**
-Ritornello Form was a foundational structure in the Baroque era, especially for creating dynamic and engaging concerto movements. Its principle of alternating a stable, recurring orchestral section with contrasting, developmental solo episodes provided a flexible yet coherent framework. While its strict application waned after the Baroque, its influence on concerto development in the Classical era was significant, and the underlying concept of a recurring "refrain" punctuating varied sections can be seen as an enduring musical idea across many genres and periods.`,
+Ritornello Form was a foundational structure in the Baroque era, especially for creating dynamic and engaging concerto movements. Its principle of alternating a stable, recurring orchestral section with contrasting, developmental solo episodes provided a flexible yet coherent framework. While its strict application waned after the Baroque, its influence on concerto development in the Classical era was significant, and the underlying concept of a recurring "refrain" punctuating varied sections can be seen as an enduring musical idea across many genres and periods.
+
+**Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3i3a0kEI7CA" title="Ritornello Form" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Ritornello Form by Samantha Inman - Dr. Samantha M. Inman discusses the features ritornello form, including common genres*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VtS5kkndrS4" title="MUS 110 - Concerto Grosso (and Ritornello Form) Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*MUS 110 - Concerto Grosso (and Ritornello Form) Explained by chriswrightmusic - Explains the concepts and terms associated with the Concerto Grosso and Ritornello Form*`,
     longDescription_zh: `**利都奈罗曲式：综合指南**
 
 **什么是利都奈罗曲式？**

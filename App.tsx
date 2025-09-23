@@ -20,8 +20,8 @@ import AchievementsPage from './pages/AchievementsPage';
 import AccountSettingsPage from './pages/AccountSettingsPage';
 import PresentationPage from './pages/PresentationPage';
 import AudioPlayerTestPage from './pages/AudioPlayerTestPage';
-import InstrumentsPage from './pages/InstrumentsPage';
-import InstrumentDetailPage from './pages/InstrumentDetailPage';
+import InstrumentsListPage from './src/pages/InstrumentsListPage';
+import InstrumentPage from './src/pages/InstrumentPage';
 import FamilyPage from './pages/FamilyPage';
 import ListeningExamsPage from './pages/ListeningExamsPage';
 import MelodyExamPage from './pages/MelodyExamPage';
@@ -58,38 +58,6 @@ const App: React.FC = () => {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 
-                {/* Protected routes without layout */}
-                <Route path="/dashboard" element={
-                  <ProtectedRoute>
-                    <DashboardPage />
-                  </ProtectedRoute>
-                } />
-                <Route path="/profile-setup" element={
-                  <ProtectedRoute>
-                    <ProfileSetupPage />
-                  </ProtectedRoute>
-                } />
-                <Route path="/admin" element={
-                  <ProtectedRoute>
-                    <AdminDashboardPage />
-                  </ProtectedRoute>
-                } />
-                <Route path="/achievements" element={
-                  <ProtectedRoute>
-                    <AchievementsPage />
-                  </ProtectedRoute>
-                } />
-                <Route path="/account-settings" element={
-                  <ProtectedRoute>
-                    <AccountSettingsPage />
-                  </ProtectedRoute>
-                } />
-                <Route path="/presentations" element={
-                  <ProtectedRoute>
-                    <PresentationPage />
-                  </ProtectedRoute>
-                } />
-                
                 {/* Main app routes (with layout and protection) */}
                 <Route element={
                   <ProtectedRoute>
@@ -97,6 +65,12 @@ const App: React.FC = () => {
                   </ProtectedRoute>
                 }>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/dashboard" element={<DashboardPage />} />
+                  <Route path="/profile-setup" element={<ProfileSetupPage />} />
+                  <Route path="/admin" element={<AdminDashboardPage />} />
+                  <Route path="/achievements" element={<AchievementsPage />} />
+                  <Route path="/account-settings" element={<AccountSettingsPage />} />
+                  <Route path="/presentations" element={<PresentationPage />} />
                   <Route path="/test" element={<TestPage />} />
                   <Route path="/audio-test" element={<AudioPlayerTestPage />} />
                   <Route path="/tools/metronome" element={<MetronomePage />} />
@@ -106,8 +80,8 @@ const App: React.FC = () => {
                   <Route path="/tools/bemol-ear-training" element={<BemolEarTrainingPage />} />
                   <Route path="/tools/sight-reading" element={<SightReadingPage />} />
                   <Route path="/links" element={<LinksPage />} />
-                  <Route path="/instruments" element={<InstrumentsPage />} />
-                  <Route path="/instruments/:instrumentId" element={<InstrumentDetailPage />} />
+                  <Route path="/instruments" element={<InstrumentsListPage />} />
+                  <Route path="/instrument/:id" element={<InstrumentPage />} />
                   <Route path="/instruments/family/:familyId" element={<FamilyPage />} />
                   <Route path="/listening-exams" element={<ListeningExamsPage />} />
             <Route path="/listening-exams/melody" element={<MelodyExamPage />} />
@@ -120,6 +94,10 @@ const App: React.FC = () => {
             <Route path="/listening-exams/pirates-caribbean" element={<PiratesCaribbeanTestPage />} />
             <Route path="/listening-exams/moon-river" element={<MoonRiverTestPage />} />
                   <Route path="/term/:termId" element={<GenericPage />} />
+                  {/* Areas of study routes */}
+                  <Route path="/areas-of-study/*" element={<GenericPage />} />
+                  {/* Coursework routes */}
+                  <Route path="/coursework/*" element={<GenericPage />} />
                 </Route>
                 
                 {/* Catch-all route - MUST be last */}

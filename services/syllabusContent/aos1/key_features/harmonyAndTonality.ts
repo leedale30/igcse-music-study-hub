@@ -31,7 +31,17 @@ Baroque harmony is characterized by its move away from the complex polyphony of 
     *   **Suspensions:** A note from one chord is held over into the next, creating a dissonance which then resolves downwards by step. This creates a beautiful "yearning" sound.
     *   **Dramatic Chords:** Composers used chords like the **diminished 7th** for moments of high drama, pain, or turmoil.
 
-*   **Tierce de Picardie (Picardy Third):** A common expressive device where a piece in a minor key ends on a major tonic chord. This was achieved by raising the third of the final chord, creating an unexpectedly bright and hopeful conclusion.`,
+*   **Tierce de Picardie (Picardy Third):** A common expressive device where a piece in a minor key ends on a major tonic chord. This was achieved by raising the third of the final chord, creating an unexpectedly bright and hopeful conclusion.
+
+**Video Resources:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3tuQrKWLCKc" title="How I wish HARMONY was explained to me as a student" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*How I wish HARMONY was explained to me as a student by Nahre Sol - An accessible and engaging explanation of harmony concepts*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D2ltRa2BosE" title="Functional Harmony - Music Theory Lesson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Functional Harmony - Music Theory Lesson by Ian O'Donnell - A comprehensive lesson on functional harmony principles*`,
     longDescription_zh: `**巴洛克时代的和声与调性：综合指南**
 
 巴洛克和声的特点是从文艺复兴时期的复杂复音音乐转向基于大小调的、更有结构、更具目标导向的体系。这创造了一种丰富而富有表现力的和声语言，能够有力地传达巴洛克美学核心的“情感”或情绪。
