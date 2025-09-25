@@ -31,7 +31,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deployment
 .vercel
+.netlify
+
+# Project specific
 musicxml-midi/
-.env.local
-.env.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+Thumbs.db
+.DS_Store?
+ehthumbs.db
+Icon?

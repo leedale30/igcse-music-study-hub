@@ -182,6 +182,66 @@ export const popSongIntroductionQuiz: Quiz = {
       ],
       correctAnswerId: 'ps4iq15a2',
       explanation: "While both combine words and music, pop songs prioritize accessibility and commercial appeal over the sophisticated text interpretation typically found in art songs."
+    },
+    {
+      id: 'ps4iq16',
+      text: "What is the role of the producer in pop music?",
+      options: [
+        { id: 'ps4iq16a1', text: 'Only to record the performance' },
+        { id: 'ps4iq16a2', text: 'To shape the overall sound, arrangement, and commercial appeal of the song' },
+        { id: 'ps4iq16a3', text: 'Only to write the lyrics' },
+        { id: 'ps4iq16a4', text: 'To perform the instruments' },
+      ],
+      correctAnswerId: 'ps4iq16a2',
+      explanation: "The producer plays a crucial creative role in pop music, shaping the overall sound, arrangement, and commercial appeal through technical and artistic decisions."
+    },
+    {
+      id: 'ps4iq17',
+      text: "Which of these is a characteristic of the 'wall of sound' production technique?",
+      options: [
+        { id: 'ps4iq17a1', text: 'Using only acoustic instruments' },
+        { id: 'ps4iq17a2', text: 'Layering multiple instruments and voices to create a dense, orchestral sound' },
+        { id: 'ps4iq17a3', text: 'Recording in complete silence' },
+        { id: 'ps4iq17a4', text: 'Using only one microphone' },
+      ],
+      correctAnswerId: 'ps4iq17a2',
+      explanation: "The 'wall of sound' technique, pioneered by Phil Spector, involves layering multiple instruments and voices to create a dense, orchestral sound that fills the entire audio spectrum."
+    },
+    {
+      id: 'ps4iq18',
+      text: "How has social media changed the pop music industry?",
+      options: [
+        { id: 'ps4iq18a1', text: 'It has no impact on music' },
+        { id: 'ps4iq18a2', text: 'It allows artists to connect directly with fans and promote music independently' },
+        { id: 'ps4iq18a3', text: 'It only affects classical music' },
+        { id: 'ps4iq18a4', text: 'It makes all music sound the same' },
+      ],
+      correctAnswerId: 'ps4iq18a2',
+      explanation: "Social media has revolutionized the pop music industry by allowing artists to connect directly with fans, promote music independently, and build audiences without traditional gatekeepers."
+    },
+    {
+      id: 'ps4iq19',
+      text: "What is a key difference between live pop performances and studio recordings?",
+      options: [
+        { id: 'ps4iq19a1', text: 'Live performances are always exactly the same as recordings' },
+        { id: 'ps4iq19a2', text: 'Live performances often feature extended versions, audience interaction, and visual elements' },
+        { id: 'ps4iq19a3', text: 'Live performances never include the original songs' },
+        { id: 'ps4iq19a4', text: 'Live performances are always acoustic' },
+      ],
+      correctAnswerId: 'ps4iq19a2',
+      explanation: "Live pop performances often differ from studio recordings by featuring extended versions, improvisation, audience interaction, and visual elements like staging and lighting."
+    },
+    {
+      id: 'ps4iq20',
+      text: "Which factor most influences the commercial success of a pop song?",
+      options: [
+        { id: 'ps4iq20a1', text: 'Complex musical theory' },
+        { id: 'ps4iq20a2', text: 'A combination of memorable melody, relatable lyrics, and effective marketing' },
+        { id: 'ps4iq20a3', text: 'Length of the song' },
+        { id: 'ps4iq20a4', text: 'Number of instruments used' },
+      ],
+      correctAnswerId: 'ps4iq20a2',
+      explanation: "Commercial success in pop music typically results from a combination of memorable melody, relatable lyrics, effective marketing, and timing with cultural trends."
     }
   ]
 };

@@ -193,11 +193,31 @@ export default function HaydnQuartetTestPage() {
             </p>
           </div>
 
-          {/* Audio Player Placeholder */}
-          <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 mb-6 text-center">
-            <p className="text-gray-600 dark:text-gray-300 mb-2">Audio will be added here</p>
-            <div className="w-full h-12 bg-gray-200 dark:bg-gray-600 rounded flex items-center justify-center">
-              <span className="text-gray-500">🎵 Haydn String Quartet Audio</span>
+          {/* Musical Score */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 mb-6 shadow-md">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center">
+              Haydn String Quartet in C Major, Op. 76 - "Emperor's Hymn"
+            </h3>
+            <div className="flex justify-center">
+              <img 
+                src="/images/haydn-quartet-notation.png" 
+                alt="Haydn String Quartet musical score showing the Emperor's Hymn melody with bar numbers and musical annotations"
+                className="max-w-full h-auto rounded-lg shadow-sm"
+                style={{ maxHeight: '400px' }}
+              />
+            </div>
+          </div>
+
+          {/* Audio Player */}
+          <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 mb-6">
+            <h3 className="text-lg font-semibold text-gray-600 dark:text-gray-300 mb-4 text-center">
+              🎵 Haydn String Quartet in C Major, Op. 76 - "Emperor's Hymn"
+            </h3>
+            <div className="flex justify-center">
+              <audio controls preload="metadata" className="w-full max-w-md">
+                <source src="/audio/Haydn - Emperor's Hymn, from String Quartet in C Major, Op. 76.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
             </div>
           </div>
 
