@@ -1,5 +1,6 @@
 
 import { SyllabusItem } from '../../types';
+import { aos6DetailedContent } from './aosDetailedContent';
 
 export const smallEnsembleAoS: SyllabusItem = {
   id: 'aos6-small-ensemble',
@@ -16,7 +17,7 @@ export const smallEnsembleAoS: SyllabusItem = {
       content: 'Traditional Chinese ensembles.',
       content_zh: '中国传统乐团。',
       longDescription: `Sizhu, meaning "silk and bamboo," refers to Chinese ensembles using instruments made from these materials. Silk string instruments include the erhu and pipa. Bamboo wind instruments include the dizi. We will explore their music from the Jiangnan region.`,
-      longDescription_zh: `丝竹，意为“丝绸与竹子”，指使用由这些材料制成的乐器的中国乐团。丝弦乐器包括二胡和琵琶。竹管乐器包括笛子。我们将探索他们来自江南地区的音乐。`
+      longDescription_zh: `丝竹，意为"丝绸与竹子"，指使用由这些材料制成的乐器的中国乐团。丝弦乐器包括二胡和琵琶。竹管乐器包括笛子。我们将探索他们来自江南地区的音乐。`
     },
     {
       id: 'dizi-erhu-pipa', title: 'Dizi, Erhu, Pipa', title_zh: '笛子、二胡、琵琶', path: '/term/dizi-erhu-pipa', isTerm: true,
@@ -66,6 +67,8 @@ export const smallEnsembleAoS: SyllabusItem = {
       content_zh: '小型合奏音乐的范例。',
       longDescription: `Listen to: "San Liu" (Chinese National Orchestra), "Rāga khamāj" (Ravi Shankar - Hindustani), and "Wasla en sabâ" (Al-Kindî Ensemble - Arab Takht).`,
       longDescription_zh: `聆听：《三六》（中国国家乐团）、《拉格卡马吉》（拉维·香卡 - 印度斯坦音乐）和《萨巴调瓦斯拉》（金迪乐团 - 阿拉伯塔赫特音乐）。`
-    }
+    },
+    aos6DetailedContent,
   ]
 };
+

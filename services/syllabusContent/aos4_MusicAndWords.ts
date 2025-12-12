@@ -2,6 +2,7 @@
 import { SyllabusItem } from '../../types';
 import { artSongQuiz } from '../quizData';
 import { popSongAoS } from './aos4_3a_PopSong';
+import { aos4DetailedContent } from './aosDetailedContent';
 
 export const musicAndWordsAoS: SyllabusItem = {
   id: 'aos4-music-and-words',
@@ -14,8 +15,8 @@ export const musicAndWordsAoS: SyllabusItem = {
   longDescription_zh: `这个领域着眼于文字非常重要的音乐。我们将学习不同类型的歌曲和合唱音乐（为合唱团创作的音乐）。您将学习作曲家如何运用旋律、和声、节奏和乐器，使文字栩栩如生。这包括艺术歌曲、合唱音乐、流行歌曲和音乐剧歌曲。`,
   children: [
     {
-      id: 'aos4-art-song', 
-      title: 'Focus Area: Art Song for Solo Voice', 
+      id: 'aos4-art-song',
+      title: 'Focus Area: Art Song for Solo Voice',
       title_zh: '重点领域：独唱艺术歌曲',
       path: '/areas-of-study/aos4-music-and-words/art-song',
       content: 'Songs for one singer, often with piano accompaniment.',
@@ -159,8 +160,8 @@ This glossary provides definitions for key musical terms relevant to this focus 
       quiz: artSongQuiz
     },
     {
-      id: 'aos4-choirs', 
-      title: 'Focus Area: Music for Choirs', 
+      id: 'aos4-choirs',
+      title: 'Focus Area: Music for Choirs',
       title_zh: '重点领域：合唱音乐',
       path: '/areas-of-study/aos4-music-and-words/choirs',
       content: 'Music for groups of singers.',
@@ -864,8 +865,9 @@ Analysing popular songs reveals the sophisticated craft behind seemingly simple 
 ---
 
 **下一步**：将这些分析技巧应用到你喜欢的歌曲上，一次专注于一个元素，然后将你的观察综合成完整的分析。`
-         }
-       ]
-     }
+        }
+      ]
+    },
+    aos4DetailedContent,
   ]
 };

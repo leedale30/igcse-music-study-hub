@@ -1,5 +1,6 @@
 
 import { SyllabusItem } from '../../types';
+import { aos7DetailedContent } from './aosDetailedContent';
 
 export const stageAndScreenAoS: SyllabusItem = {
   id: 'aos7-stage-and-screen',
@@ -52,6 +53,8 @@ export const stageAndScreenAoS: SyllabusItem = {
       content_zh: '可供聆听的舞台与银幕音乐范例。',
       longDescription: `Listen to: Stravinsky's "The Rite of Spring" (Ballet), John Williams' "Star Wars" score (Film Music), and Yoko Shimomura's "Gran Saga soundtrack" (Computer Game Music).`,
       longDescription_zh: `聆听：斯特拉文斯基的《春之祭》（芭蕾舞）、约翰·威廉姆斯的《星球大战》配乐（电影音乐），以及下村阳子的《格兰骑士团原声带》（电脑游戏音乐）。`
-    }
+    },
+    aos7DetailedContent,
   ]
 };
+

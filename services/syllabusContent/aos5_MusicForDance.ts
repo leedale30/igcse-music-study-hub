@@ -1,5 +1,6 @@
 
 import { SyllabusItem } from '../../types';
+import { aos5DetailedContent } from './aosDetailedContent';
 
 export const musicForDanceAoS: SyllabusItem = {
   id: 'aos5-music-for-dance',
@@ -44,7 +45,7 @@ export const musicForDanceAoS: SyllabusItem = {
       content: 'Music made with computers for dancing.',
       content_zh: '用电脑制作的舞曲。',
       longDescription: `Electronic Dance Music (EDM) is made using electronic instruments like synthesisers, drum machines, and computers. It has many subgenres (like House, Techno, Trance) and features like a strong beat ("four-to-the-floor"), builds, and drops to create energy on the dancefloor.`,
-      longDescription_zh: `电子舞曲（EDM）是使用合成器、鼓机和电脑等电子乐器制作的。它有许多子流派（如浩室、铁克诺、出神），并具有强劲的“四四拍”节拍、高潮构建和高潮释放等特点，以在舞池中创造能量。`
+      longDescription_zh: `电子舞曲（EDM）是使用合成器、鼓机和电脑等电子乐器制作的。它有许多子流派（如浩室、铁克诺、出神），并具有强劲的"四四拍"节拍、高潮构建和高潮释放等特点，以在舞池中创造能量。`
     },
     {
       id: 'synthesizer-daw', title: 'Synthesisers and DAWs', title_zh: '合成器与数字音频工作站', path: '/term/synthesizer-daw', isTerm: true,
@@ -59,6 +60,8 @@ export const musicForDanceAoS: SyllabusItem = {
       content_zh: '可供聆听的舞曲范例。',
       longDescription: `Listen to these examples: Piazzolla's "Libertango" (Tango), Hector Lavoe's "El Cantante" (Salsa), and F-777's "Viking Arena" (EDM).`,
       longDescription_zh: `聆听这些范例：皮亚佐拉的《自由探戈》（探戈）、赫克托·拉沃的《歌手》（萨尔萨），以及F-777的《维京竞技场》（电子舞曲）。`
-    }
+    },
+    aos5DetailedContent,
   ]
 };
+

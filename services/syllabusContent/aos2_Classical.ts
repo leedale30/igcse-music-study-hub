@@ -1,9 +1,10 @@
 
 import { SyllabusItem } from '../../types';
 import {
-    classicalIntroductionQuiz,
-    mozartLifeQuiz
+  classicalIntroductionQuiz,
+  mozartLifeQuiz
 } from '../quizData';
+import { aos2DetailedContent } from './aosDetailedContent';
 
 export const classicalMusicAoS: SyllabusItem = {
   id: 'aos2-classical-music',
@@ -223,5 +224,6 @@ Though his life was cut short, Wolfgang Amadeus Mozart left an indelible mark on
       longDescription: `To understand Classical music better, listen to different pieces. This page suggests works by Haydn, Mozart, and Beethoven. This will help you hear the style in different types of music like symphonies and concertos.`,
       longDescription_zh: `为了更好地理解古典音乐，请聆听不同的作品。此页面推荐了海顿、莫扎特和贝多芬的作品。这将帮助您在交响曲和协奏曲等不同类型的音乐中感受这种风格。`
     },
+    aos2DetailedContent,
   ]
 };

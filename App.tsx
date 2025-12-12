@@ -20,8 +20,8 @@ import AchievementsPage from './pages/AchievementsPage';
 import AccountSettingsPage from './pages/AccountSettingsPage';
 import PresentationPage from './pages/PresentationPage';
 import AudioPlayerTestPage from './pages/AudioPlayerTestPage';
-import InstrumentsListPage from './src/pages/InstrumentsListPage';
-import InstrumentPage from './src/pages/InstrumentPage';
+import InstrumentsListPage from './pages/InstrumentsListPage';
+import InstrumentPage from './pages/InstrumentPage';
 import FamilyPage from './pages/FamilyPage';
 import ListeningExamsPage from './pages/ListeningExamsPage';
 import MelodyExamPage from './pages/MelodyExamPage';
@@ -33,6 +33,9 @@ import ColdplayTestPage from './pages/ColdplayTestPage';
 import GodspellTestPage from './pages/GodspellTestPage';
 import PiratesCaribbeanTestPage from './pages/PiratesCaribbeanTestPage';
 import MoonRiverTestPage from './pages/MoonRiverTestPage';
+import TheoryListPage from './pages/TheoryListPage';
+import TheoryPage from './pages/TheoryPage';
+import AosContentPage from './pages/AosContentPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -48,64 +51,69 @@ const App: React.FC = () => {
       <ThemeProvider>
         <LanguageProvider>
           <AuthProvider>
-          <ProgressProvider>
-            <RPGProvider>
-              <Routes>
-                {/* Public test routes - MUST come first and be completely separate */}
-                <Route path="/supabase-test" element={<SupabaseTestPage />} />
-                
-                {/* Public authentication routes */}
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-                
-                {/* Main app routes (with layout and protection) */}
-                <Route element={
-                  <ProtectedRoute>
-                    <Layout />
-                  </ProtectedRoute>
-                }>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/dashboard" element={<DashboardPage />} />
-                  <Route path="/profile-setup" element={<ProfileSetupPage />} />
-                  <Route path="/admin" element={<AdminDashboardPage />} />
-                  <Route path="/achievements" element={<AchievementsPage />} />
-                  <Route path="/account-settings" element={<AccountSettingsPage />} />
-                  <Route path="/presentations" element={<PresentationPage />} />
-                  <Route path="/test" element={<TestPage />} />
-                  <Route path="/audio-test" element={<AudioPlayerTestPage />} />
-                  <Route path="/tools/metronome" element={<MetronomePage />} />
-                  <Route path="/tools/virtual-piano" element={<VirtualPianoPage />} />
-                  <Route path="/tools/ear-training" element={<EarTrainingPage />} />
-                  <Route path="/tools/circle-of-fifths" element={<CircleOfFifthsPage />} />
-                  <Route path="/tools/bemol-ear-training" element={<BemolEarTrainingPage />} />
-                  <Route path="/tools/sight-reading" element={<SightReadingPage />} />
-                  <Route path="/links" element={<LinksPage />} />
-                  <Route path="/instruments" element={<InstrumentsListPage />} />
-                  <Route path="/instrument/:id" element={<InstrumentPage />} />
-                  <Route path="/instruments/family/:familyId" element={<FamilyPage />} />
-                  <Route path="/listening-exams" element={<ListeningExamsPage />} />
-            <Route path="/listening-exams/melody" element={<MelodyExamPage />} />
-            <Route path="/listening-exams/handel-sonata" element={<HandelSonataTestPage />} />
-            <Route path="/listening-exams/haydn-quartet" element={<HaydnQuartetTestPage />} />
-            <Route path="/listening-exams/mendelssohn-overture" element={<MendelssohnOvertureTestPage />} />
-            <Route path="/listening-exams/sam-smith" element={<SamSmithTestPage />} />
-            <Route path="/listening-exams/coldplay" element={<ColdplayTestPage />} />
-            <Route path="/listening-exams/godspell" element={<GodspellTestPage />} />
-            <Route path="/listening-exams/pirates-caribbean" element={<PiratesCaribbeanTestPage />} />
-            <Route path="/listening-exams/moon-river" element={<MoonRiverTestPage />} />
-                  <Route path="/term/:termId" element={<GenericPage />} />
-                  {/* Areas of study routes */}
-                  <Route path="/areas-of-study/*" element={<GenericPage />} />
-                  {/* Coursework routes */}
-                  <Route path="/coursework/*" element={<GenericPage />} />
-                </Route>
-                
-                {/* Catch-all route - MUST be last */}
-                <Route path="*" element={<GenericPage />} />
-              </Routes>
-            </RPGProvider>
-          </ProgressProvider>
-        </AuthProvider>
+            <ProgressProvider>
+              <RPGProvider>
+                <Routes>
+                  {/* Public test routes - MUST come first and be completely separate */}
+                  <Route path="/supabase-test" element={<SupabaseTestPage />} />
+
+                  {/* Public authentication routes */}
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/signup" element={<SignupPage />} />
+
+                  {/* Main app routes (with layout and protection) */}
+                  <Route element={
+                    <ProtectedRoute>
+                      <Layout />
+                    </ProtectedRoute>
+                  }>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/dashboard" element={<DashboardPage />} />
+                    <Route path="/profile-setup" element={<ProfileSetupPage />} />
+                    <Route path="/admin" element={<AdminDashboardPage />} />
+                    <Route path="/achievements" element={<AchievementsPage />} />
+                    <Route path="/account-settings" element={<AccountSettingsPage />} />
+                    <Route path="/presentations" element={<PresentationPage />} />
+                    <Route path="/test" element={<TestPage />} />
+                    <Route path="/audio-test" element={<AudioPlayerTestPage />} />
+                    <Route path="/tools/metronome" element={<MetronomePage />} />
+                    <Route path="/tools/virtual-piano" element={<VirtualPianoPage />} />
+                    <Route path="/tools/ear-training" element={<EarTrainingPage />} />
+                    <Route path="/tools/circle-of-fifths" element={<CircleOfFifthsPage />} />
+                    <Route path="/tools/bemol-ear-training" element={<BemolEarTrainingPage />} />
+                    <Route path="/tools/sight-reading" element={<SightReadingPage />} />
+                    <Route path="/links" element={<LinksPage />} />
+                    <Route path="/instruments" element={<InstrumentsListPage />} />
+                    <Route path="/instrument/:id" element={<InstrumentPage />} />
+                    <Route path="/instruments/family/:familyId" element={<FamilyPage />} />
+                    <Route path="/listening-exams" element={<ListeningExamsPage />} />
+                    <Route path="/listening-exams/melody" element={<MelodyExamPage />} />
+                    <Route path="/listening-exams/handel-sonata" element={<HandelSonataTestPage />} />
+                    <Route path="/listening-exams/haydn-quartet" element={<HaydnQuartetTestPage />} />
+                    <Route path="/listening-exams/mendelssohn-overture" element={<MendelssohnOvertureTestPage />} />
+                    <Route path="/listening-exams/sam-smith" element={<SamSmithTestPage />} />
+                    <Route path="/listening-exams/coldplay" element={<ColdplayTestPage />} />
+                    <Route path="/listening-exams/godspell" element={<GodspellTestPage />} />
+                    <Route path="/listening-exams/pirates-caribbean" element={<PiratesCaribbeanTestPage />} />
+                    <Route path="/listening-exams/moon-river" element={<MoonRiverTestPage />} />
+                    <Route path="/term/:termId" element={<GenericPage />} />
+                    {/* Areas of study routes */}
+                    <Route path="/areas-of-study/*" element={<GenericPage />} />
+                    {/* Coursework routes */}
+                    <Route path="/coursework/*" element={<GenericPage />} />
+                    {/* Theory routes */}
+                    <Route path="/theory" element={<TheoryListPage />} />
+                    <Route path="/theory/:pageId" element={<TheoryPage />} />
+                    {/* AOS content routes */}
+                    <Route path="/aos/:aosId/*" element={<AosContentPage />} />
+                  </Route>
+
+                  {/* Catch-all route - MUST be last */}
+                  <Route path="*" element={<GenericPage />} />
+                </Routes>
+              </RPGProvider>
+            </ProgressProvider>
+          </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>

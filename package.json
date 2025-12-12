@@ -23,7 +23,7 @@
     "react-h5-audio-player": "^3.10.1",
     "react-router-dom": "^6.24.1",
     "tone": "^15.1.22",
-    "vercel": "^48.1.0",
+    "vercel": "^48.10.11",
     "zod": "^4.1.8"
   },
   "devDependencies": {

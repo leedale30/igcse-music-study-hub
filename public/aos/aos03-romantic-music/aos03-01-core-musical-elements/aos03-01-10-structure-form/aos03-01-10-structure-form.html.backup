@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aos03 01 10 Structure Form</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Morphing Gradient Background Container -->
+    <div class="gradient-bg">
+        <div class="noise-overlay"></div>
+        <div class="g-orb"></div>
+        <div class="g-orb"></div>
+        <div class="g-orb"></div>
+        <div class="g-orb"></div>
+        <div class="interactive-orb"></div>
+    </div>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="../../../areas-of-study.html" class="sidebar-logo">IGCSE Music</a>
+
+        <nav class="sidebar-nav">
+            <div style="margin-bottom: 1rem;">
+                <a href="../../../areas-of-study.html" class="sidebar-link">Home</a>
+            </div>
+
+            <ul class="nav-tree">
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 Baroque Music</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-baroque-music.html" class="sidebar-link ">Aos01 Baroque Music</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-core-musical-elements.html" class="sidebar-link ">Aos01 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-01-dynamics/aos01-01-01-dynamics.html" class="sidebar-link ">Aos01 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-02-rhythm/aos01-01-02-rhythm.html" class="sidebar-link ">Aos01 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-03-metre/aos01-01-03-metre.html" class="sidebar-link ">Aos01 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-04-tempo/aos01-01-04-tempo.html" class="sidebar-link ">Aos01 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-05-melody/aos01-01-05-melody.html" class="sidebar-link ">Aos01 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-06-harmony/aos01-01-06-harmony.html" class="sidebar-link ">Aos01 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-07-tonality/aos01-01-07-tonality.html" class="sidebar-link ">Aos01 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-08-texture/aos01-01-08-texture.html" class="sidebar-link ">Aos01 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-09-timbre/aos01-01-09-timbre.html" class="sidebar-link ">Aos01 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-10-structure-form/aos01-01-10-structure-form.html" class="sidebar-link ">Aos01 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos01 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-01-instrumentation/aos01-02-01-instrumentation.html" class="sidebar-link ">Aos01 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-02-organology/aos01-02-02-organology.html" class="sidebar-link ">Aos01 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-03-vocal-techniques/aos01-02-03-vocal-techniques.html" class="sidebar-link ">Aos01 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-04-extended-techniques/aos01-02-04-extended-techniques.html" class="sidebar-link ">Aos01 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-05-improvisation/aos01-02-05-improvisation.html" class="sidebar-link ">Aos01 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-06-composition-techniques/aos01-02-06-composition-techniques.html" class="sidebar-link ">Aos01 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-cultural-and-historical-context.html" class="sidebar-link ">Aos01 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-cultural-function.html" class="sidebar-link ">Aos01 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-01-ritual/aos01-03-01-01-ritual.html" class="sidebar-link ">3.1.1.1. Ritual</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-02-celebration/aos01-03-01-02-celebration.html" class="sidebar-link ">3.1.1.2. Celebration</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-03-work-protest/aos01-03-01-03-work-protest.html" class="sidebar-link ">3.1.1.3. Work, protest</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-04-healing/aos01-03-01-04-healing.html" class="sidebar-link ">3.1.1.4. Healing</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-05-social-identity/aos01-03-01-05-social-identity.html" class="sidebar-link ">3.1.1.5. Social Identity</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-02-historical-background/aos01-03-02-historical-background.html" class="sidebar-link ">Aos01 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-03-movement-and-dance/aos01-03-03-movement-and-dance.html" class="sidebar-link ">Aos01 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-04-economics-and-patronage/aos01-03-04-economics-and-patronage.html" class="sidebar-link ">Aos01 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-05-key-works-pieces/aos01-03-05-key-works-pieces.html" class="sidebar-link ">Aos01 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-06-key-composers-artists/aos01-03-06-key-composers-artists.html" class="sidebar-link ">Aos01 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-07-performance-practice/aos01-03-07-performance-practice.html" class="sidebar-link ">Aos01 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-07-performance-practice/aos01-03-07-01-staging/aos01-03-07-01-staging.html" class="sidebar-link ">3.7.1.1. Staging</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-07-performance-practice/aos01-03-07-02-performer-audience-relationship/aos01-03-07-02-performer-audience-relationship.html" class="sidebar-link ">3.7.1.2. Performer/audience relationship</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-07-performance-practice/aos01-03-07-03-attire/aos01-03-07-03-attire.html" class="sidebar-link ">3.7.1.3. Attire</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-07-performance-practice/aos01-03-07-04-ritualistic-elements/aos01-03-07-04-ritualistic-elements.html" class="sidebar-link ">3.7.1.4. Ritualistic elements</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-language-literacy-and-theory.html" class="sidebar-link ">Aos01 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-01-specific-terminology/aos01-04-01-specific-terminology.html" class="sidebar-link ">Aos01 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-02-lyrics-and-text-analysis/aos01-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos01 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-03-notation-system/aos01-04-03-notation-system.html" class="sidebar-link ">Aos01 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-04-oral-aural-tradition/aos01-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos01 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Baroque Music</a></li><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Baroque Music</a></li><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Baroque Music</a></li><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Baroque Music</a></li><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Baroque Music</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 05 Technology And Innovation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-technology-and-innovation.html" class="sidebar-link ">Aos01 05 Technology And Innovation</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 05 01 Music Technology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-01-music-technology/aos01-05-01-music-technology.html" class="sidebar-link ">Aos01 05 01 Music Technology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 05 02 Recording And Production Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-02-recording-and-production-techniques/aos01-05-02-recording-and-production-techniques.html" class="sidebar-link ">Aos01 05 02 Recording And Production Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 05 03 Distribution And Media</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-03-distribution-and-media/aos01-05-03-distribution-and-media.html" class="sidebar-link ">Aos01 05 03 Distribution And Media</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 05 04 Hybridization</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-04-hybridization/aos01-05-04-hybridization.html" class="sidebar-link ">Aos01 05 04 Hybridization</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-06-analytical-domains/aos01-06-analytical-domains.html" class="sidebar-link ">Aos01 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-06-analytical-domains/aos01-06-01-genre-and-style/aos01-06-01-genre-and-style.html" class="sidebar-link ">Aos01 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-06-analytical-domains/aos01-06-02-aesthetic-values/aos01-06-02-aesthetic-values.html" class="sidebar-link ">Aos01 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-06-analytical-domains/aos01-06-03-audience-reception/aos01-06-03-audience-reception.html" class="sidebar-link ">Aos01 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-06-analytical-domains/aos01-06-04-political-social-commentary/aos01-06-04-political-social-commentary.html" class="sidebar-link ">Aos01 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-06-analytical-domains/aos01-06-05-geographic-influence/aos01-06-05-geographic-influence.html" class="sidebar-link ">Aos01 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 01 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos01-baroque-music/aos01-07-glossary/aos01-07-glossary.html" class="sidebar-link ">Aos01 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 Classical Music</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-classical-music.html" class="sidebar-link ">Aos02 Classical Music</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-core-musical-elements.html" class="sidebar-link ">Aos02 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-01-dynamics/aos02-01-01-dynamics.html" class="sidebar-link ">Aos02 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-02-rhythm/aos02-01-02-rhythm.html" class="sidebar-link ">Aos02 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-03-metre/aos02-01-03-metre.html" class="sidebar-link ">Aos02 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-04-tempo/aos02-01-04-tempo.html" class="sidebar-link ">Aos02 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-05-melody/aos02-01-05-melody.html" class="sidebar-link ">Aos02 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-06-harmony/aos02-01-06-harmony.html" class="sidebar-link ">Aos02 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-07-tonality/aos02-01-07-tonality.html" class="sidebar-link ">Aos02 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-08-texture/aos02-01-08-texture.html" class="sidebar-link ">Aos02 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-09-timbre/aos02-01-09-timbre.html" class="sidebar-link ">Aos02 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-01-core-musical-elements/aos02-01-10-structure-form/aos02-01-10-structure-form.html" class="sidebar-link ">Aos02 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos02 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-01-instrumentation/aos02-02-01-instrumentation.html" class="sidebar-link ">Aos02 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-02-organology/aos02-02-02-organology.html" class="sidebar-link ">Aos02 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-03-vocal-techniques/aos02-02-03-vocal-techniques.html" class="sidebar-link ">Aos02 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-04-extended-techniques/aos02-02-04-extended-techniques.html" class="sidebar-link ">Aos02 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-05-improvisation/aos02-02-05-improvisation.html" class="sidebar-link ">Aos02 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-02-sound-sources-and-techniques/aos02-02-06-composition-techniques/aos02-02-06-composition-techniques.html" class="sidebar-link ">Aos02 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-cultural-and-historical-context.html" class="sidebar-link ">Aos02 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-01-cultural-function/aos02-03-01-cultural-function.html" class="sidebar-link ">Aos02 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-01-cultural-function/aos02-03-01-01-ritual/aos02-03-01-01-ritual.html" class="sidebar-link ">3.1.1.1. Ritual</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-01-cultural-function/aos02-03-01-02-celebration/aos02-03-01-02-celebration.html" class="sidebar-link ">3.1.1.2. Celebration</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-01-cultural-function/aos02-03-01-03-work-protest/aos02-03-01-03-work-protest.html" class="sidebar-link ">3.1.1.3. Work, protest</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-01-cultural-function/aos02-03-01-04-healing/aos02-03-01-04-healing.html" class="sidebar-link ">3.1.1.4. Healing</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-01-cultural-function/aos02-03-01-05-social-identity/aos02-03-01-05-social-identity.html" class="sidebar-link ">3.1.1.5. Social Identity</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-02-historical-background/aos02-03-02-historical-background.html" class="sidebar-link ">Aos02 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-03-movement-and-dance/aos02-03-03-movement-and-dance.html" class="sidebar-link ">Aos02 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-04-economics-and-patronage/aos02-03-04-economics-and-patronage.html" class="sidebar-link ">Aos02 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-05-key-works-pieces/aos02-03-05-key-works-pieces.html" class="sidebar-link ">Aos02 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-06-key-composers-artists/aos02-03-06-key-composers-artists.html" class="sidebar-link ">Aos02 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-07-performance-practice/aos02-03-07-performance-practice.html" class="sidebar-link ">Aos02 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-07-performance-practice/aos02-03-07-01-staging/aos02-03-07-01-staging.html" class="sidebar-link ">3.7.1.1. Staging</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-07-performance-practice/aos02-03-07-02-performer-audience-relationship/aos02-03-07-02-performer-audience-relationship.html" class="sidebar-link ">3.7.1.2. Performer/audience relationship</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-07-performance-practice/aos02-03-07-03-attire/aos02-03-07-03-attire.html" class="sidebar-link ">3.7.1.3. Attire</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-03-cultural-and-historical-context/aos02-03-07-performance-practice/aos02-03-07-04-ritualistic-elements/aos02-03-07-04-ritualistic-elements.html" class="sidebar-link ">3.7.1.4. Ritualistic elements</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-language-literacy-and-theory.html" class="sidebar-link ">Aos02 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-01-specific-terminology/aos02-04-01-specific-terminology.html" class="sidebar-link ">Aos02 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-02-lyrics-and-text-analysis/aos02-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos02 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-03-notation-system/aos02-04-03-notation-system.html" class="sidebar-link ">Aos02 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-04-oral-aural-tradition/aos02-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos02 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Classical Music</a></li><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Classical Music</a></li><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Classical Music</a></li><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Classical Music</a></li><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-04-language-literacy-and-theory/aos02-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Classical Music</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 05 Technology And Innovation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-05-technology-and-innovation/aos02-05-technology-and-innovation.html" class="sidebar-link ">Aos02 05 Technology And Innovation</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 05 01 Music Technology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-05-technology-and-innovation/aos02-05-01-music-technology/aos02-05-01-music-technology.html" class="sidebar-link ">Aos02 05 01 Music Technology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 05 02 Recording And Production Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-05-technology-and-innovation/aos02-05-02-recording-and-production-techniques/aos02-05-02-recording-and-production-techniques.html" class="sidebar-link ">Aos02 05 02 Recording And Production Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 05 03 Distribution And Media</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-05-technology-and-innovation/aos02-05-03-distribution-and-media/aos02-05-03-distribution-and-media.html" class="sidebar-link ">Aos02 05 03 Distribution And Media</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 05 04 Hybridization</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-05-technology-and-innovation/aos02-05-04-hybridization/aos02-05-04-hybridization.html" class="sidebar-link ">Aos02 05 04 Hybridization</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-06-analytical-domains/aos02-06-analytical-domains.html" class="sidebar-link ">Aos02 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-06-analytical-domains/aos02-06-01-genre-and-style/aos02-06-01-genre-and-style.html" class="sidebar-link ">Aos02 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-06-analytical-domains/aos02-06-02-aesthetic-values/aos02-06-02-aesthetic-values.html" class="sidebar-link ">Aos02 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-06-analytical-domains/aos02-06-03-audience-reception/aos02-06-03-audience-reception.html" class="sidebar-link ">Aos02 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-06-analytical-domains/aos02-06-04-political-social-commentary/aos02-06-04-political-social-commentary.html" class="sidebar-link ">Aos02 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-06-analytical-domains/aos02-06-05-geographic-influence/aos02-06-05-geographic-influence.html" class="sidebar-link ">Aos02 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 02 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos02-classical-music/aos02-07-glossary/aos02-07-glossary.html" class="sidebar-link ">Aos02 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details open>
+                    <summary>Aos 03 Romantic Music</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-romantic-music.html" class="sidebar-link ">Aos03 Romantic Music</a></li>
+            <li class="nav-item-folder">
+                <details open>
+                    <summary>Aos 03 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-core-musical-elements.html" class="sidebar-link ">Aos03 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-01-dynamics/aos03-01-01-dynamics.html" class="sidebar-link ">Aos03 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-02-rhythm/aos03-01-02-rhythm.html" class="sidebar-link ">Aos03 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-03-metre/aos03-01-03-metre.html" class="sidebar-link ">Aos03 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-04-tempo/aos03-01-04-tempo.html" class="sidebar-link ">Aos03 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-05-melody/aos03-01-05-melody.html" class="sidebar-link ">Aos03 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-06-harmony/aos03-01-06-harmony.html" class="sidebar-link ">Aos03 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-07-tonality/aos03-01-07-tonality.html" class="sidebar-link ">Aos03 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-08-texture/aos03-01-08-texture.html" class="sidebar-link ">Aos03 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-09-timbre/aos03-01-09-timbre.html" class="sidebar-link ">Aos03 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details open>
+                    <summary>Aos 03 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-10-structure-form/aos03-01-10-structure-form.html" class="sidebar-link active">Aos03 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos03 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-01-instrumentation/aos03-02-01-instrumentation.html" class="sidebar-link ">Aos03 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-02-organology/aos03-02-02-organology.html" class="sidebar-link ">Aos03 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-03-vocal-techniques/aos03-02-03-vocal-techniques.html" class="sidebar-link ">Aos03 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-04-extended-techniques/aos03-02-04-extended-techniques.html" class="sidebar-link ">Aos03 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-05-improvisation/aos03-02-05-improvisation.html" class="sidebar-link ">Aos03 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-02-sound-sources-and-techniques/aos03-02-06-composition-techniques/aos03-02-06-composition-techniques.html" class="sidebar-link ">Aos03 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-cultural-and-historical-context.html" class="sidebar-link ">Aos03 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-01-cultural-function/aos03-03-01-cultural-function.html" class="sidebar-link ">Aos03 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-01-cultural-function/aos03-03-01-01-ritual/aos03-03-01-01-ritual.html" class="sidebar-link ">Ritual</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-01-cultural-function/aos03-03-01-02-celebration/aos03-03-01-02-celebration.html" class="sidebar-link ">Celebration</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-01-cultural-function/aos03-03-01-03-work-protest/aos03-03-01-03-work-protest.html" class="sidebar-link ">Work/Protest</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-01-cultural-function/aos03-03-01-04-healing/aos03-03-01-04-healing.html" class="sidebar-link ">Healing</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-01-cultural-function/aos03-03-01-05-social-identity/aos03-03-01-05-social-identity.html" class="sidebar-link ">Social Identity</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-02-historical-background/aos03-03-02-historical-background.html" class="sidebar-link ">Aos03 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-03-movement-and-dance/aos03-03-03-movement-and-dance.html" class="sidebar-link ">Aos03 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-04-economics-and-patronage/aos03-03-04-economics-and-patronage.html" class="sidebar-link ">Aos03 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-05-key-works-pieces/aos03-03-05-key-works-pieces.html" class="sidebar-link ">Aos03 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-06-key-composers-artists/aos03-03-06-key-composers-artists.html" class="sidebar-link ">Aos03 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-07-performance-practice/aos03-03-07-performance-practice.html" class="sidebar-link ">Aos03 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-07-performance-practice/aos03-03-07-01-staging/aos03-03-07-01-staging.html" class="sidebar-link ">Staging - Romantic Music Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-07-performance-practice/aos03-03-07-02-performer-audience-relationship/aos03-03-07-02-performer-audience-relationship.html" class="sidebar-link ">Performer/Audience Relationship - Romantic Music Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-07-performance-practice/aos03-03-07-03-attire/aos03-03-07-03-attire.html" class="sidebar-link ">Attire - Romantic Music Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-03-cultural-and-historical-context/aos03-03-07-performance-practice/aos03-03-07-04-ritualistic-elements/aos03-03-07-04-ritualistic-elements.html" class="sidebar-link ">Ritualistic Elements - Romantic Music Performance Practice</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-language-literacy-and-theory.html" class="sidebar-link ">Aos03 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-01-specific-terminology/aos03-04-01-specific-terminology.html" class="sidebar-link ">Aos03 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-02-lyrics-and-text-analysis/aos03-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos03 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-03-notation-system/aos03-04-03-notation-system.html" class="sidebar-link ">Aos03 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-04-oral-aural-tradition/aos03-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos03 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Romantic Music</a></li><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Romantic Music</a></li><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Romantic Music</a></li><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Romantic Music</a></li><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-04-language-literacy-and-theory/aos03-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Romantic Music</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 05 Technology And Innovation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-05-technology-and-innovation/aos03-05-technology-and-innovation.html" class="sidebar-link ">Aos03 05 Technology And Innovation</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 05 01 Music Technology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-05-technology-and-innovation/aos03-05-01-music-technology/aos03-05-01-music-technology.html" class="sidebar-link ">Aos03 05 01 Music Technology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 05 02 Recording And Production Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-05-technology-and-innovation/aos03-05-02-recording-and-production-techniques/aos03-05-02-recording-and-production-techniques.html" class="sidebar-link ">Aos03 05 02 Recording And Production Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 05 03 Distribution And Media</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-05-technology-and-innovation/aos03-05-03-distribution-and-media/aos03-05-03-distribution-and-media.html" class="sidebar-link ">Aos03 05 03 Distribution And Media</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 05 04 Hybridization</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-05-technology-and-innovation/aos03-05-04-hybridization/aos03-05-04-hybridization.html" class="sidebar-link ">Aos03 05 04 Hybridization</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-06-analytical-domains/aos03-06-analytical-domains.html" class="sidebar-link ">Aos03 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-06-analytical-domains/aos03-06-01-genre-and-style/aos03-06-01-genre-and-style.html" class="sidebar-link ">Aos03 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-06-analytical-domains/aos03-06-02-aesthetic-values/aos03-06-02-aesthetic-values.html" class="sidebar-link ">Aos03 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-06-analytical-domains/aos03-06-03-audience-reception/aos03-06-03-audience-reception.html" class="sidebar-link ">Aos03 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-06-analytical-domains/aos03-06-04-political-social-commentary/aos03-06-04-political-social-commentary.html" class="sidebar-link ">Aos03 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-06-analytical-domains/aos03-06-05-geographic-influence/aos03-06-05-geographic-influence.html" class="sidebar-link ">Aos03 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 03 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos03-romantic-music/aos03-07-glossary/aos03-07-glossary.html" class="sidebar-link ">Aos03 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 Music And Words</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-music-and-words.html" class="sidebar-link ">Aos04 Music And Words</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-core-musical-elements.html" class="sidebar-link ">Aos04 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-01-dynamics/aos04-01-01-dynamics.html" class="sidebar-link ">Aos04 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-02-rhythm/aos04-01-02-rhythm.html" class="sidebar-link ">Aos04 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-03-metre/aos04-01-03-metre.html" class="sidebar-link ">Aos04 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-04-tempo/aos04-01-04-tempo.html" class="sidebar-link ">Aos04 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-05-melody/aos04-01-05-melody.html" class="sidebar-link ">Aos04 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-06-harmony/aos04-01-06-harmony.html" class="sidebar-link ">Aos04 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-07-tonality/aos04-01-07-tonality.html" class="sidebar-link ">Aos04 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-08-texture/aos04-01-08-texture.html" class="sidebar-link ">Aos04 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-09-timbre/aos04-01-09-timbre.html" class="sidebar-link ">Aos04 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-01-core-musical-elements/aos04-01-10-structure-form/aos04-01-10-structure-form.html" class="sidebar-link ">Aos04 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos04 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-01-instrumentation/aos04-02-01-instrumentation.html" class="sidebar-link ">Aos04 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-02-organology/aos04-02-02-organology.html" class="sidebar-link ">Aos04 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-03-vocal-techniques/aos04-02-03-vocal-techniques.html" class="sidebar-link ">Aos04 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-04-extended-techniques/aos04-02-04-extended-techniques.html" class="sidebar-link ">Aos04 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-05-improvisation/aos04-02-05-improvisation.html" class="sidebar-link ">Aos04 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-02-sound-sources-and-techniques/aos04-02-06-composition-techniques/aos04-02-06-composition-techniques.html" class="sidebar-link ">Aos04 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-cultural-and-historical-context.html" class="sidebar-link ">Aos04 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-01-cultural-function/aos04-03-01-cultural-function.html" class="sidebar-link ">Aos04 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-01-cultural-function/aos04-03-01-01-ritual/aos04-03-01-01-ritual.html" class="sidebar-link ">Ritual</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-01-cultural-function/aos04-03-01-02-celebration/aos04-03-01-02-celebration.html" class="sidebar-link ">Celebration</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-01-cultural-function/aos04-03-01-03-work-protest/aos04-03-01-03-work-protest.html" class="sidebar-link ">Work/Protest</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-01-cultural-function/aos04-03-01-04-healing/aos04-03-01-04-healing.html" class="sidebar-link ">Healing</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-01-cultural-function/aos04-03-01-05-social-identity/aos04-03-01-05-social-identity.html" class="sidebar-link ">Social Identity</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-02-historical-background/aos04-03-02-historical-background.html" class="sidebar-link ">Aos04 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-03-movement-and-dance/aos04-03-03-movement-and-dance.html" class="sidebar-link ">Aos04 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-04-economics-and-patronage/aos04-03-04-economics-and-patronage.html" class="sidebar-link ">Aos04 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-05-key-works-pieces/aos04-03-05-key-works-pieces.html" class="sidebar-link ">Aos04 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-06-key-composers-artists/aos04-03-06-key-composers-artists.html" class="sidebar-link ">Aos04 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-07-performance-practice/aos04-03-07-performance-practice.html" class="sidebar-link ">Aos04 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-07-performance-practice/aos04-03-07-01-staging/aos04-03-07-01-staging.html" class="sidebar-link ">Staging</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-07-performance-practice/aos04-03-07-02-performer-audience-relationship/aos04-03-07-02-performer-audience-relationship.html" class="sidebar-link ">Performer-Audience Relationship</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-07-performance-practice/aos04-03-07-03-attire/aos04-03-07-03-attire.html" class="sidebar-link ">Attire</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-03-cultural-and-historical-context/aos04-03-07-performance-practice/aos04-03-07-04-ritualistic-elements/aos04-03-07-04-ritualistic-elements.html" class="sidebar-link ">Ritualistic Elements</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-language-literacy-and-theory.html" class="sidebar-link ">Aos04 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-01-specific-terminology/aos04-04-01-specific-terminology.html" class="sidebar-link ">Aos04 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-02-lyrics-and-text-analysis/aos04-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos04 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-03-notation-system/aos04-04-03-notation-system.html" class="sidebar-link ">Aos04 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-04-oral-aural-tradition/aos04-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos04 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Music and Words</a></li><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Music and Words</a></li><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Music and Words</a></li><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Music and Words</a></li><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-04-language-literacy-and-theory/aos04-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Music and Words</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 05 Technology And Innovation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-05-technology-and-innovation/aos04-05-technology-and-innovation.html" class="sidebar-link ">Aos04 05 Technology And Innovation</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 05 01 Music Technology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-05-technology-and-innovation/aos04-05-01-music-technology/aos04-05-01-music-technology.html" class="sidebar-link ">Aos04 05 01 Music Technology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 05 02 Recording And Production Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-05-technology-and-innovation/aos04-05-02-recording-and-production-techniques/aos04-05-02-recording-and-production-techniques.html" class="sidebar-link ">Aos04 05 02 Recording And Production Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 05 03 Distribution And Media</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-05-technology-and-innovation/aos04-05-03-distribution-and-media/aos04-05-03-distribution-and-media.html" class="sidebar-link ">Aos04 05 03 Distribution And Media</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 05 04 Hybridization</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-05-technology-and-innovation/aos04-05-04-hybridization/aos04-05-04-hybridization.html" class="sidebar-link ">Aos04 05 04 Hybridization</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-06-analytical-domains/aos04-06-analytical-domains.html" class="sidebar-link ">Aos04 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-06-analytical-domains/aos04-06-01-genre-and-style/aos04-06-01-genre-and-style.html" class="sidebar-link ">Aos04 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-06-analytical-domains/aos04-06-02-aesthetic-values/aos04-06-02-aesthetic-values.html" class="sidebar-link ">Aos04 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-06-analytical-domains/aos04-06-03-audience-reception/aos04-06-03-audience-reception.html" class="sidebar-link ">Aos04 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-06-analytical-domains/aos04-06-04-political-social-commentary/aos04-06-04-political-social-commentary.html" class="sidebar-link ">Aos04 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-06-analytical-domains/aos04-06-05-geographic-influence/aos04-06-05-geographic-influence.html" class="sidebar-link ">Aos04 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 04 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos04-music-and-words/aos04-07-glossary/aos04-07-glossary.html" class="sidebar-link ">Aos04 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 Music For Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-music-for-dance.html" class="sidebar-link ">Aos05 Music For Dance</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-core-musical-elements.html" class="sidebar-link ">Aos05 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-01-dynamics/aos05-01-01-dynamics.html" class="sidebar-link ">Aos05 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-02-rhythm/aos05-01-02-rhythm.html" class="sidebar-link ">Aos05 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-03-metre/aos05-01-03-metre.html" class="sidebar-link ">Aos05 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-04-tempo/aos05-01-04-tempo.html" class="sidebar-link ">Aos05 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-05-melody/aos05-01-05-melody.html" class="sidebar-link ">Aos05 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-06-harmony/aos05-01-06-harmony.html" class="sidebar-link ">Aos05 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-07-tonality/aos05-01-07-tonality.html" class="sidebar-link ">Aos05 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-08-texture/aos05-01-08-texture.html" class="sidebar-link ">Aos05 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-09-timbre/aos05-01-09-timbre.html" class="sidebar-link ">Aos05 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-01-core-musical-elements/aos05-01-10-structure-form/aos05-01-10-structure-form.html" class="sidebar-link ">Aos05 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos05 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-01-instrumentation/aos05-02-01-instrumentation.html" class="sidebar-link ">Aos05 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-02-organology/aos05-02-02-organology.html" class="sidebar-link ">Aos05 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-03-vocal-techniques/aos05-02-03-vocal-techniques.html" class="sidebar-link ">Aos05 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-04-extended-techniques/aos05-02-04-extended-techniques.html" class="sidebar-link ">Aos05 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-05-improvisation/aos05-02-05-improvisation.html" class="sidebar-link ">Aos05 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-02-sound-sources-and-techniques/aos05-02-06-composition-techniques/aos05-02-06-composition-techniques.html" class="sidebar-link ">Aos05 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-cultural-and-historical-context.html" class="sidebar-link ">Aos05 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-01-cultural-function/aos05-03-01-cultural-function.html" class="sidebar-link ">Aos05 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-01-cultural-function/aos05-03-01-01-ritual/aos05-03-01-01-ritual.html" class="sidebar-link ">Ritual</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-01-cultural-function/aos05-03-01-02-celebration/aos05-03-01-02-celebration.html" class="sidebar-link ">Celebration</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-01-cultural-function/aos05-03-01-03-work-protest/aos05-03-01-03-work-protest.html" class="sidebar-link ">Work/Protest</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-01-cultural-function/aos05-03-01-04-healing/aos05-03-01-04-healing.html" class="sidebar-link ">Healing</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-01-cultural-function/aos05-03-01-05-social-identity/aos05-03-01-05-social-identity.html" class="sidebar-link ">Social Identity</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-02-historical-background/aos05-03-02-historical-background.html" class="sidebar-link ">Aos05 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-03-movement-and-dance/aos05-03-03-movement-and-dance.html" class="sidebar-link ">Aos05 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-04-economics-and-patronage/aos05-03-04-economics-and-patronage.html" class="sidebar-link ">Aos05 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-05-key-works-pieces/aos05-03-05-key-works-pieces.html" class="sidebar-link ">Aos05 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-06-key-composers-artists/aos05-03-06-key-composers-artists.html" class="sidebar-link ">Aos05 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-07-performance-practice/aos05-03-07-performance-practice.html" class="sidebar-link ">Aos05 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-07-performance-practice/aos05-03-07-01-staging/aos05-03-07-01-staging.html" class="sidebar-link ">Staging</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-07-performance-practice/aos05-03-07-02-performer-audience-relationship/aos05-03-07-02-performer-audience-relationship.html" class="sidebar-link ">Performer-Audience Relationship</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-07-performance-practice/aos05-03-07-03-attire/aos05-03-07-03-attire.html" class="sidebar-link ">Attire</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-03-cultural-and-historical-context/aos05-03-07-performance-practice/aos05-03-07-04-ritualistic-elements/aos05-03-07-04-ritualistic-elements.html" class="sidebar-link ">Ritualistic Elements</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-language-literacy-and-theory.html" class="sidebar-link ">Aos05 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-01-specific-terminology/aos05-04-01-specific-terminology.html" class="sidebar-link ">Aos05 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-02-lyrics-and-text-analysis/aos05-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos05 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-03-notation-system/aos05-04-03-notation-system.html" class="sidebar-link ">Aos05 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-04-oral-aural-tradition/aos05-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos05 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Music for Dance</a></li><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Music for Dance</a></li><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Music for Dance</a></li><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Music for Dance</a></li><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-04-language-literacy-and-theory/aos05-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Music for Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 05 Technology And Innovation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-05-technology-and-innovation/aos05-05-technology-and-innovation.html" class="sidebar-link ">Aos05 05 Technology And Innovation</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 05 01 Music Technology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-05-technology-and-innovation/aos05-05-01-music-technology/aos05-05-01-music-technology.html" class="sidebar-link ">Aos05 05 01 Music Technology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 05 02 Recording And Production Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-05-technology-and-innovation/aos05-05-02-recording-and-production-techniques/aos05-05-02-recording-and-production-techniques.html" class="sidebar-link ">Aos05 05 02 Recording And Production Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 05 03 Distribution And Media</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-05-technology-and-innovation/aos05-05-03-distribution-and-media/aos05-05-03-distribution-and-media.html" class="sidebar-link ">Aos05 05 03 Distribution And Media</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 05 04 Hybridization</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-05-technology-and-innovation/aos05-05-04-hybridization/aos05-05-04-hybridization.html" class="sidebar-link ">Aos05 05 04 Hybridization</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-06-analytical-domains/aos05-06-analytical-domains.html" class="sidebar-link ">Aos05 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-06-analytical-domains/aos05-06-01-genre-and-style/aos05-06-01-genre-and-style.html" class="sidebar-link ">Aos05 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-06-analytical-domains/aos05-06-02-aesthetic-values/aos05-06-02-aesthetic-values.html" class="sidebar-link ">Aos05 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-06-analytical-domains/aos05-06-03-audience-reception/aos05-06-03-audience-reception.html" class="sidebar-link ">Aos05 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-06-analytical-domains/aos05-06-04-political-social-commentary/aos05-06-04-political-social-commentary.html" class="sidebar-link ">Aos05 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-06-analytical-domains/aos05-06-05-geographic-influence/aos05-06-05-geographic-influence.html" class="sidebar-link ">Aos05 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 05 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos05-music-for-dance/aos05-07-glossary/aos05-07-glossary.html" class="sidebar-link ">Aos05 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 Music For Small Ensemble</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-music-for-small-ensemble.html" class="sidebar-link ">Aos06 Music For Small Ensemble</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-core-musical-elements.html" class="sidebar-link ">Aos06 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-01-dynamics/aos06-01-01-dynamics.html" class="sidebar-link ">Aos06 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-02-rhythm/aos06-01-02-rhythm.html" class="sidebar-link ">Aos06 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-03-metre/aos06-01-03-metre.html" class="sidebar-link ">Aos06 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-04-tempo/aos06-01-04-tempo.html" class="sidebar-link ">Aos06 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-05-melody/aos06-01-05-melody.html" class="sidebar-link ">Aos06 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-06-harmony/aos06-01-06-harmony.html" class="sidebar-link ">Aos06 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-07-tonality/aos06-01-07-tonality.html" class="sidebar-link ">Aos06 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-08-texture/aos06-01-08-texture.html" class="sidebar-link ">Aos06 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-09-timbre/aos06-01-09-timbre.html" class="sidebar-link ">Aos06 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-01-core-musical-elements/aos06-01-10-structure-form/aos06-01-10-structure-form.html" class="sidebar-link ">Aos06 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos06 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-01-instrumentation/aos06-02-01-instrumentation.html" class="sidebar-link ">Aos06 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-02-organology/aos06-02-02-organology.html" class="sidebar-link ">Aos06 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-03-vocal-techniques/aos06-02-03-vocal-techniques.html" class="sidebar-link ">Aos06 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-04-extended-techniques/aos06-02-04-extended-techniques.html" class="sidebar-link ">Aos06 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-05-improvisation/aos06-02-05-improvisation.html" class="sidebar-link ">Aos06 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-02-sound-sources-and-techniques/aos06-02-06-composition-techniques/aos06-02-06-composition-techniques.html" class="sidebar-link ">Aos06 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-cultural-and-historical-context.html" class="sidebar-link ">Aos06 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-01-cultural-function/aos06-03-01-cultural-function.html" class="sidebar-link ">Aos06 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-01-cultural-function/aos06-03-01-01-ritual/aos06-03-01-01-ritual.html" class="sidebar-link ">Ritual</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-01-cultural-function/aos06-03-01-02-celebration/aos06-03-01-02-celebration.html" class="sidebar-link ">Celebration</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-01-cultural-function/aos06-03-01-03-work-protest/aos06-03-01-03-work-protest.html" class="sidebar-link ">Work/Protest</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-01-cultural-function/aos06-03-01-04-healing/aos06-03-01-04-healing.html" class="sidebar-link ">Healing</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-01-cultural-function/aos06-03-01-05-social-identity/aos06-03-01-05-social-identity.html" class="sidebar-link ">Social Identity</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-02-historical-background/aos06-03-02-historical-background.html" class="sidebar-link ">Aos06 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-03-movement-and-dance/aos06-03-03-movement-and-dance.html" class="sidebar-link ">Aos06 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-04-economics-and-patronage/aos06-03-04-economics-and-patronage.html" class="sidebar-link ">Aos06 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-05-key-works-pieces/aos06-03-05-key-works-pieces.html" class="sidebar-link ">Aos06 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-06-key-composers-artists/aos06-03-06-key-composers-artists.html" class="sidebar-link ">Aos06 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-07-performance-practice/aos06-03-07-performance-practice.html" class="sidebar-link ">Aos06 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-07-performance-practice/aos06-03-07-01-staging/aos06-03-07-01-staging.html" class="sidebar-link ">Staging - Music for Small Ensemble Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-07-performance-practice/aos06-03-07-02-performer-audience-relationship/aos06-03-07-02-performer-audience-relationship.html" class="sidebar-link ">Performer/Audience Relationship - Music for Small Ensemble Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-07-performance-practice/aos06-03-07-03-attire/aos06-03-07-03-attire.html" class="sidebar-link ">Attire - Music for Small Ensemble Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-03-cultural-and-historical-context/aos06-03-07-performance-practice/aos06-03-07-04-ritualistic-elements/aos06-03-07-04-ritualistic-elements.html" class="sidebar-link ">Ritualistic Elements - Music for Small Ensemble Performance Practice</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-language-literacy-and-theory.html" class="sidebar-link ">Aos06 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-01-specific-terminology/aos06-04-01-specific-terminology.html" class="sidebar-link ">Aos06 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-02-lyrics-and-text-analysis/aos06-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos06 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-03-notation-system/aos06-04-03-notation-system.html" class="sidebar-link ">Aos06 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-04-oral-aural-tradition/aos06-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos06 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Music for Small Ensemble</a></li><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Music for Small Ensemble</a></li><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Music for Small Ensemble</a></li><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Music for Small Ensemble</a></li><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-04-language-literacy-and-theory/aos06-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Music for Small Ensemble</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-06-analytical-domains/aos06-06-analytical-domains.html" class="sidebar-link ">Aos06 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-06-analytical-domains/aos06-06-01-genre-and-style/aos06-06-01-genre-and-style.html" class="sidebar-link ">Aos06 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-06-analytical-domains/aos06-06-02-aesthetic-values/aos06-06-02-aesthetic-values.html" class="sidebar-link ">Aos06 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-06-analytical-domains/aos06-06-03-audience-reception/aos06-06-03-audience-reception.html" class="sidebar-link ">Aos06 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-06-analytical-domains/aos06-06-04-political-social-commentary/aos06-06-04-political-social-commentary.html" class="sidebar-link ">Aos06 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-06-analytical-domains/aos06-06-05-geographic-influence/aos06-06-05-geographic-influence.html" class="sidebar-link ">Aos06 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 06 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos06-music-for-small-ensemble/aos06-07-glossary/aos06-07-glossary.html" class="sidebar-link ">Aos06 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 Music For Stage And Screen</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-music-for-stage-and-screen.html" class="sidebar-link ">Aos07 Music For Stage And Screen</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 Core Musical Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-core-musical-elements.html" class="sidebar-link ">Aos07 01 Core Musical Elements</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 01 Dynamics</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-01-dynamics/aos07-01-01-dynamics.html" class="sidebar-link ">Aos07 01 01 Dynamics</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 02 Rhythm</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-02-rhythm/aos07-01-02-rhythm.html" class="sidebar-link ">Aos07 01 02 Rhythm</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 03 Metre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-03-metre/aos07-01-03-metre.html" class="sidebar-link ">Aos07 01 03 Metre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 04 Tempo</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-04-tempo/aos07-01-04-tempo.html" class="sidebar-link ">Aos07 01 04 Tempo</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 05 Melody</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-05-melody/aos07-01-05-melody.html" class="sidebar-link ">Aos07 01 05 Melody</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 06 Harmony</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-06-harmony/aos07-01-06-harmony.html" class="sidebar-link ">Aos07 01 06 Harmony</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 07 Tonality</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-07-tonality/aos07-01-07-tonality.html" class="sidebar-link ">Aos07 01 07 Tonality</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 08 Texture</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-08-texture/aos07-01-08-texture.html" class="sidebar-link ">Aos07 01 08 Texture</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 09 Timbre</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-09-timbre/aos07-01-09-timbre.html" class="sidebar-link ">Aos07 01 09 Timbre</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 01 10 Structure Form</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-01-core-musical-elements/aos07-01-10-structure-form/aos07-01-10-structure-form.html" class="sidebar-link ">Aos07 01 10 Structure Form</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 Sound Sources And Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-sound-sources-and-techniques.html" class="sidebar-link ">Aos07 02 Sound Sources And Techniques</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 01 Instrumentation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-01-instrumentation/aos07-02-01-instrumentation.html" class="sidebar-link ">Aos07 02 01 Instrumentation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 02 Organology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-02-organology/aos07-02-02-organology.html" class="sidebar-link ">Aos07 02 02 Organology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 03 Vocal Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-03-vocal-techniques/aos07-02-03-vocal-techniques.html" class="sidebar-link ">Aos07 02 03 Vocal Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 04 Extended Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-04-extended-techniques/aos07-02-04-extended-techniques.html" class="sidebar-link ">Aos07 02 04 Extended Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 05 Improvisation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-05-improvisation/aos07-02-05-improvisation.html" class="sidebar-link ">Aos07 02 05 Improvisation</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 02 06 Composition Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-02-sound-sources-and-techniques/aos07-02-06-composition-techniques/aos07-02-06-composition-techniques.html" class="sidebar-link ">Aos07 02 06 Composition Techniques</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 Cultural And Historical Context</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-cultural-and-historical-context.html" class="sidebar-link ">Aos07 03 Cultural And Historical Context</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 01 Cultural Function</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-01-cultural-function/aos07-03-01-cultural-function.html" class="sidebar-link ">Aos07 03 01 Cultural Function</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 01 01 Ritual</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-01-cultural-function/aos07-03-01-01-ritual/aos07-03-01-01-ritual.html" class="sidebar-link ">Ritual - Music for Stage and Screen Cultural Function</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 01 02 Celebration</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-01-cultural-function/aos07-03-01-02-celebration/aos07-03-01-02-celebration.html" class="sidebar-link ">Celebration - Music for Stage and Screen Cultural Function</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 01 03 Work Protest</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-01-cultural-function/aos07-03-01-03-work-protest/aos07-03-01-03-work-protest.html" class="sidebar-link ">Work/Protest - Music for Stage and Screen Cultural Function</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 01 04 Healing</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-01-cultural-function/aos07-03-01-04-healing/aos07-03-01-04-healing.html" class="sidebar-link ">Healing - Music for Stage and Screen Cultural Function</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 01 05 Social Identity</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-01-cultural-function/aos07-03-01-05-social-identity/aos07-03-01-05-social-identity.html" class="sidebar-link ">Social Identity - Music for Stage and Screen Cultural Function</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 02 Historical Background</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-02-historical-background/aos07-03-02-historical-background.html" class="sidebar-link ">Aos07 03 02 Historical Background</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 03 Movement And Dance</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-03-movement-and-dance/aos07-03-03-movement-and-dance.html" class="sidebar-link ">Aos07 03 03 Movement And Dance</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 04 Economics And Patronage</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-04-economics-and-patronage/aos07-03-04-economics-and-patronage.html" class="sidebar-link ">Aos07 03 04 Economics And Patronage</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 05 Key Works Pieces</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-05-key-works-pieces/aos07-03-05-key-works-pieces.html" class="sidebar-link ">Aos07 03 05 Key Works Pieces</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 06 Key Composers Artists</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-06-key-composers-artists/aos07-03-06-key-composers-artists.html" class="sidebar-link ">Aos07 03 06 Key Composers Artists</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 07 Performance Practice</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-07-performance-practice/aos07-03-07-performance-practice.html" class="sidebar-link ">Aos07 03 07 Performance Practice</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 07 01 Staging</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-07-performance-practice/aos07-03-07-01-staging/aos07-03-07-01-staging.html" class="sidebar-link ">Staging - Music for Stage and Screen Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 07 02 Performer Audience Relationship</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-07-performance-practice/aos07-03-07-02-performer-audience-relationship/aos07-03-07-02-performer-audience-relationship.html" class="sidebar-link ">Performer-Audience Relationship - Music for Stage and Screen Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 07 03 Attire</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-07-performance-practice/aos07-03-07-03-attire/aos07-03-07-03-attire.html" class="sidebar-link ">Attire - Music for Stage and Screen Performance Practice</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 03 07 04 Ritualistic Elements</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-03-cultural-and-historical-context/aos07-03-07-performance-practice/aos07-03-07-04-ritualistic-elements/aos07-03-07-04-ritualistic-elements.html" class="sidebar-link ">Ritualistic Elements - Music for Stage and Screen Performance Practice</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 04 Language Literacy And Theory</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-language-literacy-and-theory.html" class="sidebar-link ">Aos07 04 Language Literacy And Theory</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 04 01 Specific Terminology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-01-specific-terminology/aos07-04-01-specific-terminology.html" class="sidebar-link ">Aos07 04 01 Specific Terminology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 04 02 Lyrics And Text Analysis</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-02-lyrics-and-text-analysis/aos07-04-02-lyrics-and-text-analysis.html" class="sidebar-link ">Aos07 04 02 Lyrics And Text Analysis</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 04 03 Notation System</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-03-notation-system/aos07-04-03-notation-system.html" class="sidebar-link ">Aos07 04 03 Notation System</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 04 04 Oral Aural Tradition</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-04-oral-aural-tradition/aos07-04-04-oral-aural-tradition.html" class="sidebar-link ">Aos07 04 04 Oral Aural Tradition</a></li></ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-01-specific-terminology.html" class="sidebar-link ">4.1 Specific Terminology - Music for Stage and Screen</a></li><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-02-lyrics-text-analysis.html" class="sidebar-link ">4.2 Lyrics & Text Analysis - Music for Stage and Screen</a></li><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-03-notation-system.html" class="sidebar-link ">4.3 Notation System - Music for Stage and Screen</a></li><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-04-oral-aural-tradition.html" class="sidebar-link ">4.4 Oral/Aural Tradition - Music for Stage and Screen</a></li><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-04-language-literacy-and-theory/aos07-04-05-music-theory-framework.html" class="sidebar-link ">4.5 Music Theory Framework - Music for Stage and Screen</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 05 Technology And Innovation</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-05-technology-and-innovation/aos07-05-technology-and-innovation.html" class="sidebar-link ">Aos07 05 Technology And Innovation</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 05 01 Music Technology</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-05-technology-and-innovation/aos07-05-01-music-technology/aos07-05-01-music-technology.html" class="sidebar-link ">Aos07 05 01 Music Technology</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 05 02 Recording And Production Techniques</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-05-technology-and-innovation/aos07-05-02-recording-and-production-techniques/aos07-05-02-recording-and-production-techniques.html" class="sidebar-link ">Aos07 05 02 Recording And Production Techniques</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 05 03 Distribution And Media</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-05-technology-and-innovation/aos07-05-03-distribution-and-media/aos07-05-03-distribution-and-media.html" class="sidebar-link ">Aos07 05 03 Distribution And Media</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 05 04 Hybridization</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-05-technology-and-innovation/aos07-05-04-hybridization/aos07-05-04-hybridization.html" class="sidebar-link ">Aos07 05 04 Hybridization</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 06 Analytical Domains</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-06-analytical-domains/aos07-06-analytical-domains.html" class="sidebar-link ">Aos07 06 Analytical Domains</a></li>
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 06 01 Genre And Style</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-06-analytical-domains/aos07-06-01-genre-and-style/aos07-06-01-genre-and-style.html" class="sidebar-link ">Aos07 06 01 Genre And Style</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 06 02 Aesthetic Values</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-06-analytical-domains/aos07-06-02-aesthetic-values/aos07-06-02-aesthetic-values.html" class="sidebar-link ">Aos07 06 02 Aesthetic Values</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 06 03 Audience Reception</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-06-analytical-domains/aos07-06-03-audience-reception/aos07-06-03-audience-reception.html" class="sidebar-link ">Aos07 06 03 Audience Reception</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 06 04 Political Social Commentary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-06-analytical-domains/aos07-06-04-political-social-commentary/aos07-06-04-political-social-commentary.html" class="sidebar-link ">Aos07 06 04 Political Social Commentary</a></li></ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 06 05 Geographic Influence</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-06-analytical-domains/aos07-06-05-geographic-influence/aos07-06-05-geographic-influence.html" class="sidebar-link ">Aos07 06 05 Geographic Influence</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            
+            <li class="nav-item-folder">
+                <details >
+                    <summary>Aos 07 07 Glossary</summary>
+                    <ul class="nav-tree"><li class="nav-item-file"><a href="../../../aos07-music-for-stage-and-screen/aos07-07-glossary/aos07-07-glossary.html" class="sidebar-link ">Aos07 07 Glossary</a></li></ul>
+                </details>
+            </li>
+            </ul>
+                </details>
+            </li>
+            <li class="nav-item-file"><a href="../../../areas-of-study.html" class="sidebar-link ">IGCSE Music Areas of Study</a></li></ul>
+
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                <a href="../../../sitemap.html" class="sidebar-link">Site Map</a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <div class="container">
+                <h1>Aos03 01 10 Structure Form</h1>
+                
+                <p>Part of Aos03 Romantic Music</p>
+                
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Sub-page Navigation (Breadcrumb-like) -->
+            
+            <div style="margin-bottom: var(--spacing-sm);">
+                <a href="../../../aos03-romantic-music/aos03-romantic-music.html" style="color: var(--accent); font-size: 0.9rem;">← Back to Area
+                    Overview</a>
+            </div>
+            
+
+            <main class="content-section">
+                Definition Section 
+<section id="definition">
+<h3>Definition</h3>
+<p>Structure and form in Romantic music refer to the overall organization and architecture of musical compositions. Romantic composers approached form with greater flexibility than their Classical predecessors, often modifying traditional forms or creating entirely new structures to serve their expressive and programmatic needs. Form becomes a vehicle for storytelling, emotional expression, and the development of musical ideas over extended time spans.</p>
+</section>
+ Key Characteristics Section 
+<section id="key-characteristics">
+<h3>Key Characteristics of Romantic Structure/Form</h3>
+<div class="characteristic" id="programmatic-form">
+<h4>Programmatic and Narrative Forms</h4>
+<p>Romantic composers often created forms that followed literary or pictorial programs, with the musical structure reflecting the narrative or descriptive content rather than abstract musical logic.</p>
+<ul>
+<li><strong>Programme music:</strong> Music that tells a story or depicts scenes</li>
+<li><strong>Tone poems:</strong> Single-movement orchestral works with programmatic content</li>
+<li><strong>Narrative structure:</strong> Musical form following a story line</li>
+<li><strong>Descriptive sections:</strong> Musical episodes depicting specific scenes</li>
+</ul>
+</div>
+<div class="characteristic" id="flexible-forms">
+<h4>Flexible and Modified Traditional Forms</h4>
+<p>While Romantic composers used traditional forms like sonata form, they modified them extensively to serve their expressive needs, creating more flexible and personalized structures.</p>
+<ul>
+<li><strong>Modified sonata form:</strong> Traditional form adapted for expression</li>
+<li><strong>Through-composed:</strong> Continuous development without repetition</li>
+<li><strong>Cyclic form:</strong> Themes returning throughout multi-movement works</li>
+<li><strong>Free form:</strong> Structure determined by content rather than convention</li>
+</ul>
+</div>
+<div class="characteristic" id="thematic-transformation">
+<h4>Thematic Transformation and Development</h4>
+<p>Romantic composers used sophisticated techniques of thematic transformation, where musical themes are varied and developed throughout a work to create unity and support programmatic content.</p>
+<ul>
+<li><strong>Leitmotif:</strong> Recurring themes associated with characters or ideas</li>
+<li><strong>Thematic metamorphosis:</strong> Gradual transformation of themes</li>
+<li><strong>Motivic development:</strong> Extensive development of small musical ideas</li>
+<li><strong>Cyclic themes:</strong> Themes that return in different movements</li>
+</ul>
+</div>
+<div class="characteristic" id="extended-structures">
+<h4>Extended and Expanded Structures</h4>
+<p>Romantic forms tend to be longer and more expansive than Classical forms, with extended development sections, longer transitions, and more elaborate codas that serve expressive purposes.</p>
+<ul>
+<li><strong>Extended development:</strong> Longer, more complex development sections</li>
+<li><strong>Elaborate transitions:</strong> Extended passages connecting sections</li>
+<li><strong>Expanded codas:</strong> Lengthy concluding sections</li>
+<li><strong>Monumental scale:</strong> Large-scale structures for dramatic effect</li>
+</ul>
+</div>
+</section>
+ Terminology Section 
+<section id="terminology">
+<h3>Essential Structure/Form Terminology</h3>
+<div class="terminology-grid">
+<div class="term-card">
+<h4>Basic Form Terms</h4>
+<ul>
+<li><strong>Form:</strong> The overall structure of a musical work</li>
+<li><strong>Section:</strong> A distinct part of a musical form</li>
+<li><strong>Theme:</strong> A main musical idea</li>
+<li><strong>Episode:</strong> A contrasting section</li>
+<li><strong>Transition:</strong> A passage connecting sections</li>
+</ul>
+</div>
+<div class="term-card">
+<h4>Programmatic Terms</h4>
+<ul>
+<li><strong>Programme music:</strong> Music with extra-musical content</li>
+<li><strong>Tone poem:</strong> Single-movement programmatic work</li>
+<li><strong>Leitmotif:</strong> Recurring theme for character/idea</li>
+<li><strong>Idée fixe:</strong> Obsessive recurring theme</li>
+<li><strong>Thematic transformation:</strong> Variation of themes</li>
+</ul>
+</div>
+<div class="term-card">
+<h4>Structural Terms</h4>
+<ul>
+<li><strong>Exposition:</strong> Initial presentation of themes</li>
+<li><strong>Development:</strong> Working out of themes</li>
+<li><strong>Recapitulation:</strong> Return of opening material</li>
+<li><strong>Coda:</strong> Concluding section</li>
+<li><strong>Through-composed:</strong> Continuous, non-repetitive form</li>
+</ul>
+</div>
+</div>
+</section>
+ Comparison Section 
+<section id="comparison">
+<h3>Comparison with Baroque Structure/Form</h3>
+<div class="comparison-table">
+<div class="baroque-column">
+<h4>Baroque Structure/Form</h4>
+<ul>
+<li>Clear, predictable formal patterns</li>
+<li>Balanced, symmetrical structures</li>
+<li>Functional approach to form</li>
+<li>Limited thematic development</li>
+<li>Consistent formal procedures</li>
+</ul>
+</div>
+<div class="romantic-column">
+<h4>Romantic Structure/Form</h4>
+<ul>
+<li>Flexible, expressive formal patterns</li>
+<li>Asymmetrical, organic structures</li>
+<li>Expressive approach to form</li>
+<li>Extensive thematic development</li>
+<li>Individualized formal procedures</li>
+</ul>
+</div>
+</div>
+</section>
+ Focus Work Examples 
+<section id="focus-work-examples">
+<h3>Focus Work: Smetana's <em>Vltava</em></h3>
+<h4>Structural Analysis of <em>Vltava</em></h4>
+<div class="example" id="overall-structure">
+<h5>Overall Form: Programmatic Tone Poem</h5>
+<p><strong>Structure:</strong> Through-composed form following the river's journey</p>
+<p><strong>Characteristics:</strong> The work follows a narrative structure rather than a traditional musical form, with each section representing a different stage of the river's journey from source to Prague.</p>
+</div>
+<div class="example" id="river-source-structure">
+<h5>1. The River Source (Opening)</h5>
+<p><strong>Structure:</strong> Introduction - two separate streams converging</p>
+<p><strong>Musical Form:</strong> Two independent melodic lines (flutes) that gradually combine, representing the two mountain streams that form the river's source.</p>
+</div>
+<div class="example" id="main-theme-structure">
+<h5>2. Main River Theme (Primary Section)</h5>
+<p><strong>Structure:</strong> Statement and development of the river theme</p>
+<p><strong>Musical Form:</strong> The famous river melody is presented and then developed through various orchestral treatments, establishing the main musical character of the work.</p>
+</div>
+<div class="example" id="hunting-structure">
+<h5>3. Hunting Scene (Episode 1)</h5>
+<p><strong>Structure:</strong> Contrasting episode in different key and character</p>
+<p><strong>Musical Form:</strong> A complete contrasting section with its own themes and development, representing the royal hunt, before returning to the river theme.</p>
+</div>
+<div class="example" id="wedding-structure">
+<h5>4. Peasant Wedding (Episode 2)</h5>
+<p><strong>Structure:</strong> Folk-style episode with dance characteristics</p>
+<p><strong>Musical Form:</strong> A section based on Czech folk dance patterns, with repetitive structures typical of folk music, contrasting with the flowing river theme.</p>
+</div>
+<div class="example" id="nymphs-structure">
+<h5>5. Moonlight Dance of Water Nymphs (Episode 3)</h5>
+<p><strong>Structure:</strong> Ethereal, atmospheric section</p>
+<p><strong>Musical Form:</strong> A mysterious, floating section with less defined formal structure, creating an otherworldly atmosphere through impressionistic techniques.</p>
+</div>
+<div class="example" id="rapids-structure">
+<h5>6. St. John's Rapids (Development/Crisis)</h5>
+<p><strong>Structure:</strong> Turbulent development section</p>
+<p><strong>Musical Form:</strong> An intense development of the river theme in a chaotic, fragmented manner, representing the dangerous rapids and serving as the work's climactic crisis point.</p>
+</div>
+<div class="example" id="final-structure">
+<h5>7. Final Statement (Coda)</h5>
+<p><strong>Structure:</strong> Triumphant conclusion and apotheosis</p>
+<p><strong>Musical Form:</strong> The river theme returns in a triumphant, expanded form, representing the river's arrival in Prague and its historical significance, serving as a massive, celebratory coda.</p>
+</div>
+<div class="example" id="thematic-unity">
+<h5>Thematic Unity</h5>
+<p><strong>Unifying Elements:</strong> The river theme provides structural coherence</p>
+<p><strong>Technique:</strong> Despite the episodic nature of the work, the recurring river theme and its transformations provide overall unity, demonstrating sophisticated thematic development techniques.</p>
+</div>
+</section>
+ Performance Practice 
+<section id="performance-practice">
+<h3>Performance Practice</h3>
+<h4>Interpreting Romantic Structure/Form</h4>
+<ul>
+<li><strong>Narrative awareness:</strong> Understand the programmatic content and how it shapes the form</li>
+<li><strong>Sectional clarity:</strong> Make formal divisions clear through performance choices</li>
+<li><strong>Thematic recognition:</strong> Highlight important themes and their transformations</li>
+<li><strong>Structural pacing:</strong> Understand the large-scale pacing of the work</li>
+<li><strong>Climax building:</strong> Build toward structural climaxes effectively</li>
+</ul>
+<h4>Ensemble Considerations</h4>
+<ul>
+<li><strong>Communication:</strong> Clear cues for formal transitions and changes</li>
+<li><strong>Balance:</strong> Proper balance to clarify formal structure</li>
+<li><strong>Timing:</strong> Coordinated execution of formal transitions</li>
+<li><strong>Character:</strong> Distinct character for different formal sections</li>
+</ul>
+</section>
+ Assessment Focus 
+<section id="assessment-focus">
+<h3>Assessment Focus</h3>
+<h4>What You Need to Know</h4>
+<ul>
+<li>Identify the overall form and structure of <em>Vltava</em></li>
+<li>Understand how programmatic content shapes musical form</li>
+<li>Compare Romantic forms with other musical periods</li>
+<li>Analyze how themes are developed and transformed</li>
+<li>Recognize different sections and their characteristics</li>
+<li>Use correct terminology when describing musical form</li>
+</ul>
+<h4>Listening Skills</h4>
+<ul>
+<li>Identify when new sections begin in a piece</li>
+<li>Recognize the return of themes and their variations</li>
+<li>Understand how different sections relate to each other</li>
+<li>Follow the narrative structure of programmatic works</li>
+<li>Identify climactic points and their structural function</li>
+</ul>
+</section>
+            </main>
+
+            <div class="nav-bar" style="margin-top: var(--spacing-lg); justify-content: space-between;">
+                
+                <a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-09-timbre/aos03-01-09-timbre.html" class="btn">← Previous</a>
+                
+
+                
+                <a href="../../../aos03-romantic-music/aos03-01-core-musical-elements/aos03-01-core-musical-elements.html" class="btn">Next →</a>
+                
+            </div>
+        </div>
+
+        <footer>
+            <p>IGCSE Music Areas of Study © 2024</p>
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            document.body.style.setProperty('--mouse-x', x);
+            document.body.style.setProperty('--mouse-y', y);
+
+            // Mouse Trail Logic
+            createTrailParticle(e.clientX, e.clientY);
+        });
+
+        function createTrailParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.classList.add('trail-particle');
+            document.body.appendChild(particle);
+
+            // Randomize position slightly for a "glitch" feel
+            const offsetX = (Math.random() - 0.5) * 10;
+            const offsetY = (Math.random() - 0.5) * 10;
+
+            particle.style.left = `${x + offsetX}px`;
+            particle.style.top = `${y + offsetY}px`;
+
+            // Cycle through neon colors
+            const colors = ['var(--primary)', 'var(--secondary)', 'var(--accent)'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.background = randomColor;
+            particle.style.boxShadow = `0 0 8px ${randomColor}`;
+
+            // Remove after animation
+            setTimeout(() => {
+                particle.remove();
+            }, 800);
+        }
+    </script>
+</body>
+
+</html>
