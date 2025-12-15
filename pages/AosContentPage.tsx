@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useParams, useLocation, Link, useNavigate } from 'react-router-dom';
 
 // MathJax global declaration is in TheoryPage.tsx
@@ -24,9 +24,9 @@ const AosContentPage: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
-    // Build the file path from the URL
+    // Build the file path from the URL - memoized to prevent infinite loops
     const pathAfterAos = location.pathname.replace('/aos/', '');
-    const pathParts = pathAfterAos.split('/').filter(Boolean);
+    const pathParts = useMemo(() => pathAfterAos.split('/').filter(Boolean), [pathAfterAos]);
 
     // Find AOS info
     const currentAos = aosData.find(aos => pathAfterAos.startsWith(aos.id));
@@ -88,7 +88,7 @@ const AosContentPage: React.FC = () => {
         if (aosId) {
             fetchContent();
         }
-    }, [aosId, pathAfterAos, pathParts]);
+    }, [aosId, pathAfterAos]); // Removed pathParts - pathAfterAos is sufficient
 
     // Initialize MathJax after content loads
     useEffect(() => {
