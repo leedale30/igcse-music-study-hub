@@ -36,18 +36,43 @@ const AosContentPage: React.FC = () => {
             try {
                 setLoading(true);
 
-                // Build the HTML file path
-                let htmlPath = `/aos/${pathAfterAos}`;
+                // Build possible HTML file paths to try
+                const pathsToTry: string[] = [];
+                const lastPart = pathParts[pathParts.length - 1];
 
-                // If path ends without .html, try to find the matching HTML file
-                if (!htmlPath.endsWith('.html')) {
-                    // Try the direct path with .html extension
-                    const lastPart = pathParts[pathParts.length - 1];
-                    htmlPath = `/aos/${pathAfterAos}/${lastPart}.html`;
+                // If it already ends with .html, use as-is
+                if (pathAfterAos.endsWith('.html')) {
+                    pathsToTry.push(`/aos/${pathAfterAos}`);
+                } else {
+                    // Try: /aos/path.html (add .html to current path)
+                    pathsToTry.push(`/aos/${pathAfterAos}.html`);
+
+                    // Try: /aos/path/lastpart.html (append lastpart.html)
+                    pathsToTry.push(`/aos/${pathAfterAos}/${lastPart}.html`);
+
+                    // Try: /aos/parentpath/lastpart.html (go up one level if lastpart is duplicated)
+                    if (pathParts.length >= 2 && pathParts[pathParts.length - 1] === pathParts[pathParts.length - 2]) {
+                        const parentPath = pathParts.slice(0, -1).join('/');
+                        pathsToTry.push(`/aos/${parentPath}/${lastPart}.html`);
+                    }
                 }
 
-                const response = await fetch(htmlPath);
-                if (!response.ok) {
+                let response: Response | null = null;
+                let successPath = '';
+
+                for (const htmlPath of pathsToTry) {
+                    try {
+                        response = await fetch(htmlPath);
+                        if (response.ok) {
+                            successPath = htmlPath;
+                            break;
+                        }
+                    } catch {
+                        // Try next path
+                    }
+                }
+
+                if (!response || !response.ok) {
                     throw new Error('Content not found');
                 }
 
