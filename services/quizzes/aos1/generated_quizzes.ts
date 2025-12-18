@@ -878,8 +878,8 @@ K:G
             options: [
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "D Major" },
-                { id: 'c', text: "Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "G Major" },
+                { id: 'd', text: "A Major" }
             ],
             correctAnswerId: 'c',
             explanation: ""
