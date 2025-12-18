@@ -26,15 +26,25 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
     }, [title]);
 
     useEffect(() => {
+        let active = true;
         if (!abcNotation) return;
+
+        // Cleanup previous instances if they exist
+        if (synthControlRef.current) {
+            try {
+                synthControlRef.current.disable(true);
+            } catch (e) {
+                console.warn("Error disabling previous synthControl:", e);
+            }
+        }
 
         // Reset containers content
         if (visualRef.current) visualRef.current.innerHTML = "";
         if (audioRef.current) audioRef.current.innerHTML = "";
 
-        // Cleanup previous synth instances
-        if (synthRef.current) synthRef.current = null;
-        if (synthControlRef.current) synthControlRef.current = null;
+        // Reset refs
+        synthRef.current = null;
+        synthControlRef.current = null;
 
         try {
             // 1. Render Visual
@@ -69,8 +79,9 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
                         soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/",
                     }
                 }).then(() => {
-                    if (synthControlRef.current) {
+                    if (active && synthControlRef.current) {
                         synthControlRef.current.setTune(visualObjRef.current, true)
+                            .then(() => console.log("Audio successfully loaded and tuned"))
                             .catch((e: any) => console.warn("Audio setTune error:", e));
                     }
                 }).catch((e: any) => console.warn("Audio init error:", e));
@@ -78,6 +89,18 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
         } catch (err) {
             console.error("ABCJS Error:", err);
         }
+
+        return () => {
+            active = false;
+            // Cleanup on unmount
+            if (synthControlRef.current) {
+                try {
+                    synthControlRef.current.disable(true);
+                } catch (e) {
+                    console.warn("Error disabling synthControl on unmount:", e);
+                }
+            }
+        };
     }, [abcNotation, title, visualId, audioId]);
 
     return {
