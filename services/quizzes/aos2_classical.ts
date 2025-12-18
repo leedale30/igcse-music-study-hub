@@ -1,6 +1,7 @@
 import { Quiz } from '../../types';
 
 export const classicalIntroductionQuiz: Quiz = {
+  id: 'aos2-classical-intro',
   title: "Introduction to the Classical Era Quiz",
   questions: [
     {
@@ -103,6 +104,7 @@ export const classicalIntroductionQuiz: Quiz = {
 };
 
 export const mozartLifeQuiz: Quiz = {
+  id: 'aos2-mozart-life',
   title: "Mozart's Life and Times Quiz",
   questions: [
     {
