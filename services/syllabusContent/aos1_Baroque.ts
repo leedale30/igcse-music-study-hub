@@ -22,6 +22,23 @@ import {
   harmonyQuiz,
   specimenAllegroQuiz
 } from '../quizzes/aos1/abc_quizzes';
+import {
+  generatedQuiz1,
+  generatedQuiz2,
+  generatedQuiz3,
+  generatedQuiz4,
+  generatedQuiz5,
+  generatedQuiz6,
+  generatedQuiz7,
+  generatedQuiz8,
+  generatedQuiz9,
+  generatedQuiz10,
+  generatedQuiz11,
+  generatedQuiz12,
+  generatedQuiz13,
+  generatedQuiz14,
+  generatedQuiz15
+} from '../quizzes/aos1/generated_quizzes';
 
 // Detailed content sections from the new HTML pages
 const detailedContentSections: SyllabusItem = {
@@ -205,6 +222,33 @@ const specimenPage: SyllabusItem = {
   isTerm: false
 };
 
+// Assessment Quizzes Section - 15 comprehensive quizzes with ABC notation
+const assessmentQuizzesSection: SyllabusItem = {
+  id: 'aos1-assessment-quizzes',
+  title: '📋 Assessment Quizzes',
+  title_zh: '📋 评估测验',
+  path: '/aos/aos01-baroque-music/assessment-quizzes',
+  content: '15 comprehensive assessment quizzes with score analysis and audio playback.',
+  content_zh: '15个综合评估测验，含乐谱分析和音频播放。',
+  children: [
+    { id: 'aos1-assess-1', title: '📝 Quiz 1: Concerto Grosso in D Major', path: '/aos/aos01-baroque-music/assessment/quiz-1', content: '20 questions on Concerto Grosso structure and analysis.', quiz: generatedQuiz1, isTerm: false },
+    { id: 'aos1-assess-2', title: '📝 Quiz 2: Baroque Concerto Skeleton', path: '/aos/aos01-baroque-music/assessment/quiz-2', content: '20 questions on skeleton score analysis.', quiz: generatedQuiz2, isTerm: false },
+    { id: 'aos1-assess-3', title: '📝 Quiz 3: Baroque Concerto Analysis', path: '/aos/aos01-baroque-music/assessment/quiz-3', content: '20 questions on concerto form and texture.', quiz: generatedQuiz3, isTerm: false },
+    { id: 'aos1-assess-4', title: '📝 Quiz 4: Baroque Ritornello', path: '/aos/aos01-baroque-music/assessment/quiz-4', content: '20 questions on ritornello form.', quiz: generatedQuiz4, isTerm: false },
+    { id: 'aos1-assess-5', title: '📝 Quiz 5: Score Analysis I', path: '/aos/aos01-baroque-music/assessment/quiz-5', content: '19 questions on score reading.', quiz: generatedQuiz5, isTerm: false },
+    { id: 'aos1-assess-6', title: '📝 Quiz 6: Score Analysis II', path: '/aos/aos01-baroque-music/assessment/quiz-6', content: '18 questions on Baroque analysis.', quiz: generatedQuiz6, isTerm: false },
+    { id: 'aos1-assess-7', title: '📝 Quiz 7: Baroque Features', path: '/aos/aos01-baroque-music/assessment/quiz-7', content: '20 questions on key features.', quiz: generatedQuiz7, isTerm: false },
+    { id: 'aos1-assess-8', title: '📝 Quiz 8: Musical Elements', path: '/aos/aos01-baroque-music/assessment/quiz-8', content: '19 questions on musical elements.', quiz: generatedQuiz8, isTerm: false },
+    { id: 'aos1-assess-9', title: '📝 Quiz 9: Harmonic Analysis', path: '/aos/aos01-baroque-music/assessment/quiz-9', content: '20 questions on harmony and cadences.', quiz: generatedQuiz9, isTerm: false },
+    { id: 'aos1-assess-10', title: '📝 Quiz 10: Texture & Form', path: '/aos/aos01-baroque-music/assessment/quiz-10', content: '20 questions on texture and structure.', quiz: generatedQuiz10, isTerm: false },
+    { id: 'aos1-assess-11', title: '📝 Quiz 11: Instrumentation', path: '/aos/aos01-baroque-music/assessment/quiz-11', content: '18 questions on Baroque instruments.', quiz: generatedQuiz11, isTerm: false },
+    { id: 'aos1-assess-12', title: '📝 Quiz 12: Baroque Ritornello II', path: '/aos/aos01-baroque-music/assessment/quiz-12', content: '19 questions on ritornello analysis.', quiz: generatedQuiz12, isTerm: false },
+    { id: 'aos1-assess-13', title: '📝 Quiz 13: Concerto Grosso II', path: '/aos/aos01-baroque-music/assessment/quiz-13', content: '19 questions on concerto grosso.', quiz: generatedQuiz13, isTerm: false },
+    { id: 'aos1-assess-14', title: '📝 Quiz 14: Baroque Listening', path: '/aos/aos01-baroque-music/assessment/quiz-14', content: '20 questions with audio stimulus.', quiz: generatedQuiz14, isTerm: false },
+    { id: 'aos1-assess-15', title: '📝 Quiz 15: Specimen Allegro', path: '/aos/aos01-baroque-music/assessment/quiz-15', content: '20 questions on specimen analysis.', quiz: generatedQuiz15, isTerm: false },
+  ]
+};
+
 export const baroqueMusicAoS: SyllabusItem = {
   id: 'aos1-baroque-music',
   title: 'Area of Study 1: Baroque Music',
@@ -221,6 +265,7 @@ export const baroqueMusicAoS: SyllabusItem = {
     handelFocusWork,
     widerListeningPage,
     finalExamPage,
+    assessmentQuizzesSection,
     rapidFirePage,
     textureQuizPage,
     dynamicsQuizPage,
