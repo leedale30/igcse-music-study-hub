@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Quiz, Question, AnswerOption } from '../types';
 import { validateQuizSubmission } from '../utils/validation';
 import { useErrorHandler } from './ErrorBoundary';
 import { useAuth } from '../contexts/AuthContext';
 import { useProgress } from '../contexts/ProgressContext';
 import { Link } from 'react-router-dom';
-import abcjs from 'abcjs';
-import 'abcjs/abcjs-audio.css';
+
+import { useAbcPlayer } from '../hooks/useAbcPlayer';
 
 interface QuizProps {
   quizData: Quiz;
@@ -40,84 +40,20 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const [quizStartTime, setQuizStartTime] = useState<Date>(new Date());
   const [progressSaved, setProgressSaved] = useState(false);
 
-  const visualRef = useRef<HTMLDivElement>(null);
-  const audioRef = useRef<HTMLDivElement>(null);
-  const synthRef = useRef<any>(null);
-  const synthControlRef = useRef<any>(null);
-  const visualObjRef = useRef<any>(null);
-
-  // Generate stable IDs for this quiz instance
-  const { visualId, audioId } = useMemo(() => {
-    const suffix = quizData.title.replace(/\s+/g, '-').toLowerCase();
-    return {
-      visualId: `abc-paper-${suffix}`,
-      audioId: `abc-audio-${suffix}`
-    };
-  }, [quizData.title]);
-
   const { handleError } = useErrorHandler();
   const { user } = useAuth();
   const { addQuizResult } = useProgress();
+
+  // Use the ABC Player hook
+  const { visualRef, audioRef, visualId, audioId } = useAbcPlayer({
+    abcNotation: quizData.abcNotation || '',
+    title: quizData.title
+  });
 
   // Initialize quiz start time
   useEffect(() => {
     setQuizStartTime(new Date());
   }, [quizData.title]);
-
-  // Handle ABCJS Rendering
-  useEffect(() => {
-    if (quizData.abcNotation) {
-
-
-      // Ensure divs are empty
-      if (visualRef.current) visualRef.current.innerHTML = "";
-      if (audioRef.current) audioRef.current.innerHTML = "";
-
-      // Cleanup previous instances
-      if (synthRef.current) synthRef.current = null;
-      if (synthControlRef.current) synthControlRef.current = null;
-
-      try {
-        // Render Visual
-        if (visualRef.current) {
-          visualObjRef.current = abcjs.renderAbc(visualRef.current, quizData.abcNotation, {
-            responsive: "resize",
-            add_classes: true,
-          })[0];
-        }
-
-        // Render Audio
-        if (abcjs.synth.supportsAudio() && audioRef.current) {
-          const synthControl = new abcjs.synth.SynthController();
-          synthControlRef.current = synthControl;
-
-          synthControl.load(`#${audioId}`, null, {
-            displayRestart: true,
-            displayPlay: true,
-            displayProgress: true,
-            displayWarp: true,
-          });
-
-          const synth = new abcjs.synth.CreateSynth();
-          synthRef.current = synth;
-
-          synth.init({
-            visualObj: visualObjRef.current,
-            options: {
-              soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/",
-            }
-          }).then(() => {
-            if (synthControlRef.current) {
-              synthControlRef.current.setTune(visualObjRef.current, true)
-                .catch((e: any) => console.warn("Audio setTune error:", e));
-            }
-          }).catch((e: any) => console.warn("Audio init error:", e));
-        }
-      } catch (err) {
-        console.error("ABCJS Error:", err);
-      }
-    }
-  }, [quizData.abcNotation, quizData.title, visualId, audioId]); // Re-run if notation changes
 
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
