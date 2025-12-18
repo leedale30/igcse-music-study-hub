@@ -7,6 +7,21 @@ import { handelFocusWork } from './aos1/handel';
 import { widerListeningPage } from './aos1/widerListening';
 import { finalExamPage } from './aos1/finalExam';
 import { baroqueRapidFireQuiz } from '../quizzes/aos1/rapid_fire';
+import {
+  baroqueTextureQuiz,
+  baroqueDynamicsQuiz,
+  vivaldiRitornelloQuiz,
+  vivaldiStormQuiz,
+  vivaldiDogQuiz,
+  handelOvertureQuiz,
+  handelFugueQuiz,
+  corelliQuiz,
+  bachAirQuiz,
+  telemannQuiz,
+  ornamentsQuiz,
+  harmonyQuiz,
+  specimenAllegroQuiz
+} from '../quizzes/aos1/abc_quizzes';
 
 // Detailed content sections from the new HTML pages
 const detailedContentSections: SyllabusItem = {
@@ -73,6 +88,123 @@ const rapidFirePage: SyllabusItem = {
   isTerm: false
 };
 
+const textureQuizPage: SyllabusItem = {
+  id: 'aos1-texture-quiz',
+  title: '🧐 Texture & Continuo Quiz',
+  path: '/aos/aos01-baroque-music/texture-quiz',
+  content: 'Identify Baroque textures and continuo instruments.',
+  quiz: baroqueTextureQuiz,
+  isTerm: false
+};
+
+const dynamicsQuizPage: SyllabusItem = {
+  id: 'aos1-dynamics-quiz',
+  title: '🔈 Terraced Dynamics Quiz',
+  path: '/aos/aos01-baroque-music/dynamics-quiz',
+  content: 'Understand terraced dynamics and echo effects.',
+  quiz: baroqueDynamicsQuiz,
+  isTerm: false
+};
+
+const vivaldiRitornelloPage: SyllabusItem = {
+  id: 'aos1-vivaldi-ritornello',
+  title: '🎻 Vivaldi: Ritornello Form',
+  path: '/aos/aos01-baroque-music/vivaldi-ritornello',
+  content: 'Detailed analysis of Vivaldi\'s Ritornello form.',
+  quiz: vivaldiRitornelloQuiz,
+  isTerm: false
+};
+
+const vivaldiStormPage: SyllabusItem = {
+  id: 'aos1-vivaldi-storm',
+  title: '🌩️ Vivaldi: The Storm',
+  path: '/aos/aos01-baroque-music/vivaldi-storm',
+  content: 'Analyze the "Storm" episode and tremolo technique.',
+  quiz: vivaldiStormQuiz,
+  isTerm: false
+};
+
+const vivaldiDogPage: SyllabusItem = {
+  id: 'aos1-vivaldi-dog',
+  title: '🐕 Vivaldi: The Barking Dog',
+  path: '/aos/aos01-baroque-music/vivaldi-dog',
+  content: 'Programmatic music analysis: The lurking dog.',
+  quiz: vivaldiDogQuiz,
+  isTerm: false
+};
+
+const handelOverturePage: SyllabusItem = {
+  id: 'aos1-handel-overture',
+  title: '👑 Handel: French Overture',
+  path: '/aos/aos01-baroque-music/handel-overture',
+  content: 'Study the characteristics of the French Overture.',
+  quiz: handelOvertureQuiz,
+  isTerm: false
+};
+
+const handelFuguePage: SyllabusItem = {
+  id: 'aos1-handel-fugue',
+  title: '🎼 Handel: Fugal Texture',
+  path: '/aos/aos01-baroque-music/handel-fugue',
+  content: 'Analyze fugal texture and counterpoint.',
+  quiz: handelFugueQuiz,
+  isTerm: false
+};
+
+const corelliPage: SyllabusItem = {
+  id: 'aos1-corelli',
+  title: '🎄 Corelli: Pastorale',
+  path: '/aos/aos01-baroque-music/corelli',
+  content: 'Explore the Pastorale genre and Christmas Concerto.',
+  quiz: corelliQuiz,
+  isTerm: false
+};
+
+const bachAirPage: SyllabusItem = {
+  id: 'aos1-bach-air',
+  title: '🕯️ Bach: Air on the G String',
+  path: '/aos/aos01-baroque-music/bach-air',
+  content: 'Walking bass and suspensions in Bach\'s Air.',
+  quiz: bachAirQuiz,
+  isTerm: false
+};
+
+const telemannPage: SyllabusItem = {
+  id: 'aos1-telemann',
+  title: '👥 Telemann: Trio Sonata',
+  path: '/aos/aos01-baroque-music/telemann',
+  content: 'Understand the Trio Sonata texture and instrumentation.',
+  quiz: telemannQuiz,
+  isTerm: false
+};
+
+const ornamentsPage: SyllabusItem = {
+  id: 'aos1-ornaments',
+  title: '✨ Baroque Ornaments',
+  path: '/aos/aos01-baroque-music/ornaments',
+  content: 'Identify trills, mordents, and appoggiaturas.',
+  quiz: ornamentsQuiz,
+  isTerm: false
+};
+
+const harmonyQuizPage: SyllabusItem = {
+  id: 'aos1-harmony-quiz',
+  title: '⭕ Circle of Fifths Quiz',
+  path: '/aos/aos01-baroque-music/harmony-quiz',
+  content: 'Test your knowledge on sequences and harmony.',
+  quiz: harmonyQuiz,
+  isTerm: false
+};
+
+const specimenPage: SyllabusItem = {
+  id: 'aos1-specimen-allegro',
+  title: '📝 Specimen: Baroque Allegro',
+  path: '/aos/aos01-baroque-music/specimen-allegro',
+  content: 'Analyze a specimen Baroque Allegro piece.',
+  quiz: specimenAllegroQuiz,
+  isTerm: false
+};
+
 export const baroqueMusicAoS: SyllabusItem = {
   id: 'aos1-baroque-music',
   title: 'Area of Study 1: Baroque Music',
@@ -90,6 +222,19 @@ export const baroqueMusicAoS: SyllabusItem = {
     widerListeningPage,
     finalExamPage,
     rapidFirePage,
+    textureQuizPage,
+    dynamicsQuizPage,
+    vivaldiRitornelloPage,
+    vivaldiStormPage,
+    vivaldiDogPage,
+    handelOverturePage,
+    handelFuguePage,
+    corelliPage,
+    bachAirPage,
+    telemannPage,
+    ornamentsPage,
+    harmonyQuizPage,
+    specimenPage,
     detailedContentSections,
   ]
 };

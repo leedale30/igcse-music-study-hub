@@ -14,6 +14,7 @@ export interface Question {
 
 export interface Quiz {
   title: string;
+  abcNotation?: string; // Optional ABC notation for music quizzes
   questions: Question[];
 }
 
@@ -22,15 +23,15 @@ export interface SyllabusItem {
   title: string;
   title_zh?: string;
   path: string;
-  content?: string; 
+  content?: string;
   content_zh?: string;
-  longDescription?: string; 
+  longDescription?: string;
   longDescription_zh?: string;
-  imageUrl?: string; 
-  imageAlt?: string; 
+  imageUrl?: string;
+  imageAlt?: string;
   children?: SyllabusItem[];
-  isExternal?: boolean; 
-  isTerm?: boolean; 
+  isExternal?: boolean;
+  isTerm?: boolean;
   quiz?: Quiz; // Add optional quiz property
   audioSources?: { url: string; type: string }[];
   audioSources_zh?: { url: string; type: string }[];
