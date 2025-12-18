@@ -95,35 +95,35 @@ export const syllabusStructure: SyllabusItem[] = [
         longDescription_zh: `专注于音程识别的交互式听力训练练习。具有渐进式难度级别、和声和旋律音程、分数跟踪和详细反馈，以提高您的音乐听力。`
       },
       {
-         id: 'circle-of-fifths',
-         title: 'Circle of Fifths',
-         title_zh: '五度圈',
-         path: '/tools/circle-of-fifths',
-         content: 'Interactive visualization of key relationships and chord progressions.',
-         content_zh: '调性关系和和弦进行的交互式可视化。',
-         longDescription: `An interactive Circle of Fifths that helps you understand key signatures, chord relationships, and common progressions. Click on keys to explore their chords and hear how they sound together.`,
-         longDescription_zh: `交互式五度圈，帮助您理解调号、和弦关系和常见进行。点击调性来探索它们的和弦并听听它们如何搭配。`
-       },
-       {
-         id: 'bemol-ear-training',
-         title: 'Functional Ear Training',
-         title_zh: '功能性听力训练',
-         path: '/tools/bemol-ear-training',
-         content: 'Develop relative pitch through functional ear training inspired by Bemol.',
-         content_zh: '通过受Bemol启发的功能性听力训练培养相对音高。',
-         longDescription: `Learn to recognize scale degrees in tonal context using the functional ear training method. This approach, inspired by the open-source Bemol app, helps develop relative pitch by understanding how each note functions within a key rather than as isolated intervals.`,
-         longDescription_zh: `使用功能性听力训练方法学会在调性语境中识别音阶度数。这种受开源Bemol应用启发的方法通过理解每个音符在调性中的功能而不是作为孤立音程来帮助培养相对音高。`
-       },
-       {
-         id: 'sight-reading',
-         title: 'Sight Reading Trainer',
-         title_zh: '视谱训练器',
-         path: '/tools/sight-reading',
-         content: 'Practice reading musical notation with traditional staff-based note recognition.',
-         content_zh: '通过传统的五线谱音符识别练习阅读乐谱。',
-         longDescription: `Master the art of sight reading with this traditional staff-based note recognition trainer. Practice identifying notes on the treble clef with progressive difficulty levels, audio verification, and detailed progress tracking.`,
-         longDescription_zh: `通过这个传统的五线谱音符识别训练器掌握视谱艺术。在高音谱号上练习识别音符，具有渐进式难度级别、音频验证和详细的进度跟踪。`
-       }
+        id: 'circle-of-fifths',
+        title: 'Circle of Fifths',
+        title_zh: '五度圈',
+        path: '/tools/circle-of-fifths',
+        content: 'Interactive visualization of key relationships and chord progressions.',
+        content_zh: '调性关系和和弦进行的交互式可视化。',
+        longDescription: `An interactive Circle of Fifths that helps you understand key signatures, chord relationships, and common progressions. Click on keys to explore their chords and hear how they sound together.`,
+        longDescription_zh: `交互式五度圈，帮助您理解调号、和弦关系和常见进行。点击调性来探索它们的和弦并听听它们如何搭配。`
+      },
+      {
+        id: 'bemol-ear-training',
+        title: 'Functional Ear Training',
+        title_zh: '功能性听力训练',
+        path: '/tools/bemol-ear-training',
+        content: 'Develop relative pitch through functional ear training inspired by Bemol.',
+        content_zh: '通过受Bemol启发的功能性听力训练培养相对音高。',
+        longDescription: `Learn to recognize scale degrees in tonal context using the functional ear training method. This approach, inspired by the open-source Bemol app, helps develop relative pitch by understanding how each note functions within a key rather than as isolated intervals.`,
+        longDescription_zh: `使用功能性听力训练方法学会在调性语境中识别音阶度数。这种受开源Bemol应用启发的方法通过理解每个音符在调性中的功能而不是作为孤立音程来帮助培养相对音高。`
+      },
+      {
+        id: 'sight-reading',
+        title: 'Sight Reading Trainer',
+        title_zh: '视谱训练器',
+        path: '/tools/sight-reading',
+        content: 'Practice reading musical notation with traditional staff-based note recognition.',
+        content_zh: '通过传统的五线谱音符识别练习阅读乐谱。',
+        longDescription: `Master the art of sight reading with this traditional staff-based note recognition trainer. Practice identifying notes on the treble clef with progressive difficulty levels, audio verification, and detailed progress tracking.`,
+        longDescription_zh: `通过这个传统的五线谱音符识别训练器掌握视谱艺术。在高音谱号上练习识别音符，具有渐进式难度级别、音频验证和详细的进度跟踪。`
+      }
     ]
   },
   musicalGlossaryPage,
@@ -147,7 +147,17 @@ export const syllabusStructure: SyllabusItem[] = [
     longDescription: `This is the test page. Use this space to experiment with new components, layouts, or features.`,
     longDescription_zh: `这是测试页面。您可以在此空间中试验新组件、布局或功能。`
   },
-  termPlaceholderPage 
+  {
+    id: 'sitemap',
+    title: '📍 Site Map',
+    title_zh: '📍 网站地图',
+    path: '/sitemap',
+    content: 'Complete navigation of all pages and sections.',
+    content_zh: '所有页面和部分的完整导航。',
+    longDescription: `View a complete hierarchical map of all pages, sections, and resources available in the IGCSE Music Study Hub.`,
+    longDescription_zh: `查看IGCSE音乐学习中心所有可用页面、部分和资源的完整层次结构图。`
+  },
+  termPlaceholderPage
 ];
 
 // Helper function to find an item by path
@@ -165,37 +175,37 @@ export const findSyllabusItemByPath = (path: string, items: SyllabusItem[] = syl
   }
   // Handle dynamic paths like /term/:termId
   if (path.startsWith('/term/')) {
-      const termId = path.split('/').pop() || 'unknown-term';
-      
-      const findSpecificTerm = (currentItems: SyllabusItem[]): SyllabusItem | undefined => {
-        for (const currentItem of currentItems) {
-            if (currentItem.isTerm && currentItem.path === path) { 
-                return currentItem;
-            }
-            if (currentItem.children) {
-                const foundInChildren = findSpecificTerm(currentItem.children);
-                if (foundInChildren) return foundInChildren;
-            }
+    const termId = path.split('/').pop() || 'unknown-term';
+
+    const findSpecificTerm = (currentItems: SyllabusItem[]): SyllabusItem | undefined => {
+      for (const currentItem of currentItems) {
+        if (currentItem.isTerm && currentItem.path === path) {
+          return currentItem;
         }
-        return undefined;
-      };
+        if (currentItem.children) {
+          const foundInChildren = findSpecificTerm(currentItem.children);
+          if (foundInChildren) return foundInChildren;
+        }
+      }
+      return undefined;
+    };
 
-      const specificTermData = findSpecificTerm(syllabusStructure);
-      if (specificTermData) return specificTermData;
+    const specificTermData = findSpecificTerm(syllabusStructure);
+    if (specificTermData) return specificTermData;
 
-      // Fallback for terms not explicitly defined but linked via /term/term-name
-      const formattedTermTitle = termId.replace(/-/g, ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-      return {
-          id: termId,
-          title: formattedTermTitle,
-          title_zh: formattedTermTitle, // Fallback, could be improved with real translation if needed
-          path: path,
-          content: `Learn about ${formattedTermTitle}.`,
-          content_zh: `学习关于 ${formattedTermTitle}。`,
-          longDescription: `This page explains the musical term: ${formattedTermTitle}. Understanding this term will help you discuss music more effectively. Detailed explanation for ${formattedTermTitle} will appear here, covering its meaning, usage, and examples in music.`,
-          longDescription_zh: `此页面解释音乐术语：${formattedTermTitle}。理解这个术语将帮助您更有效地讨论音乐。关于${formattedTermTitle}的详细解释将在此处显示，涵盖其含义、用法和音乐中的例子。`,
-          isTerm: true
-      };
+    // Fallback for terms not explicitly defined but linked via /term/term-name
+    const formattedTermTitle = termId.replace(/-/g, ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    return {
+      id: termId,
+      title: formattedTermTitle,
+      title_zh: formattedTermTitle, // Fallback, could be improved with real translation if needed
+      path: path,
+      content: `Learn about ${formattedTermTitle}.`,
+      content_zh: `学习关于 ${formattedTermTitle}。`,
+      longDescription: `This page explains the musical term: ${formattedTermTitle}. Understanding this term will help you discuss music more effectively. Detailed explanation for ${formattedTermTitle} will appear here, covering its meaning, usage, and examples in music.`,
+      longDescription_zh: `此页面解释音乐术语：${formattedTermTitle}。理解这个术语将帮助您更有效地讨论音乐。关于${formattedTermTitle}的详细解释将在此处显示，涵盖其含义、用法和音乐中的例子。`,
+      isTerm: true
+    };
   }
   return undefined;
 };

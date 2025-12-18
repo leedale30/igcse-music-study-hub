@@ -36,6 +36,7 @@ import MoonRiverTestPage from './pages/MoonRiverTestPage';
 import TheoryListPage from './pages/TheoryListPage';
 import TheoryPage from './pages/TheoryPage';
 import AosContentPage from './pages/AosContentPage';
+import SitemapPage from './pages/SitemapPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -83,6 +84,7 @@ const App: React.FC = () => {
                     <Route path="/tools/bemol-ear-training" element={<BemolEarTrainingPage />} />
                     <Route path="/tools/sight-reading" element={<SightReadingPage />} />
                     <Route path="/links" element={<LinksPage />} />
+                    <Route path="/sitemap" element={<SitemapPage />} />
                     <Route path="/instruments" element={<InstrumentsListPage />} />
                     <Route path="/instrument/:id" element={<InstrumentPage />} />
                     <Route path="/instruments/family/:familyId" element={<FamilyPage />} />
