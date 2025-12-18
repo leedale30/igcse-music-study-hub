@@ -37,7 +37,11 @@ import {
   generatedQuiz12,
   generatedQuiz13,
   generatedQuiz14,
-  generatedQuiz15
+  generatedQuiz15,
+  generatedQuiz16,
+  generatedQuiz17,
+  generatedQuiz18,
+  generatedQuiz19
 } from '../quizzes/aos1/generated_quizzes';
 
 // Detailed content sections from the new HTML pages
@@ -222,14 +226,14 @@ const specimenPage: SyllabusItem = {
   isTerm: false
 };
 
-// Assessment Quizzes Section - 15 comprehensive quizzes with ABC notation
+// Assessment Quizzes Section - 19 comprehensive quizzes with ABC notation
 const assessmentQuizzesSection: SyllabusItem = {
   id: 'aos1-assessment-quizzes',
   title: '📋 Assessment Quizzes',
   title_zh: '📋 评估测验',
   path: '/aos/aos01-baroque-music/assessment-quizzes',
-  content: '15 comprehensive assessment quizzes with score analysis and audio playback.',
-  content_zh: '15个综合评估测验，含乐谱分析和音频播放。',
+  content: '19 comprehensive assessment quizzes with score analysis and audio playback.',
+  content_zh: '19个综合评估测验，含乐谱分析和音频播放.',
   children: [
     { id: 'aos1-assess-1', title: '📝 Quiz 1: Concerto Grosso in D Major', path: '/aos/aos01-baroque-music/assessment/quiz-1', content: '20 questions on Concerto Grosso structure and analysis.', quiz: generatedQuiz1, isTerm: false },
     { id: 'aos1-assess-2', title: '📝 Quiz 2: Baroque Concerto Skeleton', path: '/aos/aos01-baroque-music/assessment/quiz-2', content: '20 questions on skeleton score analysis.', quiz: generatedQuiz2, isTerm: false },
@@ -246,6 +250,10 @@ const assessmentQuizzesSection: SyllabusItem = {
     { id: 'aos1-assess-13', title: '📝 Quiz 13: Concerto Grosso II', path: '/aos/aos01-baroque-music/assessment/quiz-13', content: '19 questions on concerto grosso.', quiz: generatedQuiz13, isTerm: false },
     { id: 'aos1-assess-14', title: '📝 Quiz 14: Baroque Listening', path: '/aos/aos01-baroque-music/assessment/quiz-14', content: '20 questions with audio stimulus.', quiz: generatedQuiz14, isTerm: false },
     { id: 'aos1-assess-15', title: '📝 Quiz 15: Specimen Allegro', path: '/aos/aos01-baroque-music/assessment/quiz-15', content: '20 questions on specimen analysis.', quiz: generatedQuiz15, isTerm: false },
+    { id: 'aos1-assess-16', title: '📝 Quiz 16: Concerto in G Minor', path: '/aos/aos01-baroque-music/assessment/quiz-16', content: '20 questions on G minor concerto.', quiz: generatedQuiz16, isTerm: false },
+    { id: 'aos1-assess-17', title: '📝 Quiz 17: Concerto Grosso B', path: '/aos/aos01-baroque-music/assessment/quiz-17', content: '20 questions on concerto grosso.', quiz: generatedQuiz17, isTerm: false },
+    { id: 'aos1-assess-18', title: '📝 Quiz 18: Fugal Style', path: '/aos/aos01-baroque-music/assessment/quiz-18', content: '20 questions on fugal texture.', quiz: generatedQuiz18, isTerm: false },
+    { id: 'aos1-assess-19', title: '📝 Quiz 19: Baroque Gigue', path: '/aos/aos01-baroque-music/assessment/quiz-19', content: '20 questions on compound time.', quiz: generatedQuiz19, isTerm: false },
   ]
 };
 

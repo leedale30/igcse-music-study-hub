@@ -3475,100 +3475,1650 @@ K:G
 };
 
 export const generatedQuiz14: Quiz = {
-    id: 'aos01-57531122',
-    title: "Baroque Music Listening Quiz",
+    id: 'aos01-g2yyf5jhrq9x9okr',
+    title: "Concerto in G Minor (Specimen A)",
     abcNotation: `X:1
-T:AOS 1: Baroque Music [AOS01_57531122]
-C:SchoolClass.Net
-M:4/4
-L:1/16
-K:D
-%%barnumbers 1
-%%tempofont Wingdings 1
-Q:"Allegro" 1/4=112
-V:1 name="Violino" clef=treble
-%%MIDI program 40
-V:2 name="Continuo" clef=bass
-%%MIDI program 6
-V:1
-!f! D4 F4 A4 d4 | f2ed c2Bc d4 A4 | B2cd G2B2 A2Bc F2A2 | G2FE E4 D8 |
-a2ga f2a2 d'2c'b a2g2 | f2ef d2f2 b2ag f2e2 | d2B2 e2c2 f2d2 g2e2 | a4 A4 d8 |
-!p! a4 f2d2 a2f2 d2ef | g4 e2c2 g2e2 c2de | f2ed c2B2 ^A2Bc d2B2 | e2dc B2A2 ^G2AB c2A2 |
-!f! D4 F2G2 A4 d4 | f2ed c2Bc d4 A4 | B2cd G2B2 A2Bc F2A2 | G2FE E2G2 F4 E4 |
-D4 d4 A4 F4 | G2B2 E2G2 F2A2 D2F2 | E2A2 c2A2 !trill!e4 d4 | (3fed (3edc d4 D8 |]
-V:2
-D,4 D,4 D,4 D,4 | D,4 A,,4 D,4 F,4 | G,4 G,4 F,4 F,4 | A,4 A,,4 D,8 |
-F,4 F,4 F,4 F,4 | D,4 D,4 D,4 D,4 | G,4 A,4 B,4 C4 | D,4 A,,4 D,8 |
-D,4 D,4 D,4 D,4 | A,,4 A,,4 A,,4 A,,4 | B,,4 B,,4 B,,4 B,,4 | E,4 E,4 A,8 |
-D,4 D,4 D,4 D,4 | D,4 A,,4 D,4 F,4 | G,4 G,4 F,4 F,4 | E,4 G,4 A,4 A,,4 |
-D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
-    questions: [
-        { id: 'q1', text: "What is the Italian tempo marking indicated at the start of the score?", options: [{ id: 'a', text: "Andante" }, { id: 'b', text: "Adagio" }, { id: 'c', text: "Allegro" }, { id: 'd', text: "Presto" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q2', text: "Which Beats Per Minute (BPM) setting corresponds to the tempo of this piece?", options: [{ id: 'a', text: "60 BPM" }, { id: 'b', text: "90 BPM" }, { id: 'c', text: "112 BPM" }, { id: 'd', text: "140 BPM" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q3', text: "What is the tonality of the piece at the beginning (Bars 1–4)?", options: [{ id: 'a', text: "D Major" }, { id: 'b', text: "B Minor" }, { id: 'c', text: "G Major" }, { id: 'd', text: "A Major" }], correctAnswerId: 'a', explanation: "" },
-        { id: 'q4', text: "Which term best describes the melodic movement in the Violin part in Bar 1 (D-F-A-d)?", options: [{ id: 'a', text: "Scalic" }, { id: 'b', text: "Arpeggio" }, { id: 'c', text: "Chromatic" }, { id: 'd', text: "Stepwise" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q5', text: "In Bars 5 and 6, the melody repeats a pattern at a lower pitch. What is this device called?", options: [{ id: 'a', text: "Ostinato" }, { id: 'b', text: "Imitation" }, { id: 'c', text: "Pedal note" }, { id: 'd', text: "Sequence" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q6', text: "At Bar 9, the dynamic changes suddenly from forte to piano. What is this Baroque technique called?", options: [{ id: 'a', text: "Crescendo" }, { id: 'b', text: "Terraced dynamics" }, { id: 'c', text: "Sforzando" }, { id: 'd', text: "Diminuendo" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q7', text: "Identify the harmonic device used in Bar 11 with the introduction of the A sharp.", options: [{ id: 'a', text: "Modulation" }, { id: 'b', text: "Suspension" }, { id: 'c', text: "Tierce de Picardie" }, { id: 'd', text: "Pedal note" }], correctAnswerId: 'a', explanation: "" },
-        { id: 'q8', text: "Which instrument would most likely play the bottom stave (Voice 2) along with a cello?", options: [{ id: 'a', text: "Trumpet" }, { id: 'b', text: "Timpani" }, { id: 'c', text: "Harpsichord" }, { id: 'd', text: "Oboe" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q9', text: "The accompaniment style provided by Voice 2 throughout the piece is known as:", options: [{ id: 'a', text: "Ground bass" }, { id: 'b', text: "Alberti bass" }, { id: 'c', text: "Basso continuo" }, { id: 'd', text: "Walking bass" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q10', text: "What specific ornament is marked and played in Bar 19?", options: [{ id: 'a', text: "Mordent" }, { id: 'b', text: "Turn" }, { id: 'c', text: "Acciaccatura" }, { id: 'd', text: "Trill" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q11', text: "Which rhythmic feature is heard in the Violin part in Bar 20?", options: [{ id: 'a', text: "Syncopation" }, { id: 'b', text: "Triplets" }, { id: 'c', text: "Hemiola" }, { id: 'd', text: "Dotted rhythms" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q12', text: "Based on the structure, what form does this movement suggest?", options: [{ id: 'a', text: "Binary Form" }, { id: 'b', text: "Theme and Variations" }, { id: 'c', text: "Ritornello Form" }, { id: 'd', text: "Fugue" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q13', text: "In Bar 4, the phrase ends with a V–I chord progression. What type of cadence is this?", options: [{ id: 'a', text: "Plagal" }, { id: 'b', text: "Imperfect" }, { id: 'c', text: "Interrupted" }, { id: 'd', text: "Perfect" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q14', text: "Which term best describes the texture of this piece?", options: [{ id: 'a', text: "Monophonic" }, { id: 'b', text: "Homophonic" }, { id: 'c', text: "Polyphonic" }, { id: 'd', text: "Heterophonic" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q15', text: "In Bar 7, the bass line moves upwards in steady steps. What is the term for this bass movement?", options: [{ id: 'a', text: "Static bass" }, { id: 'b', text: "Drone" }, { id: 'c', text: "Walking bass" }, { id: 'd', text: "Ground bass" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q16', text: "In a Concerto Grosso, what is the name given to the small group of soloists?", options: [{ id: 'a', text: "Ripieno" }, { id: 'b', text: "Concertino" }, { id: 'c', text: "Tutti" }, { id: 'd', text: "Continuo" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q17', text: "Which of the following composers is NOT associated with the Baroque period?", options: [{ id: 'a', text: "J.S. Bach" }, { id: 'b', text: "A. Vivaldi" }, { id: 'c', text: "G.F. Handel" }, { id: 'd', text: "W.A. Mozart" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q18', text: "What is a Tierce de Picardie?", options: [{ id: 'a', text: "A major chord at the end of a minor piece" }, { id: 'b', text: "A sudden modulation to the dominant" }, { id: 'c', text: "A type of French dance suite" }, { id: 'd', text: "An ornament used in vocal music" }], correctAnswerId: 'a', explanation: "" },
-        { id: 'q19', text: "Which texture is most characteristic of a Fugue?", options: [{ id: 'a', text: "Homophonic" }, { id: 'b', text: "Monophonic" }, { id: 'c', text: "Contrapuntal" }, { id: 'd', text: "Chordal" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q20', text: "What is the primary function of the Harpsichord player in a Baroque ensemble?", options: [{ id: 'a', text: "To conduct the orchestra" }, { id: 'b', text: "To play the melody line only" }, { id: 'c', text: "To realize the figured bass (fill in harmonies)" }, { id: 'd', text: "To provide percussion effects" }], correctAnswerId: 'c', explanation: "" }
-    ]
-};
-
-export const generatedQuiz15: Quiz = {
-    id: 'aos01-specimen5',
-    title: "Baroque Allegro (Specimen 5)",
-    abcNotation: `X:1
-T:Specimen Extract: Baroque Allegro
+T:Specimen Extract: Concerto in G Minor
 C:SchoolClass.Net
 M:4/4
 L:1/8
 %%tempofont Wingdings 1
+Q:"Allegro" 1/4=116
+K:Gm
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I (Concertino)"
+!f! G2 B2 d2 g2 | ^f2 a2 d2 c2 | B2 d2 c2 A2 | G4 ^F4 |
+!p! G2 D2 B,2 G,2 | F2 C2 A,2 F,2 | E2 B,2 G,2 E,2 | D4 ^C4 |
+!f! D2 =E2 ^F2 D2 | G2 A2 B2 G2 | c2 B2 A2 G2 | ^F4 !trill!G4 |
+[M:3/2] A4 d4 ^c4 | d4 A4 F4 | [M:4/4] G2 B2 A2 G2 | ^F2 A2 D2 C2 |
+B,2 G2 D2 ^F2 | G4 =B4 | c4 c4 | =B4 z4 ||
+V:2 name="Strings (Ripieno)"
+%%MIDI program 48 % String Ensemble
+!f! G4 B4 | A4 D4 | G4 E4 | D4 D4 |
+!p! z8 | z8 | z8 | z8 |
+!f! D4 D4 | D4 D4 | E4 E4 | D4 D4 |
+[M:3/2] ^F4 G4 E4 | F4 F4 D4 | [M:4/4] B,2 D2 C2 B,2 | A,4 A,4 |
+G,4 B,4 | B,4 G,4 | G,4 F,4 | G,4 z4 ||
+V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42 % Cello
+!f! G,4 G,4 | D,4 ^F,4 | G,4 C,4 | D,4 D,,4 |
+!p! B,,4 G,,4 | A,,4 F,,4 | G,,4 E,,4 | F,,4 A,,4 |
+!f! D,4 C,4 | B,,4 G,,4 | C,4 ^C,4 | D,4 B,,4 |
+[M:3/2] D,4 B,,4 A,,4 | D,4 D,,4 D,4 | [M:4/4] G,,4 G,4 | D,4 ^F,4 |
+G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
+    questions: [
+        {
+            id: 'q1',
+            text: "Which period of music does this extract represent?",
+            options: [
+                { id: 'a', text: "Classical" },
+                { id: 'b', text: "Baroque" },
+                { id: 'c', text: "lassical" },
+                { id: 'd', text: "Twentieth Century" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q2',
+            text: "Which instrument plays the bass line in this extract?",
+            options: [
+                { id: 'a', text: "Double Bass and Tuba" },
+                { id: 'b', text: "ass and Tuba" },
+                { id: 'c', text: "ello (part of the Basso Continuo)" },
+                { id: 'd', text: "ouble Bass and Tuba" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q3',
+            text: "What is the texture of the opening four bars?",
+            options: [
+                { id: 'a', text: "Monophonic" },
+                { id: 'b', text: "Homophonic (Melody and Accompaniment)" },
+                { id: 'c', text: "Polyphonic / Contrapuntal" },
+                { id: 'd', text: "Heterophonic" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q4',
+            text: "In bars 5–8, the dynamic changes suddenly from *forte* to *piano*. What is the term for this?",
+            options: [
+                { id: 'a', text: "Crescendo" },
+                { id: 'b', text: "Diminuendo" },
+                { id: 'c', text: "rescendo" },
+                { id: 'd', text: "iminuendo" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q5',
+            text: "What compositional device is heard in the Violin I part in bars 5–7?",
+            options: [
+                { id: 'a', text: "Ascending Sequence" },
+                { id: 'b', text: "Descending Sequence" },
+                { id: 'c', text: "Pedal Note" },
+                { id: 'd', text: "escending Sequence" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q6',
+            text: "Which ornament is indicated by the symbol in bar 12 of the Violin I part?",
+            options: [
+                { id: 'a', text: "Mordent" },
+                { id: 'b', text: "Turn" },
+                { id: 'c', text: "Acciaccatura" },
+                { id: 'd', text: "Trill" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q7',
+            text: "Identify the cadence at the end of the first phrase (bar 4).",
+            options: [
+                { id: 'a', text: "Perfect (V–I)" },
+                { id: 'b', text: "Plagal (IV–I)" },
+                { id: 'c', text: "Imperfect (ending on V)" },
+                { id: 'd', text: "Interrupted (V–VI)" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q8',
+            text: "What is the tonality of this extract?",
+            options: [
+                { id: 'a', text: "G Major" },
+                { id: 'b', text: "G Minor" },
+                { id: 'c', text: "D Major" },
+                { id: 'd', text: "Major" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q9',
+            text: "In a Concerto Grosso, what is the name given to the small group of soloists (heard here in the Violin I part during the *piano* section)?",
+            options: [
+                { id: 'a', text: "Tutti" },
+                { id: 'b', text: "Ripieno" },
+                { id: 'c', text: "Concertino" },
+                { id: 'd', text: "Orchestra" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q10',
+            text: "In a Concerto Grosso, what is the name given to the full orchestra?",
+            options: [
+                { id: 'a', text: "Concertino" },
+                { id: 'b', text: "Ripieno / Tutti" },
+                { id: 'c', text: "oncertino" },
+                { id: 'd', text: "Quartet" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q11',
+            text: "Look at the time signature change in bar 13 ([M:3/2]). What rhythmic effect does this create before the final section?",
+            options: [
+                { id: 'a', text: "Syncopation" },
+                { id: 'b', text: "Hemiola feel (broadening the pulse)" },
+                { id: 'c', text: "Polyrhythm" },
+                { id: 'd', text: "Accelerando" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q12',
+            text: "Which instrument would most likely be improvising chords based on the bass line?",
+            options: [
+                { id: 'a', text: "Piano" },
+                { id: 'b', text: "Harpsichord" },
+                { id: 'c', text: "Clarinet" },
+                { id: 'd', text: "Timpani" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q13',
+            text: "What is the system of numbers often written below the bass line to indicate these chords called?",
+            options: [
+                { id: 'a', text: "Tablature" },
+                { id: 'b', text: "Figured Bass" },
+                { id: 'c', text: "Lead Sheet" },
+                { id: 'd', text: "Cipher Notation" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q14',
+            text: "Which form is most commonly associated with the first movement of a Baroque Concerto (alternating between the full orchestra theme and solo episodes)?",
+            options: [
+                { id: 'a', text: "Sonata Form" },
+                { id: 'b', text: "Rondo Form" },
+                { id: 'c', text: "Ritornello Form" },
+                { id: 'd', text: "Theme and Variations" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q15',
+            text: "If the piece ended on a G Major chord instead of the expected G Minor chord in the final bar (bar 20), what would this device be called?",
+            options: [
+                { id: 'a', text: "Neapolitan Sixth" },
+                { id: 'b', text: "Dominant Seventh" },
+                { id: 'c', text: "Tierce de Picardie" },
+                { id: 'd', text: "ominant Seventh" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "Which of the following composers is a prescribed 'Focus Composer' for Area of Study 1 in the 2026–2028 syllabus?",
+            options: [
+                { id: 'a', text: "Mozart" },
+                { id: 'b', text: "Handel" },
+                { id: 'c', text: "Beethoven" },
+                { id: 'd', text: "Haydn" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q17',
+            text: "What is the relationship between the starting key (G Minor) and the key suggested by the F#s and A naturals in bar 14 (D Major)?",
+            options: [
+                { id: 'a', text: "Dominant" },
+                { id: 'b', text: "Subdominant" },
+                { id: 'c', text: "Relative Major" },
+                { id: 'd', text: "ominant" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q18',
+            text: "Which rhythmic feature is prominent in the melody of bar 1?",
+            options: [
+                { id: 'a', text: "Triplets" },
+                { id: 'b', text: "Syncopation" },
+                { id: 'c', text: "Continuous Quavers/Semiquavers (Motor Rhythm)" },
+                { id: 'd', text: "Dotted Rhythms" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q19',
+            text: "The Baroque aesthetic belief that a single mood or emotion should persist throughout a movement is known as:",
+            options: [
+                { id: 'a', text: "The Doctrine of the Affections" },
+                { id: 'b', text: "Programme Music" },
+                { id: 'c', text: "Nationalism" },
+                { id: 'd', text: "octrine of the Affections" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q20',
+            text: "Which clef is used for the Basso Continuo part in the score?",
+            options: [
+                { id: 'a', text: "Treble Clef" },
+                { id: 'b', text: "Alto Clef" },
+                { id: 'c', text: "lef" },
+                { id: 'd', text: "Bass Clef *** ### **" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+    ]
+};
+
+export const generatedQuiz15: Quiz = {
+    id: 'aos01-cw5opbwhr120h5g5',
+    title: "Concerto Grosso (Specimen B)",
+    abcNotation: `X:1
+T:Specimen Extract B (Concerto Grosso)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%tempofont Wingdings 1
 Q:"Allegro" 1/4=120
+K:Am
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I (Concertino)"
+!f! A2 c2 e2 | a4 e2 | f2 d2 B2 | e4 E4 |
+!p! c2 B2 A2 | B2 A2 ^G2 | A2 c2 e2 | d4 c4 |
+!f! d2 f2 a2 | b2 d'2 f2 | e2 g2 b2 | c'2 e'2 g2 |
+f2 e2 d2 | !trill!e2 d2 c2 | B2 A2 ^G2 | A4 z2 ||
+V:2 name="Violin II (Ripieno)"
+%%MIDI program 40
+!f! A2 A2 A2 | c4 c2 | d4 d2 | B4 G4 |
+!p! z6 | z6 | z6 | z6 |
+!f! F2 A2 d2 | G2 B2 d2 | c2 e2 g2 | F2 A2 c2 |
+d2 A2 F2 | E2 G2 E2 | E2 E2 E2 | ^c4 z2 ||
+V:3 name="Cello/Harpsichord (Continuo)" clef=bass
+%%MIDI program 42 % Cello
+!f! A,4 A,,2 | A,4 A,,2 | D,4 G,2 | C,4 E,2 |
+!p! A,,2 C,2 E,2 | E,2 D,2 B,,2 | A,,2 A,2 G,2 | F,4 E,4 |
+!f! D,4 C,2 | G,4 F,2 | C,4 B,,2 | F,4 E,2 |
+D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
+    questions: [
+        {
+            id: 'q1',
+            text: "Listen to the speed of the music. Which of the following is the most suitable Italian tempo marking?",
+            options: [
+                { id: 'a', text: "Adagio (Slow)" },
+                { id: 'b', text: "Andante (Walking pace)" },
+                { id: 'c', text: "Allegro (Fast)" },
+                { id: 'd', text: "Grave (Very slow)" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q2',
+            text: "What is the approximate speed (BPM) of this extract?",
+            options: [
+                { id: 'a', text: "60 BPM" },
+                { id: 'b', text: "PM" },
+                { id: 'c', text: "120 BPM" },
+                { id: 'd', text: "160 BPM" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q3',
+            text: "Which period of music is this extract from?",
+            options: [
+                { id: 'a', text: "Baroque" },
+                { id: 'b', text: "aroque" },
+                { id: 'c', text: "lassical" },
+                { id: 'd', text: "Twentieth Century" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q4',
+            text: "What is the texture in bars 1–4?",
+            options: [
+                { id: 'a', text: "Monophonic" },
+                { id: 'b', text: "Polyphonic / Contrapuntal" },
+                { id: 'c', text: "ontrapuntal" },
+                { id: 'd', text: "Heterophonic" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q5',
+            text: "In bars 5–8, the dynamic drops to *piano*. Which group of instruments is playing the melody here?",
+            options: [
+                { id: 'a', text: "The full orchestra (Tutti)" },
+                { id: 'b', text: "The Concertino (Soloists)" },
+                { id: 'c', text: "oncertino (Soloists)" },
+                { id: 'd', text: "The Percussion section" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q6',
+            text: "What is the name given to the continuous bass part played by the Cello and Harpsichord?",
+            options: [
+                { id: 'a', text: "Ground Bass" },
+                { id: 'b', text: "ass" },
+                { id: 'c', text: "Alberti Bass" },
+                { id: 'd', text: "Basso Continuo" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q7',
+            text: "Look at the bass line in bars 9–12. The root notes move D -> G -> C -> F. What harmonic device is this?",
+            options: [
+                { id: 'a', text: "Pedal Note" },
+                { id: 'b', text: "Circle of Fifths" },
+                { id: 'c', text: "ircle of Fifths" },
+                { id: 'd', text: "rone" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q8',
+            text: "Which ornament is heard in the Violin I part in bar 14?",
+            options: [
+                { id: 'a', text: "Turn" },
+                { id: 'b', text: "Mordent" },
+                { id: 'c', text: "Trill" },
+                { id: 'd', text: "Acciaccatura" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q9',
+            text: "Identify the cadence at the very end of the extract (bars 15–16).",
+            options: [
+                { id: 'a', text: "Plagal (IV–I)" },
+                { id: 'b', text: "Interrupted (V–VI)" },
+                { id: 'c', text: "Imperfect (I–V)" },
+                { id: 'd', text: "Perfect (V–I)" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q10',
+            text: "What is the key signature of this piece?",
+            options: [
+                { id: 'a', text: "A Minor (no sharps or flats)" },
+                { id: 'b', text: "C Major (no sharps or flats)" },
+                { id: 'c', text: "Major (no sharps or flats)" },
+                { id: 'd', text: "F Major (one flat)" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q11',
+            text: "Look at the final chord in bar 16. The piece is in A Minor, but the Violin II plays a C# (making the chord A Major). What is this device called?",
+            options: [
+                { id: 'a', text: "Suspension" },
+                { id: 'b', text: "Hemiola" },
+                { id: 'c', text: "Tierce de Picardie" },
+                { id: 'd', text: "Neapolitan 6th" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q12',
+            text: "Which instrument is most likely filling in the harmonies (chords) above the bass line?",
+            options: [
+                { id: 'a', text: "Piano" },
+                { id: 'b', text: "Organ" },
+                { id: 'c', text: "Lute" },
+                { id: 'd', text: "Harpsichord" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q13',
+            text: "In a Concerto Grosso, what is the large accompanying group called?",
+            options: [
+                { id: 'a', text: "Concertino" },
+                { id: 'b', text: "Ripieno / Tutti" },
+                { id: 'c', text: "oncertino" },
+                { id: 'd', text: "Quartet" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q14',
+            text: "Which time signature fits this extract?",
+            options: [
+                { id: 'a', text: "2/4" },
+                { id: 'b', text: "3/4" },
+                { id: 'c', text: "4/4" },
+                { id: 'd', text: "6/8" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q15',
+            text: "Which composer is a 'Focus Composer' for this Area of Study in the 2026 syllabus?",
+            options: [
+                { id: 'a', text: "Bach" },
+                { id: 'b', text: "ach" },
+                { id: 'c', text: "Mozart" },
+                { id: 'd', text: "Beethoven" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "What textural feature is prominent in bars 9–12 between the Violin I and the Bass?",
+            options: [
+                { id: 'a', text: "Unison" },
+                { id: 'b', text: "Parallel motion" },
+                { id: 'c', text: "Imitation (or Dialogue)" },
+                { id: 'd', text: "ialogue)" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q17',
+            text: "The sudden change from *forte* in bar 4 to *piano* in bar 5 is an example of:",
+            options: [
+                { id: 'a', text: "Crescendo" },
+                { id: 'b', text: "Diminuendo" },
+                { id: 'c', text: "rescendo" },
+                { id: 'd', text: "iminuendo" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q18',
+            text: "What is the interval between the first two notes of the Violin I part (A to C)?",
+            options: [
+                { id: 'a', text: "Major 3rd" },
+                { id: 'b', text: "Minor 3rd" },
+                { id: 'c', text: "Perfect 4th" },
+                { id: 'd', text: "Major 2nd" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q19',
+            text: "Bars 13–14 feature a harmonic progression leading to the cadence. What harmonic device involving a clash of notes is implied in bar 15 (though not explicitly fully scored here, it is typical of the style)?",
+            options: [
+                { id: 'a', text: "Suspension (4-3)" },
+                { id: 'b', text: "Pedal Note" },
+                { id: 'c', text: "Drone" },
+                { id: 'd', text: "rone" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q20',
+            text: "Based on the style, which specific genre does this extract represent?",
+            options: [
+                { id: 'a', text: "Solo Concerto" },
+                { id: 'b', text: "Concerto Grosso" },
+                { id: 'c', text: "oncerto" },
+                { id: 'd', text: "Sonata *** ### **" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+    ]
+};
+
+export const generatedQuiz16: Quiz = {
+    id: 'aos01-3pns7u52eau9y60z',
+    title: "Fugal Style (Specimen C)",
+    abcNotation: `X:1
+T:Specimen Extract C (Fugal Style)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%tempofont Wingdings 1
+Q:"Allegro" 1/4=112
+K:Cm
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I"
+!f! c2 G2 E2 | C2 D2 E2 | F2 G2 A2 | G4 z2 |
+z6 | z6 | G2 d2 B2 | G2 A2 B2 |
+c2 d2 e2 | d2 e2 f2 | e2 d2 c2 | =B4 d2 |
+g2 f2 e2 | d2 c2 B2 | c2 d2 G2 | F4 E2 |
+D2 G,2 =B,2 | C4 =B,2 | C6 ||
+V:2 name="Violin II"
+%%MIDI program 40
+z6 | z6 | !f! G2 E2 C2 | G,2 A,2 =B,2 |
+C2 D2 E2 | D4 z2 | G2 F2 D2 | E2 F2 G2 |
+A2 B2 c2 | =B2 G2 d2 | c2 B2 A2 | G4 =B2 |
+c2 d2 e2 | f2 e2 d2 | e2 f2 e2 | d2 G2 c2 |
+=B,2 D2 F2 | E2 D2 D2 | [K:C] E6 ||
+V:3 name="Cello (Continuo)" clef=bass
+%%MIDI program 42
+z6 | z6 | z6 | z6 |
+z6 | z6 | !f! C,2 G,2 E,2 | C,2 D,2 E,2 |
+F,2 G,2 A,2 | G,2 =B,2 G,2 | C2 G,2 F,2 | G,4 F,2 |
+E,2 D,2 C,2 | B,,2 A,,2 G,,2 | C,2 B,,2 C,2 | D,2 E,2 C,2 |
+G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
+    questions: [
+        {
+            id: 'q1',
+            text: "Listen to the opening melody in bars 1–4. What is the technical name for this main theme in a fugal texture?",
+            options: [
+                { id: 'a', text: "The Episode" },
+                { id: 'b', text: "The Subject" },
+                { id: 'c', text: "The Ritornello" },
+                { id: 'd', text: "The Coda" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q2',
+            text: "Which instrument plays the main theme first?",
+            options: [
+                { id: 'a', text: "Violin II" },
+                { id: 'b', text: "Cello" },
+                { id: 'c', text: "ello" },
+                { id: 'd', text: "Viola" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q3',
+            text: "In bars 3–6, Violin II enters with the same theme but at a different pitch. What is this entry called?",
+            options: [
+                { id: 'a', text: "The Answer" },
+                { id: 'b', text: "The Counter-subject" },
+                { id: 'c', text: "ounter-subject" },
+                { id: 'd', text: "The Retrograde" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q4',
+            text: "What is the texture of the first 8 bars?",
+            options: [
+                { id: 'a', text: "Monophonic building to Polyphonic" },
+                { id: 'b', text: "Homophonic throughout" },
+                { id: 'c', text: "Heterophonic" },
+                { id: 'd', text: "Monophonic throughout" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q5',
+            text: "Which Baroque harmonic device is heard in the bass line in bars 13–15 (E-D-C-B-A-G)?",
+            options: [
+                { id: 'a', text: "Tonic Pedal" },
+                { id: 'b', text: "Circle of Fifths" },
+                { id: 'c', text: "ircle of Fifths" },
+                { id: 'd', text: "Ground Bass" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q6',
+            text: "Look at bar 18. The Violin I and Violin II parts clash (D against C) before resolving. What is this harmonic device called?",
+            options: [
+                { id: 'a', text: "Suspension (4-3)" },
+                { id: 'b', text: "Anticipation" },
+                { id: 'c', text: "Tierce de Picardie" },
+                { id: 'd', text: "Pedal Note" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q7',
+            text: "How does the piece end (bar 19)?",
+            options: [
+                { id: 'a', text: "With a fade out" },
+                { id: 'b', text: "With a unison note" },
+                { id: 'c', text: "With a Tierce de Picardie (Major chord)" },
+                { id: 'd', text: "With an interrupted cadence" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q8',
+            text: "What is the relationship between the starting key (C Minor) and the key of the Answer in bar 3 (G Minor)?",
+            options: [
+                { id: 'a', text: "Tonic and Subdominant" },
+                { id: 'b', text: "Tonic and Dominant" },
+                { id: 'c', text: "Relative Major" },
+                { id: 'd', text: "ominant" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q9',
+            text: "Which period of music is this extract from?",
+            options: [
+                { id: 'a', text: "Renaissance" },
+                { id: 'b', text: "Baroque" },
+                { id: 'c', text: "Classical" },
+                { id: 'd', text: "Romantic" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q10',
+            text: "Which composer is a Focus Composer for this Area of Study?",
+            options: [
+                { id: 'a', text: "Beethoven" },
+                { id: 'b', text: "eethoven" },
+                { id: 'c', text: "Handel" },
+                { id: 'd', text: "Schubert" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q11',
+            text: "Listen to the tempo. What is the most suitable Italian term for this speed?",
+            options: [
+                { id: 'a', text: "Largo (Very slow)" },
+                { id: 'b', text: "Adagio (Slow)" },
+                { id: 'c', text: "Andante (Walking pace)" },
+                { id: 'd', text: "Allegro (Fast)" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q12',
+            text: "In bar 11, the Violin I plays a trill (implied by the style). This is an example of:",
+            options: [
+                { id: 'a', text: "Ornamentation" },
+                { id: 'b', text: "Glissando" },
+                { id: 'c', text: "Rubato" },
+                { id: 'd', text: "Pizzicato" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q13',
+            text: "What cadence is heard at the very end of the extract (bars 18–19)?",
+            options: [
+                { id: 'a', text: "Plagal" },
+                { id: 'b', text: "Perfect" },
+                { id: 'c', text: "Imperfect" },
+                { id: 'd', text: "Interrupted" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q14',
+            text: "If this were a Concerto Grosso, which instruments would likely form the *concertino*?",
+            options: [
+                { id: 'a', text: "The full orchestra" },
+                { id: 'b', text: "The percussion section" },
+                { id: 'c', text: "The two Violins and Cello" },
+                { id: 'd', text: "A solo flute" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q15',
+            text: "What is the time signature of this extract?",
+            options: [
+                { id: 'a', text: "2/4" },
+                { id: 'b', text: "3/4" },
+                { id: 'c', text: "4/4" },
+                { id: 'd', text: "6/8" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "Which term best describes the dynamic level at the start of the piece?",
+            options: [
+                { id: 'a', text: "Piano (soft)" },
+                { id: 'b', text: "Forte (loud)" },
+                { id: 'c', text: "Crescendo (getting louder)" },
+                { id: 'd', text: "Sforzando (sudden accent)" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q17',
+            text: "In Baroque music, who would usually play the chords indicated by the bass line?",
+            options: [
+                { id: 'a', text: "The Conductor" },
+                { id: 'b', text: "The Harpsichord player (realizing the figured bass)" },
+                { id: 'c', text: "onductor" },
+                { id: 'd', text: "The Soloist" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q18',
+            text: "Look at the rhythm in bars 17–18. It feels like one long bar of 3/2 rather than two bars of 3/4. What is this rhythmic device called?",
+            options: [
+                { id: 'a', text: "Syncopation" },
+                { id: 'b', text: "Polyrhythm" },
+                { id: 'c', text: "Hemiola" },
+                { id: 'd', text: "Ostinato" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q19',
+            text: "Which of the following is NOT a feature of this extract?",
+            options: [
+                { id: 'a', text: "Imitation" },
+                { id: 'b', text: "Minor tonality" },
+                { id: 'c', text: "The use of a piano (fortepiano)" },
+                { id: 'd', text: "Diatonic harmony" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q20',
+            text: "What is the texture called when all instruments stop playing except for the soloist (not shown here, but common in the genre)?",
+            options: [
+                { id: 'a', text: "Tutti" },
+                { id: 'b', text: "Tasto solo / Monophonic" },
+                { id: 'c', text: "Homophonic" },
+                { id: 'd', text: "Dense *** ### **" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+    ]
+};
+
+export const generatedQuiz17: Quiz = {
+    id: 'aos01-u5ljl13dqcz115ar',
+    title: "Baroque Gigue (Specimen D)",
+    abcNotation: `X:1
+T:Specimen Extract D (Baroque Gigue)
+C:SchoolClass.Net
+M:6/8
+L:1/8
+%%tempofont Wingdings 1
+Q:"Presto" 3/8=120
+K:Em
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I"
+!f! E2 B G2 E | B,2 E G,2 B, | E2 G F2 A | G2 B A2 c |
+B3 !trill!A3 | G2 F E3 | z6 | z6 |
+b2 g a2 f | g2 e f2 ^d | e2 B c2 A | G2 F E3 ||
+V:2 name="Violin II"
+%%MIDI program 40
+z6 | z6 | !f! E2 B G2 E | B,2 E G,2 B, |
+E2 G F2 A | G2 A B3 | e2 B c2 A | B2 G A2 F |
+G3 F3 | E3 B,3 | G,3 A,3 | B,3 E3 ||
+V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42
+!f! E,3 E3 | ^D3 B,3 | E,3 E3 | E,3 z3 |
+G,3 B,3 | E,3 G,3 | C,3 A,,3 | B,,3 B,,3 |
+E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
+    questions: [
+        {
+            id: 'q1',
+            text: "Listen to the opening melody in Violin I (bars 1–2). How does the melody in Violin II relate to it when it enters in bars 3–4?",
+            options: [
+                { id: 'a', text: "It plays an inverted version." },
+                { id: 'b', text: "It plays in augmentation (slower)." },
+                { id: 'c', text: "It imitates the melody (plays the same tune)." },
+                { id: 'd', text: "It plays a counter-melody with no relation to the opening." }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q2',
+            text: "What is the time signature of this extract?",
+            options: [
+                { id: 'a', text: "2/4 (Simple Duple)" },
+                { id: 'b', text: "3/4 (Simple Triple)" },
+                { id: 'c', text: "6/8 (Compound Duple)" },
+                { id: 'd', text: "uple)" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q3',
+            text: "Which Italian term best describes the tempo of this music?",
+            options: [
+                { id: 'a', text: "Adagio (Slow)" },
+                { id: 'b', text: "Andante (Walking pace)" },
+                { id: 'c', text: "Presto / Vivace (Fast and lively)" },
+                { id: 'd', text: "Largo (Broad and slow)" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q4',
+            text: "What is the tonality of the extract?",
+            options: [
+                { id: 'a', text: "E Major" },
+                { id: 'b', text: "E Minor" },
+                { id: 'c', text: "G Major" },
+                { id: 'd', text: "A Minor" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q5',
+            text: "Which instrument plays the bass line?",
+            options: [
+                { id: 'a', text: "Double Bass (pizzicato)" },
+                { id: 'b', text: "ass (pizzicato)" },
+                { id: 'c', text: "ello (part of the Basso Continuo)" },
+                { id: 'd', text: "ouble Bass (pizzicato)" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q6',
+            text: "Identify the harmonic device used in the bass line in bars 9–10 (alternating between E and B).",
+            options: [
+                { id: 'a', text: "Drone" },
+                { id: 'b', text: "Dominant Pedal / Oscillation" },
+                { id: 'c', text: "Chromatic scale" },
+                { id: 'd', text: "rone" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q7',
+            text: "Which ornament is heard in Violin I in bar 5?",
+            options: [
+                { id: 'a', text: "Trill" },
+                { id: 'b', text: "Mordent" },
+                { id: 'c', text: "Turn" },
+                { id: 'd', text: "Glissando" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q8',
+            text: "What is the interval between the first two notes of the Violin I part (E to B)?",
+            options: [
+                { id: 'a', text: "Perfect 4th" },
+                { id: 'b', text: "Perfect 5th" },
+                { id: 'c', text: "Major 3rd" },
+                { id: 'd', text: "Octave" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q9',
+            text: "Identify the cadence at the very end of the extract (bars 11–12).",
+            options: [
+                { id: 'a', text: "Plagal" },
+                { id: 'b', text: "Interrupted" },
+                { id: 'c', text: "Imperfect" },
+                { id: 'd', text: "Perfect" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q10',
+            text: "Which period of music history does this extract represent?",
+            options: [
+                { id: 'a', text: "Renaissance" },
+                { id: 'b', text: "Baroque" },
+                { id: 'c', text: "Classical" },
+                { id: 'd', text: "Romantic" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q11',
+            text: "This piece is a \"Gigue\" (Jig). Which suite of dances does the Gigue typically belong to in this era?",
+            options: [
+                { id: 'a', text: "The Baroque Suite" },
+                { id: 'b', text: "aroque Suite" },
+                { id: 'c', text: "The Tone Poem" },
+                { id: 'd', text: "The String Quartet" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q12',
+            text: "In the Baroque era, the keyboard player would read the single bass line and improvise chords. What is the notation system for this called?",
+            options: [
+                { id: 'a', text: "Tablature" },
+                { id: 'b', text: "Neumes" },
+                { id: 'c', text: "Figured Bass" },
+                { id: 'd', text: "Graphic Notation" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q13',
+            text: "What is the texture at the very beginning (bars 1–2) before Violin II enters?",
+            options: [
+                { id: 'a', text: "Monophonic (Violin I and Bass only)" },
+                { id: 'b', text: "ass only)" },
+                { id: 'c', text: "Heterophonic" },
+                { id: 'd', text: "Homophonic" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q14',
+            text: "Look at Violin I in bar 9 (b-g-a-f). What compositional device is being used to descend in pitch?",
+            options: [
+                { id: 'a', text: "Sequence" },
+                { id: 'b', text: "Inversion" },
+                { id: 'c', text: "Retrograde" },
+                { id: 'd', text: "Augmentation" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q15',
+            text: "What relationship does the key of G Major (relative major) have to the tonic key of this piece (E Minor)?",
+            options: [
+                { id: 'a', text: "Dominant" },
+                { id: 'b', text: "Subdominant" },
+                { id: 'c', text: "Relative Major" },
+                { id: 'd', text: "ominant" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "Which of the following features is characteristic of Baroque music heard in this extract?",
+            options: [
+                { id: 'a', text: "Wide dynamic range with crescendos" },
+                { id: 'b', text: "Use of Rubato" },
+                { id: 'c', text: "Constant rhythmic drive (Motor Rhythm)" },
+                { id: 'd', text: "Use of the clarinet" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q17',
+            text: "If the final chord were changed from E Minor to E Major, what would this device be called?",
+            options: [
+                { id: 'a', text: "Suspension" },
+                { id: 'b', text: "Tierce de Picardie" },
+                { id: 'c', text: "Hemiola" },
+                { id: 'd', text: "Modulation" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q18',
+            text: "Which composer is a Focus Composer for this Area of Study?",
+            options: [
+                { id: 'a', text: "Beethoven" },
+                { id: 'b', text: "eethoven" },
+                { id: 'c', text: "Mozart" },
+                { id: 'd', text: "Haydn" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q19',
+            text: "How many beats per minute (BPM) is the pulse approximately?",
+            options: [
+                { id: 'a', text: "60 (Dotted Crotchet)" },
+                { id: 'b', text: "120 (Dotted Crotchet)" },
+                { id: 'c', text: "rotchet)" },
+                { id: 'd', text: "otted Crotchet)" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q20',
+            text: "What clef is used for the Basso Continuo part?",
+            options: [
+                { id: 'a', text: "Treble" },
+                { id: 'b', text: "Alto" },
+                { id: 'c', text: "Tenor" },
+                { id: 'd', text: "Bass *** ### **" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+    ]
+};
+
+export const generatedQuiz18: Quiz = {
+    id: 'aos01-0yrkv0hf2fo9htqv',
+    title: "Trio Sonata Style (Specimen E)",
+    abcNotation: `X:1
+T:Specimen Extract E (Trio Sonata style)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%tempofont Wingdings 1
+Q:1/4=120
+K:Am
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I"
+!f! c2 B2 A2 | e4 c2 | d2 B2 G2 | E4 z2 |
+e2 d2 c2 | a4 f2 | e2 d2 c2 | B4 E2 |
+A2 c2 e2 | f2 d2 B2 | e2 c2 A2 | B4 E2 |
+c2 A2 F2 | d2 B2 G2 | A2 F2 D2 | E6 |
+A,2 C2 E2 | A4 B2 | c4 B2 | A6 ||
+V:2 name="Violin II"
+%%MIDI program 40
+z6 | c2 B2 A2 | B4 G2 | c2 B2 A2 |
+G4 E2 | c2 B2 A2 | B2 E2 ^G2 | A4 G2 |
+c2 A2 E2 | d2 B2 G2 | c2 A2 F2 | ^G4 E2 |
+A2 c2 A2 | B2 d2 B2 | c2 A2 F2 | E4 D2 |
+C2 E2 A2 | F4 D2 | E4 ^G2 | A6 ||
+V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42 % Cello
+A,4 z2 | A,4 G,2 | F,4 E,2 | A,2 G,2 F,2 |
+E,4 C,2 | F,4 D,2 | G,4 A,2 | E,4 E,,2 |
+A,,2 A,2 G,2 | F,2 G,2 G,,2 | A,2 A,,2 C,2 | E,2 D,2 C,2 |
+A,4 F,2 | G,4 E,2 | F,4 D,2 | ^G,4 ^G,,2 |
+A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
+    questions: [
+        {
+            id: 'q1',
+            text: "Listen to the recording. What is the approximate speed (BPM) of this music?",
+            options: [
+                { id: 'a', text: "60 BPM (Adagio)" },
+                { id: 'b', text: "PM (Adagio)" },
+                { id: 'c', text: "120 BPM (Allegro)" },
+                { id: 'd', text: "160 BPM (Presto)" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q2',
+            text: "Which Italian term best describes the tempo of this extract?",
+            options: [
+                { id: 'a', text: "Largo" },
+                { id: 'b', text: "Andante" },
+                { id: 'c', text: "Allegro" },
+                { id: 'd', text: "Grave" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q3',
+            text: "Which period of music is this extract from?",
+            options: [
+                { id: 'a', text: "Renaissance" },
+                { id: 'b', text: "Baroque" },
+                { id: 'c', text: "Classical" },
+                { id: 'd', text: "Romantic" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q4',
+            text: "The texture of this piece features two independent melody lines above a bass line. What is this specific Baroque texture called?",
+            options: [
+                { id: 'a', text: "Trio Sonata texture" },
+                { id: 'b', text: "Monophony" },
+                { id: 'c', text: "Heterophony" },
+                { id: 'd', text: "Unison" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q5',
+            text: "Which instruments are playing the upper two melody lines?",
+            options: [
+                { id: 'a', text: "Flute and Oboe" },
+                { id: 'b', text: "Two Violins" },
+                { id: 'c', text: "Trumpet and Horn" },
+                { id: 'd', text: "Violin and Viola" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q6',
+            text: "Which instrument is playing the bass line?",
+            options: [
+                { id: 'a', text: "Double Bass" },
+                { id: 'b', text: "ass" },
+                { id: 'c', text: "ello" },
+                { id: 'd', text: "ouble Bass" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q7',
+            text: "In a full Baroque performance, which instrument would play chords based on the bass line (realising the figured bass)?",
+            options: [
+                { id: 'a', text: "Piano" },
+                { id: 'b', text: "Harp" },
+                { id: 'c', text: "Harpsichord or Organ" },
+                { id: 'd', text: "Synthesizer" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q8',
+            text: "Look at bars 13–15. The melody in Violin I moves down by step in each bar (C-A-F -> d-B-G -> A-F-D). What is this compositional device called?",
+            options: [
+                { id: 'a', text: "Ascending Sequence" },
+                { id: 'b', text: "Descending Sequence" },
+                { id: 'c', text: "Pedal Note" },
+                { id: 'd', text: "escending Sequence" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q9',
+            text: "Listen to the relationship between Violin I and Violin II in bars 1–3. How do they relate?",
+            options: [
+                { id: 'a', text: "They play in unison." },
+                { id: 'b', text: "They play in contrary motion." },
+                { id: 'c', text: "Violin II imitates Violin I (Imitation)." },
+                { id: 'd', text: "Violin II plays a drone." }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q10',
+            text: "What is the time signature of this extract?",
+            options: [
+                { id: 'a', text: "2/4" },
+                { id: 'b', text: "3/4" },
+                { id: 'c', text: "4/4" },
+                { id: 'd', text: "6/8" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q11',
+            text: "What is the tonality of the piece?",
+            options: [
+                { id: 'a', text: "A Major" },
+                { id: 'b', text: "A Minor" },
+                { id: 'c', text: "C Major" },
+                { id: 'd', text: "G Major" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q12',
+            text: "In bar 16, the harmony pauses on an E major chord (the Dominant). What type of cadence does this imply before the final phrase?",
+            options: [
+                { id: 'a', text: "Perfect (V–I)" },
+                { id: 'b', text: "Plagal (IV–I)" },
+                { id: 'c', text: "Imperfect (ending on V)" },
+                { id: 'd', text: "Interrupted (V–VI)" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q13',
+            text: "At the very end (bars 19–20), what cadence brings the piece to a close?",
+            options: [
+                { id: 'a', text: "Perfect (V–I)" },
+                { id: 'b', text: "Plagal (IV–I)" },
+                { id: 'c', text: "Imperfect (I–V)" },
+                { id: 'd', text: "Interrupted (V–VI)" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q14',
+            text: "If the final chord (bar 20) contained a C# instead of a C natural (making it A Major), what would this device be called?",
+            options: [
+                { id: 'a', text: "Suspension" },
+                { id: 'b', text: "Tierce de Picardie" },
+                { id: 'c', text: "Modulation" },
+                { id: 'd', text: "Drone" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q15',
+            text: "Which of the following is a characteristic feature of Baroque melody heard in this extract?",
+            options: [
+                { id: 'a', text: "Wide leaps and disjunct motion" },
+                { id: 'b', text: "Use of the whole-tone scale" },
+                { id: 'c', text: "Frequent use of sequences and diatonic movement" },
+                { id: 'd', text: "Extreme chromaticism" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "Which of the following composers is a 'Focus Composer' for Area of Study 1 in the 2026 syllabus?",
+            options: [
+                { id: 'a', text: "Mozart" },
+                { id: 'b', text: "Handel" },
+                { id: 'c', text: "Beethoven" },
+                { id: 'd', text: "Schubert" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q17',
+            text: "What implies that this music is NOT from the Classical period?",
+            options: [
+                { id: 'a', text: "The use of a Basso Continuo texture." },
+                { id: 'b', text: "asso Continuo texture." },
+                { id: 'c', text: "ontinuo texture." },
+                { id: 'd', text: "The use of a melody." }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q18',
+            text: "Look at the bass line in bars 4–5. It moves E -> A (down a 5th / up a 4th). This root movement is characteristic of:",
+            options: [
+                { id: 'a', text: "Functional Harmony (Circle of Fifths progression style)" },
+                { id: 'b', text: "Modal Harmony" },
+                { id: 'c', text: "ircle of Fifths progression style)" },
+                { id: 'd', text: "Pentatonic Harmony" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q19',
+            text: "What clef is used for the Cello/Continuo part?",
+            options: [
+                { id: 'a', text: "Treble" },
+                { id: 'b', text: "Alto" },
+                { id: 'c', text: "Tenor" },
+                { id: 'd', text: "Bass" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q20',
+            text: "The volume in Baroque music often stays consistent for a period and then changes suddenly. What is this concept called?",
+            options: [
+                { id: 'a', text: "Crescendo" },
+                { id: 'b', text: "Terraced Dynamics" },
+                { id: 'c', text: "rescendo" },
+                { id: 'd', text: "ynamics" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+    ]
+};
+
+export const generatedQuiz19: Quiz = {
+    id: 'aos01-gx2ybckdhofsymat',
+    title: "Baroque Minuet (Specimen F)",
+    abcNotation: `X:1
+T:Specimen Extract F (Baroque Minuet)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%tempofont Wingdings 1
+Q:"Allegretto" 1/4=120
 K:D
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin"
-!f! d2 f2 a2 d'2 | c'2 b2 a4 | !p! g2 f2 e2 d2 | c2 B2 A4 |
-!f! B2 d2 g2 b2 | a2 g2 f4 | e2 d2 !trill!c2 B2 | A4 z4 |
-a2 g2 f2 e2 | d2 c2 B2 A2 | G2 F2 E2 D2 | D4 z4 |]
+!f! d2 (3(def) e2 | d4 A2 | B2 G2 E2 | A4 G2 |
+F2 A2 d2 | g2 f2 e2 | d2 e2 !trill!c2 | d6 :|
+!p! a2 f2 d2 | g4 f2 | e2 d2 c2 | B4 A2 |
+^G2 B2 E2 | c2 B2 A2 | B2 e2 ^g2 | a6 |
+!f! A2 c2 e2 | g4 f2 | (3(gfe) d2 c2 | B4 g2 |
+(3(fed) c2 B2 | A2 G2 F2 | E2 A2 C2 | D6 ||
 V:2 name="Cello (Continuo)" clef=bass
-%%MIDI program 42 % Cello
-!f! D,4 F,4 | A,4 F,4 | !p! E,4 G,4 | A,4 F,4 |
-!f! G,4 B,4 | F,4 D,4 | A,4 E,4 | A,,4 z4 |
-F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
+%%MIDI program 42
+!f! D,4 A,,2 | F,4 D,2 | G,4 G,,2 | A,,4 A,2 |
+D,2 C,2 B,,2 | E,4 G,2 | A,4 A,,2 | D,6 :|
+!p! F,4 A,2 | B,4 A,2 | G,2 F,2 E,2 | D,4 C,2 |
+B,,4 E,2 | A,,4 C,2 | D,2 E,2 E,,2 | A,,6 |
+!f! A,,4 C,2 | E,4 D,2 | E,4 F,2 | G,4 E,2 |
+F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
     questions: [
-        { id: 'q1', text: "Which period of musical history does this extract represent?", options: [{ id: 'a', text: "Classical" }, { id: 'b', text: "Baroque" }, { id: 'c', text: "Romantic" }, { id: 'd', text: "Twentieth Century" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q2', text: "The bass line in this extract is played by a cello. Which keyboard instrument would typically complete the basso continuo?", options: [{ id: 'a', text: "Piano (Fortepiano)" }, { id: 'b', text: "Synthesizer" }, { id: 'c', text: "Harpsichord" }, { id: 'd', text: "Organ" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q3', text: "What is the texture of the music?", options: [{ id: 'a', text: "Monophonic" }, { id: 'b', text: "Polyphonic / Contrapuntal" }, { id: 'c', text: "Heterophonic" }, { id: 'd', text: "Homophonic (Melody and Accompaniment)" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q4', text: "In bars 3 and 4, the dynamic changes suddenly from forte to piano. What is the term for this?", options: [{ id: 'a', text: "Crescendo" }, { id: 'b', text: "Diminuendo" }, { id: 'c', text: "Terraced Dynamics" }, { id: 'd', text: "Sforzando" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q5', text: "Which ornament is indicated by the symbol in bar 7 of the violin part?", options: [{ id: 'a', text: "Mordent" }, { id: 'b', text: "Turn" }, { id: 'c', text: "Acciaccatura" }, { id: 'd', text: "Trill" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q6', text: "Identify the cadence at the end of the first phrase (bar 8).", options: [{ id: 'a', text: "Perfect (V–I)" }, { id: 'b', text: "Imperfect (ending on V)" }, { id: 'c', text: "Plagal (IV–I)" }, { id: 'd', text: "Interrupted (V–VI)" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q7', text: "Which compositional device is used in the violin melody in bars 3 and 4?", options: [{ id: 'a', text: "Ascending Sequence" }, { id: 'b', text: "Descending Sequence" }, { id: 'c', text: "Pedal Note" }, { id: 'd', text: "Inversion" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q8', text: "In a Concerto Grosso, what is the name given to the small group of soloists?", options: [{ id: 'a', text: "Tutti" }, { id: 'b', text: "Ripieno" }, { id: 'c', text: "Concertino" }, { id: 'd', text: "Orchestra" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q9', text: "In a Concerto Grosso, what is the name given to the full orchestra?", options: [{ id: 'a', text: "Concertino" }, { id: 'b', text: "Ripieno / Tutti" }, { id: 'c', text: "Soloist" }, { id: 'd', text: "Quartet" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q10', text: "Which of the following instruments would NOT typically be found in an orchestra of this period?", options: [{ id: 'a', text: "Violin" }, { id: 'b', text: "Clarinet" }, { id: 'c', text: "Oboe" }, { id: 'd', text: "Bassoon" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q11', text: "What is the tonality of this extract?", options: [{ id: 'a', text: "D Major" }, { id: 'b', text: "D Minor" }, { id: 'c', text: "C Major" }, { id: 'd', text: "Atonal" }], correctAnswerId: 'a', explanation: "" },
-        { id: 'q12', text: "Which form is commonly associated with the first movement of a Baroque Concerto?", options: [{ id: 'a', text: "Sonata Form" }, { id: 'b', text: "Minuet and Trio" }, { id: 'c', text: "Ritornello Form" }, { id: 'd', text: "Theme and Variations" }], correctAnswerId: 'c', explanation: "" },
-        { id: 'q13', text: "What is the interval between the first two notes of the violin part in bar 1?", options: [{ id: 'a', text: "Major 3rd" }, { id: 'b', text: "Perfect 4th" }, { id: 'c', text: "Perfect 5th" }, { id: 'd', text: "Minor 3rd" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q14', text: "The aesthetic concept that a single mood or emotion should persist throughout a Baroque movement is known as:", options: [{ id: 'a', text: "The Doctrine of the Affections" }, { id: 'b', text: "Programme Music" }, { id: 'c', text: "Nationalism" }, { id: 'd', text: "Minimalism" }], correctAnswerId: 'a', explanation: "" },
-        { id: 'q15', text: "Look at the bass part in the ABC notation. What clef is used for the Cello?", options: [{ id: 'a', text: "Treble Clef" }, { id: 'b', text: "Alto Clef" }, { id: 'c', text: "Tenor Clef" }, { id: 'd', text: "Bass Clef" }], correctAnswerId: 'd', explanation: "" },
-        { id: 'q16', text: "Which of the following composers is a Focus Composer for this Area of Study in the 2026 syllabus?", options: [{ id: 'a', text: "Mozart" }, { id: 'b', text: "Handel" }, { id: 'c', text: "Beethoven" }, { id: 'd', text: "Haydn" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q17', text: "What is the relationship between the starting key (D Major) and the key suggested at the cadence in bar 8 (A Major)?", options: [{ id: 'a', text: "Relative Minor" }, { id: 'b', text: "Dominant" }, { id: 'c', text: "Subdominant" }, { id: 'd', text: "Tonic Minor" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q18', text: "Which rhythmic feature involves a dotted note followed by a short note, often associated with the French Overture style?", options: [{ id: 'a', text: "Syncopation" }, { id: 'b', text: "Dotted Rhythms" }, { id: 'c', text: "Triplets" }, { id: 'd', text: "Polyrhythm" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q19', text: "What is the system of numbers written below the bass line to indicate chords called?", options: [{ id: 'a', text: "Tablature" }, { id: 'b', text: "Figured Bass" }, { id: 'c', text: "Lead Sheet" }, { id: 'd', text: "Cipher Notation" }], correctAnswerId: 'b', explanation: "" },
-        { id: 'q20', text: "If this piece ended on a minor key but the final chord was changed to a Major chord, what would that device be called?", options: [{ id: 'a', text: "Neapolitan Sixth" }, { id: 'b', text: "Dominant Seventh" }, { id: 'c', text: "Tierce de Picardie" }, { id: 'd', text: "Suspension" }], correctAnswerId: 'c', explanation: "" }
+        {
+            id: 'q1',
+            text: "What is the time signature of this extract?",
+            options: [
+                { id: 'a', text: "2/4" },
+                { id: 'b', text: "3/4" },
+                { id: 'c', text: "4/4" },
+                { id: 'd', text: "6/8" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q2',
+            text: "Which specific dance type does this extract represent?",
+            options: [
+                { id: 'a', text: "Gigue" },
+                { id: 'b', text: "Sarabande" },
+                { id: 'c', text: "Minuet" },
+                { id: 'd', text: "Gavotte" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q3',
+            text: "What is the structure of the first 8 bars (the first section)?",
+            options: [
+                { id: 'a', text: "Ternary Form" },
+                { id: 'b', text: "Through-composed" },
+                { id: 'c', text: "Binary Form (Part A)" },
+                { id: 'd', text: "Rondo Form" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q4',
+            text: "Identify the cadence at bar 8.",
+            options: [
+                { id: 'a', text: "Perfect (V–I)" },
+                { id: 'b', text: "Imperfect (I–V)" },
+                { id: 'c', text: "Plagal (IV–I)" },
+                { id: 'd', text: "Interrupted (V–VI)" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q5',
+            text: "Which ornament is heard in the violin part in bar 7?",
+            options: [
+                { id: 'a', text: "Turn" },
+                { id: 'b', text: "Mordent" },
+                { id: 'c', text: "Acciaccatura" },
+                { id: 'd', text: "Trill" }
+            ],
+            correctAnswerId: 'd',
+            explanation: ""
+        },
+        {
+            id: 'q6',
+            text: "In bars 9–12, the dynamic changes to *piano*. Which key has the music modulated to at the start of this section (Bar 9)?",
+            options: [
+                { id: 'a', text: "G Major (Subdominant)" },
+                { id: 'b', text: "A Major (Dominant) – *hint: look at the C sharps in the B section in general, though bar 9 starts on A chord*." },
+                { id: 'c', text: "sharps in the B section in general, though bar 9 starts on A chord*." },
+                { id: 'd', text: "ominant) – *hint: look at the C sharps in the B section in general, though bar 9 starts on A chord*." }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q7',
+            text: "Look at bar 1 (Violin). What rhythmic device is used on beat 2?",
+            options: [
+                { id: 'a', text: "Dotted rhythm" },
+                { id: 'b', text: "Triplet" },
+                { id: 'c', text: "Syncopation" },
+                { id: 'd', text: "otted rhythm" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q8',
+            text: "Which instrument plays the bass line?",
+            options: [
+                { id: 'a', text: "Double Bass (pizzicato)" },
+                { id: 'b', text: "ass (pizzicato)" },
+                { id: 'c', text: "ello (Basso Continuo)" },
+                { id: 'd', text: "ouble Bass (pizzicato)" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q9',
+            text: "What is the texture of this extract?",
+            options: [
+                { id: 'a', text: "Monophonic" },
+                { id: 'b', text: "Polyphonic / Contrapuntal" },
+                { id: 'c', text: "ontrapuntal" },
+                { id: 'd', text: "Heterophonic" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q10',
+            text: "In the B section (starting bar 9), the music moves through several keys. Identify the cadence in bar 16.",
+            options: [
+                { id: 'a', text: "Perfect Cadence in A Major" },
+                { id: 'b', text: "Perfect Cadence in D Major" },
+                { id: 'c', text: "adence in A Major" },
+                { id: 'd', text: "Major" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q11',
+            text: "Look at bars 20–22. The rhythm of the melody (and the harmonic change) feels like it shifts from \"1-2-3, 1-2-3\" to \"1-2, 1-2, 1-2\" (creating a feeling of 3/2 time across two bars). What is this Baroque device called?",
+            options: [
+                { id: 'a', text: "Hemiola" },
+                { id: 'b', text: "Ostinato" },
+                { id: 'c', text: "Syncopation" },
+                { id: 'd', text: "Anacrusis" }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q12',
+            text: "Which period of music history is this from?",
+            options: [
+                { id: 'a', text: "Renaissance" },
+                { id: 'b', text: "Baroque" },
+                { id: 'c', text: "Classical" },
+                { id: 'd', text: "Romantic" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q13',
+            text: "If this were a full performance, which instrument would likely fill in the harmonies above the cello part?",
+            options: [
+                { id: 'a', text: "Piano" },
+                { id: 'b', text: "Organ" },
+                { id: 'c', text: "Harpsichord" },
+                { id: 'd', text: "Harp" }
+            ],
+            correctAnswerId: 'c',
+            explanation: ""
+        },
+        {
+            id: 'q14',
+            text: "What relationship exists between the opening key (D Major) and the key at bar 16 (A Major)?",
+            options: [
+                { id: 'a', text: "Relative Minor" },
+                { id: 'b', text: "Dominant" },
+                { id: 'c', text: "Subdominant" },
+                { id: 'd', text: "ominant" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q15',
+            text: "In bar 15, the Violin plays a G# leading to an A. This accidental suggests a momentary modulation to:",
+            options: [
+                { id: 'a', text: "E Major" },
+                { id: 'b', text: "A Major" },
+                { id: 'c', text: "B Minor" },
+                { id: 'd', text: "F# Minor" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "Which of the following composers is a 'Focus Composer' for Area of Study 1 in the 2026 syllabus?",
+            options: [
+                { id: 'a', text: "Mozart" },
+                { id: 'b', text: "Vivaldi" },
+                { id: 'c', text: "Beethoven" },
+                { id: 'd', text: "Schubert" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q17',
+            text: "What implies that this piece is likely a Minuet?",
+            options: [
+                { id: 'a', text: "It is in 3/4 time and has a moderate, stately tempo." },
+                { id: 'b', text: "It is in 4/4 time and is fast." },
+                { id: 'c', text: "It uses a drone." },
+                { id: 'd', text: "It is in 6/8 compound time." }
+            ],
+            correctAnswerId: 'a',
+            explanation: ""
+        },
+        {
+            id: 'q18',
+            text: "Look at the bass line in bars 1-4. It moves mostly by:",
+            options: [
+                { id: 'a', text: "Chromatic steps" },
+                { id: 'b', text: "Leaps (disjunct motion)" },
+                { id: 'c', text: "hromatic steps" },
+                { id: 'd', text: "Drone" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q19',
+            text: "The sudden change from *piano* (bar 16) back to *forte* (bar 17) is an example of:",
+            options: [
+                { id: 'a', text: "Crescendo" },
+                { id: 'b', text: "Terraced Dynamics" },
+                { id: 'c', text: "rescendo" },
+                { id: 'd', text: "ynamics" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q20',
+            text: "What is the interval between the first two notes of the Violin part in bar 17 (A to C#)?",
+            options: [
+                { id: 'a', text: "Minor 3rd" },
+                { id: 'b', text: "Major 3rd" },
+                { id: 'c', text: "Perfect 4th" },
+                { id: 'd', text: "Perfect 5th *** ### **" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
     ]
 };
 
@@ -3588,5 +5138,9 @@ export const generatedQuizzes = [
     generatedQuiz12,
     generatedQuiz13,
     generatedQuiz14,
-    generatedQuiz15
+    generatedQuiz15,
+    generatedQuiz16,
+    generatedQuiz17,
+    generatedQuiz18,
+    generatedQuiz19
 ];
