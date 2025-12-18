@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation, Link, useParams } from 'react-router-dom';
 import { syllabusStructure, findSyllabusItemByPath } from '../services/syllabusData';
 import { SyllabusItem } from '../types';
-import QuizComponent from '../components/QuizComponent'; 
+import QuizComponent from '../components/QuizComponent';
 // GlossaryBot temporarily removed
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggleButton from '../components/LanguageToggleButton';
@@ -18,10 +18,10 @@ const Breadcrumbs: React.FC<{ currentItem: SyllabusItem }> = ({ currentItem }) =
 
   // Always start with Home
   const homeItem = findSyllabusItemByPath('/');
-  if (currentItem.path !== '/' && homeItem) { 
+  if (currentItem.path !== '/' && homeItem) {
     crumbs.push({ title: getCrumbTitle(homeItem), path: '/' });
   }
-  
+
   if (currentItem.isTerm && currentItem.path.startsWith('/term/')) {
     const glossaryPage = findSyllabusItemByPath('/glossary');
     if (glossaryPage) {
@@ -41,18 +41,18 @@ const Breadcrumbs: React.FC<{ currentItem: SyllabusItem }> = ({ currentItem }) =
       }
     }
   }
-  
+
   const uniqueCrumbs = crumbs.reduce((acc, current) => {
     if (!acc.find(crumb => crumb.path === current.path)) {
       acc.push(current);
     }
     return acc;
   }, [] as { title: string; path: string }[]);
-  
+
   if (!uniqueCrumbs.find(crumb => crumb.path === currentItem.path) && currentItem.path !== '/') {
-     uniqueCrumbs.push({ title: getCrumbTitle(currentItem), path: currentItem.path });
+    uniqueCrumbs.push({ title: getCrumbTitle(currentItem), path: currentItem.path });
   } else if (currentItem.path === '/' && uniqueCrumbs.length === 0 && homeItem) {
-     uniqueCrumbs.push({ title: getCrumbTitle(homeItem), path: '/' });
+    uniqueCrumbs.push({ title: getCrumbTitle(homeItem), path: '/' });
   }
 
   return (
@@ -79,15 +79,15 @@ const Breadcrumbs: React.FC<{ currentItem: SyllabusItem }> = ({ currentItem }) =
 
 const renderFormattedText = (text: string): React.ReactNode => {
   if (!text) return null;
-  
+
   // Check if the text contains HTML iframe elements
   if (text.includes('<iframe')) {
     return <div dangerouslySetInnerHTML={{ __html: text }} />;
   }
-  
+
   // Handle horizontal dividers (---)
   // Note: This is now handled at block level in renderDescriptionBlock
-  
+
   // Handle Markdown checkboxes
   // Note: Block-level handling is done in renderDescriptionBlock
   const checkboxMatch = text.match(/^(\s*)-\s*\[\s*\]\s*(.*)$/);
@@ -96,13 +96,13 @@ const renderFormattedText = (text: string): React.ReactNode => {
     const content = checkboxMatch[2];
     const indentLevel = Math.floor(indent.length / 2); // 2 spaces = 1 indent level
     const marginLeft = indentLevel * 1.5; // 1.5rem per indent level
-    
+
     return (
       <div className="flex items-start gap-2 mb-2" style={{ marginLeft: `${marginLeft}rem` }}>
-        <input 
-          type="checkbox" 
-          disabled 
-          className="mt-1 h-4 w-4 text-sky-600 border-gray-300 rounded focus:ring-sky-500 dark:border-gray-600 dark:bg-gray-700" 
+        <input
+          type="checkbox"
+          disabled
+          className="mt-1 h-4 w-4 text-sky-600 border-gray-300 rounded focus:ring-sky-500 dark:border-gray-600 dark:bg-gray-700"
         />
         <span className="text-base text-gray-700 dark:text-gray-300">
           {renderFormattedText(content)}
@@ -110,7 +110,7 @@ const renderFormattedText = (text: string): React.ReactNode => {
       </div>
     );
   }
-  
+
   // Handle Markdown headings
   if (text.startsWith('#')) {
     const headingMatch = text.match(/^(#{1,6})\s+(.+)$/);
@@ -125,8 +125,8 @@ const renderFormattedText = (text: string): React.ReactNode => {
         5: 'text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-2 mt-3',
         6: 'text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2 mt-2'
       };
-      
-      switch(level) {
+
+      switch (level) {
         case 1: return <h1 className={headingClasses[1]}>{renderFormattedText(content)}</h1>;
         case 2: return <h2 className={headingClasses[2]}>{renderFormattedText(content)}</h2>;
         case 3: return <h3 className={headingClasses[3]}>{renderFormattedText(content)}</h3>;
@@ -137,7 +137,7 @@ const renderFormattedText = (text: string): React.ReactNode => {
       }
     }
   }
-  
+
   // Improved bold text handling with better regex
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, index) => {
@@ -145,93 +145,93 @@ const renderFormattedText = (text: string): React.ReactNode => {
       const boldContent = part.substring(2, part.length - 2);
       return <strong key={index}>{boldContent}</strong>;
     }
-    return part; 
+    return part;
   });
 };
 
 const renderDescriptionBlock = (block: string, keyPrefix: string): React.ReactNode[] => {
-    const elements: React.ReactNode[] = [];
-    if (!block) return elements;
+  const elements: React.ReactNode[] = [];
+  if (!block) return elements;
 
-    const trimmedBlock = block.trim();
-    if (!trimmedBlock) return elements;
+  const trimmedBlock = block.trim();
+  if (!trimmedBlock) return elements;
 
-    const lines = trimmedBlock.split('\n');
-    let currentListItemsContent: React.ReactNode[] = [];
+  const lines = trimmedBlock.split('\n');
+  let currentListItemsContent: React.ReactNode[] = [];
 
-    lines.forEach((line, lineIndex) => {
-        const trimmedLineStart = line.trimStart();
-        if (trimmedLineStart.startsWith('*   ')) {
-            currentListItemsContent.push(renderFormattedText(trimmedLineStart.substring(4)));
-        } else {
-            if (currentListItemsContent.length > 0) {
-                elements.push(
-                    <ul key={`${keyPrefix}-list-${lineIndex}`} className="list-disc pl-7 mb-4 space-y-1">
-                        {currentListItemsContent.map((itemContent, itemIndex) => (
-                            <li key={itemIndex} className="text-base sm:text-lg text-gray-700 dark:text-gray-300">{itemContent}</li>
-                        ))}
-                    </ul>
-                );
-                currentListItemsContent = [];
-            }
-            if (line.trim()) {
-                // Check if the line is a header (starts with #)
-                const trimmedLine = line.trim();
-                if (trimmedLine.match(/^#{1,6}\s/)) {
-                    // Render header directly without wrapping in <p>
-                    elements.push(
-                        <div key={`${keyPrefix}-header-${lineIndex}`} className="mb-4">
-                            {renderFormattedText(trimmedLine)}
-                        </div>
-                    );
-                } else if (trimmedLine === '---') {
-                    // Handle horizontal dividers at block level to avoid nesting in <p>
-                    elements.push(
-                        <hr key={`${keyPrefix}-divider-${lineIndex}`} className="my-6 border-gray-300 dark:border-gray-600" />
-                    );
-                } else if (trimmedLine.startsWith('- [ ]')) {
-                    // Handle checkboxes at block level to avoid nesting in <p>
-                    elements.push(
-                        <div key={`${keyPrefix}-checkbox-${lineIndex}`} className="mb-4">
-                            {renderFormattedText(trimmedLine)}
-                        </div>
-                    );
-                } else if (trimmedLine.includes('<iframe')) {
-                    // Check if the line contains HTML content (like iframe)
-                    elements.push(
-                        <div key={`${keyPrefix}-html-${lineIndex}`} className="mb-4">
-                            {renderFormattedText(trimmedLine)}
-                        </div>
-                    );
-                } else {
-                    elements.push(
-                        <p key={`${keyPrefix}-para-${lineIndex}`} className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
-                            {renderFormattedText(trimmedLine)}
-                        </p>
-                    );
-                }
-            }
-        }
-    });
-
-    if (currentListItemsContent.length > 0) {
+  lines.forEach((line, lineIndex) => {
+    const trimmedLineStart = line.trimStart();
+    if (trimmedLineStart.startsWith('*   ')) {
+      currentListItemsContent.push(renderFormattedText(trimmedLineStart.substring(4)));
+    } else {
+      if (currentListItemsContent.length > 0) {
         elements.push(
-            <ul key={`${keyPrefix}-list-end`} className="list-disc pl-7 mb-4 space-y-1">
-                {currentListItemsContent.map((itemContent, itemIndex) => (
-                    <li key={itemIndex} className="text-base sm:text-lg text-gray-700 dark:text-gray-300">{itemContent}</li>
-                ))}
-            </ul>
+          <ul key={`${keyPrefix}-list-${lineIndex}`} className="list-disc pl-7 mb-4 space-y-1">
+            {currentListItemsContent.map((itemContent, itemIndex) => (
+              <li key={itemIndex} className="text-base sm:text-lg text-gray-700 dark:text-gray-300">{itemContent}</li>
+            ))}
+          </ul>
         );
+        currentListItemsContent = [];
+      }
+      if (line.trim()) {
+        // Check if the line is a header (starts with #)
+        const trimmedLine = line.trim();
+        if (trimmedLine.match(/^#{1,6}\s/)) {
+          // Render header directly without wrapping in <p>
+          elements.push(
+            <div key={`${keyPrefix}-header-${lineIndex}`} className="mb-4">
+              {renderFormattedText(trimmedLine)}
+            </div>
+          );
+        } else if (trimmedLine === '---') {
+          // Handle horizontal dividers at block level to avoid nesting in <p>
+          elements.push(
+            <hr key={`${keyPrefix}-divider-${lineIndex}`} className="my-6 border-gray-300 dark:border-gray-600" />
+          );
+        } else if (trimmedLine.startsWith('- [ ]')) {
+          // Handle checkboxes at block level to avoid nesting in <p>
+          elements.push(
+            <div key={`${keyPrefix}-checkbox-${lineIndex}`} className="mb-4">
+              {renderFormattedText(trimmedLine)}
+            </div>
+          );
+        } else if (trimmedLine.includes('<iframe')) {
+          // Check if the line contains HTML content (like iframe)
+          elements.push(
+            <div key={`${keyPrefix}-html-${lineIndex}`} className="mb-4">
+              {renderFormattedText(trimmedLine)}
+            </div>
+          );
+        } else {
+          elements.push(
+            <p key={`${keyPrefix}-para-${lineIndex}`} className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
+              {renderFormattedText(trimmedLine)}
+            </p>
+          );
+        }
+      }
     }
-    return elements;
+  });
+
+  if (currentListItemsContent.length > 0) {
+    elements.push(
+      <ul key={`${keyPrefix}-list-end`} className="list-disc pl-7 mb-4 space-y-1">
+        {currentListItemsContent.map((itemContent, itemIndex) => (
+          <li key={itemIndex} className="text-base sm:text-lg text-gray-700 dark:text-gray-300">{itemContent}</li>
+        ))}
+      </ul>
+    );
+  }
+  return elements;
 };
 
 const GenericPage: React.FC = () => {
   const location = useLocation();
   const { language } = useLanguage();
-  
+
   let currentPath = location.pathname;
-  
+
   const item = findSyllabusItemByPath(currentPath);
 
   if (!item) {
@@ -243,7 +243,7 @@ const GenericPage: React.FC = () => {
       </div>
     );
   }
-  
+
   const displayTitle = language === 'en-zh' && item.title_zh ? `${item.title} / ${item.title_zh}` : item.title;
   const audioCreditText = language === 'en-zh' && item.audioCredit_zh ? item.audioCredit_zh : item.audioCredit;
   // Use Chinese audio for bilingual mode, English audio for English-only mode
@@ -256,7 +256,7 @@ const GenericPage: React.FC = () => {
       const englishBlocks = (item.longDescription || '').split(/\n\s*\n/);
       const chineseBlocks = item.longDescription_zh.split(/\n\s*\n/);
       const maxLength = Math.max(englishBlocks.length, chineseBlocks.length);
-      
+
       return Array.from({ length: maxLength }).map((_, i) => (
         <React.Fragment key={i}>
           {englishBlocks[i] && (
@@ -288,8 +288,8 @@ const GenericPage: React.FC = () => {
       <article>
         <header className="mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
           <LanguageToggleButton />
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100">{displayTitle}</h1>
-            {item.isTerm && <p className="text-sky-600 dark:text-sky-400 text-sm mt-1">Musical Term / 音乐术语</p>}
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100">{displayTitle}</h1>
+          {item.isTerm && <p className="text-sky-600 dark:text-sky-400 text-sm mt-1">Musical Term / 音乐术语</p>}
         </header>
 
         {currentAudioSources && currentAudioSources.length > 0 && (
@@ -300,14 +300,14 @@ const GenericPage: React.FC = () => {
 
         {item.imageUrl && item.imageAlt && (
           <div className="my-6 flex justify-center" role="figure" aria-label={item.imageAlt}>
-            <img 
-              src={item.imageUrl} 
-              alt={item.imageAlt} 
+            <img
+              src={item.imageUrl}
+              alt={item.imageAlt}
               className="w-full max-w-md h-auto rounded-lg shadow-lg object-cover border border-gray-200 dark:border-gray-700"
             />
           </div>
         )}
-        
+
         <section>
           {renderContent()}
         </section>
@@ -323,25 +323,35 @@ const GenericPage: React.FC = () => {
 
       {item.children && item.children.length > 0 && item.id !== 'glossary' && (
         <div className="mt-10 pt-8 border-t border-gray-300 dark:border-gray-600">
-            <h2 className="text-xl md:text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-4">
-              Explore further: / 进一步探索：
-            </h2>
-            <ul className="list-none pl-0 space-y-3">
+          <h2 className="text-xl md:text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-4">
+            Explore further: / 进一步探索：
+          </h2>
+          <ul className="list-none pl-0 space-y-3">
             {item.children.filter(child => !(child.isTerm && child.path.includes(':termId'))).map(child => {
               const childDisplayTitle = language === 'en-zh' && child.title_zh ? `${child.title} / ${child.title_zh}` : child.title;
-              const childDisplayContent = language === 'en-zh' && child.content_zh ? `${child.content} / ${child.content_zh}`: child.content;
+              const childDisplayContent = language === 'en-zh' && child.content_zh ? `${child.content} / ${child.content_zh}` : child.content;
 
               return (
                 <li key={child.id} className="bg-gray-50 hover:bg-gray-100 p-4 rounded-lg shadow-sm transition-all duration-150 border border-gray-200 hover:border-sky-300 dark:bg-slate-700 dark:hover:bg-slate-600 dark:border-gray-600 dark:hover:border-sky-500">
-                  <Link to={child.path} className="text-sky-700 hover:text-sky-800 font-medium text-lg group block dark:text-sky-400 dark:hover:text-sky-300">
+                  {child.path.startsWith('http') ? (
+                    <a href={child.path} target="_blank" rel="noopener noreferrer" className="text-sky-700 hover:text-sky-800 font-medium text-lg group block dark:text-sky-400 dark:hover:text-sky-300">
+                      {childDisplayTitle}
+                      <div className="flex items-center gap-2">
+                        <span className="text-sky-500 group-hover:translate-x-1 transition-transform inline-block opacity-75 group-hover:opacity-100 dark:text-sky-400">→</span>
+                        <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link to={child.path} className="text-sky-700 hover:text-sky-800 font-medium text-lg group block dark:text-sky-400 dark:hover:text-sky-300">
                       {childDisplayTitle}
                       <span className="ml-2 text-sky-500 group-hover:translate-x-1 transition-transform inline-block opacity-75 group-hover:opacity-100 dark:text-sky-400">→</span>
-                  </Link>
+                    </Link>
+                  )}
                   {child.content && <p className="text-sm text-gray-600 dark:text-gray-400 mt-1.5">{childDisplayContent}</p>}
                 </li>
               );
             })}
-            </ul>
+          </ul>
         </div>
       )}
     </div>

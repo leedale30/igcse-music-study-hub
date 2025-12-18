@@ -6,13 +6,14 @@ import { vivaldiFocusWork } from './aos1/vivaldi';
 import { handelFocusWork } from './aos1/handel';
 import { widerListeningPage } from './aos1/widerListening';
 import { finalExamPage } from './aos1/finalExam';
+import { baroqueRapidFireQuiz } from '../quizzes/aos1/rapid_fire';
 
 // Detailed content sections from the new HTML pages
 const detailedContentSections: SyllabusItem = {
   id: 'aos1-detailed-content',
   title: '📚 Detailed Study Materials',
   title_zh: '📚 详细学习资料',
-  path: '/aos/aos01-baroque-music',
+  path: 'https://www.schoolclass.net/aos/aos01-baroque-music',
   content: 'In-depth content covering all aspects of Baroque music.',
   content_zh: '深入涵盖巴洛克音乐各方面的内容。',
   children: [
@@ -20,45 +21,56 @@ const detailedContentSections: SyllabusItem = {
       id: 'aos1-core-elements',
       title: 'Core Musical Elements',
       title_zh: '核心音乐元素',
-      path: '/aos/aos01-baroque-music/aos01-01-core-musical-elements',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements',
       content: 'Dynamics, rhythm, metre, tempo, melody, harmony, tonality, texture, timbre, and structure.',
     },
     {
       id: 'aos1-sound-sources',
       title: 'Sound Sources & Techniques',
       title_zh: '声源与技巧',
-      path: '/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques',
       content: 'Instrumentation, organology, vocal techniques, and composition methods.',
     },
     {
       id: 'aos1-cultural-context',
       title: 'Cultural & Historical Context',
       title_zh: '文化与历史背景',
-      path: '/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context',
       content: 'Historical background, key composers, patronage, and performance practice.',
     },
     {
       id: 'aos1-language-theory',
       title: 'Language, Literacy & Theory',
       title_zh: '语言、读写与理论',
-      path: '/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory',
       content: 'Terminology, notation systems, and analytical concepts.',
     },
     {
       id: 'aos1-technology',
       title: 'Technology & Innovation',
       title_zh: '技术与创新',
-      path: '/aos/aos01-baroque-music/aos01-05-technology-and-innovation',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-05-technology-and-innovation',
       content: 'Music technology, recording, and distribution in the Baroque context.',
     },
     {
       id: 'aos1-analytical',
       title: 'Analytical Domains',
       title_zh: '分析领域',
-      path: '/aos/aos01-baroque-music/aos01-06-analytical-domains',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains',
       content: 'Genre, style, aesthetics, audience reception, and geographic influence.',
     },
   ]
+};
+
+const rapidFirePage: SyllabusItem = {
+  id: 'aos1-rapid-fire',
+  title: '⚡ Rapid Fire Knowledge Check',
+  title_zh: '⚡ 快速知识检查',
+  path: '/aos/aos01-baroque-music/rapid-fire',
+  content: 'Test your knowledge with these quick-fire questions!',
+  content_zh: '通过这些快速提问测试你的知识！',
+  quiz: baroqueRapidFireQuiz,
+  isTerm: false
 };
 
 export const baroqueMusicAoS: SyllabusItem = {
@@ -77,6 +89,7 @@ export const baroqueMusicAoS: SyllabusItem = {
     handelFocusWork,
     widerListeningPage,
     finalExamPage,
+    rapidFirePage,
     detailedContentSections,
   ]
 };

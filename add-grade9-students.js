@@ -4,7 +4,7 @@
 function addGrade9Students() {
   // Get existing users from localStorage
   const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-  
+
   // Define the Grade 9 students
   const grade9Students = [
     {
@@ -45,25 +45,38 @@ function addGrade9Students() {
       profileCompleted: true,
       createdAt: new Date(),
       lastLoginAt: new Date()
+    },
+    {
+      id: 'student-vengie-guan-001',
+      email: 'vengie.guan@school.com',
+      password: 'vengie123',
+      name: 'Vengie Guan',
+      firstName: 'Vengie',
+      lastName: 'Guan',
+      nickname: 'VENGIE',
+      role: 'student',
+      profileCompleted: true,
+      createdAt: new Date(),
+      lastLoginAt: new Date()
     }
   ];
-  
+
   // Check if students already exist and add only new ones
-  const newStudents = grade9Students.filter(student => 
+  const newStudents = grade9Students.filter(student =>
     !existingUsers.some(user => user.email === student.email)
   );
-  
+
   if (newStudents.length === 0) {
     console.log('All Grade 9 students already exist in the system.');
     return;
   }
-  
+
   // Add new students to existing users
   const updatedUsers = [...existingUsers, ...newStudents];
-  
+
   // Save updated users to localStorage
   localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
-  
+
   // Create initial progress data for each new student
   newStudents.forEach(student => {
     const initialProgress = {
@@ -77,15 +90,15 @@ function addGrade9Students() {
       badges: [],
       lastUpdated: new Date()
     };
-    
+
     localStorage.setItem(`igcse-progress-${student.id}`, JSON.stringify(initialProgress));
   });
-  
+
   console.log(`Successfully added ${newStudents.length} Grade 9 students:`);
   newStudents.forEach(student => {
     console.log(`- ${student.name} (${student.nickname}): ${student.email} / ${student.password}`);
   });
-  
+
   return newStudents;
 }
 
@@ -105,4 +118,8 @@ console.log('');
 console.log('3. ZHANG, JIAXIN (STEVEN)');
 console.log('   Email: steven.zhang@school.com');
 console.log('   Password: steven123');
+console.log('');
+console.log('4. GUAN, VENGIE (VENGIE)');
+console.log('   Email: vengie.guan@school.com');
+console.log('   Password: vengie123');
 console.log('\nStudents can now log in with these credentials!');

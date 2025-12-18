@@ -18,7 +18,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // Create demo user if it doesn't exist
     const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
     const demoUserExists = existingUsers.some((u: any) => u.email === 'demo@student.com');
-    
+
     if (!demoUserExists) {
       const demoUser = {
         id: 'demo-user-001',
@@ -31,7 +31,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         profileCompleted: true
       };
       existingUsers.push(demoUser);
-      
+
       // Create demo teacher account
       const demoTeacher = {
         id: 'teacher-001',
@@ -44,7 +44,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         profileCompleted: true
       };
       existingUsers.push(demoTeacher);
-      
+
       // Create Grade 9 student accounts
       const grade9Students = [
         {
@@ -88,12 +88,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           profileCompleted: true,
           createdAt: new Date('2024-01-01'),
           lastLoginAt: new Date()
+        },
+        {
+          id: 'student-vengie-guan-001',
+          email: 'vengie.guan@school.com',
+          password: 'vengie123',
+          name: 'Vengie Guan',
+          firstName: 'Vengie',
+          lastName: 'Guan',
+          nickname: 'VENGIE',
+          role: 'student' as const,
+          group: 'Grade 9',
+          profileCompleted: true,
+          createdAt: new Date('2024-01-01'),
+          lastLoginAt: new Date()
         }
       ];
-      
+
       // Add Grade 9 students to existing users
       existingUsers.push(...grade9Students);
-      
+
       // Create Grade 10 student accounts
       const grade10Students = [
         {
@@ -181,12 +195,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           lastLoginAt: new Date()
         }
       ];
-      
+
       // Add Grade 10 students to existing users
       existingUsers.push(...grade10Students);
-      
+
       localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
-      
+
       // Create sample progress data for demo user
       const demoProgressExists = localStorage.getItem('igcse-progress-demo-user-001');
       if (!demoProgressExists) {
@@ -271,14 +285,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         };
         localStorage.setItem('igcse-progress-demo-user-001', JSON.stringify(sampleProgress));
       }
-      
+
       // Create initial progress data for Grade 9 students
       const grade9StudentIds = [
         'student-emily-chan-001',
-        'student-christina-wang-001', 
-        'student-steven-zhang-001'
+        'student-christina-wang-001',
+        'student-steven-zhang-001',
+        'student-vengie-guan-001'
       ];
-      
+
       grade9StudentIds.forEach(studentId => {
         const progressExists = localStorage.getItem(`igcse-progress-${studentId}`);
         if (!progressExists) {
@@ -296,7 +311,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           localStorage.setItem(`igcse-progress-${studentId}`, JSON.stringify(initialProgress));
         }
       });
-      
+
       // Create initial progress data for Grade 10 students
       const grade10StudentIds = [
         'student-ziyao-dong-001',
@@ -306,7 +321,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         'student-yucan-wang-001',
         'student-junhao-xu-001'
       ];
-      
+
       grade10StudentIds.forEach(studentId => {
         const progressExists = localStorage.getItem(`igcse-progress-${studentId}`);
         if (!progressExists) {
@@ -325,7 +340,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }
       });
     }
-    
+
     // Load saved user
     const savedUser = localStorage.getItem('igcse-music-user');
     if (savedUser) {
@@ -340,7 +355,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         localStorage.removeItem('igcse-music-user');
       }
     }
-    
+
     // Set loading to false after checking authentication
     setIsLoading(false);
   }, []);
@@ -355,9 +370,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       // Get existing users from localStorage
       const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-      
+
       // Find user with matching email and password
-      const foundUser = existingUsers.find((u: any) => 
+      const foundUser = existingUsers.find((u: any) =>
         u.email === email && u.password === password
       );
 
@@ -368,19 +383,19 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       // Update last login time
       foundUser.lastLoginAt = new Date();
-      
+
       // Update user in storage
-      const updatedUsers = existingUsers.map((u: any) => 
+      const updatedUsers = existingUsers.map((u: any) =>
         u.id === foundUser.id ? foundUser : u
       );
       localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
 
       // Remove password from user object for security
       const { password: _, ...userWithoutPassword } = foundUser;
-      
+
       setUser(userWithoutPassword);
       localStorage.setItem('igcse-music-user', JSON.stringify(userWithoutPassword));
-      
+
       return true;
     } catch (error) {
       setError('Login failed. Please try again.');
@@ -400,7 +415,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       // Get existing users from localStorage
       const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-      
+
       // Check if user already exists
       const userExists = existingUsers.some((u: any) => u.email === email);
       if (userExists) {
@@ -426,10 +441,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       // Remove password from user object for security
       const { password: _, ...userWithoutPassword } = newUser;
-      
+
       setUser(userWithoutPassword);
       localStorage.setItem('igcse-music-user', JSON.stringify(userWithoutPassword));
-      
+
       return true;
     } catch (error) {
       setError('Signup failed. Please try again.');
@@ -441,30 +456,30 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const updateProfile = async (profileData: Partial<User>): Promise<boolean> => {
     if (!user) return false;
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
       // Update user object
       const updatedUser = { ...user, ...profileData };
-      
+
       // Update in users list
       const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-      const updatedUsers = existingUsers.map((u: any) => 
+      const updatedUsers = existingUsers.map((u: any) =>
         u.id === user.id ? { ...u, ...profileData } : u
       );
       localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
-      
+
       // Update current user
       setUser(updatedUser);
       localStorage.setItem('igcse-music-user', JSON.stringify(updatedUser));
-      
+
       // Create backup after profile update
       if (user.role === 'student') {
         dataBackupManager.createStudentBackup(user.id);
       }
-      
+
       return true;
     } catch (error) {
       setError('Failed to update profile. Please try again.');
@@ -476,32 +491,32 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const updatePassword = async (currentPassword: string, newPassword: string): Promise<boolean> => {
     if (!user) return false;
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
       // Get existing users from localStorage
       const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-      
+
       // Find current user and verify password
       const currentUser = existingUsers.find((u: any) => u.id === user.id);
       if (!currentUser || currentUser.password !== currentPassword) {
         setError('Current password is incorrect');
         return false;
       }
-      
+
       // Update password in users list
-      const updatedUsers = existingUsers.map((u: any) => 
+      const updatedUsers = existingUsers.map((u: any) =>
         u.id === user.id ? { ...u, password: newPassword } : u
       );
       localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
-      
+
       // Create backup after password update
       if (user.role === 'student') {
         dataBackupManager.createStudentBackup(user.id);
       }
-      
+
       return true;
     } catch (error) {
       setError('Failed to update password. Please try again.');

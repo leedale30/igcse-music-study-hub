@@ -21,9 +21,9 @@ const ChevronRightIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
 );
 
 
@@ -61,18 +61,37 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
           )}
         </div>
       ) : (
-        <NavLink
-          to={item.path}
-          className={({ isActive }) =>
-            `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${
-              isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
-            }`
-          }
-          style={{ paddingLeft }}
-          title={displayTitle}
-        >
-          {displayTitle}
-        </NavLink>
+        <>
+          {item.path.startsWith('http') ? (
+            <a
+              href={item.path}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate text-gray-300 hover:bg-slate-700 hover:text-gray-100"
+              style={{ paddingLeft }}
+              title={displayTitle}
+            >
+              <div className="flex items-center">
+                <span className="truncate">{displayTitle}</span>
+                <svg className="w-3 h-3 ml-1 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
+            </a>
+          ) : (
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                }`
+              }
+              style={{ paddingLeft }}
+              title={displayTitle}
+            >
+              {displayTitle}
+            </NavLink>
+          )}
+        </>
       )}
     </li>
   );
@@ -88,58 +107,56 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
   return (
     <>
-        {/* Overlay for mobile */}
-        <div
-            className={`fixed inset-0 bg-black/60 z-30 transition-opacity lg:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-            onClick={() => setIsOpen(false)}
-            aria-hidden="true"
-        />
+      {/* Overlay for mobile */}
+      <div
+        className={`fixed inset-0 bg-black/60 z-30 transition-opacity lg:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+      />
 
-        {/* Sidebar */}
-        <div className={`fixed top-0 left-0 h-full w-72 z-40 transform transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:h-auto lg:z-auto lg:rounded-l-lg lg:shadow-lg ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-            <aside className="w-full bg-slate-800 text-gray-100 p-4 space-y-2 overflow-y-auto h-full">
-            <div className="flex justify-end lg:hidden mb-2">
-                <button onClick={() => setIsOpen(false)} className="p-1 text-gray-400 hover:text-white" aria-label="Close menu">
-                    <CloseIcon className="w-6 h-6" />
-                </button>
-            </div>
-            <nav>
-                <ul>
-                {structure.filter(item => !(item.isTerm && item.path.includes(':termId'))).map(item => (
-                    <SidebarItem key={item.id} item={item} level={0} />
-                ))}
-                <li className="mt-4 pt-4 border-t border-slate-700">
-                    <NavLink
-                        to="/instruments"
-                        className={({ isActive }) =>
-                            `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${
-                            isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
-                            }`
-                        }
-                        style={{ paddingLeft: '1rem' }}
-                        title="Instruments"
-                    >
-                        Instruments
-                    </NavLink>
-                </li>
-                <li className="mb-1">
-                    <NavLink
-                        to="/listening-exams"
-                        className={({ isActive }) =>
-                            `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${
-                            isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
-                            }`
-                        }
-                        style={{ paddingLeft: '1rem' }}
-                        title="Listening Exams"
-                    >
-                        Listening Exams
-                    </NavLink>
-                </li>
-                </ul>
-            </nav>
-            </aside>
-        </div>
+      {/* Sidebar */}
+      <div className={`fixed top-0 left-0 h-full w-72 z-40 transform transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:h-auto lg:z-auto lg:rounded-l-lg lg:shadow-lg ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <aside className="w-full bg-slate-800 text-gray-100 p-4 space-y-2 overflow-y-auto h-full">
+          <div className="flex justify-end lg:hidden mb-2">
+            <button onClick={() => setIsOpen(false)} className="p-1 text-gray-400 hover:text-white" aria-label="Close menu">
+              <CloseIcon className="w-6 h-6" />
+            </button>
+          </div>
+          <nav>
+            <ul>
+              {structure.filter(item => !(item.isTerm && item.path.includes(':termId'))).map(item => (
+                <SidebarItem key={item.id} item={item} level={0} />
+              ))}
+              <li className="mt-4 pt-4 border-t border-slate-700">
+                <NavLink
+                  to="/instruments"
+                  className={({ isActive }) =>
+                    `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                    }`
+                  }
+                  style={{ paddingLeft: '1rem' }}
+                  title="Instruments"
+                >
+                  Instruments
+                </NavLink>
+              </li>
+              <li className="mb-1">
+                <NavLink
+                  to="/listening-exams"
+                  className={({ isActive }) =>
+                    `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                    }`
+                  }
+                  style={{ paddingLeft: '1rem' }}
+                  title="Listening Exams"
+                >
+                  Listening Exams
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
     </>
   );
 };
