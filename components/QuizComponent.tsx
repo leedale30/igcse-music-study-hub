@@ -55,6 +55,25 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
     setQuizStartTime(new Date());
   }, [quizData.title]);
 
+  // Shuffle options for each question to prevent cheating
+  // Fisher-Yates shuffle algorithm
+  const shuffledOptionsMap = React.useMemo(() => {
+    const shuffle = <T,>(array: T[]): T[] => {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    const map: Record<string, typeof quizData.questions[0]['options']> = {};
+    quizData.questions.forEach(q => {
+      map[q.id] = shuffle(q.options);
+    });
+    return map;
+  }, [quizData.id]); // Only re-shuffle when quiz changes
+
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
   const handleAnswerSelect = (questionId: string, answerId: string) => {
@@ -183,7 +202,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
               <li key={q.id} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-slate-700">
                 <p className="font-semibold text-gray-800 dark:text-gray-200 mb-2">{index + 1}. {q.text}</p>
                 <div className="space-y-2">
-                  {q.options.map(opt => {
+                  {shuffledOptionsMap[q.id].map(opt => {
                     let itemClass = "flex items-center p-3 rounded-md text-sm ";
                     let icon = null;
 
@@ -252,7 +271,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
       <div className="bg-white dark:bg-slate-700 p-4 sm:p-6 rounded-lg shadow">
         <p className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6 min-h-[3em]">{currentQuestion.text}</p>
         <div className="space-y-3">
-          {currentQuestion.options.map(option => (
+          {shuffledOptionsMap[currentQuestion.id].map(option => (
             <button
               key={option.id}
               onClick={() => handleAnswerSelect(currentQuestion.id, option.id)}
