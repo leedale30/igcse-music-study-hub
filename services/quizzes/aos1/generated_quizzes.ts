@@ -17,8 +17,11 @@ Q:"Allegro" 1/4=110
 %%score (1 2) 3
 K:D
 V:1 name="Violino"
+%%MIDI program 40
 V:2 name="Cembalo RH"
+%%MIDI program 6
 V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42
 % --- Ritornello Theme ---
 [V:1] d2 d2 (f/e/d) (g/f/e) | f2 f2 a2 f2 | gfed cdef | d2 d2 d4 |
 [V:2] z8 | d2 d2 (f/e/d) (g/f/e) | f2 f2 a2 f2 | gfed cdef |
@@ -292,8 +295,11 @@ Q:"Allegro" 1/4=112
 %%tempofont Wingdings 1
 %%score { 1 | 2 | 3 }
 V:1 name="Violin" snm="Vln."
+%%MIDI program 40
 V:2 name="Cembalo" snm="Cemb."
+%%MIDI program 6
 V:3 name="Basso Continuo" snm="B.C." clef=bass
+%%MIDI program 42
 K:D
 % --- Ritornello Theme (Tutti) ---
 [V:1] d2 f2 a2 d'2 | c'bag f2 e2 | b2 g2 a2 f2 | gfed c2 A2 |
@@ -568,7 +574,9 @@ Q:"Allegro" 1/4=110
 %%barnumbers 1
 %%score { 1 | 2 }
 V:1 name="Violin" snm="Vln."
+%%MIDI program 40
 V:2 name="Harpsichord" snm="Hps." clef=bass
+%%MIDI program 42
 K:G
 % --- Ritornello Theme: Motor Rhythm and Triadic Melody ---
 [V:1] G4 D2G2 B4 G2B2 | d2B2d2g2 e2c2e2g2 | f2d2f2a2 g2d2B2G2 | A2D2F2A2 G4 z4 |
@@ -841,8 +849,11 @@ Q: "Allegro" 1/4=120
 %%barnumbers 1
 %%score { (V:1 | V:2) | V:3 }
 V:1 name="Violin I" snm="Vln.1"
+%%MIDI program 40
 V:2 name="Violin II" snm="Vln.2"
+%%MIDI program 40
 V:3 name="Basso Continuo" snm="B.C." clef=bass
+%%MIDI program 42
 K:G
 [V:1] G2 BG d2 BG | e2 cA f2 dB | gdBG cAFD | G2 G2 G4 |]
 [V:2] z4 G2 BG | c2 AF d2 BG | BAGF EFGA | B2 A2 G4 |]
@@ -1092,8 +1103,11 @@ Q: "Allegro" 1/4=110
 %%tempofont Wingdings 1
 K:G
 V:1 name="Violin I" snm="Vln.I"
+%%MIDI program 40
 V:2 name="Violin II" snm="Vln.II"
+%%MIDI program 40
 V:3 name="Basso Continuo" snm="B.C." clef=bass
+%%MIDI program 42
 % -- Score --
 [V:1] g2 (b/a/g) d'2 g2 | e'2 (d'/c'/b) a2 d'2 | (b/c'/d') (a/b/c') (g/a/b) (f/g/a) | g2 f2 g4 |]
 [V:2] d2 (g/f/e) b2 d2 | c2 (b/a/g) f2 b2 | (g/a/b) (f/g/a) (e/f/g) (d/e/f) | e2 d2 d4 |]
@@ -1331,9 +1345,13 @@ Q:"Allegro" 1/4=115
 %%tempofont Wingdings 1
 %%score [ 1 | 2 | (3 4) ]
 V:1 clef=treble name="Violin I"
+%%MIDI program 40
 V:2 clef=treble name="Violin II"
+%%MIDI program 40
 V:3 clef=treble name="Harpsichord"
+%%MIDI program 6
 V:4 clef=bass name="Basso Continuo"
+%%MIDI program 42
 K:G
 % --- Ritornello Theme (Tutti) ---
 [V:1] G2 G/A/B/c/ d2 G2 | e2 e/f/g/a/ g2 f2 | g/f/e/d/ c/B/A/G/ d2 c2 | B2 A2 G4 |
@@ -1609,8 +1627,11 @@ Q:"Allegro" 1/4=110
 %%score (1 2) 3
 K:D
 V:1 name="Flute" snm="Fl."
+%%MIDI program 73
 V:2 name="Harpsichord" snm="Hpschd."
+%%MIDI program 6
 V:3 name="Cello / Basso" snm="Vc." clef=bass
+%%MIDI program 42
 % --- Ritornello (Tutti) ---
 [V:1] d2 f/e/d a2 a2 | b2 g/f/e a2 a2 | gfed cdec | d2 d2 d4 |
 [V:2] [Fd]2 [Ad]2 [Ac]2 [Ae]2 | [Gd]2 [Bd]2 [Ac]2 [Ae]2 | [Bd]4 [Ac]4 | [Fd]2 [Fd]2 [Fd]4 |
@@ -1883,8 +1904,11 @@ Q:"Allegro" 1/4=100
 %%barnumbers 1
 K:D
 V:1 name="Violino"
+%%MIDI program 40
 V:2 name="Cembalo RH"
+%%MIDI program 6
 V:3 clef=bass name="Basso Continuo"
+%%MIDI program 42
 % --- Ritornello (Tutti) ---
 [V:1] d2 A2 F2 D2 | GFEG F2 D2 | B2 G2 A2 F2 | G2 F2- F2 D2 |
 [V:2] F2 D2 A,2 F,2 | B,A,CB, A,2 F,2 | G2 E2 F2 D2 | E2 E2 D4 |
@@ -2440,9 +2464,13 @@ Q: "Allegro" 1/4=110
 %%score [ 1 | 2 | 3 | (4 5) ]
 K:D
 V:1 name="Violin I" snm="Vln.1"
+%%MIDI program 40
 V:2 name="Violin II" snm="Vln.2"
+%%MIDI program 40
 V:3 name="Cello" snm="Vc." clef=bass
+%%MIDI program 42
 V:4 name="Harpsichord" snm="Hpschd."
+%%MIDI program 6
 V:5 clef=bass
 % --- Composition ---
 [V:1] d2 (3fed a2 d'2 | f'2 e'd' d'2 c'2 | d'4 z a f d | A2 G/F/G F2 E2 | D8 |]
@@ -2685,9 +2713,13 @@ Q:"Allegro" 1/4=112
 K:D
 %%staves [1 2 3 4]
 V:1 name="Violin I" snm="Vln1"
+%%MIDI program 40
 V:2 name="Violin II" snm="Vln2"
+%%MIDI program 40
 V:3 name="Viola" snm="Vla" clef=alto
+%%MIDI program 41
 V:4 name="Basso Continuo" snm="B.C." clef=bass
+%%MIDI program 42
 % --- Score ---
 [V:1] d2 (fe) d2 a2 | f2 (gf) e2 a2 | (fd)(ge) (af)(bg) | f2 e2 d4 |
 [V:2] A2 (dc) A2 f2 | d2 (ed) c2 e2 | (dA)(eA) (fA)(gA) | d2 c2 A4 |
@@ -2960,15 +2992,19 @@ Q: "Allegro" 1/4=110
 %%tempofont Wingdings 1
 K:G
 V:1 name="Violin"
+%%MIDI program 40
 |: G2 (BG) d2 G2 | F2 (AF) d2 F2 | G2 (BG) e2 (dc) | (BA)(GF) G4 :|
 |: d2 (fd) a2 d2 | e2 (ge) b2 e2 | (ag)(fe) (dc)(BA) | G2 F2 G4 :|
 V:2 name="Oboe"
+%%MIDI program 68
 |: z8 | G2 (BG) d2 G2 | E2 (GE) c2 (BA) | (GF)(ED) D4 :|
 |: B2 (dB) f2 B2 | c2 (ec) g2 c2 | (fe)(dc) (BA)(GF) | E2 D2 D4 :|
 V:3 name="Harpsichord RH"
+%%MIDI program 6
 |: [B,2D2G2] z2 [B,2D2G2] z2 | [A,2D2F2] z2 [A,2D2F2] z2 | [G,2C2E2] z2 [G,2C2E2] z2 | [D2G2] [D2F2] [B,4D4G4] :|
 |: [F2A2d2] z2 [F2A2d2] z2 | [G2B2e2] z2 [G2B2e2] z2 | [C2E2A2] [D2F2A2] [D2G2B2] [D2F2A2] | [G,2C2E2] [A,2D2F2] [B,4D4G4] :|
 V:4 name="Basso Continuo" clef=bass
+%%MIDI program 42
 |: G,,2 G,2 B,,2 G,2 | D,,2 D,2 F,,2 D,2 | C,,2 C,2 A,,2 C,2 | D,2 D,,2 G,,4 :|
 |: D,,2 D,2 F,,2 D,2 | E,,2 E,2 G,,2 E,2 | A,,2 D,2 G,,2 D,2 | C,2 D,2 G,,4 :|`,
     questions: [
@@ -3229,8 +3265,11 @@ Q:"Allegro" 1/4=120
 K:D
 %%score {V1 | (V2 V3)}
 V:1 clef=treble name="Violin"
+%%MIDI program 40
 V:2 clef=treble name="Harpsichord"
+%%MIDI program 6
 V:3 clef=bass name="Basso Continuo"
+%%MIDI program 42
 % --- Ritornello Theme ---
 [V:1] d2 a2 f2 d2 | gfed cdec | d2 a2 f2 d2 | (3gag (3fgf e2 A2 |
 [V:2] z8 | d2 f2 a2 d2 | z4 z2 A2 | d2 f2 a2 g2 |
@@ -3776,12 +3815,19 @@ Q: "Allegro" 1/4=112
 %%tempofont Wingdings 1
 %%score (1 2 3) 4 5 [6 | 7]
 V:1 name="Solo Violin" snm="S.Vln."
+%%MIDI program 40
 V:2 name="Violin I" snm="Vln.I"
+%%MIDI program 40
 V:3 name="Violin II" snm="Vln.II"
+%%MIDI program 40
 V:4 name="Viola" snm="Vla."
+%%MIDI program 41
 V:5 name="Basso Continuo (Cello)" snm="Vc." clef=bass
+%%MIDI program 42
 V:6 name="Harpsichord (RH)" snm="Hpschd."
+%%MIDI program 6
 V:7 name="Harpsichord (LH)" snm="Hpschd." clef=bass
+%%MIDI program 42
 K:G
 % --- Ritornello (Tutti) ---
 [V:1] G2 G>A B2 B>c | d2 de d2 cB | c2 e2 A2 d2 | B2 G2 G4 |
@@ -4053,6 +4099,7 @@ K:Gm
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin I (Concertino)"
+%%MIDI program 40
 !f! G2 B2 d2 g2 | ^f2 a2 d2 c2 | B2 d2 c2 A2 | G4 ^F4 |
 !p! G2 D2 B,2 G,2 | F2 C2 A,2 F,2 | E2 B,2 G,2 E,2 | D4 ^C4 |
 !f! D2 =E2 ^F2 D2 | G2 A2 B2 G2 | c2 B2 A2 G2 | ^F4 !trill!G4 |
@@ -4330,6 +4377,7 @@ K:Am
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin I (Concertino)"
+%%MIDI program 40
 !f! A2 c2 e2 | a4 e2 | f2 d2 B2 | e4 E4 |
 !p! c2 B2 A2 | B2 A2 ^G2 | A2 c2 e2 | d4 c4 |
 !f! d2 f2 a2 | b2 d'2 f2 | e2 g2 b2 | c'2 e'2 g2 |
@@ -4604,6 +4652,7 @@ K:Cm
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin I"
+%%MIDI program 40
 !f! c2 G2 E2 | C2 D2 E2 | F2 G2 A2 | G4 z2 |
 z6 | z6 | G2 d2 B2 | G2 A2 B2 |
 c2 d2 e2 | d2 e2 f2 | e2 d2 c2 | =B4 d2 |
@@ -4881,6 +4930,7 @@ K:Em
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin I"
+%%MIDI program 40
 !f! E2 B G2 E | B,2 E G,2 B, | E2 G F2 A | G2 B A2 c |
 B3 !trill!A3 | G2 F E3 | z6 | z6 |
 b2 g a2 f | g2 e f2 ^d | e2 B c2 A | G2 F E3 ||
@@ -5152,6 +5202,7 @@ K:Am
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin I"
+%%MIDI program 40
 !f! c2 B2 A2 | e4 c2 | d2 B2 G2 | E4 z2 |
 e2 d2 c2 | a4 f2 | e2 d2 c2 | B4 E2 |
 A2 c2 e2 | f2 d2 B2 | e2 c2 A2 | B4 E2 |
@@ -5429,6 +5480,7 @@ K:D
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin"
+%%MIDI program 40
 !f! d2 (3(def) e2 | d4 A2 | B2 G2 E2 | A4 G2 |
 F2 A2 d2 | g2 f2 e2 | d2 e2 !trill!c2 | d6 :|
 !p! a2 f2 d2 | g4 f2 | e2 d2 c2 | B4 A2 |
@@ -5701,6 +5753,7 @@ K:D
 %%barnumbers 1
 %%MIDI program 40 % Violin
 V:1 name="Violin"
+%%MIDI program 40
 !f! d2 f2 a2 d'2 | c'2 b2 a4 | !p! g2 f2 e2 d2 | c2 B2 A4 |
 !f! B2 d2 g2 b2 | a2 g2 f4 | e2 d2 !trill!c2 B2 | A4 z4 |
 a2 g2 f2 e2 | d2 c2 B2 A2 | G2 F2 E2 D2 | D4 z4 |]
