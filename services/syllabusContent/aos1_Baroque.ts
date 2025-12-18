@@ -41,7 +41,10 @@ import {
   generatedQuiz16,
   generatedQuiz17,
   generatedQuiz18,
-  generatedQuiz19
+  generatedQuiz19,
+  generatedQuiz20,
+  generatedQuiz21,
+  generatedQuiz22
 } from '../quizzes/aos1/generated_quizzes';
 
 // Detailed content sections from the new HTML pages
@@ -254,6 +257,9 @@ const assessmentQuizzesSection: SyllabusItem = {
     { id: 'aos1-assess-17', title: '📝 Quiz 17: Concerto Grosso B', path: '/aos/aos01-baroque-music/assessment/quiz-17', content: '20 questions on concerto grosso.', quiz: generatedQuiz17, isTerm: false },
     { id: 'aos1-assess-18', title: '📝 Quiz 18: Fugal Style', path: '/aos/aos01-baroque-music/assessment/quiz-18', content: '20 questions on fugal texture.', quiz: generatedQuiz18, isTerm: false },
     { id: 'aos1-assess-19', title: '📝 Quiz 19: Baroque Gigue', path: '/aos/aos01-baroque-music/assessment/quiz-19', content: '20 questions on compound time.', quiz: generatedQuiz19, isTerm: false },
+    { id: 'aos1-assess-20', title: '📝 Quiz 20: Baroque Suite', path: '/aos/aos01-baroque-music/assessment/quiz-20', content: '20 questions on suite movements.', quiz: generatedQuiz20, isTerm: false },
+    { id: 'aos1-assess-21', title: '📝 Quiz 21: Baroque Specimen', path: '/aos/aos01-baroque-music/assessment/quiz-21', content: '20 questions on specimen paper.', quiz: generatedQuiz21, isTerm: false },
+    { id: 'aos1-assess-22', title: '📝 Quiz 22: Baroque Allegro II', path: '/aos/aos01-baroque-music/assessment/quiz-22', content: '20 questions on allegro analysis.', quiz: generatedQuiz22, isTerm: false },
   ]
 };
 
