@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useParams, useLocation, Link, useNavigate } from 'react-router-dom';
+import { findSyllabusItemByPath } from '../services/syllabusData';
+import QuizComponent from '../components/QuizComponent';
+import { Quiz } from '../types';
 
 // MathJax global declaration is in TheoryPage.tsx
 
@@ -22,6 +25,7 @@ const AosContentPage: React.FC = () => {
     const [pageTitle, setPageTitle] = useState<string>('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [activeQuiz, setActiveQuiz] = useState<Quiz | undefined>(undefined);
     const contentRef = useRef<HTMLDivElement>(null);
 
     // Build the file path from the URL - memoized to prevent infinite loops
@@ -35,7 +39,20 @@ const AosContentPage: React.FC = () => {
         const fetchContent = async () => {
             try {
                 setLoading(true);
+                setError(null);
+                setActiveQuiz(undefined);
+                setHtmlContent('');
 
+                // Check if this path corresponds to a Quiz
+                const item = findSyllabusItemByPath(location.pathname);
+                if (item && item.quiz) {
+                    setActiveQuiz(item.quiz);
+                    setPageTitle(item.title);
+                    setLoading(false);
+                    return;
+                }
+
+                // If not a quiz, try fetching HTML content
                 // Build possible HTML file paths to try
                 const pathsToTry: string[] = [];
                 const lastPart = pathParts[pathParts.length - 1];
@@ -73,6 +90,7 @@ const AosContentPage: React.FC = () => {
                 }
 
                 if (!response || !response.ok) {
+                    // If no HTML found and no quiz found, throw
                     throw new Error('Content not found');
                 }
 
@@ -113,7 +131,7 @@ const AosContentPage: React.FC = () => {
         if (aosId) {
             fetchContent();
         }
-    }, [aosId, pathAfterAos]); // Removed pathParts - pathAfterAos is sufficient
+    }, [aosId, pathAfterAos, location.pathname, pathParts]);
 
     // Initialize MathJax after content loads
     useEffect(() => {
@@ -266,28 +284,34 @@ const AosContentPage: React.FC = () => {
                 </h1>
             </header>
 
-            {/* Content */}
-            <article
-                ref={contentRef}
-                className="
-          aos-content
-          prose prose-slate dark:prose-invert max-w-none
-          prose-headings:text-gray-800 dark:prose-headings:text-gray-100
-          prose-p:text-gray-700 dark:prose-p:text-gray-300
-          prose-a:text-sky-600 dark:prose-a:text-sky-400 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-gray-900 dark:prose-strong:text-white
-          prose-li:text-gray-700 dark:prose-li:text-gray-300
-          prose-em:text-gray-700 dark:prose-em:text-gray-300
-          [&_.card]:bg-white [&_.card]:dark:bg-gray-800 [&_.card]:rounded-xl [&_.card]:p-4 [&_.card]:shadow-sm [&_.card]:border [&_.card]:border-gray-200 [&_.card]:dark:border-gray-700
-          [&_.grid]:grid [&_.grid]:gap-4 [&_.grid]:grid-cols-1 [&_.grid]:md:grid-cols-2
-          [&_section]:mb-8
-          [&_h2]:text-xl [&_h2]:md:text-2xl [&_h2]:font-bold [&_h2]:mt-8 [&_h2]:mb-4
-          [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-3
-          [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4
-          [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4
-        "
-                dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            {/* Content or Quiz */}
+            {activeQuiz ? (
+                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+                    <QuizComponent quizData={activeQuiz} />
+                </div>
+            ) : (
+                <article
+                    ref={contentRef}
+                    className="
+              aos-content
+              prose prose-slate dark:prose-invert max-w-none
+              prose-headings:text-gray-800 dark:prose-headings:text-gray-100
+              prose-p:text-gray-700 dark:prose-p:text-gray-300
+              prose-a:text-sky-600 dark:prose-a:text-sky-400 prose-a:no-underline hover:prose-a:underline
+              prose-strong:text-gray-900 dark:prose-strong:text-white
+              prose-li:text-gray-700 dark:prose-li:text-gray-300
+              prose-em:text-gray-700 dark:prose-em:text-gray-300
+              [&_.card]:bg-white [&_.card]:dark:bg-gray-800 [&_.card]:rounded-xl [&_.card]:p-4 [&_.card]:shadow-sm [&_.card]:border [&_.card]:border-gray-200 [&_.card]:dark:border-gray-700
+              [&_.grid]:grid [&_.grid]:gap-4 [&_.grid]:grid-cols-1 [&_.grid]:md:grid-cols-2
+              [&_section]:mb-8
+              [&_h2]:text-xl [&_h2]:md:text-2xl [&_h2]:font-bold [&_h2]:mt-8 [&_h2]:mb-4
+              [&_h3]:text-lg [&_h3]:md:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-3
+              [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4
+              [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4
+            "
+                    dangerouslySetInnerHTML={{ __html: htmlContent }}
+                />
+            )}
 
             {/* Navigation back */}
             <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
