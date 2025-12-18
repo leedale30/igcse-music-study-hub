@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Quiz, Question, AnswerOption } from '../types';
 import { validateQuizSubmission } from '../utils/validation';
 import { useErrorHandler } from './ErrorBoundary';
@@ -46,6 +46,15 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const synthControlRef = useRef<any>(null);
   const visualObjRef = useRef<any>(null);
 
+  // Generate stable IDs for this quiz instance
+  const { visualId, audioId } = useMemo(() => {
+    const suffix = quizData.title.replace(/\s+/g, '-').toLowerCase();
+    return {
+      visualId: `abc-paper-${suffix}`,
+      audioId: `abc-audio-${suffix}`
+    };
+  }, [quizData.title]);
+
   const { handleError } = useErrorHandler();
   const { user } = useAuth();
   const { addQuizResult } = useProgress();
@@ -58,8 +67,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   // Handle ABCJS Rendering
   useEffect(() => {
     if (quizData.abcNotation) {
-      const visualId = `abc-paper-${quizData.title.replace(/\s+/g, '-')}`;
-      const audioId = `abc-audio-${quizData.title.replace(/\s+/g, '-')}`;
+
 
       // Ensure divs are empty
       if (visualRef.current) visualRef.current.innerHTML = "";
@@ -83,7 +91,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
           const synthControl = new abcjs.synth.SynthController();
           synthControlRef.current = synthControl;
 
-          synthControl.load(audioRef.current, null, {
+          synthControl.load(`#${audioId}`, null, {
             displayRestart: true,
             displayPlay: true,
             displayProgress: true,
@@ -109,7 +117,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
         console.error("ABCJS Error:", err);
       }
     }
-  }, [quizData.abcNotation, quizData.title]); // Re-run if notation changes
+  }, [quizData.abcNotation, quizData.title, visualId, audioId]); // Re-run if notation changes
 
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
@@ -296,8 +304,8 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
       {quizData.abcNotation && (
         <div className="mb-8 p-4 bg-white rounded-lg shadow-inner">
           <h3 className="text-lg font-semibold text-slate-700 mb-2">Musical Extract</h3>
-          <div ref={audioRef} className="mb-2"></div>
-          <div ref={visualRef} className="w-full overflow-x-auto"></div>
+          <div id={audioId} ref={audioRef} className="mb-2"></div>
+          <div id={visualId} ref={visualRef} className="w-full overflow-x-auto"></div>
         </div>
       )}
 
