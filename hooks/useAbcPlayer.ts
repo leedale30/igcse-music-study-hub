@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo, useCallback } from 'react';
+import { useEffect, useRef, useMemo, useCallback, useState } from 'react';
 import abcjs from 'abcjs';
 import 'abcjs/abcjs-audio.css';
 
@@ -10,6 +10,7 @@ interface UseAbcPlayerProps {
 export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
     const visualRef = useRef<HTMLDivElement>(null);
     const audioRef = useRef<HTMLDivElement>(null);
+    const [isReady, setIsReady] = useState(false);
 
     // Internal refs to hold instances
     const synthRef = useRef<any>(null);
@@ -26,52 +27,20 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
         };
     }, [title]);
 
-    // Function to initialize audio - called on user interaction
-    const initializeAudio = useCallback(() => {
-        if (audioInitializedRef.current || !visualObjRef.current) return;
-
-        if (!abcjs.synth.supportsAudio()) {
-            console.warn("Audio not supported");
-            return;
-        }
-
-        try {
-            const synthControl = new abcjs.synth.SynthController();
-            synthControlRef.current = synthControl;
-
-            // Load the audio control UI
-            synthControl.load(`#${audioId}`, null, {
-                displayRestart: true,
-                displayPlay: true,
-                displayProgress: true,
-                displayWarp: true,
-            });
-
-            const synth = new abcjs.synth.CreateSynth();
-            synthRef.current = synth;
-
-            synth.init({
-                visualObj: visualObjRef.current,
-                options: {
-                    soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/",
-                }
-            }).then(() => {
-                if (synthControlRef.current) {
-                    synthControlRef.current.setTune(visualObjRef.current, true)
-                        .then(() => {
-                            console.log("Audio successfully loaded and tuned");
-                            audioInitializedRef.current = true;
-                        })
-                        .catch((e: any) => console.warn("Audio setTune error:", e));
-                }
-            }).catch((e: any) => console.warn("Audio init error:", e));
-        } catch (err) {
-            console.error("ABCJS Audio Error:", err);
-        }
-    }, [audioId]);
-
+    // Effect to detect when refs are ready
     useEffect(() => {
-        if (!abcNotation) return;
+        // Use a small delay to ensure the DOM is fully committed
+        const timer = setTimeout(() => {
+            if (visualRef.current && audioRef.current) {
+                setIsReady(true);
+            }
+        }, 50);
+        return () => clearTimeout(timer);
+    }, [abcNotation, title]);
+
+    // Main effect for rendering - only runs when isReady
+    useEffect(() => {
+        if (!abcNotation || !isReady) return;
 
         // Cleanup previous instances if they exist
         if (synthControlRef.current) {
@@ -92,7 +61,7 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
         audioInitializedRef.current = false;
 
         try {
-            // 1. Render Visual immediately
+            // 1. Render Visual
             if (visualRef.current) {
                 visualObjRef.current = abcjs.renderAbc(visualRef.current, abcNotation, {
                     responsive: "resize",
@@ -100,13 +69,12 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
                 })[0];
             }
 
-            // 2. Set up audio control UI (but don't initialize synth yet)
-            // The synth will be initialized on first user click
+            // 2. Set up audio control UI
             if (abcjs.synth.supportsAudio() && audioRef.current) {
                 const synthControl = new abcjs.synth.SynthController();
                 synthControlRef.current = synthControl;
 
-                // Load the audio control UI - this creates the play button
+                // Load the audio control UI using the element ID
                 synthControl.load(`#${audioId}`, null, {
                     displayRestart: true,
                     displayPlay: true,
@@ -114,20 +82,17 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
                     displayWarp: true,
                 });
 
-                // Create the synth but don't call init() yet
+                // Create and initialize the synth
                 const synth = new abcjs.synth.CreateSynth();
                 synthRef.current = synth;
 
-                // Initialize the synth - abcjs handles the user interaction requirement internally
-                // when the user clicks play, it will trigger the audio context
                 synth.init({
                     visualObj: visualObjRef.current,
                     options: {
                         soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/",
                     }
                 }).then(() => {
-                    if (synthControlRef.current) {
-                        // setTune with userAction=true tells abcjs that this came from a user action
+                    if (synthControlRef.current && visualObjRef.current) {
                         synthControlRef.current.setTune(visualObjRef.current, true)
                             .then(() => {
                                 console.log("Audio successfully loaded and tuned");
@@ -151,13 +116,17 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
                 }
             }
         };
-    }, [abcNotation, title, visualId, audioId, initializeAudio]);
+    }, [abcNotation, title, visualId, audioId, isReady]);
+
+    // Reset isReady when notation changes
+    useEffect(() => {
+        setIsReady(false);
+    }, [abcNotation, title]);
 
     return {
         visualRef,
         audioRef,
         visualId,
-        audioId,
-        initializeAudio
+        audioId
     };
 };
