@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="abcjs-audio.css">
+    <script src="https://cdn.jsdelivr.net/npm/abcjs@6.2.3/dist/abcjs-basic-min.js"></script>
+</head>
+
+<body>
+
+    <!-- Quiz Library (Visible by default) -->
+    <div id="quiz-library" class="quiz-library">
+        <div class="library-header">
+            <h1>ABC Quiz Library</h1>
+            <p>Select a quiz to begin or upload your own.</p>
+        </div>
+
+        <div class="library-actions">
+            <input type="file" id="library-uploader" accept=".txt,.md" style="display: none;">
+            <button class="upload-btn large" onclick="document.getElementById('library-uploader').click()">
+                📂 Upload Custom Quiz
+            </button>
+        </div>
+
+        <div id="quiz-grid" class="quiz-grid">
+            <!-- Cards injected by JS -->
+            <p style="color: #ccc;">Loading quizzes...</p>
+        </div>
+    </div>
+
+    <!-- Main Quiz Player (Hidden by default) -->
+    <div id="app-container" class="app-container" style="display: none;">
+        <header class="quiz-header">
+            <h1>SchoolClass.Net</h1>
+            <div class="header-controls" id="header-controls" style="display: flex;">
+                <div class="quiz-info-container">
+                    <span id="quiz-code-label" class="quiz-code-label">CODE: ---</span>
+                    <span id="quiz-title-label" class="quiz-title-label">Title</span>
+                </div>
+                <button id="back-to-library-btn" class="upload-btn secondary-btn" onclick="showLibrary()">Back to
+                    Library</button>
+
+
+
+                <div class="score-board">
+                    <span>Score: <span id="score">0</span></span>
+                </div>
+            </div>
+            <!-- Old uploader hidden/removed as we use library now -->
+            <input type="file" id="quiz-uploader" accept=".txt,.md" style="display: none;">
+        </header>
+
+        <div class="layout-grid">
+            <!-- Music Player Section -->
+            <section id="music-section" class="music-card">
+                <h3 class="section-title">Audio Stimulus</h3>
+                <div id="abc-audio" class="abcjs-midi-container"></div>
+                <div id="abc-paper" class="abcjs-container"></div>
+            </section>
+
+            <main class="quiz-card">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div id="quiz-content">
+                    <div class="question-container">
+                        <h2 id="question-text">Loading Question...</h2>
+                    </div>
+
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be injected here -->
+                    </div>
+
+                    <div class="feedback-container hidden" id="feedback-container">
+                        <p id="feedback-text"></p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="next-btn" class="btn primary-btn hidden">Next Question</button>
+                    <button id="restart-btn" class="btn secondary-btn hidden">Restart Quiz</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="quiz_data.js"></script>
+    <script src="abc-player.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary-color: #ec4899;
+    --background-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --border-radius: 16px;
+    --font-family: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.quiz-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.quiz-info-container {
+    color: white;
+    margin-right: auto;
+    text-align: left;
+}
+
+.quiz-code-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.quiz-title-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.upload-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.score-board {
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.music-card,
+.quiz-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.music-card {
+    /* Margin handled by grid gap on desktop */
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    /* Allow scrolling for long scores */
+}
+
+/* Desktop Logic */
+@media (min-width: 1024px) {
+    .app-container {
+        max-width: 1400px;
+    }
+
+    .layout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .music-card {
+        margin-bottom: 0;
+        position: sticky;
+        top: 20px;
+        /* Optional: keeps music visible if quiz is long */
+    }
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+#abc-paper {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.progress-bar-container {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.question-container {
+    margin-bottom: 2rem;
+}
+
+#question-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-btn {
+    padding: 1rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: white;
+    color: white;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    outline: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn:nth-child(1) {
+    background-color: #ef4444;
+    /* Red */
+}
+
+.option-btn:nth-child(2) {
+    background-color: #f59e0b;
+    /* Yellow */
+}
+
+.option-btn:nth-child(3) {
+    background-color: #3b82f6;
+    /* Blue */
+}
+
+.option-btn:nth-child(4) {
+    background-color: #22c55e;
+    /* Green */
+}
+
+.option-btn:hover:not(:disabled) {
+    filter: brightness(90%);
+    transform: translateY(-2px);
+}
+
+/* Feedback Styles */
+.option-btn.correct {
+    /* Keep original background color */
+    box-shadow: 0 0 0 4px #10b981, 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    opacity: 1 !important;
+    /* Ensure it stays visible */
+    z-index: 10;
+}
+
+.option-btn.correct::after {
+    content: ' ✓';
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-left: 8px;
+    background: white;
+    color: #10b981;
+    border-radius: 50%;
+    padding: 2px 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn.incorrect {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+
+.option-btn.incorrect::after {
+    content: ' ✕';
+    font-weight: 800;
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* When any answer is selected, fade out the unselected/disabled buttons */
+.options-container:has(.option-btn:disabled) .option-btn:not(.correct):not(.incorrect) {
+    opacity: 0.5;
+    filter: grayscale(0.5);
+}
+
+.feedback-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback-container.correct {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.feedback-container.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.controls {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+}
+
+.secondary-btn {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: #db2777;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   Quiz Library & Menu
+   ========================================= */
+.quiz-library {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.library-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.library-header p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.library-actions {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.card-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-item .meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-item p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-item .play-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.card-item:hover .play-btn {
+    background: var(--primary-hover);
+}
+
+@media (max-width: 480px) {
+    .quiz-card {
+        padding: 1.5rem;
+    }
+
+    .quiz-header h1 {
+        font-size: 2rem;
+    }
+}
