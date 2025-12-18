@@ -13,6 +13,7 @@
     "@google/genai": "^1.20.0",
     "@music-i18n/musicxml-player": "github:infojunkie/musicxml-player",
     "@supabase/supabase-js": "^2.57.4",
+    "abcjs": "^6.5.2",
     "dotenv": "^17.2.2",
     "html-midi-player": "^1.6.0",
     "midi-parser-js": "^4.0.4",

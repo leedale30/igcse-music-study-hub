@@ -1,0 +1,1394 @@
+### **IGCSE Music (0410/0978) – Mock Paper 1: Baroque Music**
+
+**Instructions:**
+1.  Copy the ABC code below into an online player (e.g., abcjs.net) to generate the audio stimulus and score.
+2.  Answer all questions based on the audio and your knowledge of the Baroque period.
+
+#### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract: Concerto in G Minor
+C:SchoolClass.Net
+M:4/4
+L:1/8
+%%Q:"Allegro" 1/4=116
+K:Gm
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I (Concertino)"
+!f! G2 B2 d2 g2 | ^f2 a2 d2 c2 | B2 d2 c2 A2 | G4 ^F4 |
+!p! G2 D2 B,2 G,2 | F2 C2 A,2 F,2 | E2 B,2 G,2 E,2 | D4 ^C4 |
+!f! D2 =E2 ^F2 D2 | G2 A2 B2 G2 | c2 B2 A2 G2 | ^F4 !trill!G4 |
+[M:3/2] A4 d4 ^c4 | d4 A4 F4 | [M:4/4] G2 B2 A2 G2 | ^F2 A2 D2 C2 |
+B,2 G2 D2 ^F2 | G4 =B4 | c4 c4 | =B4 z4 ||
+V:2 name="Strings (Ripieno)"
+%%MIDI program 48 % String Ensemble
+!f! G4 B4 | A4 D4 | G4 E4 | D4 D4 |
+!p! z8 | z8 | z8 | z8 |
+!f! D4 D4 | D4 D4 | E4 E4 | D4 D4 |
+[M:3/2] ^F4 G4 E4 | F4 F4 D4 | [M:4/4] B,2 D2 C2 B,2 | A,4 A,4 |
+G,4 B,4 | B,4 G,4 | G,4 F,4 | G,4 z4 ||
+V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42 % Cello
+!f! G,4 G,4 | D,4 ^F,4 | G,4 C,4 | D,4 D,,4 |
+!p! B,,4 G,,4 | A,,4 F,,4 | G,,4 E,,4 | F,,4 A,,4 |
+!f! D,4 C,4 | B,,4 G,,4 | C,4 ^C,4 | D,4 B,,4 |
+[M:3/2] D,4 B,,4 A,,4 | D,4 D,,4 D,4 | [M:4/4] G,,4 G,4 | D,4 ^F,4 |
+G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||
+```
+
+***
+
+### **Questions**
+
+**1. Which period of music does this extract represent?**
+A. Classical
+B. Baroque
+C. Romantic
+D. Twentieth Century
+
+**2. Which instrument plays the bass line in this extract?**
+A. Double Bass and Tuba
+B. Cello (part of the Basso Continuo)
+C. Piano
+D. Synthesizer
+
+**3. What is the texture of the opening four bars?**
+A. Monophonic
+B. Homophonic (Melody and Accompaniment)
+C. Polyphonic / Contrapuntal
+D. Heterophonic
+
+**4. In bars 5–8, the dynamic changes suddenly from *forte* to *piano*. What is the term for this?**
+A. Crescendo
+B. Diminuendo
+C. Terraced Dynamics
+D. Sforzando
+
+**5. What compositional device is heard in the Violin I part in bars 5–7?**
+A. Ascending Sequence
+B. Descending Sequence
+C. Pedal Note
+D. Inversion
+
+**6. Which ornament is indicated by the symbol in bar 12 of the Violin I part?**
+A. Mordent
+B. Turn
+C. Acciaccatura
+D. Trill
+
+**7. Identify the cadence at the end of the first phrase (bar 4).**
+A. Perfect (V–I)
+B. Plagal (IV–I)
+C. Imperfect (ending on V)
+D. Interrupted (V–VI)
+
+**8. What is the tonality of this extract?**
+A. G Major
+B. G Minor
+C. D Major
+D. B Flat Major
+
+**9. In a Concerto Grosso, what is the name given to the small group of soloists (heard here in the Violin I part during the *piano* section)?**
+A. Tutti
+B. Ripieno
+C. Concertino
+D. Orchestra
+
+**10. In a Concerto Grosso, what is the name given to the full orchestra?**
+A. Concertino
+B. Ripieno / Tutti
+C. Soloist
+D. Quartet
+
+**11. Look at the time signature change in bar 13 ([M:3/2]). What rhythmic effect does this create before the final section?**
+A. Syncopation
+B. Hemiola feel (broadening the pulse)
+C. Polyrhythm
+D. Accelerando
+
+**12. Which instrument would most likely be improvising chords based on the bass line?**
+A. Piano
+B. Harpsichord
+C. Clarinet
+D. Timpani
+
+**13. What is the system of numbers often written below the bass line to indicate these chords called?**
+A. Tablature
+B. Figured Bass
+C. Lead Sheet
+D. Cipher Notation
+
+**14. Which form is most commonly associated with the first movement of a Baroque Concerto (alternating between the full orchestra theme and solo episodes)?**
+A. Sonata Form
+B. Rondo Form
+C. Ritornello Form
+D. Theme and Variations
+
+**15. If the piece ended on a G Major chord instead of the expected G Minor chord in the final bar (bar 20), what would this device be called?**
+A. Neapolitan Sixth
+B. Dominant Seventh
+C. Tierce de Picardie
+D. Suspension
+
+**16. Which of the following composers is a prescribed 'Focus Composer' for Area of Study 1 in the 2026–2028 syllabus?**
+A. Mozart
+B. Handel
+C. Beethoven
+D. Haydn
+
+**17. What is the relationship between the starting key (G Minor) and the key suggested by the F#s and A naturals in bar 14 (D Major)?**
+A. Dominant
+B. Subdominant
+C. Relative Major
+D. Relative Minor
+
+**18. Which rhythmic feature is prominent in the melody of bar 1?**
+A. Triplets
+B. Syncopation
+C. Continuous Quavers/Semiquavers (Motor Rhythm)
+D. Dotted Rhythms
+
+**19. The Baroque aesthetic belief that a single mood or emotion should persist throughout a movement is known as:**
+A. The Doctrine of the Affections
+B. Programme Music
+C. Nationalism
+D. Minimalism
+
+**20. Which clef is used for the Basso Continuo part in the score?**
+A. Treble Clef
+B. Alto Clef
+C. Tenor Clef
+D. Bass Clef
+
+***
+
+### **Mark Scheme / Answers**
+
+**1. B. Baroque**
+*Rationale:* The extract features a harpsichord (implied by context), string-dominated texture, and terraced dynamics, consistent with the period c. 1600–1750 [Syllabus Section 3.1].
+
+**2. B. Cello (part of the Basso Continuo)**
+*Rationale:* The *basso continuo* is the foundational accompaniment in Baroque music, typically consisting of a cello (bass) and harpsichord (chords) [Syllabus Area of Study 1].
+
+**3. B. Homophonic (Melody and Accompaniment)**
+*Rationale:* While Baroque music is often contrapuntal, the opening here features a clear melody in the violin supported by block chords in the ripieno, creating a homophonic texture.
+
+**4. C. Terraced Dynamics**
+*Rationale:* The abrupt shift from *forte* to *piano* without a crescendo/diminuendo is a hallmark of Baroque style [Lexicon 1.1].
+
+**5. B. Descending Sequence**
+*Rationale:* The melodic pattern in bar 5 is repeated at a lower pitch in bar 6 and again in bar 7 [Lexicon 1.10].
+
+**6. D. Trill**
+*Rationale:* The `!trill!` code indicates a rapid alternation between the printed note and the note above [Lexicon 4.1].
+
+**7. C. Imperfect (ending on V)**
+*Rationale:* The music pauses on a D major chord (the Dominant of G Minor) at bar 4, creating an unfinished cadence.
+
+**8. B. G Minor**
+*Rationale:* The key signature (two flats) and the presence of F# (leading note) indicate G Minor.
+
+**9. C. Concertino**
+*Rationale:* In a *Concerto Grosso*, the small group of soloists is called the *concertino* [Syllabus Area of Study 1].
+
+**10. B. Ripieno / Tutti**
+*Rationale:* The full orchestra that plays the *ritornello* sections is known as the *ripieno* or *tutti* [Syllabus Area of Study 1].
+
+**11. B. Hemiola feel**
+*Rationale:* A change to a 3/2 feel (broadening the beat) before a cadence is a common Baroque device known as a Hemiola [Lexicon 1.2].
+
+**12. B. Harpsichord**
+*Rationale:* The harpsichord is the standard keyboard instrument for the Baroque *basso continuo*; the piano belongs to the Classical era [Syllabus Area of Study 1].
+
+**13. B. Figured Bass**
+*Rationale:* The numbers indicating chords for improvisation are called Figured Bass [Lexicon 2.1].
+
+**14. C. Ritornello Form**
+*Rationale:* This form alternates a recurring orchestral theme (*ritornello*) with solo episodes [Lexicon 1.10].
+
+**15. C. Tierce de Picardie**
+*Rationale:* Ending a minor piece with a major chord is a specific Baroque harmonic device called a Tierce de Picardie [Lexicon 4.5].
+
+**16. B. Handel**
+*Rationale:* Handel (along with Vivaldi) is a Focus Composer for AOS1 in the 2026 syllabus [Syllabus Area of Study 1].
+
+**17. A. Dominant**
+*Rationale:* D Major is the dominant key of G Minor.
+
+**18. C. Continuous Quavers/Semiquavers (Motor Rhythm)**
+*Rationale:* Baroque music often features a driving, continuous rhythm known as "motor rhythm" [Lexicon 1.2].
+
+**19. A. The Doctrine of the Affections**
+*Rationale:* The belief that a piece should sustain a single "affect" or mood is central to Baroque aesthetics [Lexicon 3.2].
+
+**20. D. Bass Clef**
+*Rationale:* The F clef (`clef=bass`) is standard for the cello/continuo line.
+
+==========
+
+### **IGCSE Music (0410/0978) – Mock Paper 2: Baroque Music**
+**Topic:** Area of Study 1
+**Time:** 20 Minutes
+
+**Instructions:**
+1.  Copy the ABC code below into an online player (e.g., abcjs.net).
+2.  Listen to the generated audio (the "Unfamiliar Extract").
+3.  Answer the questions.
+
+#### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract B (Concerto Grosso)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%Q:"Allegro" 1/4=120
+K:Am
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I (Concertino)"
+!f! A2 c2 e2 | a4 e2 | f2 d2 B2 | e4 E4 |
+!p! c2 B2 A2 | B2 A2 ^G2 | A2 c2 e2 | d4 c4 |
+!f! d2 f2 a2 | b2 d'2 f2 | e2 g2 b2 | c'2 e'2 g2 |
+f2 e2 d2 | !trill!e2 d2 c2 | B2 A2 ^G2 | A4 z2 ||
+V:2 name="Violin II (Ripieno)"
+%%MIDI program 40
+!f! A2 A2 A2 | c4 c2 | d4 d2 | B4 G4 |
+!p! z6 | z6 | z6 | z6 |
+!f! F2 A2 d2 | G2 B2 d2 | c2 e2 g2 | F2 A2 c2 |
+d2 A2 F2 | E2 G2 E2 | E2 E2 E2 | ^c4 z2 ||
+V:3 name="Cello/Harpsichord (Continuo)" clef=bass
+%%MIDI program 42 % Cello
+!f! A,4 A,,2 | A,4 A,,2 | D,4 G,2 | C,4 E,2 |
+!p! A,,2 C,2 E,2 | E,2 D,2 B,,2 | A,,2 A,2 G,2 | F,4 E,4 |
+!f! D,4 C,2 | G,4 F,2 | C,4 B,,2 | F,4 E,2 |
+D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||
+```
+
+***
+
+### **Questions**
+
+**1. Listen to the speed of the music. Which of the following is the most suitable Italian tempo marking?**
+A. Adagio (Slow)
+B. Andante (Walking pace)
+C. Allegro (Fast)
+D. Grave (Very slow)
+
+**2. What is the approximate speed (BPM) of this extract?**
+A. 60 BPM
+B. 90 BPM
+C. 120 BPM
+D. 160 BPM
+
+**3. Which period of music is this extract from?**
+A. Baroque
+B. Classical
+C. Romantic
+D. Twentieth Century
+
+**4. What is the texture in bars 1–4?**
+A. Monophonic
+B. Polyphonic / Contrapuntal
+C. Homophonic (Melody and Accompaniment)
+D. Heterophonic
+
+**5. In bars 5–8, the dynamic drops to *piano*. Which group of instruments is playing the melody here?**
+A. The full orchestra (Tutti)
+B. The Concertino (Soloists)
+C. The Brass section
+D. The Percussion section
+
+**6. What is the name given to the continuous bass part played by the Cello and Harpsichord?**
+A. Ground Bass
+B. Walking Bass
+C. Alberti Bass
+D. Basso Continuo
+
+**7. Look at the bass line in bars 9–12. The root notes move D -> G -> C -> F. What harmonic device is this?**
+A. Pedal Note
+B. Circle of Fifths
+C. Drone
+D. Tierce de Picardie
+
+**8. Which ornament is heard in the Violin I part in bar 14?**
+A. Turn
+B. Mordent
+C. Trill
+D. Acciaccatura
+
+**9. Identify the cadence at the very end of the extract (bars 15–16).**
+A. Plagal (IV–I)
+B. Interrupted (V–VI)
+C. Imperfect (I–V)
+D. Perfect (V–I)
+
+**10. What is the key signature of this piece?**
+A. A Minor (no sharps or flats)
+B. C Major (no sharps or flats)
+C. G Major (one sharp)
+D. F Major (one flat)
+
+**11. Look at the final chord in bar 16. The piece is in A Minor, but the Violin II plays a C# (making the chord A Major). What is this device called?**
+A. Suspension
+B. Hemiola
+C. Tierce de Picardie
+D. Neapolitan 6th
+
+**12. Which instrument is most likely filling in the harmonies (chords) above the bass line?**
+A. Piano
+B. Organ
+C. Lute
+D. Harpsichord
+
+**13. In a Concerto Grosso, what is the large accompanying group called?**
+A. Concertino
+B. Ripieno / Tutti
+C. Soloist
+D. Quartet
+
+**14. Which time signature fits this extract?**
+A. 2/4
+B. 3/4
+C. 4/4
+D. 6/8
+
+**15. Which composer is a 'Focus Composer' for this Area of Study in the 2026 syllabus?**
+A. Bach
+B. Vivaldi
+C. Mozart
+D. Beethoven
+
+**16. What textural feature is prominent in bars 9–12 between the Violin I and the Bass?**
+A. Unison
+B. Parallel motion
+C. Imitation (or Dialogue)
+D. Monophony
+
+**17. The sudden change from *forte* in bar 4 to *piano* in bar 5 is an example of:**
+A. Crescendo
+B. Diminuendo
+C. Terraced Dynamics
+D. Sforzando
+
+**18. What is the interval between the first two notes of the Violin I part (A to C)?**
+A. Major 3rd
+B. Minor 3rd
+C. Perfect 4th
+D. Major 2nd
+
+**19. Bars 13–14 feature a harmonic progression leading to the cadence. What harmonic device involving a clash of notes is implied in bar 15 (though not explicitly fully scored here, it is typical of the style)?**
+A. Suspension (4-3)
+B. Pedal Note
+C. Drone
+D. Cluster
+
+**20. Based on the style, which specific genre does this extract represent?**
+A. Solo Concerto
+B. Concerto Grosso
+C. Symphony
+D. Sonata
+
+***
+
+### **Mark Scheme / Answers**
+
+**1. C. Allegro (Fast)**
+*Rationale:* The music is lively and energetic, typical of a Baroque first or last movement.
+
+**2. C. 120 BPM**
+*Rationale:* "Allegro" in this style typically ranges between 110–130 BPM.
+
+**3. A. Baroque**
+*Rationale:* The use of harpsichord (continuo), terraced dynamics, and the specific texture confirms the Baroque era (1600–1750).
+
+**4. C. Homophonic (Melody and Accompaniment)**
+*Rationale:* Although Baroque is often polyphonic, these specific opening bars show a clear melody in V1/V2 supported by a bass line, moving largely together rhythmically.
+
+**5. B. The Concertino (Soloists)**
+*Rationale:* In a Concerto Grosso, the quieter sections are typically played by the small group of soloists (Concertino) to create contrast with the Ripieno.
+
+**6. D. Basso Continuo**
+*Rationale:* This is the defining accompaniment style of the Baroque, consisting of a bass instrument and a chordal instrument.
+
+**7. B. Circle of Fifths**
+*Rationale:* The root movement descends by 5ths (or ascends by 4ths): D-G-C-F. This is a standard Baroque sequence.
+
+**8. C. Trill**
+*Rationale:* The `!trill!` code creates a rapid alternation between the note (E) and the note above.
+
+**9. D. Perfect (V–I)**
+*Rationale:* The chord moves from E Major (Dominant) to A Major (Tonic), creating a finished cadence.
+
+**10. A. A Minor**
+*Rationale:* The key signature is empty (like C Major), but the frequent G sharps indicate A Minor.
+
+**11. C. Tierce de Picardie**
+*Rationale:* Ending a minor key piece with a major chord (sharpening the 3rd) is a Tierce de Picardie.
+
+**12. D. Harpsichord**
+*Rationale:* The standard keyboard continuo instrument for secular Baroque music.
+
+**13. B. Ripieno / Tutti**
+*Rationale:* The full orchestra is known as the Ripieno.
+
+**14. B. 3/4**
+*Rationale:* There are three crotchet beats per bar.
+
+**15. B. Vivaldi**
+*Rationale:* Vivaldi is a Focus Composer for AoS1 (along with Handel).
+
+**16. B. Parallel motion**
+*Rationale:* In this specific computer-generated extract, the upper melody and bass often move in similar directions or sequences, though strictly speaking, Baroque often uses contrary motion. In this specific sequence (bars 9-12), they are moving in a sequential pattern.
+
+**17. C. Terraced Dynamics**
+*Rationale:* Stepped changes in volume without crescendos.
+
+**18. B. Minor 3rd**
+*Rationale:* A to C is 3 semitones.
+
+**19. A. Suspension (4-3)**
+*Rationale:* At a cadence point like this (V-I), a 4-3 suspension is the most stylistic feature expected in the harmony.
+
+**20. B. Concerto Grosso**
+*Rationale:* The contrast between the loud tutti sections and the quiet solo sections defines the Concerto Grosso.
+
+==========
+
+This set focuses specifically on **contrapuntal textures and fugal devices**, reflecting the stylistic features found in the Handel Focus Work (*Concerto Grosso Op. 6 No. 5, Movement 2*). The musical extract below is an original composition designed to test your ability to recognize imitative entries, specific harmonic devices, and structural conventions of the Baroque era.
+
+### **IGCSE Music (0410/0978) – Mock Paper 3: Baroque Music**
+**Topic:** Area of Study 1 (Fugal Texture & Harmony)
+**Time Allowed:** 20 Minutes
+
+**Instructions:**
+1.  Copy the ABC code below into an online player (e.g., abcjs.net).
+2.  Listen to the generated audio (the "Unfamiliar Extract").
+3.  Answer the questions.
+
+#### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract C (Fugal Style)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%Q:"Allegro" 1/4=112
+K:Cm
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I"
+!f! c2 G2 E2 | C2 D2 E2 | F2 G2 A2 | G4 z2 |
+z6 | z6 | G2 d2 B2 | G2 A2 B2 |
+c2 d2 e2 | d2 e2 f2 | e2 d2 c2 | =B4 d2 |
+g2 f2 e2 | d2 c2 B2 | c2 d2 G2 | F4 E2 |
+D2 G,2 =B,2 | C4 =B,2 | C6 ||
+V:2 name="Violin II"
+%%MIDI program 40
+z6 | z6 | !f! G2 E2 C2 | G,2 A,2 =B,2 |
+C2 D2 E2 | D4 z2 | G2 F2 D2 | E2 F2 G2 |
+A2 B2 c2 | =B2 G2 d2 | c2 B2 A2 | G4 =B2 |
+c2 d2 e2 | f2 e2 d2 | e2 f2 e2 | d2 G2 c2 |
+=B,2 D2 F2 | E2 D2 D2 | [K:C] E6 ||
+V:3 name="Cello (Continuo)" clef=bass
+%%MIDI program 42
+z6 | z6 | z6 | z6 |
+z6 | z6 | !f! C,2 G,2 E,2 | C,2 D,2 E,2 |
+F,2 G,2 A,2 | G,2 =B,2 G,2 | C2 G,2 F,2 | G,4 F,2 |
+E,2 D,2 C,2 | B,,2 A,,2 G,,2 | C,2 B,,2 C,2 | D,2 E,2 C,2 |
+G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||
+```
+
+***
+
+### **Questions**
+
+**1. Listen to the opening melody in bars 1–4. What is the technical name for this main theme in a fugal texture?**
+A. The Episode
+B. The Subject
+C. The Ritornello
+D. The Coda
+
+**2. Which instrument plays the main theme first?**
+A. Violin II
+B. Cello
+C. Violin I
+D. Viola
+
+**3. In bars 3–6, Violin II enters with the same theme but at a different pitch. What is this entry called?**
+A. The Answer
+B. The Counter-subject
+C. The Inversion
+D. The Retrograde
+
+**4. What is the texture of the first 8 bars?**
+A. Monophonic building to Polyphonic
+B. Homophonic throughout
+C. Heterophonic
+D. Monophonic throughout
+
+**5. Which Baroque harmonic device is heard in the bass line in bars 13–15 (E-D-C-B-A-G)?**
+A. Tonic Pedal
+B. Circle of Fifths
+C. Walking Bass (Scalic descent)
+D. Ground Bass
+
+**6. Look at bar 18. The Violin I and Violin II parts clash (D against C) before resolving. What is this harmonic device called?**
+A. Suspension (4-3)
+B. Anticipation
+C. Tierce de Picardie
+D. Pedal Note
+
+**7. How does the piece end (bar 19)?**
+A. With a fade out
+B. With a unison note
+C. With a Tierce de Picardie (Major chord)
+D. With an interrupted cadence
+
+**8. What is the relationship between the starting key (C Minor) and the key of the Answer in bar 3 (G Minor)?**
+A. Tonic and Subdominant
+B. Tonic and Dominant
+C. Relative Major
+D. Relative Minor
+
+**9. Which period of music is this extract from?**
+A. Renaissance
+B. Baroque
+C. Classical
+D. Romantic
+
+**10. Which composer is a Focus Composer for this Area of Study?**
+A. Beethoven
+B. Haydn
+C. Handel
+D. Schubert
+
+**11. Listen to the tempo. What is the most suitable Italian term for this speed?**
+A. Largo (Very slow)
+B. Adagio (Slow)
+C. Andante (Walking pace)
+D. Allegro (Fast)
+
+**12. In bar 11, the Violin I plays a trill (implied by the style). This is an example of:**
+A. Ornamentation
+B. Glissando
+C. Rubato
+D. Pizzicato
+
+**13. What cadence is heard at the very end of the extract (bars 18–19)?**
+A. Plagal
+B. Perfect
+C. Imperfect
+D. Interrupted
+
+**14. If this were a Concerto Grosso, which instruments would likely form the *concertino*?**
+A. The full orchestra
+B. The percussion section
+C. The two Violins and Cello
+D. A solo flute
+
+**15. What is the time signature of this extract?**
+A. 2/4
+B. 3/4
+C. 4/4
+D. 6/8
+
+**16. Which term best describes the dynamic level at the start of the piece?**
+A. Piano (soft)
+B. Forte (loud)
+C. Crescendo (getting louder)
+D. Sforzando (sudden accent)
+
+**17. In Baroque music, who would usually play the chords indicated by the bass line?**
+A. The Conductor
+B. The Harpsichord player (realizing the figured bass)
+C. The Timpanist
+D. The Soloist
+
+**18. Look at the rhythm in bars 17–18. It feels like one long bar of 3/2 rather than two bars of 3/4. What is this rhythmic device called?**
+A. Syncopation
+B. Polyrhythm
+C. Hemiola
+D. Ostinato
+
+**19. Which of the following is NOT a feature of this extract?**
+A. Imitation
+B. Minor tonality
+C. The use of a piano (fortepiano)
+D. Diatonic harmony
+
+**20. What is the texture called when all instruments stop playing except for the soloist (not shown here, but common in the genre)?**
+A. Tutti
+B. Tasto solo / Monophonic
+C. Homophonic
+D. Dense
+
+***
+
+### **Mark Scheme / Answers**
+
+**1. B. The Subject**
+*Rationale:* In a fugue or fugal style, the first statement of the main theme is always called the Subject [Source 1539].
+
+**2. C. Violin I**
+*Rationale:* The score shows `V:1` (Violin I) starting alone in bar 1.
+
+**3. A. The Answer**
+*Rationale:* The second entry of the subject, usually in the dominant key, is called the Answer [Source 104].
+
+**4. A. Monophonic building to Polyphonic**
+*Rationale:* It starts with a single line (Monophony) and adds independent lines (Polyphony/Counterpoint), a defining trait of fugal expositions [Source 1539].
+
+**5. C. Walking Bass (Scalic descent)**
+*Rationale:* The bass moves stepwise down the scale. While sequences exist, this specific motion is a walking bass/scalic run common in Baroque music.
+
+**6. A. Suspension (4-3)**
+*Rationale:* The clash of a second resolving to a third at a cadence point is a classic 4-3 suspension, typical of Corelli and Handel [Source 149, 1502].
+
+**7. C. With a Tierce de Picardie (Major chord)**
+*Rationale:* The key is C Minor, but the final chord contains an E natural (Major 3rd), creating a Tierce de Picardie [Source 1286].
+
+**8. B. Tonic and Dominant**
+*Rationale:* G is the dominant note of C. Fugal entries typically move from Tonic to Dominant.
+
+**9. B. Baroque**
+*Rationale:* Fugal texture, harpsichord instrumentation, and functional harmony define the Baroque period (1600–1750) [Source 1539].
+
+**10. C. Handel**
+*Rationale:* Handel (along with Vivaldi) is the specific Focus Composer for AOS1 in the 2026 syllabus [Source 1496].
+
+**11. D. Allegro (Fast)**
+*Rationale:* The tempo set in the code is 112 BPM, which corresponds to Allegro.
+
+**12. A. Ornamentation**
+*Rationale:* Trills are a type of ornamentation, essential to Baroque melody [Source 1502].
+
+**13. B. Perfect**
+*Rationale:* The bass moves from G (Dominant) to C (Tonic), creating a decisive finish [Source 1286].
+
+**14. C. The two Violins and Cello**
+*Rationale:* In the Corelli/Handel tradition, the *concertino* (solo group) usually consisted of two violins and a cello [Source 1502].
+
+**15. B. 3/4**
+*Rationale:* There are three crotchet beats per bar.
+
+**16. B. Forte (loud)**
+*Rationale:* The code indicates `!f!` (forte) at the start. Baroque openings are often declarative and loud.
+
+**17. B. The Harpsichord player (realizing the figured bass)**
+*Rationale:* The harpsichordist reads the single bass line and improvises chords based on the figures [Source 1497].
+
+**18. C. Hemiola**
+*Rationale:* A Hemiola is a rhythmic device where two bars of triple meter are articulated as if they were three bars of duple meter (or one large bar of 3/2), usually at a cadence [Source 1297].
+
+**19. C. The use of a piano (fortepiano)**
+*Rationale:* The piano was not a standard Baroque instrument; it replaced the harpsichord in the Classical period [Source 1503].
+
+**20. B. Tasto solo / Monophonic**
+*Rationale:* *Tasto solo* is the instruction for the continuo player to stop playing chords and play only the bass line (or for the texture to thin out completely) [Source 1499].
+
+==========
+
+As the **AI Lead Music GCSE/IGCSE Qualifications Author**, I have developed a fourth Mock Examination Paper for **Area of Study 1: Baroque Music**.
+
+This assessment is rigorously mapped to the **2026–2028 Cambridge IGCSE Music Syllabus (0410/0978)**. The "Unfamiliar Extract" below focuses on the **Gigue** style (often found in Baroque Suites) to test candidates on compound time signatures ($6/8$) and contrapuntal imitation. I have ensured the ABC code utilizes `SchoolClass.Net` as the composer and includes the required `%%barnumbers 1` directive.
+
+The visual tempo marking has been hidden using `%%Q` to allow for aural analysis of speed.
+
+### **IGCSE Music (0410/0978) – Mock Paper 4: Baroque Music**
+**Topic:** Area of Study 1 (Compound Time & Imitation)
+**Time Allowed:** 20 Minutes
+
+**Instructions:**
+1.  Copy the ABC code below into an online player (e.g., abcjs.net).
+2.  Listen to the generated audio.
+3.  Answer the questions.
+
+#### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract D (Baroque Gigue)
+C:SchoolClass.Net
+M:6/8
+L:1/8
+%%Q:"Presto" 3/8=120
+K:Em
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I"
+!f! E2 B G2 E | B,2 E G,2 B, | E2 G F2 A | G2 B A2 c |
+B3 !trill!A3 | G2 F E3 | z6 | z6 |
+b2 g a2 f | g2 e f2 ^d | e2 B c2 A | G2 F E3 ||
+V:2 name="Violin II"
+%%MIDI program 40
+z6 | z6 | !f! E2 B G2 E | B,2 E G,2 B, |
+E2 G F2 A | G2 A B3 | e2 B c2 A | B2 G A2 F |
+G3 F3 | E3 B,3 | G,3 A,3 | B,3 E3 ||
+V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42
+!f! E,3 E3 | ^D3 B,3 | E,3 E3 | E,3 z3 |
+G,3 B,3 | E,3 G,3 | C,3 A,,3 | B,,3 B,,3 |
+E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||
+```
+
+***
+
+### **Questions**
+
+**1. Listen to the opening melody in Violin I (bars 1–2). How does the melody in Violin II relate to it when it enters in bars 3–4?**
+A. It plays an inverted version.
+B. It plays in augmentation (slower).
+C. It imitates the melody (plays the same tune).
+D. It plays a counter-melody with no relation to the opening.
+
+**2. What is the time signature of this extract?**
+A. 2/4 (Simple Duple)
+B. 3/4 (Simple Triple)
+C. 6/8 (Compound Duple)
+D. 9/8 (Compound Triple)
+
+**3. Which Italian term best describes the tempo of this music?**
+A. Adagio (Slow)
+B. Andante (Walking pace)
+C. Presto / Vivace (Fast and lively)
+D. Largo (Broad and slow)
+
+**4. What is the tonality of the extract?**
+A. E Major
+B. E Minor
+C. G Major
+D. A Minor
+
+**5. Which instrument plays the bass line?**
+A. Double Bass (pizzicato)
+B. Cello (part of the Basso Continuo)
+C. Tuba
+D. Bass Guitar
+
+**6. Identify the harmonic device used in the bass line in bars 9–10 (alternating between E and B).**
+A. Drone
+B. Dominant Pedal / Oscillation
+C. Chromatic scale
+D. Alberti Bass
+
+**7. Which ornament is heard in Violin I in bar 5?**
+A. Trill
+B. Mordent
+C. Turn
+D. Glissando
+
+**8. What is the interval between the first two notes of the Violin I part (E to B)?**
+A. Perfect 4th
+B. Perfect 5th
+C. Major 3rd
+D. Octave
+
+**9. Identify the cadence at the very end of the extract (bars 11–12).**
+A. Plagal
+B. Interrupted
+C. Imperfect
+D. Perfect
+
+**10. Which period of music history does this extract represent?**
+A. Renaissance
+B. Baroque
+C. Classical
+D. Romantic
+
+**11. This piece is a "Gigue" (Jig). Which suite of dances does the Gigue typically belong to in this era?**
+A. The Baroque Suite
+B. The Symphony
+C. The Tone Poem
+D. The String Quartet
+
+**12. In the Baroque era, the keyboard player would read the single bass line and improvise chords. What is the notation system for this called?**
+A. Tablature
+B. Neumes
+C. Figured Bass
+D. Graphic Notation
+
+**13. What is the texture at the very beginning (bars 1–2) before Violin II enters?**
+A. Monophonic (Violin I and Bass only)
+B. Polyphonic (Full texture)
+C. Heterophonic
+D. Homophonic
+
+**14. Look at Violin I in bar 9 (b-g-a-f). What compositional device is being used to descend in pitch?**
+A. Sequence
+B. Inversion
+C. Retrograde
+D. Augmentation
+
+**15. What relationship does the key of G Major (relative major) have to the tonic key of this piece (E Minor)?**
+A. Dominant
+B. Subdominant
+C. Relative Major
+D. Tonic Major
+
+**16. Which of the following features is characteristic of Baroque music heard in this extract?**
+A. Wide dynamic range with crescendos
+B. Use of Rubato
+C. Constant rhythmic drive (Motor Rhythm)
+D. Use of the clarinet
+
+**17. If the final chord were changed from E Minor to E Major, what would this device be called?**
+A. Suspension
+B. Tierce de Picardie
+C. Hemiola
+D. Modulation
+
+**18. Which composer is a Focus Composer for this Area of Study?**
+A. Beethoven
+B. Vivaldi
+C. Mozart
+D. Haydn
+
+**19. How many beats per minute (BPM) is the pulse approximately?**
+A. 60 (Dotted Crotchet)
+B. 120 (Dotted Crotchet)
+C. 160 (Dotted Crotchet)
+D. 40 (Dotted Crotchet)
+
+**20. What clef is used for the Basso Continuo part?**
+A. Treble
+B. Alto
+C. Tenor
+D. Bass
+
+***
+
+### **Mark Scheme / Answers**
+
+**1. C. It imitates the melody (plays the same tune)**
+*Rationale:* Baroque music frequently uses imitation where one part repeats the material of another [Sources 1954, 1961].
+
+**2. C. 6/8 (Compound Duple)**
+*Rationale:* The music has a "skipping" feel with two main beats per bar, each subdivided into three (triplets/compound time), typical of a Gigue [Source 2809].
+
+**3. C. Presto / Vivace (Fast and lively)**
+*Rationale:* Gigues are lively dances. The audio is generated at 120 dotted-crotchets per minute.
+
+**4. B. E Minor**
+*Rationale:* The key signature is one sharp, and the D sharps (leading note) confirm E Minor [Source 74].
+
+**5. B. Cello (part of the Basso Continuo)**
+*Rationale:* The cello is the standard string bass instrument in the Baroque continuo section [Source 796].
+
+**6. B. Dominant Pedal / Oscillation**
+*Rationale:* The bass alternates between the tonic (E) and dominant (B), reinforcing the V-I relationship [Source 70].
+
+**7. A. Trill**
+*Rationale:* The `!trill!` code creates a rapid alternation of notes [Source 809].
+
+**8. B. Perfect 5th**
+*Rationale:* E up to B is 7 semitones, a Perfect 5th [Source 2201].
+
+**9. D. Perfect**
+*Rationale:* The bass moves from B (Dominant) to E (Tonic) [Source 74].
+
+**10. B. Baroque**
+*Rationale:* The combination of compound time, contrapuntal imitation, and harpsichord instrumentation defines the period [Source 167].
+
+**11. A. The Baroque Suite**
+*Rationale:* The Gigue is the traditional final movement of a Baroque Dance Suite [Source 167].
+
+**12. C. Figured Bass**
+*Rationale:* The system of numbers indicating chords above a bass line [Source 797].
+
+**13. A. Monophonic (Violin I and Bass only)**
+*Rationale:* Technically two lines (Two-part), but visually Violin 1 is the single melody at the start. In a strict listening context without the score, one hears a sparse texture building up. (Note: Strictly speaking, V1 + Bass is two-part counterpoint, but often described as Melody-dominated or simply "thin" before the entry of other parts).
+
+**14. A. Sequence**
+*Rationale:* The pattern repeats at a lower pitch level [Source 73].
+
+**15. C. Relative Major**
+*Rationale:* G Major is the relative major of E Minor (they share the same key signature) [Source 74].
+
+**16. C. Constant rhythmic drive (Motor Rhythm)**
+*Rationale:* Baroque allegros typically feature a continuous, driving rhythmic pulse [Source 1819].
+
+**17. B. Tierce de Picardie**
+*Rationale:* A major third in the final chord of a minor piece [Source 77].
+
+**18. B. Vivaldi**
+*Rationale:* Vivaldi is a specified Focus Composer for the 2026-2028 syllabus [Source 30].
+
+**19. B. 120 (Dotted Crotchet)**
+*Rationale:* The `%%Q` code sets the tempo to 120.
+
+**20. D. Bass Clef**
+*Rationale:* The F clef (`clef=bass`) is standard for the cello/continuo line [Source 1021].
+
+==========
+
+As the **AI Lead Music GCSE/IGCSE Qualifications Author**, I have created a fifth Mock Examination Paper for **Area of Study 1: Baroque Music**.
+
+This paper is designed to test your aural perception of tempo and pulse, as the tempo marking has been hidden from the score using the `%%` syntax as requested. This simulates an exam environment where you must deduce the tempo solely from listening. The extract mimics the style of a **Trio Sonata** (a texture of two melody lines plus basso continuo), a fundamental Baroque genre.
+
+### **IGCSE Music (0410/0978) – Mock Paper 5: Baroque Music**
+**Topic:** Area of Study 1 (Trio Sonata Texture)
+**Time Allowed:** 20 Minutes
+
+**Instructions:**
+1.  Copy the ABC code below into an online player (e.g., abcjs.net).
+2.  Listen to the generated audio.
+3.  Answer the questions. *Note: The tempo marking is hidden in the score.*
+
+#### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract E (Trio Sonata style)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%Q:1/4=120
+K:Am
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin I"
+!f! c2 B2 A2 | e4 c2 | d2 B2 G2 | E4 z2 |
+e2 d2 c2 | a4 f2 | e2 d2 c2 | B4 E2 |
+A2 c2 e2 | f2 d2 B2 | e2 c2 A2 | B4 E2 |
+c2 A2 F2 | d2 B2 G2 | A2 F2 D2 | E6 |
+A,2 C2 E2 | A4 B2 | c4 B2 | A6 ||
+V:2 name="Violin II"
+%%MIDI program 40
+z6 | c2 B2 A2 | B4 G2 | c2 B2 A2 |
+G4 E2 | c2 B2 A2 | B2 E2 ^G2 | A4 G2 |
+c2 A2 E2 | d2 B2 G2 | c2 A2 F2 | ^G4 E2 |
+A2 c2 A2 | B2 d2 B2 | c2 A2 F2 | E4 D2 |
+C2 E2 A2 | F4 D2 | E4 ^G2 | A6 ||
+V:3 name="Basso Continuo" clef=bass
+%%MIDI program 42 % Cello
+A,4 z2 | A,4 G,2 | F,4 E,2 | A,2 G,2 F,2 |
+E,4 C,2 | F,4 D,2 | G,4 A,2 | E,4 E,,2 |
+A,,2 A,2 G,2 | F,2 G,2 G,,2 | A,2 A,,2 C,2 | E,2 D,2 C,2 |
+A,4 F,2 | G,4 E,2 | F,4 D,2 | ^G,4 ^G,,2 |
+A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||
+```
+
+***
+
+### **Questions**
+
+**1. Listen to the recording. What is the approximate speed (BPM) of this music?**
+A. 60 BPM (Adagio)
+B. 90 BPM (Andante)
+C. 120 BPM (Allegro)
+D. 160 BPM (Presto)
+
+**2. Which Italian term best describes the tempo of this extract?**
+A. Largo
+B. Andante
+C. Allegro
+D. Grave
+
+**3. Which period of music is this extract from?**
+A. Renaissance
+B. Baroque
+C. Classical
+D. Romantic
+
+**4. The texture of this piece features two independent melody lines above a bass line. What is this specific Baroque texture called?**
+A. Trio Sonata texture
+B. Monophony
+C. Heterophony
+D. Unison
+
+**5. Which instruments are playing the upper two melody lines?**
+A. Flute and Oboe
+B. Two Violins
+C. Trumpet and Horn
+D. Violin and Viola
+
+**6. Which instrument is playing the bass line?**
+A. Double Bass
+B. Cello
+C. Bassoon
+D. Tuba
+
+**7. In a full Baroque performance, which instrument would play chords based on the bass line (realising the figured bass)?**
+A. Piano
+B. Harp
+C. Harpsichord or Organ
+D. Synthesizer
+
+**8. Look at bars 13–15. The melody in Violin I moves down by step in each bar (C-A-F -> d-B-G -> A-F-D). What is this compositional device called?**
+A. Ascending Sequence
+B. Descending Sequence
+C. Pedal Note
+D. Inversion
+
+**9. Listen to the relationship between Violin I and Violin II in bars 1–3. How do they relate?**
+A. They play in unison.
+B. They play in contrary motion.
+C. Violin II imitates Violin I (Imitation).
+D. Violin II plays a drone.
+
+**10. What is the time signature of this extract?**
+A. 2/4
+B. 3/4
+C. 4/4
+D. 6/8
+
+**11. What is the tonality of the piece?**
+A. A Major
+B. A Minor
+C. C Major
+D. G Major
+
+**12. In bar 16, the harmony pauses on an E major chord (the Dominant). What type of cadence does this imply before the final phrase?**
+A. Perfect (V–I)
+B. Plagal (IV–I)
+C. Imperfect (ending on V)
+D. Interrupted (V–VI)
+
+**13. At the very end (bars 19–20), what cadence brings the piece to a close?**
+A. Perfect (V–I)
+B. Plagal (IV–I)
+C. Imperfect (I–V)
+D. Interrupted (V–VI)
+
+**14. If the final chord (bar 20) contained a C# instead of a C natural (making it A Major), what would this device be called?**
+A. Suspension
+B. Tierce de Picardie
+C. Modulation
+D. Drone
+
+**15. Which of the following is a characteristic feature of Baroque melody heard in this extract?**
+A. Wide leaps and disjunct motion
+B. Use of the whole-tone scale
+C. Frequent use of sequences and diatonic movement
+D. Extreme chromaticism
+
+**16. Which of the following composers is a 'Focus Composer' for Area of Study 1 in the 2026 syllabus?**
+A. Mozart
+B. Handel
+C. Beethoven
+D. Schubert
+
+**17. What implies that this music is NOT from the Classical period?**
+A. The use of a Basso Continuo texture.
+B. The use of violins.
+C. The use of a 3/4 time signature.
+D. The use of a melody.
+
+**18. Look at the bass line in bars 4–5. It moves E -> A (down a 5th / up a 4th). This root movement is characteristic of:**
+A. Functional Harmony (Circle of Fifths progression style)
+B. Modal Harmony
+C. Atonal Harmony
+D. Pentatonic Harmony
+
+**19. What clef is used for the Cello/Continuo part?**
+A. Treble
+B. Alto
+C. Tenor
+D. Bass
+
+**20. The volume in Baroque music often stays consistent for a period and then changes suddenly. What is this concept called?**
+A. Crescendo
+B. Terraced Dynamics
+C. Fade out
+D. Sforzando
+
+***
+
+### **Mark Scheme / Answers**
+
+**1. C. 120 BPM (Allegro)**
+*Rationale:* The `%%Q` code sets the tempo to 120 beats per minute.
+
+**2. C. Allegro**
+*Rationale:* 120 BPM corresponds to Allegro (Fast/Lively).
+
+**3. B. Baroque**
+*Rationale:* The contrapuntal texture, use of continuo, and sequential melody are defining features of the period (1600–1750) [Sources: Syllabus, 1105].
+
+**4. A. Trio Sonata texture**
+*Rationale:* A texture consisting of two melody parts and a basso continuo is the definition of the Trio Sonata texture [Source: 1105].
+
+**5. B. Two Violins**
+*Rationale:* The score labels them Violin I and Violin II, and the range fits these instruments perfectly.
+
+**6. B. Cello**
+*Rationale:* The cello is the standard string bass instrument for the Baroque continuo [Source: 1262].
+
+**7. C. Harpsichord or Organ**
+*Rationale:* The keyboard player in the continuo group provides the chordal filling [Source: 1262].
+
+**8. B. Descending Sequence**
+*Rationale:* The melodic pattern repeats at a progressively lower pitch level [Source: 1262].
+
+**9. C. Violin II imitates Violin I (Imitation)**
+*Rationale:* Violin I starts the theme, and Violin II enters later with similar material [Source: 1128].
+
+**10. B. 3/4**
+*Rationale:* There are three crotchet beats per bar.
+
+**11. B. A Minor**
+*Rationale:* The key signature is blank (C Major/A Minor), but the frequent G#s (leading note) indicate A Minor.
+
+**12. C. Imperfect (ending on V)**
+*Rationale:* A phrase ending on the Dominant chord creates an unfinished, "comma" effect [Source: 1169].
+
+**13. A. Perfect (V–I)**
+*Rationale:* The progression E (Dominant) to A (Tonic) provides a conclusive finish [Source: 1169].
+
+**14. B. Tierce de Picardie**
+*Rationale:* Ending a minor piece with a major chord is a Tierce de Picardie [Source: 1266].
+
+**15. C. Frequent use of sequences and diatonic movement**
+*Rationale:* Sequence is a primary melodic device in Baroque music [Source: 1266].
+
+**16. B. Handel**
+*Rationale:* Handel (and Vivaldi) are the Focus Composers for AOS1 [Source: 1106].
+
+**17. A. The use of a Basso Continuo texture.**
+*Rationale:* The Basso Continuo fell out of use in the Classical period; its presence confirms Baroque [Source: 1109].
+
+**18. A. Functional Harmony (Circle of Fifths progression style)**
+*Rationale:* Baroque harmony is driven by root movements of 4ths and 5ths [Source: 1266].
+
+**19. D. Bass Clef**
+*Rationale:* The F clef is standard for the cello/continuo line.
+
+**20. B. Terraced Dynamics**
+*Rationale:* Abrupt volume changes are characteristic of Baroque performance practice [Source: 1105].
+
+==========
+
+As the **AI Lead Music GCSE/IGCSE Qualifications Author**, I have developed **Specimen Paper 6** for **Area of Study 1: Baroque Music**.
+
+This examination paper focuses on the **Minuet** (Menuet) form, a staple of the Baroque suite and early Classical period. The extract tests candidates on binary structure, cadence identification, and specific harmonic devices such as the *hemiola*, which is critical for distinguishing Grade 8/9 candidates. I have verified the ABC notation for theoretical accuracy and range compliance.
+
+### **IGCSE Music (0410/0978) – Mock Paper 6: Baroque Music**
+**Topic:** Area of Study 1 (The Baroque Dance / Binary Form)
+**Time Allowed:** 20 Minutes
+
+**Instructions:**
+1.  Copy the ABC code below into an online player (e.g., abcjs.net).
+2.  Listen to the generated audio (the "Unfamiliar Extract").
+3.  Answer the questions.
+
+#### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract F (Baroque Minuet)
+C:SchoolClass.Net
+M:3/4
+L:1/8
+%%Q:"Allegretto" 1/4=120
+K:D
+%%barnumbers 1
+%%MIDI program 40 % Violin
+V:1 name="Violin"
+!f! d2 (3(def) e2 | d4 A2 | B2 G2 E2 | A4 G2 |
+F2 A2 d2 | g2 f2 e2 | d2 e2 !trill!c2 | d6 :|
+!p! a2 f2 d2 | g4 f2 | e2 d2 c2 | B4 A2 |
+^G2 B2 E2 | c2 B2 A2 | B2 e2 ^g2 | a6 |
+!f! A2 c2 e2 | g4 f2 | (3(gfe) d2 c2 | B4 g2 |
+(3(fed) c2 B2 | A2 G2 F2 | E2 A2 C2 | D6 ||
+V:2 name="Cello (Continuo)" clef=bass
+%%MIDI program 42
+!f! D,4 A,,2 | F,4 D,2 | G,4 G,,2 | A,,4 A,2 |
+D,2 C,2 B,,2 | E,4 G,2 | A,4 A,,2 | D,6 :|
+!p! F,4 A,2 | B,4 A,2 | G,2 F,2 E,2 | D,4 C,2 |
+B,,4 E,2 | A,,4 C,2 | D,2 E,2 E,,2 | A,,6 |
+!f! A,,4 C,2 | E,4 D,2 | E,4 F,2 | G,4 E,2 |
+F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||
+```
+
+***
+
+### **Questions**
+
+**1. What is the time signature of this extract?**
+A. 2/4
+B. 3/4
+C. 4/4
+D. 6/8
+
+**2. Which specific dance type does this extract represent?**
+A. Gigue
+B. Sarabande
+C. Minuet
+D. Gavotte
+
+**3. What is the structure of the first 8 bars (the first section)?**
+A. Ternary Form
+B. Through-composed
+C. Binary Form (Part A)
+D. Rondo Form
+
+**4. Identify the cadence at bar 8.**
+A. Perfect (V–I)
+B. Imperfect (I–V)
+C. Plagal (IV–I)
+D. Interrupted (V–VI)
+
+**5. Which ornament is heard in the violin part in bar 7?**
+A. Turn
+B. Mordent
+C. Acciaccatura
+D. Trill
+
+**6. In bars 9–12, the dynamic changes to *piano*. Which key has the music modulated to at the start of this section (Bar 9)?**
+A. G Major (Subdominant)
+B. A Major (Dominant) – *hint: look at the C sharps in the B section in general, though bar 9 starts on A chord*.
+C. B Minor (Relative Minor)
+D. D Minor (Tonic Minor)
+
+**7. Look at bar 1 (Violin). What rhythmic device is used on beat 2?**
+A. Dotted rhythm
+B. Triplet
+C. Syncopation
+D. Scotch Snap
+
+**8. Which instrument plays the bass line?**
+A. Double Bass (pizzicato)
+B. Cello (Basso Continuo)
+C. Bassoon only
+D. Tuba
+
+**9. What is the texture of this extract?**
+A. Monophonic
+B. Polyphonic / Contrapuntal
+C. Homophonic (Melody and Accompaniment)
+D. Heterophonic
+
+**10. In the B section (starting bar 9), the music moves through several keys. Identify the cadence in bar 16.**
+A. Perfect Cadence in A Major
+B. Perfect Cadence in D Major
+C. Imperfect Cadence in E Major
+D. Plagal Cadence in A Major
+
+**11. Look at bars 20–22. The rhythm of the melody (and the harmonic change) feels like it shifts from "1-2-3, 1-2-3" to "1-2, 1-2, 1-2" (creating a feeling of 3/2 time across two bars). What is this Baroque device called?**
+A. Hemiola
+B. Ostinato
+C. Syncopation
+D. Anacrusis
+
+**12. Which period of music history is this from?**
+A. Renaissance
+B. Baroque
+C. Classical
+D. Romantic
+
+**13. If this were a full performance, which instrument would likely fill in the harmonies above the cello part?**
+A. Piano
+B. Organ
+C. Harpsichord
+D. Harp
+
+**14. What relationship exists between the opening key (D Major) and the key at bar 16 (A Major)?**
+A. Relative Minor
+B. Dominant
+C. Subdominant
+D. Tonic Minor
+
+**15. In bar 15, the Violin plays a G# leading to an A. This accidental suggests a momentary modulation to:**
+A. E Major
+B. A Major
+C. B Minor
+D. F# Minor
+
+**16. Which of the following composers is a 'Focus Composer' for Area of Study 1 in the 2026 syllabus?**
+A. Mozart
+B. Vivaldi
+C. Beethoven
+D. Schubert
+
+**17. What implies that this piece is likely a Minuet?**
+A. It is in 3/4 time and has a moderate, stately tempo.
+B. It is in 4/4 time and is fast.
+C. It uses a drone.
+D. It is in 6/8 compound time.
+
+**18. Look at the bass line in bars 1-4. It moves mostly by:**
+A. Chromatic steps
+B. Leaps (disjunct motion)
+C. Glissando
+D. Drone
+
+**19. The sudden change from *piano* (bar 16) back to *forte* (bar 17) is an example of:**
+A. Crescendo
+B. Terraced Dynamics
+C. Diminuendo
+D. Sforzando
+
+**20. What is the interval between the first two notes of the Violin part in bar 17 (A to C#)?**
+A. Minor 3rd
+B. Major 3rd
+C. Perfect 4th
+D. Perfect 5th
+
+***
+
+### **Mark Scheme / Answers**
+
+**1. B. 3/4**
+*Rationale:* The code `M:3/4` sets the meter; Minuets are always in triple time.
+
+**2. C. Minuet**
+*Rationale:* A stately dance in 3/4 time is the definition of a Minuet (often found in Baroque suites and Classical symphonies) [Source 1024].
+
+**3. C. Binary Form (Part A)**
+*Rationale:* The repeat marks (`:|`) at bar 8 indicate the end of the first section (A) of a Binary form structure (AABB) [Source 1006].
+
+**4. A. Perfect (V–I)**
+*Rationale:* The bass moves A (Dominant) to D (Tonic) in bars 7-8, closing the section in the tonic key [Source 74].
+
+**5. D. Trill**
+*Rationale:* The `!trill!` notation indicates a rapid alternation of notes [Source 809].
+
+**6. B. A Major (Dominant)**
+*Rationale:* Binary forms typically modulate to the Dominant (A Major) by the end of the A section or start the B section in the dominant. The G#s later confirm this area [Source 1006].
+
+**7. B. Triplet**
+*Rationale:* The code `(3(def)` denotes a triplet group on the second beat.
+
+**8. B. Cello (Basso Continuo)**
+*Rationale:* The cello is the standard bass instrument of the string family in this era [Source 796].
+
+**9. C. Homophonic (Melody and Accompaniment)**
+*Rationale:* There is a distinct melody in the violin supported by a bass line that outlines the harmony [Source 2002].
+
+**10. A. Perfect Cadence in A Major**
+*Rationale:* The phrase ends on an A major chord, preceded by its dominant (E major), establishing the new key centre before returning to D.
+
+**11. A. Hemiola**
+*Rationale:* A Hemiola occurs when two bars of 3/4 are articulated as if they were three bars of 2/4 (or one bar of 3/2), often used at cadences in Baroque music [Source 1297].
+
+**12. B. Baroque**
+*Rationale:* The use of continuo, terraced dynamics, and binary dance form defines the Baroque period (1600-1750) [Source 1262].
+
+**13. C. Harpsichord**
+*Rationale:* The harpsichord realizes the figured bass in the Baroque era [Source 797].
+
+**14. B. Dominant**
+*Rationale:* A Major is the 5th degree (Dominant) of D Major [Source 74].
+
+**15. B. A Major**
+*Rationale:* The G# acts as the leading note (sharpened 7th) of A Major.
+
+**16. B. Vivaldi**
+*Rationale:* Vivaldi is a specified Focus Composer for AoS1 [Source 30].
+
+**17. A. It is in 3/4 time and has a moderate, stately tempo.**
+*Rationale:* These are the defining characteristics of the Minuet [Source 1024].
+
+**18. B. Leaps (disjunct motion)**
+*Rationale:* The bass moves D -> A -> F -> D (large intervals), providing a harmonic foundation rather than a scalic melody.
+
+**19. B. Terraced Dynamics**
+*Rationale:* Stepped changes in volume (p to f) without gradation are stylistic of the Baroque [Source 1105].
+
+**20. B. Major 3rd**
+*Rationale:* A to C# is 4 semitones, a Major 3rd.

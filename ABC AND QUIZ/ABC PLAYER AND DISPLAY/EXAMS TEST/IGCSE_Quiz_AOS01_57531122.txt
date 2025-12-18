@@ -1,0 +1,220 @@
+
+Title: AOS 1: Baroque Music Listening Quiz
+Description: A comprehensive 20-question MCQ test on AOS 1: Baroque Music.
+Code: AOS01_57531122
+
+### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:AOS 1: Baroque Music [AOS01_57531122]
+C:SchoolClass.Net
+M:4/4
+L:1/16
+K:D
+%%barnumbers 1
+%%tempofont Wingdings 1
+Q:"Allegro" 1/4=112
+V:1 name="Violino" clef=treble
+%%MIDI program 40
+V:2 name="Continuo" clef=bass
+%%MIDI program 6
+V:1
+!f! D4 F4 A4 d4 | f2ed c2Bc d4 A4 | B2cd G2B2 A2Bc F2A2 | G2FE E4 D8 |
+a2ga f2a2 d'2c'b a2g2 | f2ef d2f2 b2ag f2e2 | d2B2 e2c2 f2d2 g2e2 | a4 A4 d8 |
+!p! a4 f2d2 a2f2 d2ef | g4 e2c2 g2e2 c2de | f2ed c2B2 ^A2Bc d2B2 | e2dc B2A2 ^G2AB c2A2 |
+!f! D4 F2G2 A4 d4 | f2ed c2Bc d4 A4 | B2cd G2B2 A2Bc F2A2 | G2FE E2G2 F4 E4 |
+D4 d4 A4 F4 | G2B2 E2G2 F2A2 D2F2 | E2A2 c2A2 !trill!e4 d4 | (3fed (3edc d4 D8 |]
+V:2
+D,4 D,4 D,4 D,4 | D,4 A,,4 D,4 F,4 | G,4 G,4 F,4 F,4 | A,4 A,,4 D,8 |
+F,4 F,4 F,4 F,4 | D,4 D,4 D,4 D,4 | G,4 A,4 B,4 C4 | D,4 A,,4 D,8 |
+D,4 D,4 D,4 D,4 | A,,4 A,,4 A,,4 A,,4 | B,,4 B,,4 B,,4 B,,4 | E,4 E,4 A,8 |
+D,4 D,4 D,4 D,4 | D,4 A,,4 D,4 F,4 | G,4 G,4 F,4 F,4 | E,4 G,4 A,4 A,,4 |
+D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]
+```
+
+### **Questions**
+
+**1. What is the Italian tempo marking indicated at the start of the score?**
+A. Andante
+B. Adagio
+C. Allegro
+D. Presto
+
+**2. Which Beats Per Minute (BPM) setting corresponds to the tempo of this piece?**
+A. 60 BPM
+B. 90 BPM
+C. 112 BPM
+D. 140 BPM
+
+**3. What is the tonality of the piece at the beginning (Bars 1–4)?**
+A. D Major
+B. B Minor
+C. G Major
+D. A Major
+
+**4. Which term best describes the melodic movement in the Violin part in Bar 1 (D-F-A-d)?**
+A. Scalic
+B. Arpeggio
+C. Chromatic
+D. Stepwise
+
+**5. In Bars 5 and 6, the melody repeats a pattern at a lower pitch. What is this device called?**
+A. Ostinato
+B. Imitation
+C. Pedal note
+D. Sequence
+
+**6. At Bar 9, the dynamic changes suddenly from *forte* to *piano*. What is this Baroque technique called?**
+A. Crescendo
+B. Terraced dynamics
+C. Sforzando
+D. Diminuendo
+
+**7. Identify the harmonic device used in Bar 11 with the introduction of the A sharp (^A).**
+A. Modulation
+B. Suspension
+C. Tierce de Picardie
+D. Pedal note
+
+**8. Which instrument would most likely play the bottom stave (Voice 2) along with a cello?**
+A. Trumpet
+B. Timpani
+C. Harpsichord
+D. Oboe
+
+**9. The accompaniment style provided by Voice 2 throughout the piece is known as:**
+A. Ground bass
+B. Alberti bass
+C. Basso continuo
+D. Walking bass
+
+**10. What specific ornament is marked and played in Bar 19?**
+A. Mordent
+B. Turn
+C. Acciaccatura
+D. Trill
+
+**11. Which rhythmic feature is heard in the Violin part in Bar 20?**
+A. Syncopation
+B. Triplets
+C. Hemiola
+D. Dotted rhythms
+
+**12. Based on the structure, what form does this movement suggest, particularly with the return of the opening theme at Bar 13?**
+A. Binary Form
+B. Theme and Variations
+C. Ritornello Form
+D. Fugue
+
+**13. In Bar 4, the phrase ends with a V–I chord progression. What type of cadence is this?**
+A. Plagal
+B. Imperfect
+C. Interrupted
+D. Perfect
+
+**14. Which term best describes the texture of this piece (Melody with accompaniment)?**
+A. Monophonic
+B. Homophonic
+C. Polyphonic
+D. Heterophonic
+
+**15. In Bar 7, the bass line moves upwards in steady steps. What is the term for this bass movement?**
+A. Static bass
+B. Drone
+C. Walking bass
+D. Ground bass
+
+**16. In a Concerto Grosso, what is the name given to the small group of soloists?**
+A. Ripieno
+B. Concertino
+C. Tutti
+D. Continuo
+
+**17. Which of the following composers is NOT associated with the Baroque period?**
+A. J.S. Bach
+B. A. Vivaldi
+C. G.F. Handel
+D. W.A. Mozart
+
+**18. What is a "Tierce de Picardie"?**
+A. A major chord at the end of a minor piece
+B. A sudden modulation to the dominant
+C. A type of French dance suite
+D. An ornament used in vocal music
+
+**19. Which texture is most characteristic of a Fugue?**
+A. Homophonic
+B. Monophonic
+C. Contrapuntal
+D. Chordal
+
+**20. What is the primary function of the Harpsichord player in a Baroque ensemble?**
+A. To conduct the orchestra
+B. To play the melody line only
+C. To realize the figured bass (fill in harmonies)
+D. To provide percussion effects
+
+***
+
+### **Mark Scheme**
+
+**1. C. Allegro**
+*Rationale:* The score header explicitly states `Q:"Allegro"`, which is the Italian term for a fast, lively tempo.
+
+**2. C. 112 BPM**
+*Rationale:* The score header explicitly states `1/4=112`, indicating 112 beats per minute.
+
+**3. A. D Major**
+*Rationale:* The key signature has two sharps (F#, C#) and the piece begins and ends on the tonic D chord.
+
+**4. B. Arpeggio**
+*Rationale:* The notes D, F, A, d form a broken chord (triad) played in succession, which is the definition of an arpeggio.
+
+**5. D. Sequence**
+*Rationale:* A sequence is the immediate repetition of a melodic idea at a different pitch level. Bar 6 repeats the shape of Bar 5 one step lower.
+
+**6. B. Terraced dynamics**
+*Rationale:* Baroque music typically features abrupt shifts in volume (block dynamics) rather than gradual crescendos or diminuendos.
+
+**7. A. Modulation**
+*Rationale:* The introduction of the accidental A# (the leading note of B minor) indicates a shift in tonality away from the home key, known as modulation.
+
+**8. C. Harpsichord**
+*Rationale:* The harpsichord is the quintessential keyboard instrument of the Baroque era, used to fill in harmonies (continuo) alongside a bass instrument like the cello.
+
+**9. C. Basso continuo**
+*Rationale:* This is the continuous bass line that provides the harmonic framework in Baroque music, read by the keyboard and bass string player.
+
+**10. D. Trill**
+*Rationale:* The notation `!trill!` indicates a rapid alternation between the notated note and the note above it.
+
+**11. B. Triplets**
+*Rationale:* The notation `(3fed` indicates three notes played in the time of two, which is a triplet.
+
+**12. C. Ritornello Form**
+*Rationale:* The return of the main theme (the Ritornello) at Bar 13 after contrasting episodes is characteristic of Baroque Ritornello form.
+
+**13. D. Perfect**
+*Rationale:* The chords move from A (Dominant/V) to D (Tonic/I), which creates a sense of completion known as a Perfect Cadence.
+
+**14. B. Homophonic**
+*Rationale:* The texture consists of a clear melody line (Violin) supported by a chordal accompaniment (Continuo), defined as homophony (or melody-dominated homophony).
+
+**15. C. Walking bass**
+*Rationale:* The bass line in Bar 7 moves in steady, equal note values (crotchets) up the scale, mimicking a walking motion.
+
+**16. B. Concertino**
+*Rationale:* In a Concerto Grosso, the small group of soloists is called the *Concertino*, while the larger accompanying orchestra is the *Ripieno*.
+
+**17. D. W.A. Mozart**
+*Rationale:* Mozart is a Classical era composer. Bach, Vivaldi, and Handel are the three main pillars of the Baroque era.
+
+**18. A. A major chord at the end of a minor piece**
+*Rationale:* A Tierce de Picardie (Picardy Third) is a harmonic device where a piece in a minor key ends with a major tonic chord.
+
+**19. C. Contrapuntal**
+*Rationale:* A Fugue is based on polyphonic texture where independent melodic lines weave together, known as counterpoint (contrapuntal texture).
+
+**20. C. To realize the figured bass (fill in harmonies)**
+*Rationale:* The harpsichordist reads the single bass note and improvises (realizes) the chords above it based on numerical figures (figured bass).

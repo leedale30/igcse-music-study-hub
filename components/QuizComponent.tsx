@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Quiz, Question, AnswerOption } from '../types';
 import { validateQuizSubmission } from '../utils/validation';
 import { useErrorHandler } from './ErrorBoundary';
 import { useAuth } from '../contexts/AuthContext';
 import { useProgress } from '../contexts/ProgressContext';
 import { Link } from 'react-router-dom';
+import abcjs from 'abcjs';
+import 'abcjs/abcjs-audio.css';
 
 interface QuizProps {
   quizData: Quiz;
@@ -37,7 +39,13 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   const [validationError, setValidationError] = useState<string | null>(null);
   const [quizStartTime, setQuizStartTime] = useState<Date>(new Date());
   const [progressSaved, setProgressSaved] = useState(false);
-  
+
+  const visualRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLDivElement>(null);
+  const synthRef = useRef<any>(null);
+  const synthControlRef = useRef<any>(null);
+  const visualObjRef = useRef<any>(null);
+
   const { handleError } = useErrorHandler();
   const { user } = useAuth();
   const { addQuizResult } = useProgress();
@@ -47,10 +55,66 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
     setQuizStartTime(new Date());
   }, [quizData.title]);
 
+  // Handle ABCJS Rendering
+  useEffect(() => {
+    if (quizData.abcNotation) {
+      const visualId = `abc-paper-${quizData.title.replace(/\s+/g, '-')}`;
+      const audioId = `abc-audio-${quizData.title.replace(/\s+/g, '-')}`;
+
+      // Ensure divs are empty
+      if (visualRef.current) visualRef.current.innerHTML = "";
+      if (audioRef.current) audioRef.current.innerHTML = "";
+
+      // Cleanup previous instances
+      if (synthRef.current) synthRef.current = null;
+      if (synthControlRef.current) synthControlRef.current = null;
+
+      try {
+        // Render Visual
+        if (visualRef.current) {
+          visualObjRef.current = abcjs.renderAbc(visualRef.current, quizData.abcNotation, {
+            responsive: "resize",
+            add_classes: true,
+          })[0];
+        }
+
+        // Render Audio
+        if (abcjs.synth.supportsAudio() && audioRef.current) {
+          const synthControl = new abcjs.synth.SynthController();
+          synthControlRef.current = synthControl;
+
+          synthControl.load(audioRef.current, null, {
+            displayRestart: true,
+            displayPlay: true,
+            displayProgress: true,
+            displayWarp: true,
+          });
+
+          const synth = new abcjs.synth.CreateSynth();
+          synthRef.current = synth;
+
+          synth.init({
+            visualObj: visualObjRef.current,
+            options: {
+              soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/",
+            }
+          }).then(() => {
+            if (synthControlRef.current) {
+              synthControlRef.current.setTune(visualObjRef.current, true)
+                .catch((e: any) => console.warn("Audio setTune error:", e));
+            }
+          }).catch((e: any) => console.warn("Audio init error:", e));
+        }
+      } catch (err) {
+        console.error("ABCJS Error:", err);
+      }
+    }
+  }, [quizData.abcNotation, quizData.title]); // Re-run if notation changes
+
   const currentQuestion = quizData.questions[currentQuestionIndex];
 
   const handleAnswerSelect = (questionId: string, answerId: string) => {
-    if (showResults) return; 
+    if (showResults) return;
     setSelectedAnswers(prev => ({ ...prev, [questionId]: answerId }));
   };
 
@@ -71,13 +135,13 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
       }
     });
     setScore(currentScore);
-    
+
     // Save progress for logged-in users
     if (user && !progressSaved) {
       const quizEndTime = new Date();
       const timeSpent = Math.floor((quizEndTime.getTime() - quizStartTime.getTime()) / 1000); // in seconds
       const percentage = (currentScore / quizData.questions.length) * 100;
-      
+
       try {
         addQuizResult({
           quizId: `quiz-${quizData.title.toLowerCase().replace(/\s+/g, '-')}`,
@@ -118,7 +182,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
         <p className="text-lg sm:text-xl text-center text-gray-800 dark:text-gray-200 mb-6">
           You scored <span className="font-bold text-sky-600 dark:text-sky-400">{score}</span> out of <span className="font-bold text-sky-600 dark:text-sky-400">{quizData.questions.length}</span>!
         </p>
-        
+
         {/* Progress tracking notifications */}
         {user && progressSaved && (
           <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
@@ -139,7 +203,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
             </div>
           </div>
         )}
-        
+
         {!user && (
           <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
             <div className="flex items-center">
@@ -184,9 +248,9 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
                       icon = <CheckCircleIcon className="mr-2 text-green-500 flex-shrink-0" />;
                     } else if (opt.id === userAnswerId && !isCorrect) {
                       itemClass += "bg-red-100 text-red-700 font-medium dark:bg-red-900/60 dark:text-red-300";
-                       icon = <XCircleIcon className="mr-2 text-red-500 flex-shrink-0" />;
+                      icon = <XCircleIcon className="mr-2 text-red-500 flex-shrink-0" />;
                     } else {
-                       itemClass += "bg-gray-50 text-gray-700 dark:bg-slate-600 dark:text-gray-300";
+                      itemClass += "bg-gray-50 text-gray-700 dark:bg-slate-600 dark:text-gray-300";
                     }
 
                     return (
@@ -199,14 +263,14 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
                   })}
                 </div>
                 {!isCorrect && q.explanation && (
-                    <p className="mt-3 text-sm text-sky-700 bg-sky-50 dark:bg-sky-900/60 dark:text-sky-300 p-2 rounded-md">
-                        <strong>Explanation:</strong> {q.explanation}
-                    </p>
+                  <p className="mt-3 text-sm text-sky-700 bg-sky-50 dark:bg-sky-900/60 dark:text-sky-300 p-2 rounded-md">
+                    <strong>Explanation:</strong> {q.explanation}
+                  </p>
                 )}
-                 {isCorrect && q.explanation && ( 
-                    <p className="mt-3 text-sm text-green-700 bg-green-50 dark:bg-green-900/40 dark:text-green-300 p-2 rounded-md">
-                        <strong>Explanation:</strong> {q.explanation}
-                    </p>
+                {isCorrect && q.explanation && (
+                  <p className="mt-3 text-sm text-green-700 bg-green-50 dark:bg-green-900/40 dark:text-green-300 p-2 rounded-md">
+                    <strong>Explanation:</strong> {q.explanation}
+                  </p>
                 )}
               </li>
             );
@@ -227,10 +291,20 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   return (
     <div className="mt-8 p-4 sm:p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700">
       <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center">{quizData.title}</h2>
+
+      {/* ABCJS Container */}
+      {quizData.abcNotation && (
+        <div className="mb-8 p-4 bg-white rounded-lg shadow-inner">
+          <h3 className="text-lg font-semibold text-slate-700 mb-2">Musical Extract</h3>
+          <div ref={audioRef} className="mb-2"></div>
+          <div ref={visualRef} className="w-full overflow-x-auto"></div>
+        </div>
+      )}
+
       <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
         Question {currentQuestionIndex + 1} of {quizData.questions.length}
       </p>
-      
+
       <div className="bg-white dark:bg-slate-700 p-4 sm:p-6 rounded-lg shadow">
         <p className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6 min-h-[3em]">{currentQuestion.text}</p>
         <div className="space-y-3">
@@ -239,10 +313,10 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
               key={option.id}
               onClick={() => handleAnswerSelect(currentQuestion.id, option.id)}
               disabled={showResults}
-              aria-pressed={selectedAnswers[currentQuestion.id] === option.id}
+              aria-pressed={selectedAnswers[currentQuestion.id] === option.id ? "true" : "false"}
               className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-150 
-                ${selectedAnswers[currentQuestion.id] === option.id 
-                  ? 'bg-sky-500 border-sky-600 text-white font-semibold ring-2 ring-sky-300 shadow-md' 
+                ${selectedAnswers[currentQuestion.id] === option.id
+                  ? 'bg-sky-500 border-sky-600 text-white font-semibold ring-2 ring-sky-300 shadow-md'
                   : 'bg-white border-gray-300 hover:bg-sky-50 hover:border-sky-400 text-gray-700 dark:bg-slate-600 dark:border-slate-500 dark:hover:bg-sky-900/50 dark:hover:border-sky-600 dark:text-gray-300'
                 } 
                 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-opacity-50

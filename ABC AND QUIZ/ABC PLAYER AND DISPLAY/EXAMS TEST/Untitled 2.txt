@@ -1,0 +1,223 @@
+As the **AI Lead Music GCSE/IGCSE Qualifications Author**, I have constructed a 20-question Mock Examination Paper specifically for **Area of Study 1: Baroque Music** (2026–2028 Cambridge IGCSE Music 0410/0978).
+
+To simulate the listening examination experience, I have composed an original *basso continuo* and violin extract in the style of the Focus Composers (Vivaldi/Handel). This piece includes specific Baroque features such as sequences, functional harmony, and terraced dynamics to ensure the questions are rigorous and syllabus-compliant.
+
+### **IGCSE Music Mock Paper: Area of Study 1 (Baroque Music)**
+
+**Instructions:**
+1.  Copy the ABC code below into a player/editor (like abcjs.net) to generate the audio stimulus and score.
+2.  Answer the 20 multiple-choice questions based on the music and your knowledge of the Baroque period.
+3.  Check your answers against the Mark Scheme provided at the end.
+
+***
+
+### **Audio Stimulus (ABC Notation)**
+
+```abc
+X:1
+T:Specimen Extract: Baroque Allegro
+C:SchoolClass.Net
+M:4/4
+L:1/8
+Q:"Allegro" 1/4=112
+K:G
+%%barnumbers 1
+%%MIDI program 40
+V:1 name="Violin (Concertino)"
+!f! G2 d2 B2 G2 | d2 cB A2 D2 | G2 B2 c2 A2 | B4 A4 |
+!p! B2 d2 c2 B2 | c2 e2 d2 c2 | d2 g2 f2 e2 | d4 !trill!c4 |
+!f! B2 d2 g2 b2 | a2 g2 f2 e2 | d2 c2 B2 A2 | G4 z4 ||
+V:2 name="Cello/Harpsichord (Continuo)" clef=bass
+%%MIDI program 42
+!f! G,4 B,4 | D,4 F,4 | G,4 E,4 | D,4 D,,4 |
+!p! G,4 G,,4 | A,4 A,,4 | B,4 C,4 | D,4 D,,4 |
+!f! G,4 B,4 | C,4 ^C,4 | D,4 D,,4 | G,,4 z4 ||
+```
+
+***
+
+### **Questions**
+
+**1. Which period of musical history is this extract from?**
+A. Classical
+B. Romantic
+C. Baroque
+D. Twentieth Century
+
+**2. What is the texture of the opening four bars?**
+A. Monophonic (single line)
+B. Melody and Accompaniment (Homophonic)
+C. Heterophonic
+D. A cappella
+
+**3. In the Baroque era, the bass line (played here by the cello) and the chordal accompaniment (harpsichord) are collectively known as what?**
+A. Alberti Bass
+B. Basso Continuo
+C. Ground Bass
+D. Walking Bass
+
+**4. Look at bars 5 and 6 (the *piano* section). What compositional device is used in the melody?**
+A. Ascending Sequence
+B. Descending Sequence
+C. Inversion
+D. Pedal Note
+
+**5. What implies that this piece is in a Major key?**
+A. It sounds happy and uses a major third in the tonic chord.
+B. It sounds sad and uses a minor third.
+C. It uses a drone.
+D. It is atonal.
+
+**6. Which ornament is heard in the violin part in bar 8 (beat 3)?**
+A. Turn
+B. Mordent
+C. Acciaccatura
+D. Trill
+
+**7. Identify the cadence at the very end of the extract (bars 11–12).**
+A. Plagal (IV–I)
+B. Perfect (V–I)
+C. Imperfect (I–V)
+D. Interrupted (V–VI)
+
+**8. The change in volume from *forte* (bar 4) to *piano* (bar 5) without a crescendo or diminuendo is known as:**
+A. Sforzando
+B. Terraced Dynamics
+C. Marcato
+D. Fade-out
+
+**9. Which instrument would most likely be improvising chords based on the bass line in this extract?**
+A. Piano
+B. Harpsichord
+C. Clarinet
+D. Timpani
+
+**10. What is the system of numbers written below the bass line to tell the keyboard player which chords to play called?**
+A. Tablature
+B. Cipher Notation
+C. Figured Bass
+D. Lead Sheet
+
+**11. Which musical form, common in Baroque concertos, features a recurring main theme alternating with contrasting episodes?**
+A. Sonata Form
+B. Minuet and Trio
+C. Ritornello Form
+D. Theme and Variations
+
+**12. In a Concerto Grosso, the small group of soloists (heard here as the violin) is called the:**
+A. Tutti
+B. Ripieno
+C. Concertino
+D. Orchestra
+
+**13. The large accompanying group (the full orchestra) is called the:**
+A. Ripieno / Tutti
+B. Concertino
+C. Soloist
+D. Quartet
+
+**14. Which time signature best fits this extract?**
+A. 3/4
+B. 4/4 (Common Time)
+C. 6/8
+D. 5/4
+
+**15. If a composer wanted this music to depict a specific scene (e.g., a storm or birds), what would it be called?**
+A. Absolute Music
+B. Programme Music
+C. Atonal Music
+D. Aleatoric Music
+
+**16. Which of the following features is NOT typical of the Baroque period?**
+A. Use of Basso Continuo
+B. Use of the Clarinet
+C. Use of Ornamentation
+D. Use of Diatonic Harmony
+
+**17. Look at the bass line in bar 10 (C to C# to D). What harmonic effect does the C# suggest?**
+A. A modulation (key change) or chromatic passing note heading to D.
+B. A mistake in the score.
+C. A change to a minor key.
+D. A drone.
+
+**18. Which composer is a set Focus Composer for Baroque Music (AOS1) in the 2026–2028 syllabus?**
+A. Mozart
+B. Vivaldi
+C. Beethoven
+D. Haydn
+
+**19. What relationship exists between the key at the start (G Major) and the key at the dominant (D Major)?**
+A. They are unrelated.
+B. They are closely related keys.
+C. It is the relative minor.
+D. It is the tonic minor.
+
+**20. The concept that a single mood or feeling should persist throughout a Baroque movement is known as:**
+A. The Doctrine of the Affections
+B. Sonata Principle
+C. Minimalism
+D. Serialism
+
+***
+
+### **Mark Scheme**
+
+**1. C. Baroque**
+*Rationale:* The presence of continuo, terraced dynamics, and the style of melody are defining features of the period (c. 1600–1750).
+
+**2. B. Melody and Accompaniment (Homophonic)**
+*Rationale:* There is a clear melody in the violin supported by a bass line and implied chords.
+
+**3. B. Basso Continuo**
+*Rationale:* This is the rhythm section of the Baroque era, typically cello and harpsichord.
+
+**4. A. Ascending Sequence**
+*Rationale:* The pattern in bar 5 (B-d-c-B) moves up a step in bar 6 (c-e-d-c).
+
+**5. A. It sounds happy and uses a major third...**
+*Rationale:* The piece is in G Major.
+
+**6. D. Trill**
+*Rationale:* The `!trill!` notation in the code produces a rapid alternation between notes.
+
+**7. B. Perfect (V–I)**
+*Rationale:* The bass moves from D (Dominant) to G (Tonic) at the end, creating a finished sound.
+
+**8. B. Terraced Dynamics**
+*Rationale:* Sudden shifts in volume are a hallmark of Baroque instrumentation limitations (harpsichord) and style.
+
+**9. B. Harpsichord**
+*Rationale:* The piano was not widely used in the Baroque era; the harpsichord is the standard continuo instrument.
+
+**10. C. Figured Bass**
+*Rationale:* Numbers indicating intervals above the bass note are called Figured Bass.
+
+**11. C. Ritornello Form**
+*Rationale:* A structure involving a returning "tutti" theme (Ritornello) is standard for Vivaldi/Handel concertos.
+
+**12. C. Concertino**
+*Rationale:* The "little group" of soloists.
+
+**13. A. Ripieno / Tutti**
+*Rationale:* The "stuffing" or full orchestra.
+
+**14. B. 4/4 (Common Time)**
+*Rationale:* There are four crotchet beats per bar.
+
+**15. B. Programme Music**
+*Rationale:* Music that carries extra-musical meaning (like Vivaldi's *Spring*) is Programme Music.
+
+**16. B. Use of the Clarinet**
+*Rationale:* Clarinets were not standard in the Baroque orchestra; they became common in the Classical/Romantic periods.
+
+**17. A. A modulation... or chromatic passing note...**
+*Rationale:* The C# acts as a leading note to D, momentarily tonicizing the dominant.
+
+**18. B. Vivaldi**
+*Rationale:* Vivaldi (and Handel) are the focus composers for AOS1.
+
+**19. B. They are closely related keys.**
+*Rationale:* The dominant is the most closely related key to the tonic.
+
+**20. A. The Doctrine of the Affections**
+*Rationale:* The Baroque belief that a piece should explore one specific emotion (affect) at a time.
