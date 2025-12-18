@@ -20,7 +20,12 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
 
     // Generate stable IDs for this quiz instance
     const { visualId, audioId } = useMemo(() => {
-        const suffix = title.replace(/\s+/g, '-').toLowerCase();
+        // Remove all non-alphanumeric characters except hyphens, then collapse multiple hyphens
+        const suffix = title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric with hyphens
+            .replace(/^-+|-+$/g, '')      // Remove leading/trailing hyphens
+            .replace(/-+/g, '-');         // Collapse multiple hyphens
         return {
             visualId: `abc-paper-${suffix}`,
             audioId: `abc-audio-${suffix}`
