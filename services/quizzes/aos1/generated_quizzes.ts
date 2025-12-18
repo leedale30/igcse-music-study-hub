@@ -67,7 +67,7 @@ V:3 name="Basso Continuo" clef=bass
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "A Major" },
                 { id: 'c', text: "D Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major D) B Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -78,7 +78,7 @@ V:3 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Concertino" },
                 { id: 'b', text: "Ripieno" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino B) Ripieno C) Woodwind Section" },
                 { id: 'd', text: "Brass Fanfare" }
             ],
             correctAnswerId: 'b',
@@ -102,7 +102,7 @@ V:3 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Pedal Note" },
                 { id: 'b', text: "Circle of Fifths Sequence" },
-                { id: 'c', text: "ircle of Fifths Sequence" },
+                { id: 'c', text: "ircle of Fifths Sequence C) Ground Bass" },
                 { id: 'd', text: "Inversion" }
             ],
             correctAnswerId: 'b',
@@ -114,8 +114,8 @@ V:3 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Conjunct (Stepwise)" },
                 { id: 'b', text: "Disjunct (Leaping)" },
-                { id: 'c', text: "onjunct (Stepwise)" },
-                { id: 'd', text: "isjunct (Leaping)" }
+                { id: 'c', text: "onjunct (Stepwise) B) Disjunct (Leaping) C) Chromatic" },
+                { id: 'd', text: "isjunct (Leaping) C) Chromatic D) Atonal" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -138,7 +138,7 @@ V:3 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Imperfect Cadence (I-V)" },
                 { id: 'b', text: "Plagal Cadence (IV-I)" },
-                { id: 'c', text: "adence (I-V)" },
+                { id: 'c', text: "adence (I-V) B) Plagal Cadence (IV-I) C) Interrupted Cadence (V-vi)" },
                 { id: 'd', text: "Perfect Cadence (V-I)" }
             ],
             correctAnswerId: 'd',
@@ -151,7 +151,7 @@ V:3 name="Basso Continuo" clef=bass
                 { id: 'a', text: "Triple time (3/4)" },
                 { id: 'b', text: "Simple Quadruple time (4/4)" },
                 { id: 'c', text: "Compound Duple time (6/8)" },
-                { id: 'd', text: "uple time (6/8)" }
+                { id: 'd', text: "uple time (6/8) D) Compound Triple time (9/8)" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -163,7 +163,7 @@ V:3 name="Basso Continuo" clef=bass
                 { id: 'a', text: "F# Minor" },
                 { id: 'b', text: "G Major" },
                 { id: 'c', text: "A Major (The Dominant)" },
-                { id: 'd', text: "ominant)" }
+                { id: 'd', text: "ominant) D) E Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -174,7 +174,7 @@ V:3 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Concertino" },
                 { id: 'b', text: "Tutti" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino B) Tutti C) Ripieno" },
                 { id: 'd', text: "Continuo" }
             ],
             correctAnswerId: 'a',
@@ -185,7 +185,7 @@ V:3 name="Basso Continuo" clef=bass
             text: "In Bar 3, the bass line moves in steady quavers. What is the specific term for this Baroque bass style?",
             options: [
                 { id: 'a', text: "Alberti Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B) Walking Bass" },
                 { id: 'c', text: "Murky Bass" },
                 { id: 'd', text: "Ostinato" }
             ],
@@ -223,7 +223,7 @@ V:3 name="Basso Continuo" clef=bass
                 { id: 'a', text: "Syncopated and jazzy" },
                 { id: 'b', text: "Dotted rhythms throughout" },
                 { id: 'c', text: "Primarily quavers and semiquavers" },
-                { id: 'd', text: "otted rhythms throughout" }
+                { id: 'd', text: "otted rhythms throughout C) Primarily quavers and semiquavers D) Sustained whole notes" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -269,8 +269,8 @@ V:3 name="Basso Continuo" clef=bass
             text: "Which typical Baroque feature is NOT found in this score?",
             options: [
                 { id: 'a', text: "Basso Continuo" },
-                { id: 'b', text: "asso Continuo" },
-                { id: 'c', text: "ontinuo" },
+                { id: 'b', text: "asso Continuo B) Use of Sequences" },
+                { id: 'c', text: "ontinuo B) Use of Sequences C) 12-Tone Serialism" },
                 { id: 'd', text: "Functional Harmony" }
             ],
             correctAnswerId: 'c',
@@ -343,7 +343,7 @@ K:D
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "D Major" },
                 { id: 'c', text: "A Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major C) A Major D) B Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -389,9 +389,9 @@ K:D
             text: "Which term best describes the movement of the Basso Continuo (V3) in Bars 1–4?",
             options: [
                 { id: 'a', text: "Static Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B) Alberti Bass" },
                 { id: 'c', text: "Octave Disjunction (Walking Bass variant)" },
-                { id: 'd', text: "isjunction (Walking Bass variant)" }
+                { id: 'd', text: "isjunction (Walking Bass variant) D) Ground Bass" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -402,7 +402,7 @@ K:D
             options: [
                 { id: 'a', text: "Perfect Cadence" },
                 { id: 'b', text: "Plagal Cadence" },
-                { id: 'c', text: "adence" },
+                { id: 'c', text: "adence B) Plagal Cadence C) Interrupted Cadence" },
                 { id: 'd', text: "Imperfect Cadence" }
             ],
             correctAnswerId: 'd',
@@ -414,7 +414,7 @@ K:D
             options: [
                 { id: 'a', text: "Cello" },
                 { id: 'b', text: "Lute" },
-                { id: 'c', text: "ello" },
+                { id: 'c', text: "ello B) Lute C) Harpsichord" },
                 { id: 'd', text: "Pipe Organ" }
             ],
             correctAnswerId: 'c',
@@ -462,7 +462,7 @@ K:D
             options: [
                 { id: 'a', text: "Perfect Cadence (V-I)" },
                 { id: 'b', text: "Imperfect Cadence (I-V)" },
-                { id: 'c', text: "adence (V-I)" },
+                { id: 'c', text: "adence (V-I) B) Imperfect Cadence (I-V) C) Plagal Cadence (IV-I)" },
                 { id: 'd', text: "Phrygian Cadence" }
             ],
             correctAnswerId: 'a',
@@ -475,7 +475,7 @@ K:D
                 { id: 'a', text: "3/4 (Simple Triple)" },
                 { id: 'b', text: "4/4 (Simple Quadruple)" },
                 { id: 'c', text: "6/8 (Compound Duple)" },
-                { id: 'd', text: "uple)" }
+                { id: 'd', text: "uple) D) 2/2 (Alla Breve)" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -486,8 +486,8 @@ K:D
             options: [
                 { id: 'a', text: "Large leaps (Disjunct)" },
                 { id: 'b', text: "Stepwise motion (Scalic/Conjunct)" },
-                { id: 'c', text: "onjunct)" },
-                { id: 'd', text: "isjunct)" }
+                { id: 'c', text: "onjunct) C) Arpeggios" },
+                { id: 'd', text: "isjunct) B) Stepwise motion (Scalic/Conjunct) C) Arpeggios D) Repeated notes" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -498,7 +498,7 @@ K:D
             options: [
                 { id: 'a', text: "Chromaticism" },
                 { id: 'b', text: "Functional diatonic harmony supporting the upper voices" },
-                { id: 'c', text: "hromaticism" },
+                { id: 'c', text: "hromaticism B) Functional diatonic harmony supporting the upper voices C) Use of synthesizers" },
                 { id: 'd', text: "Extensive rubato" }
             ],
             correctAnswerId: 'b',
@@ -522,7 +522,7 @@ K:D
             options: [
                 { id: 'a', text: "One (F#)" },
                 { id: 'b', text: "Two (F# and C#)" },
-                { id: 'c', text: "#)" },
+                { id: 'c', text: "#) C) Three (F#, C#, G#)" },
                 { id: 'd', text: "Zero" }
             ],
             correctAnswerId: 'b',
@@ -627,8 +627,8 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
             options: [
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "G Major" },
-                { id: 'c', text: "Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "Major B) G Major C) D Major" },
+                { id: 'd', text: "Major D) E Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -638,8 +638,8 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
             text: "Which term best describes the combination of the Harpsichord and the Bass line (V:2)?",
             options: [
                 { id: 'a', text: "Basso Ostinato" },
-                { id: 'b', text: "asso Ostinato" },
-                { id: 'c', text: "ontinuo" },
+                { id: 'b', text: "asso Ostinato B) Basso Continuo" },
+                { id: 'c', text: "ontinuo C) Alberti Bass" },
                 { id: 'd', text: "Ground Bass" }
             ],
             correctAnswerId: 'b',
@@ -652,7 +652,7 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
                 { id: 'a', text: "Syncopation" },
                 { id: 'b', text: "Dotted rhythms" },
                 { id: 'c', text: "Motor rhythm (continuous semiquavers)" },
-                { id: 'd', text: "otted rhythms" }
+                { id: 'd', text: "otted rhythms C) Motor rhythm (continuous semiquavers) D) Triplets" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -663,7 +663,7 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
             options: [
                 { id: 'a', text: "Chromatic scales" },
                 { id: 'b', text: "Stepwise auxiliary notes" },
-                { id: 'c', text: "hromatic scales" },
+                { id: 'c', text: "hromatic scales B) Stepwise auxiliary notes C) Triadic/Arpeggio movement" },
                 { id: 'd', text: "Pentatonic shapes" }
             ],
             correctAnswerId: 'c',
@@ -688,7 +688,7 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
                 { id: 'a', text: "Ascending" },
                 { id: 'b', text: "Descending" },
                 { id: 'c', text: "Static" },
-                { id: 'd', text: "escending" }
+                { id: 'd', text: "escending C) Static D) It stays within the same octave" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -772,7 +772,7 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
                 { id: 'a', text: "Atonal" },
                 { id: 'b', text: "Bitonal" },
                 { id: 'c', text: "Diatonic and functional" },
-                { id: 'd', text: "iatonic and functional" }
+                { id: 'd', text: "iatonic and functional D) Modal" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -795,7 +795,7 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
             options: [
                 { id: 'a', text: "Vivaldi" },
                 { id: 'b', text: "Chopin" },
-                { id: 'c', text: "hopin" },
+                { id: 'c', text: "hopin C) Beethoven" },
                 { id: 'd', text: "Debussy" }
             ],
             correctAnswerId: 'a',
@@ -808,7 +808,7 @@ w: 5 6 5 6 6 4 3 5 6 5 6 6 4 3 5`,
                 { id: 'a', text: "Stepwise (G to A)" },
                 { id: 'b', text: "Dominant to Tonic (D to G)" },
                 { id: 'c', text: "Subdominant to Tonic (C to G)" },
-                { id: 'd', text: "ominant to Tonic (D to G)" }
+                { id: 'd', text: "ominant to Tonic (D to G) C) Subdominant to Tonic (C to G) D) Relative minor to Major (E to G)" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -879,7 +879,7 @@ K:G
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "D Major" },
                 { id: 'c', text: "G Major" },
-                { id: 'd', text: "A Major" }
+                { id: 'd', text: "E Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -914,7 +914,7 @@ K:G
             options: [
                 { id: 'a', text: "Chromaticism" },
                 { id: 'b', text: "Tonic Pedal" },
-                { id: 'c', text: "hromaticism" },
+                { id: 'c', text: "Alberti Bass" },
                 { id: 'd', text: "Ground Bass" }
             ],
             correctAnswerId: 'b',
@@ -926,7 +926,7 @@ K:G
             options: [
                 { id: 'a', text: "Flute and Harp" },
                 { id: 'b', text: "Cello and Harpsichord" },
-                { id: 'c', text: "ello and Harpsichord" },
+                { id: 'c', text: "Violin and Viola" },
                 { id: 'd', text: "Trumpet and Timpani" }
             ],
             correctAnswerId: 'b',
@@ -962,7 +962,7 @@ K:G
             options: [
                 { id: 'a', text: "Crotchet" },
                 { id: 'b', text: "Quaver" },
-                { id: 'c', text: "rotchet" },
+                { id: 'c', text: "Semiquaver" },
                 { id: 'd', text: "Minim" }
             ],
             correctAnswerId: 'b',
@@ -974,7 +974,7 @@ K:G
             options: [
                 { id: 'a', text: "Imperfect Cadence (I-V)" },
                 { id: 'b', text: "Plagal Cadence (IV-I)" },
-                { id: 'c', text: "adence (I-V)" },
+                { id: 'c', text: "Interrupted Cadence (V-VI)" },
                 { id: 'd', text: "Perfect Cadence (V-I)" }
             ],
             correctAnswerId: 'd',
@@ -987,7 +987,7 @@ K:G
                 { id: 'a', text: "A chromatic scale" },
                 { id: 'b', text: "A G Major arpeggio" },
                 { id: 'c', text: "A D7 chord" },
-                { id: 'd', text: "7 chord" }
+                { id: 'd', text: "A cluster chord" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1069,8 +1069,8 @@ K:G
             text: "Which of the following is NOT a feature of this Baroque score?",
             options: [
                 { id: 'a', text: "Use of Basso Continuo" },
-                { id: 'b', text: "asso Continuo" },
-                { id: 'c', text: "ontinuo" },
+                { id: 'b', text: "Imitative counterpoint" },
+                { id: 'c', text: "Use of a Clarinet" },
                 { id: 'd', text: "Functional diatonic harmony" }
             ],
             correctAnswerId: 'c',
@@ -1116,7 +1116,7 @@ V:3 name="Basso Continuo" snm="B.C." clef=bass
             text: "What is the exact BPM (Beats Per Minute) indicated for this piece?",
             options: [
                 { id: 'a', text: "120 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B) 110 BPM" },
                 { id: 'c', text: "100 BPM" },
                 { id: 'd', text: "105 BPM" }
             ],
@@ -1129,8 +1129,8 @@ V:3 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "D Major" },
-                { id: 'c', text: "Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "Major B) D Major C) G Major" },
+                { id: 'd', text: "Major C) G Major D) E Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -1165,7 +1165,7 @@ V:3 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Flute and Trumpet" },
                 { id: 'b', text: "Harpsichord and Cello" },
-                { id: 'c', text: "ello" },
+                { id: 'c', text: "ello C) Violin and Viola" },
                 { id: 'd', text: "Oboe and Bassoon" }
             ],
             correctAnswerId: 'b',
@@ -1200,7 +1200,7 @@ V:3 name="Basso Continuo" snm="B.C." clef=bass
             text: "Bar 3 of the Basso Continuo features a steady descending scalar line. What is the term for this bass style?",
             options: [
                 { id: 'a', text: "Ground Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B) Walking Bass" },
                 { id: 'c', text: "Alberti Bass" },
                 { id: 'd', text: "Murky Bass" }
             ],
@@ -1273,8 +1273,8 @@ V:3 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Crescendo and Diminuendo" },
                 { id: 'b', text: "Terraced dynamics" },
-                { id: 'c', text: "rescendo and Diminuendo" },
-                { id: 'd', text: "iminuendo" }
+                { id: 'c', text: "rescendo and Diminuendo B) Terraced dynamics C) Extreme sudden accents (Sforzando) on every beat" },
+                { id: 'd', text: "iminuendo B) Terraced dynamics C) Extreme sudden accents (Sforzando) on every beat D) Constant Fade-outs" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1298,7 +1298,7 @@ V:3 name="Basso Continuo" snm="B.C." clef=bass
                 { id: 'a', text: "Atonal" },
                 { id: 'b', text: "Diatonic/Tonal" },
                 { id: 'c', text: "Modal" },
-                { id: 'd', text: "iatonic/Tonal" }
+                { id: 'd', text: "iatonic/Tonal C) Modal D) Pentatonic" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1381,8 +1381,8 @@ K:G
             options: [
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "D Major" },
-                { id: 'c', text: "Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "Major B. D Major C. G Major" },
+                { id: 'd', text: "Major C. G Major D. E Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -1442,7 +1442,7 @@ K:G
                 { id: 'a', text: "Inversion" },
                 { id: 'b', text: "Retrograde" },
                 { id: 'c', text: "Descending Sequence" },
-                { id: 'd', text: "escending Sequence" }
+                { id: 'd', text: "escending Sequence D. Ascending Sequence" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -1466,7 +1466,7 @@ K:G
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "D Major (The Dominant)" },
                 { id: 'c', text: "A Minor" },
-                { id: 'd', text: "Major (The Dominant)" }
+                { id: 'd', text: "Major (The Dominant) C. A Minor D. C Major (The Subdominant)" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1477,7 +1477,7 @@ K:G
             options: [
                 { id: 'a', text: "Violin I and Violin II" },
                 { id: 'b', text: "Harpsichord and Basso Continuo (Cello/Bass)" },
-                { id: 'c', text: "ontinuo (Cello/Bass)" },
+                { id: 'c', text: "ontinuo (Cello/Bass) C. Harpsichord and Violin I" },
                 { id: 'd', text: "Violin II and Harpsichord" }
             ],
             correctAnswerId: 'b',
@@ -1488,7 +1488,7 @@ K:G
             text: "What is the structural form of this piece based on the return of the opening material?",
             options: [
                 { id: 'a', text: "Binary Form" },
-                { id: 'b', text: "inary Form" },
+                { id: 'b', text: "inary Form B. Ternary Form" },
                 { id: 'c', text: "Ritornello Form" },
                 { id: 'd', text: "Theme and Variations" }
             ],
@@ -1501,7 +1501,7 @@ K:G
             options: [
                 { id: 'a', text: "Chromatic scales" },
                 { id: 'b', text: "Scalic flourishes (semiquaver runs)" },
-                { id: 'c', text: "hromatic scales" },
+                { id: 'c', text: "hromatic scales B. Scalic flourishes (semiquaver runs) C. Arpeggiated chords" },
                 { id: 'd', text: "Wide leaps (disjunct)" }
             ],
             correctAnswerId: 'b',
@@ -1513,7 +1513,7 @@ K:G
             options: [
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "C Major" },
-                { id: 'c', text: "Major" },
+                { id: 'c', text: "Major C. A Major" },
                 { id: 'd', text: "E Minor" }
             ],
             correctAnswerId: 'c',
@@ -1526,7 +1526,7 @@ K:G
                 { id: 'a', text: "Atonal" },
                 { id: 'b', text: "Diatonic and functional" },
                 { id: 'c', text: "Modal" },
-                { id: 'd', text: "iatonic and functional" }
+                { id: 'd', text: "iatonic and functional C. Modal D. Bitonal" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1549,7 +1549,7 @@ K:G
             options: [
                 { id: 'a', text: "Crotchet" },
                 { id: 'b', text: "Minim" },
-                { id: 'c', text: "rotchet" },
+                { id: 'c', text: "rotchet B. Minim C. Semibreve" },
                 { id: 'd', text: "Quaver" }
             ],
             correctAnswerId: 'c',
@@ -1573,8 +1573,8 @@ K:G
             options: [
                 { id: 'a', text: "To signal a Perfect Cadence in G Major" },
                 { id: 'b', text: "To create a Secondary Dominant (V of V) effect" },
-                { id: 'c', text: "adence in G Major" },
-                { id: 'd', text: "ominant (V of V) effect" }
+                { id: 'c', text: "adence in G Major B. To create a Secondary Dominant (V of V) effect C. To transition to the relative minor" },
+                { id: 'd', text: "ominant (V of V) effect C. To transition to the relative minor D. It is a blue note" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1645,7 +1645,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             text: "What is the BPM (Beats Per Minute) for this piece?",
             options: [
                 { id: 'a', text: "90 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B. 110 BPM" },
                 { id: 'c', text: "120 BPM" },
                 { id: 'd', text: "140 BPM" }
             ],
@@ -1659,7 +1659,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "A Major" },
                 { id: 'c', text: "D Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major D. B Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -1670,7 +1670,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             options: [
                 { id: 'a', text: "Flute and Harpsichord" },
                 { id: 'b', text: "Flute and Cello" },
-                { id: 'c', text: "ello" },
+                { id: 'c', text: "ello C. Harpsichord and Cello" },
                 { id: 'd', text: "Flute and Violin" }
             ],
             correctAnswerId: 'c',
@@ -1719,7 +1719,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
                 { id: 'a', text: "Inversion" },
                 { id: 'b', text: "Descending Sequence" },
                 { id: 'c', text: "Retrograde" },
-                { id: 'd', text: "escending Sequence" }
+                { id: 'd', text: "escending Sequence C. Retrograde D. Pedal Point" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1729,7 +1729,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             text: "Look at the Cello part (V3) in Bars 1–3. What is the most accurate description of this bass style?",
             options: [
                 { id: 'a', text: "Walking Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B. Alberti Bass" },
                 { id: 'c', text: "Ground Bass (Ostinato)" },
                 { id: 'd', text: "Slap Bass" }
             ],
@@ -1742,7 +1742,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             options: [
                 { id: 'a', text: "Imperfect Cadence (I-V)" },
                 { id: 'b', text: "Plagal Cadence (IV-I)" },
-                { id: 'c', text: "adence (I-V)" },
+                { id: 'c', text: "adence (I-V) B. Plagal Cadence (IV-I) C. Perfect Cadence (V-I)" },
                 { id: 'd', text: "Interrupted Cadence (V-vi)" }
             ],
             correctAnswerId: 'c',
@@ -1754,7 +1754,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             options: [
                 { id: 'a', text: "Chromaticism" },
                 { id: 'b', text: "Arpeggiation" },
-                { id: 'c', text: "hromaticism" },
+                { id: 'c', text: "hromaticism B. Arpeggiation C. Syncopation" },
                 { id: 'd', text: "Trill" }
             ],
             correctAnswerId: 'b',
@@ -1767,7 +1767,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
                 { id: 'a', text: "Tonic Pedal" },
                 { id: 'b', text: "Dominant Pedal/Reinforcement" },
                 { id: 'c', text: "Subdominant Pedal" },
-                { id: 'd', text: "ominant Pedal/Reinforcement" }
+                { id: 'd', text: "ominant Pedal/Reinforcement C. Subdominant Pedal D. Relative Minor Pivot" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -1809,6 +1809,18 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             explanation: ""
         },
         {
+            id: 'q16',
+            text: "Look at the final chord in Bar 16. Which notes are present in the ensemble to form the D Major triad?",
+            options: [
+                { id: 'a', text: "D, G, B" },
+                { id: 'b', text: "B. D, F#, A" },
+                { id: 'c', text: "D, E, A" },
+                { id: 'd', text: ", G, B B. D, F#, A C. D, E, A D. D, F, A" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
             id: 'q17',
             text: "What is the interval between the first and second notes of the Flute part in Bar 1 (D to F#)?",
             options: [
@@ -1838,7 +1850,7 @@ V:3 name="Cello / Basso" snm="Vc." clef=bass
             options: [
                 { id: 'a', text: "Use of the Piano for dynamics" },
                 { id: 'b', text: "Use of Basso Continuo" },
-                { id: 'c', text: "ontinuo" },
+                { id: 'c', text: "ontinuo C. Large percussion section" },
                 { id: 'd', text: "Twelve-tone serialism" }
             ],
             correctAnswerId: 'b',
@@ -1903,7 +1915,7 @@ V:3 clef=bass name="Basso Continuo"
             text: "What is the precise tempo in Beats Per Minute (BPM) as indicated in the score?",
             options: [
                 { id: 'a', text: "80 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B) 100 BPM" },
                 { id: 'c', text: "120 BPM" },
                 { id: 'd', text: "144 BPM" }
             ],
@@ -1917,7 +1929,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "A Major" },
                 { id: 'c', text: "D Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major D) B Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -1976,7 +1988,7 @@ V:3 clef=bass name="Basso Continuo"
             options: [
                 { id: 'a', text: "Imperfect Cadence" },
                 { id: 'b', text: "Interrupted Cadence" },
-                { id: 'c', text: "adence" },
+                { id: 'c', text: "adence B) Interrupted Cadence C) Plagal Cadence" },
                 { id: 'd', text: "Perfect Cadence (V-I)" }
             ],
             correctAnswerId: 'd',
@@ -2001,7 +2013,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "E Minor" },
                 { id: 'b', text: "A Major (The Dominant)" },
                 { id: 'c', text: "F# Minor" },
-                { id: 'd', text: "ominant)" }
+                { id: 'd', text: "ominant) C) F# Minor D) C Major" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -2013,7 +2025,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "Relative Minor" },
                 { id: 'b', text: "Subdominant" },
                 { id: 'c', text: "Dominant" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant D) Parallel Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2023,9 +2035,9 @@ V:3 clef=bass name="Basso Continuo"
             text: "In Bar 12, the Basso Continuo (V3) repeats the note A. What harmonic device is this?",
             options: [
                 { id: 'a', text: "Ground Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B) Dominant Pedal" },
                 { id: 'c', text: "Tonic Pedal" },
-                { id: 'd', text: "ominant Pedal" }
+                { id: 'd', text: "ominant Pedal C) Tonic Pedal D) Alberti Bass" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -2096,7 +2108,7 @@ V:3 clef=bass name="Basso Continuo"
             options: [
                 { id: 'a', text: "Treble Clef" },
                 { id: 'b', text: "Alto Clef" },
-                { id: 'c', text: "lef" },
+                { id: 'c', text: "lef B) Alto Clef C) Bass Clef" },
                 { id: 'd', text: "Tenor Clef" }
             ],
             correctAnswerId: 'c',
@@ -2202,7 +2214,7 @@ w: 5 6 #`,
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "D Major" },
                 { id: 'c', text: "A Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major C) A Major D) B Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -2225,8 +2237,8 @@ w: 5 6 #`,
             options: [
                 { id: 'a', text: "Scalic and conjunct" },
                 { id: 'b', text: "Chromatic" },
-                { id: 'c', text: "hromatic" },
-                { id: 'd', text: "isjunct and triadic" }
+                { id: 'c', text: "hromatic C) Disjunct and triadic" },
+                { id: 'd', text: "isjunct and triadic D) Monophonic" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2249,8 +2261,8 @@ w: 5 6 #`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Diminuendo" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "iminuendo" }
+                { id: 'c', text: "rescendo B) Diminuendo C) Terraced Dynamics" },
+                { id: 'd', text: "iminuendo C) Terraced Dynamics D) Sforzando" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2262,7 +2274,7 @@ w: 5 6 #`,
                 { id: 'a', text: "Syncopation" },
                 { id: 'b', text: "Dotted rhythms" },
                 { id: 'c', text: "Triplets" },
-                { id: 'd', text: "otted rhythms" }
+                { id: 'd', text: "otted rhythms C) Triplets D) Hemiola" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2285,7 +2297,7 @@ w: 5 6 #`,
             options: [
                 { id: 'a', text: "Treble Clef" },
                 { id: 'b', text: "Bass Clef" },
-                { id: 'c', text: "lef" },
+                { id: 'c', text: "lef B) Bass Clef C) Alto Clef" },
                 { id: 'd', text: "Tenor Clef" }
             ],
             correctAnswerId: 'c',
@@ -2308,7 +2320,7 @@ w: 5 6 #`,
             text: "The Basso Continuo in Bars 5–7 moves in steady octaves. This style of moving bassline is known as a:",
             options: [
                 { id: 'a', text: "Walking Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B) Alberti Bass" },
                 { id: 'c', text: "Murky Bass" },
                 { id: 'd', text: "Pedal Point" }
             ],
@@ -2345,8 +2357,8 @@ w: 5 6 #`,
             options: [
                 { id: 'a', text: "Arpeggiated" },
                 { id: 'b', text: "Scalic/Conjunct" },
-                { id: 'c', text: "onjunct" },
-                { id: 'd', text: "isjunct" }
+                { id: 'c', text: "onjunct C) Disjunct" },
+                { id: 'd', text: "isjunct D) Whole-tone" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -2392,8 +2404,8 @@ w: 5 6 #`,
             text: "Which of the following Baroque characteristics is NOT present in this score?",
             options: [
                 { id: 'a', text: "Use of Basso Continuo" },
-                { id: 'b', text: "asso Continuo" },
-                { id: 'c', text: "ontinuo" },
+                { id: 'b', text: "asso Continuo B) Clear diatonic tonality" },
+                { id: 'c', text: "ontinuo B) Clear diatonic tonality C) Use of a Clarinet solo" },
                 { id: 'd', text: "Sequence and repetition" }
             ],
             correctAnswerId: 'c',
@@ -2470,7 +2482,7 @@ V:5 clef=bass
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "A Major" },
                 { id: 'c', text: "**D Major**" },
-                { id: 'd', text: "Major**" }
+                { id: 'd', text: "Major** D. B Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2493,7 +2505,7 @@ V:5 clef=bass
             options: [
                 { id: 'a', text: "Violin I and Violin II" },
                 { id: 'b', text: "Violin I and Cello" },
-                { id: 'c', text: "ello" },
+                { id: 'c', text: "ello C. **Cello and Harpsichord**" },
                 { id: 'd', text: "Harpsichord and Violin II" }
             ],
             correctAnswerId: 'c',
@@ -2528,7 +2540,7 @@ V:5 clef=bass
             text: "Examine the Cello (V3) and Harpsichord LH (V5) in Bar 1. Which harmonic device is used here?",
             options: [
                 { id: 'a', text: "Ground Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B. **Tonic Pedal**" },
                 { id: 'c', text: "Walking Bass" },
                 { id: 'd', text: "Sequence" }
             ],
@@ -2542,7 +2554,7 @@ V:5 clef=bass
                 { id: 'a', text: "**Dominant Pedal**" },
                 { id: 'b', text: "Inverted Pedal" },
                 { id: 'c', text: "Tierce de Picardie" },
-                { id: 'd', text: "ominant Pedal**" }
+                { id: 'd', text: "ominant Pedal** B. Inverted Pedal C. Tierce de Picardie D. Circle of Fifths" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -2566,7 +2578,7 @@ V:5 clef=bass
                 { id: 'a', text: "Syncopation" },
                 { id: 'b', text: "Dotted rhythms" },
                 { id: 'c', text: "**Triplet**" },
-                { id: 'd', text: "otted rhythms" }
+                { id: 'd', text: "otted rhythms C. **Triplet** D. Anacrusis" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2612,7 +2624,7 @@ V:5 clef=bass
             text: "The title \"Ritornello\" suggests that this music is likely:",
             options: [
                 { id: 'a', text: "**A recurring theme in a Baroque concerto**" },
-                { id: 'b', text: "aroque concerto**" },
+                { id: 'b', text: "aroque concerto** B. A sacred motet for a choir" },
                 { id: 'c', text: "A movement from a solo keyboard suite" },
                 { id: 'd', text: "An improvisational cadenza" }
             ],
@@ -2637,7 +2649,7 @@ V:5 clef=bass
             options: [
                 { id: 'a', text: "One (F#)" },
                 { id: 'b', text: "**Two (F# and C#)**" },
-                { id: 'c', text: "#)**" },
+                { id: 'c', text: "#)** C. Three (F#, C#, and G#)" },
                 { id: 'd', text: "None" }
             ],
             correctAnswerId: 'b',
@@ -2709,7 +2721,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             text: "What is the specific BPM (Beats Per Minute) for this piece?",
             options: [
                 { id: 'a', text: "120 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B. 112 BPM" },
                 { id: 'c', text: "100 BPM" },
                 { id: 'd', text: "96 BPM" }
             ],
@@ -2723,7 +2735,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "A Major" },
                 { id: 'c', text: "D Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major D. B Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2735,7 +2747,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
                 { id: 'a', text: "2/4 (Simple Duple)" },
                 { id: 'b', text: "3/4 (Simple Triple)" },
                 { id: 'c', text: "4/4 (Simple Quadruple)" },
-                { id: 'd', text: "uple)" }
+                { id: 'd', text: "uple) B. 3/4 (Simple Triple) C. 4/4 (Simple Quadruple) D. 6/8 (Compound Duple)" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2771,7 +2783,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
                 { id: 'a', text: "Augmentation" },
                 { id: 'b', text: "Diminution" },
                 { id: 'c', text: "Descending Sequence" },
-                { id: 'd', text: "iminution" }
+                { id: 'd', text: "iminution C. Descending Sequence D. Retrograde" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -2781,7 +2793,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             text: "Look at the Basso Continuo in Bars 7–8. This style of moving bass line, characterized by steady quarter-note movement, is known as:",
             options: [
                 { id: 'a', text: "Walking Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B. Murky Bass" },
                 { id: 'c', text: "Staccato Bass" },
                 { id: 'd', text: "Ostinato" }
             ],
@@ -2794,7 +2806,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Imperfect Cadence (I-V)" },
                 { id: 'b', text: "Plagal Cadence (IV-I)" },
-                { id: 'c', text: "adence (I-V)" },
+                { id: 'c', text: "adence (I-V) B. Plagal Cadence (IV-I) C. Interrupted Cadence (V-vi)" },
                 { id: 'd', text: "Perfect Cadence (V-I)" }
             ],
             correctAnswerId: 'd',
@@ -2806,7 +2818,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Treble Clef" },
                 { id: 'b', text: "Bass Clef" },
-                { id: 'c', text: "lef" },
+                { id: 'c', text: "lef B. Bass Clef C. Alto Clef" },
                 { id: 'd', text: "Tenor Clef" }
             ],
             correctAnswerId: 'c',
@@ -2842,7 +2854,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Flute and Harp" },
                 { id: 'b', text: "Cello and Harpsichord" },
-                { id: 'c', text: "ello and Harpsichord" },
+                { id: 'c', text: "ello and Harpsichord C. Trumpet and Organ" },
                 { id: 'd', text: "Violin and Viola" }
             ],
             correctAnswerId: 'b',
@@ -2890,7 +2902,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Changes every measure" },
                 { id: 'b', text: "Changes every half-bar (minims)" },
-                { id: 'c', text: "hanges every measure" },
+                { id: 'c', text: "hanges every measure B. Changes every half-bar (minims) C. Changes once every four measures" },
                 { id: 'd', text: "No harmonic changes" }
             ],
             correctAnswerId: 'b',
@@ -2902,7 +2914,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "Ripieno" },
                 { id: 'b', text: "Concertino" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino C. Tutti" },
                 { id: 'd', text: "Continuo" }
             ],
             correctAnswerId: 'b',
@@ -2914,7 +2926,7 @@ V:4 name="Basso Continuo" snm="B.C." clef=bass
             options: [
                 { id: 'a', text: "One (F#)" },
                 { id: 'b', text: "Two (F#, C#)" },
-                { id: 'c', text: "#)" },
+                { id: 'c', text: "#) C. Three (F#, C#, G#)" },
                 { id: 'd', text: "Zero" }
             ],
             correctAnswerId: 'b',
@@ -2990,8 +3002,8 @@ V:4 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "D Major" },
-                { id: 'c', text: "Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "Major B. D Major C. G Major" },
+                { id: 'd', text: "Major C. G Major D. E Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3014,7 +3026,7 @@ V:4 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Chromaticism" },
                 { id: 'b', text: "Arpeggio / Broken Chord" },
-                { id: 'c', text: "hromaticism" },
+                { id: 'c', text: "hromaticism B. Arpeggio / Broken Chord C. Glissando" },
                 { id: 'd', text: "Mordent" }
             ],
             correctAnswerId: 'b',
@@ -3062,7 +3074,7 @@ V:4 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Plagal Cadence (IV - I)" },
                 { id: 'b', text: "Imperfect Cadence (I - V)" },
-                { id: 'c', text: "adence (IV - I)" },
+                { id: 'c', text: "adence (IV - I) B. Imperfect Cadence (I - V) C. Interrupted Cadence (V - VI)" },
                 { id: 'd', text: "Perfect Cadence (V - I)" }
             ],
             correctAnswerId: 'd',
@@ -3073,8 +3085,8 @@ V:4 name="Basso Continuo" clef=bass
             text: "Which two instruments are most likely acting as the \"Concertino\" group in this fragment?",
             options: [
                 { id: 'a', text: "Harpsichord and Basso Continuo" },
-                { id: 'b', text: "asso Continuo" },
-                { id: 'c', text: "ontinuo" },
+                { id: 'b', text: "asso Continuo B. Violin and Oboe" },
+                { id: 'c', text: "ontinuo B. Violin and Oboe C. Violin and Harpsichord" },
                 { id: 'd', text: "Oboe and Basso Continuo" }
             ],
             correctAnswerId: 'b',
@@ -3099,7 +3111,7 @@ V:4 name="Basso Continuo" clef=bass
                 { id: 'a', text: "Large disjunct leaps" },
                 { id: 'b', text: "Static on one note" },
                 { id: 'c', text: "Descending scalic (conjunct) motion" },
-                { id: 'd', text: "escending scalic (conjunct) motion" }
+                { id: 'd', text: "escending scalic (conjunct) motion D. Ascending chromaticism" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3134,7 +3146,7 @@ V:4 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Classical" },
                 { id: 'b', text: "Romantic" },
-                { id: 'c', text: "lassical" },
+                { id: 'c', text: "lassical B. Romantic C. Baroque" },
                 { id: 'd', text: "Renaissance" }
             ],
             correctAnswerId: 'c',
@@ -3159,7 +3171,7 @@ V:4 name="Basso Continuo" clef=bass
                 { id: 'a', text: "Tonic to Subdominant" },
                 { id: 'b', text: "Tonic to Relative Minor" },
                 { id: 'c', text: "Tonic to Dominant" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant D. Tonic to Supertonic" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3170,7 +3182,7 @@ V:4 name="Basso Continuo" clef=bass
             options: [
                 { id: 'a', text: "Quarter notes (Crotchets)" },
                 { id: 'b', text: "Half notes (Minims)" },
-                { id: 'c', text: "rotchets)" },
+                { id: 'c', text: "rotchets) B. Half notes (Minims) C. Eighth notes (Quavers)" },
                 { id: 'd', text: "Sixteenth notes (Semiquavers)" }
             ],
             correctAnswerId: 'c',
@@ -3193,9 +3205,9 @@ V:4 name="Basso Continuo" clef=bass
             text: "Which Baroque feature is NOT explicitly present in this printed score?",
             options: [
                 { id: 'a', text: "Basso Continuo" },
-                { id: 'b', text: "asso Continuo" },
-                { id: 'c', text: "ontinuo" },
-                { id: 'd', text: "ynamics markings (p/f)" }
+                { id: 'b', text: "asso Continuo B. Terraced Dynamics markings (p/f)" },
+                { id: 'c', text: "ontinuo B. Terraced Dynamics markings (p/f) C. Diatonic harmony" },
+                { id: 'd', text: "ynamics markings (p/f) C. Diatonic harmony D. Imitative texture" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -3253,7 +3265,7 @@ V:3 clef=bass name="Basso Continuo"
             text: "What is the precise tempo of the piece in beats per minute (BPM)?",
             options: [
                 { id: 'a', text: "100 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B. 120 BPM" },
                 { id: 'c', text: "140 BPM" },
                 { id: 'd', text: "60 BPM" }
             ],
@@ -3265,9 +3277,9 @@ V:3 clef=bass name="Basso Continuo"
             text: "Identify the primary key of the piece.",
             options: [
                 { id: 'a', text: "G Major" },
-                { id: 'b', text: "A Major /" },
+                { id: 'b', text: "A Major /C. D Major" },
                 { id: 'c', text: "D Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major D. B Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3290,7 +3302,7 @@ V:3 clef=bass name="Basso Continuo"
             options: [
                 { id: 'a', text: "Flute" },
                 { id: 'b', text: "Cello or Viola da Gamba" },
-                { id: 'c', text: "ello or Viola da Gamba" },
+                { id: 'c', text: "ello or Viola da Gamba C. Trumpet" },
                 { id: 'd', text: "Violin" }
             ],
             correctAnswerId: 'b',
@@ -3303,7 +3315,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "Syncopation" },
                 { id: 'b', text: "Dotted rhythms" },
                 { id: 'c', text: "Triplets" },
-                { id: 'd', text: "otted rhythms" }
+                { id: 'd', text: "otted rhythms C. Triplets D. Lombardic rhythms" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3314,7 +3326,7 @@ V:3 clef=bass name="Basso Continuo"
             options: [
                 { id: 'a', text: "Perfect Cadence (V-I)" },
                 { id: 'b', text: "Plagal Cadence (IV-I)" },
-                { id: 'c', text: "adence (V-I)" },
+                { id: 'c', text: "adence (V-I) B. Plagal Cadence (IV-I) C. Imperfect Cadence (I-V)" },
                 { id: 'd', text: "Interrupted Cadence (V-vi)" }
             ],
             correctAnswerId: 'c',
@@ -3327,7 +3339,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "Pedal point" },
                 { id: 'b', text: "Descending sequence" },
                 { id: 'c', text: "Ground bass" },
-                { id: 'd', text: "escending sequence" }
+                { id: 'd', text: "escending sequence C. Ground bass D. Inverted drone" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -3350,7 +3362,7 @@ V:3 clef=bass name="Basso Continuo"
             options: [
                 { id: 'a', text: "Monophonic" },
                 { id: 'b', text: "Polyphonic (Contrapuntal)" },
-                { id: 'c', text: "ontrapuntal)" },
+                { id: 'c', text: "ontrapuntal) C. Heterophonic" },
                 { id: 'd', text: "Strictly Chordal" }
             ],
             correctAnswerId: 'b',
@@ -3361,7 +3373,7 @@ V:3 clef=bass name="Basso Continuo"
             text: "What is the term for the steady, eighth-note (quaver) movement found in the bass line (e.g., Bar 3)?",
             options: [
                 { id: 'a', text: "Alberti Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B. Walking Bass" },
                 { id: 'c', text: "Murky Bass" },
                 { id: 'd', text: "Ostinato" }
             ],
@@ -3387,7 +3399,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "Glissando" },
                 { id: 'b', text: "Fioritura (or Melodic Decoration)" },
                 { id: 'c', text: "Mordent" },
-                { id: 'd', text: "ecoration)" }
+                { id: 'd', text: "ecoration) C. Mordent D. Trill" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -3410,8 +3422,20 @@ V:3 clef=bass name="Basso Continuo"
             options: [
                 { id: 'a', text: "Imperfect Cadence" },
                 { id: 'b', text: "Perfect Cadence" },
-                { id: 'c', text: "adence" },
+                { id: 'c', text: "adence B. Perfect Cadence C. Plagal Cadence" },
                 { id: 'd', text: "Phrygian Cadence" }
+            ],
+            correctAnswerId: 'b',
+            explanation: ""
+        },
+        {
+            id: 'q16',
+            text: "Which note acts as the 'Leading Note' in this piece's key?",
+            options: [
+                { id: 'a', text: "G#" },
+                { id: 'b', text: "C#" },
+                { id: 'c', text: "# C. F#" },
+                { id: 'd', text: "E#" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -3423,7 +3447,7 @@ V:3 clef=bass name="Basso Continuo"
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "D Major" },
                 { id: 'c', text: "A Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major C. A Major D. E Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -3513,7 +3537,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
             text: "Which Beats Per Minute (BPM) setting corresponds to the tempo of this piece?",
             options: [
                 { id: 'a', text: "60 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B. 90 BPM" },
                 { id: 'c', text: "112 BPM" },
                 { id: 'd', text: "140 BPM" }
             ],
@@ -3527,7 +3551,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
                 { id: 'a', text: "D Major" },
                 { id: 'b', text: "B Minor" },
                 { id: 'c', text: "G Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major B. B Minor C. G Major D. A Major" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -3562,7 +3586,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Terraced dynamics" },
-                { id: 'c', text: "rescendo" },
+                { id: 'c', text: "rescendo B. Terraced dynamics C. Sforzando" },
                 { id: 'd', text: "Diminuendo" }
             ],
             correctAnswerId: 'b',
@@ -3633,7 +3657,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
             text: "Based on the structure, what form does this movement suggest, particularly with the return of the opening theme at Bar 13?",
             options: [
                 { id: 'a', text: "Binary Form" },
-                { id: 'b', text: "inary Form" },
+                { id: 'b', text: "inary Form B. Theme and Variations" },
                 { id: 'c', text: "Ritornello Form" },
                 { id: 'd', text: "Fugue" }
             ],
@@ -3671,7 +3695,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
                 { id: 'a', text: "Static bass" },
                 { id: 'b', text: "Drone" },
                 { id: 'c', text: "Walking bass" },
-                { id: 'd', text: "rone" }
+                { id: 'd', text: "rone C. Walking bass D. Ground bass" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3682,7 +3706,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
             options: [
                 { id: 'a', text: "Ripieno" },
                 { id: 'b', text: "Concertino" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino C. Tutti" },
                 { id: 'd', text: "Continuo" }
             ],
             correctAnswerId: 'b',
@@ -3693,7 +3717,7 @@ D,4 F,4 A,4 D4 | G,4 E,4 F,4 D,4 | A,4 A,,4 A,4 A,,4 | D,4 A,,4 D,8 |]`,
             text: "Which of the following composers is NOT associated with the Baroque period?",
             options: [
                 { id: 'a', text: "J.S. Bach" },
-                { id: 'b', text: "ach" },
+                { id: 'b', text: "ach B. A. Vivaldi" },
                 { id: 'c', text: "G.F. Handel" },
                 { id: 'd', text: "W.A. Mozart" }
             ],
@@ -3814,8 +3838,8 @@ K:G
             options: [
                 { id: 'a', text: "C Major" },
                 { id: 'b', text: "D Major" },
-                { id: 'c', text: "Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "Major B) D Major C) G Major" },
+                { id: 'd', text: "Major C) G Major D) E Minor" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -3825,7 +3849,7 @@ K:G
             text: "What is the formal structure indicated by the return of the opening theme in Bars 9–12?",
             options: [
                 { id: 'a', text: "Binary Form" },
-                { id: 'b', text: "inary Form" },
+                { id: 'b', text: "inary Form B) Ritornello Form" },
                 { id: 'c', text: "Sonata Form" },
                 { id: 'd', text: "Variation Form" }
             ],
@@ -3839,7 +3863,7 @@ K:G
                 { id: 'a', text: "Syncopation" },
                 { id: 'b', text: "Dotted rhythms" },
                 { id: 'c', text: "Triplets" },
-                { id: 'd', text: "otted rhythms" }
+                { id: 'd', text: "otted rhythms C) Triplets D) Hemiola" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -3861,7 +3885,7 @@ K:G
             text: "Which harmonic device is used in the Basso Continuo (V5/V7) during Bars 1 and 2?",
             options: [
                 { id: 'a', text: "Ground Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B) Tonic Pedal" },
                 { id: 'c', text: "Alberti Bass" },
                 { id: 'd', text: "Chromatic Ascent" }
             ],
@@ -3874,7 +3898,7 @@ K:G
             options: [
                 { id: 'a', text: "Cadenza" },
                 { id: 'b', text: "Episode" },
-                { id: 'c', text: "adenza" },
+                { id: 'c', text: "adenza B) Episode C) Coda" },
                 { id: 'd', text: "Bridge" }
             ],
             correctAnswerId: 'b',
@@ -3898,7 +3922,7 @@ K:G
             options: [
                 { id: 'a', text: "Concertino" },
                 { id: 'b', text: "Basso Continuo" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino B) Basso Continuo C) Ripieno" },
                 { id: 'd', text: "Obbligato" }
             ],
             correctAnswerId: 'b',
@@ -3935,7 +3959,7 @@ K:G
                 { id: 'a', text: "Semiquavers" },
                 { id: 'b', text: "Demisemiquavers" },
                 { id: 'c', text: "Quavers" },
-                { id: 'd', text: "emisemiquavers" }
+                { id: 'd', text: "emisemiquavers C) Quavers D) Crochets" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -3994,8 +4018,8 @@ K:G
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Terraced dynamics" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "iminuendo" }
+                { id: 'c', text: "rescendo B) Terraced dynamics C) Diminuendo" },
+                { id: 'd', text: "iminuendo D) Sforzando" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4055,7 +4079,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
             options: [
                 { id: 'a', text: "Classical" },
                 { id: 'b', text: "Baroque" },
-                { id: 'c', text: "lassical" },
+                { id: 'c', text: "lassical B. Baroque C. Romantic" },
                 { id: 'd', text: "Twentieth Century" }
             ],
             correctAnswerId: 'b',
@@ -4066,9 +4090,9 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
             text: "Which instrument plays the bass line in this extract?",
             options: [
                 { id: 'a', text: "Double Bass and Tuba" },
-                { id: 'b', text: "ass and Tuba" },
-                { id: 'c', text: "ello (part of the Basso Continuo)" },
-                { id: 'd', text: "ouble Bass and Tuba" }
+                { id: 'b', text: "ass and Tuba B. Cello (part of the Basso Continuo)" },
+                { id: 'c', text: "ello (part of the Basso Continuo) C. Piano" },
+                { id: 'd', text: "ouble Bass and Tuba B. Cello (part of the Basso Continuo) C. Piano D. Synthesizer" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4091,8 +4115,8 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Diminuendo" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "iminuendo" }
+                { id: 'c', text: "rescendo B. Diminuendo C. Terraced Dynamics" },
+                { id: 'd', text: "iminuendo C. Terraced Dynamics D. Sforzando" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -4104,7 +4128,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
                 { id: 'a', text: "Ascending Sequence" },
                 { id: 'b', text: "Descending Sequence" },
                 { id: 'c', text: "Pedal Note" },
-                { id: 'd', text: "escending Sequence" }
+                { id: 'd', text: "escending Sequence C. Pedal Note D. Inversion" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4140,7 +4164,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
                 { id: 'a', text: "G Major" },
                 { id: 'b', text: "G Minor" },
                 { id: 'c', text: "D Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major D. B Flat Major" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4163,7 +4187,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
             options: [
                 { id: 'a', text: "Concertino" },
                 { id: 'b', text: "Ripieno / Tutti" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino B. Ripieno / Tutti C. Soloist" },
                 { id: 'd', text: "Quartet" }
             ],
             correctAnswerId: 'b',
@@ -4224,7 +4248,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
                 { id: 'a', text: "Neapolitan Sixth" },
                 { id: 'b', text: "Dominant Seventh" },
                 { id: 'c', text: "Tierce de Picardie" },
-                { id: 'd', text: "ominant Seventh" }
+                { id: 'd', text: "ominant Seventh C. Tierce de Picardie D. Suspension" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -4248,7 +4272,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
                 { id: 'a', text: "Dominant" },
                 { id: 'b', text: "Subdominant" },
                 { id: 'c', text: "Relative Major" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant B. Subdominant C. Relative Major D. Relative Minor" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -4272,7 +4296,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
                 { id: 'a', text: "The Doctrine of the Affections" },
                 { id: 'b', text: "Programme Music" },
                 { id: 'c', text: "Nationalism" },
-                { id: 'd', text: "octrine of the Affections" }
+                { id: 'd', text: "octrine of the Affections B. Programme Music C. Nationalism D. Minimalism" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -4283,7 +4307,7 @@ G,4 B,,4 | E,4 D,4 | C,4 A,,4 | G,,4 z4 ||`,
             options: [
                 { id: 'a', text: "Treble Clef" },
                 { id: 'b', text: "Alto Clef" },
-                { id: 'c', text: "lef" },
+                { id: 'c', text: "lef B. Alto Clef C. Tenor Clef" },
                 { id: 'd', text: "Bass Clef *** ### **" }
             ],
             correctAnswerId: 'd',
@@ -4340,7 +4364,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             text: "What is the approximate speed (BPM) of this extract?",
             options: [
                 { id: 'a', text: "60 BPM" },
-                { id: 'b', text: "PM" },
+                { id: 'b', text: "PM B. 90 BPM" },
                 { id: 'c', text: "120 BPM" },
                 { id: 'd', text: "160 BPM" }
             ],
@@ -4352,8 +4376,8 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             text: "Which period of music is this extract from?",
             options: [
                 { id: 'a', text: "Baroque" },
-                { id: 'b', text: "aroque" },
-                { id: 'c', text: "lassical" },
+                { id: 'b', text: "aroque B. Classical" },
+                { id: 'c', text: "lassical C. Romantic" },
                 { id: 'd', text: "Twentieth Century" }
             ],
             correctAnswerId: 'a',
@@ -4365,7 +4389,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "Monophonic" },
                 { id: 'b', text: "Polyphonic / Contrapuntal" },
-                { id: 'c', text: "ontrapuntal" },
+                { id: 'c', text: "ontrapuntal C. Homophonic (Melody and Accompaniment)" },
                 { id: 'd', text: "Heterophonic" }
             ],
             correctAnswerId: 'c',
@@ -4377,7 +4401,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "The full orchestra (Tutti)" },
                 { id: 'b', text: "The Concertino (Soloists)" },
-                { id: 'c', text: "oncertino (Soloists)" },
+                { id: 'c', text: "oncertino (Soloists) C. The Brass section" },
                 { id: 'd', text: "The Percussion section" }
             ],
             correctAnswerId: 'b',
@@ -4388,7 +4412,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             text: "What is the name given to the continuous bass part played by the Cello and Harpsichord?",
             options: [
                 { id: 'a', text: "Ground Bass" },
-                { id: 'b', text: "ass" },
+                { id: 'b', text: "ass B. Walking Bass" },
                 { id: 'c', text: "Alberti Bass" },
                 { id: 'd', text: "Basso Continuo" }
             ],
@@ -4401,8 +4425,8 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "Pedal Note" },
                 { id: 'b', text: "Circle of Fifths" },
-                { id: 'c', text: "ircle of Fifths" },
-                { id: 'd', text: "rone" }
+                { id: 'c', text: "ircle of Fifths C. Drone" },
+                { id: 'd', text: "rone D. Tierce de Picardie" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4437,7 +4461,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "A Minor (no sharps or flats)" },
                 { id: 'b', text: "C Major (no sharps or flats)" },
-                { id: 'c', text: "Major (no sharps or flats)" },
+                { id: 'c', text: "Major (no sharps or flats) C. G Major (one sharp)" },
                 { id: 'd', text: "F Major (one flat)" }
             ],
             correctAnswerId: 'a',
@@ -4473,7 +4497,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "Concertino" },
                 { id: 'b', text: "Ripieno / Tutti" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino B. Ripieno / Tutti C. Soloist" },
                 { id: 'd', text: "Quartet" }
             ],
             correctAnswerId: 'b',
@@ -4496,7 +4520,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             text: "Which composer is a 'Focus Composer' for this Area of Study in the 2026 syllabus?",
             options: [
                 { id: 'a', text: "Bach" },
-                { id: 'b', text: "ach" },
+                { id: 'b', text: "ach B. Vivaldi" },
                 { id: 'c', text: "Mozart" },
                 { id: 'd', text: "Beethoven" }
             ],
@@ -4510,7 +4534,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
                 { id: 'a', text: "Unison" },
                 { id: 'b', text: "Parallel motion" },
                 { id: 'c', text: "Imitation (or Dialogue)" },
-                { id: 'd', text: "ialogue)" }
+                { id: 'd', text: "ialogue) D. Monophony" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4521,8 +4545,8 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Diminuendo" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "iminuendo" }
+                { id: 'c', text: "rescendo B. Diminuendo C. Terraced Dynamics" },
+                { id: 'd', text: "iminuendo C. Terraced Dynamics D. Sforzando" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -4546,7 +4570,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
                 { id: 'a', text: "Suspension (4-3)" },
                 { id: 'b', text: "Pedal Note" },
                 { id: 'c', text: "Drone" },
-                { id: 'd', text: "rone" }
+                { id: 'd', text: "rone D. Cluster" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -4557,7 +4581,7 @@ D,4 F,4 | E,4 A,4 | E,4 E,4 | A,,4 z2 ||`,
             options: [
                 { id: 'a', text: "Solo Concerto" },
                 { id: 'b', text: "Concerto Grosso" },
-                { id: 'c', text: "oncerto" },
+                { id: 'c', text: "oncerto B. Concerto Grosso C. Symphony" },
                 { id: 'd', text: "Sonata *** ### **" }
             ],
             correctAnswerId: 'b',
@@ -4618,7 +4642,7 @@ G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
             options: [
                 { id: 'a', text: "Violin II" },
                 { id: 'b', text: "Cello" },
-                { id: 'c', text: "ello" },
+                { id: 'c', text: "ello C. Violin I" },
                 { id: 'd', text: "Viola" }
             ],
             correctAnswerId: 'c',
@@ -4630,7 +4654,7 @@ G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
             options: [
                 { id: 'a', text: "The Answer" },
                 { id: 'b', text: "The Counter-subject" },
-                { id: 'c', text: "ounter-subject" },
+                { id: 'c', text: "ounter-subject C. The Inversion" },
                 { id: 'd', text: "The Retrograde" }
             ],
             correctAnswerId: 'a',
@@ -4654,7 +4678,7 @@ G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
             options: [
                 { id: 'a', text: "Tonic Pedal" },
                 { id: 'b', text: "Circle of Fifths" },
-                { id: 'c', text: "ircle of Fifths" },
+                { id: 'c', text: "ircle of Fifths C. Walking Bass (Scalic descent)" },
                 { id: 'd', text: "Ground Bass" }
             ],
             correctAnswerId: 'c',
@@ -4691,7 +4715,7 @@ G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
                 { id: 'a', text: "Tonic and Subdominant" },
                 { id: 'b', text: "Tonic and Dominant" },
                 { id: 'c', text: "Relative Major" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant C. Relative Major D. Relative Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4713,7 +4737,7 @@ G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
             text: "Which composer is a Focus Composer for this Area of Study?",
             options: [
                 { id: 'a', text: "Beethoven" },
-                { id: 'b', text: "eethoven" },
+                { id: 'b', text: "eethoven B. Haydn" },
                 { id: 'c', text: "Handel" },
                 { id: 'd', text: "Schubert" }
             ],
@@ -4798,7 +4822,7 @@ G,2 =B,,2 G,,2 | C,2 F,2 G,2 | [K:C] C,6 ||`,
             options: [
                 { id: 'a', text: "The Conductor" },
                 { id: 'b', text: "The Harpsichord player (realizing the figured bass)" },
-                { id: 'c', text: "onductor" },
+                { id: 'c', text: "onductor B. The Harpsichord player (realizing the figured bass) C. The Timpanist" },
                 { id: 'd', text: "The Soloist" }
             ],
             correctAnswerId: 'b',
@@ -4890,7 +4914,7 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
                 { id: 'a', text: "2/4 (Simple Duple)" },
                 { id: 'b', text: "3/4 (Simple Triple)" },
                 { id: 'c', text: "6/8 (Compound Duple)" },
-                { id: 'd', text: "uple)" }
+                { id: 'd', text: "uple) B. 3/4 (Simple Triple) C. 6/8 (Compound Duple) D. 9/8 (Compound Triple)" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -4924,9 +4948,9 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
             text: "Which instrument plays the bass line?",
             options: [
                 { id: 'a', text: "Double Bass (pizzicato)" },
-                { id: 'b', text: "ass (pizzicato)" },
-                { id: 'c', text: "ello (part of the Basso Continuo)" },
-                { id: 'd', text: "ouble Bass (pizzicato)" }
+                { id: 'b', text: "ass (pizzicato) B. Cello (part of the Basso Continuo)" },
+                { id: 'c', text: "ello (part of the Basso Continuo) C. Tuba" },
+                { id: 'd', text: "ouble Bass (pizzicato) B. Cello (part of the Basso Continuo) C. Tuba D. Bass Guitar" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4938,7 +4962,7 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
                 { id: 'a', text: "Drone" },
                 { id: 'b', text: "Dominant Pedal / Oscillation" },
                 { id: 'c', text: "Chromatic scale" },
-                { id: 'd', text: "rone" }
+                { id: 'd', text: "rone B. Dominant Pedal / Oscillation C. Chromatic scale D. Alberti Bass" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -4996,7 +5020,7 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
             text: "This piece is a \"Gigue\" (Jig). Which suite of dances does the Gigue typically belong to in this era?",
             options: [
                 { id: 'a', text: "The Baroque Suite" },
-                { id: 'b', text: "aroque Suite" },
+                { id: 'b', text: "aroque Suite B. The Symphony" },
                 { id: 'c', text: "The Tone Poem" },
                 { id: 'd', text: "The String Quartet" }
             ],
@@ -5020,7 +5044,7 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
             text: "What is the texture at the very beginning (bars 1–2) before Violin II enters?",
             options: [
                 { id: 'a', text: "Monophonic (Violin I and Bass only)" },
-                { id: 'b', text: "ass only)" },
+                { id: 'b', text: "ass only) B. Polyphonic (Full texture)" },
                 { id: 'c', text: "Heterophonic" },
                 { id: 'd', text: "Homophonic" }
             ],
@@ -5046,7 +5070,7 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
                 { id: 'a', text: "Dominant" },
                 { id: 'b', text: "Subdominant" },
                 { id: 'c', text: "Relative Major" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant B. Subdominant C. Relative Major D. Tonic Major" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -5080,7 +5104,7 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
             text: "Which composer is a Focus Composer for this Area of Study?",
             options: [
                 { id: 'a', text: "Beethoven" },
-                { id: 'b', text: "eethoven" },
+                { id: 'b', text: "eethoven B. Vivaldi" },
                 { id: 'c', text: "Mozart" },
                 { id: 'd', text: "Haydn" }
             ],
@@ -5093,8 +5117,8 @@ E,3 B,,3 | E,3 B,,3 | G,3 A,3 | B,3 E,3 ||`,
             options: [
                 { id: 'a', text: "60 (Dotted Crotchet)" },
                 { id: 'b', text: "120 (Dotted Crotchet)" },
-                { id: 'c', text: "rotchet)" },
-                { id: 'd', text: "otted Crotchet)" }
+                { id: 'c', text: "rotchet) B. 120 (Dotted Crotchet) C. 160 (Dotted Crotchet)" },
+                { id: 'd', text: "otted Crotchet) B. 120 (Dotted Crotchet) C. 160 (Dotted Crotchet) D. 40 (Dotted Crotchet)" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5153,7 +5177,7 @@ A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
             text: "Listen to the recording. What is the approximate speed (BPM) of this music?",
             options: [
                 { id: 'a', text: "60 BPM (Adagio)" },
-                { id: 'b', text: "PM (Adagio)" },
+                { id: 'b', text: "PM (Adagio) B. 90 BPM (Andante)" },
                 { id: 'c', text: "120 BPM (Allegro)" },
                 { id: 'd', text: "160 BPM (Presto)" }
             ],
@@ -5213,9 +5237,9 @@ A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
             text: "Which instrument is playing the bass line?",
             options: [
                 { id: 'a', text: "Double Bass" },
-                { id: 'b', text: "ass" },
-                { id: 'c', text: "ello" },
-                { id: 'd', text: "ouble Bass" }
+                { id: 'b', text: "ass B. Cello" },
+                { id: 'c', text: "ello C. Bassoon" },
+                { id: 'd', text: "ouble Bass B. Cello C. Bassoon D. Tuba" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5239,7 +5263,7 @@ A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
                 { id: 'a', text: "Ascending Sequence" },
                 { id: 'b', text: "Descending Sequence" },
                 { id: 'c', text: "Pedal Note" },
-                { id: 'd', text: "escending Sequence" }
+                { id: 'd', text: "escending Sequence C. Pedal Note D. Inversion" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5345,8 +5369,8 @@ A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
             text: "What implies that this music is NOT from the Classical period?",
             options: [
                 { id: 'a', text: "The use of a Basso Continuo texture." },
-                { id: 'b', text: "asso Continuo texture." },
-                { id: 'c', text: "ontinuo texture." },
+                { id: 'b', text: "asso Continuo texture. B. The use of violins." },
+                { id: 'c', text: "ontinuo texture. B. The use of violins. C. The use of a 3/4 time signature." },
                 { id: 'd', text: "The use of a melody." }
             ],
             correctAnswerId: 'a',
@@ -5358,7 +5382,7 @@ A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
             options: [
                 { id: 'a', text: "Functional Harmony (Circle of Fifths progression style)" },
                 { id: 'b', text: "Modal Harmony" },
-                { id: 'c', text: "ircle of Fifths progression style)" },
+                { id: 'c', text: "ircle of Fifths progression style) B. Modal Harmony C. Atonal Harmony" },
                 { id: 'd', text: "Pentatonic Harmony" }
             ],
             correctAnswerId: 'a',
@@ -5382,8 +5406,8 @@ A,,4 C,2 | D,4 F,2 | E,4 E,,2 | A,,6 ||`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Terraced Dynamics" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "ynamics" }
+                { id: 'c', text: "rescendo B. Terraced Dynamics C. Fade out" },
+                { id: 'd', text: "ynamics C. Fade out D. Sforzando *** ### **" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5486,8 +5510,8 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
             options: [
                 { id: 'a', text: "G Major (Subdominant)" },
                 { id: 'b', text: "A Major (Dominant) – *hint: look at the C sharps in the B section in general, though bar 9 starts on A chord*." },
-                { id: 'c', text: "sharps in the B section in general, though bar 9 starts on A chord*." },
-                { id: 'd', text: "ominant) – *hint: look at the C sharps in the B section in general, though bar 9 starts on A chord*." }
+                { id: 'c', text: "sharps in the B section in general, though bar 9 starts on A chord*. C. B Minor (Relative Minor)" },
+                { id: 'd', text: "ominant) – *hint: look at the C sharps in the B section in general, though bar 9 starts on A chord*. C. B Minor (Relative Minor) D. D Minor (Tonic Minor)" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5499,7 +5523,7 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
                 { id: 'a', text: "Dotted rhythm" },
                 { id: 'b', text: "Triplet" },
                 { id: 'c', text: "Syncopation" },
-                { id: 'd', text: "otted rhythm" }
+                { id: 'd', text: "otted rhythm B. Triplet C. Syncopation D. Scotch Snap" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5509,9 +5533,9 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
             text: "Which instrument plays the bass line?",
             options: [
                 { id: 'a', text: "Double Bass (pizzicato)" },
-                { id: 'b', text: "ass (pizzicato)" },
-                { id: 'c', text: "ello (Basso Continuo)" },
-                { id: 'd', text: "ouble Bass (pizzicato)" }
+                { id: 'b', text: "ass (pizzicato) B. Cello (Basso Continuo)" },
+                { id: 'c', text: "ello (Basso Continuo) C. Bassoon only" },
+                { id: 'd', text: "ouble Bass (pizzicato) B. Cello (Basso Continuo) C. Bassoon only D. Tuba" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5522,7 +5546,7 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
             options: [
                 { id: 'a', text: "Monophonic" },
                 { id: 'b', text: "Polyphonic / Contrapuntal" },
-                { id: 'c', text: "ontrapuntal" },
+                { id: 'c', text: "ontrapuntal C. Homophonic (Melody and Accompaniment)" },
                 { id: 'd', text: "Heterophonic" }
             ],
             correctAnswerId: 'c',
@@ -5534,8 +5558,8 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
             options: [
                 { id: 'a', text: "Perfect Cadence in A Major" },
                 { id: 'b', text: "Perfect Cadence in D Major" },
-                { id: 'c', text: "adence in A Major" },
-                { id: 'd', text: "Major" }
+                { id: 'c', text: "adence in A Major B. Perfect Cadence in D Major C. Imperfect Cadence in E Major" },
+                { id: 'd', text: "Major C. Imperfect Cadence in E Major D. Plagal Cadence in A Major" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -5583,7 +5607,7 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
                 { id: 'a', text: "Relative Minor" },
                 { id: 'b', text: "Dominant" },
                 { id: 'c', text: "Subdominant" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant C. Subdominant D. Tonic Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5630,7 +5654,7 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
             options: [
                 { id: 'a', text: "Chromatic steps" },
                 { id: 'b', text: "Leaps (disjunct motion)" },
-                { id: 'c', text: "hromatic steps" },
+                { id: 'c', text: "hromatic steps B. Leaps (disjunct motion) C. Glissando" },
                 { id: 'd', text: "Drone" }
             ],
             correctAnswerId: 'b',
@@ -5642,8 +5666,8 @@ F,4 G,2 | A,2 B,2 A,2 | G,2 F,2 A,2 | D,6 ||`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Terraced Dynamics" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "ynamics" }
+                { id: 'c', text: "rescendo B. Terraced Dynamics C. Diminuendo" },
+                { id: 'd', text: "ynamics C. Diminuendo D. Sforzando" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5692,7 +5716,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
             options: [
                 { id: 'a', text: "Classical" },
                 { id: 'b', text: "Baroque" },
-                { id: 'c', text: "lassical" },
+                { id: 'c', text: "lassical B. Baroque C. Romantic" },
                 { id: 'd', text: "Twentieth Century" }
             ],
             correctAnswerId: 'b',
@@ -5716,7 +5740,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
             options: [
                 { id: 'a', text: "Monophonic" },
                 { id: 'b', text: "Polyphonic / Contrapuntal" },
-                { id: 'c', text: "ontrapuntal" },
+                { id: 'c', text: "ontrapuntal C. Heterophonic" },
                 { id: 'd', text: "Homophonic (Melody and Accompaniment)" }
             ],
             correctAnswerId: 'd',
@@ -5728,8 +5752,8 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
             options: [
                 { id: 'a', text: "Crescendo" },
                 { id: 'b', text: "Diminuendo" },
-                { id: 'c', text: "rescendo" },
-                { id: 'd', text: "iminuendo" }
+                { id: 'c', text: "rescendo B. Diminuendo C. Terraced Dynamics" },
+                { id: 'd', text: "iminuendo C. Terraced Dynamics D. Sforzando" }
             ],
             correctAnswerId: 'c',
             explanation: ""
@@ -5765,7 +5789,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
                 { id: 'a', text: "Ascending Sequence" },
                 { id: 'b', text: "Descending Sequence" },
                 { id: 'c', text: "Pedal Note" },
-                { id: 'd', text: "escending Sequence" }
+                { id: 'd', text: "escending Sequence C. Pedal Note D. Inversion" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5788,7 +5812,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
             options: [
                 { id: 'a', text: "Concertino" },
                 { id: 'b', text: "Ripieno / Tutti" },
-                { id: 'c', text: "oncertino" },
+                { id: 'c', text: "oncertino B. Ripieno / Tutti C. Soloist" },
                 { id: 'd', text: "Quartet" }
             ],
             correctAnswerId: 'b',
@@ -5800,7 +5824,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
             options: [
                 { id: 'a', text: "Violin" },
                 { id: 'b', text: "Clarinet" },
-                { id: 'c', text: "larinet" },
+                { id: 'c', text: "larinet C. Oboe" },
                 { id: 'd', text: "Bassoon" }
             ],
             correctAnswerId: 'b',
@@ -5813,7 +5837,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
                 { id: 'a', text: "D Major" },
                 { id: 'b', text: "D Minor" },
                 { id: 'c', text: "C Major" },
-                { id: 'd', text: "Major" }
+                { id: 'd', text: "Major B. D Minor C. C Major D. Atonal" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -5849,7 +5873,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
                 { id: 'a', text: "The Doctrine of the Affections" },
                 { id: 'b', text: "Programme Music" },
                 { id: 'c', text: "Nationalism" },
-                { id: 'd', text: "octrine of the Affections" }
+                { id: 'd', text: "octrine of the Affections B. Programme Music C. Nationalism D. Minimalism" }
             ],
             correctAnswerId: 'a',
             explanation: ""
@@ -5860,7 +5884,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
             options: [
                 { id: 'a', text: "Treble Clef" },
                 { id: 'b', text: "Alto Clef" },
-                { id: 'c', text: "lef" },
+                { id: 'c', text: "lef B. Alto Clef C. Tenor Clef" },
                 { id: 'd', text: "Bass Clef" }
             ],
             correctAnswerId: 'd',
@@ -5885,7 +5909,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
                 { id: 'a', text: "Relative Minor" },
                 { id: 'b', text: "Dominant" },
                 { id: 'c', text: "Subdominant" },
-                { id: 'd', text: "ominant" }
+                { id: 'd', text: "ominant C. Subdominant D. Tonic Minor" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5897,7 +5921,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
                 { id: 'a', text: "Syncopation" },
                 { id: 'b', text: "Dotted Rhythms" },
                 { id: 'c', text: "Triplets" },
-                { id: 'd', text: "otted Rhythms" }
+                { id: 'd', text: "otted Rhythms C. Triplets D. Polyrhythm" }
             ],
             correctAnswerId: 'b',
             explanation: ""
@@ -5921,7 +5945,7 @@ F,4 A,4 | B,4 F,4 | G,4 A,4 | D,4 z4 |]`,
                 { id: 'a', text: "Neapolitan Sixth" },
                 { id: 'b', text: "Dominant Seventh" },
                 { id: 'c', text: "Tierce de Picardie" },
-                { id: 'd', text: "ominant Seventh" }
+                { id: 'd', text: "ominant Seventh C. Tierce de Picardie D. Suspension *** ### **" }
             ],
             correctAnswerId: 'c',
             explanation: ""
