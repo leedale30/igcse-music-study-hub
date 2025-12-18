@@ -47,7 +47,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
   // Use the ABC Player hook
   const { visualRef, audioRef, visualId, audioId } = useAbcPlayer({
     abcNotation: quizData.abcNotation || '',
-    title: quizData.title
+    quizId: quizData.id
   });
 
   // Initialize quiz start time

@@ -4,10 +4,10 @@ import 'abcjs/abcjs-audio.css';
 
 interface UseAbcPlayerProps {
     abcNotation: string;
-    title: string;
+    quizId: string;
 }
 
-export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
+export const useAbcPlayer = ({ abcNotation, quizId }: UseAbcPlayerProps) => {
     const visualRef = useRef<HTMLDivElement>(null);
     const audioRef = useRef<HTMLDivElement>(null);
     const [isReady, setIsReady] = useState(false);
@@ -18,19 +18,13 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
     const visualObjRef = useRef<any>(null);
     const audioInitializedRef = useRef<boolean>(false);
 
-    // Generate stable IDs for this quiz instance
+    // Generate stable IDs using the quiz ID directly
     const { visualId, audioId } = useMemo(() => {
-        // Remove all non-alphanumeric characters except hyphens, then collapse multiple hyphens
-        const suffix = title
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric with hyphens
-            .replace(/^-+|-+$/g, '')      // Remove leading/trailing hyphens
-            .replace(/-+/g, '-');         // Collapse multiple hyphens
         return {
-            visualId: `abc-paper-${suffix}`,
-            audioId: `abc-audio-${suffix}`
+            visualId: `abc-paper-${quizId}`,
+            audioId: `abc-audio-${quizId}`
         };
-    }, [title]);
+    }, [quizId]);
 
     // Effect to detect when refs are ready
     useEffect(() => {
@@ -41,7 +35,7 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
             }
         }, 50);
         return () => clearTimeout(timer);
-    }, [abcNotation, title]);
+    }, [abcNotation, quizId]);
 
     // Main effect for rendering - only runs when isReady
     useEffect(() => {
@@ -121,12 +115,12 @@ export const useAbcPlayer = ({ abcNotation, title }: UseAbcPlayerProps) => {
                 }
             }
         };
-    }, [abcNotation, title, visualId, audioId, isReady]);
+    }, [abcNotation, quizId, visualId, audioId, isReady]);
 
     // Reset isReady when notation changes
     useEffect(() => {
         setIsReady(false);
-    }, [abcNotation, title]);
+    }, [abcNotation, quizId]);
 
     return {
         visualRef,

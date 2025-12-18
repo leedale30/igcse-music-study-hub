@@ -1,6 +1,7 @@
 import { Quiz } from '../../../types';
 
 export const baroqueRapidFireQuiz: Quiz = {
+    id: 'aos1-rapid-fire',
     title: "Baroque Music: Rapid Fire Knowledge Check",
     questions: [
         {

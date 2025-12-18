@@ -13,6 +13,7 @@ export interface Question {
 }
 
 export interface Quiz {
+  id: string;
   title: string;
   abcNotation?: string; // Optional ABC notation for music quizzes
   questions: Question[];

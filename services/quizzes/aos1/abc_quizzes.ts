@@ -1,6 +1,7 @@
 import { Quiz } from '../../../types';
 
 export const baroqueTextureQuiz: Quiz = {
+    id: 'aos1-texture-continuo',
     title: "Identifying Baroque Texture and Continuo",
     abcNotation: `X:1
 T:Specimen Extract: Continuo Texture
@@ -72,6 +73,7 @@ G,4 B,4 | C4 D4 | E4 A,4 | D4 D,4 |]`,
 };
 
 export const baroqueDynamicsQuiz: Quiz = {
+    id: 'aos1-terraced-dynamics',
     title: "Terraced Dynamics and Echo Effects",
     abcNotation: `X:2
 T:Terraced Dynamics Study
@@ -126,6 +128,7 @@ V:1 name="Violin I"
 };
 
 export const vivaldiRitornelloQuiz: Quiz = {
+    id: 'aos1-vivaldi-ritornello',
     title: "Vivaldi’s Spring – Ritornello Form",
     abcNotation: `X:3
 T:Concerto in E Major (Ritornello Style)
@@ -195,6 +198,7 @@ V:2 name="Orchestra"
 };
 
 export const vivaldiStormQuiz: Quiz = {
+    id: 'aos1-vivaldi-storm',
     title: "Vivaldi’s Spring – The Storm (Tremolo)",
     abcNotation: `X:4
 T:The Storm Episode
@@ -261,6 +265,7 @@ e2dc bagf e2d2 c2B2 | c2BA G2F2 E4 z4 |]`,
 };
 
 export const vivaldiDogQuiz: Quiz = {
+    id: 'aos1-vivaldi-dog',
     title: "Vivaldi’s Spring – The Barking Dog (Viola)",
     abcNotation: `X:5
 T:Largo e Pianissimo
@@ -328,6 +333,7 @@ V:2 name="Viola (The Dog)" clef=alto
 };
 
 export const handelOvertureQuiz: Quiz = {
+    id: 'aos1-handel-overture',
     title: "Handel Op. 6 No. 5 – French Overture Style",
     abcNotation: `X:6
 T:Overture in D (French Style)
@@ -394,6 +400,7 @@ F3/2G/ A2 G3/2F/ E2 | D8 |]`,
 };
 
 export const handelFugueQuiz: Quiz = {
+    id: 'aos1-handel-fugue',
     title: "Handel Op. 6 No. 5 – Fugal Texture",
     abcNotation: `X:7
 T:Fugal Allegro
@@ -461,6 +468,7 @@ z8 | z4 A2 d2 | c2 B2 A2 G2 | F2 E2 D2 F2 |`,
 };
 
 export const corelliQuiz: Quiz = {
+    id: 'aos1-corelli-pastorale',
     title: "Corelli’s Pastorale – The Sound of Christmas",
     abcNotation: `X:8
 T:Pastorale (Largo)
@@ -531,6 +539,7 @@ G,12 | C,12 |`,
 };
 
 export const bachAirQuiz: Quiz = {
+    id: 'aos1-bach-air',
     title: "Bach’s Air – Walking Bass and Suspensions",
     abcNotation: `X:9
 T:Air from Suite No. 3
@@ -586,6 +595,7 @@ D,2 D,,2 C,2 C,,2 | B,,2 B,,,2 A,,,2 G,,,2 |`,
 };
 
 export const telemannQuiz: Quiz = {
+    id: 'aos1-telemann-trio',
     title: "The Trio Sonata Texture",
     abcNotation: `X:10
 T:Trio Sonata in A Minor
@@ -643,6 +653,7 @@ A,4 A,,4 | G,,4 G,4 |`,
 };
 
 export const ornamentsQuiz: Quiz = {
+    id: 'aos1-ornaments',
     title: "Identifying Ornaments",
     abcNotation: `X:11
 T:Ornamentation Study
@@ -682,6 +693,7 @@ V:1 name="Flute"
 };
 
 export const harmonyQuiz: Quiz = {
+    id: 'aos1-harmony-circle',
     title: "Sequences and The Circle of Fifths",
     abcNotation: `X:12
 T:Circle of Fifths
@@ -723,6 +735,7 @@ C4 E4 | B,4 D4 | A,4 C4 |`,
 };
 
 export const specimenAllegroQuiz: Quiz = {
+    id: 'aos1-specimen-allegro',
     title: "Baroque Allegro (Specimen 5)",
     abcNotation: `X:1
 T:Specimen Extract: Baroque Allegro
