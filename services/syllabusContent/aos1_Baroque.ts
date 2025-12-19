@@ -229,6 +229,31 @@ const specimenPage: SyllabusItem = {
   isTerm: false
 };
 
+// AOS1 Recap Quizzes Section - grouped topic quizzes with ABC notation
+const recapQuizzesSection: SyllabusItem = {
+  id: 'aos1-recap-quizzes',
+  title: '🎯 AOS1 Recap Quizzes',
+  title_zh: '🎯 AOS1复习测验',
+  path: '/aos/aos01-baroque-music/recap-quizzes',
+  content: 'Topic-specific quizzes with score excerpts to reinforce your Baroque music knowledge.',
+  content_zh: '包含乐谱片段的专题测验，巩固巴洛克音乐知识。',
+  children: [
+    textureQuizPage,
+    dynamicsQuizPage,
+    vivaldiRitornelloPage,
+    vivaldiStormPage,
+    vivaldiDogPage,
+    handelOverturePage,
+    handelFuguePage,
+    corelliPage,
+    bachAirPage,
+    telemannPage,
+    ornamentsPage,
+    harmonyQuizPage,
+    specimenPage,
+  ]
+};
+
 // Assessment Quizzes Section - 19 comprehensive quizzes with ABC notation
 const assessmentQuizzesSection: SyllabusItem = {
   id: 'aos1-assessment-quizzes',
@@ -279,21 +304,9 @@ export const baroqueMusicAoS: SyllabusItem = {
     handelFocusWork,
     widerListeningPage,
     finalExamPage,
-    assessmentQuizzesSection,
     rapidFirePage,
-    textureQuizPage,
-    dynamicsQuizPage,
-    vivaldiRitornelloPage,
-    vivaldiStormPage,
-    vivaldiDogPage,
-    handelOverturePage,
-    handelFuguePage,
-    corelliPage,
-    bachAirPage,
-    telemannPage,
-    ornamentsPage,
-    harmonyQuizPage,
-    specimenPage,
+    recapQuizzesSection,
+    assessmentQuizzesSection,
     detailedContentSections,
   ]
 };
