@@ -3,8 +3,8 @@ import { SyllabusItem } from '../../../../types';
 import { vivaldiSpringMvt1Quiz } from '../../../quizzes/aos1/vivaldi';
 
 export const vivaldiSpringMvt1Page: SyllabusItem = {
-    id: 'aos1-vivaldi-spring-mvt1', 
-    title: 'Movement 1 (Allegro)', 
+    id: 'aos1-vivaldi-spring-mvt1',
+    title: 'Movement 1 (Allegro)',
     title_zh: '第一乐章 (快板)',
     path: '/areas-of-study/aos1-baroque-music/vivaldi/spring/movement-1',
     content: 'Context of "The Four Seasons" and details of "Spring," Movement 1.',
@@ -147,5 +147,14 @@ The solo violinist and the orchestra make use of a range of techniques, includin
 
 这个乐章是维瓦尔第如何运用**利都奈罗曲式**的绝佳范例，其中主要的管弦乐主题与描绘伴随十四行诗中特定场景的对比性独奏插段交替出现。你会注意到整个管弦乐队（全体/协奏部）与独奏小提琴（或一小组独奏小提琴）之间的清晰对比。`,
     quiz: vivaldiSpringMvt1Quiz,
-    children: []
+    children: [
+        {
+            id: 'aos1-vivaldi-spring-mvt1-deep-dive',
+            title: '🔬 Deep Dive: Annotated Score',
+            title_zh: '🔬 深度解析：注释乐谱',
+            path: '/aos/aos01-baroque-music/vivaldi/spring/deep-dive.html',
+            content: 'Comprehensive bar-by-bar analysis with ABC notation, program music annotations, and detailed musicological commentary.',
+            content_zh: '全面的逐小节分析，包含ABC记谱法、标题音乐注释和详细的音乐学评论。',
+        }
+    ]
 };
