@@ -47,7 +47,7 @@ import {
   generatedQuiz22
 } from '../quizzes/aos1/generated_quizzes';
 
-// Detailed content sections from the new HTML pages
+// Detailed content sections from the new HTML pages - full hierarchy
 const detailedContentSections: SyllabusItem = {
   id: 'aos1-detailed-content',
   title: '📚 Detailed Study Materials',
@@ -62,6 +62,18 @@ const detailedContentSections: SyllabusItem = {
       title_zh: '核心音乐元素',
       path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements',
       content: 'Dynamics, rhythm, metre, tempo, melody, harmony, tonality, texture, timbre, and structure.',
+      children: [
+        { id: 'aos1-dynamics', title: 'Dynamics', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-01-dynamics/aos01-01-01-dynamics.html', content: 'Dynamic markings and terraced dynamics in Baroque music.' },
+        { id: 'aos1-rhythm', title: 'Rhythm', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-02-rhythm/aos01-01-02-rhythm.html', content: 'Rhythmic patterns and motor rhythm.' },
+        { id: 'aos1-metre', title: 'Metre', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-03-metre/aos01-01-03-metre.html', content: 'Time signatures and metric organization.' },
+        { id: 'aos1-tempo', title: 'Tempo', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-04-tempo/aos01-01-04-tempo.html', content: 'Italian tempo markings and Baroque conventions.' },
+        { id: 'aos1-melody', title: 'Melody', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-05-melody/aos01-01-05-melody.html', content: 'Melodic characteristics and sequences.' },
+        { id: 'aos1-harmony', title: 'Harmony', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-06-harmony/aos01-01-06-harmony.html', content: 'Functional harmony and diatonic relationships.' },
+        { id: 'aos1-tonality', title: 'Tonality', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-07-tonality/aos01-01-07-tonality.html', content: 'Major/minor keys and modulation.' },
+        { id: 'aos1-texture', title: 'Texture', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-08-texture/aos01-01-08-texture.html', content: 'Polyphonic, homophonic, and imitative textures.' },
+        { id: 'aos1-timbre', title: 'Timbre', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-09-timbre/aos01-01-09-timbre.html', content: 'Instrumental timbres and basso continuo.' },
+        { id: 'aos1-structure', title: 'Structure/Form', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-01-core-musical-elements/aos01-01-10-structure-form/aos01-01-10-structure-form.html', content: 'Binary, ternary, ritornello, and fugal forms.' },
+      ]
     },
     {
       id: 'aos1-sound-sources',
@@ -69,6 +81,14 @@ const detailedContentSections: SyllabusItem = {
       title_zh: '声源与技巧',
       path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques',
       content: 'Instrumentation, organology, vocal techniques, and composition methods.',
+      children: [
+        { id: 'aos1-instrumentation', title: 'Instrumentation', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-01-instrumentation/aos01-02-01-instrumentation.html', content: 'Baroque orchestra and ensembles.' },
+        { id: 'aos1-organology', title: 'Organology', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-02-organology/aos01-02-02-organology.html', content: 'Period instruments and their construction.' },
+        { id: 'aos1-vocal-techniques', title: 'Vocal Techniques', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-03-vocal-techniques/aos01-02-03-vocal-techniques.html', content: 'Baroque vocal styles and ornamentation.' },
+        { id: 'aos1-extended-techniques', title: 'Extended Techniques', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-04-extended-techniques/aos01-02-04-extended-techniques.html', content: 'Tremolo, pizzicato, and other techniques.' },
+        { id: 'aos1-improvisation', title: 'Improvisation', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-05-improvisation/aos01-02-05-improvisation.html', content: 'Figured bass realization and ornamentation.' },
+        { id: 'aos1-composition', title: 'Composition Techniques', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-02-sound-sources-and-techniques/aos01-02-06-composition-techniques/aos01-02-06-composition-techniques.html', content: 'Counterpoint, fugue, and canon.' },
+      ]
     },
     {
       id: 'aos1-cultural-context',
@@ -76,6 +96,15 @@ const detailedContentSections: SyllabusItem = {
       title_zh: '文化与历史背景',
       path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context',
       content: 'Historical background, key composers, patronage, and performance practice.',
+      children: [
+        { id: 'aos1-cultural-function', title: 'Cultural Function', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-01-cultural-function/aos01-03-01-cultural-function.html', content: 'Role of music in society.' },
+        { id: 'aos1-historical', title: 'Historical Background', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-02-historical-background/aos01-03-02-historical-background.html', content: 'The Baroque era 1600-1750.' },
+        { id: 'aos1-dance', title: 'Movement & Dance', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-03-movement-and-dance/aos01-03-03-movement-and-dance.html', content: 'Dance forms and suites.' },
+        { id: 'aos1-patronage', title: 'Economics & Patronage', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-04-economics-and-patronage/aos01-03-04-economics-and-patronage.html', content: 'Court and church patronage.' },
+        { id: 'aos1-key-works', title: 'Key Works & Pieces', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-05-key-works-pieces/aos01-03-05-key-works-pieces.html', content: 'Important compositions to study.' },
+        { id: 'aos1-composers', title: 'Key Composers', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-06-key-composers-artists/aos01-03-06-key-composers-artists.html', content: 'Bach, Handel, Vivaldi, and others.' },
+        { id: 'aos1-performance', title: 'Performance Practice', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-03-cultural-and-historical-context/aos01-03-07-performance-practice/aos01-03-07-performance-practice.html', content: 'Historical performance and interpretation.' },
+      ]
     },
     {
       id: 'aos1-language-theory',
@@ -83,6 +112,12 @@ const detailedContentSections: SyllabusItem = {
       title_zh: '语言、读写与理论',
       path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory',
       content: 'Terminology, notation systems, and analytical concepts.',
+      children: [
+        { id: 'aos1-terminology', title: 'Specific Terminology', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-01-specific-terminology/aos01-04-01-specific-terminology.html', content: 'Baroque musical vocabulary.' },
+        { id: 'aos1-lyrics', title: 'Lyrics & Text Analysis', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-02-lyrics-and-text-analysis/aos01-04-02-lyrics-and-text-analysis.html', content: 'Word painting and text setting.' },
+        { id: 'aos1-notation', title: 'Notation System', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-03-notation-system/aos01-04-03-notation-system.html', content: 'Figured bass and score notation.' },
+        { id: 'aos1-oral-aural', title: 'Oral/Aural Tradition', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-04-language-literacy-and-theory/aos01-04-04-oral-aural-tradition/aos01-04-04-oral-aural-tradition.html', content: 'Listening and aural traditions.' },
+      ]
     },
     {
       id: 'aos1-technology',
@@ -90,6 +125,12 @@ const detailedContentSections: SyllabusItem = {
       title_zh: '技术与创新',
       path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-05-technology-and-innovation',
       content: 'Music technology, recording, and distribution in the Baroque context.',
+      children: [
+        { id: 'aos1-music-tech', title: 'Music Technology', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-01-music-technology/aos01-05-01-music-technology.html', content: 'Instrument making and development.' },
+        { id: 'aos1-recording', title: 'Recording & Production', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-02-recording-and-production-techniques/aos01-05-02-recording-and-production-techniques.html', content: 'Modern recordings of Baroque music.' },
+        { id: 'aos1-distribution', title: 'Distribution & Media', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-03-distribution-and-media/aos01-05-03-distribution-and-media.html', content: 'Music printing and dissemination.' },
+        { id: 'aos1-hybridization', title: 'Hybridization', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-05-technology-and-innovation/aos01-05-04-hybridization/aos01-05-04-hybridization.html', content: 'Cross-genre influences.' },
+      ]
     },
     {
       id: 'aos1-analytical',
@@ -97,6 +138,20 @@ const detailedContentSections: SyllabusItem = {
       title_zh: '分析领域',
       path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains',
       content: 'Genre, style, aesthetics, audience reception, and geographic influence.',
+      children: [
+        { id: 'aos1-genre-style', title: 'Genre & Style', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains/aos01-06-01-genre-and-style/aos01-06-01-genre-and-style.html', content: 'Musical genres of the Baroque.' },
+        { id: 'aos1-aesthetic', title: 'Aesthetic Values', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains/aos01-06-02-aesthetic-values/aos01-06-02-aesthetic-values.html', content: 'Doctrine of affections and beauty.' },
+        { id: 'aos1-audience', title: 'Audience Reception', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains/aos01-06-03-audience-reception/aos01-06-03-audience-reception.html', content: 'Historical and modern reception.' },
+        { id: 'aos1-political', title: 'Political/Social Commentary', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains/aos01-06-04-political-social-commentary/aos01-06-04-political-social-commentary.html', content: 'Music and power.' },
+        { id: 'aos1-geographic', title: 'Geographic Influence', path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-06-analytical-domains/aos01-06-05-geographic-influence/aos01-06-05-geographic-influence.html', content: 'Italian, French, German, English styles.' },
+      ]
+    },
+    {
+      id: 'aos1-glossary',
+      title: 'AOS1 Glossary',
+      title_zh: 'AOS1 术语表',
+      path: 'https://www.schoolclass.net/aos/aos01-baroque-music/aos01-07-glossary/aos01-07-glossary.html',
+      content: 'Key terminology for Baroque music study.',
     },
   ]
 };
