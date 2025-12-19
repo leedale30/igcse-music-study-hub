@@ -475,7 +475,7 @@ T:Pastorale (Largo)
 C:Arcangelo Corelli
 M:12/8
 L:1/8
-Q:"Largo" 1/4.=50
+Q:"Largo" 1/4.=40
 K:G
 V:1 name="Violin I"
 %%MIDI program 40 % Auto-injected for Violin I
