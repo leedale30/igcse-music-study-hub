@@ -22,6 +22,7 @@ import {
   harmonyQuiz,
   specimenAllegroQuiz
 } from '../quizzes/aos1/abc_quizzes';
+import { vivaldiSpringQuiz } from '../quizzes/aos1/vivaldiSpring';
 import {
   generatedQuiz1,
   generatedQuiz2,
@@ -284,6 +285,16 @@ const specimenPage: SyllabusItem = {
   isTerm: false
 };
 
+const vivaldiSpringPage: SyllabusItem = {
+  id: 'aos1-vivaldi-spring',
+  title: '🌸 Vivaldi: Spring (Allegro)',
+  path: '/aos/aos01-baroque-music/vivaldi-spring',
+  content: 'Full score analysis of Spring Movement 1 with Ritornello form, program music, and 20 questions.',
+  longDescription: `Study Vivaldi's famous Spring Allegro from The Four Seasons. This comprehensive analysis includes:\n\n- **Full 4-voice ABC notation** with correct MIDI instrument playback\n- **Ritornello Form structure** with 5 Ritornellos and 4 Episodes\n- **Program Music analysis** - birdsong, murmuring streams, and the storm\n- **Key relationships** - E Major, B Major (Dominant), C# Minor (Relative Minor)\n- **Terraced dynamics** and the Baroque echo effect\n- **20 IGCSE-focused questions** covering all musical elements`,
+  quiz: vivaldiSpringQuiz,
+  isTerm: false
+};
+
 // AOS1 Recap Quizzes Section - grouped topic quizzes with ABC notation
 const recapQuizzesSection: SyllabusItem = {
   id: 'aos1-recap-quizzes',
@@ -293,6 +304,7 @@ const recapQuizzesSection: SyllabusItem = {
   content: 'Topic-specific quizzes with score excerpts to reinforce your Baroque music knowledge.',
   content_zh: '包含乐谱片段的专题测验，巩固巴洛克音乐知识。',
   children: [
+    vivaldiSpringPage,
     textureQuizPage,
     dynamicsQuizPage,
     vivaldiRitornelloPage,
