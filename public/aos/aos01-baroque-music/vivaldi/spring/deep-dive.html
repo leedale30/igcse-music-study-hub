@@ -35,16 +35,8 @@
     td.td5 {width: 106.0px; background-color: #f6f9fc; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #000000 #000000 #000000 #000000; padding: 8.0px 12.0px 8.0px 12.0px}
     ul.ul1 {list-style-type: none}
   </style>
-<style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; max-width: 1000px; margin: 0 auto; line-height: 1.6; color: #333; background-color: #fcfcfc; }
-    h1, h2, h3, h4 { color: #2c3e50; margin-top: 1.5em; margin-bottom: 0.5em; }
-    h1 { font-size: 2.5em; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-    h2 { font-size: 1.8em; border-bottom: 1px solid #eee; }
-    p { margin-bottom: 1em; }
-    ul { margin-bottom: 1em; padding-left: 20px; }
-    li { margin-bottom: 0.5em; }
-    
-    /* ABCJS Styles */
+</head>
+<body><style>
     .abc-container { 
         margin: 30px 0; 
         background: #ffffff; 
@@ -59,16 +51,14 @@
         border-radius: 0 0 8px 8px; 
         margin-top: 10px;
     }
-    .abcjs-midi-loop.abcjs-btn { display: none !important; } /* Hide loop button if cluttering */
+    .abcjs-midi-loop.abcjs-btn { display: none !important; }
     svg { overflow: visible !important; }
     
-    /* Table Styles */
     table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
     th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
     th { background-color: #f8f9fa; font-weight: bold; }
     tr:nth-child(even) { background-color: #f8f9fa; }
-</style><script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/6.2.2/abcjs-basic-min.js"></script></head>
-<body>
+</style>
 <h1 style="margin: 0.0px 0.0px 21.4px 0.0px; font: 32.0px 'Helvetica Neue'; color: #181818; -webkit-text-stroke: #181818"><span class="s1">Pedagogical Musicological Analysis and Annotated Score: Antonio Vivaldi’s The Four Seasons — ‘Spring’ (Allegro)</span></h1>
 <div class="abc-container" id="full-score-container">X:1
 T:Vivaldi The Four Seasons 1. Spring  Has Arrived
@@ -1272,60 +1262,38 @@ V:4 name="Continuo" clef=bass
 <li class="li14"><span class="s7"></span><span class="s8">Construction of Vivaldi Spring 1st movement Ritornello 1 (bars 1-13) - NZQA, accessed on December 19, 2025, <a href="https://www.google.com/url?q=https://www2.nzqa.govt.nz/assets/NCEA/Subject-pages/Music/Exams-and-exemplars/Level-3/AS-91422/91422-Exemplar-High-Not-Achieved.pdf&amp;sa=D&amp;source=editors&amp;ust=1766127440523694&amp;usg=AOvVaw2MgAZyeRspoYKAF5MDiUtp"><span class="s9">https://www2.nzqa.govt.nz/assets/NCEA/Subject-pages/Music/Exams-and-exemplars/Level-3/AS-91422/91422-Exemplar-High-Not-Achieved.pdf</span></a></span></li>
 <li class="li13"><span class="s3"></span><span class="s1">(PDF) Vivaldi Violin Concerto "Four Seasons" -- Spring music analysis - ResearchGate, accessed on December 19, 2025, <a href="https://www.google.com/url?q=https://www.researchgate.net/publication/379949749_Vivaldi_Violin_Concerto_Four_Seasons_--_Spring_music_analysis&amp;sa=D&amp;source=editors&amp;ust=1766127440524038&amp;usg=AOvVaw2uKX-pAgjv4pl72P17LZvn"><span class="s6">https://www.researchgate.net/publication/379949749_Vivaldi_Violin_Concerto_Four_Seasons_--_Spring_music_analysis</span></a></span></li>
 </ul>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    if (typeof ABCJS === 'undefined') {
-        console.error("ABCJS not loaded!");
-        return;
-    }
-
-    var abcElements = document.querySelectorAll('.abc-container');
-    
-    abcElements.forEach(function(el, index) {
-        var abcString = el.innerText.trim();
-        // Remove the raw text
-        el.innerHTML = "";
-        
-        var idBase = "abc-item-" + index;
-        
-        // Create Visual Container
-        var visualDiv = document.createElement("div");
-        visualDiv.id = idBase + "-vis";
-        el.appendChild(visualDiv);
-        
-        // Create Audio Container
-        var audioDiv = document.createElement("div");
-        audioDiv.id = idBase + "-aud";
-        el.appendChild(audioDiv);
-        
-        // Render Visual
-        var visualObj = ABCJS.renderAbc(visualDiv.id, abcString, {
-            responsive: "resize",
-            add_classes: true,
-            staffwidth: 800
-        });
-        
-        // Render Audio
-        if (ABCJS.synth.supportsAudio()) {
-            var synthControl = new ABCJS.synth.SynthController();
-            synthControl.load(audioDiv.id, null, {
-                displayPlay: true,
-                displayProgress: true,
-                displayWarp: true
-            });
-            
-            var createSynth = new ABCJS.synth.CreateSynth();
-            createSynth.init({visualObj: visualObj[0]}).then(function () {
-                synthControl.setTune(visualObj[0], false).then(function (response) {
-                    console.log("Audio loaded for " + idBase);
-                }).catch(function (error) {
-                    console.warn("Audio problem:", error);
-                });
-            }).catch(function (error) {
-                console.warn("Audio init problem:", error);
-            });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/6.2.2/abcjs-basic-min.js"></script><script>
+(function() {
+    function initABC() {
+        if (typeof ABCJS === 'undefined') {
+            console.log("ABCJS waiting...");
+            setTimeout(initABC, 100);
+            return;
         }
-    });
-});
+        var abcElements = document.querySelectorAll('.abc-container');
+        abcElements.forEach(function(el, index) {
+            if (el.querySelector('svg')) return;
+            var abcString = el.innerText.trim();
+            el.innerHTML = "";
+            var idBase = "abc-item-" + index + "-" + Math.floor(Math.random() * 1000);
+            var visualDiv = document.createElement("div");
+            visualDiv.id = idBase + "-vis";
+            el.appendChild(visualDiv);
+            var audioDiv = document.createElement("div");
+            audioDiv.id = idBase + "-aud";
+            el.appendChild(audioDiv);
+            var visualObj = ABCJS.renderAbc(visualDiv.id, abcString, { responsive: "resize", add_classes: true, staffwidth: 800 });
+            if (ABCJS.synth.supportsAudio()) {
+                var synthControl = new ABCJS.synth.SynthController();
+                synthControl.load(audioDiv.id, null, { displayPlay: true, displayProgress: true, displayWarp: true });
+                var createSynth = new ABCJS.synth.CreateSynth();
+                createSynth.init({visualObj: visualObj[0]}).then(function () {
+                    synthControl.setTune(visualObj[0], false).catch(function(e){});
+                }).catch(function(e){});
+            }
+        });
+    }
+    initABC();
+})();
 </script></body>
 </html>

@@ -135,8 +135,28 @@ const AosContentPage: React.FC = () => {
 
     // Initialize MathJax after content loads
     useEffect(() => {
-        if (htmlContent && contentRef.current && window.MathJax?.typesetPromise) {
-            window.MathJax.typesetPromise([contentRef.current]).catch(console.error);
+        if (htmlContent && contentRef.current) {
+            // 1. MathJax
+            if (window.MathJax?.typesetPromise) {
+                window.MathJax.typesetPromise([contentRef.current]).catch(console.error);
+            }
+
+            // 2. Re-execute scripts (dangerouslySetInnerHTML does not execute scripts)
+            const scripts = contentRef.current.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement('script');
+                // Copy attributes
+                for (let i = 0; i < oldScript.attributes.length; i++) {
+                    const attr = oldScript.attributes[i];
+                    newScript.setAttribute(attr.name, attr.value);
+                }
+                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                try {
+                    oldScript.parentNode?.replaceChild(newScript, oldScript);
+                } catch (e) {
+                    // Script might have been removed already
+                }
+            });
         }
     }, [htmlContent]);
 
