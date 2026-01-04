@@ -33,8 +33,7 @@ import ColdplayTestPage from './pages/ColdplayTestPage';
 import GodspellTestPage from './pages/GodspellTestPage';
 import PiratesCaribbeanTestPage from './pages/PiratesCaribbeanTestPage';
 import MoonRiverTestPage from './pages/MoonRiverTestPage';
-import TheoryListPage from './pages/TheoryListPage';
-import TheoryPage from './pages/TheoryPage';
+import TheoryRoutes from './routes/TheoryRoutes';
 import AosContentPage from './pages/AosContentPage';
 import VivaldiSpringDeepDivePage from './pages/aos1/VivaldiSpringDeepDivePage';
 import { BaroqueRoutes } from './routes/BaroqueRoutes';
@@ -111,9 +110,8 @@ const App: React.FC = () => {
                     <Route path="/areas-of-study/*" element={<GenericPage />} />
                     {/* Coursework routes */}
                     <Route path="/coursework/*" element={<GenericPage />} />
-                    {/* Theory routes */}
-                    <Route path="/theory" element={<TheoryListPage />} />
-                    <Route path="/theory/:pageId" element={<TheoryPage />} />
+                    {/* Theory routes (135 React components) */}
+                    <Route path="/theory/*" element={<TheoryRoutes />} />
                     {/* AOS content routes */}
                     {/* Specific AOS Pages */}
                     <Route path="/aos/vivaldi-spring-deep-dive" element={<VivaldiSpringDeepDivePage />} />
