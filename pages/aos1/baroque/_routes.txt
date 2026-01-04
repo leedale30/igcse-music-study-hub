@@ -1,0 +1,119 @@
+// Import statements
+import Baroque0101DynamicsPage from './pages/aos1/baroque/Baroque0101DynamicsPage';
+import Baroque0102RhythmPage from './pages/aos1/baroque/Baroque0102RhythmPage';
+import Baroque0103MetrePage from './pages/aos1/baroque/Baroque0103MetrePage';
+import Baroque0104TempoPage from './pages/aos1/baroque/Baroque0104TempoPage';
+import Baroque0105MelodyPage from './pages/aos1/baroque/Baroque0105MelodyPage';
+import Baroque0106HarmonyPage from './pages/aos1/baroque/Baroque0106HarmonyPage';
+import Baroque0107TonalityPage from './pages/aos1/baroque/Baroque0107TonalityPage';
+import Baroque0108TexturePage from './pages/aos1/baroque/Baroque0108TexturePage';
+import Baroque0109TimbrePage from './pages/aos1/baroque/Baroque0109TimbrePage';
+import Baroque0110StructureFormPage from './pages/aos1/baroque/Baroque0110StructureFormPage';
+import Baroque01CoreMusicalElementsPage from './pages/aos1/baroque/Baroque01CoreMusicalElementsPage';
+import Baroque0201InstrumentationPage from './pages/aos1/baroque/Baroque0201InstrumentationPage';
+import Baroque0202OrganologyPage from './pages/aos1/baroque/Baroque0202OrganologyPage';
+import Baroque0203VocalTechniquesPage from './pages/aos1/baroque/Baroque0203VocalTechniquesPage';
+import Baroque0204ExtendedTechniquesPage from './pages/aos1/baroque/Baroque0204ExtendedTechniquesPage';
+import Baroque0205ImprovisationPage from './pages/aos1/baroque/Baroque0205ImprovisationPage';
+import Baroque0206CompositionTechniquesPage from './pages/aos1/baroque/Baroque0206CompositionTechniquesPage';
+import Baroque02SoundSourcesAndTechniquesPage from './pages/aos1/baroque/Baroque02SoundSourcesAndTechniquesPage';
+import Baroque030101RitualPage from './pages/aos1/baroque/Baroque030101RitualPage';
+import Baroque030102CelebrationPage from './pages/aos1/baroque/Baroque030102CelebrationPage';
+import Baroque030103WorkProtestPage from './pages/aos1/baroque/Baroque030103WorkProtestPage';
+import Baroque030104HealingPage from './pages/aos1/baroque/Baroque030104HealingPage';
+import Baroque030105SocialIdentityPage from './pages/aos1/baroque/Baroque030105SocialIdentityPage';
+import Baroque0301CulturalFunctionPage from './pages/aos1/baroque/Baroque0301CulturalFunctionPage';
+import Baroque0302HistoricalBackgroundPage from './pages/aos1/baroque/Baroque0302HistoricalBackgroundPage';
+import Baroque0303MovementAndDancePage from './pages/aos1/baroque/Baroque0303MovementAndDancePage';
+import Baroque0304EconomicsAndPatronagePage from './pages/aos1/baroque/Baroque0304EconomicsAndPatronagePage';
+import Baroque0305KeyWorksPiecesPage from './pages/aos1/baroque/Baroque0305KeyWorksPiecesPage';
+import Baroque0306KeyComposersArtistsPage from './pages/aos1/baroque/Baroque0306KeyComposersArtistsPage';
+import Baroque030701StagingPage from './pages/aos1/baroque/Baroque030701StagingPage';
+import Baroque030702PerformerAudienceRelationshipPage from './pages/aos1/baroque/Baroque030702PerformerAudienceRelationshipPage';
+import Baroque030703AttirePage from './pages/aos1/baroque/Baroque030703AttirePage';
+import Baroque030704RitualisticElementsPage from './pages/aos1/baroque/Baroque030704RitualisticElementsPage';
+import Baroque0307PerformancePracticePage from './pages/aos1/baroque/Baroque0307PerformancePracticePage';
+import Baroque03CulturalAndHistoricalContextPage from './pages/aos1/baroque/Baroque03CulturalAndHistoricalContextPage';
+import Baroque0401SpecificTerminologyPage from './pages/aos1/baroque/Baroque0401SpecificTerminologyPage';
+import Baroque0401SpecificTerminologyPage from './pages/aos1/baroque/Baroque0401SpecificTerminologyPage';
+import Baroque0402LyricsAndTextAnalysisPage from './pages/aos1/baroque/Baroque0402LyricsAndTextAnalysisPage';
+import Baroque0402LyricsTextAnalysisPage from './pages/aos1/baroque/Baroque0402LyricsTextAnalysisPage';
+import Baroque0403NotationSystemPage from './pages/aos1/baroque/Baroque0403NotationSystemPage';
+import Baroque0403NotationSystemPage from './pages/aos1/baroque/Baroque0403NotationSystemPage';
+import Baroque0404OralAuralTraditionPage from './pages/aos1/baroque/Baroque0404OralAuralTraditionPage';
+import Baroque0404OralAuralTraditionPage from './pages/aos1/baroque/Baroque0404OralAuralTraditionPage';
+import Baroque0405MusicTheoryFrameworkPage from './pages/aos1/baroque/Baroque0405MusicTheoryFrameworkPage';
+import Baroque04LanguageLiteracyAndTheoryPage from './pages/aos1/baroque/Baroque04LanguageLiteracyAndTheoryPage';
+import Baroque0501MusicTechnologyPage from './pages/aos1/baroque/Baroque0501MusicTechnologyPage';
+import Baroque0502RecordingAndProductionTechniquesPage from './pages/aos1/baroque/Baroque0502RecordingAndProductionTechniquesPage';
+import Baroque0503DistributionAndMediaPage from './pages/aos1/baroque/Baroque0503DistributionAndMediaPage';
+import Baroque0504HybridizationPage from './pages/aos1/baroque/Baroque0504HybridizationPage';
+import Baroque05TechnologyAndInnovationPage from './pages/aos1/baroque/Baroque05TechnologyAndInnovationPage';
+import Baroque0601GenreAndStylePage from './pages/aos1/baroque/Baroque0601GenreAndStylePage';
+import Baroque0602AestheticValuesPage from './pages/aos1/baroque/Baroque0602AestheticValuesPage';
+import Baroque0603AudienceReceptionPage from './pages/aos1/baroque/Baroque0603AudienceReceptionPage';
+import Baroque0604PoliticalSocialCommentaryPage from './pages/aos1/baroque/Baroque0604PoliticalSocialCommentaryPage';
+import Baroque0605GeographicInfluencePage from './pages/aos1/baroque/Baroque0605GeographicInfluencePage';
+import Baroque06AnalyticalDomainsPage from './pages/aos1/baroque/Baroque06AnalyticalDomainsPage';
+import Baroque07GlossaryPage from './pages/aos1/baroque/Baroque07GlossaryPage';
+import BaroqueBaroqueMusicPage from './pages/aos1/baroque/BaroqueBaroqueMusicPage';
+
+// Route definitions
+<Route path="/aos/baroque/core-musical-elements/dynamics" element={<Baroque0101DynamicsPage />} />
+<Route path="/aos/baroque/core-musical-elements/rhythm" element={<Baroque0102RhythmPage />} />
+<Route path="/aos/baroque/core-musical-elements/metre" element={<Baroque0103MetrePage />} />
+<Route path="/aos/baroque/core-musical-elements/tempo" element={<Baroque0104TempoPage />} />
+<Route path="/aos/baroque/core-musical-elements/melody" element={<Baroque0105MelodyPage />} />
+<Route path="/aos/baroque/core-musical-elements/harmony" element={<Baroque0106HarmonyPage />} />
+<Route path="/aos/baroque/core-musical-elements/tonality" element={<Baroque0107TonalityPage />} />
+<Route path="/aos/baroque/core-musical-elements/texture" element={<Baroque0108TexturePage />} />
+<Route path="/aos/baroque/core-musical-elements/timbre" element={<Baroque0109TimbrePage />} />
+<Route path="/aos/baroque/core-musical-elements/structure-form" element={<Baroque0110StructureFormPage />} />
+<Route path="/aos/baroque/core-musical-elements" element={<Baroque01CoreMusicalElementsPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques/instrumentation" element={<Baroque0201InstrumentationPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques/organology" element={<Baroque0202OrganologyPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques/vocal-techniques" element={<Baroque0203VocalTechniquesPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques/extended-techniques" element={<Baroque0204ExtendedTechniquesPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques/improvisation" element={<Baroque0205ImprovisationPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques/composition-techniques" element={<Baroque0206CompositionTechniquesPage />} />
+<Route path="/aos/baroque/sound-sources-and-techniques" element={<Baroque02SoundSourcesAndTechniquesPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/cultural-function/01-ritual" element={<Baroque030101RitualPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/cultural-function/02-celebration" element={<Baroque030102CelebrationPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/cultural-function/03-work-protest" element={<Baroque030103WorkProtestPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/cultural-function/04-healing" element={<Baroque030104HealingPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/cultural-function/05-social-identity" element={<Baroque030105SocialIdentityPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/cultural-function" element={<Baroque0301CulturalFunctionPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/historical-background" element={<Baroque0302HistoricalBackgroundPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/movement-and-dance" element={<Baroque0303MovementAndDancePage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/economics-and-patronage" element={<Baroque0304EconomicsAndPatronagePage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/key-works-pieces" element={<Baroque0305KeyWorksPiecesPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/key-composers-artists" element={<Baroque0306KeyComposersArtistsPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/performance-practice/01-staging" element={<Baroque030701StagingPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/performance-practice/02-performer-audience-relationship" element={<Baroque030702PerformerAudienceRelationshipPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/performance-practice/03-attire" element={<Baroque030703AttirePage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/performance-practice/04-ritualistic-elements" element={<Baroque030704RitualisticElementsPage />} />
+<Route path="/aos/baroque/cultural-and-historical-context/performance-practice" element={<Baroque0307PerformancePracticePage />} />
+<Route path="/aos/baroque/cultural-and-historical-context" element={<Baroque03CulturalAndHistoricalContextPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory/specific-terminology" element={<Baroque0401SpecificTerminologyPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory" element={<Baroque0401SpecificTerminologyPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory/lyrics-and-text-analysis" element={<Baroque0402LyricsAndTextAnalysisPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory" element={<Baroque0402LyricsTextAnalysisPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory/notation-system" element={<Baroque0403NotationSystemPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory" element={<Baroque0403NotationSystemPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory/oral-aural-tradition" element={<Baroque0404OralAuralTraditionPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory" element={<Baroque0404OralAuralTraditionPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory" element={<Baroque0405MusicTheoryFrameworkPage />} />
+<Route path="/aos/baroque/language-literacy-and-theory" element={<Baroque04LanguageLiteracyAndTheoryPage />} />
+<Route path="/aos/baroque/technology-and-innovation/music-technology" element={<Baroque0501MusicTechnologyPage />} />
+<Route path="/aos/baroque/technology-and-innovation/recording-and-production-techniques" element={<Baroque0502RecordingAndProductionTechniquesPage />} />
+<Route path="/aos/baroque/technology-and-innovation/distribution-and-media" element={<Baroque0503DistributionAndMediaPage />} />
+<Route path="/aos/baroque/technology-and-innovation/hybridization" element={<Baroque0504HybridizationPage />} />
+<Route path="/aos/baroque/technology-and-innovation" element={<Baroque05TechnologyAndInnovationPage />} />
+<Route path="/aos/baroque/analytical-domains/genre-and-style" element={<Baroque0601GenreAndStylePage />} />
+<Route path="/aos/baroque/analytical-domains/aesthetic-values" element={<Baroque0602AestheticValuesPage />} />
+<Route path="/aos/baroque/analytical-domains/audience-reception" element={<Baroque0603AudienceReceptionPage />} />
+<Route path="/aos/baroque/analytical-domains/political-social-commentary" element={<Baroque0604PoliticalSocialCommentaryPage />} />
+<Route path="/aos/baroque/analytical-domains/geographic-influence" element={<Baroque0605GeographicInfluencePage />} />
+<Route path="/aos/baroque/analytical-domains" element={<Baroque06AnalyticalDomainsPage />} />
+<Route path="/aos/baroque/glossary" element={<Baroque07GlossaryPage />} />
+<Route path="/aos/baroque/." element={<BaroqueBaroqueMusicPage />} />
