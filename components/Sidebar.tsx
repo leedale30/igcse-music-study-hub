@@ -46,7 +46,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="w-full flex items-center justify-between text-left px-2 py-2.5 text-sm text-gray-200 hover:bg-slate-700 rounded-md transition-colors duration-150"
-            style={{ paddingLeft }}
+            style={{ paddingLeft }} // eslint-disable-line react-native/no-inline-styles -- dynamic indent
             title={displayTitle}
           >
             <span className="truncate">{displayTitle}</span>
@@ -68,7 +68,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate text-gray-300 hover:bg-slate-700 hover:text-gray-100"
-              style={{ paddingLeft }}
+              style={{ paddingLeft }} // eslint-disable-line react-native/no-inline-styles -- dynamic indent
               title={displayTitle}
             >
               <div className="flex items-center">
@@ -85,7 +85,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
                 `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
                 }`
               }
-              style={{ paddingLeft }}
+              style={{ paddingLeft }} // eslint-disable-line react-native/no-inline-styles -- dynamic indent
               title={displayTitle}
             >
               {displayTitle}
@@ -151,6 +151,58 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   title="Listening Exams"
                 >
                   Listening Exams
+                </NavLink>
+              </li>
+              <li className="mb-1">
+                <NavLink
+                  to="/theory"
+                  className={({ isActive }) =>
+                    `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                    }`
+                  }
+                  style={{ paddingLeft: '1rem' }}
+                  title="Music Theory"
+                >
+                  Music Theory
+                </NavLink>
+              </li>
+              <li className="mb-1">
+                <NavLink
+                  to="/presentations"
+                  className={({ isActive }) =>
+                    `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                    }`
+                  }
+                  style={{ paddingLeft: '1rem' }}
+                  title="Presentations"
+                >
+                  Presentations
+                </NavLink>
+              </li>
+              <li className="mt-4 pt-4 border-t border-slate-700">
+                <NavLink
+                  to="/dashboard"
+                  className={({ isActive }) =>
+                    `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                    }`
+                  }
+                  style={{ paddingLeft: '1rem' }}
+                  title="My Dashboard"
+                >
+                  📊 My Dashboard
+                </NavLink>
+              </li>
+              <li className="mb-1">
+                <NavLink
+                  to="/achievements"
+                  className={({ isActive }) =>
+                    `block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate ${isActive ? 'bg-sky-600 dark:bg-sky-500 text-white font-medium' : 'text-gray-300 hover:bg-slate-700 hover:text-gray-100'
+                    }`
+                  }
+                  style={{ paddingLeft: '1rem' }}
+                  title="Achievements"
+                >
+                  🏆 Achievements
                 </NavLink>
               </li>
             </ul>

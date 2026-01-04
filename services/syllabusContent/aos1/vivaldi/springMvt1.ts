@@ -150,11 +150,11 @@ The solo violinist and the orchestra make use of a range of techniques, includin
     children: [
         {
             id: 'aos1-vivaldi-spring-mvt1-deep-dive',
-            title: '🔬 Deep Dive: Annotated Score',
-            title_zh: '🔬 深度解析：注释乐谱',
-            path: '/aos/aos01-baroque-music/vivaldi/spring/deep-dive.html',
-            content: 'Comprehensive bar-by-bar analysis with ABC notation, program music annotations, and detailed musicological commentary.',
-            content_zh: '全面的逐小节分析，包含ABC记谱法、标题音乐注释和详细的音乐学评论。',
+            title: 'Deep Dive: Analysis & Score',
+            title_zh: '深度解析：注释乐谱',
+            path: '/aos/vivaldi-spring-deep-dive',
+            content: 'Comprehensive bar-by-bar analysis with ABC notation.',
+            content_zh: '全面的逐小节分析，包含ABC记谱法。'
         }
     ]
 };

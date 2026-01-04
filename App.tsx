@@ -36,6 +36,7 @@ import MoonRiverTestPage from './pages/MoonRiverTestPage';
 import TheoryListPage from './pages/TheoryListPage';
 import TheoryPage from './pages/TheoryPage';
 import AosContentPage from './pages/AosContentPage';
+import VivaldiSpringDeepDivePage from './pages/aos1/VivaldiSpringDeepDivePage';
 import SitemapPage from './pages/SitemapPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -107,6 +108,9 @@ const App: React.FC = () => {
                     <Route path="/theory" element={<TheoryListPage />} />
                     <Route path="/theory/:pageId" element={<TheoryPage />} />
                     {/* AOS content routes */}
+                    {/* Specific AOS Pages */}
+                    <Route path="/aos/vivaldi-spring-deep-dive" element={<VivaldiSpringDeepDivePage />} />
+                    {/* AOS generic content routes */}
                     <Route path="/aos/:aosId/*" element={<AosContentPage />} />
                   </Route>
 

@@ -276,7 +276,7 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
               key={option.id}
               onClick={() => handleAnswerSelect(currentQuestion.id, option.id)}
               disabled={showResults}
-              aria-pressed={selectedAnswers[currentQuestion.id] === option.id}
+              aria-pressed={selectedAnswers[currentQuestion.id] === option.id ? true : undefined}
               className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-150 
                 ${selectedAnswers[currentQuestion.id] === option.id
                   ? 'bg-sky-500 border-sky-600 text-white font-semibold ring-2 ring-sky-300 shadow-md'

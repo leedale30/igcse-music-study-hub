@@ -100,6 +100,7 @@ const InstrumentsListPage: React.FC = () => {
               <select
                 value={selectedFamily}
                 onChange={(e) => setSelectedFamily(e.target.value)}
+                aria-label="Filter by instrument family"
                 className="pl-10 pr-8 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[200px]"
               >
                 <option value="all">
@@ -138,7 +139,7 @@ const InstrumentsListPage: React.FC = () => {
             </p>
           </div>
         ) : (
-          Object.entries(groupedInstruments).map(([family, instruments]) => (
+          Object.entries(groupedInstruments).map(([family, instruments]: [string, InstrumentData[]]) => (
             <div key={family} className="mb-12">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 border-b-2 border-blue-500 pb-2">
                 {family}

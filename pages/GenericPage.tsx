@@ -98,10 +98,12 @@ const renderFormattedText = (text: string): React.ReactNode => {
     const marginLeft = indentLevel * 1.5; // 1.5rem per indent level
 
     return (
+      // eslint-disable-next-line react-native/no-inline-styles
       <div className="flex items-start gap-2 mb-2" style={{ marginLeft: `${marginLeft}rem` }}>
         <input
           type="checkbox"
           disabled
+          aria-label="Checklist item"
           className="mt-1 h-4 w-4 text-sky-600 border-gray-300 rounded focus:ring-sky-500 dark:border-gray-600 dark:bg-gray-700"
         />
         <span className="text-base text-gray-700 dark:text-gray-300">

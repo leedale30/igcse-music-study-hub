@@ -104,6 +104,7 @@ const SectionList: React.FC<{ sections: SiteSection[]; level?: number }> = ({ se
     const paddingLeft = level * 16;
 
     return (
+        // eslint-disable-next-line react-native/no-inline-styles
         <ul className={`space-y-1 ${level === 0 ? 'mt-4' : 'mt-1'}`} style={{ paddingLeft }}>
             {sections.map((section) => (
                 <li key={section.path}>
