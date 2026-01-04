@@ -44,6 +44,9 @@ import { DanceRoutes } from './routes/DanceRoutes';
 import { SmallEnsembleRoutes } from './routes/SmallEnsembleRoutes';
 import { StageScreenRoutes } from './routes/StageScreenRoutes';
 import SitemapPage from './pages/SitemapPage';
+import GlossaryPage from './pages/GlossaryPage';
+import CourseworkPage from './pages/CourseworkPage';
+import AreasOfStudyPage from './pages/AreasOfStudyPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -105,11 +108,11 @@ const App: React.FC = () => {
                     <Route path="/listening-exams/godspell" element={<GodspellTestPage />} />
                     <Route path="/listening-exams/pirates-caribbean" element={<PiratesCaribbeanTestPage />} />
                     <Route path="/listening-exams/moon-river" element={<MoonRiverTestPage />} />
-                    <Route path="/term/:termId" element={<GenericPage />} />
+                    <Route path="/glossary" element={<GlossaryPage />} />
                     {/* Areas of study routes */}
-                    <Route path="/areas-of-study/*" element={<GenericPage />} />
+                    <Route path="/areas-of-study" element={<AreasOfStudyPage />} />
                     {/* Coursework routes */}
-                    <Route path="/coursework/*" element={<GenericPage />} />
+                    <Route path="/coursework" element={<CourseworkPage />} />
                     {/* Theory routes (135 React components) */}
                     <Route path="/theory/*" element={<TheoryRoutes />} />
                     {/* AOS content routes */}
