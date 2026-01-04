@@ -39,6 +39,11 @@ import AosContentPage from './pages/AosContentPage';
 import VivaldiSpringDeepDivePage from './pages/aos1/VivaldiSpringDeepDivePage';
 import { BaroqueRoutes } from './routes/BaroqueRoutes';
 import { ClassicalRoutes } from './routes/ClassicalRoutes';
+import { RomanticRoutes } from './routes/RomanticRoutes';
+import { MusicAndWordsRoutes } from './routes/MusicAndWordsRoutes';
+import { DanceRoutes } from './routes/DanceRoutes';
+import { SmallEnsembleRoutes } from './routes/SmallEnsembleRoutes';
+import { StageScreenRoutes } from './routes/StageScreenRoutes';
 import SitemapPage from './pages/SitemapPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -116,6 +121,16 @@ const App: React.FC = () => {
                     {BaroqueRoutes}
                     {/* AOS2 Classical Music Routes (52 pages) */}
                     {ClassicalRoutes}
+                    {/* AOS3 Romantic Music Routes (58 pages) */}
+                    {RomanticRoutes}
+                    {/* AOS4 Music and Words Routes (58 pages) */}
+                    {MusicAndWordsRoutes}
+                    {/* AOS5 Music for Dance Routes (58 pages) */}
+                    {DanceRoutes}
+                    {/* AOS6 Small Ensemble Routes (53 pages) */}
+                    {SmallEnsembleRoutes}
+                    {/* AOS7 Stage and Screen Routes (58 pages) */}
+                    {StageScreenRoutes}
                     {/* AOS generic content routes */}
                     <Route path="/aos/:aosId/*" element={<AosContentPage />} />
                   </Route>

@@ -1,0 +1,55 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Dance0502RecordingAndProductionTechniquesPage: React.FC = () => {
+  return (
+    <article className="max-w-4xl mx-auto px-4 py-8">
+      {/* Breadcrumb Navigation */}
+      <nav className="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <Link to="/" className="hover:text-sky-600 dark:hover:text-sky-400">Home</Link>
+        <span className="mx-2">›</span>
+        <Link to="/aos/dance" className="hover:text-sky-600 dark:hover:text-sky-400">Music for Dance</Link>
+        <span className="mx-2">›</span>
+        <span className="text-gray-700 dark:text-gray-300">Recording And Production Techniques</span>
+      </nav>
+
+      {/* Page Header */}
+      <header className="mb-10">
+        <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+          Recording And Production Techniques
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
+          Area of Study 5 • Music for Dance
+        </p>
+      </header>
+
+      {/* Main Content */}
+      <div className="prose prose-slate dark:prose-invert max-w-none
+        prose-headings:text-slate-800 dark:prose-headings:text-slate-100
+        prose-h2:text-2xl prose-h2:font-bold prose-h2:border-b prose-h2:border-slate-200 prose-h2:dark:border-slate-700 prose-h2:pb-2 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:font-semibold
+        prose-h4:text-lg prose-h4:font-medium
+        prose-p:text-gray-700 prose-p:dark:text-gray-300 prose-p:leading-relaxed
+        prose-li:text-gray-700 prose-li:dark:text-gray-300
+        prose-strong:text-slate-800 prose-strong:dark:text-slate-200
+        prose-em:text-gray-600 prose-em:dark:text-gray-400
+        prose-a:text-sky-600 prose-a:dark:text-sky-400 prose-a:hover:underline
+        [&_section]:mb-10 [&_section]:bg-slate-50 [&_section]:dark:bg-slate-800 [&_section]:rounded-lg [&_section]:p-6
+      ">
+        <div dangerouslySetInnerHTML={{ __html: `<h3>5.2. Recording &amp; Production Techniques: Studio methods, mic placement, mixing styles, and mastering.</h3>
+<p>The characteristic sound and structure of modern dance genres rely heavily on specific production techniques.</p>
+<ul>
+<li> <strong>Rhythmic Foundation:</strong> The foundation of EDM is the programmed rhythmic pattern, typically the <strong>four-to-the-floor</strong> kick drum rhythm. This driving pulse requires the use of the <strong>drum machine</strong>.</li>
+<li> <strong>Structural Manipulation:</strong> Production techniques are used to manipulate musical energy for the dance floor, including the use of:</li>
+<li> <strong>Breakdown, Build up, and Drop:</strong> Essential structural elements used to create and release tension in EDM tracks. <strong>Builds</strong> often use techniques like <strong>filtering</strong> to intensify the sound before the climax (<strong>drop</strong>).</li>
+<li> <strong>Layering and Texture:</strong> Production methods are used to create the dense textures of popular recorded dance music:</li>
+<li> <strong>Multi-tracking:</strong> Capturing separate audio tracks to allow individual processing (e.g., applying specific effects to the synthesiser bass line versus the lead melody).</li>
+<li> <strong>Overdubbing</strong> and <strong>double-tracking:</strong> Layering musical parts to achieve a fuller, more complex sound.</li>
+<li> <strong>Composition Link:</strong> For Composition 2 (which can relate to this area), if you choose to submit a written commentary instead of a traditional score, you must clearly explain <strong>how your effects were achieved</strong> through the use of <strong>technology</strong>.</li>
+</ul>` }} />
+      </div>
+    </article>
+  );
+};
+
+export default Dance0502RecordingAndProductionTechniquesPage;
