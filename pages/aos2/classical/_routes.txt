@@ -1,0 +1,119 @@
+// Import statements
+import Classical0101DynamicsPage from './pages/aos2/classical/Classical0101DynamicsPage';
+import Classical0102RhythmPage from './pages/aos2/classical/Classical0102RhythmPage';
+import Classical0103MetrePage from './pages/aos2/classical/Classical0103MetrePage';
+import Classical0104TempoPage from './pages/aos2/classical/Classical0104TempoPage';
+import Classical0105MelodyPage from './pages/aos2/classical/Classical0105MelodyPage';
+import Classical0106HarmonyPage from './pages/aos2/classical/Classical0106HarmonyPage';
+import Classical0107TonalityPage from './pages/aos2/classical/Classical0107TonalityPage';
+import Classical0108TexturePage from './pages/aos2/classical/Classical0108TexturePage';
+import Classical0109TimbrePage from './pages/aos2/classical/Classical0109TimbrePage';
+import Classical0110StructureFormPage from './pages/aos2/classical/Classical0110StructureFormPage';
+import Classical01CoreMusicalElementsPage from './pages/aos2/classical/Classical01CoreMusicalElementsPage';
+import Classical0201InstrumentationPage from './pages/aos2/classical/Classical0201InstrumentationPage';
+import Classical0202OrganologyPage from './pages/aos2/classical/Classical0202OrganologyPage';
+import Classical0203VocalTechniquesPage from './pages/aos2/classical/Classical0203VocalTechniquesPage';
+import Classical0204ExtendedTechniquesPage from './pages/aos2/classical/Classical0204ExtendedTechniquesPage';
+import Classical0205ImprovisationPage from './pages/aos2/classical/Classical0205ImprovisationPage';
+import Classical0206CompositionTechniquesPage from './pages/aos2/classical/Classical0206CompositionTechniquesPage';
+import Classical02SoundSourcesAndTechniquesPage from './pages/aos2/classical/Classical02SoundSourcesAndTechniquesPage';
+import Classical030101RitualPage from './pages/aos2/classical/Classical030101RitualPage';
+import Classical030102CelebrationPage from './pages/aos2/classical/Classical030102CelebrationPage';
+import Classical030103WorkProtestPage from './pages/aos2/classical/Classical030103WorkProtestPage';
+import Classical030104HealingPage from './pages/aos2/classical/Classical030104HealingPage';
+import Classical030105SocialIdentityPage from './pages/aos2/classical/Classical030105SocialIdentityPage';
+import Classical0301CulturalFunctionPage from './pages/aos2/classical/Classical0301CulturalFunctionPage';
+import Classical0302HistoricalBackgroundPage from './pages/aos2/classical/Classical0302HistoricalBackgroundPage';
+import Classical0303MovementAndDancePage from './pages/aos2/classical/Classical0303MovementAndDancePage';
+import Classical0304EconomicsAndPatronagePage from './pages/aos2/classical/Classical0304EconomicsAndPatronagePage';
+import Classical0305KeyWorksPiecesPage from './pages/aos2/classical/Classical0305KeyWorksPiecesPage';
+import Classical0306KeyComposersArtistsPage from './pages/aos2/classical/Classical0306KeyComposersArtistsPage';
+import Classical030701StagingPage from './pages/aos2/classical/Classical030701StagingPage';
+import Classical030702PerformerAudienceRelationshipPage from './pages/aos2/classical/Classical030702PerformerAudienceRelationshipPage';
+import Classical030703AttirePage from './pages/aos2/classical/Classical030703AttirePage';
+import Classical030704RitualisticElementsPage from './pages/aos2/classical/Classical030704RitualisticElementsPage';
+import Classical0307PerformancePracticePage from './pages/aos2/classical/Classical0307PerformancePracticePage';
+import Classical03CulturalAndHistoricalContextPage from './pages/aos2/classical/Classical03CulturalAndHistoricalContextPage';
+import Classical0401SpecificTerminologyPage from './pages/aos2/classical/Classical0401SpecificTerminologyPage';
+import Classical0401SpecificTerminologyPage from './pages/aos2/classical/Classical0401SpecificTerminologyPage';
+import Classical0402LyricsAndTextAnalysisPage from './pages/aos2/classical/Classical0402LyricsAndTextAnalysisPage';
+import Classical0402LyricsTextAnalysisPage from './pages/aos2/classical/Classical0402LyricsTextAnalysisPage';
+import Classical0403NotationSystemPage from './pages/aos2/classical/Classical0403NotationSystemPage';
+import Classical0403NotationSystemPage from './pages/aos2/classical/Classical0403NotationSystemPage';
+import Classical0404OralAuralTraditionPage from './pages/aos2/classical/Classical0404OralAuralTraditionPage';
+import Classical0404OralAuralTraditionPage from './pages/aos2/classical/Classical0404OralAuralTraditionPage';
+import Classical0405MusicTheoryFrameworkPage from './pages/aos2/classical/Classical0405MusicTheoryFrameworkPage';
+import Classical04LanguageLiteracyAndTheoryPage from './pages/aos2/classical/Classical04LanguageLiteracyAndTheoryPage';
+import Classical0501MusicTechnologyPage from './pages/aos2/classical/Classical0501MusicTechnologyPage';
+import Classical0502RecordingAndProductionTechniquesPage from './pages/aos2/classical/Classical0502RecordingAndProductionTechniquesPage';
+import Classical0503DistributionAndMediaPage from './pages/aos2/classical/Classical0503DistributionAndMediaPage';
+import Classical0504HybridizationPage from './pages/aos2/classical/Classical0504HybridizationPage';
+import Classical05TechnologyAndInnovationPage from './pages/aos2/classical/Classical05TechnologyAndInnovationPage';
+import Classical0601GenreAndStylePage from './pages/aos2/classical/Classical0601GenreAndStylePage';
+import Classical0602AestheticValuesPage from './pages/aos2/classical/Classical0602AestheticValuesPage';
+import Classical0603AudienceReceptionPage from './pages/aos2/classical/Classical0603AudienceReceptionPage';
+import Classical0604PoliticalSocialCommentaryPage from './pages/aos2/classical/Classical0604PoliticalSocialCommentaryPage';
+import Classical0605GeographicInfluencePage from './pages/aos2/classical/Classical0605GeographicInfluencePage';
+import Classical06AnalyticalDomainsPage from './pages/aos2/classical/Classical06AnalyticalDomainsPage';
+import Classical07GlossaryPage from './pages/aos2/classical/Classical07GlossaryPage';
+import ClassicalClassicalMusicPage from './pages/aos2/classical/ClassicalClassicalMusicPage';
+
+// Route definitions
+<Route path="/aos/classical/core-musical-elements/dynamics" element={<Classical0101DynamicsPage />} />
+<Route path="/aos/classical/core-musical-elements/rhythm" element={<Classical0102RhythmPage />} />
+<Route path="/aos/classical/core-musical-elements/metre" element={<Classical0103MetrePage />} />
+<Route path="/aos/classical/core-musical-elements/tempo" element={<Classical0104TempoPage />} />
+<Route path="/aos/classical/core-musical-elements/melody" element={<Classical0105MelodyPage />} />
+<Route path="/aos/classical/core-musical-elements/harmony" element={<Classical0106HarmonyPage />} />
+<Route path="/aos/classical/core-musical-elements/tonality" element={<Classical0107TonalityPage />} />
+<Route path="/aos/classical/core-musical-elements/texture" element={<Classical0108TexturePage />} />
+<Route path="/aos/classical/core-musical-elements/timbre" element={<Classical0109TimbrePage />} />
+<Route path="/aos/classical/core-musical-elements/structure-form" element={<Classical0110StructureFormPage />} />
+<Route path="/aos/classical/core-musical-elements" element={<Classical01CoreMusicalElementsPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques/instrumentation" element={<Classical0201InstrumentationPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques/organology" element={<Classical0202OrganologyPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques/vocal-techniques" element={<Classical0203VocalTechniquesPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques/extended-techniques" element={<Classical0204ExtendedTechniquesPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques/improvisation" element={<Classical0205ImprovisationPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques/composition-techniques" element={<Classical0206CompositionTechniquesPage />} />
+<Route path="/aos/classical/sound-sources-and-techniques" element={<Classical02SoundSourcesAndTechniquesPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/cultural-function/01-ritual" element={<Classical030101RitualPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/cultural-function/02-celebration" element={<Classical030102CelebrationPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/cultural-function/03-work-protest" element={<Classical030103WorkProtestPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/cultural-function/04-healing" element={<Classical030104HealingPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/cultural-function/05-social-identity" element={<Classical030105SocialIdentityPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/cultural-function" element={<Classical0301CulturalFunctionPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/historical-background" element={<Classical0302HistoricalBackgroundPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/movement-and-dance" element={<Classical0303MovementAndDancePage />} />
+<Route path="/aos/classical/cultural-and-historical-context/economics-and-patronage" element={<Classical0304EconomicsAndPatronagePage />} />
+<Route path="/aos/classical/cultural-and-historical-context/key-works-pieces" element={<Classical0305KeyWorksPiecesPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/key-composers-artists" element={<Classical0306KeyComposersArtistsPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/performance-practice/01-staging" element={<Classical030701StagingPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/performance-practice/02-performer-audience-relationship" element={<Classical030702PerformerAudienceRelationshipPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/performance-practice/03-attire" element={<Classical030703AttirePage />} />
+<Route path="/aos/classical/cultural-and-historical-context/performance-practice/04-ritualistic-elements" element={<Classical030704RitualisticElementsPage />} />
+<Route path="/aos/classical/cultural-and-historical-context/performance-practice" element={<Classical0307PerformancePracticePage />} />
+<Route path="/aos/classical/cultural-and-historical-context" element={<Classical03CulturalAndHistoricalContextPage />} />
+<Route path="/aos/classical/language-literacy-and-theory/specific-terminology" element={<Classical0401SpecificTerminologyPage />} />
+<Route path="/aos/classical/language-literacy-and-theory" element={<Classical0401SpecificTerminologyPage />} />
+<Route path="/aos/classical/language-literacy-and-theory/lyrics-and-text-analysis" element={<Classical0402LyricsAndTextAnalysisPage />} />
+<Route path="/aos/classical/language-literacy-and-theory" element={<Classical0402LyricsTextAnalysisPage />} />
+<Route path="/aos/classical/language-literacy-and-theory/notation-system" element={<Classical0403NotationSystemPage />} />
+<Route path="/aos/classical/language-literacy-and-theory" element={<Classical0403NotationSystemPage />} />
+<Route path="/aos/classical/language-literacy-and-theory/oral-aural-tradition" element={<Classical0404OralAuralTraditionPage />} />
+<Route path="/aos/classical/language-literacy-and-theory" element={<Classical0404OralAuralTraditionPage />} />
+<Route path="/aos/classical/language-literacy-and-theory" element={<Classical0405MusicTheoryFrameworkPage />} />
+<Route path="/aos/classical/language-literacy-and-theory" element={<Classical04LanguageLiteracyAndTheoryPage />} />
+<Route path="/aos/classical/technology-and-innovation/music-technology" element={<Classical0501MusicTechnologyPage />} />
+<Route path="/aos/classical/technology-and-innovation/recording-and-production-techniques" element={<Classical0502RecordingAndProductionTechniquesPage />} />
+<Route path="/aos/classical/technology-and-innovation/distribution-and-media" element={<Classical0503DistributionAndMediaPage />} />
+<Route path="/aos/classical/technology-and-innovation/hybridization" element={<Classical0504HybridizationPage />} />
+<Route path="/aos/classical/technology-and-innovation" element={<Classical05TechnologyAndInnovationPage />} />
+<Route path="/aos/classical/analytical-domains/genre-and-style" element={<Classical0601GenreAndStylePage />} />
+<Route path="/aos/classical/analytical-domains/aesthetic-values" element={<Classical0602AestheticValuesPage />} />
+<Route path="/aos/classical/analytical-domains/audience-reception" element={<Classical0603AudienceReceptionPage />} />
+<Route path="/aos/classical/analytical-domains/political-social-commentary" element={<Classical0604PoliticalSocialCommentaryPage />} />
+<Route path="/aos/classical/analytical-domains/geographic-influence" element={<Classical0605GeographicInfluencePage />} />
+<Route path="/aos/classical/analytical-domains" element={<Classical06AnalyticalDomainsPage />} />
+<Route path="/aos/classical/glossary" element={<Classical07GlossaryPage />} />
+<Route path="/aos/classical/." element={<ClassicalClassicalMusicPage />} />

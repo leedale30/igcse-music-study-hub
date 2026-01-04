@@ -38,6 +38,7 @@ import TheoryPage from './pages/TheoryPage';
 import AosContentPage from './pages/AosContentPage';
 import VivaldiSpringDeepDivePage from './pages/aos1/VivaldiSpringDeepDivePage';
 import { BaroqueRoutes } from './routes/BaroqueRoutes';
+import { ClassicalRoutes } from './routes/ClassicalRoutes';
 import SitemapPage from './pages/SitemapPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -113,6 +114,8 @@ const App: React.FC = () => {
                     <Route path="/aos/vivaldi-spring-deep-dive" element={<VivaldiSpringDeepDivePage />} />
                     {/* AOS1 Baroque Music Routes (52 pages) */}
                     {BaroqueRoutes}
+                    {/* AOS2 Classical Music Routes (52 pages) */}
+                    {ClassicalRoutes}
                     {/* AOS generic content routes */}
                     <Route path="/aos/:aosId/*" element={<AosContentPage />} />
                   </Route>

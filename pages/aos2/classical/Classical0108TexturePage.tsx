@@ -1,0 +1,365 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Classical0108TexturePage: React.FC = () => {
+  return (
+    <article className="max-w-4xl mx-auto px-4 py-8">
+      {/* Breadcrumb Navigation */}
+      <nav className="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <Link to="/" className="hover:text-sky-600 dark:hover:text-sky-400">Home</Link>
+        <span className="mx-2">›</span>
+        <Link to="/aos/classical" className="hover:text-sky-600 dark:hover:text-sky-400">Classical Music</Link>
+        <span className="mx-2">›</span>
+        <span className="text-gray-700 dark:text-gray-300">Texture</span>
+      </nav>
+
+      {/* Page Header */}
+      <header className="mb-10">
+        <h1 className="text-4xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+          Texture
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-300">
+          Area of Study 2 • Classical Music
+        </p>
+      </header>
+
+      {/* Main Content */}
+      <div className="prose prose-slate dark:prose-invert max-w-none
+        prose-headings:text-slate-800 dark:prose-headings:text-slate-100
+        prose-h2:text-2xl prose-h2:font-bold prose-h2:border-b prose-h2:border-slate-200 prose-h2:dark:border-slate-700 prose-h2:pb-2 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:font-semibold
+        prose-h4:text-lg prose-h4:font-medium
+        prose-p:text-gray-700 prose-p:dark:text-gray-300 prose-p:leading-relaxed
+        prose-li:text-gray-700 prose-li:dark:text-gray-300
+        prose-strong:text-slate-800 prose-strong:dark:text-slate-200
+        prose-em:text-gray-600 prose-em:dark:text-gray-400
+        prose-a:text-sky-600 prose-a:dark:text-sky-400 prose-a:hover:underline
+        [&_section]:mb-10 [&_section]:bg-slate-50 [&_section]:dark:bg-slate-800 [&_section]:rounded-lg [&_section]:p-6
+        [&_.assessment-section]:bg-amber-50 [&_.assessment-section]:dark:bg-amber-900/20 [&_.assessment-section]:border [&_.assessment-section]:border-amber-200 [&_.assessment-section]:dark:border-amber-800
+        [&_.definition-section]:bg-sky-50 [&_.definition-section]:dark:bg-sky-900/20 [&_.definition-section]:border [&_.definition-section]:border-sky-200 [&_.definition-section]:dark:border-sky-800
+        [&_.characteristic-item]:bg-white [&_.characteristic-item]:dark:bg-slate-700 [&_.characteristic-item]:rounded-lg [&_.characteristic-item]:p-4 [&_.characteristic-item]:mb-4 [&_.characteristic-item]:border [&_.characteristic-item]:border-slate-200 [&_.characteristic-item]:dark:border-slate-600
+        [&_.example-item]:bg-white [&_.example-item]:dark:bg-slate-700 [&_.example-item]:rounded-lg [&_.example-item]:p-4 [&_.example-item]:mb-4 [&_.example-item]:border [&_.example-item]:border-slate-200 [&_.example-item]:dark:border-slate-600
+      ">
+        <div dangerouslySetInnerHTML={{ __html: `Definition Section 
+<section className="definition-section" id="definition">
+<h2>Definition: Texture</h2>
+<p><strong>Texture</strong> refers to the way musical lines or voices are combined and layered in a composition. In Classical music, texture is characterized by the predominance of homophony, the development of sophisticated accompaniment patterns like the Alberti bass, and the strategic use of different textural types to create contrast and support formal structure.</p>
+</section>
+ Key Characteristics Section 
+<section className="characteristics-section" id="key-characteristics">
+<h2>Key Characteristics of Classical Texture</h2>
+<div className="characteristic-item" id="homophonic-dominance">
+<h3>Homophonic Dominance</h3>
+<p>Classical music is predominantly homophonic, featuring a clear melodic line supported by harmonic accompaniment.</p>
+<h4>Melody and Accompaniment</h4>
+<p>The fundamental Classical textural approach:</p>
+<ul>
+<li><strong>Primary melody:</strong> Clear, singable melodic line in the highest voice</li>
+<li><strong>Harmonic support:</strong> Lower voices provide chordal accompaniment</li>
+<li><strong>Rhythmic differentiation:</strong> Melody and accompaniment have distinct rhythmic patterns</li>
+<li><strong>Textural clarity:</strong> Each layer has a specific function and character</li>
+</ul>
+<h4>Sophisticated Accompaniment Patterns</h4>
+<p>Classical composers developed elaborate accompaniment techniques:</p>
+<ul>
+<li><strong>Alberti bass:</strong> Broken chord patterns in the left hand</li>
+<li><strong>Arpeggiated accompaniment:</strong> Flowing broken chord figures</li>
+<li><strong>Repeated chord patterns:</strong> Rhythmic harmonic support</li>
+<li><strong>Walking bass lines:</strong> Stepwise bass movement with harmonic function</li>
+</ul>
+</div>
+<div className="characteristic-item" id="textural-variety">
+<h3>Strategic Textural Variety</h3>
+<p>Classical composers used different textures for contrast, formal articulation, and expressive purposes.</p>
+<h4>Textural Contrast</h4>
+<p>Different textures used for structural and expressive purposes:</p>
+<ul>
+<li><strong>Homophonic sections:</strong> For lyrical, expressive passages</li>
+<li><strong>Polyphonic episodes:</strong> For development and complexity</li>
+<li><strong>Unison passages:</strong> For dramatic emphasis and power</li>
+<li><strong>Antiphonal textures:</strong> For dialogue between voices or sections</li>
+</ul>
+<h4>Formal Functions</h4>
+<p>Texture supports Classical formal structures:</p>
+<ul>
+<li><strong>Theme presentation:</strong> Clear homophonic texture for main themes</li>
+<li><strong>Development sections:</strong> More complex polyphonic textures</li>
+<li><strong>Transitions:</strong> Textural changes to signal formal divisions</li>
+<li><strong>Climactic moments:</strong> Thicker textures for dramatic peaks</li>
+</ul>
+</div>
+</section>
+ Alberti Bass Section 
+<section className="alberti-section" id="alberti-bass">
+<h2>The Alberti Bass</h2>
+<div className="alberti-item" id="alberti-definition">
+<h3>Definition and Characteristics</h3>
+<p>The Alberti bass is a specific type of broken chord accompaniment pattern that became emblematic of Classical style:</p>
+<h4>Basic Pattern</h4>
+<p>The fundamental Alberti bass structure:</p>
+<ul>
+<li><strong>Broken chord pattern:</strong> Chord tones played in succession rather than simultaneously</li>
+<li><strong>Standard order:</strong> Typically lowest note, highest note, middle note, highest note</li>
+<li><strong>Continuous motion:</strong> Steady stream of notes, usually in eighth or sixteenth notes</li>
+<li><strong>Harmonic foundation:</strong> Clearly outlines the underlying chord progression</li>
+</ul>
+<h4>Variations and Developments</h4>
+<p>Classical composers created numerous variations of the basic pattern:</p>
+<ul>
+<li><strong>Rhythmic variations:</strong> Different note values and rhythmic patterns</li>
+<li><strong>Melodic elaboration:</strong> Added passing tones and neighbor notes</li>
+<li><strong>Register changes:</strong> Alberti patterns in different octaves</li>
+<li><strong>Textural combinations:</strong> Alberti bass with other accompaniment types</li>
+</ul>
+</div>
+<div className="alberti-item" id="alberti-functions">
+<h3>Functions of Alberti Bass</h3>
+<p>The Alberti bass serves multiple musical functions in Classical compositions:</p>
+<h4>Harmonic Functions</h4>
+<ul>
+<li><strong>Chord definition:</strong> Clearly outlines harmonic progressions</li>
+<li><strong>Voice leading:</strong> Smooth connection between chord changes</li>
+<li><strong>Harmonic rhythm:</strong> Maintains steady harmonic pulse</li>
+<li><strong>Tonal clarity:</strong> Reinforces key centers and modulations</li>
+</ul>
+<h4>Textural Functions</h4>
+<ul>
+<li><strong>Accompaniment layer:</strong> Provides supportive background for melody</li>
+<li><strong>Rhythmic continuity:</strong> Maintains steady motion and momentum</li>
+<li><strong>Textural interest:</strong> Adds movement without competing with melody</li>
+<li><strong>Dynamic foundation:</strong> Supports crescendos and diminuendos</li>
+</ul>
+<h4>Expressive Functions</h4>
+<ul>
+<li><strong>Elegance and refinement:</strong> Creates sophisticated, courtly character</li>
+<li><strong>Emotional support:</strong> Enhances melodic expression through harmonic color</li>
+<li><strong>Stylistic identity:</strong> Immediately recognizable as Classical style</li>
+<li><strong>Virtuosic display:</strong> Demonstrates technical skill and musical sophistication</li>
+</ul>
+</div>
+</section>
+ Textural Types Section 
+<section className="types-section" id="textural-types">
+<h2>Classical Textural Types</h2>
+<div className="texture-type" id="homophonic-textures">
+<h3>Homophonic Textures</h3>
+<p>The dominant textural approach in Classical music:</p>
+<h4>Melody and Accompaniment</h4>
+<p>The most common Classical texture:</p>
+<ul>
+<li><strong>Clear melodic line:</strong> Usually in the highest voice</li>
+<li><strong>Chordal accompaniment:</strong> Supporting harmonies in lower voices</li>
+<li><strong>Rhythmic independence:</strong> Different rhythmic patterns in melody and accompaniment</li>
+<li><strong>Functional hierarchy:</strong> Clear distinction between primary and supporting voices</li>
+</ul>
+<h4>Accompanied Melody Variations</h4>
+<p>Different approaches to homophonic texture:</p>
+<ul>
+<li><strong>Simple chordal:</strong> Block chords supporting melody</li>
+<li><strong>Arpeggiated:</strong> Broken chord patterns (including Alberti bass)</li>
+<li><strong>Figural:</strong> Decorative patterns that outline harmonies</li>
+<li><strong>Contrapuntal accompaniment:</strong> More independent accompanying voices</li>
+</ul>
+</div>
+<div className="texture-type" id="polyphonic-textures">
+<h3>Polyphonic Textures</h3>
+<p>Used strategically for contrast and development:</p>
+<h4>Imitative Polyphony</h4>
+<p>Voices enter with the same or similar material:</p>
+<ul>
+<li><strong>Fugal episodes:</strong> Brief fugal passages within larger works</li>
+<li><strong>Canon:</strong> Strict imitation at different time intervals</li>
+<li><strong>Stretto:</strong> Overlapping entries of imitative material</li>
+<li><strong>Invertible counterpoint:</strong> Voices that can exchange positions</li>
+</ul>
+<h4>Free Polyphony</h4>
+<p>Independent voices without strict imitation:</p>
+<ul>
+<li><strong>Contrapuntal development:</strong> Independent melodic lines in development sections</li>
+<li><strong>Voice exchange:</strong> Voices trading melodic and harmonic roles</li>
+<li><strong>Motivic interplay:</strong> Different motifs combined simultaneously</li>
+<li><strong>Textural layering:</strong> Multiple independent musical ideas</li>
+</ul>
+</div>
+<div className="texture-type" id="special-textures">
+<h3>Special Textural Effects</h3>
+<p>Unique textures used for specific expressive purposes:</p>
+<h4>Unison and Octave Doubling</h4>
+<p>All voices playing the same melodic line:</p>
+<ul>
+<li><strong>Dramatic emphasis:</strong> For powerful, emphatic statements</li>
+<li><strong>Formal articulation:</strong> To mark important structural points</li>
+<li><strong>Dynamic climax:</strong> Maximum textural density and power</li>
+<li><strong>Thematic return:</strong> Highlighting the return of important themes</li>
+</ul>
+<h4>Antiphonal Textures</h4>
+<p>Dialogue between different voices or groups:</p>
+<ul>
+<li><strong>Question and answer:</strong> Alternating phrases between voices</li>
+<li><strong>Echo effects:</strong> Repetition of material in different voices</li>
+<li><strong>Concertante style:</strong> Dialogue between soloist and ensemble</li>
+<li><strong>Spatial effects:</strong> Music that plays with physical positioning</li>
+</ul>
+</div>
+</section>
+ Textural Development Section 
+<section className="development-section" id="textural-development">
+<h2>Textural Development Techniques</h2>
+<div className="development-item" id="thematic-texture">
+<h3>Thematic and Textural Integration</h3>
+<p>Classical composers integrated textural changes with thematic development:</p>
+<h4>Theme and Variations</h4>
+<p>Textural variation as a developmental technique:</p>
+<ul>
+<li><strong>Textural variations:</strong> Same theme in different textural settings</li>
+<li><strong>Accompaniment changes:</strong> Different accompaniment patterns for each variation</li>
+<li><strong>Voice redistribution:</strong> Theme moved between different voices</li>
+<li><strong>Density variation:</strong> From simple to complex textures</li>
+</ul>
+<h4>Development Section Techniques</h4>
+<p>Textural manipulation in sonata form development:</p>
+<ul>
+<li><strong>Fragmentation:</strong> Breaking themes into smaller textural units</li>
+<li><strong>Combination:</strong> Layering different thematic materials</li>
+<li><strong>Inversion:</strong> Turning accompaniment into melody and vice versa</li>
+<li><strong>Augmentation:</strong> Stretching themes across different textural layers</li>
+</ul>
+</div>
+<div className="development-item" id="formal-texture">
+<h3>Texture and Formal Structure</h3>
+<p>How textural changes support and articulate Classical forms:</p>
+<h4>Sonata Form Textural Plan</h4>
+<p>Typical textural organization in sonata form:</p>
+<ul>
+<li><strong>Exposition:</strong> Clear homophonic presentation of themes</li>
+<li><strong>Development:</strong> More complex polyphonic and fragmented textures</li>
+<li><strong>Recapitulation:</strong> Return to clear homophonic textures</li>
+<li><strong>Coda:</strong> Often features textural intensification and climax</li>
+</ul>
+<h4>Other Forms</h4>
+<p>Textural organization in other Classical forms:</p>
+<ul>
+<li><strong>Rondo form:</strong> Textural contrast between refrain and episodes</li>
+<li><strong>Theme and variations:</strong> Systematic textural transformation</li>
+<li><strong>Minuet and trio:</strong> Textural contrast between sections</li>
+<li><strong>Concerto form:</strong> Textural dialogue between soloist and orchestra</li>
+</ul>
+</div>
+</section>
+ Focus Work Examples Section 
+<section className="examples-section" id="focus-examples">
+<h2>Focus Work Examples</h2>
+<div className="example-item" id="mozart-example">
+<h3>Mozart: <em>Quintet for Piano and Winds in E flat major, K. 452</em></h3>
+<p>Mozart's Quintet demonstrates sophisticated Classical textural organization:</p>
+<h4>First Movement Textural Features</h4>
+<ul>
+<li><strong>Opening theme:</strong> Clear homophonic texture with piano melody and wind accompaniment</li>
+<li><strong>Alberti bass passages:</strong> Piano left hand provides broken chord accompaniment</li>
+<li><strong>Concertante dialogue:</strong> Antiphonal exchanges between piano and winds</li>
+<li><strong>Development complexity:</strong> Polyphonic episodes with motivic interplay</li>
+</ul>
+<h4>Textural Variety</h4>
+<ul>
+<li><strong>Solo passages:</strong> Individual instruments featured with minimal accompaniment</li>
+<li><strong>Ensemble tutti:</strong> All instruments playing together in homophonic texture</li>
+<li><strong>Imitative episodes:</strong> Brief polyphonic passages with motivic imitation</li>
+<li><strong>Textural transitions:</strong> Smooth changes between different textural types</li>
+</ul>
+<h4>Characteristic Techniques</h4>
+<ul>
+<li><strong>Piano-wind balance:</strong> Careful textural balance between keyboard and winds</li>
+<li><strong>Accompaniment patterns:</strong> Variety of accompaniment styles including Alberti bass</li>
+<li><strong>Motivic distribution:</strong> Themes and motifs shared between different instruments</li>
+<li><strong>Dynamic coordination:</strong> Textural changes coordinated with dynamic levels</li>
+</ul>
+</div>
+</section>
+ Comparison with Baroque Section 
+<section className="comparison-section" id="baroque-comparison">
+<h2>Classical vs. Baroque Texture</h2>
+<p>Understanding the evolution from Baroque to Classical textural practice:</p>
+<div className="comparison-list" id="comparison-points">
+<h3>Key Differences</h3>
+<h4>Primary Textural Type</h4>
+<ul>
+<li><strong>Baroque:</strong> Predominantly polyphonic with equal voice independence</li>
+<li><strong>Classical:</strong> Predominantly homophonic with clear melody-accompaniment hierarchy</li>
+<li><strong>Baroque:</strong> Continuous polyphonic texture throughout movements</li>
+<li><strong>Classical:</strong> Strategic alternation between homophonic and polyphonic textures</li>
+</ul>
+<h4>Accompaniment Style</h4>
+<ul>
+<li><strong>Baroque:</strong> Basso continuo with figured bass realization</li>
+<li><strong>Classical:</strong> Fully written-out accompaniment patterns (Alberti bass, etc.)</li>
+<li><strong>Baroque:</strong> Accompaniment often has melodic independence</li>
+<li><strong>Classical:</strong> Accompaniment primarily supportive and harmonic</li>
+</ul>
+<h4>Textural Function</h4>
+<ul>
+<li><strong>Baroque:</strong> Texture supports continuous motivic development</li>
+<li><strong>Classical:</strong> Texture articulates formal structure and thematic contrast</li>
+<li><strong>Baroque:</strong> Consistent textural density throughout</li>
+<li><strong>Classical:</strong> Variable textural density for expressive and formal purposes</li>
+</ul>
+</div>
+</section>
+ Performance Practice Section 
+<section className="practice-section" id="performance-practice">
+<h2>Performance Practice</h2>
+<p>Guidelines for realizing Classical texture in performance:</p>
+<div className="practice-list" id="practice-guidelines">
+<h3>Key Considerations</h3>
+<h4>Textural Clarity</h4>
+<ul>
+<li><strong>Melodic prominence:</strong> Ensure primary melodies are clearly audible</li>
+<li><strong>Accompaniment balance:</strong> Keep accompaniment supportive, not competitive</li>
+<li><strong>Voice independence:</strong> In polyphonic sections, maintain clear voice leading</li>
+<li><strong>Textural transitions:</strong> Make changes between textural types audible</li>
+</ul>
+<h4>Alberti Bass Performance</h4>
+<ul>
+<li><strong>Evenness:</strong> Maintain consistent note values and dynamics</li>
+<li><strong>Harmonic clarity:</strong> Emphasize chord changes and harmonic rhythm</li>
+<li><strong>Dynamic sensitivity:</strong> Allow Alberti bass to support melodic dynamics</li>
+<li><strong>Articulation:</strong> Use appropriate touch for style and character</li>
+</ul>
+<h4>Ensemble Coordination</h4>
+<ul>
+<li><strong>Balance awareness:</strong> Adjust dynamics according to textural role</li>
+<li><strong>Rhythmic precision:</strong> Maintain clear rhythmic relationships between layers</li>
+<li><strong>Phrase coordination:</strong> Align phrasing across different textural layers</li>
+<li><strong>Stylistic unity:</strong> Ensure all parts contribute to overall Classical style</li>
+</ul>
+</div>
+</section>
+ Assessment Focus Section 
+<section className="assessment-section" id="assessment-focus">
+<h2>Assessment Focus</h2>
+<p>Key points for IGCSE Music assessment regarding texture in Classical music:</p>
+<div className="assessment-list" id="assessment-points">
+<h3>Essential Knowledge</h3>
+<ul>
+<li><strong>Textural types:</strong> Identify homophonic, polyphonic, and unison textures</li>
+<li><strong>Alberti bass:</strong> Recognize and understand this characteristic Classical technique</li>
+<li><strong>Accompaniment patterns:</strong> Identify different types of Classical accompaniment</li>
+<li><strong>Textural functions:</strong> Understand how texture supports form and expression</li>
+<li><strong>Historical context:</strong> Compare Classical texture with Baroque practices</li>
+<li><strong>Formal coordination:</strong> How textural changes articulate Classical forms</li>
+</ul>
+<h3>Analytical Skills</h3>
+<ul>
+<li>Identify different textural types in musical examples</li>
+<li>Analyze how textural changes support formal structure</li>
+<li>Recognize Alberti bass and other Classical accompaniment patterns</li>
+<li>Evaluate the relationship between texture and expression</li>
+<li>Compare textural treatment across different Classical composers</li>
+</ul>
+</div>
+</section>` }} />
+      </div>
+    </article>
+  );
+};
+
+export default Classical0108TexturePage;
