@@ -5,6 +5,7 @@ import { useAuth } from './AuthContext';
 import { badgeManager } from '../utils/badgeManager';
 import { useRPG } from './RPGContext';
 import { dataBackupManager } from '../utils/dataBackup';
+import { supabase } from '../src/lib/supabase';
 
 interface ProgressContextType {
   progress: StudentProgress | null;
@@ -39,7 +40,8 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
   const [achievements, setAchievements] = useState<Achievement[]>([]);
   const [badgeStats, setBadgeStats] = useState<BadgeStats | null>(null);
   const [newBadgeIds, setNewBadgeIds] = useState<string[]>([]);
-  
+  const [loading, setLoading] = useState(false);
+
   // Get RPG context (will be null if RPG is not enabled)
   let rpgContext: any = null;
   try {
@@ -87,32 +89,57 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
     }
   }, [progress?.totalQuizzesCompleted, progress?.averageQuizScore, progress?.totalStudyTime]);
 
-  const loadUserProgress = (userId: string) => {
-    const savedProgress = localStorage.getItem(`igcse-progress-${userId}`);
-    if (savedProgress) {
-      try {
-        const progressData = JSON.parse(savedProgress);
-        // Convert date strings back to Date objects
-        progressData.lastUpdated = new Date(progressData.lastUpdated);
-        progressData.quizResults = progressData.quizResults.map((result: any) => ({
-          ...result,
-          completedAt: new Date(result.completedAt)
-        }));
-        progressData.pageProgress = progressData.pageProgress.map((page: any) => ({
-          ...page,
-          visitedAt: new Date(page.visitedAt)
-        }));
-        progressData.badges = progressData.badges.map((badge: any) => ({
-          ...badge,
-          earnedAt: new Date(badge.earnedAt)
-        }));
-        setProgress(progressData);
-      } catch (error) {
-        console.error('Error parsing progress data:', error);
-        initializeProgress(userId);
-      }
-    } else {
+  const loadUserProgress = async (userId: string) => {
+    try {
+      setLoading(true);
+      // Fetch progress from Supabase
+      const { data: progressData, error } = await supabase
+        .from('progress')
+        .select('*')
+        .eq('user_id', userId);
+
+      if (error) throw error;
+
+      // Transform DB data to frontend structure
+      const quizResults: QuizResult[] = progressData?.map(item => ({
+        quizId: item.quiz_id,
+        quizTitle: item.answers?.quizTitle || `Quiz ${item.quiz_id}`, // Fallback if title not saved
+        sectionId: item.section,
+        score: item.score,
+        totalQuestions: item.total_questions,
+        percentage: item.percentage,
+        timeSpent: item.time_taken || 0,
+        completedAt: new Date(item.completed_at),
+        answers: item.answers
+      })) || [];
+
+      // Calculate aggregated stats
+      const totalQuizzes = quizResults.length;
+      const totalTime = quizResults.reduce((acc, curr) => acc + curr.timeSpent, 0);
+      const avgScore = totalQuizzes > 0
+        ? quizResults.reduce((acc, curr) => acc + curr.percentage, 0) / totalQuizzes
+        : 0;
+
+      // Initialize progress object
+      const newProgress: StudentProgress = {
+        userId,
+        totalQuizzesCompleted: totalQuizzes,
+        totalPagesVisited: 0, // Page visits not yet in DB, keeping 0 for now or fetch from another table if added
+        averageQuizScore: avgScore,
+        totalStudyTime: totalTime,
+        quizResults: quizResults,
+        pageProgress: [], // Page progress not migrated yet
+        badges: [], // Badges stored separately or locally for now
+        lastUpdated: new Date()
+      };
+
+      setProgress(newProgress);
+    } catch (error) {
+      console.error('Error loading progress from Supabase:', error);
+      // Fallback to local storage or empty initialization handled here if needed
       initializeProgress(userId);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -129,60 +156,76 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
       lastUpdated: new Date()
     };
     setProgress(newProgress);
-    saveProgress(newProgress);
+    // No need to save to DB on init, wait for first activity
   };
 
-  const saveProgress = (progressData: StudentProgress) => {
-    if (progressData.userId) {
-      localStorage.setItem(`igcse-progress-${progressData.userId}`, JSON.stringify(progressData));
-    }
+  const saveProgress = async (progressData: StudentProgress) => {
+    // This function is now mainly a placeholder or could be used to save non-quiz data if we add tables
+    // Quiz results are saved individually in addQuizResult
   };
 
-  const addQuizResult = (result: Omit<QuizResult, 'completedAt'>) => {
+  const addQuizResult = async (result: Omit<QuizResult, 'completedAt'>) => {
     if (!progress || !user) return;
 
+    const completedAt = new Date();
     const newResult: QuizResult = {
       ...result,
-      completedAt: new Date()
+      completedAt
     };
+
+    // Optimistic update
+    const updatedQuizResults = [...progress.quizResults, newResult];
+    const totalQuizzes = updatedQuizResults.length;
+    const totalTime = progress.totalStudyTime + result.timeSpent;
+    const avgScore = updatedQuizResults.reduce((acc, curr) => acc + curr.percentage, 0) / totalQuizzes;
 
     const updatedProgress: StudentProgress = {
       ...progress,
-      totalQuizzesCompleted: progress.totalQuizzesCompleted + 1,
-      quizResults: [...progress.quizResults, newResult],
+      totalQuizzesCompleted: totalQuizzes,
+      quizResults: updatedQuizResults,
+      averageQuizScore: avgScore,
+      totalStudyTime: totalTime,
       lastUpdated: new Date()
     };
 
-    // Recalculate average score using only the latest attempt for each quiz
-    const latestQuizResults = new Map<string, QuizResult>();
-    
-    // Group by quizId and keep only the most recent attempt for each quiz
-    updatedProgress.quizResults.forEach(quiz => {
-      const existing = latestQuizResults.get(quiz.quizId);
-      if (!existing || quiz.completedAt > existing.completedAt) {
-        latestQuizResults.set(quiz.quizId, quiz);
-      }
-    });
-    
-    // Calculate average using only latest attempts
-    const latestResults = Array.from(latestQuizResults.values());
-    const totalScore = latestResults.reduce((sum, quiz) => sum + quiz.percentage, 0);
-    updatedProgress.averageQuizScore = latestResults.length > 0 ? totalScore / latestResults.length : 0;
-
-    // Add total time spent on quiz
-    updatedProgress.totalStudyTime += result.timeSpent;
-
     setProgress(updatedProgress);
-    saveProgress(updatedProgress);
 
-    // Create backup after quiz completion
-    if (user?.id && user.role === 'student') {
+    // Save to Supabase
+    try {
+      const payload = {
+        user_id: user.id,
+        quiz_id: result.quizId,
+        section: result.sectionId || 'general',
+        score: result.score,
+        total_questions: result.totalQuestions,
+        percentage: result.percentage,
+        time_taken: result.timeSpent,
+        completed_at: completedAt.toISOString(),
+        answers: {
+          ...result.answers,
+          quizTitle: result.quizTitle // Store title in JSONB for retrieval
+        }
+      };
+
+      const { error } = await supabase
+        .from('progress')
+        .upsert(payload, { onConflict: 'user_id, section, quiz_id' });
+
+      if (error) throw error;
+
+    } catch (error) {
+      console.error('Error saving quiz result to Supabase:', error);
+      // Could add logic to queue retry or show error to user
+    }
+
+    // Create backup after quiz completion (if using local backups, otherwise remove)
+    if (user?.role === 'student') {
       dataBackupManager.createStudentBackup(user.id);
     }
 
     // Check for new badges (legacy system)
     checkForNewBadges(updatedProgress);
-    
+
     // Check for new achievements (enhanced system)
     setTimeout(() => {
       const newBadges = badgeManager.checkForNewBadges(updatedProgress, enhancedBadges, { latestQuiz: newResult });
@@ -194,8 +237,8 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
         });
         setNewBadgeIds(prev => [...prev, ...newBadges.map(b => b.id)]);
       }
-    }, 100); // Small delay to ensure state is updated
-    
+    }, 100);
+
     // Process quiz result through RPG system if enabled
     if (rpgContext?.isRPGEnabled) {
       try {
@@ -211,14 +254,14 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
 
     // Check if page already visited
     const existingPageIndex = progress.pageProgress.findIndex(p => p.pageId === pageId);
-    
+
     let updatedPageProgress: PageProgress[];
     let totalPagesVisited = progress.totalPagesVisited;
 
     if (existingPageIndex >= 0) {
       // Update existing page progress
-      updatedPageProgress = progress.pageProgress.map((page, index) => 
-        index === existingPageIndex 
+      updatedPageProgress = progress.pageProgress.map((page, index) =>
+        index === existingPageIndex
           ? { ...page, visitedAt: new Date(), timeSpent: page.timeSpent + timeSpent, completed }
           : page
       );
@@ -244,6 +287,11 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
     };
 
     setProgress(updatedProgress);
+
+    // Note: Page progress saving to Supabase is not yet implemented in the schema
+    // We could add a 'study_sessions' table insert here if desired, 
+    // or just leave it local/in-memory for now if critical tracking isn't needed.
+    // For now, retaining local update logic but not saving to DB to avoid errors.
     saveProgress(updatedProgress);
   };
 
@@ -267,6 +315,8 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
 
     setProgress(updatedProgress);
     saveProgress(updatedProgress);
+
+    // TODO: persist badges to 'achievements' table in Supabase
   };
 
   const checkForNewBadges = (currentProgress: StudentProgress) => {
@@ -321,30 +371,17 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
   };
 
   const getAverageScore = (): number => {
-    if (!progress || progress.quizResults.length === 0) return 0;
-    
-    // Calculate average using only the latest attempt for each quiz
-    const latestQuizResults = new Map<string, QuizResult>();
-    
-    progress.quizResults.forEach(quiz => {
-      const existing = latestQuizResults.get(quiz.quizId);
-      if (!existing || quiz.completedAt > existing.completedAt) {
-        latestQuizResults.set(quiz.quizId, quiz);
-      }
-    });
-    
-    const latestResults = Array.from(latestQuizResults.values());
-    const totalScore = latestResults.reduce((sum, quiz) => sum + quiz.percentage, 0);
-    return latestResults.length > 0 ? totalScore / latestResults.length : 0;
+    // Use the calculated average from state which is based on latest results from DB
+    return progress?.averageQuizScore || 0;
   };
 
   const getTotalStudyTime = (): string => {
     if (!progress) return '0 minutes';
-    
+
     const totalMinutes = Math.floor(progress.totalStudyTime / 60);
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
-    
+
     if (hours > 0) {
       return `${hours}h ${minutes}m`;
     }
@@ -355,29 +392,39 @@ export const ProgressProvider: React.FC<ProgressProviderProps> = ({ children }) 
     return progress?.badges.filter(badge => badge.category === category) || [];
   };
 
-  const resetProgress = () => {
+  const resetProgress = async () => {
     if (!user) return;
+
+    // Clear local
     localStorage.removeItem(`igcse-progress-${user.id}`);
+
+    // Clear DB (optional, but 'reset' implies wiping data)
+    try {
+      await supabase.from('progress').delete().eq('user_id', user.id);
+    } catch (e) {
+      console.error('Error resetting progress in DB:', e);
+    }
+
     initializeProgress(user.id);
   };
 
   // Enhanced badge system methods
   const checkForNewAchievements = () => {
     if (!progress) return;
-    
+
     const newBadges = badgeManager.checkForNewBadges(progress, enhancedBadges);
     if (newBadges.length > 0) {
       setEnhancedBadges(prev => [...prev, ...newBadges]);
       setNewBadgeIds(prev => [...prev, ...newBadges.map(b => b.id)]);
-      
+
       // Save enhanced badges to localStorage
       localStorage.setItem(`enhanced-badges-${user?.id}`, JSON.stringify([...enhancedBadges, ...newBadges]));
     }
-    
+
     // Update achievements and stats
     const updatedAchievements = badgeManager.generateAchievements(progress, [...enhancedBadges, ...newBadges]);
     const updatedStats = badgeManager.calculateBadgeStats([...enhancedBadges, ...newBadges]);
-    
+
     setAchievements(updatedAchievements);
     setBadgeStats(updatedStats);
   };

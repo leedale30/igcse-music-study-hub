@@ -134,10 +134,9 @@ const App: React.FC = () => {
                     {StageScreenRoutes}
                     {/* AOS generic content routes */}
                     <Route path="/aos/:aosId/*" element={<AosContentPage />} />
+                    {/* Catch-all route - protected */}
+                    <Route path="*" element={<GenericPage />} />
                   </Route>
-
-                  {/* Catch-all route - MUST be last */}
-                  <Route path="*" element={<GenericPage />} />
                 </Routes>
               </RPGProvider>
             </ProgressProvider>

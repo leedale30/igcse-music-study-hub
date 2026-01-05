@@ -117,6 +117,8 @@ export interface QuizResult {
   percentage: number;
   completedAt: Date;
   timeSpent: number; // in seconds
+  sectionId?: string;
+  answers?: Record<string, any>;
 }
 
 export interface PageProgress {
