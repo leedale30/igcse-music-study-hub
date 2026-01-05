@@ -2,9 +2,9 @@ import { SyllabusItem } from '../../types';
 import { popularSongIntroductionPage } from './aos3a/introduction';
 import { popularSongKeyFeaturesPage } from './aos3a/keyFeatures';
 import { popularSongFocusWork1 } from './aos3a/focusWork1';
-import { popularSongFocusWork2 } from './aos3a/focusWork2';
-import { popularSongWiderListeningPage } from './aos3a/widerListening';
-import { popularSongFinalExamPage } from './aos3a/finalExam';
+// import { popularSongFocusWork2 } from './aos3a/focusWork2';
+// import { popularSongWiderListeningPage } from './aos3a/widerListening';
+// import { popularSongFinalExamPage } from './aos3a/finalExam';
 
 export const popularSongAoS: SyllabusItem = {
   id: 'aos3a-popular-song',
@@ -19,8 +19,8 @@ export const popularSongAoS: SyllabusItem = {
     popularSongIntroductionPage,
     popularSongKeyFeaturesPage,
     popularSongFocusWork1,
-    popularSongFocusWork2,
-    popularSongWiderListeningPage,
-    popularSongFinalExamPage,
+    // popularSongFocusWork2,
+    // popularSongWiderListeningPage,
+    // popularSongFinalExamPage,
   ]
 };

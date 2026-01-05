@@ -17,9 +17,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // Initialize auth state
   useEffect(() => {
     if (!isSupabaseConfigured) {
-      // Fallback to localStorage for demo/development
-      console.log('Supabase not configured, using localStorage fallback');
-      initializeLocalAuth();
+      console.error('Supabase is not configured. Authentication will not work.');
+      setIsLoading(false);
       return;
     }
 
@@ -80,108 +79,40 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
-  // Initialize localStorage-based auth (fallback)
-  const initializeLocalAuth = () => {
-    // Create demo users if they don't exist
-    const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-    if (!existingUsers.some((u: any) => u.email === 'demo@student.com')) {
-      const demoUsers = [
-        {
-          id: 'demo-user-001',
-          email: 'demo@student.com',
-          password: 'demo123',
-          name: 'Demo Student',
-          role: 'student',
-          createdAt: new Date(),
-          lastLoginAt: new Date(),
-          profileCompleted: true
-        },
-        {
-          id: 'teacher-001',
-          email: 'teacher@school.com',
-          password: 'teacher123',
-          name: 'Music Teacher',
-          role: 'teacher',
-          createdAt: new Date(),
-          lastLoginAt: new Date(),
-          profileCompleted: true
-        },
-        {
-          id: 'admin-001',
-          email: 'admin@school.com',
-          password: 'admin123',
-          name: 'Administrator',
-          role: 'admin',
-          createdAt: new Date(),
-          lastLoginAt: new Date(),
-          profileCompleted: true
-        }
-      ];
-      localStorage.setItem('igcse-music-users', JSON.stringify([...existingUsers, ...demoUsers]));
-    }
-
-    // Check for saved session
-    const savedUser = localStorage.getItem('igcse-music-user');
-    if (savedUser) {
-      try {
-        const userData = JSON.parse(savedUser);
-        userData.createdAt = new Date(userData.createdAt);
-        userData.lastLoginAt = new Date(userData.lastLoginAt);
-        setUser(userData);
-      } catch (e) {
-        localStorage.removeItem('igcse-music-user');
-      }
-    }
-    setIsLoading(false);
-  };
-
   // Login function
   const login = async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
     setError(null);
 
     try {
-      if (isSupabaseConfigured) {
-        // Supabase login
-        const { data, error } = await supabase.auth.signInWithPassword({
-          email,
-          password
-        });
-
-        if (error) {
-          setError(error.message);
-          return false;
-        }
-
-        if (data.user) {
-          await fetchUserProfile(data.user.id);
-
-          // Update last login time
-          await supabase
-            .from('profiles')
-            .update({ last_login_at: new Date().toISOString() })
-            .eq('id', data.user.id);
-
-          return true;
-        }
+      if (!isSupabaseConfigured) {
+        setError('Authentication service is not configured');
         return false;
-      } else {
-        // localStorage fallback
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-        const foundUser = existingUsers.find((u: any) => u.email === email && u.password === password);
+      }
 
-        if (!foundUser) {
-          setError('Invalid email or password');
-          return false;
-        }
+      // Supabase login
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
 
-        foundUser.lastLoginAt = new Date();
-        const { password: _, ...userWithoutPassword } = foundUser;
-        setUser(userWithoutPassword);
-        localStorage.setItem('igcse-music-user', JSON.stringify(userWithoutPassword));
+      if (error) {
+        setError(error.message);
+        return false;
+      }
+
+      if (data.user) {
+        await fetchUserProfile(data.user.id);
+
+        // Update last login time
+        await supabase
+          .from('profiles')
+          .update({ last_login_at: new Date().toISOString() })
+          .eq('id', data.user.id);
+
         return true;
       }
+      return false;
     } catch (err: any) {
       setError(err.message || 'Login failed');
       return false;
@@ -196,59 +127,34 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setError(null);
 
     try {
-      if (isSupabaseConfigured) {
-        // Supabase signup
-        const { data, error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              name: name,
-              role: 'student'
-            }
-          }
-        });
-
-        if (error) {
-          setError(error.message);
-          return false;
-        }
-
-        if (data.user) {
-          // Profile is auto-created by database trigger
-          await fetchUserProfile(data.user.id);
-          return true;
-        }
+      if (!isSupabaseConfigured) {
+        setError('Authentication service is not configured');
         return false;
-      } else {
-        // localStorage fallback
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
+      }
 
-        if (existingUsers.some((u: any) => u.email === email)) {
-          setError('Email already exists');
-          return false;
+      // Supabase signup
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            name: name,
+            role: 'student'
+          }
         }
+      });
 
-        const newUser = {
-          id: `user_${Date.now()}`,
-          email,
-          password,
-          name,
-          role: 'student' as const,
-          profileCompleted: false,
-          createdAt: new Date(),
-          lastLoginAt: new Date()
-        };
+      if (error) {
+        setError(error.message);
+        return false;
+      }
 
-        existingUsers.push(newUser);
-        localStorage.setItem('igcse-music-users', JSON.stringify(existingUsers));
-
-        const { password: _, ...userWithoutPassword } = newUser;
-        setUser(userWithoutPassword);
-        localStorage.setItem('igcse-music-user', JSON.stringify(userWithoutPassword));
+      if (data.user) {
+        // Profile is auto-created by database trigger
+        await fetchUserProfile(data.user.id);
         return true;
       }
+      return false;
     } catch (err: any) {
       setError(err.message || 'Signup failed');
       return false;
@@ -264,31 +170,28 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setError(null);
 
     try {
-      if (isSupabaseConfigured) {
-        const updateData: Record<string, any> = {};
-        if (profileData.name) updateData.name = profileData.name;
-        if (profileData.firstName) updateData.first_name = profileData.firstName;
-        if (profileData.lastName) updateData.last_name = profileData.lastName;
-        if (profileData.nickname) updateData.nickname = profileData.nickname;
-        if (profileData.group) updateData.group_name = profileData.group;
-        if (profileData.profileCompleted !== undefined) updateData.profile_completed = profileData.profileCompleted;
-
-        const { error } = await supabase
-          .from('profiles')
-          .update(updateData)
-          .eq('id', user.id);
-
-        if (error) throw error;
-
-        await fetchUserProfile(user.id);
-        return true;
-      } else {
-        // localStorage fallback
-        const updatedUser = { ...user, ...profileData };
-        setUser(updatedUser);
-        localStorage.setItem('igcse-music-user', JSON.stringify(updatedUser));
-        return true;
+      if (!isSupabaseConfigured) {
+        setError('Authentication service is not configured');
+        return false;
       }
+
+      const updateData: Record<string, any> = {};
+      if (profileData.name) updateData.name = profileData.name;
+      if (profileData.firstName) updateData.first_name = profileData.firstName;
+      if (profileData.lastName) updateData.last_name = profileData.lastName;
+      if (profileData.nickname) updateData.nickname = profileData.nickname;
+      if (profileData.group) updateData.group_name = profileData.group;
+      if (profileData.profileCompleted !== undefined) updateData.profile_completed = profileData.profileCompleted;
+
+      const { error } = await supabase
+        .from('profiles')
+        .update(updateData)
+        .eq('id', user.id);
+
+      if (error) throw error;
+
+      await fetchUserProfile(user.id);
+      return true;
     } catch (err: any) {
       setError(err.message || 'Update failed');
       return false;
@@ -304,29 +207,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setError(null);
 
     try {
-      if (isSupabaseConfigured) {
-        const { error } = await supabase.auth.updateUser({
-          password: newPassword
-        });
-
-        if (error) throw error;
-        return true;
-      } else {
-        // localStorage fallback - verify current password first
-        const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-        const currentUser = existingUsers.find((u: any) => u.id === user.id);
-
-        if (!currentUser || currentUser.password !== currentPassword) {
-          setError('Current password is incorrect');
-          return false;
-        }
-
-        const updatedUsers = existingUsers.map((u: any) =>
-          u.id === user.id ? { ...u, password: newPassword } : u
-        );
-        localStorage.setItem('igcse-music-users', JSON.stringify(updatedUsers));
-        return true;
+      if (!isSupabaseConfigured) {
+        setError('Authentication service is not configured');
+        return false;
       }
+
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword
+      });
+
+      if (error) throw error;
+      return true;
     } catch (err: any) {
       setError(err.message || 'Password update failed');
       return false;
@@ -341,7 +232,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       await supabase.auth.signOut();
     }
     setUser(null);
+    // Clearing local storage user data just in case
     localStorage.removeItem('igcse-music-user');
+    localStorage.removeItem('sb-access-token'); // Clear Supabase token if stored manually (though Supabase client handles this)
     setError(null);
   };
 

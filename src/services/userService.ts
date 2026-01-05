@@ -1,65 +1,74 @@
 import { supabase } from '../lib/supabase'
-
-export interface UserProfile {
-  id: string
-  email?: string
-  full_name: string
-  nickname?: string
-  role: 'student' | 'teacher' | 'admin'
-  grade?: string
-  profile_image?: string
-  created_at?: string
-  updated_at?: string
-}
+import { User } from '../../types' // Adjust path to types.ts
 
 export class UserService {
   // Get user profile
-  static async getUserProfile(userId: string): Promise<UserProfile> {
+  static async getUserProfile(userId: string): Promise<User> {
     const { data, error } = await supabase
-      .from('users')
+      .from('profiles')
       .select('*')
       .eq('id', userId)
       .single()
-    
+
     if (error) {
       console.error('Error fetching user profile:', error)
       throw error
     }
-    
-    return data as UserProfile
+
+    // Map DB columns to User type
+    return {
+      id: data.id,
+      email: data.email,
+      name: data.name,
+      firstName: data.first_name,
+      lastName: data.last_name,
+      nickname: data.nickname,
+      role: data.role,
+      group: data.group_name,
+      profileCompleted: data.profile_completed,
+      createdAt: new Date(data.created_at),
+      lastLoginAt: new Date(data.last_login_at)
+    } as User
   }
-  
+
   // Create or update user profile
-  static async upsertProfile(profile: UserProfile): Promise<UserProfile> {
-    const { data, error } = await supabase
-      .from('users')
-      .upsert(profile, { onConflict: 'id' })
-      .select()
-    
-    if (error) {
-      console.error('Error updating user profile:', error)
-      throw error
-    }
-    
-    return data[0] as UserProfile
-  }
-  
-  // Update specific profile fields
+  // Note: mostly handled by triggers or specific updates now
   static async updateProfile(
     userId: string,
-    updates: Partial<Omit<UserProfile, 'id'>>
-  ): Promise<UserProfile> {
+    updates: Partial<User>
+  ): Promise<User> {
+    const updateData: any = {}
+    if (updates.name) updateData.name = updates.name
+    if (updates.firstName) updateData.first_name = updates.firstName
+    if (updates.lastName) updateData.last_name = updates.lastName
+    if (updates.nickname) updateData.nickname = updates.nickname
+    if (updates.group) updateData.group_name = updates.group
+    if (updates.profileCompleted !== undefined) updateData.profile_completed = updates.profileCompleted
+
     const { data, error } = await supabase
-      .from('users')
-      .update(updates)
+      .from('profiles')
+      .update(updateData)
       .eq('id', userId)
       .select()
-    
+      .single()
+
     if (error) {
       console.error('Error updating user profile:', error)
       throw error
     }
-    
-    return data[0] as UserProfile
+
+    return {
+      id: data.id,
+      email: data.email,
+      name: data.name,
+      firstName: data.first_name,
+      lastName: data.last_name,
+      nickname: data.nickname,
+      role: data.role,
+      group: data.group_name,
+      profileCompleted: data.profile_completed,
+      createdAt: new Date(data.created_at),
+      lastLoginAt: new Date(data.last_login_at)
+    } as User
   }
 }

@@ -68,7 +68,7 @@ const InstrumentsListPage: React.FC = () => {
             </h1>
           </div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            {language === 'en-zh' 
+            {language === 'en-zh'
               ? '探索世界各地的乐器，了解它们的历史、构造和音色特点 / Explore instruments from around the world and learn about their history, construction, and unique sounds'
               : 'Explore instruments from around the world and learn about their history, construction, and unique sounds'
             }
@@ -98,6 +98,7 @@ const InstrumentsListPage: React.FC = () => {
                 <FilterIcon />
               </div>
               <select
+                aria-label={language === 'en-zh' ? '选择乐器类别 / Select Instrument Family' : 'Select Instrument Family'}
                 value={selectedFamily}
                 onChange={(e) => setSelectedFamily(e.target.value)}
                 className="pl-10 pr-8 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white min-w-[200px]"
@@ -116,7 +117,7 @@ const InstrumentsListPage: React.FC = () => {
 
           {/* Results Count */}
           <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-            {language === 'en-zh' 
+            {language === 'en-zh'
               ? `找到 ${filteredInstruments.length} 个乐器 / Found ${filteredInstruments.length} instruments`
               : `Found ${filteredInstruments.length} instruments`
             }
@@ -131,14 +132,14 @@ const InstrumentsListPage: React.FC = () => {
               {language === 'en-zh' ? '未找到乐器 / No instruments found' : 'No instruments found'}
             </h3>
             <p className="text-gray-500 dark:text-gray-500">
-              {language === 'en-zh' 
+              {language === 'en-zh'
                 ? '请尝试不同的搜索词或筛选条件 / Try different search terms or filters'
                 : 'Try different search terms or filters'
               }
             </p>
           </div>
         ) : (
-          Object.entries(groupedInstruments).map(([family, instruments]) => (
+          Object.entries(groupedInstruments).map(([family, instruments]: [string, InstrumentData[]]) => (
             <div key={family} className="mb-12">
               <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 border-b-2 border-blue-500 pb-2">
                 {family}
@@ -146,7 +147,7 @@ const InstrumentsListPage: React.FC = () => {
                   ({instruments.length} {language === 'en-zh' ? '个乐器 / instruments' : 'instruments'})
                 </span>
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {instruments.map(instrument => (
                   <Link
@@ -179,14 +180,14 @@ const InstrumentsListPage: React.FC = () => {
                     {/* Instrument Info */}
                     <div className="p-4">
                       <h3 className="font-semibold text-lg text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {language === 'en-zh' && instrument.name_zh 
+                        {language === 'en-zh' && instrument.name_zh
                           ? `${instrument.name_zh} / ${instrument.name}`
                           : instrument.name
                         }
                       </h3>
-                      
+
                       <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-3">
-                        {language === 'en-zh' && instrument.description_zh 
+                        {language === 'en-zh' && instrument.description_zh
                           ? instrument.description_zh
                           : instrument.description
                         }

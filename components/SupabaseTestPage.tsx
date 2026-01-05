@@ -21,7 +21,7 @@ export function SupabaseTestPage() {
   const [error, setError] = useState<string | null>(null)
   const [testEmail, setTestEmail] = useState('test@example.com')
   const [testPassword, setTestPassword] = useState('password123')
-  const [testResults, setTestResults] = useState<{[key: string]: boolean}>({})
+  const [testResults, setTestResults] = useState<{ [key: string]: boolean }>({})
   const [subscription, setSubscription] = useState<any>(null)
   const [errorLog, setErrorLog] = useState<ErrorLogEntry[]>([])
   const [showErrorLog, setShowErrorLog] = useState(false)
@@ -121,13 +121,13 @@ export function SupabaseTestPage() {
     addToErrorLog('Connection', 'info', 'Starting Supabase connection test...')
     addToErrorLog('Connection', 'info', `Supabase URL: ${import.meta.env.VITE_SUPABASE_URL}`)
     addToErrorLog('Connection', 'info', `Supabase Key exists: ${!!import.meta.env.VITE_SUPABASE_ANON_KEY}`)
-    
+
     try {
       // Test basic connection by trying to get the current session
       addToErrorLog('Connection', 'info', 'Testing Supabase client connection...')
       const { data: { session }, error: sessionError } = await supabase.auth.getSession()
       addToErrorLog('Connection', 'info', 'Session query completed', { session: !!session, sessionError })
-      
+
       if (sessionError) {
         addToErrorLog('Connection', 'error', 'Session error occurred', sessionError)
         setTestResults(prev => ({
@@ -136,12 +136,12 @@ export function SupabaseTestPage() {
         }))
         return false
       }
-      
+
       // Test a simple query to verify database connection
       addToErrorLog('Connection', 'info', 'Testing database connection...')
-      const { data, error } = await supabase.from('users').select('count').limit(1)
+      const { data, error } = await supabase.from('profiles').select('count').limit(1)
       addToErrorLog('Connection', 'info', 'Database query completed', { data, error })
-      
+
       if (error) {
         // This might fail if the table doesn't exist, which is okay for testing connection
         addToErrorLog('Connection', 'warning', 'Database query failed (expected if no tables exist)', error.message)
@@ -156,7 +156,7 @@ export function SupabaseTestPage() {
           connection: true
         }))
       }
-      
+
       return true
     } catch (error: any) {
       addToErrorLog('Connection', 'error', 'Connection test exception', error)
@@ -171,34 +171,34 @@ export function SupabaseTestPage() {
   // Test authentication
   async function testAuthentication() {
     addToErrorLog('Authentication', 'info', 'Testing authentication...')
-    
+
     // Store current user to restore later
     const originalUser = user
     const originalUserData = localStorage.getItem('igcse-music-user')
     addToErrorLog('Authentication', 'info', `Original user: ${originalUser?.email || 'none'}`)
-    
+
     try {
       // Test the actual authentication system (localStorage-based)
       const testEmail = 'test@example.com'
       const testPassword = 'testpassword123'
       const testName = 'Test User'
-      
+
       addToErrorLog('Authentication', 'info', `Testing signup with: ${testEmail}`)
-      
+
       // Test signup
       const signupResult = await signup(testEmail, testPassword, testName)
       addToErrorLog('Authentication', 'info', 'Signup completed', { success: !!signupResult })
-      
+
       if (signupResult) {
         // Test logout and login cycle
         addToErrorLog('Authentication', 'info', 'Testing logout...')
         logout()
-        
+
         // Test login
         addToErrorLog('Authentication', 'info', `Testing login with: ${testEmail}`)
         const loginResult = await login(testEmail, testPassword)
         addToErrorLog('Authentication', 'info', 'Login completed', { success: !!loginResult })
-        
+
         if (loginResult) {
           addToErrorLog('Authentication', 'info', 'Authentication test passed')
           setTestResults(prev => ({
@@ -216,7 +216,7 @@ export function SupabaseTestPage() {
         // Try login with demo account for testing
         addToErrorLog('Authentication', 'warning', 'Signup failed, testing with demo login...')
         const demoLoginResult = await login('demo@student.com', 'demo123')
-        
+
         if (demoLoginResult) {
           addToErrorLog('Authentication', 'info', 'Demo login successful')
           setTestResults(prev => ({
@@ -231,7 +231,7 @@ export function SupabaseTestPage() {
           }))
         }
       }
-      
+
       // Restore original user session
       if (originalUser && originalUserData) {
         addToErrorLog('Authentication', 'info', 'Restoring original user session...')
@@ -245,14 +245,14 @@ export function SupabaseTestPage() {
           addToErrorLog('Authentication', 'info', 'Restored demo student session')
         }
       }
-      
+
     } catch (error: any) {
       addToErrorLog('Authentication', 'error', 'Authentication test exception', error)
       setTestResults(prev => ({
         ...prev,
         auth: false
       }))
-      
+
       // Restore original user session even on error
       if (originalUser && originalUserData) {
         addToErrorLog('Authentication', 'info', 'Restoring original user session after error...')
@@ -269,11 +269,11 @@ export function SupabaseTestPage() {
   // Test login with provided credentials
   async function testLogin() {
     addToErrorLog('Login', 'info', `Testing login with provided credentials: ${testEmail}`)
-    
+
     try {
       const loginResult = await login(testEmail, testPassword)
       addToErrorLog('Login', 'info', 'Login attempt completed', { success: !!loginResult })
-      
+
       if (loginResult) {
         setTestResults(prev => ({
           ...prev,
@@ -311,9 +311,9 @@ export function SupabaseTestPage() {
       addToErrorLog('Progress Service', 'error', errorMsg)
       return false
     }
-    
+
     addToErrorLog('Progress Service', 'info', `Testing progress service for user: ${user.email}`)
-    
+
     try {
       // Create test progress data
       addToErrorLog('Progress Service', 'info', 'Attempting to save quiz progress...')
@@ -326,9 +326,9 @@ export function SupabaseTestPage() {
         30, // example time taken in seconds
         { answers: ['test'] } // example answers data
       )
-      
+
       addToErrorLog('Progress Service', 'info', 'Save progress completed', { success: !!result })
-      
+
       if (!result) {
         const errorMsg = 'Progress test failed: Could not save progress'
         setTestResults(prev => ({ ...prev, progress: false }))
@@ -336,14 +336,14 @@ export function SupabaseTestPage() {
         addToErrorLog('Progress Service', 'error', errorMsg)
         return false
       }
-      
+
       addToErrorLog('Progress Service', 'info', 'Attempting to retrieve user progress...')
       const userProgress = await ProgressService.getUserProgress(user.id)
-      addToErrorLog('Progress Service', 'info', 'Retrieve progress completed', { 
-        success: !!userProgress, 
-        count: userProgress?.length || 0 
+      addToErrorLog('Progress Service', 'info', 'Retrieve progress completed', {
+        success: !!userProgress,
+        count: userProgress?.length || 0
       })
-      
+
       if (!userProgress || userProgress.length === 0) {
         const errorMsg = 'Progress test failed: Could not retrieve progress'
         setTestResults(prev => ({ ...prev, progress: false }))
@@ -351,7 +351,7 @@ export function SupabaseTestPage() {
         addToErrorLog('Progress Service', 'error', errorMsg)
         return false
       }
-      
+
       setProgress(userProgress)
       setTestResults(prev => ({ ...prev, progress: true }))
       addToErrorLog('Progress Service', 'info', 'Progress service test passed')
@@ -374,9 +374,9 @@ export function SupabaseTestPage() {
       addToErrorLog('Realtime Service', 'error', errorMsg)
       return false
     }
-    
+
     addToErrorLog('Realtime Service', 'info', `Testing realtime service for user: ${user.email}`)
-    
+
     try {
       // Subscribe to user progress changes
       addToErrorLog('Realtime Service', 'info', 'Attempting to subscribe to user progress changes...')
@@ -387,9 +387,9 @@ export function SupabaseTestPage() {
           setProgress(prev => [...prev, payload.new])
         }
       )
-      
+
       addToErrorLog('Realtime Service', 'info', 'Subscription created successfully', { subscriptionStatus: sub ? 'active' : 'failed' })
-      
+
       setSubscription(sub)
       setTestResults(prev => ({ ...prev, realtime: true }))
       addToErrorLog('Realtime Service', 'info', 'Realtime service test passed')
@@ -412,24 +412,24 @@ export function SupabaseTestPage() {
       addToErrorLog('Storage Service', 'error', errorMsg)
       return false
     }
-    
+
     addToErrorLog('Storage Service', 'info', `Testing storage service for user: ${user.email}`)
-    
+
     try {
       // Create a small test file
       addToErrorLog('Storage Service', 'info', 'Creating test file...')
       const testFile = new File(['test content'], 'test.txt', { type: 'text/plain' })
-      addToErrorLog('Storage Service', 'info', 'Test file created', { 
-        name: testFile.name, 
-        size: testFile.size, 
-        type: testFile.type 
+      addToErrorLog('Storage Service', 'info', 'Test file created', {
+        name: testFile.name,
+        size: testFile.size,
+        type: testFile.type
       })
-      
+
       // Upload the file
       addToErrorLog('Storage Service', 'info', 'Attempting to upload file to test-files bucket...')
       const uploadResult = await StorageService.uploadFile('test-files', 'test.txt', testFile)
       addToErrorLog('Storage Service', 'info', 'Upload completed', { success: !!uploadResult })
-      
+
       if (!uploadResult) {
         const errorMsg = 'Storage test failed: Could not upload file'
         setTestResults(prev => ({ ...prev, storage: false }))
@@ -437,12 +437,12 @@ export function SupabaseTestPage() {
         addToErrorLog('Storage Service', 'error', errorMsg)
         return false
       }
-      
+
       // Get the URL
       addToErrorLog('Storage Service', 'info', 'Attempting to get public URL...')
       const url = await StorageService.getPublicUrl('test-files', 'test.txt')
       addToErrorLog('Storage Service', 'info', 'Get public URL completed', { success: !!url, url })
-      
+
       if (!url) {
         const errorMsg = 'Storage test failed: Could not get public URL'
         setTestResults(prev => ({ ...prev, storage: false }))
@@ -450,12 +450,12 @@ export function SupabaseTestPage() {
         addToErrorLog('Storage Service', 'error', errorMsg)
         return false
       }
-      
+
       // Delete the file
       addToErrorLog('Storage Service', 'info', 'Attempting to delete test file...')
       await StorageService.deleteFile('test-files', 'test.txt')
       addToErrorLog('Storage Service', 'info', 'File deletion completed')
-      
+
       setTestResults(prev => ({ ...prev, storage: true }))
       addToErrorLog('Storage Service', 'info', 'Storage service test passed')
       return true
@@ -474,18 +474,18 @@ export function SupabaseTestPage() {
     addToErrorLog('System', 'info', 'Button clicked - runAllTests function called')
     setLoading(true)
     setError(null)
-    
+
     // Reset test results
     setTestResults({})
     addToErrorLog('System', 'info', 'Test results reset')
-    
+
     try {
       addToErrorLog('System', 'info', 'Running connection test...')
       await testSupabaseConnection()
-      
+
       addToErrorLog('System', 'info', 'Running authentication test...')
       await testAuthentication()
-      
+
       if (user) {
         addToErrorLog('System', 'info', 'User is authenticated, running additional tests...')
         await testProgressService()
@@ -498,7 +498,7 @@ export function SupabaseTestPage() {
       addToErrorLog('System', 'error', 'Error during test execution', error)
       setError(`Test execution failed: ${error.message || error}`)
     }
-    
+
     addToErrorLog('System', 'info', 'All tests completed')
     setLoading(false)
   }
@@ -527,214 +527,213 @@ export function SupabaseTestPage() {
             <p className="font-semibold">You are now on the Supabase Test Page!</p>
             <p>This page tests the connection to your Supabase backend services.</p>
           </div>
-      
-      {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-          <p>{error}</p>
-        </div>
-      )}
-      
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Test Credentials</h2>
-        <div className="flex gap-4 mb-4">
-          <input
-            type="email"
-            value={testEmail}
-            onChange={(e) => setTestEmail(e.target.value)}
-            placeholder="Email"
-            className="border p-2 rounded flex-1"
-          />
-          <input
-            type="password"
-            value={testPassword}
-            onChange={(e) => setTestPassword(e.target.value)}
-            placeholder="Password"
-            className="border p-2 rounded flex-1"
-          />
-        </div>
-        <div className="flex gap-2">
-          <button 
-            onClick={testLogin}
-            disabled={loading}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Test Login
-          </button>
-          {user && (
-            <button 
-              onClick={() => logout()}
-              className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Sign Out
-            </button>
+
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+              <p>{error}</p>
+            </div>
           )}
-        </div>
-      </div>
-      
-      <div className="mb-6">
-        <button 
-          onClick={runAllTests}
-          disabled={loading}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {loading ? 'Testing...' : 'Run All Tests'}
-        </button>
-      </div>
-      
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Test Results</h2>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="border p-4 rounded">
-            <h3 className="font-medium">Supabase Connection</h3>
-            <div className={`mt-2 ${testResults.connection === undefined ? 'text-gray-500' : testResults.connection ? 'text-green-500' : 'text-red-500'}`}>
-              {testResults.connection === undefined ? 'Not tested' : testResults.connection ? 'Success' : 'Failed'}
+
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">Test Credentials</h2>
+            <div className="flex gap-4 mb-4">
+              <input
+                type="email"
+                value={testEmail}
+                onChange={(e) => setTestEmail(e.target.value)}
+                placeholder="Email"
+                className="border p-2 rounded flex-1"
+              />
+              <input
+                type="password"
+                value={testPassword}
+                onChange={(e) => setTestPassword(e.target.value)}
+                placeholder="Password"
+                className="border p-2 rounded flex-1"
+              />
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={testLogin}
+                disabled={loading}
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Test Login
+              </button>
+              {user && (
+                <button
+                  onClick={() => logout()}
+                  className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Sign Out
+                </button>
+              )}
             </div>
           </div>
-          
-          <div className="border p-4 rounded">
-            <h3 className="font-medium">Authentication</h3>
-            <div className={`mt-2 ${testResults.auth === undefined ? 'text-gray-500' : testResults.auth ? 'text-green-500' : 'text-red-500'}`}>
-              {testResults.auth === undefined ? 'Not tested' : testResults.auth ? 'Success' : 'Failed'}
-            </div>
-          </div>
-          
-          <div className="border p-4 rounded">
-            <h3 className="font-medium">Progress Service</h3>
-            <div className={`mt-2 ${testResults.progress === undefined ? 'text-gray-500' : testResults.progress ? 'text-green-500' : 'text-red-500'}`}>
-              {testResults.progress === undefined ? 'Not tested' : testResults.progress ? 'Success' : 'Failed'}
-            </div>
-          </div>
-          
-          <div className="border p-4 rounded">
-            <h3 className="font-medium">Realtime Service</h3>
-            <div className={`mt-2 ${testResults.realtime === undefined ? 'text-gray-500' : testResults.realtime ? 'text-green-500' : 'text-red-500'}`}>
-              {testResults.realtime === undefined ? 'Not tested' : testResults.realtime ? 'Success' : 'Failed'}
-            </div>
-          </div>
-          
-          <div className="border p-4 rounded">
-            <h3 className="font-medium">Storage Service</h3>
-            <div className={`mt-2 ${testResults.storage === undefined ? 'text-gray-500' : testResults.storage ? 'text-green-500' : 'text-red-500'}`}>
-              {testResults.storage === undefined ? 'Not tested' : testResults.storage ? 'Success' : 'Failed'}
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {user && (
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">User Information</h2>
-          <pre className="bg-gray-100 p-4 rounded overflow-auto">
-            {JSON.stringify(user, null, 2)}
-          </pre>
-        </div>
-      )}
-      
-      {/* Error Log Section */}
-      <div className="bg-gray-50 p-6 rounded-lg mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-800">Error Log</h2>
-          <div className="flex gap-2">
+
+          <div className="mb-6">
             <button
-              onClick={() => setShowErrorLog(!showErrorLog)}
-              className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm"
+              onClick={runAllTests}
+              disabled={loading}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {showErrorLog ? 'Hide Log' : 'Show Log'}
-            </button>
-            <button
-              onClick={clearErrorLog}
-              className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm"
-            >
-              Clear Log
-            </button>
-            <button
-              onClick={exportErrorLog}
-              className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 text-sm"
-            >
-              Export Log
+              {loading ? 'Testing...' : 'Run All Tests'}
             </button>
           </div>
-        </div>
-        
-        {showErrorLog && (
-          <div className="bg-white border rounded-lg max-h-96 overflow-y-auto">
-            {errorLog.length === 0 ? (
-              <div className="p-4 text-gray-500 text-center">
-                No log entries yet. Run tests to see detailed logs.
+
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold mb-2">Test Results</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border p-4 rounded">
+                <h3 className="font-medium">Supabase Connection</h3>
+                <div className={`mt-2 ${testResults.connection === undefined ? 'text-gray-500' : testResults.connection ? 'text-green-500' : 'text-red-500'}`}>
+                  {testResults.connection === undefined ? 'Not tested' : testResults.connection ? 'Success' : 'Failed'}
+                </div>
               </div>
-            ) : (
-              <div className="divide-y divide-gray-200">
-                {errorLog.map((entry, index) => (
-                  <div key={index} className="p-3">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className={`inline-block w-2 h-2 rounded-full ${
-                            entry.level === 'error' ? 'bg-red-500' :
-                            entry.level === 'warning' ? 'bg-yellow-500' :
-                            'bg-blue-500'
-                          }`}></span>
-                          <span className="font-medium text-sm text-gray-700">
-                            {entry.test}
-                          </span>
-                          <span className="text-xs text-gray-500">
-                            {new Date(entry.timestamp).toLocaleTimeString()}
-                          </span>
-                        </div>
-                        <div className="text-sm text-gray-800 mb-1">
-                          {entry.message}
-                        </div>
-                        {entry.details && (
-                          <div className="text-xs text-gray-600 bg-gray-50 p-2 rounded font-mono">
-                            {typeof entry.details === 'string' 
-                              ? entry.details 
-                              : JSON.stringify(entry.details, null, 2)
-                            }
-                          </div>
-                        )}
-                      </div>
-                    </div>
+
+              <div className="border p-4 rounded">
+                <h3 className="font-medium">Authentication</h3>
+                <div className={`mt-2 ${testResults.auth === undefined ? 'text-gray-500' : testResults.auth ? 'text-green-500' : 'text-red-500'}`}>
+                  {testResults.auth === undefined ? 'Not tested' : testResults.auth ? 'Success' : 'Failed'}
+                </div>
+              </div>
+
+              <div className="border p-4 rounded">
+                <h3 className="font-medium">Progress Service</h3>
+                <div className={`mt-2 ${testResults.progress === undefined ? 'text-gray-500' : testResults.progress ? 'text-green-500' : 'text-red-500'}`}>
+                  {testResults.progress === undefined ? 'Not tested' : testResults.progress ? 'Success' : 'Failed'}
+                </div>
+              </div>
+
+              <div className="border p-4 rounded">
+                <h3 className="font-medium">Realtime Service</h3>
+                <div className={`mt-2 ${testResults.realtime === undefined ? 'text-gray-500' : testResults.realtime ? 'text-green-500' : 'text-red-500'}`}>
+                  {testResults.realtime === undefined ? 'Not tested' : testResults.realtime ? 'Success' : 'Failed'}
+                </div>
+              </div>
+
+              <div className="border p-4 rounded">
+                <h3 className="font-medium">Storage Service</h3>
+                <div className={`mt-2 ${testResults.storage === undefined ? 'text-gray-500' : testResults.storage ? 'text-green-500' : 'text-red-500'}`}>
+                  {testResults.storage === undefined ? 'Not tested' : testResults.storage ? 'Success' : 'Failed'}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {user && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">User Information</h2>
+              <pre className="bg-gray-100 p-4 rounded overflow-auto">
+                {JSON.stringify(user, null, 2)}
+              </pre>
+            </div>
+          )}
+
+          {/* Error Log Section */}
+          <div className="bg-gray-50 p-6 rounded-lg mb-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold text-gray-800">Error Log</h2>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setShowErrorLog(!showErrorLog)}
+                  className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-sm"
+                >
+                  {showErrorLog ? 'Hide Log' : 'Show Log'}
+                </button>
+                <button
+                  onClick={clearErrorLog}
+                  className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-sm"
+                >
+                  Clear Log
+                </button>
+                <button
+                  onClick={exportErrorLog}
+                  className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 text-sm"
+                >
+                  Export Log
+                </button>
+              </div>
+            </div>
+
+            {showErrorLog && (
+              <div className="bg-white border rounded-lg max-h-96 overflow-y-auto">
+                {errorLog.length === 0 ? (
+                  <div className="p-4 text-gray-500 text-center">
+                    No log entries yet. Run tests to see detailed logs.
                   </div>
-                ))}
+                ) : (
+                  <div className="divide-y divide-gray-200">
+                    {errorLog.map((entry, index) => (
+                      <div key={index} className="p-3">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className={`inline-block w-2 h-2 rounded-full ${entry.level === 'error' ? 'bg-red-500' :
+                                  entry.level === 'warning' ? 'bg-yellow-500' :
+                                    'bg-blue-500'
+                                }`}></span>
+                              <span className="font-medium text-sm text-gray-700">
+                                {entry.test}
+                              </span>
+                              <span className="text-xs text-gray-500">
+                                {new Date(entry.timestamp).toLocaleTimeString()}
+                              </span>
+                            </div>
+                            <div className="text-sm text-gray-800 mb-1">
+                              {entry.message}
+                            </div>
+                            {entry.details && (
+                              <div className="text-xs text-gray-600 bg-gray-50 p-2 rounded font-mono">
+                                {typeof entry.details === 'string'
+                                  ? entry.details
+                                  : JSON.stringify(entry.details, null, 2)
+                                }
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
-          </div>
-        )}
-        
-        <div className="mt-2 text-sm text-gray-600">
-          Total entries: {errorLog.length}
-          {errorLog.length > 0 && (
-            <>
-              {' | '}
-              Errors: {errorLog.filter(e => e.level === 'error').length}
-              {' | '}
-              Warnings: {errorLog.filter(e => e.level === 'warning').length}
-              {' | '}
-              Info: {errorLog.filter(e => e.level === 'info').length}
-            </>
-          )}
-        </div>
-      </div>
 
-      {/* User Information */}
-      {user && (
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">User Information</h2>
-          <pre className="bg-gray-100 p-4 rounded overflow-auto">
-            {JSON.stringify(user, null, 2)}
-          </pre>
-        </div>
-      )}
-      
-      {progress.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Progress Data</h2>
-          <pre className="bg-gray-100 p-4 rounded overflow-auto">
-            {JSON.stringify(progress, null, 2)}
-          </pre>
-        </div>
-      )}
-      
+            <div className="mt-2 text-sm text-gray-600">
+              Total entries: {errorLog.length}
+              {errorLog.length > 0 && (
+                <>
+                  {' | '}
+                  Errors: {errorLog.filter(e => e.level === 'error').length}
+                  {' | '}
+                  Warnings: {errorLog.filter(e => e.level === 'warning').length}
+                  {' | '}
+                  Info: {errorLog.filter(e => e.level === 'info').length}
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* User Information */}
+          {user && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">User Information</h2>
+              <pre className="bg-gray-100 p-4 rounded overflow-auto">
+                {JSON.stringify(user, null, 2)}
+              </pre>
+            </div>
+          )}
+
+          {progress.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xl font-semibold mb-2">Progress Data</h2>
+              <pre className="bg-gray-100 p-4 rounded overflow-auto">
+                {JSON.stringify(progress, null, 2)}
+              </pre>
+            </div>
+          )}
+
         </div>
       </div>
     </div>

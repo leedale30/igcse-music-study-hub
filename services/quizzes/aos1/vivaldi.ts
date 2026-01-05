@@ -1,4 +1,4 @@
-import { Quiz } from '../../types';
+import { Quiz } from '../../../types';
 
 export const vivaldiQuiz: Quiz = {
   title: "Vivaldi's Life and Times Quiz",

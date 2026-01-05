@@ -1,4 +1,4 @@
-import { Quiz } from '../../types';
+import { Quiz } from '../../../types';
 import { baroqueIntroductionQuiz } from './introduction';
 import { vivaldiQuiz, vivaldiSpringMvt1Quiz } from './vivaldi';
 import { handelConcertoGrossoQuiz } from './handel';
