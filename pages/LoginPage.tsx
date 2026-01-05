@@ -36,7 +36,7 @@ const LoginPage: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear validation error for this field
     if (validationErrors[name]) {
       setValidationErrors(prev => ({ ...prev, [name]: '' }));
@@ -101,11 +101,10 @@ const LoginPage: React.FC = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                  validationErrors.email
+                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${validationErrors.email
                     ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                     : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600 dark:focus:ring-sky-400'
-                } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
+                  } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
                 placeholder="Enter your email"
                 disabled={isLoading}
               />
@@ -128,11 +127,10 @@ const LoginPage: React.FC = () => {
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 pr-12 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                    validationErrors.password
+                  className={`w-full px-4 py-3 pr-12 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${validationErrors.password
                       ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                       : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600 dark:focus:ring-sky-400'
-                  } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
+                    } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
                   placeholder="Enter your password"
                   disabled={isLoading}
                 />
@@ -203,71 +201,7 @@ const LoginPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Demo Account Info */}
-        <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
-            Demo Accounts
-          </h3>
-          <p className="text-sm text-blue-700 dark:text-blue-300 mb-3">
-            Try the system with these demo credentials:
-          </p>
-          
-          <div className="space-y-3">
-            <div>
-              <p className="text-xs font-medium text-blue-800 dark:text-blue-200 mb-1">Student Account:</p>
-              <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
-                <p>Email: demo@student.com</p>
-              </div>
-            </div>
-            
-            <div>
-              <p className="text-xs font-medium text-blue-800 dark:text-blue-200 mb-1">Teacher Account:</p>
-              <div className="text-sm font-mono text-blue-600 dark:text-blue-400">
-                <p>Email: teacher@school.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Troubleshooting Section */}
-        <div className="mt-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-          <h3 className="text-sm font-medium text-yellow-800 dark:text-yellow-200 mb-2">
-            🔧 Login Issues?
-          </h3>
-          <p className="text-sm text-yellow-700 dark:text-yellow-300 mb-3">
-            If you can't log in with the teacher account, try resetting the authentication data:
-          </p>
-          
-          <div className="flex space-x-2">
-            <button
-              onClick={() => {
-                const result = resetAuthData();
-                if (result) {
-                  alert('✅ Authentication data reset! You can now log in with teacher@school.com / teacher123');
-                  window.location.reload();
-                } else {
-                  alert('❌ Failed to reset authentication data. Please try refreshing the page.');
-                }
-              }}
-              className="bg-yellow-600 hover:bg-yellow-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
-            >
-              🔄 Reset Auth Data
-            </button>
-            
-            <button
-              onClick={() => {
-                const { users, teacher } = checkAuthData();
-                const message = teacher 
-                  ? `✅ Teacher account found!\nTotal users: ${users.length}\nTeacher: ${teacher.name} (${teacher.email})`
-                  : `❌ Teacher account not found!\nTotal users: ${users.length}\nPlease click 'Reset Auth Data' to fix this.`;
-                alert(message);
-              }}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
-            >
-              🔍 Check Status
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
