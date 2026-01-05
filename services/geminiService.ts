@@ -8,8 +8,8 @@ let chatSession: any = null;
 
 export const initChatSession = (pageContext?: string, baseUrl?: string) => {
     try {
-        // Access process.env.API_KEY directly as required by guidelines
-        const key = process.env.API_KEY;
+        // Vite requires VITE_ prefix for env vars to be exposed to frontend
+        const key = import.meta.env.VITE_API_KEY;
 
         // Initialize with custom baseUrl if provided (essential for China/Enterprise proxies)
         const genAI = new GoogleGenAI({
