@@ -52,7 +52,7 @@ export interface User {
   firstName?: string;
   lastName?: string;
   nickname?: string;
-  role: 'student' | 'teacher';
+  role: 'student' | 'teacher' | 'admin';
   group?: string; // Grade level or class group (e.g., 'Grade 9', 'Grade 10')
   profileCompleted: boolean;
   createdAt: Date;
