@@ -55,6 +55,7 @@ import { ProgressProvider } from './contexts/ProgressContext';
 import { RPGProvider } from './contexts/RPGContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import { SupabaseTestPage } from './components/SupabaseTestPage';
+import { ChatWidget } from './components/tutor/ChatWidget';
 
 const App: React.FC = () => {
   return (
@@ -143,6 +144,8 @@ const App: React.FC = () => {
           </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
+      {/* AI Tutor Widget - Available on all pages */}
+      <ChatWidget baseUrl="/google-api" />
     </ErrorBoundary>
   );
 };
