@@ -22,20 +22,48 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return;
     }
 
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        fetchUserProfile(session.user.id);
-      } else {
+    // Timeout wrapper to prevent infinite loading
+    const withTimeout = <T,>(promise: Promise<T>, timeoutMs: number): Promise<T> => {
+      return Promise.race([
+        promise,
+        new Promise<T>((_, reject) =>
+          setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
+        )
+      ]);
+    };
+
+    // Get initial session with timeout
+    const initializeSession = async () => {
+      try {
+        const { data: { session } } = await withTimeout(
+          supabase.auth.getSession(),
+          10000 // 10 second timeout
+        );
+
+        if (session?.user) {
+          await withTimeout(fetchUserProfile(session.user.id), 10000);
+        } else {
+          setIsLoading(false);
+        }
+      } catch (err) {
+        console.error('Session initialization failed or timed out:', err);
+        // On timeout/error, allow user to access login page
         setIsLoading(false);
       }
-    });
+    };
+
+    initializeSession();
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log('Auth state changed:', event);
       if (session?.user) {
-        await fetchUserProfile(session.user.id);
+        try {
+          await withTimeout(fetchUserProfile(session.user.id), 10000);
+        } catch (err) {
+          console.error('Profile fetch timed out:', err);
+          setIsLoading(false);
+        }
       } else {
         setUser(null);
         setIsLoading(false);
