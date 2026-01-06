@@ -70,7 +70,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     visualObj: vObj[0],
                     millisecondsPerMeasure: vObj[0].millisecondsPerMeasure(),
                     options: {
-                        soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/"
+                        soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/abcjs/"
                     }
                 }).then(() => synth.prime()),
                 10000, // 10 second timeout
@@ -117,7 +117,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     visualObj: vObj[0],
                     millisecondsPerMeasure: vObj[0].millisecondsPerMeasure(),
                     options: {
-                        soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/"
+                        soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/abcjs/"
                     }
                 }).then(() => synth.prime()).then(() => {
                     setModalSynthControl(synth);
@@ -188,8 +188,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                             onClick={() => togglePlay(false)}
                             disabled={!isAudioReady}
                             className={`flex items-center gap-2 px-3 py-1 rounded text-xs font-bold transition-colors ${isAudioReady
-                                    ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                                    : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                                ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                                : 'bg-gray-700 text-gray-400 cursor-not-allowed'
                                 }`}
                         >
                             {audioError ? (
@@ -242,8 +242,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                                     onClick={() => togglePlay(true)}
                                     disabled={!isModalAudioReady}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-colors ${isModalAudioReady
-                                            ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                                            : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
+                                        ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                                        : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
                                         }`}
                                 >
                                     {!isModalAudioReady ? (
