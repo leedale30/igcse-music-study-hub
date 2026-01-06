@@ -56,17 +56,12 @@ export const sendMessageToTeacher = async (
     });
 
     try {
-        // Build the API URL - use proxy if baseUrl is provided, otherwise direct
-        let apiUrl: string;
-        if (proxyBase) {
-            // Use Vercel proxy for China access
-            apiUrl = `${proxyBase}/v1beta/models/${MODEL_NAME}:generateContent?key=${key}`;
-        } else {
-            // Direct API access
-            apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${key}`;
-        }
+        // Use our serverless proxy endpoint which is pinned to US regions
+        // This bypasses China's block on direct Gemini API access
+        const apiUrl = '/api/gemini';
 
         const requestBody = {
+            model: MODEL_NAME,
             contents: conversationHistory,
             systemInstruction: {
                 parts: [{ text: systemInstruction }]
