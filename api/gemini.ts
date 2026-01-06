@@ -19,9 +19,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const modelName = model || 'gemini-1.5-flash';
 
         // Use Vercel AI SDK to generate text
-        // This automatically uses the Google provider and can be routed via AI Gateway
+        // Ensure we pick up the API key from various possible env vars
+        const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GOOGLE_API_KEY || process.env.API_KEY;
+
+        const googleProvider = createGoogleGenerativeAI({
+            apiKey: apiKey,
+        });
+
         const result = await generateText({
-            model: google(modelName),
+            model: googleProvider(modelName),
             system: system, // Pass system instruction if provided
             messages: messages, // Expects standard Vercel AI SDK message format
         });
