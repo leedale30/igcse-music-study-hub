@@ -20,7 +20,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         // Use Vercel AI SDK to generate text
         // Ensure we pick up the API key from various possible env vars
+        const envKeys = Object.keys(process.env);
+        console.log('DEBUG: Available Environment Variables:', envKeys);
+
         const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GOOGLE_API_KEY || process.env.API_KEY;
+
+        if (!apiKey) {
+            console.error('DEBUG: API Key is CRITICALLY MISSING. Checked GOOGLE_GENERATIVE_AI_API_KEY, GOOGLE_API_KEY, API_KEY');
+            throw new Error(`Missing API Key. Available env vars: ${envKeys.filter(k => k.includes('API') || k.includes('KEY')).join(', ')}`);
+        }
 
         const googleProvider = createGoogleGenerativeAI({
             apiKey: apiKey,
