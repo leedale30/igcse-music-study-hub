@@ -50,12 +50,22 @@ import AreasOfStudyPage from './pages/AreasOfStudyPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { AuthProvider } from './contexts/AuthContext';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { ProgressProvider } from './contexts/ProgressContext';
 import { RPGProvider } from './contexts/RPGContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import { SupabaseTestPage } from './components/SupabaseTestPage';
 import { ChatWidget } from './components/tutor/ChatWidget';
+
+// Wrapper component that only shows ChatWidget for logged-in users
+const AuthenticatedChatWidget: React.FC = () => {
+  const { user } = useAuth();
+
+  // Only show Maestro for logged-in users
+  if (!user) return null;
+
+  return <ChatWidget />;
+};
 
 const App: React.FC = () => {
   return (
@@ -139,13 +149,13 @@ const App: React.FC = () => {
                     <Route path="*" element={<GenericPage />} />
                   </Route>
                 </Routes>
+                {/* AI Tutor Widget - Only for logged-in users */}
+                <AuthenticatedChatWidget />
               </RPGProvider>
             </ProgressProvider>
           </AuthProvider>
         </LanguageProvider>
       </ThemeProvider>
-      {/* AI Tutor Widget - Available on all pages */}
-      <ChatWidget />
     </ErrorBoundary>
   );
 };
