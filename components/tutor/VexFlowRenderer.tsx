@@ -22,8 +22,13 @@ export const VexFlowRenderer: React.FC<Props> = ({ data, id }) => {
         container.innerHTML = ''; // Clear previous render
 
         try {
-            const VF = window.Vex.Flow;
-            
+            const VF = window.Vex?.Flow;
+
+            // Guard: Ensure VexFlow is fully loaded
+            if (!VF || !VF.Factory) {
+                console.warn('VexFlow not fully initialized');
+                return;
+            }
             // Parse the data block
             const lines = data.split('\n');
             let clef = 'treble';
@@ -33,10 +38,10 @@ export const VexFlowRenderer: React.FC<Props> = ({ data, id }) => {
             lines.forEach(line => {
                 const [key, ...valParts] = line.split(':');
                 if (!key || valParts.length === 0) return;
-                
+
                 const val = valParts.join(':').trim();
                 const k = key.trim().toLowerCase();
-                
+
                 if (k === 'clef') clef = val;
                 if (k === 'time') time = val;
                 if (k === 'notes') notesStr = val;
@@ -53,7 +58,7 @@ export const VexFlowRenderer: React.FC<Props> = ({ data, id }) => {
             });
 
             const context = vf.getContext();
-            
+
             // Apply Dark Mode Styling to Context
             context.setFont("Arial", 10, "").setBackgroundFillStyle("#0d1117");
             context.setFillStyle("#e2e8f0"); // Text/Notes color
@@ -64,7 +69,7 @@ export const VexFlowRenderer: React.FC<Props> = ({ data, id }) => {
 
             // Create notes
             const notes = score.notes(notesStr, { stem: 'up' });
-            
+
             // Create voice manually to disable strict mode
             // This prevents "Voice does not have enough notes" errors if the AI generates incomplete measures
             const voice = score.voice(notes);
@@ -72,11 +77,11 @@ export const VexFlowRenderer: React.FC<Props> = ({ data, id }) => {
 
             // Render Stave
             system.addStave({
-                voices: [ voice ]
+                voices: [voice]
             }).addClef(clef).addTimeSignature(time);
 
             // Add connector (start line)
-            system.addConnector(); 
+            system.addConnector();
 
             vf.draw();
 
