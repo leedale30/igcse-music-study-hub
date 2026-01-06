@@ -14,6 +14,14 @@ declare global {
     }
 }
 
+// Timeout wrapper for promises
+const withTimeout = <T,>(promise: Promise<T>, ms: number, errorMsg: string): Promise<T> => {
+    return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => reject(new Error(errorMsg)), ms);
+        promise.then(resolve).catch(reject).finally(() => clearTimeout(timer));
+    });
+};
+
 export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
     // Inline Refs & State
     const paperRef = useRef<HTMLDivElement>(null);
@@ -21,6 +29,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
     const [synthControl, setSynthControl] = useState<any>(null);
     const [visualObj, setVisualObj] = useState<any>(null); // Store parsed ABC object
     const [isAudioReady, setIsAudioReady] = useState(false);
+    const [audioError, setAudioError] = useState(false);
 
     // Fullscreen Refs & State
     const [isFullscreen, setIsFullscreen] = useState(false);
@@ -34,6 +43,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         if (!paperRef.current || !window.ABCJS) return;
 
         setIsAudioReady(false);
+        setAudioError(false);
         setSynthControl(null);
 
         const vObj = window.ABCJS.renderAbc(paperRef.current, abc, {
@@ -52,18 +62,26 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         if (window.ABCJS.synth.supportsAudio()) {
             const synth = new window.ABCJS.synth.CreateSynth();
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            
-            synth.init({
-                audioContext: audioContext,
-                visualObj: vObj[0],
-                millisecondsPerMeasure: vObj[0].millisecondsPerMeasure(),
-                options: {
-                    soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/"
-                }
-            }).then(() => synth.prime()).then(() => {
+
+            // Use timeout to prevent infinite loading
+            withTimeout(
+                synth.init({
+                    audioContext: audioContext,
+                    visualObj: vObj[0],
+                    millisecondsPerMeasure: vObj[0].millisecondsPerMeasure(),
+                    options: {
+                        soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/FluidR3_GM/"
+                    }
+                }).then(() => synth.prime()),
+                10000, // 10 second timeout
+                'Audio loading timed out'
+            ).then(() => {
                 setSynthControl(synth);
                 setIsAudioReady(true);
-            }).catch((error: any) => console.warn("Audio problem:", error));
+            }).catch((error: any) => {
+                console.warn("Audio problem:", error);
+                setAudioError(true);
+            });
         }
 
         return () => {
@@ -93,7 +111,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             if (window.ABCJS.synth.supportsAudio()) {
                 const synth = new window.ABCJS.synth.CreateSynth();
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                
+
                 synth.init({
                     audioContext: audioContext,
                     visualObj: vObj[0],
@@ -138,13 +156,13 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     const downloadMidi = () => {
         if (!visualObj || !window.ABCJS) return;
-        
+
         try {
             // Generate MIDI binary
             const midi = window.ABCJS.synth.getMidiFile(visualObj, { midiOutputType: "binary" });
             const blob = new Blob([midi], { type: "audio/midi" });
             const url = window.URL.createObjectURL(blob);
-            
+
             const a = document.createElement('a');
             a.href = url;
             a.download = `maestro-result-${id}.mid`;
@@ -166,26 +184,27 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                 <div className="bg-gray-800 px-3 py-2 flex items-center justify-between border-b border-gray-700">
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Musical Example</span>
                     <div className="flex items-center gap-2">
-                        <button 
+                        <button
                             onClick={() => togglePlay(false)}
                             disabled={!isAudioReady}
-                            className={`flex items-center gap-2 px-3 py-1 rounded text-xs font-bold transition-colors ${
-                                isAudioReady 
-                                    ? 'bg-indigo-600 hover:bg-indigo-500 text-white' 
+                            className={`flex items-center gap-2 px-3 py-1 rounded text-xs font-bold transition-colors ${isAudioReady
+                                    ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
                                     : 'bg-gray-700 text-gray-400 cursor-not-allowed'
-                            }`}
+                                }`}
                         >
-                            {!isAudioReady ? (
+                            {audioError ? (
+                                <RefreshCw className="w-3 h-3" />
+                            ) : !isAudioReady ? (
                                 <Loader2 className="w-3 h-3 animate-spin" />
                             ) : (
                                 isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />
                             )}
-                            {isPlaying ? 'Stop' : (isAudioReady ? 'Play' : 'Loading...')}
+                            {audioError ? 'Retry' : isPlaying ? 'Stop' : (isAudioReady ? 'Play' : 'Loading...')}
                         </button>
-                        
+
                         <div className="h-4 w-px bg-gray-600 mx-1"></div>
 
-                        <button 
+                        <button
                             onClick={downloadMidi}
                             className="p-1 hover:bg-gray-700 rounded text-gray-400 hover:text-white transition-colors"
                             title="Download MIDI"
@@ -193,7 +212,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                             <Download className="w-4 h-4" />
                         </button>
 
-                        <button 
+                        <button
                             onClick={() => setIsFullscreen(true)}
                             className="p-1 hover:bg-gray-700 rounded text-gray-400 hover:text-white transition-colors"
                             title="Expand Score"
@@ -219,14 +238,13 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                                 Full Score View
                             </h3>
                             <div className="flex items-center gap-3">
-                                <button 
+                                <button
                                     onClick={() => togglePlay(true)}
                                     disabled={!isModalAudioReady}
-                                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-colors ${
-                                        isModalAudioReady 
-                                            ? 'bg-indigo-600 hover:bg-indigo-500 text-white' 
+                                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-colors ${isModalAudioReady
+                                            ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
                                             : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
-                                    }`}
+                                        }`}
                                 >
                                     {!isModalAudioReady ? (
                                         <Loader2 className="w-4 h-4 animate-spin" />
@@ -235,7 +253,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                                     )}
                                     {isModalPlaying ? 'Stop Playback' : (isModalAudioReady ? 'Play Score' : 'Loading Audio...')}
                                 </button>
-                                
+
                                 <button
                                     onClick={downloadMidi}
                                     className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-lg font-medium transition-colors border border-gray-700"
@@ -244,7 +262,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                                     Download MIDI
                                 </button>
 
-                                <button 
+                                <button
                                     onClick={() => {
                                         if (modalSynthControl) modalSynthControl.stop();
                                         setIsFullscreen(false);
@@ -258,9 +276,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
                         {/* Modal Content */}
                         <div className="flex-1 overflow-auto p-8 bg-gray-950 flex justify-center items-start">
-                             <div className="w-full flex justify-center">
+                            <div className="w-full flex justify-center">
                                 <div ref={modalPaperRef} className="w-full max-w-4xl" />
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
