@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import { getDefinition } from '../services/geminiService';
 
 const RobotIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
@@ -16,22 +16,22 @@ const SparkleIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 // Helper to render text with **bold** formatting
 const renderFormattedBotResponse = (text: string): React.ReactNode => {
-    if (!text) return null;
-    // Split by newlines first to preserve them as paragraphs or line breaks
-    return text.split('\n').map((line, lineIndex) => {
-        // Then split by bold markdown
-        const parts = line.split(/(\*\*.*?\*\*)/g);
-        return (
-            <p key={lineIndex} className="mb-2 last:mb-0"> {/* Add paragraph for each line */}
-                {parts.map((part, index) => {
-                    if (part.startsWith('**') && part.endsWith('**')) {
-                        return <strong key={index}>{part.substring(2, part.length - 2)}</strong>;
-                    }
-                    return part;
-                })}
-            </p>
-        );
-    });
+  if (!text) return null;
+  // Split by newlines first to preserve them as paragraphs or line breaks
+  return text.split('\n').map((line, lineIndex) => {
+    // Then split by bold markdown
+    const parts = line.split(/(\*\*.*?\*\*)/g);
+    return (
+      <p key={lineIndex} className="mb-2 last:mb-0"> {/* Add paragraph for each line */}
+        {parts.map((part, index) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={index}>{part.substring(2, part.length - 2)}</strong>;
+          }
+          return part;
+        })}
+      </p>
+    );
+  });
 };
 
 
@@ -40,8 +40,6 @@ const GlossaryBot: React.FC = () => {
   const [definition, setDefinition] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -55,16 +53,10 @@ const GlossaryBot: React.FC = () => {
     setDefinition('');
 
     try {
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: `Hi GlossaBot! Please define the musical term "${term.trim()}" for me. I'm an IGCSE Music student.`,
-        config: {
-          systemInstruction: `You are GlossaBot, a friendly and knowledgeable assistant specializing in musical terms for IGCSE Music students. Your responses should be clear, concise, accurate, and easy to understand. Use simple language where appropriate, but don't shy away from correct terminology if explained well. Aim for definitions around 2-4 sentences, plus a short example or fun fact if it enhances understanding. Be encouraging and make learning engaging! When you define the term, please make sure the term itself is bolded using markdown like **Term**. Start your response with a friendly greeting unless it's a follow-up.`,
-        }
-      });
-      setDefinition(response.text);
+      const result = await getDefinition(term);
+      setDefinition(result);
     } catch (e: any) {
-      console.error("Gemini API error:", e);
+      console.error("GlossaryBot error:", e);
       setError("Oh dear! It seems my circuits are a bit jumbled, or the musical muses are quiet. I couldn't fetch the definition for that. Please check the term or try again in a moment.");
       setDefinition('');
     } finally {
@@ -81,7 +73,7 @@ const GlossaryBot: React.FC = () => {
           <p className="text-sm text-slate-600 dark:text-slate-400">Your Personal Music Terminology Assistant!</p>
         </div>
       </div>
-      
+
       <p className="mb-6 text-slate-700 dark:text-slate-300 text-base">
         Hello! I'm <strong>GlossaBot</strong>. Curious about a musical term? Type it below, and I'll do my best to explain it in a way that's easy for IGCSE Music students to understand. Let's learn together!
       </p>
