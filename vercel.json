@@ -1,25 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
   "rewrites": [
     {
-      "source": "/google-api/:match*",
-      "destination": "https://generativelanguage.googleapis.com/:match*"
-    },
-    {
-      "source": "/test/:path*",
-      "destination": "/test/:path*"
-    },
-    {
-      "source": "/((?!test/).*)",
+      "source": "/((?!api/|test/).*)",
       "destination": "/index.html"
     }
   ],
