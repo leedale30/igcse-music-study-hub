@@ -1,5 +1,6 @@
-
-
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { generateText } from 'ai';
+import { google } from '@ai-sdk/google';
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method === 'OPTIONS') {
         res.setHeader('Access-Control-Allow-Origin', '*');
