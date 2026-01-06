@@ -1,16 +1,14 @@
-import { GoogleGenAI } from "@google/genai";
 import { ChatMessage, ABC_PLUS_CONTEXT, GroundingMetadata } from "../types/tutor";
 
-// Using Gemini 2.5 Flash (the currently available fast model)
+// Using Gemini 2.5 Flash
 export const MODEL_NAME = "gemini-2.5-flash";
 
-let ai: GoogleGenAI | null = null;
 let conversationHistory: { role: string; parts: { text: string }[] }[] = [];
 let systemInstruction = "";
+let currentBaseUrl = "";
 
 export const initChatSession = (pageContext?: string, baseUrl?: string) => {
     try {
-        // Vite requires VITE_ prefix for env vars to be exposed to frontend
         const key = import.meta.env.VITE_API_KEY;
 
         if (!key) {
@@ -18,8 +16,8 @@ export const initChatSession = (pageContext?: string, baseUrl?: string) => {
             return null;
         }
 
-        // Initialize the client
-        ai = new GoogleGenAI({ apiKey: key });
+        // Store baseUrl for API calls
+        currentBaseUrl = baseUrl || "";
 
         // Reset conversation history
         conversationHistory = [];
@@ -30,7 +28,7 @@ export const initChatSession = (pageContext?: string, baseUrl?: string) => {
             systemInstruction += `\n\n=== CONTEXT FROM USER'S CURRENT SCREEN ===\nThe user is currently looking at a webpage with the following content. Use this to answer context-specific questions:\n\n${pageContext.substring(0, 20000)}\n\n=== END CONTEXT ===`;
         }
 
-        return ai;
+        return true;
     } catch (error) {
         console.error("Failed to init chat", error);
         return null;
@@ -42,32 +40,60 @@ export const sendMessageToTeacher = async (
     history: ChatMessage[],
     baseUrl?: string
 ): Promise<{ text: string; groundingMetadata?: GroundingMetadata }> => {
-    if (!ai) {
-        const initialized = initChatSession(undefined, baseUrl);
-        if (!initialized) {
-            throw new Error("Failed to initialize chat session");
-        }
+    const key = import.meta.env.VITE_API_KEY;
+
+    if (!key) {
+        throw new Error("No API key configured");
     }
 
-    try {
-        // Add user message to history
-        conversationHistory.push({
-            role: "user",
-            parts: [{ text: userMessage }]
-        });
+    // Use provided baseUrl or stored one
+    const proxyBase = baseUrl || currentBaseUrl;
 
-        // Make the API call using the correct SDK method
-        const response = await ai!.models.generateContent({
-            model: MODEL_NAME,
+    // Add user message to history
+    conversationHistory.push({
+        role: "user",
+        parts: [{ text: userMessage }]
+    });
+
+    try {
+        // Build the API URL - use proxy if baseUrl is provided, otherwise direct
+        let apiUrl: string;
+        if (proxyBase) {
+            // Use Vercel proxy for China access
+            apiUrl = `${proxyBase}/v1beta/models/${MODEL_NAME}:generateContent?key=${key}`;
+        } else {
+            // Direct API access
+            apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${key}`;
+        }
+
+        const requestBody = {
             contents: conversationHistory,
-            config: {
-                systemInstruction: systemInstruction,
+            systemInstruction: {
+                parts: [{ text: systemInstruction }]
+            },
+            generationConfig: {
                 temperature: 0.7,
             }
+        };
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody)
         });
 
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            console.error('Gemini API error:', response.status, errorData);
+            throw new Error(errorData.error?.message || `API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
         // Extract the response text
-        const text = response.text || "I'm having trouble responding right now.";
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm having trouble responding right now.";
 
         // Add assistant response to history
         conversationHistory.push({
@@ -76,13 +102,12 @@ export const sendMessageToTeacher = async (
         });
 
         // Extract grounding metadata if available
-        const groundingMetadata = response.candidates?.[0]?.groundingMetadata as GroundingMetadata | undefined;
+        const groundingMetadata = data.candidates?.[0]?.groundingMetadata as GroundingMetadata | undefined;
 
         return { text, groundingMetadata };
     } catch (error) {
         console.error("Gemini Error:", error);
         // Reset on error
-        ai = null;
         conversationHistory = [];
         throw error;
     }
