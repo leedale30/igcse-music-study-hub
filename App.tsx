@@ -145,7 +145,7 @@ const App: React.FC = () => {
         </LanguageProvider>
       </ThemeProvider>
       {/* AI Tutor Widget - Available on all pages */}
-      <ChatWidget baseUrl="/google-api" />
+      <ChatWidget />
     </ErrorBoundary>
   );
 };
