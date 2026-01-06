@@ -1,11 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { generateText } from 'ai';
-import { google } from '@ai-sdk/google';
 
-// Force this function to run in US East (N. Virginia)
-export const config = {
-    regions: ['iad1'],
-};
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method === 'OPTIONS') {
