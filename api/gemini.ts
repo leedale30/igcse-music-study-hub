@@ -1,27 +1,38 @@
-// Serverless function to proxy Gemini API requests from a non-China region
-// This runs as a Vercel serverless function, not an edge function
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+// Force this function to run in US regions, not China
 export const config = {
-    // Force this function to run in a US region, not in China
     regions: ['iad1', 'sfo1', 'pdx1'],
 };
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+    // Handle CORS preflight
+    if (req.method === 'OPTIONS') {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        return res.status(200).end();
+    }
+
     // Only allow POST requests
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
+        return res.status(405).json({ error: 'Method not allowed. Use POST.' });
     }
 
     const apiKey = process.env.API_KEY;
 
     if (!apiKey) {
-        return res.status(500).json({ error: 'API key not configured' });
+        console.error('API_KEY environment variable not set');
+        return res.status(500).json({ error: 'API key not configured on server' });
     }
 
     try {
         const { model, contents, systemInstruction, generationConfig } = req.body;
 
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model || 'gemini-2.5-flash'}:generateContent?key=${apiKey}`;
+        const modelName = model || 'gemini-2.5-flash';
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+
+        console.log('Proxying request to Gemini API for model:', modelName);
 
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -38,6 +49,7 @@ export default async function handler(req: any, res: any) {
         const data = await response.json();
 
         if (!response.ok) {
+            console.error('Gemini API error:', response.status, data);
             return res.status(response.status).json(data);
         }
 
