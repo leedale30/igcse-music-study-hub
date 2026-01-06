@@ -254,6 +254,47 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  // Update email
+  const updateEmail = async (newEmail: string): Promise<boolean> => {
+    if (!user) return false;
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      if (!isSupabaseConfigured) {
+        setError('Authentication service is not configured');
+        return false;
+      }
+
+      // Update email in Supabase Auth
+      const { error: authError } = await supabase.auth.updateUser({
+        email: newEmail
+      });
+
+      if (authError) throw authError;
+
+      // Also update email in profiles table
+      const { error: profileError } = await supabase
+        .from('profiles')
+        .update({ email: newEmail })
+        .eq('id', user.id);
+
+      if (profileError) {
+        console.error('Profile email update failed:', profileError);
+        // Don't fail the whole operation if profile update fails
+      }
+
+      // Refresh user profile
+      await fetchUserProfile(user.id);
+      return true;
+    } catch (err: any) {
+      setError(err.message || 'Email update failed');
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   // Logout
   const logout = async () => {
     if (isSupabaseConfigured) {
@@ -272,6 +313,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     signup,
     updateProfile,
     updatePassword,
+    updateEmail,
     logout,
     isLoading,
     error

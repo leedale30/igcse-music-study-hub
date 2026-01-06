@@ -18,9 +18,9 @@ const passwordSchema = z.object({
 });
 
 const AccountSettingsPage: React.FC = () => {
-  const { user, updateProfile, updatePassword } = useAuth();
+  const { user, updateProfile, updatePassword, updateEmail } = useAuth();
   const navigate = useNavigate();
-  
+
   // Email change state
   const [emailData, setEmailData] = useState({
     email: user?.email || ''
@@ -28,7 +28,7 @@ const AccountSettingsPage: React.FC = () => {
   const [emailErrors, setEmailErrors] = useState<Record<string, string>>({});
   const [isUpdatingEmail, setIsUpdatingEmail] = useState(false);
   const [emailSuccess, setEmailSuccess] = useState(false);
-  
+
   // Password change state
   const [passwordData, setPasswordData] = useState({
     currentPassword: '',
@@ -43,7 +43,7 @@ const AccountSettingsPage: React.FC = () => {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEmailData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear validation error for this field
     if (emailErrors[name]) {
       setEmailErrors(prev => ({ ...prev, [name]: '' }));
@@ -55,7 +55,7 @@ const AccountSettingsPage: React.FC = () => {
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setPasswordData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear validation error for this field
     if (passwordErrors[name]) {
       setPasswordErrors(prev => ({ ...prev, [name]: '' }));
@@ -94,23 +94,14 @@ const AccountSettingsPage: React.FC = () => {
       return;
     }
 
-    // Check if email already exists
-    const existingUsers = JSON.parse(localStorage.getItem('igcse-music-users') || '[]');
-    const emailExists = existingUsers.some((u: any) => u.email === emailData.email && u.id !== user?.id);
-    if (emailExists) {
-      setEmailErrors({ email: 'An account with this email already exists' });
-      setIsUpdatingEmail(false);
-      return;
-    }
-
-    // Update email
-    const success = await updateProfile({ email: emailData.email.trim() });
+    // Update email using Supabase Auth
+    const success = await updateEmail(emailData.email.trim());
     if (success) {
       setEmailSuccess(true);
     } else {
       setEmailErrors({ email: 'Failed to update email. Please try again.' });
     }
-    
+
     setIsUpdatingEmail(false);
   };
 
@@ -146,7 +137,7 @@ const AccountSettingsPage: React.FC = () => {
     } else {
       setPasswordErrors({ newPassword: 'Failed to update password. Please try again.' });
     }
-    
+
     setIsUpdatingPassword(false);
   };
 
@@ -232,11 +223,10 @@ const AccountSettingsPage: React.FC = () => {
                   name="email"
                   value={emailData.email}
                   onChange={handleEmailChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                    emailErrors.email
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${emailErrors.email
                       ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                       : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600 dark:focus:ring-sky-400'
-                  } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
+                    } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
                   placeholder="Enter new email address"
                   disabled={isUpdatingEmail}
                 />
@@ -287,11 +277,10 @@ const AccountSettingsPage: React.FC = () => {
                   name="currentPassword"
                   value={passwordData.currentPassword}
                   onChange={handlePasswordChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                    passwordErrors.currentPassword
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${passwordErrors.currentPassword
                       ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                       : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600 dark:focus:ring-sky-400'
-                  } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
+                    } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
                   placeholder="Enter current password"
                   disabled={isUpdatingPassword}
                 />
@@ -312,11 +301,10 @@ const AccountSettingsPage: React.FC = () => {
                   name="newPassword"
                   value={passwordData.newPassword}
                   onChange={handlePasswordChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                    passwordErrors.newPassword
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${passwordErrors.newPassword
                       ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                       : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600 dark:focus:ring-sky-400'
-                  } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
+                    } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
                   placeholder="Enter new password (min. 6 characters)"
                   disabled={isUpdatingPassword}
                 />
@@ -337,11 +325,10 @@ const AccountSettingsPage: React.FC = () => {
                   name="confirmPassword"
                   value={passwordData.confirmPassword}
                   onChange={handlePasswordChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                    passwordErrors.confirmPassword
+                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${passwordErrors.confirmPassword
                       ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                       : 'border-slate-300 focus:ring-sky-500 focus:border-sky-500 dark:border-slate-600 dark:focus:ring-sky-400'
-                  } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
+                    } bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 placeholder-slate-500 dark:placeholder-slate-400`}
                   placeholder="Confirm new password"
                   disabled={isUpdatingPassword}
                 />
