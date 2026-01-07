@@ -61,6 +61,7 @@ import { MatchmakingView } from './components/rpg/MatchmakingView';
 import { BattleView } from './components/rpg/BattleView';
 import { ResultsView } from './components/rpg/ResultsView';
 import { PracticeView } from './components/rpg/PracticeView';
+import { CharacterSheet } from './components/rpg/CharacterSheet';
 
 // Wrapper component that only shows ChatWidget for logged-in users
 const AuthenticatedChatWidget: React.FC = () => {
@@ -157,6 +158,7 @@ const App: React.FC = () => {
                     <Route path="/rpg/battle/:matchId" element={<BattleView />} />
                     <Route path="/rpg/results/:matchId" element={<ResultsView />} />
                     <Route path="/rpg/practice" element={<PracticeView />} />
+                    <Route path="/rpg/character" element={<CharacterSheet />} />
 
                     {/* Catch-all route - protected */}
                     <Route path="*" element={<GenericPage />} />
