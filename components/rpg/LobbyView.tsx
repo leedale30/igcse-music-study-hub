@@ -135,6 +135,18 @@ export const LobbyView: React.FC<LobbyViewProps> = ({ userId }) => {
                         <Swords className={`w-8 h-8 ${currentTheme.accentClass.split(' ')[0]}`} />
                         <span className="text-3xl font-black italic tracking-tighter">BATTLE NOW</span>
                     </motion.button>
+
+                    {/* Practice Mode Button */}
+                    <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => navigate('/rpg/practice')}
+                        className="h-16 rounded-2xl border border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center gap-3 transition-all"
+                    >
+                        <Trophy className="w-6 h-6 text-yellow-400" />
+                        <span className="text-xl font-bold">Practice Mode</span>
+                        <span className="text-xs text-white/40">(Solo)</span>
+                    </motion.button>
                 </motion.div>
 
                 {/* Leaderboard (Right Col) */}
