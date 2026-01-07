@@ -56,6 +56,10 @@ import { RPGProvider } from './contexts/RPGContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import { SupabaseTestPage } from './components/SupabaseTestPage';
 import { ChatWidget } from './components/tutor/ChatWidget';
+import { LobbyView } from './components/rpg/LobbyView';
+import { MatchmakingView } from './components/rpg/MatchmakingView';
+import { BattleView } from './components/rpg/BattleView';
+import { ResultsView } from './components/rpg/ResultsView';
 
 // Wrapper component that only shows ChatWidget for logged-in users
 const AuthenticatedChatWidget: React.FC = () => {
@@ -145,6 +149,13 @@ const App: React.FC = () => {
                     {StageScreenRoutes}
                     {/* AOS generic content routes */}
                     <Route path="/aos/:aosId/*" element={<AosContentPage />} />
+
+                    {/* RPG Routes */}
+                    <Route path="/rpg" element={<LobbyView />} />
+                    <Route path="/rpg/matchmaking" element={<MatchmakingView />} />
+                    <Route path="/rpg/battle/:matchId" element={<BattleView />} />
+                    <Route path="/rpg/results/:matchId" element={<ResultsView />} />
+
                     {/* Catch-all route - protected */}
                     <Route path="*" element={<GenericPage />} />
                   </Route>
