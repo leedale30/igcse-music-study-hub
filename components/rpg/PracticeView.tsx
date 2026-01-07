@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
 import { THEMES, RPGTheme } from '../../types/rpg_themes';
 import { useNavigate } from 'react-router-dom';
-import { Timer, CheckCircle, XCircle, Trophy, ArrowLeft, Zap, Target } from 'lucide-react';
+import { Timer, CheckCircle, XCircle, Trophy, ArrowLeft, Zap, Target, Star } from 'lucide-react';
 import { supabase } from '../../src/lib/supabase';
+import { awardXP } from '../../services/rpgService';
+import { useAuth } from '../../contexts/AuthContext';
 
 interface Question {
     id: string;
@@ -33,7 +35,10 @@ export const PracticeView: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [totalAnswered, setTotalAnswered] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState(0);
+    const [xpEarned, setXpEarned] = useState(0);
+    const [xpSaved, setXpSaved] = useState(false);
     const navigate = useNavigate();
+    const { user } = useAuth();
 
     const currentTheme = THEMES[theme];
 
@@ -112,6 +117,38 @@ export const PracticeView: React.FC = () => {
         }, 1500);
     }, [currentIndex, questions, showResult, streak]);
 
+    // Award XP when game ends
+    useEffect(() => {
+        if (gameOver && !xpSaved && user?.id) {
+            const earnedXP = Math.floor(score / 10); // 10 points = 1 XP
+            setXpEarned(earnedXP);
+
+            if (earnedXP > 0) {
+                awardXP({
+                    user_id: user.id,
+                    points: earnedXP,
+                    source: 'quiz',
+                    metadata: {
+                        mode: 'practice',
+                        score: score,
+                        accuracy: totalAnswered > 0 ? Math.round((correctAnswers / totalAnswered) * 100) : 0,
+                        bestStreak: bestStreak,
+                        questionsAnswered: totalAnswered
+                    }
+                }).then(result => {
+                    if (result.success) {
+                        console.log('XP awarded successfully:', earnedXP);
+                        setXpSaved(true);
+                    } else {
+                        console.error('Failed to award XP:', result.error);
+                    }
+                });
+            } else {
+                setXpSaved(true);
+            }
+        }
+    }, [gameOver, xpSaved, user, score, totalAnswered, correctAnswers, bestStreak]);
+
     const restartGame = () => {
         setCurrentIndex(0);
         setScore(0);
@@ -123,6 +160,8 @@ export const PracticeView: React.FC = () => {
         setGameOver(false);
         setTotalAnswered(0);
         setCorrectAnswers(0);
+        setXpEarned(0);
+        setXpSaved(false);
         // Reshuffle questions
         setQuestions(prev => [...prev].sort(() => Math.random() - 0.5));
     };
@@ -169,6 +208,20 @@ export const PracticeView: React.FC = () => {
                                 <div className="text-sm text-white/50">Correct</div>
                             </div>
                         </div>
+
+                        {/* XP Earned Banner */}
+                        {xpEarned > 0 && (
+                            <motion.div
+                                initial={{ scale: 0, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ delay: 0.3, type: 'spring' }}
+                                className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-xl p-4 flex items-center justify-center gap-3"
+                            >
+                                <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+                                <span className="text-xl font-bold text-yellow-300">+{xpEarned} XP Earned!</span>
+                                {xpSaved && <span className="text-xs text-green-400">(Saved)</span>}
+                            </motion.div>
+                        )}
 
                         <div className="flex gap-4">
                             <button
