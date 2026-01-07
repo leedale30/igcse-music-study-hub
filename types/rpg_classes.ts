@@ -298,26 +298,30 @@ export const ATTRIBUTE_INFO: Record<AttributeId, { name: string; icon: string; c
     luck: { name: 'Luck', icon: '🍀', color: 'text-emerald-400', effect: '+1% crit chance per point' },
 };
 
-export const CLASS_INFO: Record<RPGClassId, { color: string; bgGradient: string; borderColor: string }> = {
+export const CLASS_INFO: Record<RPGClassId, { color: string; bgGradient: string; borderColor: string; avatar: string }> = {
     melodist: {
         color: 'text-pink-400',
         bgGradient: 'from-pink-600/20 to-purple-600/20',
-        borderColor: 'border-pink-500/30'
+        borderColor: 'border-pink-500/30',
+        avatar: '/assets/avatars/melodist.png'
     },
     rhythmancer: {
         color: 'text-orange-400',
         bgGradient: 'from-orange-600/20 to-red-600/20',
-        borderColor: 'border-orange-500/30'
+        borderColor: 'border-orange-500/30',
+        avatar: '/assets/avatars/rhythmancer.png'
     },
     harmonauts: {
         color: 'text-cyan-400',
         bgGradient: 'from-cyan-600/20 to-blue-600/20',
-        borderColor: 'border-cyan-500/30'
+        borderColor: 'border-cyan-500/30',
+        avatar: '/assets/avatars/harmonauts.png'
     },
     synthweaver: {
         color: 'text-green-400',
         bgGradient: 'from-green-600/20 to-teal-600/20',
-        borderColor: 'border-green-500/30'
+        borderColor: 'border-green-500/30',
+        avatar: '/assets/avatars/synthweaver.png'
     },
 };
 
