@@ -7,6 +7,7 @@ import { getLeaderboard } from '../../services/rpgService';
 import { useNavigate } from 'react-router-dom';
 import { Trophy, Zap, Shield, Swords, User } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { getLevelProgress, xpForLevel, xpToNextLevel, MAX_LEVEL } from '../../utils/xpCalculations';
 
 interface LobbyViewProps {
     userId?: string;
@@ -100,20 +101,20 @@ export const LobbyView: React.FC<LobbyViewProps> = ({ userId }) => {
 
                             <h2 className="text-3xl font-black tracking-tight">{profile?.nickname || 'Student'}</h2>
                             <p className={`text-sm font-bold uppercase tracking-widest mb-6 ${currentTheme.accentClass.split(' ')[0]}`}>
-                                Level {profile?.level || 1} {profile?.character_class || 'Novice'}
+                                Level {profile?.level || 1}{profile?.level >= MAX_LEVEL ? ' (MAX)' : ''} {profile?.character_class || 'Novice'}
                             </p>
 
                             {/* XP Bar */}
                             <div className="w-full bg-black/40 h-4 rounded-full overflow-hidden border border-white/5">
                                 <motion.div
                                     initial={{ width: 0 }}
-                                    animate={{ width: `${(profile?.xp || 0) % 100}%` }}
+                                    animate={{ width: `${getLevelProgress(profile?.xp || 0)}%` }}
                                     className={`h-full ${theme === 'nano' ? 'bg-cyan-500' : theme === 'banana' ? 'bg-yellow-400' : theme === 'flash' ? 'bg-red-500' : 'bg-white'}`}
                                 />
                             </div>
                             <div className="flex justify-between w-full text-xs text-white/40 mt-2 font-mono">
-                                <span>XP: {profile?.xp || 0}</span>
-                                <span>NEXT: {((Math.floor((profile?.xp || 0) / 100) + 1) * 100)}</span>
+                                <span>XP: {(profile?.xp || 0).toLocaleString()}</span>
+                                <span>{profile?.level >= MAX_LEVEL ? 'MAX LEVEL!' : `Next: +${xpToNextLevel(profile?.xp || 0).toLocaleString()} XP`}</span>
                             </div>
                         </div>
                     </div>
