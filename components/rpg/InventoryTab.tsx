@@ -3,13 +3,15 @@ import { RPGCharacter } from '../../types/rpg';
 
 interface InventoryTabProps {
     character: RPGCharacter;
+    onEquip: (item: any, slot: string) => void;
+    onUnequip: (slot: string) => void;
 }
 
 /**
  * Inventory tab for RPG Dashboard.
  * Displays equipped items and inventory grid.
  */
-export const InventoryTab: React.FC<InventoryTabProps> = ({ character }) => {
+export const InventoryTab: React.FC<InventoryTabProps> = ({ character, onEquip, onUnequip }) => {
     const equipmentSlots = ['mainHand', 'offHand', 'head', 'chest', 'hands', 'feet', 'accessory1', 'accessory2'];
 
     return (
@@ -22,7 +24,9 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({ character }) => {
                         return (
                             <div
                                 key={slot}
-                                className="aspect-square border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg flex items-center justify-center bg-slate-50 dark:bg-slate-700"
+                                className={`aspect-square border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg flex items-center justify-center bg-slate-50 dark:bg-slate-700 ${equippedItem ? 'cursor-pointer hover:border-red-400' : ''}`}
+                                onClick={() => equippedItem && onUnequip(slot)}
+                                title={equippedItem ? "Click to unequip" : "Empty slot"}
                             >
                                 {equippedItem ? (
                                     <div className="text-center">
@@ -49,10 +53,17 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({ character }) => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        {character.inventory.map((invItem, index) => (
-                            <div
-                                key={`${invItem.item.id}-${index}`}
-                                className={`p-3 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${invItem.item.rarity === 'legendary'
+                        {character.inventory.map((invItem, index) => {
+                            // Determine appropriate slot
+                            const validSlots = getValidSlots(invItem.item.type);
+                            // Simple logic: pick first valid slot or none
+                            const targetSlot = validSlots[0];
+
+                            return (
+                                <div
+                                    key={`${invItem.item.id}-${index}`}
+                                    onClick={() => targetSlot && onEquip(invItem, targetSlot)}
+                                    className={`p-3 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${invItem.item.rarity === 'legendary'
                                         ? 'border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20'
                                         : invItem.item.rarity === 'epic'
                                             ? 'border-purple-400 bg-purple-50 dark:bg-purple-900/20'
@@ -61,26 +72,52 @@ export const InventoryTab: React.FC<InventoryTabProps> = ({ character }) => {
                                                 : invItem.item.rarity === 'uncommon'
                                                     ? 'border-green-400 bg-green-50 dark:bg-green-900/20'
                                                     : 'border-gray-400 bg-gray-50 dark:bg-gray-900/20'
-                                    }`}
-                                title={`${invItem.item.name}\n${invItem.item.description}`}
-                            >
-                                <div className="text-center">
-                                    <div className="text-2xl mb-1">{invItem.item.icon}</div>
-                                    <div className="text-xs font-medium truncate">{invItem.item.name}</div>
-                                    {invItem.quantity > 1 && (
-                                        <div className="text-xs text-slate-600 dark:text-slate-400">x{invItem.quantity}</div>
-                                    )}
-                                    <div className="text-xs text-slate-500 dark:text-slate-500 capitalize">
-                                        {invItem.item.rarity}
+                                        }`}
+                                    title={`${invItem.item.name}\n${invItem.item.description}${targetSlot ? `\nClick to equip to ${targetSlot}` : '\nCannot equip'}`}
+                                >
+                                    <div className="text-center">
+                                        <div className="text-2xl mb-1">{invItem.item.icon}</div>
+                                        <div className="text-xs font-medium truncate">{invItem.item.name}</div>
+                                        {invItem.quantity > 1 && (
+                                            <div className="text-xs text-slate-600 dark:text-slate-400">x{invItem.quantity}</div>
+                                        )}
+                                        <div className="text-xs text-slate-500 dark:text-slate-500 capitalize">
+                                            {invItem.item.rarity}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 )}
             </div>
         </div>
     );
 };
+
+// Helper function to determine valid slots for an item type
+function getValidSlots(itemType: string): string[] {
+    const type = itemType.toLowerCase();
+    switch (type) {
+        case 'weapon':
+        case 'instrument':
+            return ['mainHand', 'offHand'];
+        case 'armor':
+        case 'chest':
+            return ['chest'];
+        case 'head':
+        case 'hat':
+            return ['head'];
+        case 'legs':
+        case 'feet':
+            return ['feet'];
+        case 'accessory':
+        case 'ring':
+        case 'amulet':
+            return ['accessory1', 'accessory2'];
+        default:
+            return [];
+    }
+}
 
 export default InventoryTab;

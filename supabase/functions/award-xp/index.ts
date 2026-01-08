@@ -85,16 +85,21 @@ serve(async (req) => {
                 )
             }
 
-            // Only teachers/admins can award XP to others
+            // Check permissions
             const { data: profile } = await supabase
                 .from('profiles')
                 .select('role')
                 .eq('id', user.id)
                 .single()
 
-            if (!profile || !['teacher', 'admin'].includes(profile.role)) {
+            const isTeacherOrAdmin = profile && ['teacher', 'admin'].includes(profile.role);
+            // Allow self-awarding for quizzes/tests (Practice Mode)
+            // Note: We check user_id strictly. If user sends email, secure self-award via email is not supported here, must use UUID.
+            const isSelfAward = (source === 'quiz' || source === 'test') && user_id === user.id;
+
+            if (!isTeacherOrAdmin && !isSelfAward) {
                 return new Response(
-                    JSON.stringify({ error: 'Only teachers can award XP' }),
+                    JSON.stringify({ error: 'Permission denied: Only teachers can award XP to others' }),
                     { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
                 )
             }

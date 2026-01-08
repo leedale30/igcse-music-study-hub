@@ -94,6 +94,7 @@ export interface Item {
 }
 
 export interface InventoryItem {
+  id?: string; // Unique ID of the inventory record (if from DB)
   item: Item;
   quantity: number;
   durability?: number;
@@ -326,7 +327,7 @@ export interface RPGIntegration {
       statGains?: Partial<CharacterStats>;
     };
   };
-  
+
   // Map badges to RPG achievements
   badgeIntegration: {
     [badgeId: string]: {
@@ -336,7 +337,7 @@ export interface RPGIntegration {
       statBonus?: Partial<CharacterStats>;
     };
   };
-  
+
   // Study time to RPG benefits
   studyTimeRewards: {
     experiencePerMinute: number;

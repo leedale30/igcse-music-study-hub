@@ -39,6 +39,9 @@ dist-ssr
 # Project specific
 musicxml-midi/
 
+# Legacy/unused folders (do not deploy)
+DONTNEED/
+
 # Temporary files
 *.tmp
 *.temp

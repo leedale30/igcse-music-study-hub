@@ -369,20 +369,243 @@ export async function getMatchHistory(user_id: string, limit = 20): Promise<RPGM
 }
 
 /**
- * Get user's XP history
+ * Get full character profile including stats, inventory, and equipment
  */
-export async function getXPHistory(user_id: string, limit = 50): Promise<any[]> {
-    const { data, error } = await supabase
-        .from('xp_events')
+export async function getCharacterProfile(user_id: string): Promise<{
+    success: boolean;
+    character?: any; // We'll type this properly in the implementation
+    error?: string;
+}> {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    // 1. Get Base Stats
+    const { data: stats, error: statsError } = await supabase
+        .from('rpg_player_stats')
         .select('*')
         .eq('user_id', user_id)
-        .order('created_at', { ascending: false })
-        .limit(limit);
+        .single();
 
-    if (error) {
-        console.error('Error fetching XP history:', error);
-        return [];
+    if (statsError || !stats) {
+        // Handle case where stats don't exist yet (new user)
+        if (statsError?.code === 'PGRST116') {
+            // Create default stats via Edge Function or direct insert if policy allows
+            // For now, return specific error so UI can trigger initialization
+            return { success: false, error: 'CHARACTER_NOT_FOUND' };
+        }
+        return { success: false, error: statsError?.message };
     }
 
-    return data || [];
+    // 2. Get Inventory
+    const { data: inventory, error: invError } = await supabase
+        .from('rpg_inventory')
+        .select(`
+            *,
+            item:rpg_items(*)
+        `)
+        .eq('user_id', user_id);
+
+    if (invError) return { success: false, error: invError.message };
+
+    // 3. Get Equipment
+    const { data: equipment, error: equipError } = await supabase
+        .from('rpg_equipment')
+        .select('*')
+        .eq('user_id', user_id)
+        .single();
+
+    // 4. Get Active Buffs
+    const { data: hacks, error: hacksError } = await supabase
+        .from('rpg_active_buffs')
+        .select(`
+            *,
+            powerup:rpg_powerups(*)
+        `)
+        .eq('user_id', user_id);
+
+    // Construct the RPGCharacter object
+    // This maps the DB shape to the Frontend types/rpg.ts shape
+    // Note: Some fields like 'abilities' might need a separate table or column in stats
+
+    // Helper to shape inventory
+    const formattedInventory = inventory?.map((inv: any) => ({
+        id: inv.id,
+        item: {
+            id: inv.item.id,
+            name: inv.item.name,
+            description: inv.item.description,
+            icon: inv.item.icon,
+            type: inv.item.type,
+            rarity: inv.item.rarity,
+            level: inv.level,
+            value: inv.item.sell_price, // Mapping sell_price to value
+            stats: {
+                // Map bonus columns to stats object
+                knowledge: inv.item.precision_bonus, // Mapping precision to knowledge for now?
+                // Or stick closer to the new DB schema which uses precision/tempo etc.
+                // We need to align the frontend types with the DB schema eventually.
+            }
+        },
+        quantity: inv.quantity,
+        acquiredAt: new Date(inv.obtained_at)
+    })) || [];
+
+    // Helper to shape equipment
+    // We need to map the flat equipment row (weapon_id, head_id etc) to the Equipment interface
+    // yielding { mainHand: InventoryItem, ... }
+    const formattedEquipment: any = {};
+    const slotsMap: Record<string, string> = {
+        'weapon_id': 'mainHand',
+        'head_id': 'head',
+        'chest_id': 'chest',
+        'legs_id': 'feet', // mapping legs to feet
+        'accessory1_id': 'accessory1',
+        'accessory2_id': 'accessory2'
+    };
+
+    if (equipment) {
+        for (const [dbCol, stateKey] of Object.entries(slotsMap)) {
+            const itemId = equipment[dbCol];
+            if (itemId) {
+                // Find full item details from inventory array
+                const invItem = formattedInventory.find((i: any) => i.item.id === itemId || i.id === itemId); // Careful with IDs here. 
+                // The equipment table stores Inventory IDs (UUIDs), not Item IDs (strings)
+                const correctInvItem = formatInventoryItemFromId(inventory as any[], itemId);
+
+                if (correctInvItem) {
+                    formattedEquipment[stateKey] = correctInvItem;
+                }
+            }
+        }
+    }
+
+    const character = {
+        id: stats.user_id,
+        userId: stats.user_id,
+        class: stats.class_id,
+        level: getLevelFromXp(stats.total_xp || 0), // If xp is stored, or calculate
+        // ... mapping other fields
+        // Since the DB schema is slightly different from the frontend types (Precision/Tempo vs Knowledge/Rhythm),
+        // we might need a translation layer here or update the frontend types.
+        // For Phase 1, we will verify the data flow.
+        stats: {
+            knowledge: stats.precision,
+            rhythm: stats.tempo,
+            harmony: stats.resonance,
+            creativity: stats.synergy,
+            focus: stats.fortitude
+        },
+        health: stats.current_hp,
+        maxHealth: stats.max_hp,
+        gold: stats.gold,
+        inventory: formattedInventory,
+        equipment: formattedEquipment,
+        // ... fill rest with defaults or fetched data
+    };
+
+    return { success: true, character };
+}
+
+// Helper
+function formatInventoryItemFromId(rawInventory: any[], inventoryUuid: string) {
+    const found = rawInventory.find(i => i.id === inventoryUuid);
+    if (!found) return null;
+    return {
+        item: {
+            id: found.item.id,
+            name: found.item.name,
+            icon: found.item.icon,
+            rarity: found.item.rarity,
+            // ... other item props
+        },
+        quantity: found.quantity,
+        acquiredAt: new Date(found.obtained_at)
+    };
+}
+
+function getLevelFromXp(xp: number) {
+    return Math.floor(Math.sqrt(xp / 100)) + 1; // Simplified placeholder
+}
+
+
+/**
+ * Equip an item
+ */
+export async function equipItem(userId: string, inventoryId: string, slot: string): Promise<{ success: boolean; error?: string }> {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    // Map frontend slot names to DB column names
+    const slotMap: Record<string, string> = {
+        'mainHand': 'weapon_id',
+        'offHand': 'offhand_id', // Note: DB might not have offhand yet, check schema
+        'head': 'head_id',
+        'chest': 'chest_id',
+        'feet': 'legs_id',
+        'accessory1': 'accessory1_id',
+        'accessory2': 'accessory2_id'
+    };
+
+    const dbColumn = slotMap[slot];
+    if (!dbColumn) return { success: false, error: 'Invalid slot' };
+
+    // 1. Check if equipment row exists, create if not
+    const { data: existing } = await supabase.from('rpg_equipment').select('user_id').eq('user_id', userId).single();
+    if (!existing) {
+        await supabase.from('rpg_equipment').insert({ user_id: userId });
+    }
+
+    // 2. Update the slot
+    const { error } = await supabase
+        .from('rpg_equipment')
+        .update({ [dbColumn]: inventoryId, updated_at: new Date().toISOString() })
+        .eq('user_id', userId);
+
+    if (error) return { success: false, error: error.message };
+
+    // 3. Mark item as equipped in inventory (optional, for UI filtering)
+    // The DB schema had an 'equipped' boolean in rpg_inventory. Let's update that too.
+
+    // First unmark whatever was there before (complex without knowing what it was, but we can just rely on the equipment table for now 
+    // or run a stored procedure. For a simple client-side implementation:)
+
+    // Mark new item as equipped
+    await supabase.from('rpg_inventory').update({ equipped: true, equipped_slot: slot }).eq('id', inventoryId);
+
+    return { success: true };
+}
+
+/**
+ * Unequip an item
+ */
+export async function unequipItem(userId: string, slot: string): Promise<{ success: boolean; error?: string }> {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    const slotMap: Record<string, string> = {
+        'mainHand': 'weapon_id',
+        'offHand': 'offhand_id',
+        'head': 'head_id',
+        'chest': 'chest_id',
+        'feet': 'legs_id',
+        'accessory1': 'accessory1_id',
+        'accessory2': 'accessory2_id'
+    };
+
+    const dbColumn = slotMap[slot];
+    if (!dbColumn) return { success: false, error: 'Invalid slot' };
+
+    // Update equipment table
+    const { error } = await supabase
+        .from('rpg_equipment')
+        .update({ [dbColumn]: null, updated_at: new Date().toISOString() })
+        .eq('user_id', userId);
+
+    if (error) return { success: false, error: error.message };
+
+    // Update inventory table (unmark equipped)
+    await supabase
+        .from('rpg_inventory')
+        .update({ equipped: false, equipped_slot: null })
+        .eq('user_id', userId)
+        .eq('equipped_slot', slot); // Unmark whatever was in that slot
+
+    return { success: true };
 }

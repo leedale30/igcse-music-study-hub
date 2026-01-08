@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { RPGCharacter, RPGGameState, CharacterClass, Item, RPGChallenge, RPGNotification } from '../types/rpg';
 import { rpgManager } from '../utils/rpgManager';
+import { getCharacterProfile, equipItem, unequipItem } from '../services/rpgService';
+import { InventoryTab } from './rpg/InventoryTab';
 import { CHARACTER_CLASSES, RPG_ITEMS } from '../utils/rpgConfig';
 
 interface RPGDashboardProps {
@@ -16,13 +18,39 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
   const [isInitializing, setIsInitializing] = useState(false);
 
   useEffect(() => {
-    // Load existing game state or show class selection
-    const existingState = rpgManager.loadGameState(userId);
-    if (existingState) {
-      setGameState(existingState);
-    } else {
-      setShowClassSelection(true);
-    }
+    const init = async () => {
+      setIsInitializing(true);
+      try {
+        // 1. Try to load from Supabase
+        const { success, character, error } = await getCharacterProfile(userId);
+
+        if (success && character) {
+          // 2. Sync Manager with Remote Data
+          const newState = rpgManager.syncWithRemote(character);
+          setGameState(newState);
+        } else {
+          console.warn('Could not load remote character:', error);
+
+          // 3. Fallback to local storage or new character flow
+          const existingState = rpgManager.loadGameState(userId);
+          if (existingState) {
+            setGameState(existingState);
+          } else {
+            setShowClassSelection(true);
+          }
+        }
+      } catch (e) {
+        console.error('Failed to initialize RPG:', e);
+        // Fallback
+        const existingState = rpgManager.loadGameState(userId);
+        if (existingState) setGameState(existingState);
+        else setShowClassSelection(true);
+      } finally {
+        setIsInitializing(false);
+      }
+    };
+
+    init();
 
     // Set up event listeners
     const handleNotification = (notification: RPGNotification) => {
@@ -62,6 +90,70 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
     setNotifications(prev => prev.filter(n => n.id !== notificationId));
   };
 
+  const handleEquip = async (item: any, slot: string) => {
+    if (!gameState) return;
+    try {
+      // Optimistic UI update could go here, but for now we'll wait for server
+      const inventoryId = item.id;
+      if (!inventoryId) {
+        console.error('Cannot equip item without ID');
+        return;
+      }
+
+      const { success, error } = await equipItem(userId, inventoryId, slot);
+
+      if (success) {
+        // Refresh character state
+        const { character } = await getCharacterProfile(userId);
+        if (character) {
+          const newState = rpgManager.syncWithRemote(character);
+          setGameState(newState);
+          rpgManager.addNotification({
+            id: Date.now().toString(),
+            type: 'item_found', // Reusing icon
+            title: 'Equipped Item',
+            message: `Equipped ${item.item.name}`,
+            icon: '🛡️',
+            duration: 3000,
+            createdAt: new Date()
+          });
+        }
+      } else {
+        console.error('Failed to equip:', error);
+        rpgManager.addNotification({
+          id: Date.now().toString(),
+          type: 'death', // Error icon
+          title: 'Equip Failed',
+          message: error || 'Unknown error',
+          icon: '❌',
+          duration: 3000,
+          createdAt: new Date()
+        });
+      }
+    } catch (e) {
+      console.error('Equip error:', e);
+    }
+  };
+
+  const handleUnequip = async (slot: string) => {
+    if (!gameState) return;
+    try {
+      const { success, error } = await unequipItem(userId, slot);
+      if (success) {
+        // Refresh character state
+        const { character } = await getCharacterProfile(userId);
+        if (character) {
+          const newState = rpgManager.syncWithRemote(character);
+          setGameState(newState);
+        }
+      } else {
+        console.error('Failed to unequip:', error);
+      }
+    } catch (e) {
+      console.error('Unequip error:', e);
+    }
+  };
+
   // Class Selection Screen
   if (showClassSelection) {
     return (
@@ -83,28 +175,27 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                 return (
                   <div
                     key={classInfo.id}
-                    className={`relative p-6 rounded-lg border-2 transition-all duration-200 ${
-                      isLocked
-                        ? 'bg-gray-200 dark:bg-gray-700 border-gray-400 opacity-60 cursor-not-allowed'
-                        : 'bg-white dark:bg-slate-700 border-amber-400 hover:border-amber-600 hover:shadow-lg cursor-pointer transform hover:scale-105'
-                    }`}
+                    className={`relative p-6 rounded-lg border-2 transition-all duration-200 ${isLocked
+                      ? 'bg-gray-200 dark:bg-gray-700 border-gray-400 opacity-60 cursor-not-allowed'
+                      : 'bg-white dark:bg-slate-700 border-amber-400 hover:border-amber-600 hover:shadow-lg cursor-pointer transform hover:scale-105'
+                      }`}
                     onClick={() => !isLocked && !isInitializing && handleClassSelection(classInfo.id)}
                   >
                     {isLocked && (
                       <div className="absolute top-2 right-2 text-2xl">🔒</div>
                     )}
-                    
+
                     <div className="text-center mb-4">
                       <div className="text-6xl mb-2">{classInfo.icon}</div>
                       <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                         {classInfo.name}
                       </h3>
                     </div>
-                    
+
                     <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 text-center">
                       {classInfo.description}
                     </p>
-                    
+
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="font-medium">Primary:</span>
@@ -115,7 +206,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                         <span className="capitalize">{classInfo.secondaryStat}</span>
                       </div>
                     </div>
-                    
+
                     <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-600">
                       <h4 className="font-medium text-sm mb-2">Starting Stats:</h4>
                       <div className="grid grid-cols-2 gap-1 text-xs">
@@ -126,7 +217,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                         <div>Focus: {classInfo.startingStats.focus}</div>
                       </div>
                     </div>
-                    
+
                     {isLocked && classInfo.unlockRequirement && (
                       <div className="mt-4 pt-4 border-t border-gray-300 dark:border-gray-600">
                         <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -138,7 +229,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                 );
               })}
             </div>
-            
+
             {onClose && (
               <div className="text-center mt-8">
                 <button
@@ -192,6 +283,14 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                 <span className="font-medium">{character.mana}/{character.maxMana} Mana</span>
               </div>
             </div>
+            {/* Added Equipment Bonus Display */}
+            <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+              {Object.values(character.equipment).filter(e => e).length > 0 &&
+                `Bonus Stats from Equipment: ${Object.values(character.totalStats).reduce((a, b) => a + b, 0) -
+                Object.values(character.stats).reduce((a, b) => a + b, 0)
+                }`
+              }
+            </div>
           </div>
           <div className="text-right">
             <div className="text-sm text-slate-600 dark:text-slate-400">Run #{gameState.statistics.totalRuns}</div>
@@ -200,7 +299,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             </div>
           </div>
         </div>
-        
+
         {/* Health Bar */}
         <div className="mt-4">
           <div className="flex justify-between text-sm mb-1">
@@ -208,13 +307,13 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             <span>{character.health}/{character.maxHealth}</span>
           </div>
           <div className="w-full bg-red-200 dark:bg-red-900 rounded-full h-3">
-            <div 
+            <div
               className="bg-red-500 h-3 rounded-full transition-all duration-300"
               style={{ width: `${(character.health / character.maxHealth) * 100}%` }}
             />
           </div>
         </div>
-        
+
         {/* Experience Bar */}
         <div className="mt-4">
           <div className="flex justify-between text-sm mb-1">
@@ -222,14 +321,14 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             <span>{character.experience} / {character.experience + character.experienceToNext}</span>
           </div>
           <div className="w-full bg-blue-200 dark:bg-blue-900 rounded-full h-3">
-            <div 
+            <div
               className="bg-blue-500 h-3 rounded-full transition-all duration-300"
               style={{ width: `${(character.experience / (character.experience + character.experienceToNext)) * 100}%` }}
             />
           </div>
         </div>
       </div>
-      
+
       {/* Stats */}
       <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
         <h3 className="text-lg font-semibold mb-4">Character Stats</h3>
@@ -242,7 +341,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
           ))}
         </div>
       </div>
-      
+
       {/* Abilities */}
       <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
         <h3 className="text-lg font-semibold mb-4">Class Abilities</h3>
@@ -250,17 +349,16 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
           {classInfo.classAbilities.map((ability) => {
             const isUnlocked = character.abilities.includes(ability.id);
             const isAvailable = character.level >= ability.unlockLevel;
-            
+
             return (
               <div
                 key={ability.id}
-                className={`p-4 rounded-lg border ${
-                  isUnlocked
-                    ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
-                    : isAvailable
+                className={`p-4 rounded-lg border ${isUnlocked
+                  ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+                  : isAvailable
                     ? 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800'
                     : 'bg-gray-50 dark:bg-gray-900/20 border-gray-200 dark:border-gray-800 opacity-60'
-                }`}
+                  }`}
               >
                 <div className="flex items-center space-x-3">
                   <div className="text-2xl">{ability.icon}</div>
@@ -287,7 +385,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
           })}
         </div>
       </div>
-      
+
       {/* Current Run Stats */}
       <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
         <h3 className="text-lg font-semibold mb-4">Current Run Statistics</h3>
@@ -309,78 +407,6 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             <div className="text-sm text-slate-600 dark:text-slate-400">Deaths</div>
           </div>
         </div>
-      </div>
-    </div>
-  );
-
-  // Inventory Tab
-  const InventoryTab = () => (
-    <div className="space-y-6">
-      <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
-        <h3 className="text-lg font-semibold mb-4">Equipment</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {['mainHand', 'offHand', 'head', 'chest', 'hands', 'feet', 'accessory1', 'accessory2'].map((slot) => {
-            const equippedItem = character.equipment[slot as keyof typeof character.equipment];
-            return (
-              <div
-                key={slot}
-                className="aspect-square border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg flex items-center justify-center bg-slate-50 dark:bg-slate-700"
-              >
-                {equippedItem ? (
-                  <div className="text-center">
-                    <div className="text-2xl mb-1">{equippedItem.item.icon}</div>
-                    <div className="text-xs font-medium">{equippedItem.item.name}</div>
-                  </div>
-                ) : (
-                  <div className="text-center text-slate-400">
-                    <div className="text-xs capitalize">{slot.replace(/([A-Z])/g, ' $1').trim()}</div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      
-      <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
-        <h3 className="text-lg font-semibold mb-4">Inventory ({character.inventory.length} items)</h3>
-        {character.inventory.length === 0 ? (
-          <div className="text-center py-8 text-slate-500 dark:text-slate-400">
-            <div className="text-4xl mb-2">🎒</div>
-            <p>Your inventory is empty. Complete quizzes and challenges to find items!</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {character.inventory.map((invItem, index) => (
-              <div
-                key={`${invItem.item.id}-${index}`}
-                className={`p-3 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
-                  invItem.item.rarity === 'legendary'
-                    ? 'border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20'
-                    : invItem.item.rarity === 'epic'
-                    ? 'border-purple-400 bg-purple-50 dark:bg-purple-900/20'
-                    : invItem.item.rarity === 'rare'
-                    ? 'border-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                    : invItem.item.rarity === 'uncommon'
-                    ? 'border-green-400 bg-green-50 dark:bg-green-900/20'
-                    : 'border-gray-400 bg-gray-50 dark:bg-gray-900/20'
-                }`}
-                title={`${invItem.item.name}\n${invItem.item.description}`}
-              >
-                <div className="text-center">
-                  <div className="text-2xl mb-1">{invItem.item.icon}</div>
-                  <div className="text-xs font-medium truncate">{invItem.item.name}</div>
-                  {invItem.quantity > 1 && (
-                    <div className="text-xs text-slate-600 dark:text-slate-400">x{invItem.quantity}</div>
-                  )}
-                  <div className="text-xs text-slate-500 dark:text-slate-500 capitalize">
-                    {invItem.item.rarity}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
@@ -407,19 +433,18 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
                       <h4 className="font-semibold">{challenge.name}</h4>
-                      <span className={`px-2 py-1 text-xs rounded-full ${
-                        challenge.difficulty === 'legendary'
-                          ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400'
-                          : challenge.difficulty === 'master'
+                      <span className={`px-2 py-1 text-xs rounded-full ${challenge.difficulty === 'legendary'
+                        ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400'
+                        : challenge.difficulty === 'master'
                           ? 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
                           : challenge.difficulty === 'expert'
-                          ? 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400'
-                          : challenge.difficulty === 'adept'
-                          ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
-                          : challenge.difficulty === 'apprentice'
-                          ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
-                          : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
-                      }`}>
+                            ? 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400'
+                            : challenge.difficulty === 'adept'
+                              ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
+                              : challenge.difficulty === 'apprentice'
+                                ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
+                                : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
+                        }`}>
                         {challenge.difficulty}
                       </span>
                       {challenge.isDaily && (
@@ -429,16 +454,15 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                       )}
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">{challenge.description}</p>
-                    
+
                     {/* Objectives */}
                     <div className="space-y-2 mb-3">
                       {challenge.objectives.map((objective) => (
                         <div key={objective.id} className="flex items-center space-x-2">
-                          <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${
-                            objective.isCompleted
-                              ? 'bg-green-500 border-green-500 text-white'
-                              : 'border-slate-300 dark:border-slate-600'
-                          }`}>
+                          <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${objective.isCompleted
+                            ? 'bg-green-500 border-green-500 text-white'
+                            : 'border-slate-300 dark:border-slate-600'
+                            }`}>
                             {objective.isCompleted && <span className="text-xs">✓</span>}
                           </div>
                           <span className="text-sm">{objective.description}</span>
@@ -448,7 +472,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
                         </div>
                       ))}
                     </div>
-                    
+
                     {/* Rewards */}
                     <div className="flex items-center space-x-4 text-sm">
                       <span className="font-medium">Rewards:</span>
@@ -502,7 +526,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
               <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
           </div>
-          
+
           <div className="flex items-center justify-between">
             <div>
               <h4 className="font-medium">Notifications</h4>
@@ -525,7 +549,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
               <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
             </label>
           </div>
-          
+
           <div className="flex items-center justify-between">
             <div>
               <h4 className="font-medium">Visual Effects</h4>
@@ -550,7 +574,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-white dark:bg-slate-800 rounded-lg p-6 border border-slate-200 dark:border-slate-700">
         <h3 className="text-lg font-semibold mb-4">Statistics</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -582,17 +606,16 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
         {notifications.map((notification) => (
           <div
             key={notification.id}
-            className={`p-4 rounded-lg shadow-lg border-l-4 bg-white dark:bg-slate-800 animate-slide-in-right cursor-pointer ${
-              notification.rarity === 'legendary'
-                ? 'border-yellow-500'
-                : notification.rarity === 'epic'
+            className={`p-4 rounded-lg shadow-lg border-l-4 bg-white dark:bg-slate-800 animate-slide-in-right cursor-pointer ${notification.rarity === 'legendary'
+              ? 'border-yellow-500'
+              : notification.rarity === 'epic'
                 ? 'border-purple-500'
                 : notification.rarity === 'rare'
-                ? 'border-blue-500'
-                : notification.type === 'level_up'
-                ? 'border-green-500'
-                : 'border-gray-500'
-            }`}
+                  ? 'border-blue-500'
+                  : notification.type === 'level_up'
+                    ? 'border-green-500'
+                    : 'border-gray-500'
+              }`}
             onClick={() => dismissNotification(notification.id)}
           >
             <div className="flex items-center space-x-3">
@@ -642,11 +665,10 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeTab === tab.id
-                    ? 'bg-white dark:bg-slate-600 text-amber-900 dark:text-amber-100 shadow-sm'
-                    : 'text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 hover:bg-amber-200 dark:hover:bg-slate-600'
-                }`}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === tab.id
+                  ? 'bg-white dark:bg-slate-600 text-amber-900 dark:text-amber-100 shadow-sm'
+                  : 'text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100 hover:bg-amber-200 dark:hover:bg-slate-600'
+                  }`}
               >
                 <span>{tab.icon}</span>
                 <span>{tab.label}</span>
@@ -657,7 +679,7 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
           {/* Tab Content */}
           <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
             {activeTab === 'character' && <CharacterTab />}
-            {activeTab === 'inventory' && <InventoryTab />}
+            {activeTab === 'inventory' && <InventoryTab character={gameState.character} onEquip={handleEquip} onUnequip={handleUnequip} />}
             {activeTab === 'challenges' && <ChallengesTab />}
             {activeTab === 'settings' && <SettingsTab />}
           </div>
