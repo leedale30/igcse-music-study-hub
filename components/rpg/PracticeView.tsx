@@ -137,7 +137,7 @@ export const PracticeView: React.FC = () => {
                     }
                 }).then(result => {
                     if (result.success) {
-                        console.log('XP awarded successfully:', earnedXP);
+                        // XP awarded successfully
                         setXpSaved(true);
                     } else {
                         console.error('Failed to award XP:', result.error);

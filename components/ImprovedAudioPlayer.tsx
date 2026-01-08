@@ -29,15 +29,15 @@ const ImprovedAudioPlayer: React.FC<ImprovedAudioPlayerProps> = ({ sources, cred
   };
 
   const handlePlay = () => {
-    console.log('Audio started playing');
+    // Audio started playing
   };
 
   const handlePause = () => {
-    console.log('Audio paused');
+    // Audio paused
   };
 
   const handleEnded = () => {
-    console.log('Audio playback ended');
+    // Audio playback ended
   };
 
   return (
@@ -116,7 +116,7 @@ const ImprovedAudioPlayer: React.FC<ImprovedAudioPlayerProps> = ({ sources, cred
           {credit}
         </p>
       )}
-      
+
       <style jsx>{`
         .improved-audio-player {
           --rhap-theme-color: #0ea5e9;
