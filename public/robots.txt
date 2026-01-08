@@ -1,0 +1,12 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://igcse-music.vercel.app/sitemap.xml
+
+# Disallow admin and test pages
+Disallow: /admin
+Disallow: /supabase-test
+Disallow: /test
+Disallow: /audio-test

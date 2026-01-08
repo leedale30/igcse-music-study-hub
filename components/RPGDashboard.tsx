@@ -286,8 +286,8 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             {/* Added Equipment Bonus Display */}
             <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
               {Object.values(character.equipment).filter(e => e).length > 0 &&
-                `Bonus Stats from Equipment: ${Object.values(character.totalStats).reduce((a, b) => a + b, 0) -
-                Object.values(character.stats).reduce((a, b) => a + b, 0)
+                `Bonus Stats from Equipment: ${(Object.values(character.totalStats) as number[]).reduce((a, b) => a + b, 0) -
+                (Object.values(character.stats) as number[]).reduce((a, b) => a + b, 0)
                 }`
               }
             </div>
@@ -306,10 +306,10 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             <span>Health</span>
             <span>{character.health}/{character.maxHealth}</span>
           </div>
-          <div className="w-full bg-red-200 dark:bg-red-900 rounded-full h-3">
+          <div className="w-full bg-red-200 dark:bg-red-900 rounded-full h-3 overflow-hidden">
             <div
               className="bg-red-500 h-3 rounded-full transition-all duration-300"
-              style={{ width: `${(character.health / character.maxHealth) * 100}%` }}
+              style={{ width: `${Math.round((character.health / character.maxHealth) * 100)}%` }}
             />
           </div>
         </div>
@@ -320,10 +320,10 @@ const RPGDashboard: React.FC<RPGDashboardProps> = ({ userId, onClose }) => {
             <span>Experience</span>
             <span>{character.experience} / {character.experience + character.experienceToNext}</span>
           </div>
-          <div className="w-full bg-blue-200 dark:bg-blue-900 rounded-full h-3">
+          <div className="w-full bg-blue-200 dark:bg-blue-900 rounded-full h-3 overflow-hidden">
             <div
               className="bg-blue-500 h-3 rounded-full transition-all duration-300"
-              style={{ width: `${(character.experience / (character.experience + character.experienceToNext)) * 100}%` }}
+              style={{ width: `${Math.round((character.experience / (character.experience + character.experienceToNext)) * 100)}%` }}
             />
           </div>
         </div>

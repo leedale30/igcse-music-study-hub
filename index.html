@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGCSE Music 2026 Study Hub</title>
-  
+  <title>IGCSE Music Study Hub | Interactive Music Theory Learning</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Interactive music theory learning platform for IGCSE students. Practice ear training, learn music theory, explore instruments, and prepare for your IGCSE Music exam with our gamified RPG system.">
+  <meta name="keywords"
+    content="IGCSE Music, music theory, ear training, music education, Cambridge IGCSE, music exam preparation, music learning, intervals, scales, chords, music RPG">
+  <meta name="author" content="IGCSE Music Study Hub">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://igcse-music.vercel.app/">
+  <meta property="og:title" content="IGCSE Music Study Hub | Interactive Music Theory Learning">
+  <meta property="og:description"
+    content="Interactive music theory learning platform for IGCSE students. Practice ear training, learn music theory, and prepare for your exam.">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:site_name" content="IGCSE Music Study Hub">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://igcse-music.vercel.app/">
+  <meta name="twitter:title" content="IGCSE Music Study Hub | Interactive Music Theory Learning">
+  <meta name="twitter:description" content="Interactive music theory learning platform for IGCSE students.">
+  <meta name="twitter:image" content="/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="canonical" href="https://igcse-music.vercel.app/">
+
+
   <!-- MathJax for theory pages -->
   <script>
     MathJax = {
@@ -18,61 +48,80 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  
+
   <!-- AI Tutor: Music notation rendering -->
   <script src="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://unpkg.com/vexflow@4.2.2/releases/vexflow-min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/abcjs-audio.css">
-  
+
   <!-- Removed Tailwind CDN (now using build-time Tailwind) -->
-  
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
     @import url('./styles/badges.css');
     @import url('./styles/rpg.css');
+
     /* Custom scrollbar for webkit browsers */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: #f1f1f1;
+
       /* Dark mode scrollbar track */
-      .dark & { background: #2d3748; }
+      .dark & {
+        background: #2d3748;
+      }
     }
+
     ::-webkit-scrollbar-thumb {
       background: #888;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
+
     body {
-      font-family: 'Inter', sans-serif; /* Using Inter as a modern sans-serif font */
+      font-family: 'Inter', sans-serif;
+      /* Using Inter as a modern sans-serif font */
     }
 
     /* Animation for error messages */
     .animate-shake {
-      animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+      animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
       transform: translate3d(0, 0, 0);
     }
+
     @keyframes shake {
-      10%, 90% {
+
+      10%,
+      90% {
         transform: translate3d(-1px, 0, 0);
       }
-      20%, 80% {
+
+      20%,
+      80% {
         transform: translate3d(2px, 0, 0);
       }
-      30%, 50%, 70% {
+
+      30%,
+      50%,
+      70% {
         transform: translate3d(-4px, 0, 0);
       }
-      40%, 60% {
+
+      40%,
+      60% {
         transform: translate3d(4px, 0, 0);
       }
     }
-    
+
     /* Custom styles for range inputs (audio player sliders) */
     input[type='range'] {
       -webkit-appearance: none;
@@ -80,38 +129,49 @@
       background: transparent;
       cursor: pointer;
     }
+
     /* -webkit- (Chrome, Safari, Opera, Edge Chromium) */
     input[type='range']::-webkit-slider-thumb {
-      -webkit-appearance: none; /* Override default look */
+      -webkit-appearance: none;
+      /* Override default look */
       appearance: none;
-      margin-top: -6px; /* Centers thumb on the track */
-      background-color: #0ea5e9; /* sky-500 */
+      margin-top: -6px;
+      /* Centers thumb on the track */
+      background-color: #0ea5e9;
+      /* sky-500 */
       height: 16px;
       width: 16px;
       border-radius: 50%;
     }
+
     html.dark input[type='range']::-webkit-slider-thumb {
-        background-color: #38bdf8; /* sky-400 */
+      background-color: #38bdf8;
+      /* sky-400 */
     }
 
     /* -moz- (Firefox) */
     input[type='range']::-moz-range-thumb {
-      background-color: #0ea5e9; /* sky-500 */
+      background-color: #0ea5e9;
+      /* sky-500 */
       height: 16px;
       width: 16px;
       border-radius: 50%;
       border: none;
     }
+
     html.dark input[type='range']::-moz-range-thumb {
-        background-color: #38bdf8; /* sky-400 */
+      background-color: #38bdf8;
+      /* sky-400 */
     }
   </style>
-  
+
   <!-- Removed importmap; Vite handles module resolution/bundling -->
-  
+
 </head>
+
 <body class="bg-gray-100 dark:bg-slate-900">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
