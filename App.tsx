@@ -49,6 +49,7 @@ const SitemapPage = lazy(() => import('./pages/SitemapPage'));
 const GlossaryPage = lazy(() => import('./pages/GlossaryPage'));
 const CourseworkPage = lazy(() => import('./pages/CourseworkPage'));
 const AreasOfStudyPage = lazy(() => import('./pages/AreasOfStudyPage'));
+const ExamQuizPage = lazy(() => import('./pages/ExamQuizPage'));
 
 // Lazy load route modules
 const BaroqueRoutes = lazy(() => import('./routes/BaroqueRoutes').then(m => ({ default: () => m.BaroqueRoutes })));
@@ -151,6 +152,10 @@ const App: React.FC = () => {
                       <Route path="/areas-of-study" element={<AreasOfStudyPage />} />
                       {/* Coursework routes */}
                       <Route path="/coursework" element={<CourseworkPage />} />
+
+                      {/* Exam Practice Routes */}
+                      <Route path="/exam-practice/2nd-year/mock-1/:quizId" element={<ExamQuizPage />} />
+
                       {/* Theory routes (135 React components) */}
                       <Route path="/theory/*" element={<TheoryRoutes />} />
                       {/* AOS content routes */}
