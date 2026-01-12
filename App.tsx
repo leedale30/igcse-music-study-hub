@@ -152,6 +152,8 @@ const App: React.FC = () => {
                       <Route path="/areas-of-study" element={<AreasOfStudyPage />} />
                       {/* Coursework routes */}
                       <Route path="/coursework" element={<CourseworkPage />} />
+                      <Route path="/coursework/:sectionId" element={<AosContentPage />} />
+                      <Route path="/coursework/:sectionId/:subSectionId" element={<AosContentPage />} />
 
                       {/* Exam Practice Routes */}
                       <Route path="/exam-practice/2nd-year/mock-1/:quizId" element={<ExamQuizPage />} />
