@@ -18,6 +18,7 @@ import { popularSongwritingMelodyItems } from './syllabusContent/popularSongwrit
 import { popularSongwritingHarmonyItems } from './syllabusContent/popularSongwritingHarmony';
 import { popularSongwritingProductionItems } from './syllabusContent/popularSongwritingProduction';
 import { musicalGlossaryPage } from './syllabusContent/musicalGlossary';
+import { examPractice } from './syllabusContent/examPractice';
 
 export const syllabusStructure: SyllabusItem[] = [
   homePage,
@@ -54,6 +55,7 @@ export const syllabusStructure: SyllabusItem[] = [
       courseworkComposing,
     ]
   },
+  examPractice,
   {
     id: 'tools',
     title: 'Music Tools',
