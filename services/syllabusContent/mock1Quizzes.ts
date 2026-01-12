@@ -12,6 +12,7 @@ export interface QuizData {
     topicCode: string;
     description: string;
     abcNotation: string;
+    revisionNotes?: string;
     questions: QuizQuestion[];
 }
 
@@ -21,6 +22,62 @@ export const mock1Quizzes: Record<string, QuizData> = {
         title: '2.2 The Architecture of Tonality',
         topicCode: 'TOPIC_64310510',
         description: 'A comprehensive 20-question MCQ test on 2.2 The Architecture of Tonality.',
+        revisionNotes: `
+            <h3>Study Handout: 2.2 The Architecture of Tonality</h3>
+            <p><strong>Tonality</strong> provides the “gravity” of a piece. It determines which note feels like “home” (the <strong>Tonic</strong>). Understanding the architecture requires fluency in the symbols used to map pitch.</p>
+            
+            <h4>The Tools of Pitch</h4>
+            <p>Music is written on a staff governed by clefs.</p>
+            <ul>
+                <li><strong>The Treble Clef (&):</strong> Generally locates G above middle C. It is used for higher voices (Violin, Flute, Soprano).</li>
+                <li><strong>The Bass Clef (?):</strong> Locates the F below middle C. It is used for lower foundations (Cello, Tuba, Bass).</li>
+            </ul>
+
+            <h4>Key Signatures and Accidentals</h4>
+            <p>The specific “flavor” of the tonality is defined by the key signature, which instructs us which notes to alter consistently.</p>
+            <ul>
+                <li><strong>Sharp (#):</strong> Raises a pitch by a semitone.</li>
+                <li><strong>Flat (b):</strong> Lowers a pitch by a semitone.</li>
+                <li><strong>Natural (n):</strong> Cancels a previous sharp or flat, returning the note to its white-key state.</li>
+            </ul>
+
+            <h4>The Functional Hierarchy</h4>
+            <p>In tonal music, not all notes are created equal. We organize them by <strong>Scale Degree</strong> to understand their structural weight.</p>
+            
+            <table class="w-full text-left border-collapse border border-slate-300 dark:border-slate-700 my-4">
+                <thead>
+                    <tr class="bg-slate-100 dark:bg-slate-800">
+                        <th class="border border-slate-300 dark:border-slate-700 p-2">Degree</th>
+                        <th class="border border-slate-300 dark:border-slate-700 p-2">Name</th>
+                        <th class="border border-slate-300 dark:border-slate-700 p-2">Function / “Personality”</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>I</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>Tonic</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>Home.</strong> The point of rest and resolution.</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>IV</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>Subdominant</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>The Departure.</strong> Often feels like moving away from home; creates moderate tension.</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>V</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>Dominant</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>The Tension.</strong> Demands resolution back to the Tonic (I).</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>VII</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>Leading Tone</strong></td>
+                        <td class="border border-slate-300 dark:border-slate-700 p-2"><strong>The Guide.</strong> A semitone below the Tonic; it pulls strongly upward (e.g., Ti &rarr; Do).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Summary:</strong> When analyzing, look at the interaction between <strong>Texture</strong> (the layers) and <strong>Tonality</strong> (the key). A change from a thin <strong>Monophonic</strong> texture to a thick <strong>Polyphonic</strong> texture often coincides with a harmonic shift, creating a structural climax.</p>
+        `,
         abcNotation: `X: 1
 T: 2.2 The Architecture of Tonality [TOPIC_64310510]
 C: SchoolClass.Net

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award } from 'lucide-react';
+import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen } from 'lucide-react';
 import { AbcRenderer } from '../components/tutor/AbcRenderer';
 import { mock1Quizzes } from '../services/syllabusContent/mock1Quizzes';
 
@@ -103,6 +103,20 @@ const ExamQuizPage: React.FC = () => {
                         {quiz.description}
                     </p>
 
+                    {/* Revision Notes */}
+                    {quiz.revisionNotes && (
+                        <div className="mb-8 bg-indigo-50/50 dark:bg-indigo-900/10 rounded-xl border border-indigo-100 dark:border-indigo-800/50 overflow-hidden">
+                            <div className="bg-indigo-100/50 dark:bg-indigo-900/30 px-6 py-3 border-b border-indigo-200/50 dark:border-indigo-800/50 flex items-center gap-3">
+                                <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                                <h3 className="font-bold text-indigo-900 dark:text-indigo-100">Revision Notes</h3>
+                            </div>
+                            <div
+                                className="p-6 prose prose-indigo dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-indigo-900 dark:prose-headings:text-indigo-100 prose-p:text-gray-700 dark:prose-p:text-gray-300"
+                                dangerouslySetInnerHTML={{ __html: quiz.revisionNotes }}
+                            />
+                        </div>
+                    )}
+
                     <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
                         <div className="bg-gray-950 px-4 py-3 border-b border-gray-800 flex items-center gap-2">
                             <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">Audio Stimulus</span>
@@ -123,10 +137,10 @@ const ExamQuizPage: React.FC = () => {
                             <div
                                 key={q.id}
                                 className={`bg-white dark:bg-gray-800 rounded-xl border p-6 transition-all duration-300 ${isSubmitted
-                                        ? isCorrect
-                                            ? 'border-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.1)]'
-                                            : 'border-red-500/50'
-                                        : 'border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-700'
+                                    ? isCorrect
+                                        ? 'border-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.1)]'
+                                        : 'border-red-500/50'
+                                    : 'border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-700'
                                     }`}
                             >
                                 <div className="flex items-start gap-4">
