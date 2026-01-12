@@ -28,6 +28,14 @@ CREATE TABLE IF NOT EXISTS public.rpg_classes (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Ensure teacher_id exists (in case table existed from previous version)
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_classes' AND column_name = 'teacher_id') THEN
+        ALTER TABLE public.rpg_classes ADD COLUMN teacher_id UUID REFERENCES auth.users(id);
+    END IF;
+END $$;
+
 -- ================================================
 -- STEP 3: Create questions table
 -- ================================================
@@ -197,34 +205,41 @@ ALTER TABLE public.rpg_match_turns ENABLE ROW LEVEL SECURITY;
 -- ================================================
 
 -- RPG Classes: Teachers can CRUD their classes, students can view
+DROP POLICY IF EXISTS "Teachers can manage their classes" ON public.rpg_classes;
 CREATE POLICY "Teachers can manage their classes"
 ON public.rpg_classes FOR ALL
 USING (auth.uid() = teacher_id);
 
+DROP POLICY IF EXISTS "Users can view classes" ON public.rpg_classes;
 CREATE POLICY "Users can view classes"
 ON public.rpg_classes FOR SELECT
 USING (true);
 
 -- Questions: Teachers can CRUD, students can view during matches only
+DROP POLICY IF EXISTS "Teachers can manage questions" ON public.rpg_questions;
 CREATE POLICY "Teachers can manage questions"
 ON public.rpg_questions FOR ALL
 USING (auth.uid() = author_id);
 
+DROP POLICY IF EXISTS "Users can view active questions" ON public.rpg_questions;
 CREATE POLICY "Users can view active questions"
 ON public.rpg_questions FOR SELECT
 USING (is_active = true);
 
 -- XP Events: Users can view their own events
+DROP POLICY IF EXISTS "Users can view own xp events" ON public.xp_events;
 CREATE POLICY "Users can view own xp events"
 ON public.xp_events FOR SELECT
 USING (auth.uid() = user_id);
 
 -- Matches: Players can view their matches
+DROP POLICY IF EXISTS "Players can view their matches" ON public.rpg_matches;
 CREATE POLICY "Players can view their matches"
 ON public.rpg_matches FOR SELECT
 USING (auth.uid() = player_a OR auth.uid() = player_b);
 
 -- Match Turns: Players can view turns in their matches
+DROP POLICY IF EXISTS "Players can view their match turns" ON public.rpg_match_turns;
 CREATE POLICY "Players can view their match turns"
 ON public.rpg_match_turns FOR SELECT
 USING (
@@ -236,6 +251,7 @@ USING (
 );
 
 -- Teachers can view all matches and turns for their school
+DROP POLICY IF EXISTS "Teachers can view school matches" ON public.rpg_matches;
 CREATE POLICY "Teachers can view school matches"
 ON public.rpg_matches FOR SELECT
 USING (
@@ -246,6 +262,7 @@ USING (
     )
 );
 
+DROP POLICY IF EXISTS "Teachers can view all match turns" ON public.rpg_match_turns;
 CREATE POLICY "Teachers can view all match turns"
 ON public.rpg_match_turns FOR SELECT
 USING (

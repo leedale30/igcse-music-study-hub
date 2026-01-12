@@ -31,6 +31,22 @@ CREATE TABLE IF NOT EXISTS rpg_classes (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+
+
+-- Fix structure if rpg_classes existed with UUID
+DO $$
+BEGIN
+    BEGIN
+        ALTER TABLE public.rpg_player_stats DROP CONSTRAINT IF EXISTS rpg_player_stats_class_id_fkey;
+        ALTER TABLE public.rpg_classes ALTER COLUMN id TYPE TEXT;
+        ALTER TABLE public.rpg_player_stats ALTER COLUMN class_id TYPE TEXT;
+        -- Re-add constraint if safe
+        -- ALTER TABLE public.rpg_player_stats ADD CONSTRAINT rpg_player_stats_class_id_fkey FOREIGN KEY (class_id) REFERENCES rpg_classes(id);
+    EXCEPTION
+        WHEN OTHERS THEN RAISE NOTICE 'Could not alter rpg_classes IDs: %', SQLERRM;
+    END;
+END $$;
+
 INSERT INTO rpg_classes (id, name, description, specialty, music_link, icon, base_precision, base_tempo, base_resonance, base_fortitude, base_synergy, base_luck)
 VALUES
     ('melodist', 'Melodist', 'Masters of melody who strike with precision. High damage but fragile.', 'High accuracy, glass cannon', 'Melody mastery', '🎼', 5, 2, 0, -2, 0, 3),
@@ -84,9 +100,23 @@ CREATE TABLE IF NOT EXISTS rpg_player_stats (
 -- ================================================
 -- 3. Items & Equipment
 -- ================================================
-CREATE TYPE item_rarity AS ENUM ('common', 'uncommon', 'rare', 'epic', 'legendary');
-CREATE TYPE item_type AS ENUM ('weapon', 'armor', 'accessory', 'consumable', 'material', 'chest');
-CREATE TYPE equipment_slot AS ENUM ('weapon', 'head', 'chest', 'legs', 'accessory1', 'accessory2');
+DO $$ BEGIN
+    CREATE TYPE item_rarity AS ENUM ('common', 'uncommon', 'rare', 'epic', 'legendary');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE item_type AS ENUM ('weapon', 'armor', 'accessory', 'consumable', 'material', 'chest');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE equipment_slot AS ENUM ('weapon', 'head', 'chest', 'legs', 'accessory1', 'accessory2');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
 
 CREATE TABLE IF NOT EXISTS rpg_items (
     id TEXT PRIMARY KEY,
@@ -124,6 +154,87 @@ CREATE TABLE IF NOT EXISTS rpg_items (
     
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- Fix rpg_items ID type if it's currently UUID
+DO $$
+BEGIN
+    BEGIN
+        -- Handle rpg_inventory
+        IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'rpg_inventory') THEN
+            ALTER TABLE public.rpg_inventory DROP CONSTRAINT IF EXISTS rpg_inventory_item_id_fkey;
+            ALTER TABLE public.rpg_inventory ALTER COLUMN item_id TYPE TEXT;
+        END IF;
+
+        -- Handle rpg_loot_tables
+        IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'rpg_loot_tables') THEN
+             ALTER TABLE public.rpg_loot_tables DROP CONSTRAINT IF EXISTS rpg_loot_tables_item_id_fkey;
+             ALTER TABLE public.rpg_loot_tables ALTER COLUMN item_id TYPE TEXT;
+        END IF;
+
+        -- Handle rpg_equipment (potential conflicts)
+        IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'rpg_equipment') THEN
+             ALTER TABLE public.rpg_equipment DROP CONSTRAINT IF EXISTS rpg_equipment_weapon_id_fkey;
+             ALTER TABLE public.rpg_equipment DROP CONSTRAINT IF EXISTS rpg_equipment_head_id_fkey;
+             ALTER TABLE public.rpg_equipment DROP CONSTRAINT IF EXISTS rpg_equipment_chest_id_fkey;
+             ALTER TABLE public.rpg_equipment DROP CONSTRAINT IF EXISTS rpg_equipment_legs_id_fkey;
+             ALTER TABLE public.rpg_equipment DROP CONSTRAINT IF EXISTS rpg_equipment_accessory1_id_fkey;
+             ALTER TABLE public.rpg_equipment DROP CONSTRAINT IF EXISTS rpg_equipment_accessory2_id_fkey;
+        END IF;
+
+        -- Handle rpg_trade_items (legacy/existing table?)
+        IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'rpg_trade_items') THEN
+             ALTER TABLE public.rpg_trade_items DROP CONSTRAINT IF EXISTS rpg_trade_items_item_id_fkey;
+        END IF;
+
+        -- Handle rpg_shop_items
+        IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'rpg_shop_items') THEN
+             ALTER TABLE public.rpg_shop_items DROP CONSTRAINT IF EXISTS rpg_shop_items_item_id_fkey;
+        END IF;
+
+        ALTER TABLE public.rpg_items ALTER COLUMN id TYPE TEXT;
+        
+        -- Add missing columns to rpg_items if needed
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'type') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN type item_type DEFAULT 'material';
+        END IF;
+         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'rarity') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN rarity item_rarity DEFAULT 'common';
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'slot') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN slot equipment_slot;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'icon') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN icon TEXT DEFAULT '❓';
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'music_reference') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN music_reference TEXT;
+        END IF;
+        -- Stats
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'precision_bonus') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN precision_bonus INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'tempo_bonus') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN tempo_bonus INTEGER DEFAULT 0;
+        END IF;
+         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'fortitude_bonus') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN fortitude_bonus INTEGER DEFAULT 0;
+        END IF;
+         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'luck_bonus') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN luck_bonus INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'damage_bonus') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN damage_bonus INTEGER DEFAULT 0;
+        END IF;
+         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'buy_price') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN buy_price INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_items' AND column_name = 'sell_price') THEN
+            ALTER TABLE public.rpg_items ADD COLUMN sell_price INTEGER DEFAULT 0;
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN RAISE NOTICE 'Could not alter rpg_items IDs: %', SQLERRM;
+    END;
+END $$;
 
 -- ================================================
 -- 4. Player Inventory
@@ -176,6 +287,23 @@ CREATE TABLE IF NOT EXISTS rpg_chests (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Ensure columns exist (robust migration)
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_chests' AND column_name = 'min_items') THEN
+        ALTER TABLE public.rpg_chests ADD COLUMN min_items INTEGER DEFAULT 1;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_chests' AND column_name = 'max_items') THEN
+        ALTER TABLE public.rpg_chests ADD COLUMN max_items INTEGER DEFAULT 3;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_chests' AND column_name = 'guaranteed_rarity') THEN
+        ALTER TABLE public.rpg_chests ADD COLUMN guaranteed_rarity item_rarity;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_chests' AND column_name = 'cost_gold') THEN
+        ALTER TABLE public.rpg_chests ADD COLUMN cost_gold INTEGER DEFAULT 0;
+    END IF;
+END $$;
+
 CREATE TABLE IF NOT EXISTS rpg_loot_tables (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     chest_id TEXT REFERENCES rpg_chests(id),
@@ -184,6 +312,22 @@ CREATE TABLE IF NOT EXISTS rpg_loot_tables (
     min_quantity INTEGER DEFAULT 1,
     max_quantity INTEGER DEFAULT 1
 );
+
+-- Fix structure if existing tables have UUIDs instead of TEXT
+DO $$
+BEGIN
+    -- Try to convert ID columns to TEXT if they aren't
+    BEGIN
+        ALTER TABLE public.rpg_loot_tables DROP CONSTRAINT IF EXISTS rpg_loot_tables_chest_id_fkey;
+        ALTER TABLE IF EXISTS public.rpg_level_rewards DROP CONSTRAINT IF EXISTS rpg_level_rewards_chest_id_fkey;
+        ALTER TABLE public.rpg_chests ALTER COLUMN id TYPE TEXT;
+        ALTER TABLE public.rpg_loot_tables ALTER COLUMN chest_id TYPE TEXT;
+        -- Re-add constraint if useful, or let it be
+        -- ALTER TABLE public.rpg_loot_tables ADD CONSTRAINT rpg_loot_tables_chest_id_fkey FOREIGN KEY (chest_id) REFERENCES rpg_chests(id);
+    EXCEPTION
+        WHEN OTHERS THEN RAISE NOTICE 'Could not alter chest IDs: %', SQLERRM;
+    END;
+END $$;
 
 -- Sample chests
 INSERT INTO rpg_chests (id, name, description, rarity, icon, cost_gold, min_items, max_items)
@@ -198,7 +342,11 @@ ON CONFLICT (id) DO NOTHING;
 -- ================================================
 -- 7. Trading System
 -- ================================================
-CREATE TYPE trade_status AS ENUM ('pending', 'accepted', 'declined', 'cancelled', 'completed');
+DO $$ BEGIN
+    CREATE TYPE trade_status AS ENUM ('pending', 'accepted', 'declined', 'cancelled', 'completed');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
 
 CREATE TABLE IF NOT EXISTS rpg_trades (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -250,6 +398,34 @@ CREATE TABLE IF NOT EXISTS rpg_active_buffs (
     expires_at TIMESTAMPTZ,
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+
+
+-- Ensure columns exist and fix ID type
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_powerups' AND column_name = 'music_reference') THEN
+        ALTER TABLE public.rpg_powerups ADD COLUMN music_reference TEXT;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_powerups' AND column_name = 'cooldown_seconds') THEN
+        ALTER TABLE public.rpg_powerups ADD COLUMN cooldown_seconds INTEGER DEFAULT 0;
+    END IF;
+
+    -- Fix ID type
+    BEGIN
+        ALTER TABLE IF EXISTS public.rpg_active_buffs DROP CONSTRAINT IF EXISTS rpg_active_buffs_powerup_id_fkey;
+        ALTER TABLE public.rpg_powerups ALTER COLUMN id TYPE TEXT;
+        
+        -- Allow NULL duration
+        ALTER TABLE public.rpg_powerups ALTER COLUMN duration_seconds DROP NOT NULL;
+        
+        IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'rpg_active_buffs') THEN
+             ALTER TABLE public.rpg_active_buffs ALTER COLUMN powerup_id TYPE TEXT;
+        END IF;
+    EXCEPTION
+        WHEN OTHERS THEN RAISE NOTICE 'Could not alter powerup IDs: %', SQLERRM;
+    END;
+END $$;
 
 -- Sample power-ups
 INSERT INTO rpg_powerups (id, name, description, icon, effect_type, effect_value, duration_seconds, music_reference)
@@ -308,6 +484,34 @@ CREATE TABLE IF NOT EXISTS rpg_level_rewards (
     title_unlock TEXT,                      -- Special title at this level
     special_item TEXT                       -- Special item ID at milestones
 );
+
+
+
+-- Ensure columns exist (robust migration)
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'gold_reward') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN gold_reward INTEGER DEFAULT 0;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'crystals_reward') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN crystals_reward INTEGER DEFAULT 0;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'attribute_points') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN attribute_points INTEGER DEFAULT 1;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'skill_points') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN skill_points INTEGER DEFAULT 1;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'chest_rewards') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN chest_rewards TEXT[];
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'title_unlock') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN title_unlock TEXT;
+    END IF;
+     IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'rpg_level_rewards' AND column_name = 'special_item') THEN
+        ALTER TABLE public.rpg_level_rewards ADD COLUMN special_item TEXT;
+    END IF;
+END $$;
 
 -- Level rewards (every 5 levels has bonus)
 INSERT INTO rpg_level_rewards (level, gold_reward, crystals_reward, attribute_points, skill_points, chest_rewards, title_unlock)
@@ -384,6 +588,10 @@ CREATE TABLE IF NOT EXISTS rpg_weekly_rewards (
 -- ================================================
 -- 13. Sample Items (Cyberpunk × Music)
 -- ================================================
+-- Mix of Cyberpunk and Classical Music references
+
+
+
 INSERT INTO rpg_items (id, name, description, type, rarity, slot, icon, music_reference, precision_bonus, tempo_bonus, fortitude_bonus, luck_bonus, damage_bonus, buy_price, sell_price)
 VALUES
     -- Weapons

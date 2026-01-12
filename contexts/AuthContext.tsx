@@ -14,6 +14,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+
+
+  // Timeout wrapper to prevent infinite loading
+  const withTimeout = <T,>(promise: Promise<T>, timeoutMs: number): Promise<T> => {
+    return Promise.race([
+      promise,
+      new Promise<T>((_, reject) =>
+        setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
+      )
+    ]);
+  };
+
   // Initialize auth state
   useEffect(() => {
     if (!isSupabaseConfigured) {
@@ -22,15 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return;
     }
 
-    // Timeout wrapper to prevent infinite loading
-    const withTimeout = <T,>(promise: Promise<T>, timeoutMs: number): Promise<T> => {
-      return Promise.race([
-        promise,
-        new Promise<T>((_, reject) =>
-          setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
-        )
-      ]);
-    };
+
 
     // Get initial session with timeout
     const initializeSession = async () => {
@@ -129,14 +133,27 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         return false;
       }
 
+
       if (data.user) {
-        await fetchUserProfile(data.user.id);
+        try {
+          await withTimeout(fetchUserProfile(data.user.id), 10000);
+        } catch (profileErr) {
+          console.error('Profile fetch timed out during login:', profileErr);
+          // We don't fail the login completely, but user might be null which prevents redirect
+          // Ideally we might want to return false here or set an error
+          setError('Login succeeded but loading profile timed out. Please try again.');
+          return false;
+        }
 
         // Update last login time
-        await supabase
+        // Fire and forget - don't await this to speed up login
+        supabase
           .from('profiles')
           .update({ last_login_at: new Date().toISOString() })
-          .eq('id', data.user.id);
+          .eq('id', data.user.id)
+          .then(({ error }) => {
+            if (error) console.error('Failed to update last login:', error);
+          });
 
         return true;
       }
@@ -179,7 +196,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       if (data.user) {
         // Profile is auto-created by database trigger
-        await fetchUserProfile(data.user.id);
+        try {
+          await withTimeout(fetchUserProfile(data.user.id), 10000);
+        } catch (profileErr) {
+          console.error('Profile fetch timed out during signup:', profileErr);
+          setError('Signup succeeded but loading profile timed out. Please refresh.');
+          return false;
+        }
         return true;
       }
       return false;
