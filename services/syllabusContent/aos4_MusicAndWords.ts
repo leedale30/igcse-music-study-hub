@@ -21,143 +21,41 @@ export const musicAndWordsAoS: SyllabusItem = {
       path: '/areas-of-study/aos4-music-and-words/art-song',
       content: 'Songs for one singer, often with piano accompaniment.',
       content_zh: '为一位歌手创作的歌曲，通常有钢琴伴奏。',
-      longDescription: `**A Comprehensive Guide to Focus Area: Art Song for Solo Voice**
+      quiz: artSongQuiz,
+      longDescription: `
+<section>
+  <p>An <strong>Art Song</strong> is a setting of a quality poem for a solo singer, where the music is designed to enhance the poetry. The <strong>piano</strong> is an equal partner in telling the story.</p>
 
-This focus area explores the rich tradition of songs composed for a solo voice, examining how musical features are purposefully employed to enhance the meaning of words. This genre, a significant part of the Romantic era, continued to flourish with astonishing variety and creativity into the twentieth century and beyond. Candidates are expected to develop a robust knowledge of how composers set words to music, exploring the interplay between text and sound.
+  <div class="grid">
+    <div class="card">
+      <h3>Word-Painting Example</h3>
+      <p>In Vaughan Williams's <em>"The Vagabond"</em>, the piano uses a heavy, marching "striding bass" to represent the wanderer's journey.</p>
+    </div>
+    <div class="card">
+      <h3>Vocal Textures</h3>
+      <ul>
+        <li><strong>Syllabic:</strong> Clear communication of words (common in <em>The Vagabond</em>).</li>
+        <li><strong>Melismatic:</strong> Expressive flourishes on single syllables.</li>
+      </ul>
+    </div>
+  </div>
 
-Composers wrote individual songs and often grouped collections of songs with a related theme or words by the same poet into **"song cycles"**. While most art songs were written with piano accompaniment, other instrumental combinations, such as Benjamin Britten's **Serenade for Tenor, horn and strings** or Richard Strauss's monumental **Four Last Songs** with full orchestral accompaniment, are also found.
+  <h2>Musical Example: Strophic Form</h2>
+  <p>A simple strophic melody where the same music repeats for every verse. This creates a sense of familiarity and storytelling.</p>
 
-**Key Concepts and Musical Features**
-
-Composers of art song aim to capture the overall atmosphere of a text and may also highlight the meaning of individual words or phrases through various techniques.
-
-*   **Word-Painting:** This is a primary technique where the music directly illustrates the meaning of individual words or phrases. For example, if the words refer to something rising, the composer might set that part to an ascending melodic line. This technique is a crucial element in how music enhances the text.
-*   **Text Setting:** The relationship between syllables of text and musical notes is a key compositional choice. This includes **Syllabic** setting (one note is set per syllable of text, prioritising textual clarity and rhythmic drive) and **Melisma** (one syllable of text is sung over many notes, creating a florid, expressive vocal line to embellish important words).
-*   **Structure:** The overall plan of an art song is often directly related to the structure and narrative of the poem it sets. Two main forms are **Strophic Form** (each verse is set to the same melody and accompaniment, providing familiarity) and **Through-Composed** (the music continually changes to respond to the text's narrative, allowing for a more detailed and flexible interpretation).
-*   **Accompaniment:** The piano or instrumental part is not merely a backing but an equal partner in conveying the text's meaning. In Vaughan Williams's “The vagabond,” for instance, a "striding bass" in the piano reflects the traveller's determination just as much as the vocal line does.
-*   **Stylistic Approaches:** In the early twentieth century, composers in England and America challenged the established Romantic style. Their approaches included **English Art Song** (composers like Ralph Vaughan Williams favoured a pastoral lyricism, often inspired by folk music and English poetry) and **American Art Song** (composers like Charles Ives and Aaron Copland explored wider influences like dissonance, jazz, and folk idioms, reflecting the spirit of the new century).
-
-**Starting Point Example: Ralph Vaughan Williams – Songs of Travel (1901–1904)**
-
-**Songs of Travel** is one of the finest examples of the English art song repertoire. This song cycle for solo voice and piano sets nine poems by Robert Louis Stevenson, tracing the emotional journey of a restless wanderer. Throughout the cycle, Vaughan Williams masterfully uses both the vocal line and the piano to portray the meaning of the words.
-
-*   **"The vagabond":** This bold opening song uses a memorable marching rhythm with a striding bass in the piano accompaniment, perfectly reflecting the traveller's determination to keep going along the open road.
-*   **"Let beauty awake":** The tender poem is matched with gentle, lyrical music and a rippling arpeggio accompaniment in the piano. A striking moment of word-painting occurs with the large rising interval on the forte repetition of the title phrase.
-*   **"In dreams":** As the wanderer remembers the girl he has left behind, the music creates a melancholy feel through a persistent, uneasy off-beat rhythm in the piano and a chromatic vocal line.
-*   **"The infinite shining heavens":** Pianissimo, wide-spaced arpeggiated piano chords combine with an expansive melodic line to evoke the vast brilliance of the night sky.
-*   **Epilogue: "I have trod the upward and downward slope":** This final section unifies the entire cycle by quoting melodies from three of the earlier songs, ending with a pianissimo version of the powerful bass line from "The Vagabond".
-
-**What Not to Know for the Examination**
-
-To ensure clarity and prevent over-study in non-examinable areas, candidates should note that for Area of Study 4 they will **not** be expected to:
-*   Identify any instruments not already found in other areas of study.
-*   Identify or name any specific composers or performers.
-*   Identify the specific time period of an extract.
-
-**Glossary of Key Terms for Art Song for Solo Voice**
-
-This glossary provides definitions for key musical terms relevant to this focus area, drawn from across the curriculum framework to ensure precision and clarity.
-
-*   **Accompaniment:** The musical background supporting a melody, which in art song often plays an equal role in conveying meaning.
-*   **Arpeggio/Broken chords:** Chords where the notes are played successively rather than simultaneously.
-*   **Art Song:** A genre for solo voice, typically with piano accompaniment, where musical features are used to enhance the meaning of a poetic text.
-*   **Chromatic:** Notes that do not belong to the diatonic scale or key, often used for emotional effect or to create a melancholy feel.
-*   **Dissonance:** Notes that sound tense or unstable when played together, a feature explored by some American art song composers.
-*   **Dynamics:** The volume of the music, from loud (forte) to quiet (piano).
-*   **Forte (f):** A loud dynamic marking.
-*   **Homophonic:** A texture consisting of a melody line with a chordal accompaniment.
-*   **Instrumentation:** The specific combination of instruments and voices used in a piece of music.
-*   **Interval:** The distance in pitch between two notes.
-*   **Lyrical:** Characterised by a rich, song-like quality, often expressive and expansive.
-*   **Melisma:** The setting of one syllable of text to many notes in the melody line.
-*   **Melody:** A sequence of single notes that is musically satisfying; the main tune.
-*   **Metre:** The number of beats in a bar and how they are grouped.
-*   **Minor key:** A tonality often associated with sad, solemn, or melancholic music.
-*   **Monophonic:** A musical texture consisting of a single melodic line with no harmonic accompaniment.
-*   **Off-beat Rhythm:** A rhythm that emphasizes the weaker parts of the beat, creating an uneasy or syncopated feel.
-*   **Pianissimo (pp):** A very quiet dynamic marking.
-*   **Pitch:** The highness or lowness of a sound.
-*   **Polyphonic:** A musical texture with two or more independent melodic lines sounding simultaneously.
-*   **Rhythm:** The effect created by combining a variety of notes with different durations.
-*   **Song Cycle:** A collection of individual songs grouped together, often with a related theme or with words by the same poet, intended to be performed consecutively.
-*   **Strophic Form:** A song structure where each verse of a poem is set to the same melody and accompaniment.
-*   **Structure:** The overall plan or organization of a piece of music.
-*   **Syllabic:** The setting of words with one syllable per note.
-*   **Tempo:** The speed of the music.
-*   **Texture:** The different layers in a piece of music and how they interact (e.g., monophonic, homophonic, polyphonic).
-*   **Through-Composed:** A song structure where the music continually changes and evolves, responding to the developing narrative of the text without repeating main sections.
-*   **Timbre:** The tone quality or specific sound made by an instrument or voice.
-*   **Tonality:** The key of a piece of music (e.g., Major, Minor).
-*   **Word-Painting:** A technique where musical features are used to illustrate the meaning of individual words or phrases in a text.`,
-      longDescription_zh: `**独唱艺术歌曲重点领域综合指南**
-
-本重点领域探讨为独唱声部创作的歌曲的丰富传统，研究如何有目的地运用音乐特征来增强文字的意义。这一体裁是浪漫主义时期的重要组成部分，并在二十世纪及以后以惊人的多样性和创造力继续蓬勃发展。考生应深入了解作曲家如何为文字谱曲，探索文本与声音之间的相互作用。
-
-作曲家创作单曲，并常常将主题相关或由同一位诗人作词的歌曲集结成**“声乐套曲”**。虽然大多数艺术歌曲都配有钢琴伴奏，但也存在其他乐器组合，例如本杰明·布里顿的**《男高音、圆号与弦乐小夜曲》**或理查德·施特劳斯宏伟的**《最后四首歌》**（配有完整的管弦乐队伴奏）。
-
-**关键概念与音乐特征**
-
-艺术歌曲的作曲家旨在捕捉文本的整体氛围，也可能通过各种技巧突出个别词语或短语的意义。
-
-*   **音画法 (Word-Painting):** 这是一种主要技巧，音乐直接描绘个别词语或短语的意义。例如，如果歌词提到上升的事物，作曲家可能会用上升的旋律线来谱写该部分。这种技巧是音乐如何增强文本意义的关键要素。
-*   **歌词设定 (Text Setting):** 歌词音节与音符之间的关系是一个关键的作曲选择。这包括**音节式**设定（每个音节对应一个音符，优先考虑文本清晰度和节奏动力）和**花腔式**（一个音节在多个音符上演唱，创造出华丽、富有表现力的声乐线条以修饰重要词语）。
-*   **结构:** 艺术歌曲的整体构思通常与其所谱写的诗歌的结构和叙事直接相关。两种主要形式是**分节歌形式**（每节诗都配以相同的旋律和伴奏，提供熟悉感）和**通谱式**（音乐不断变化以响应文本的叙事，允许更详细和灵活的诠释）。
-*   **伴奏:** 钢琴或器乐部分不仅仅是背景，而是在传达文本意义方面同等重要的伙伴。例如，在沃恩·威廉姆斯的《流浪者》中，钢琴中“行进的低音”与声乐线条一样，反映了旅行者的决心。
-*   **风格方法:** 在二十世纪初，英国和美国的作曲家挑战了既定的浪漫主义风格。他们的方法包括**英国艺术歌曲**（像拉尔夫·沃恩·威廉姆斯这样的作曲家偏爱田园诗般的抒情风格，常受民歌和英国诗歌的启发）和**美国艺术歌曲**（像查尔斯·艾夫斯和亚伦·科普兰这样的作曲家探索了更广泛的影响，如不协和音、爵士乐和民间习语，反映了新世纪的精神）。
-
-**起点范例：拉尔夫·沃恩·威廉姆斯 – 《旅行之歌》(1901–1904)**
-
-**《旅行之歌》**是英国艺术歌曲曲目中最优秀的范例之一。这部为独唱和钢琴而作的声乐套曲，为罗伯特·路易斯·史蒂文森的九首诗谱曲，追溯了一个不安的流浪者的情感旅程。在整个套曲中，沃恩·威廉姆斯巧妙地运用声乐线条和钢琴来描绘歌词的意义。
-
-*   **《流浪者》:** 这首大胆的开篇歌曲在钢琴伴奏中使用了令人难忘的进行曲节奏和行进的低音，完美地反映了旅行者决心继续前行的开放道路。
-*   **《让美丽苏醒》:** 温柔的诗歌配以轻柔、抒情的音乐和钢琴中荡漾的琶音伴奏。在标题短语的强音重复处，一个大的上升音程构成了一个引人注目的音画法时刻。
-*   **《在梦中》:** 当流浪者回忆起他留下的女孩时，音乐通过钢琴中持续、不安的切分节奏和半音阶的声乐线条，营造出一种忧郁的感觉。
-*   **《无限闪耀的天空》:** 极弱的、宽间距的钢琴琶音和弦与宽广的旋律线条相结合，唤起了夜空的广阔辉煌。
-*   **尾声：《我走过上坡和下坡》:** 最后一部分通过引用前面三首歌曲的旋律来统一整个套曲，以一个极弱版本的《流浪者》中强有力的低音线条结束。
-
-**考试中无需掌握的内容**
-
-为确保清晰并防止在非考点区域过度学习，考生应注意，在学习领域4中，他们将**不**被要求：
-*   识别任何在其他学习领域中未出现的乐器。
-*   识别或说出任何特定的作曲家或表演者。
-*   识别节选的特定时期。
-
-**独唱艺术歌曲关键术语词汇表**
-
-本词汇表为与本重点领域相关的关键音乐术语提供定义，这些术语取自整个课程框架，以确保精确和清晰。
-
-*   **伴奏:** 支持旋律的音乐背景，在艺术歌曲中常在传达意义方面扮演同等重要的角色。
-*   **琶音/分解和弦:** 和弦的音符相继而非同时演奏。
-*   **艺术歌曲:** 一种为独唱声部创作的体裁，通常有钢琴伴奏，其中音乐特征被用来增强诗歌文本的意义。
-*   **半音阶:** 不属于自然音阶或调性的音符，常用于情感效果或营造忧郁感。
-*   **不协和音:** 一起演奏时听起来紧张或不稳定的音符，是某些美国艺术歌曲作曲家探索的特征。
-*   **力度:** 音乐的音量，从响亮（强）到安静（弱）。
-*   **强 (f):** 一种响亮的力度标记。
-*   **主音织体:** 由一条旋律线和和弦伴奏组成的织体。
-*   **配器:** 一首乐曲中使用的乐器和声部的特定组合。
-*   **音程:** 两个音符之间的音高距离。
-*   **抒情:** 具有丰富、如歌的品质，通常富有表现力且宽广。
-*   **花腔:** 将一个文本音节设定在旋律线的多个音符上。
-*   **旋律:** 一连串令人愉悦的单音；主调。
-*   **节拍:** 一小节中的拍数及其组合方式。
-*   **小调:** 通常与悲伤、庄严或忧郁音乐相关的调性。
-*   **单音织体:** 由单一旋律线组成，无和声伴奏的音乐织体。
-*   **切分节奏:** 强调节拍弱部分的节奏，产生不安或切分的感觉。
-*   **极弱 (pp):** 一种非常安静的力度标记。
-*   **音高:** 声音的高低。
-*   **复音织体:** 同时响起两条或多条独立旋律线的音乐织体。
-*   **节奏:** 由不同时值的音符组合产生的效果。
-*   **声乐套曲:** 一组单独歌曲的集合，通常有相关主题或由同一位诗人作词，旨在连续表演。
-*   **分节歌形式:** 一种歌曲结构，其中诗歌的每一节都配以相同的旋律和伴奏。
-*   **结构:** 一首乐曲的整体规划或组织。
-*   **音节式:** 每个音节对应一个音符的歌词设定。
-*   **速度:** 音乐的速度。
-*   **织体:** 一首乐曲中的不同层次及其相互作用（例如，单音、主音、复音）。
-*   **通谱式:** 一种歌曲结构，其中音乐不断变化和发展，以响应文本不断发展的叙事，而不重复主要部分。
-*   **音色:** 乐器或声音的音质或特定声音。
-*   **调性:** 一首乐曲的调（例如，大调、小调）。
-*   **音画法:** 一种运用音乐特征来描绘文本中个别词语或短语意义的技巧。`,
-      quiz: artSongQuiz
+  <div class="abc-score-container card p-6 bg-white dark:bg-slate-800 overflow-x-auto shadow-inner border-2 border-slate-100 dark:border-slate-700">
+    <div class="abc-score" data-abc='
+X:1
+T:Simple Strophic Melody
+M:4/4
+L:1/4
+K:C
+C | E E G G | A A G z | F F E E | D D C ||
+w: The sun is high, the sky is blue. I walk the road a-way from you.
+'></div>
+  </div>
+</section>
+`
     },
     {
       id: 'aos4-choirs',
@@ -166,46 +64,45 @@ This glossary provides definitions for key musical terms relevant to this focus 
       path: '/areas-of-study/aos4-music-and-words/choirs',
       content: 'Music for groups of singers.',
       content_zh: '为歌手团体创作的音乐。',
-      longDescription: `This focus area examines music written for choirs since the beginning of the twentieth century, ranging from simple unaccompanied works to large-scale compositions for vast choral forces and orchestra. Extracts in the examination may be from either secular or sacred works.
+      quiz: choirQuiz,
+      longDescription: `
+<section>
+  <p>Choral music involves groups of singers. The most common arrangement is <strong>SATB</strong> (Soprano, Alto, Tenor, Bass). Since the 20th century, composers have explored massive choral forces and inventive textures.</p>
 
-**Key Concepts and Musical Features:**
+  <div class="grid">
+    <div class="card">
+      <h3>Choral Textures</h3>
+      <ul>
+        <li><strong>Homophonic:</strong> All voices move together in chords (common in hymns).</li>
+        <li><strong>Polyphonic:</strong> Independent melodic lines weaving together.</li>
+        <li><strong>Antiphonal:</strong> Two or more groups "responding" to each other (Double Choir).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Modern Techniques</h3>
+      <ul>
+        <li><strong>Aleatoric:</strong> Singers repeat notes at their own pace (randomized "cloud" of sound).</li>
+        <li><strong>Ostinato:</strong> Repeating rhythmic or melodic patterns in the accompaniment.</li>
+      </ul>
+    </div>
+  </div>
 
-*   **Vocal Textures:** The use of multiple voices allows for a wide variety of textures. These include standard **Four-Part Homophonic (SATB)** writing, **Richer Textures** with divided parts (e.g., SSAATTBB), **Double Choir**, **Antiphonal** effects (one choir responding to another), **Polyphonic/Contrapuntal** textures with independent lines, and **Canon** (where a melody is imitated by other parts).
-*   **Compositional Techniques:** Other compositional techniques include:
-*   **Word-Painting:** As in art song, musical ideas are used to reflect the text's meaning. In Jonathan Dove's work, sopranos soar to a high A on the words "the spirits of the air".
-*   **Ostinato:** A repeated musical pattern, often in the accompaniment.
-*   **Polyrhythm:** The simultaneous use of two or more contrasting rhythms.
-*   **Aleatoric Writing:** A technique where singers are given defined pitches and words but are instructed to repeat them at their own individual tempo, creating an inventive, layered texture.
+  <h2>Musical Example: A Simple Canon</h2>
+  <p>A <strong>Canon</strong> is a strict form of imitation where one part starts the melody and others follow exactly with the same notes.</p>
 
-**Starting Point Example: Jonathan Dove – The Passing of the Year**
-
-A song cycle for double choir and piano that showcases a vast range of textures and word-setting techniques.
-
-*   **"Invocation":** Uses an ostinato piano part with polyrhythm (triplets against straight quavers), which the choir then adds to with its own complex rhythmic layers.
-*   **"Answer July":** Uses both homophonic and antiphonal textures over an ostinato piano accompaniment.
-*   **"Hot sun, cool fire":** Employs aleatoric writing, where singers repeat phrases at their own pace.
-*   **"Ah, Sun-flower!":** Is set as a complex eight-part canon.
-*   **"Ring out, wild bells":** The final movement uses extensive word-painting, with both piano and voices representing the sound of ringing bells through a wide variety of choral textures.`,
-      longDescription_zh: `本重点领域考察自二十世纪初以来为合唱团创作的音乐，范围从简单的无伴奏作品到为庞大合唱团和管弦乐队创作的大型作品。考试中的节选可能来自世俗或宗教作品。
-
-**关键概念与音乐特征：**
-
-*   **声乐织体：** 多声部的使用允许多种多样的织体。这些包括标准的**四部主音（SATB）**写作、声部分裂的**更丰富的织体**（如SSAATTBB）、**双重合唱团**、**对唱**效果（一个合唱团回应另一个）、具有独立线条的**复音/对位**织体，以及**卡农**（一个旋律被其他声部模仿）。
-*   **作曲技巧：** 其他作曲技巧包括：
-*   **音画法：** 如同在艺术歌曲中，音乐理念被用来反映文本的意义。在乔纳森·多芬的作品中，女高音在唱到“空气的精灵”时，音高飙升至高音A。
-*   **固定音型：** 一种重复的音乐模式，常出现在伴奏中。
-*   **复节奏：** 同时使用两种或多种对比鲜明的节奏。
-*   **随机写作：** 一种技巧，歌手被给予确定的音高和歌词，但被指示以各自的速度重复，从而创造出一种富有创意、层次分明的织体。
-
-**起点范例：乔纳森·多芬 – 《流年》**
-
-这是一部为双重合唱团和钢琴而作的声乐套曲，展示了广泛的织体和歌词设定技巧。
-
-*   **《祈祷》：** 使用钢琴的固定音型部分，并带有复节奏（三连音对直八分音符），合唱团随后加入自己复杂的节奏层次。
-*   **《七月的回应》：** 在钢琴固定音型伴奏上，同时使用主音和对唱织体。
-*   **《烈日，凉火》：** 采用随机写作，歌手以自己的节奏重复乐句。
-*   **《啊，向日葵！》：** 被设定为一个复杂的八部卡农。
-*   **《敲响吧，野钟》：** 最后的乐章广泛使用音画法，钢琴和人声通过各种合唱织体来表现钟声。`
+  <div class="abc-score-container card p-6 bg-white dark:bg-slate-800 overflow-x-auto shadow-inner border-2 border-slate-100 dark:border-slate-700">
+    <div class="abc-score" data-abc='
+X:1
+T:3-Part Choral Canon
+M:4/4
+L:1/4
+K:G
+"1" G A B G | "2" B c d2 | "3" d/e/ d/c/ B G | A D G2 ||
+w: Frè-re Jac-ques, Frè-re Jac-ques, dor-mez-vous? dor-mez-vous?
+'></div>
+  </div>
+</section>
+`
     },
     {
       id: 'aos4-popular-song-and-musicals',
@@ -343,57 +240,58 @@ A song cycle for double choir and piano that showcases a vast range of textures 
       path: '/areas-of-study/aos4-music-and-words/key-features',
       content: 'Core concepts for analysing songs.',
       content_zh: '分析歌曲的核心概念。',
-      longDescription: 'This section explains some of the most important concepts for understanding how music and words work together across different genres.',
-      longDescription_zh: '本节解释了一些理解不同体裁中音乐与文字如何协同工作的最重要概念。',
-      children: [
-        {
-          id: 'word-painting', title: 'Word-Painting', title_zh: '音画法', path: '/term/word-painting', isTerm: true,
-          content: 'Music that sounds like the words.',
-          content_zh: '听起来像文字的音乐。',
-          longDescription: `Word-painting is a technique where the music directly illustrates the meaning of a word or phrase. For example, the music might use an ascending melody for a word like "rising," or a descending line for "falling." Composers use this to make the meaning of the words clearer and more expressive.`,
-          longDescription_zh: `音画法是一种音乐直接描绘词语或短语意义的技巧。例如，音乐可能会用上升的旋律来表现“上升”这样的词，或用下降的旋律线来表现“下降”。作曲家使用这种方法使词语的意义更清晰、更具表现力。`
-        },
-        {
-          id: 'text-setting', title: 'Text Setting (Syllabic/Melismatic)', title_zh: '歌词设定 (音节式/花腔式)', path: '/term/text-setting', isTerm: true,
-          content: 'How syllables are set to notes.',
-          content_zh: '音节如何与音符对应。',
-          longDescription: `Text setting describes how syllables of a word are set to musical notes. The two main types are:
-*   **Syllabic:** Each syllable of text gets one note. This makes the text very clear and easy to understand.
-*   **Melismatic:** A single syllable of text is sung over many notes (a melisma). This is often used to add emphasis to an important word or for vocal display.`,
-          longDescription_zh: `歌词设定描述了一个词的音节如何与音符相对应。两种主要类型是：
-*   **音节式:** 每个文本音节对应一个音符。这使得文本非常清晰易懂。
-*   **花腔式:** 一个文本音节在多个音符上演唱（一个花腔）。这通常用于强调一个重要的词或用于声乐展示。`
-        },
-        {
-          id: 'song-structure', title: 'Song Structures', title_zh: '歌曲结构', path: '/term/song-structure', isTerm: true,
-          content: 'How songs are built.',
-          content_zh: '歌曲是如何构建的。',
-          longDescription: `Song structure describes how a song is organised into sections. Common forms include:
-*   **Strophic Form:** The same music is repeated for each verse of lyrics, like in a traditional hymn or folk song.
-*   **Through-Composed:** New music is written for each section of the text, allowing the music to follow a developing story without repeating large sections.
-*   **Verse-Chorus Form:** The most common structure in popular music, where verses (which tell the story) alternate with a repeating, memorable chorus.`,
-          longDescription_zh: `歌曲结构描述了一首歌是如何组织成段落的。常见的形式包括：
-*   **分节歌形式:** 每节歌词重复使用相同的音乐，就像传统的赞美诗或民歌一样。
-*   **通谱式:** 为文本的每个部分创作新的音乐，使音乐能够跟随一个发展的故事，而无需重复大的段落。
-*   **主歌-副歌形式:** 流行音乐中最常见的结构，其中讲述故事的主歌与重复、令人难忘的副歌交替出现。`
-        }
-      ]
+      longDescription: `
+<section>
+  <p>To succeed in AOS4, you must master the vocabulary used to describe the relationship between music and text.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Text Setting</h3>
+      <ul>
+        <li><strong>Syllabic:</strong> One note per syllable (Check out <a href="/term/texture">Texture</a>).</li>
+        <li><strong>Melismatic:</strong> Many notes per syllable (common in <a href="/areas-of-study/aos1-baroque">Baroque</a> vocal music).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Word-Painting</h3>
+      <p>Using musical devices to illustrate the text (e.g., ascending scales for "heaven", dissonant chords for "pain").</p>
+    </div>
+  </div>
+</section>
+`
     },
     {
-      id: 'aos4-starting-points', title: 'Starting Points (Wider Listening)', title_zh: '起点 (扩展聆听)', path: '/areas-of-study/aos4-music-and-words/starting-points',
-      content: 'Examples to listen to for Music and Words.',
-      content_zh: '可供聆听的音乐与文字范例。',
-      longDescription: `Here are some key examples of music that combine words and music in different ways. Listening to these will help you understand the features of each focus area.
+      id: 'aos4-starting-points',
+      title: 'Focus Works & Examples',
+      title_zh: '重点作品与范例',
+      path: '/areas-of-study/aos4-music-and-words/starting-points',
+      content: 'Key listening for AOS4.',
+      content_zh: 'AOS4的关键聆听。',
+      longDescription: `
+<section>
+  <p>The IGCSE syllabus highlights specific areas of study. Below are the recommended focal works for this Area of Study.</p>
 
-*   **Art Song:** **Ralph Vaughan Williams – Songs of Travel**
-*   This song cycle for solo voice and piano sets poems by Robert Louis Stevenson. Listen to how the piano accompaniment in "The vagabond" creates a marching rhythm, and how the vocal line in "Let beauty awake" is gentle and lyrical to match the poetry.
+  <div class="card">
+    <h3>1. Art Song: Ralph Vaughan Williams</h3>
+    <p><strong>Work:</strong> <em>Songs of Travel</em> (Song Cycle)</p>
+    <p>Listen for: The "marching" bass in "The Vagabond" and the word-painting in "Let Beauty Awake".</p>
+  </div>
 
-*   **Music for Choirs:** **Jonathan Dove – The Passing of the Year**
-*   A song cycle for double choir and piano. Notice the use of different vocal textures, from homophony and antiphonal effects in "Answer July" to a complex eight-part canon in "Ah, Sun-flower!". Also listen for word-painting in the final movement, "Ring out, wild bells".
+  <div class="card">
+    <h3>2. Choral Music: Jonathan Dove</h3>
+    <p><strong>Work:</strong> <em>The Passing of the Year</em></p>
+    <p>Listen for: The intricate 8-part canon in "Ah, Sun-flower!" and the pealing bell effects in "Ring out, wild bells".</p>
+  </div>
 
-*   **Popular Song & Musicals:** **Benj Pasek & Justin Paul – A Million Dreams (from The Greatest Showman)**
-*   This song shares features common to both genres. It has a clear verse-pre-chorus-chorus structure and soaring melodies typical of pop ballads. It also uses the orchestra to build drama with devices like cymbal rolls and added reverb, a common technique in musical theatre.`,
-      longDescription_zh: `以下是一些以不同方式结合文字和音乐的关键范例。聆听这些将帮助您理解每个重点领域的特征。
+  <div class="card">
+    <h3>3. Popular Song & Musicals</h3>
+    <p><strong>Work:</strong> <em>A Million Dreams</em> (The Greatest Showman)</p>
+    <p>Listen for: The verse-chorus-bridge structure and the use of modern production (reverb, build-ups).</p>
+  </div>
+</section>
+`
+    },
+    longDescription_zh: `以下是一些以不同方式结合文字和音乐的关键范例。聆听这些将帮助您理解每个重点领域的特征。
 
 *   **艺术歌曲：** **拉尔夫·沃恩·威廉姆斯 – 《旅行之歌》**
 *   这部为独唱和钢琴而作的声乐套曲，为罗伯特·路易斯·史蒂文森的诗歌谱曲。聆听《流浪者》中钢琴伴奏如何创造出行进的节奏，以及《让美丽苏醒》中声乐线条如何温柔抒情以匹配诗歌。
@@ -403,15 +301,15 @@ A song cycle for double choir and piano that showcases a vast range of textures 
 
 *   **流行歌曲与音乐剧：** **本吉·帕塞克和贾斯汀·保罗 – 《一百万个梦想》（来自《马戏之王》）**
 *   这首歌兼具两种体裁的共同特征。它有清晰的主歌-前副歌-副歌结构和流行民谣典型的飙升旋律。它还使用管弦乐队通过钹滚奏和增加混响等手段来营造戏剧性，这是音乐剧中的常用技巧。`,
-      children: [
-        {
-          id: 'aos4-pop-song-analysis',
-          title: 'Pop Song Analysis',
-          title_zh: '流行歌曲分析',
-          path: '/areas-of-study/aos4-music-and-words/starting-points/pop-song-analysis',
-          content: 'Detailed analysis of popular songs demonstrating key musical features.',
-          content_zh: '流行歌曲的详细分析，展示关键音乐特征。',
-          longDescription: `# Pop Song Analysis
+    children: [
+      {
+        id: 'aos4-pop-song-analysis',
+        title: 'Pop Song Analysis',
+        title_zh: '流行歌曲分析',
+        path: '/areas-of-study/aos4-music-and-words/starting-points/pop-song-analysis',
+        content: 'Detailed analysis of popular songs demonstrating key musical features.',
+        content_zh: '流行歌曲的详细分析，展示关键音乐特征。',
+        longDescription: `# Pop Song Analysis
 
 ## Understanding Popular Music Through Analysis
 
@@ -638,7 +536,7 @@ Analysing popular songs reveals the sophisticated craft behind seemingly simple 
 ---
 
 **Next Steps**: Apply these analytical techniques to songs you enjoy, focusing on one element at a time before synthesizing your observations into a complete analysis.`,
-          longDescription_zh: `# 流行歌曲分析
+        longDescription_zh: `# 流行歌曲分析
 
 ## 通过分析理解流行音乐
 
@@ -865,9 +763,9 @@ Analysing popular songs reveals the sophisticated craft behind seemingly simple 
 ---
 
 **下一步**：将这些分析技巧应用到你喜欢的歌曲上，一次专注于一个元素，然后将你的观察综合成完整的分析。`
-        }
-      ]
+      }
+    ]
     },
-    aos4DetailedContent,
+  aos4DetailedContent,
   ]
 };
