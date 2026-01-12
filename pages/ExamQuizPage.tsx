@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen } from 'lucide-react';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Link as LinkIcon } from 'lucide-react';
 import { AbcRenderer } from '../components/tutor/AbcRenderer';
 import { mock1Quizzes } from '../services/syllabusContent/mock1Quizzes';
 
@@ -72,6 +72,7 @@ const ExamQuizPage: React.FC = () => {
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => navigate(-1)}
+                            aria-label="Go back"
                             className="p-2 -ml-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors text-gray-500 dark:text-gray-400"
                         >
                             <ArrowLeft className="w-5 h-5" />
@@ -127,7 +128,50 @@ const ExamQuizPage: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Questions */}
+
+
+                {/* AI Tutor Reminder */}
+                {
+                    quiz.aiReminder && (
+                        <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border border-amber-200 dark:border-amber-800/50 rounded-xl p-4 flex items-start gap-4 shadow-sm">
+                            <div className="bg-amber-100 dark:bg-amber-800/50 p-2 rounded-lg">
+                                <Bot className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-amber-800 dark:text-amber-200 text-sm mb-1">Stuck on a question?</h4>
+                                <p className="text-amber-700 dark:text-amber-300 text-sm">
+                                    Ask <strong>Maestro AI</strong> for help! It can explain complex concepts, analyze the score with you, or clarify any musical terms.
+                                </p>
+                            </div>
+                        </div>
+                    )
+                }
+
+                {/* Related Links */}
+                {
+                    quiz.relatedLinks && quiz.relatedLinks.length > 0 && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {quiz.relatedLinks.map((link, index) => (
+                                <Link
+                                    key={index}
+                                    to={link.url}
+                                    target="_blank"
+                                    className="group flex items-center gap-3 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-indigo-300 dark:hover:border-indigo-700 transition-all shadow-sm hover:shadow-md"
+                                >
+                                    <div className="bg-indigo-50 dark:bg-indigo-900/30 p-2 rounded-lg group-hover:bg-indigo-100 dark:group-hover:bg-indigo-800/50 transition-colors">
+                                        <LinkIcon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-0.5">Recommended Resource</p>
+                                        <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                            {link.text}
+                                        </h4>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    )
+                }
                 <div className="space-y-6">
                     {quiz.questions.map((q, index) => {
                         const isCorrect = userAnswers[q.id] === q.correctAnswer;
@@ -210,42 +254,46 @@ const ExamQuizPage: React.FC = () => {
                 </div>
 
                 {/* Footer / Submit Button */}
-                {!isSubmitted && (
-                    <div className="mt-8 flex justify-end">
-                        <button
-                            onClick={handleSubmit}
-                            disabled={Object.keys(userAnswers).length !== quiz.questions.length}
-                            className={`px-8 py-4 rounded-xl font-bold text-white shadow-lg transform transition-all 
+                {
+                    !isSubmitted && (
+                        <div className="mt-8 flex justify-end">
+                            <button
+                                onClick={handleSubmit}
+                                disabled={Object.keys(userAnswers).length !== quiz.questions.length}
+                                className={`px-8 py-4 rounded-xl font-bold text-white shadow-lg transform transition-all 
                                 ${Object.keys(userAnswers).length === quiz.questions.length
-                                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:scale-105 hover:shadow-xl'
-                                    : 'bg-gray-400 cursor-not-allowed opacity-70'
-                                }`}
-                        >
-                            {Object.keys(userAnswers).length === quiz.questions.length
-                                ? 'Submit Quiz'
-                                : `Answer all questions (${Object.keys(userAnswers).length}/${quiz.questions.length})`
-                            }
-                        </button>
-                    </div>
-                )}
+                                        ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:scale-105 hover:shadow-xl'
+                                        : 'bg-gray-400 cursor-not-allowed opacity-70'
+                                    }`}
+                            >
+                                {Object.keys(userAnswers).length === quiz.questions.length
+                                    ? 'Submit Quiz'
+                                    : `Answer all questions (${Object.keys(userAnswers).length}/${quiz.questions.length})`
+                                }
+                            </button>
+                        </div>
+                    )
+                }
 
-                {isSubmitted && (
-                    <div className="mt-8 flex justify-center">
-                        <button
-                            onClick={() => {
-                                setIsSubmitted(false);
-                                setUserAnswers({});
-                                setScore(0);
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }}
-                            className="px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                        >
-                            Retake Quiz
-                        </button>
-                    </div>
-                )}
-            </main>
-        </div>
+                {
+                    isSubmitted && (
+                        <div className="mt-8 flex justify-center">
+                            <button
+                                onClick={() => {
+                                    setIsSubmitted(false);
+                                    setUserAnswers({});
+                                    setScore(0);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
+                                className="px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                            >
+                                Retake Quiz
+                            </button>
+                        </div>
+                    )
+                }
+            </main >
+        </div >
     );
 };
 

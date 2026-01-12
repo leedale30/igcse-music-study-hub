@@ -167,16 +167,12 @@ const App: React.FC = () => {
                       <Route path="/aos/baroque/*" element={<BaroqueRoutes />} />
                       {/* AOS2 Classical Music Routes (52 pages) */}
                       <Route path="/aos/classical/*" element={<ClassicalRoutes />} />
-                      {/* AOS3 Romantic Music Routes (58 pages) */}
-                      <Route path="/aos/romantic/*" element={<RomanticRoutes />} />
-                      {/* AOS4 Music and Words Routes (58 pages) */}
-                      <Route path="/aos/music-words/*" element={<MusicAndWordsRoutes />} />
-                      {/* AOS5 Music for Dance Routes (58 pages) */}
-                      <Route path="/aos/dance/*" element={<DanceRoutes />} />
-                      {/* AOS6 Small Ensemble Routes (53 pages) */}
-                      <Route path="/aos/small-ensemble/*" element={<SmallEnsembleRoutes />} />
-                      {/* AOS7 Stage and Screen Routes (58 pages) */}
-                      <Route path="/aos/stage-screen/*" element={<StageScreenRoutes />} />
+                      {/* Dynamic AOS Routes (AOS3-AOS7) */}
+                      {/* <Route path="/aos/romantic/*" element={<RomanticRoutes />} /> */}
+                      {/* <Route path="/aos/music-words/*" element={<MusicAndWordsRoutes />} /> */}
+                      {/* <Route path="/aos/dance/*" element={<DanceRoutes />} /> */}
+                      {/* <Route path="/aos/small-ensemble/*" element={<SmallEnsembleRoutes />} /> */}
+                      {/* <Route path="/aos/stage-screen/*" element={<StageScreenRoutes />} /> */}
                       {/* AOS generic content routes */}
                       <Route path="/aos/:aosId/*" element={<AosContentPage />} />
 

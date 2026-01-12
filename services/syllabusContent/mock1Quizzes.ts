@@ -13,6 +13,8 @@ export interface QuizData {
     description: string;
     abcNotation: string;
     revisionNotes?: string;
+    relatedLinks?: { text: string; url: string; }[];
+    aiReminder?: boolean;
     questions: QuizQuestion[];
 }
 
@@ -277,7 +279,12 @@ G,4 C,4 | G,4 E,4 | D,4 D,4 | D,4 G,,4 |]`,
                 correctAnswer: 2,
                 rationale: 'This is the verbatim definition of Tonality provided in the study handout.'
             }
-        ]
+        ],
+        relatedLinks: [
+            { text: 'Theory: Minor & Major Scales', url: '/theory/ch4/scales' },
+            { text: 'AOS1: Baroque Tonality', url: '/aos/baroque/tonality' }
+        ],
+        aiReminder: true
     },
     'quiz-texture-basics': {
         id: 'quiz-texture-basics',
@@ -475,7 +482,12 @@ z8 | z8 | z8 | z8 |]`,
                 correctAnswer: 1,
                 rationale: 'This describes the auditory distinction regarding the "hierarchy of importance" within the texture.'
             }
-        ]
+        ],
+        relatedLinks: [
+            { text: 'Theory: Musical Texture (Chapter 14)', url: '/theory/ch14/texture' },
+            { text: 'AOS1: Baroque Texture', url: '/aos/baroque/texture' }
+        ],
+        aiReminder: true
     },
     'quiz-texture-detailed': {
         id: 'quiz-texture-detailed',
@@ -662,7 +674,12 @@ V:3 name="Violoncello" snm="Vc." clef=bass
                 correctAnswer: 1,
                 rationale: 'When voices move in the same rhythm but on different pitches (forming block chords), it is a specific sub-type of homophony called Homorhythmic or Chordal texture.'
             }
-        ]
+        ],
+        relatedLinks: [
+            { text: 'Theory: Musical Texture (Chapter 14)', url: '/theory/ch14/texture' },
+            { text: 'AOS2: Classical Texture', url: '/aos/classical/texture' }
+        ],
+        aiReminder: true
     },
     'quiz-texture-strategies': {
         id: 'quiz-texture-strategies',
@@ -856,6 +873,11 @@ V: V4 name="Cello" clef=bass
                 correctAnswer: 2,
                 rationale: 'In a homophonic texture, the listener\'s attention is drawn to the foreground element, which is the melody.'
             }
-        ]
+        ],
+        relatedLinks: [
+            { text: 'Theory: Musical Texture', url: '/theory/ch14/texture' },
+            { text: 'Tools: Ear Training', url: '/tools/ear-training' }
+        ],
+        aiReminder: true
     }
 };
