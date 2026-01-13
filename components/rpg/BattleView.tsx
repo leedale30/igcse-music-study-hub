@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
-import { RPGLayout } from './RPGLayout';
+
 import { useParams, useNavigate } from 'react-router-dom';
 import { getQuestion, submitAnswer, subscribeToMatch, subscribeToMatchTurns, submitBotAnswer, RPGMatch, RPGQuestion } from '../../services/rpgService';
 import { useAuth } from '../../contexts/AuthContext';
 import { cn } from '../../src/lib/utils';
-import { Heart, Timer, Sword, ShieldAlert } from 'lucide-react';
+import { Heart, Timer, Sword, ShieldAlert, Zap } from 'lucide-react';
 import { THEMES } from '../../types/rpg_themes';
 
 export const BattleView: React.FC = () => {
@@ -37,11 +37,8 @@ export const BattleView: React.FC = () => {
             const { success, question: q, match_state, already_answered } = await getQuestion(matchId);
             if (success) {
                 setQuestion(q || null);
-                // We need to fetch the full match object separately or construct it from match_state
-                // For simplicity assuming subscriptions will fill in the details shortly
             }
-            // Also need to get initial match state purely for health bars 
-            // The subscription will handle updates
+            setLoading(false); // <-- This was missing!
         };
 
         init();
@@ -79,10 +76,6 @@ export const BattleView: React.FC = () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
 
-        return () => {
-            unsubMatch();
-            if (timerRef.current) clearInterval(timerRef.current);
-        };
     }, [matchId]);
 
     // Bot Logic

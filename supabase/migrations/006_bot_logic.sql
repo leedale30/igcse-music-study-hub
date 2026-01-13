@@ -66,7 +66,7 @@ VALUES (
 ON CONFLICT (user_id) DO NOTHING;
 
 
--- 3. RPC to Start Bot Match
+-- 3. RPC to Start Bot Match (includes question selection)
 CREATE OR REPLACE FUNCTION public.start_bot_match()
 RETURNS JSONB
 LANGUAGE plpgsql
@@ -75,22 +75,43 @@ AS $$
 DECLARE
     new_match_id UUID;
     bot_id UUID := '00000000-0000-0000-0000-000000000001';
+    selected_questions UUID[];
 BEGIN
+    -- Select 5 random active questions
+    SELECT ARRAY_AGG(id) INTO selected_questions
+    FROM (
+        SELECT id FROM public.rpg_questions
+        WHERE is_active = true
+        ORDER BY RANDOM()
+        LIMIT 5
+    ) AS q;
+
+    -- Ensure we have enough questions
+    IF array_length(selected_questions, 1) IS NULL OR array_length(selected_questions, 1) < 5 THEN
+        RETURN jsonb_build_object('success', false, 'error', 'Not enough questions available');
+    END IF;
+
     INSERT INTO public.rpg_matches (
         player_a,
         player_b,
         current_turn,
+        total_turns,
         status,
         player_a_health,
-        player_b_health
+        player_b_health,
+        question_ids,
+        started_at
     )
     VALUES (
         auth.uid(),
         bot_id,
         1,
+        5,
         'active',
         100,
-        100
+        100,
+        selected_questions,
+        NOW()
     )
     RETURNING id INTO new_match_id;
 
