@@ -4,12 +4,13 @@
 
 -- 1. Create a Bot User Profile (System User)
 -- UUID: 00000000-0000-0000-0000-000000000001
-INSERT INTO public.profiles (id, name, nickname, avatar_url)
+INSERT INTO public.profiles (id, name, nickname, avatar_url, email)
 VALUES (
     '00000000-0000-0000-0000-000000000001',
     'Training Bot',
     'Bot',
-    '/assets/rpg/nano.png'
+    '/assets/rpg/nano.png',
+    'bot@system.local'
 )
 ON CONFLICT (id) DO NOTHING;
 
