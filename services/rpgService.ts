@@ -239,6 +239,38 @@ export async function submitAnswer(params: {
     };
 }
 
+/**
+ * Start a match against the Bot
+ */
+export async function startBotMatch(): Promise<{ success: boolean; match_id?: string; error?: string }> {
+    const { data: { session } } = await supabase.auth.getSession();
+
+    const { data, error } = await supabase.rpc('start_bot_match');
+
+    if (error) {
+        return { success: false, error: error.message };
+    }
+
+    return { success: true, match_id: data.match_id };
+}
+
+/**
+ * Submit an answer/action on behalf of the Bot
+ */
+export async function submitBotAnswer(params: {
+    match_id: string;
+    question_id: string;
+    is_correct: boolean;
+}): Promise<{ success: boolean; damage?: number; error?: string }> {
+    const { data, error } = await supabase.rpc('submit_bot_answer', params);
+
+    if (error) {
+        return { success: false, error: error.message };
+    }
+
+    return { success: true, damage: data.damage };
+}
+
 // ================================================
 // Realtime Subscriptions
 // ================================================

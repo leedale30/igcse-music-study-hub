@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
+import { RPGLayout } from './RPGLayout';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getQuestion, submitAnswer, subscribeToMatch, subscribeToMatchTurns, RPGMatch, RPGQuestion } from '../../services/rpgService';
+import { getQuestion, submitAnswer, subscribeToMatch, subscribeToMatchTurns, submitBotAnswer, RPGMatch, RPGQuestion } from '../../services/rpgService';
 import { useAuth } from '../../contexts/AuthContext';
 import { cn } from '../../src/lib/utils';
 import { Heart, Timer, Sword, ShieldAlert } from 'lucide-react';
@@ -77,7 +78,45 @@ export const BattleView: React.FC = () => {
             unsubMatch();
             if (timerRef.current) clearInterval(timerRef.current);
         };
+
+        return () => {
+            unsubMatch();
+            if (timerRef.current) clearInterval(timerRef.current);
+        };
     }, [matchId]);
+
+    // Bot Logic
+    useEffect(() => {
+        if (!match || !question || submitting || feedback) return;
+
+        // Check if opponent is Bot
+        // UUID for bot is 00000000-0000-0000-0000-000000000001
+        const isBotMatch = match.player_b === '00000000-0000-0000-0000-000000000001';
+
+        if (isBotMatch) {
+            // Check if we are waiting for bot? 
+            // Actually, we just trigger bot move after random delay if it hasn't moved for this turn yet.
+            // But we don't know if it moved unless we track it.
+            // Simplified: Just always trigger a bot move 3-8s after question loads.
+            // The RPC will handle if it's duplicate or valid.
+
+            // Avoid setting multiple timeouts
+            const timerId = setTimeout(async () => {
+                // Determine if bot is correct (based on difficulty?)
+                // Simple RNG for now: 70% chance correct
+                const isCorrect = Math.random() < 0.7;
+
+                await submitBotAnswer({
+                    match_id: match.id,
+                    question_id: question.id,
+                    is_correct: isCorrect
+                });
+            }, Math.random() * 4000 + 3000); // 3-7 seconds delay
+
+            return () => clearTimeout(timerId);
+        }
+
+    }, [match, question]); // Re-run when match/question updates (new turn)
 
     // Timer Logic
     useEffect(() => {
