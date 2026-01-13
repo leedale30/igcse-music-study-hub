@@ -145,6 +145,14 @@ export const MatchmakingView: React.FC = () => {
                     </button>
 
                     <button
+                        onClick={() => alert('Bot matches coming soon! (Backend implementation needed)')}
+                        className="w-full py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 transition-all flex items-center justify-center gap-2"
+                    >
+                        <User className="w-5 h-5 text-white/40" />
+                        PRACTICE VS BOT
+                    </button>
+
+                    <button
                         onClick={() => navigate('/rpg')}
                         className="w-full py-3 text-white/40 hover:text-white transition-colors text-sm tracking-widest uppercase hover:underline"
                     >

@@ -267,9 +267,29 @@ export const BattleView: React.FC = () => {
                             className="absolute bottom-8 left-8 right-8 bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl z-30 flex gap-8"
                         >
                             <div className="flex-1 space-y-6">
-                                <h3 className="text-2xl font-bold leading-relaxed">
-                                    {question.content.prompt}
-                                </h3>
+                                <div className="flex justify-between items-start">
+                                    <h3 className="text-2xl font-bold leading-relaxed">
+                                        {question.content.prompt}
+                                    </h3>
+                                    <button
+                                        onClick={() => alert('Abilities coming in next update!')}
+                                        className="bg-yellow-600/20 text-yellow-400 border border-yellow-500/50 px-4 py-2 rounded-lg font-bold hover:bg-yellow-600/40 transition-colors flex items-center gap-2"
+                                    >
+                                        <Zap className="w-5 h-5" />
+                                        ACTIONS
+                                    </button>
+                                </div>
+
+                                {/* Audio Player */}
+                                {(question.type === 'audio' || question.type === 'listening') && question.media_path && (
+                                    <div className="w-full bg-black/40 p-4 rounded-xl border border-white/10">
+                                        <audio controls autoPlay className="w-full">
+                                            <source src={question.media_path} type="audio/mpeg" />
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                )}
+
                                 {/* Determine input type based on question */}
                                 {question.type === 'mcq' && (
                                     <div className="grid grid-cols-2 gap-4">

@@ -341,6 +341,16 @@ export const PracticeView: React.FC = () => {
 
                     <h2 className="text-xl font-bold mb-8">{question.content.prompt}</h2>
 
+                    {/* Audio Player */}
+                    {(question.type === 'audio' || question.type === 'listening') && (question as any).media_path && (
+                        <div className="w-full bg-black/40 p-4 rounded-xl border border-white/10 mb-6">
+                            <audio controls autoPlay className="w-full">
+                                <source src={(question as any).media_path} type="audio/mpeg" />
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    )}
+
                     <div className="space-y-3">
                         {currentChoices.map((choiceObj, index) => {
                             let buttonClass = 'w-full p-4 rounded-xl border text-left transition-all ';

@@ -70,6 +70,10 @@ const ResultsView = lazy(() => import('./components/rpg/ResultsView').then(m => 
 const PracticeView = lazy(() => import('./components/rpg/PracticeView').then(m => ({ default: m.PracticeView })));
 const CharacterSheet = lazy(() => import('./components/rpg/CharacterSheet').then(m => ({ default: m.CharacterSheet })));
 const InventoryView = lazy(() => import('./components/rpg/InventoryView').then(m => ({ default: m.InventoryView })));
+const ShopView = lazy(() => import('./components/rpg/ShopView').then(m => ({ default: m.ShopView })));
+const EquipmentView = lazy(() => import('./components/rpg/EquipmentView').then(m => ({ default: m.EquipmentView })));
+const TeamView = lazy(() => import('./components/rpg/TeamView').then(m => ({ default: m.TeamView })));
+const SkillsView = lazy(() => import('./components/rpg/SkillsView').then(m => ({ default: m.SkillsView })));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -186,6 +190,10 @@ const App: React.FC = () => {
                       <Route path="/rpg/practice" element={<PracticeView />} />
                       <Route path="/rpg/character" element={<CharacterSheet />} />
                       <Route path="/rpg/inventory" element={<InventoryView />} />
+                      <Route path="/rpg/shop" element={<ShopView />} />
+                      <Route path="/rpg/equipment" element={<EquipmentView />} />
+                      <Route path="/rpg/team" element={<TeamView />} />
+                      <Route path="/rpg/skills" element={<SkillsView />} />
 
                       {/* Catch-all route - protected */}
                       <Route path="*" element={<GenericPage />} />
