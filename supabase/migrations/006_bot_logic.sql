@@ -2,8 +2,30 @@
 -- RPG BOT LOGIC (CORRECTED)
 -- ================================================
 
--- 1. Create a Bot User Profile (System User)
--- UUID: 00000000-0000-0000-0000-000000000001
+-- 1. Create Bot User in auth.users (Required for foreign key)
+INSERT INTO auth.users (
+    instance_id,
+    id,
+    aud,
+    role,
+    email,
+    encrypted_password,
+    email_confirmed_at,
+    created_at,
+    updated_at
+) VALUES (
+    '00000000-0000-0000-0000-000000000000',
+    '00000000-0000-0000-0000-000000000001',
+    'authenticated',
+    'authenticated',
+    'bot@system.local',
+    '$2a$10$wT.f.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q.q', -- Dummy hash
+    NOW(),
+    NOW(),
+    NOW()
+) ON CONFLICT (id) DO NOTHING;
+
+-- 2. Create Bot Profile (System User)
 INSERT INTO public.profiles (id, name, nickname, avatar_url, email)
 VALUES (
     '00000000-0000-0000-0000-000000000001',
