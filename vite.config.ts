@@ -14,11 +14,13 @@ export default defineConfig(({ mode }) => {
           output: {
             manualChunks: {
               vendor: ['react', 'react-dom', 'react-router-dom'],
-              // Separate music libraries into their own chunks
-              music: ['tone', '@magenta/music', 'abcjs', 'vexflow'],
-              midi: ['html-midi-player'],
+              // Split music libraries into their own chunks
+              magenta: ['@magenta/music'],
+              tone: ['tone'],
+              sheet: ['abcjs', 'vexflow', 'opensheetmusicdisplay'],
+              midi: ['html-midi-player', 'midi-parser-js'],
               // UI libraries
-              ui: ['@iconify/react', 'marked']
+              ui: ['@iconify/react', 'marked', 'lucide-react', 'framer-motion']
             }
           },
           // Suppress eval warnings from third-party libraries
