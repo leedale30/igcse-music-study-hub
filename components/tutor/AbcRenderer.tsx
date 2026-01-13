@@ -1,17 +1,10 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Play, Pause, RefreshCw, Maximize2, X, Download, FileDown, FileText, Loader2, AlertCircle } from 'lucide-react';
+import abcjs from 'abcjs';
 
 interface Props {
     abc: string;
     id: string;
-}
-
-declare global {
-    interface Window {
-        ABCJS: any;
-        webkitAudioContext: typeof AudioContext;
-    }
 }
 
 // Timeout wrapper for promises
@@ -77,7 +70,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Inline Rendering
     useEffect(() => {
-        if (!paperRef.current || !window.ABCJS) {
+        if (!paperRef.current || !abcjs) {
             setRenderError('ABC.js library not loaded');
             return;
         }
@@ -90,7 +83,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         try {
             const cleanedAbc = cleanAbc(abc);
 
-            const vObj = window.ABCJS.renderAbc(paperRef.current, cleanedAbc, {
+            const vObj = abcjs.renderAbc(paperRef.current, cleanedAbc, {
                 responsive: 'resize',
                 add_classes: true,
                 paddingtop: 10,
@@ -113,8 +106,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             setVisualObj(vObj[0]);
 
             // Initialize audio
-            if (window.ABCJS.synth && window.ABCJS.synth.supportsAudio()) {
-                const synth = new window.ABCJS.synth.CreateSynth();
+            if (abcjs.synth && abcjs.synth.supportsAudio()) {
+                const synth = new abcjs.synth.CreateSynth();
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
                 withTimeout(
@@ -150,7 +143,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Fullscreen Rendering when active
     useEffect(() => {
-        if (!isFullscreen || !modalPaperRef.current || !window.ABCJS) return;
+        if (!isFullscreen || !modalPaperRef.current || !abcjs) return;
 
         setIsModalAudioReady(false);
         setModalSynthControl(null);
@@ -159,7 +152,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             try {
                 const cleanedAbc = cleanAbc(abc);
 
-                const vObj = window.ABCJS.renderAbc(modalPaperRef.current, cleanedAbc, {
+                const vObj = abcjs.renderAbc(modalPaperRef.current, cleanedAbc, {
                     responsive: 'resize',
                     add_classes: true,
                     scale: 1.3,
@@ -175,8 +168,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     }
                 });
 
-                if (vObj && vObj.length > 0 && window.ABCJS.synth && window.ABCJS.synth.supportsAudio()) {
-                    const synth = new window.ABCJS.synth.CreateSynth();
+                if (vObj && vObj.length > 0 && abcjs.synth && abcjs.synth.supportsAudio()) {
+                    const synth = new abcjs.synth.CreateSynth();
                     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
                     synth.init({
@@ -234,8 +227,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         setIsAudioReady(false);
         // Force re-render by triggering the effect
         const cleanedAbc = cleanAbc(abc);
-        if (visualObj && window.ABCJS.synth && window.ABCJS.synth.supportsAudio()) {
-            const synth = new window.ABCJS.synth.CreateSynth();
+        if (visualObj && abcjs.synth && abcjs.synth.supportsAudio()) {
+            const synth = new abcjs.synth.CreateSynth();
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
             synth.init({
@@ -256,14 +249,14 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
     };
 
     const downloadMidi = () => {
-        if (!visualObj || !window.ABCJS) {
+        if (!visualObj || !abcjs) {
             alert("Score not ready. Please wait for it to load.");
             return;
         }
 
         try {
             // Use link format which is more reliable
-            const midi = window.ABCJS.synth.getMidiFile(visualObj, {
+            const midi = abcjs.synth.getMidiFile(visualObj, {
                 midiOutputType: "link",
                 fileName: `maestro-${id}`
             });
@@ -275,7 +268,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                 document.body.removeChild(midi);
             } else {
                 // Fallback to binary
-                const midiBinary = window.ABCJS.synth.getMidiFile(visualObj, { midiOutputType: "binary" });
+                const midiBinary = abcjs.synth.getMidiFile(visualObj, { midiOutputType: "binary" });
                 if (midiBinary && midiBinary.length > 0) {
                     const blob = new Blob([midiBinary], { type: "audio/midi" });
                     const url = window.URL.createObjectURL(blob);
@@ -340,8 +333,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                             onClick={audioError ? retryAudio : () => togglePlay(false)}
                             disabled={!isAudioReady && !audioError}
                             className={`flex items-center gap-2 px-3 py-1 rounded text-xs font-bold transition-colors ${isAudioReady || audioError
-                                    ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                                    : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                                ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                                : 'bg-gray-700 text-gray-400 cursor-not-allowed'
                                 }`}
                             title={audioError ? "Retry loading audio" : isPlaying ? "Stop" : "Play"}
                         >
@@ -403,8 +396,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                                     onClick={() => togglePlay(true)}
                                     disabled={!isModalAudioReady}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-colors ${isModalAudioReady
-                                            ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                                            : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
+                                        ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                                        : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
                                         }`}
                                     title={isModalPlaying ? "Stop" : "Play"}
                                 >

@@ -1,6 +1,9 @@
-
 import { SyllabusItem } from '../../types';
 import { popSongQuiz } from '../quizzes/aos4_quizzes';
+import { popSongIntroductionPage } from './aos4_3a/introduction';
+import { popSongMelodyPage } from './aos4_3a/melody';
+import { popSongStructurePage } from './aos4_3a/structure';
+import { popSongTempoPage } from './aos4_3a/tempo';
 
 export const popSongAoS: SyllabusItem = {
   id: 'aos4-3a-pop-song',

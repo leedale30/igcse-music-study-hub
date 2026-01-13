@@ -1,8 +1,8 @@
-
 import { SyllabusItem } from '../../types';
 import { artSongQuiz } from '../quizData';
 import { popSongAoS } from './aos4_3a_PopSong';
 import { aos4DetailedContent } from './aosDetailedContent';
+import { choirQuiz } from '../quizzes/aos4_quizzes';
 
 export const musicAndWordsAoS: SyllabusItem = {
   id: 'aos4-music-and-words',
@@ -290,7 +290,7 @@ w: Frè-re Jac-ques, Frè-re Jac-ques, dor-mez-vous? dor-mez-vous?
   </div>
 </section>
 `,
-    longDescription_zh: `以下是一些以不同方式结合文字和音乐的关键范例。聆听这些将帮助您理解每个重点领域的特征。
+      longDescription_zh: `以下是一些以不同方式结合文字和音乐的关键范例。聆听这些将帮助您理解每个重点领域的特征。
 
 *   **艺术歌曲：** **拉尔夫·沃恩·威廉姆斯 – 《旅行之歌》**
 *   这部为独唱和钢琴而作的声乐套曲，为罗伯特·路易斯·史蒂文森的诗歌谱曲。聆听《流浪者》中钢琴伴奏如何创造出行进的节奏，以及《让美丽苏醒》中声乐线条如何温柔抒情以匹配诗歌。
@@ -300,15 +300,15 @@ w: Frè-re Jac-ques, Frè-re Jac-ques, dor-mez-vous? dor-mez-vous?
 
 *   **流行歌曲与音乐剧：** **本吉·帕塞克和贾斯汀·保罗 – 《一百万个梦想》（来自《马戏之王》）**
 *   这首歌兼具两种体裁的共同特征。它有清晰的主歌-前副歌-副歌结构和流行民谣典型的飙升旋律。它还使用管弦乐队通过钹滚奏和增加混响等手段来营造戏剧性，这是音乐剧中的常用技巧。`,
-    children: [
-      {
-        id: 'aos4-pop-song-analysis',
-        title: 'Pop Song Analysis',
-        title_zh: '流行歌曲分析',
-        path: '/areas-of-study/music-and-words/starting-points/pop-song-analysis',
-        content: 'Detailed analysis of popular songs demonstrating key musical features.',
-        content_zh: '流行歌曲的详细分析，展示关键音乐特征。',
-        longDescription: `# Pop Song Analysis
+      children: [
+        {
+          id: 'aos4-pop-song-analysis',
+          title: 'Pop Song Analysis',
+          title_zh: '流行歌曲分析',
+          path: '/areas-of-study/music-and-words/starting-points/pop-song-analysis',
+          content: 'Detailed analysis of popular songs demonstrating key musical features.',
+          content_zh: '流行歌曲的详细分析，展示关键音乐特征。',
+          longDescription: `# Pop Song Analysis
 
 ## Understanding Popular Music Through Analysis
 
@@ -535,7 +535,7 @@ Analysing popular songs reveals the sophisticated craft behind seemingly simple 
 ---
 
 **Next Steps**: Apply these analytical techniques to songs you enjoy, focusing on one element at a time before synthesizing your observations into a complete analysis.`,
-        longDescription_zh: `# 流行歌曲分析
+          longDescription_zh: `# 流行歌曲分析
 
 ## 通过分析理解流行音乐
 
@@ -762,9 +762,9 @@ Analysing popular songs reveals the sophisticated craft behind seemingly simple 
 ---
 
 **下一步**：将这些分析技巧应用到你喜欢的歌曲上，一次专注于一个元素，然后将你的观察综合成完整的分析。`
-      }
-    ]
+        }
+      ]
     },
-  aos4DetailedContent,
+    aos4DetailedContent,
   ]
 };
