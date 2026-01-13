@@ -134,6 +134,8 @@ export const PracticeView: React.FC = () => {
             setBestStreak(prev => Math.max(prev, streak + 1));
             setCorrectAnswers(prev => prev + 1);
         } else {
+            // Penalty for wrong answer
+            setScore(prev => prev - 10);
             setStreak(0);
         }
 
