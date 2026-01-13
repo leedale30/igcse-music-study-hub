@@ -45,18 +45,26 @@ export const PracticeView: React.FC = () => {
     // Fetch random questions
     useEffect(() => {
         const fetchQuestions = async () => {
-            const { data, error } = await supabase
-                .from('rpg_questions')
-                .select('*')
-                .limit(20)
-                .order('id', { ascending: false }); // Get recent ones, or use random
+            // Try to use the random RPC, fallback to simple select
+            let { data, error } = await supabase.rpc('get_random_rpg_questions', { limit_count: 50 });
+
+            if (error) {
+                console.warn('RPC get_random_rpg_questions not found, falling back to basic fetch');
+                const result = await supabase
+                    .from('rpg_questions')
+                    .select('*')
+                    .limit(50)
+                    .order('created_at', { ascending: false });
+                data = result.data;
+                error = result.error;
+            }
 
             if (error) {
                 console.error('Error fetching questions:', error);
                 return;
             }
 
-            // Shuffle the questions
+            // Shuffle the questions array
             const shuffled = (data || []).sort(() => Math.random() - 0.5);
             setQuestions(shuffled);
             setLoading(false);
@@ -64,6 +72,20 @@ export const PracticeView: React.FC = () => {
 
         fetchQuestions();
     }, []);
+
+    // State for shuffled choices of current question
+    const [currentChoices, setCurrentChoices] = useState<{ text: string; originalIndex: number }[]>([]);
+
+    useEffect(() => {
+        if (questions.length > 0 && currentIndex < questions.length) {
+            const q = questions[currentIndex];
+            if (q.content.choices) {
+                const shuffled = q.content.choices.map((text, idx) => ({ text, originalIndex: idx }))
+                    .sort(() => Math.random() - 0.5);
+                setCurrentChoices(shuffled);
+            }
+        }
+    }, [currentIndex, questions]);
 
     // Timer countdown
     useEffect(() => {
@@ -83,13 +105,16 @@ export const PracticeView: React.FC = () => {
         return () => clearInterval(timer);
     }, [loading, gameOver, showResult, currentIndex]);
 
-    const handleAnswer = useCallback((answerIndex: number) => {
+    const handleAnswer = useCallback((shuffledIndex: number) => {
         if (showResult) return;
 
         const question = questions[currentIndex];
-        const correct = answerIndex === question.answer_key;
 
-        setSelectedAnswer(answerIndex);
+        // Map the clicked index back to the original index
+        const originalIndex = shuffledIndex === -1 ? -1 : currentChoices[shuffledIndex].originalIndex;
+        const correct = originalIndex === question.answer_key;
+
+        setSelectedAnswer(shuffledIndex);
         setIsCorrect(correct);
         setShowResult(true);
         setTotalAnswered(prev => prev + 1);
@@ -115,7 +140,7 @@ export const PracticeView: React.FC = () => {
                 setTimeLeft(15);
             }
         }, 1500);
-    }, [currentIndex, questions, showResult, streak]);
+    }, [currentIndex, questions, showResult, streak, currentChoices]);
 
     // Award XP when game ends
     useEffect(() => {
@@ -162,7 +187,7 @@ export const PracticeView: React.FC = () => {
         setCorrectAnswers(0);
         setXpEarned(0);
         setXpSaved(false);
-        // Reshuffle questions
+        // Reshuffle existing questions
         setQuestions(prev => [...prev].sort(() => Math.random() - 0.5));
     };
 
@@ -307,11 +332,11 @@ export const PracticeView: React.FC = () => {
                     <h2 className="text-xl font-bold mb-8">{question.content.prompt}</h2>
 
                     <div className="space-y-3">
-                        {question.content.choices.map((choice, index) => {
+                        {currentChoices.map((choiceObj, index) => {
                             let buttonClass = 'w-full p-4 rounded-xl border text-left transition-all ';
 
                             if (showResult) {
-                                if (index === question.answer_key) {
+                                if (choiceObj.originalIndex === question.answer_key) {
                                     buttonClass += 'border-green-500 bg-green-500/20 text-green-200';
                                 } else if (index === selectedAnswer && !isCorrect) {
                                     buttonClass += 'border-red-500 bg-red-500/20 text-red-200';
@@ -335,8 +360,8 @@ export const PracticeView: React.FC = () => {
                                         <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">
                                             {String.fromCharCode(65 + index)}
                                         </span>
-                                        <span className="flex-1">{choice}</span>
-                                        {showResult && index === question.answer_key && (
+                                        <span className="flex-1">{choiceObj.text}</span>
+                                        {showResult && choiceObj.originalIndex === question.answer_key && (
                                             <CheckCircle className="w-6 h-6 text-green-400" />
                                         )}
                                         {showResult && index === selectedAnswer && !isCorrect && (

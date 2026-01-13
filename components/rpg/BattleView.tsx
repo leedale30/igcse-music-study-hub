@@ -145,6 +145,17 @@ export const BattleView: React.FC = () => {
         }
     };
 
+    // State for shuffled choices
+    const [shuffledChoices, setShuffledChoices] = useState<{ text: string; originalIndex: number }[]>([]);
+
+    useEffect(() => {
+        if (question && question.content.choices) {
+            const shuffled = question.content.choices.map((text: string, idx: number) => ({ text, originalIndex: idx }))
+                .sort(() => Math.random() - 0.5);
+            setShuffledChoices(shuffled);
+        }
+    }, [question]);
+
     const isPlayerA = user?.id === match?.player_a;
     const myHealth = isPlayerA ? match?.player_a_health : match?.player_b_health;
     const oppHealth = isPlayerA ? match?.player_b_health : match?.player_a_health;
@@ -262,20 +273,20 @@ export const BattleView: React.FC = () => {
                                 {/* Determine input type based on question */}
                                 {question.type === 'mcq' && (
                                     <div className="grid grid-cols-2 gap-4">
-                                        {question.content.choices?.map((choice: string, idx: number) => (
+                                        {shuffledChoices.map((choice, idx) => (
                                             <button
                                                 key={idx}
                                                 disabled={submitting || selectedAnswer !== null}
-                                                onClick={() => handleSubmit(idx)}
+                                                onClick={() => handleSubmit(choice.originalIndex)}
                                                 className={`p-4 rounded-xl text-left border transition-all
-                                                    ${selectedAnswer === idx
+                                                    ${selectedAnswer === choice.originalIndex
                                                         ? 'bg-cyan-500 border-cyan-400 text-black font-bold scale-[1.02]'
                                                         : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30'
                                                     }
                                                 `}
                                             >
                                                 <span className="opacity-50 mr-4 font-mono">{String.fromCharCode(65 + idx)}.</span>
-                                                {choice}
+                                                {choice.text}
                                             </button>
                                         ))}
                                     </div>
