@@ -286,6 +286,7 @@ export const CharacterSheet: React.FC = () => {
                         {[
                             { icon: Package, label: 'Inventory', path: '/rpg/inventory', color: 'text-amber-400' },
                             { icon: Sword, label: 'Equipment', path: '/rpg/equipment', color: 'text-red-400' },
+                            { icon: Package, label: 'Shop', path: '/rpg/shop', color: 'text-yellow-400' }, // Added Shop
                             { icon: Users, label: 'Team', path: '/rpg/team', color: 'text-green-400' },
                             { icon: Settings, label: 'Skills', path: '/rpg/skills', color: 'text-purple-400' },
                         ].map((link) => (
