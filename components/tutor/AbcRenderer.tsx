@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Play, Pause, RefreshCw, Maximize2, X, Download, FileDown, FileText, Loader2, AlertCircle } from 'lucide-react';
 import abcjs from 'abcjs';
@@ -71,7 +70,10 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Inline Rendering
     useEffect(() => {
-        if (!paperRef.current) return;
+        if (!paperRef.current || !abcjs) {
+            setRenderError('ABC.js library not loaded');
+            return;
+        }
 
         setIsAudioReady(false);
         setAudioError(false);
@@ -104,9 +106,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             setVisualObj(vObj[0]);
 
             // Initialize audio
-            if (abcjs.synth.supportsAudio()) {
+            if (abcjs.synth && abcjs.synth.supportsAudio()) {
                 const synth = new abcjs.synth.CreateSynth();
-                const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
                 withTimeout(
                     synth.init({
@@ -141,7 +143,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Fullscreen Rendering when active
     useEffect(() => {
-        if (!isFullscreen || !modalPaperRef.current) return;
+        if (!isFullscreen || !modalPaperRef.current || !abcjs) return;
 
         setIsModalAudioReady(false);
         setModalSynthControl(null);
@@ -166,9 +168,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     }
                 });
 
-                if (vObj && vObj.length > 0 && abcjs.synth.supportsAudio()) {
+                if (vObj && vObj.length > 0 && abcjs.synth && abcjs.synth.supportsAudio()) {
                     const synth = new abcjs.synth.CreateSynth();
-                    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
                     synth.init({
                         audioContext: audioContext,
@@ -225,9 +227,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         setIsAudioReady(false);
         // Force re-render by triggering the effect
         const cleanedAbc = cleanAbc(abc);
-        if (visualObj && abcjs.synth.supportsAudio()) {
+        if (visualObj && abcjs.synth && abcjs.synth.supportsAudio()) {
             const synth = new abcjs.synth.CreateSynth();
-            const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
             synth.init({
                 audioContext: audioContext,
@@ -247,7 +249,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
     };
 
     const downloadMidi = () => {
-        if (!visualObj) {
+        if (!visualObj || !abcjs) {
             alert("Score not ready. Please wait for it to load.");
             return;
         }
@@ -331,8 +333,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                             onClick={audioError ? retryAudio : () => togglePlay(false)}
                             disabled={!isAudioReady && !audioError}
                             className={`flex items-center gap-2 px-3 py-1 rounded text-xs font-bold transition-colors ${isAudioReady || audioError
-                                    ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                                    : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                                ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                                : 'bg-gray-700 text-gray-400 cursor-not-allowed'
                                 }`}
                             title={audioError ? "Retry loading audio" : isPlaying ? "Stop" : "Play"}
                         >
@@ -394,8 +396,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                                     onClick={() => togglePlay(true)}
                                     disabled={!isModalAudioReady}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-colors ${isModalAudioReady
-                                            ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
-                                            : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
+                                        ? 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                                        : 'bg-gray-800 text-gray-400 cursor-not-allowed border border-gray-700'
                                         }`}
                                     title={isModalPlaying ? "Stop" : "Play"}
                                 >
