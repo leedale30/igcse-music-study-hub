@@ -16,7 +16,9 @@ interface Question {
         choices: string[];
         questionType: string;
     };
-    answer_key: number;
+    answer_key: {
+        correct: number;
+    };
     difficulty: number;
 }
 
@@ -45,16 +47,21 @@ export const PracticeView: React.FC = () => {
     // Fetch random questions
     useEffect(() => {
         const fetchQuestions = async () => {
-            // Try to use the random RPC, fallback to simple select
+            // Try to use the random RPC
             let { data, error } = await supabase.rpc('get_random_rpg_questions', { limit_count: 50 });
 
             if (error) {
-                console.warn('RPC get_random_rpg_questions not found, falling back to basic fetch');
+                console.warn('RPC get_random_rpg_questions not found, using random range fallback');
+
+                // Get total count for random offset
+                const { count } = await supabase.from('rpg_questions').select('*', { count: 'exact', head: true });
+                const total = count || 800;
+                const offset = Math.floor(Math.random() * Math.max(0, total - 50));
+
                 const result = await supabase
                     .from('rpg_questions')
                     .select('*')
-                    .limit(50)
-                    .order('created_at', { ascending: false });
+                    .range(offset, offset + 49);
                 data = result.data;
                 error = result.error;
             }
@@ -64,7 +71,7 @@ export const PracticeView: React.FC = () => {
                 return;
             }
 
-            // Shuffle the questions array
+            // Shuffle the questions array for extra randomness
             const shuffled = (data || []).sort(() => Math.random() - 0.5);
             setQuestions(shuffled);
             setLoading(false);
@@ -112,7 +119,8 @@ export const PracticeView: React.FC = () => {
 
         // Map the clicked index back to the original index
         const originalIndex = shuffledIndex === -1 ? -1 : currentChoices[shuffledIndex].originalIndex;
-        const correct = originalIndex === question.answer_key;
+        // Access .correct property from answer_key object
+        const correct = originalIndex === Number(question.answer_key?.correct);
 
         setSelectedAnswer(shuffledIndex);
         setIsCorrect(correct);
@@ -336,7 +344,7 @@ export const PracticeView: React.FC = () => {
                             let buttonClass = 'w-full p-4 rounded-xl border text-left transition-all ';
 
                             if (showResult) {
-                                if (choiceObj.originalIndex === question.answer_key) {
+                                if (choiceObj.originalIndex === Number(question.answer_key?.correct)) {
                                     buttonClass += 'border-green-500 bg-green-500/20 text-green-200';
                                 } else if (index === selectedAnswer && !isCorrect) {
                                     buttonClass += 'border-red-500 bg-red-500/20 text-red-200';
@@ -361,7 +369,7 @@ export const PracticeView: React.FC = () => {
                                             {String.fromCharCode(65 + index)}
                                         </span>
                                         <span className="flex-1">{choiceObj.text}</span>
-                                        {showResult && choiceObj.originalIndex === question.answer_key && (
+                                        {showResult && choiceObj.originalIndex === Number(question.answer_key?.correct) && (
                                             <CheckCircle className="w-6 h-6 text-green-400" />
                                         )}
                                         {showResult && index === selectedAnswer && !isCorrect && (

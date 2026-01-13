@@ -19,16 +19,17 @@ def parse_questions(filename):
             if current_q:
                 questions.append(current_q)
             current_q = {
-                'prompt': q_match.group(2),
+                'prompt': q_match.group(2).strip(),
                 'choices': [],
                 'answer': None
             }
             continue
             
-        c_match = re.match(r'^([A-D])\)\s+(.*?)(?:\s+\*)?$', line_stripped)
+        c_match = re.match(r'^([A-D])\)\s+(.*)$', line_stripped)
         if c_match and current_q:
-            choice_text = c_match.group(2).strip()
-            is_correct = '*' in line_stripped[line_stripped.find(')') :]
+            choice_raw = c_match.group(2).strip()
+            is_correct = choice_raw.endswith('*')
+            choice_text = choice_raw.rstrip('*').strip()
             
             if is_correct:
                 current_q['answer'] = len(current_q['choices'])
@@ -53,7 +54,8 @@ def generate_data(questions):
                 'choices': q['choices'],
                 'questionType': 'mcq'
             },
-            'answer_key': str(q['answer']),
+            # Edge Function expects an object like { "correct": 0 }
+            'answer_key': { 'correct': q['answer'] },
             'difficulty': 3,
             'subject_tag': 'glossary',
             'is_active': True
