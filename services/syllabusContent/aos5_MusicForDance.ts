@@ -1,5 +1,5 @@
-
 import { SyllabusItem } from '../../types';
+import { tangoQuiz, salsaQuiz, edmQuiz } from '../quizData';
 import { aos5DetailedContent } from './aosDetailedContent';
 
 export const musicForDanceAoS: SyllabusItem = {
@@ -14,10 +14,55 @@ export const musicForDanceAoS: SyllabusItem = {
   children: [
     {
       id: 'aos5-tango', title: 'Focus Area: Tango', title_zh: '重点领域：探戈', path: '/areas-of-study/dance/tango',
-      content: 'Passionate dance music from Argentina.',
-      content_zh: '来自阿根廷的充满激情的舞曲。',
-      longDescription: `Tango is a dramatic and passionate dance and music style from Buenos Aires, Argentina. We will learn about its history, characteristic rhythms like the habanera, and important instruments like the bandoneon.`,
-      longDescription_zh: `探戈是一种来自阿根廷布宜诺斯艾利斯的戏剧性且充满激情的舞蹈和音乐风格。我们将学习它的历史、哈巴涅拉等特色节奏，以及班多钮手风琴等重要乐器。`
+      content: 'Passional dance music from Argentina with a distinct rhythmic pulse.',
+      content_zh: '来自阿根廷的充满激情的舞曲，具有独特的节奏律动。',
+      quiz: tangoQuiz,
+      longDescription: `
+<section>
+  <p>Tango is one of the most famous and dramatic dance styles in the world, originating in the late 19th century in the suburbs of <strong>Buenos Aires</strong> (Argentina) and <strong>Montevideo</strong> (Uruguay).</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Key Musical Features</h3>
+      <ul>
+        <li><strong>Time Signature:</strong> 2/4 or 4/4 with a steady, driving pulse.</li>
+        <li><strong>Articulation:</strong> Heavy use of <strong>staccato</strong> and sharp accents (Marcato).</li>
+        <li><strong>Rhythm:</strong> The foundational <strong>Habanera</strong> rhythm and heavy syncopation.</li>
+        <li><strong>Dynamics:</strong> Sudden, dramatic shifts between very quiet and very loud.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The "Sexteto Típico"</h3>
+      <p>A traditional Tango ensemble usually includes:</p>
+      <ul>
+        <li><strong>Two Violins</strong> (playing in octaves for a thick sound).</li>
+        <li><strong>Two Bandoneóns</strong> (the essential "soul" of Tango).</li>
+        <li><strong>Piano</strong> (providing percussive rhythmic support).</li>
+        <li><strong>Double Bass</strong> (emphasizing the strong beats).</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Musical Example: The Habanera Rhythm</h2>
+  <p>The Habanera is a syncopated rhythmic pattern that provides the characteristic "hop" or "limp" to the Tango pulse. Listen for the dotted eighth note followed by the sixteenth note.</p>
+
+  <div class="abc-score-container card p-6 bg-white dark:bg-slate-800 overflow-x-auto shadow-inner border-2 border-slate-100 dark:border-slate-700">
+    <div class="abc-score" data-abc='
+X:1
+T:Tango Habanera Rhythm
+M:2/4
+L:1/8
+K:C
+G\u003eF EE | G\u003eF EE ||
+w: 1-and-a 2-and | 1-and-a 2-and
+'></div>
+  </div>
+
+  <h3>Astor Piazzolla and "Nuevo Tango"</h3>
+  <p>In the 1950s, <strong>Astor Piazzolla</strong> revolutionized the genre by blending traditional Tango with elements of Jazz and Classical music, introducing dissonance, complex counterpoint, and concert-style arrangements.</p>
+</section>
+`,
+      longDescription_zh: `探戈是世界上最著名且最具戏剧性的舞蹈风格之一，19世纪末起源于阿根廷布宜诺斯艾利斯和乌拉圭蒙得维的亚的郊区。探戈音乐以其强烈的节奏感、戏剧性的动态变化以及班多钮手风琴独特的音色而闻名。关键特征包括2/4或4/4拍子、大量使用断奏和重音，以及基础的哈巴涅拉节奏。`
     },
     {
       id: 'bandoneon', title: 'Bandoneon', title_zh: '班多钮手风琴', path: '/term/bandoneon', isTerm: true,
@@ -28,10 +73,51 @@ export const musicForDanceAoS: SyllabusItem = {
     },
     {
       id: 'aos5-salsa', title: 'Focus Area: Salsa', title_zh: '重点领域：萨尔萨', path: '/areas-of-study/dance/salsa',
-      content: 'Lively dance music from Latin America.',
-      content_zh: '来自拉丁美洲的活泼舞曲。',
-      longDescription: `Salsa is energetic dance music that came from Cuban and Puerto Rican communities in New York. It has exciting rhythms, often uses call-and-response vocals, and features instruments like congas, timbales, and a horn section (trumpets and trombones).`,
-      longDescription_zh: `萨尔萨是源自纽约古巴和波多黎各社区的充满活力的舞曲。它有令人兴奋的节奏，经常使用呼应式唱法，并以康加鼓、廷巴鼓和号角组（小号和长号）等乐器为特色。`
+      content: 'High-energy Latin dance music built on the Clave rhythm.',
+      content_zh: '基于克拉维节奏的高能量拉丁舞曲。',
+      quiz: salsaQuiz,
+      longDescription: `
+<section>
+  <p>Salsa is an energetic, polyrhythmic dance music that emerged in the 1960s, primarily in <strong>New York City</strong>, through the blending of Cuban (Son), Puerto Rican, and American Jazz influences.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>The Core: The Clave</h3>
+      <p>The <strong>Clave</strong> is the rhythmic foundation. All other parts must align with it. The most common is the "Son Clave," which can be 3-2 or 2-3.</p>
+      <ul>
+        <li><strong>Structural Rhythm:</strong> A two-measure pattern.</li>
+        <li><strong>Instruments:</strong> Claves (wooden sticks).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Key Sections</h3>
+      <ul>
+        <li><strong>Verse (Cuerpo):</strong> The narrative part of the song.</li>
+        <li><strong>Montuno:</strong> The high-energy section featuring call-and-response and solos.</li>
+        <li><strong>Mambo/Moña:</strong> Powerful brass riffs between vocal sections.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Musical Example: The 2-3 Son Clave</h2>
+  <p>Notice the syncopated "3" side and the steady "2" side. This pattern keeps the entire band in sync.</p>
+
+  <div class="abc-score-container card p-6 bg-white dark:bg-slate-800 overflow-x-auto shadow-inner border-2 border-slate-100 dark:border-slate-700">
+    <div class="abc-score" data-abc='
+X:1
+T:2-3 Son Clave
+M:4/4
+L:4
+K:C
+z c c z | c z c z ||
+'></div>
+  </div>
+
+  <h3>Instrumentation</h3>
+  <p>Salsa features a rich percussion section: <strong>Congas</strong> (playing the Tumbao), <strong>Timbales</strong> (leading sections with cowbells), and <strong>Bongos</strong> (Martillo rhythm). The harmonic foundation is provided by the <strong>Piano montuno</strong> and the <strong>anticipated bass</strong>.</p>
+</section>
+`,
+      longDescription_zh: `萨尔萨是一种充满活力的复节奏舞曲，20世纪60年代主要出现在纽约市，融合了古巴（颂乐）、波多黎各和美国爵士乐的影响。克拉维（Clave）节奏是萨尔萨的灵魂，所有其他乐器声部都必须与其保持一致。`
     },
     {
       id: 'claves-cuatro', title: 'Clavés and Cuatro', title_zh: '音棒与四弦吉他', path: '/term/claves-cuatro', isTerm: true,
@@ -42,10 +128,38 @@ export const musicForDanceAoS: SyllabusItem = {
     },
     {
       id: 'aos5-edm', title: 'Focus Area: EDM (Electronic Dance Music)', title_zh: '重点领域：电子舞曲 (EDM)', path: '/areas-of-study/dance/edm',
-      content: 'Music made with computers for dancing.',
-      content_zh: '用电脑制作的舞曲。',
-      longDescription: `Electronic Dance Music (EDM) is made using electronic instruments like synthesisers, drum machines, and computers. It has many subgenres (like House, Techno, Trance) and features like a strong beat ("four-to-the-floor"), builds, and drops to create energy on the dancefloor.`,
-      longDescription_zh: `电子舞曲（EDM）是使用合成器、鼓机和电脑等电子乐器制作的。它有许多子流派（如浩室、铁克诺、出神），并具有强劲的"四四拍"节拍、高潮构建和高潮释放等特点，以在舞池中创造能量。`
+      content: 'Modern dance music produced using digital technology.',
+      content_zh: '使用数字技术制作的现代舞曲。',
+      quiz: edmQuiz,
+      longDescription: `
+<section>
+  <p>Electronic Dance Music (EDM) covers a vast range of genres (House, Techno, Trance, Dubstep, DnB) united by their production method: the use of <strong>Digital Audio Workstations (DAWs)</strong> and synthesizers.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Key Production Techniques</h3>
+      <ul>
+        <li><strong>Four-on-the-floor:</strong> A steady kick on every beat (120-130 BPM in House).</li>
+        <li><strong>Build-ups:</strong> Increasing tension through rising pitch and faster rhythms.</li>
+        <li><strong>The Drop:</strong> The climax where the full beat and main melody return.</li>
+        <li><strong>Sidechaining:</strong> "Pumping" effect where bass ducks under the kick.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Electronic Elements</h3>
+      <ul>
+        <li><strong>Synthesizers:</strong> Creating Lead, Pad, and Bass sounds.</li>
+        <li><strong>Drum Machines:</strong> Iconic sounds like the TR-808 and TR-909.</li>
+        <li><strong>Sampling:</strong> Reusing recorded sounds (vocals, loops) in new ways.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Structure and Flow</h2>
+  <p>EDM tracks are often built for <strong>Club Mixing</strong>, featuring an intro/outro with minimal percussion to allow DJs to blend tracks. The energy is managed through carefully placed "Breakdowns" where beats drop out, followed by "Builds" and the final "Drop."</p>
+</section>
+`,
+      longDescription_zh: `电子舞曲（EDM）涵盖了广泛的流派（如浩室、铁克诺、出神、回响贝斯），它们通过相同的制作方法联系在一起：使用数字音频工作站（DAW）和合成器。核心技术包括“四四拍”踢鼓节奏、高潮构建、高潮释放和侧链压缩等。`
     },
     {
       id: 'synthesizer-daw', title: 'Synthesisers and DAWs', title_zh: '合成器与数字音频工作站', path: '/term/synthesizer-daw', isTerm: true,
