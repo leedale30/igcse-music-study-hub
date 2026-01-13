@@ -11,17 +11,10 @@ export default defineConfig(({ mode }) => {
       build: {
         chunkSizeWarningLimit: 2000, // Increase limit to reduce warnings for large chunks
         rollupOptions: {
+          // Manual chunks removed to prevent circular dependency issues during load
+          // Vite will handle splitting automatically based on dynamic imports and graph analysis
           output: {
-            manualChunks: {
-              vendor: ['react', 'react-dom', 'react-router-dom'],
-              // Split music libraries into their own chunks
-              magenta: ['@magenta/music'],
-              tone: ['tone'],
-              sheet: ['abcjs', 'vexflow', 'opensheetmusicdisplay'],
-              midi: ['html-midi-player', 'midi-parser-js'],
-              // UI libraries
-              ui: ['@iconify/react', 'marked', 'lucide-react', 'framer-motion']
-            }
+             manualChunks: undefined
           },
           // Suppress eval warnings from third-party libraries
           onwarn(warning, warn) {

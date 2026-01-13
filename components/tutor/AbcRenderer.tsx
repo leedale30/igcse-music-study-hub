@@ -1,17 +1,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Play, Pause, RefreshCw, Maximize2, X, Download, FileDown, FileText, Loader2, AlertCircle } from 'lucide-react';
+import abcjs from 'abcjs';
 
 interface Props {
     abc: string;
     id: string;
-}
-
-declare global {
-    interface Window {
-        ABCJS: any;
-        webkitAudioContext: typeof AudioContext;
-    }
 }
 
 // Timeout wrapper for promises
@@ -77,10 +71,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Inline Rendering
     useEffect(() => {
-        if (!paperRef.current || !window.ABCJS) {
-            setRenderError('ABC.js library not loaded');
-            return;
-        }
+        if (!paperRef.current) return;
 
         setIsAudioReady(false);
         setAudioError(false);
@@ -90,7 +81,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         try {
             const cleanedAbc = cleanAbc(abc);
 
-            const vObj = window.ABCJS.renderAbc(paperRef.current, cleanedAbc, {
+            const vObj = abcjs.renderAbc(paperRef.current, cleanedAbc, {
                 responsive: 'resize',
                 add_classes: true,
                 paddingtop: 10,
@@ -113,9 +104,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             setVisualObj(vObj[0]);
 
             // Initialize audio
-            if (window.ABCJS.synth && window.ABCJS.synth.supportsAudio()) {
-                const synth = new window.ABCJS.synth.CreateSynth();
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            if (abcjs.synth.supportsAudio()) {
+                const synth = new abcjs.synth.CreateSynth();
+                const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
 
                 withTimeout(
                     synth.init({
@@ -150,7 +141,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Fullscreen Rendering when active
     useEffect(() => {
-        if (!isFullscreen || !modalPaperRef.current || !window.ABCJS) return;
+        if (!isFullscreen || !modalPaperRef.current) return;
 
         setIsModalAudioReady(false);
         setModalSynthControl(null);
@@ -159,7 +150,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             try {
                 const cleanedAbc = cleanAbc(abc);
 
-                const vObj = window.ABCJS.renderAbc(modalPaperRef.current, cleanedAbc, {
+                const vObj = abcjs.renderAbc(modalPaperRef.current, cleanedAbc, {
                     responsive: 'resize',
                     add_classes: true,
                     scale: 1.3,
@@ -175,9 +166,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     }
                 });
 
-                if (vObj && vObj.length > 0 && window.ABCJS.synth && window.ABCJS.synth.supportsAudio()) {
-                    const synth = new window.ABCJS.synth.CreateSynth();
-                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                if (vObj && vObj.length > 0 && abcjs.synth.supportsAudio()) {
+                    const synth = new abcjs.synth.CreateSynth();
+                    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
 
                     synth.init({
                         audioContext: audioContext,
@@ -234,9 +225,9 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
         setIsAudioReady(false);
         // Force re-render by triggering the effect
         const cleanedAbc = cleanAbc(abc);
-        if (visualObj && window.ABCJS.synth && window.ABCJS.synth.supportsAudio()) {
-            const synth = new window.ABCJS.synth.CreateSynth();
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if (visualObj && abcjs.synth.supportsAudio()) {
+            const synth = new abcjs.synth.CreateSynth();
+            const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
 
             synth.init({
                 audioContext: audioContext,
@@ -256,14 +247,14 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
     };
 
     const downloadMidi = () => {
-        if (!visualObj || !window.ABCJS) {
+        if (!visualObj) {
             alert("Score not ready. Please wait for it to load.");
             return;
         }
 
         try {
             // Use link format which is more reliable
-            const midi = window.ABCJS.synth.getMidiFile(visualObj, {
+            const midi = abcjs.synth.getMidiFile(visualObj, {
                 midiOutputType: "link",
                 fileName: `maestro-${id}`
             });
@@ -275,7 +266,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                 document.body.removeChild(midi);
             } else {
                 // Fallback to binary
-                const midiBinary = window.ABCJS.synth.getMidiFile(visualObj, { midiOutputType: "binary" });
+                const midiBinary = abcjs.synth.getMidiFile(visualObj, { midiOutputType: "binary" });
                 if (midiBinary && midiBinary.length > 0) {
                     const blob = new Blob([midiBinary], { type: "audio/midi" });
                     const url = window.URL.createObjectURL(blob);
