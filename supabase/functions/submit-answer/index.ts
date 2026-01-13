@@ -127,15 +127,27 @@ serve(async (req) => {
         }
 
         // Validate answer against answer_key
-        const answerKey: AnswerKey = question.answer_key
+        const answerKey = question.answer_key
         let isCorrect = false
 
         if (question.type === 'mcq' || question.type === 'audio' || question.type === 'listening') {
             // MCQ: check if answer matches correct index
-            isCorrect = answer === answerKey.correct
+            // Handle both legacy (integer) and new (object) formats
+            let correctIndex: number = -1;
+
+            if (typeof answerKey === 'number') {
+                correctIndex = answerKey;
+            } else if (typeof answerKey === 'object' && answerKey !== null) {
+                // Check for 'correct' property (number or string)
+                if (answerKey.correct !== undefined) {
+                    correctIndex = Number(answerKey.correct);
+                }
+            }
+
+            isCorrect = answer === correctIndex;
         } else if (question.type === 'short') {
             // Short answer: check if answer matches any acceptable answer
-            if (answerKey.text && Array.isArray(answerKey.text)) {
+            if (answerKey && typeof answerKey === 'object' && answerKey.text && Array.isArray(answerKey.text)) {
                 const normalizedAnswer = String(answer).toLowerCase().trim()
                 isCorrect = answerKey.text.some(
                     (acceptable: string) => acceptable.toLowerCase().trim() === normalizedAnswer

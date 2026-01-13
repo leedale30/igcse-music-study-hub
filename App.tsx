@@ -69,6 +69,7 @@ const BattleView = lazy(() => import('./components/rpg/BattleView').then(m => ({
 const ResultsView = lazy(() => import('./components/rpg/ResultsView').then(m => ({ default: m.ResultsView })));
 const PracticeView = lazy(() => import('./components/rpg/PracticeView').then(m => ({ default: m.PracticeView })));
 const CharacterSheet = lazy(() => import('./components/rpg/CharacterSheet').then(m => ({ default: m.CharacterSheet })));
+const InventoryView = lazy(() => import('./components/rpg/InventoryView').then(m => ({ default: m.InventoryView })));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -184,6 +185,7 @@ const App: React.FC = () => {
                       <Route path="/rpg/results/:matchId" element={<ResultsView />} />
                       <Route path="/rpg/practice" element={<PracticeView />} />
                       <Route path="/rpg/character" element={<CharacterSheet />} />
+                      <Route path="/rpg/inventory" element={<InventoryView />} />
 
                       {/* Catch-all route - protected */}
                       <Route path="*" element={<GenericPage />} />

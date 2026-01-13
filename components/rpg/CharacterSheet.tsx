@@ -12,6 +12,7 @@ import {
     ATTRIBUTE_INFO, CLASS_INFO, CURRENCY_INFO
 } from '../../types/rpg_classes';
 import { getPlayerStats, getClasses, selectClass, allocateAttributePoint } from '../../services/classService';
+import { supabase } from '../../lib/supabase';
 
 export const CharacterSheet: React.FC = () => {
     const { user } = useAuth();
@@ -44,6 +45,49 @@ export const CharacterSheet: React.FC = () => {
         }
 
         setLoading(false);
+    };
+
+    const handleAvatarUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (!event.target.files || event.target.files.length === 0) return;
+        if (!user) return;
+
+        const file = event.target.files[0];
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${user.id}-${Math.random()}.${fileExt}`;
+        const filePath = `${fileName}`;
+
+        try {
+            setLoading(true);
+
+            // 1. Upload to Supabase Storage
+            const { error: uploadError } = await supabase.storage
+                .from('avatars')
+                .upload(filePath, file);
+
+            if (uploadError) throw uploadError;
+
+            // 2. Get Public URL
+            const { data: { publicUrl } } = supabase.storage
+                .from('avatars')
+                .getPublicUrl(filePath);
+
+            // 3. Update Profile
+            // Check if profile has avatar_url column first implicitly by trying update
+            const { error: updateError } = await supabase
+                .from('profiles')
+                .update({ avatar_url: publicUrl })
+                .eq('id', user.id);
+
+            if (updateError) throw updateError;
+
+            await loadData(); // Reload to see change
+
+        } catch (error) {
+            console.error('Error uploading avatar:', error);
+            alert('Failed to upload avatar. Ensure the database migration has been run.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleClassSelect = async (classId: string) => {
@@ -106,7 +150,26 @@ export const CharacterSheet: React.FC = () => {
                     >
                         <div className="flex items-start justify-between">
                             <div className="flex items-center gap-4">
-                                <div className="text-5xl">{selectedClass?.icon || '❓'}</div>
+                                <div className="relative group">
+                                    <div className="w-24 h-24 rounded-full border-4 border-white/10 bg-black/40 overflow-hidden flex items-center justify-center">
+                                        {(stats as any)?.avatar_url ? (
+                                            <img src={(stats as any).avatar_url} alt="Avatar" className="w-full h-full object-cover" />
+                                        ) : (
+                                            <div className="text-4xl">{selectedClass?.icon || '❓'}</div>
+                                        )}
+                                    </div>
+                                    <label className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-full cursor-pointer transition-opacity">
+                                        <div className="text-xs font-bold text-white flex flex-col items-center">
+                                            <span>Change</span>
+                                        </div>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            className="hidden"
+                                            onChange={handleAvatarUpload}
+                                        />
+                                    </label>
+                                </div>
                                 <div>
                                     <h2 className="text-2xl font-bold">{selectedClass?.name || 'No Class'}</h2>
                                     <p className="text-white/60">{selectedClass?.specialty}</p>
