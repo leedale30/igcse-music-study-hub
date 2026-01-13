@@ -1,28 +1,23 @@
 
 import React, { useEffect, useRef } from 'react';
+import Vex from 'vexflow';
 
 interface Props {
     data: string;
     id: string;
 }
 
-declare global {
-    interface Window {
-        Vex: any;
-    }
-}
-
 export const VexTabRenderer: React.FC<Props> = ({ data, id }) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!containerRef.current || !window.Vex) return;
+        if (!containerRef.current) return;
 
         const container = containerRef.current;
         container.innerHTML = '';
 
         try {
-            const VF = window.Vex.Flow;
+            const VF = Vex.Flow;
             const width = 500;
             const height = 200;
 

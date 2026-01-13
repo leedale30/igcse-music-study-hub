@@ -15,10 +15,10 @@ export default defineConfig(({ mode }) => {
             manualChunks: {
               vendor: ['react', 'react-dom', 'react-router-dom'],
               // Separate music libraries into their own chunks
-              music: ['tone', '@magenta/music'],
+              music: ['tone', '@magenta/music', 'abcjs', 'vexflow'],
               midi: ['html-midi-player'],
               // UI libraries
-              ui: ['@iconify/react']
+              ui: ['@iconify/react', 'marked']
             }
           },
           // Suppress eval warnings from third-party libraries

@@ -1,28 +1,23 @@
 
 import React, { useEffect, useRef } from 'react';
+import Vex from 'vexflow';
 
 interface Props {
     data: string;
     id: string;
 }
 
-declare global {
-    interface Window {
-        Vex: any;
-    }
-}
-
 export const VexFlowRenderer: React.FC<Props> = ({ data, id }) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!containerRef.current || !window.Vex) return;
+        if (!containerRef.current) return;
 
         const container = containerRef.current;
         container.innerHTML = ''; // Clear previous render
 
         try {
-            const VF = window.Vex?.Flow;
+            const VF = Vex.Flow;
 
             // Guard: Ensure VexFlow is fully loaded
             if (!VF || !VF.Factory) {

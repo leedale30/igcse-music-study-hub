@@ -213,7 +213,7 @@ export const artSongQuiz: Quiz = {
             text: "What is 'Tessitura'?",
             options: [
                 { id: 'asq18a1', text: 'The speed of the song.' },
-                { id: 'asq18a2', text: 'The general range or 'home' area of a vocal part.' },
+                  { id: 'asq18a2', text: "The general range or 'home' area of a vocal part." },
                 { id: 'asq18a3', text: 'A type of piano pedal.' },
                 { id: 'asq18a4', text: 'The language of the text.' },
             ],

@@ -289,8 +289,7 @@ w: Frè-re Jac-ques, Frè-re Jac-ques, dor-mez-vous? dor-mez-vous?
     <p>Listen for: The verse-chorus-bridge structure and the use of modern production (reverb, build-ups).</p>
   </div>
 </section>
-`
-    },
+`,
     longDescription_zh: `以下是一些以不同方式结合文字和音乐的关键范例。聆听这些将帮助您理解每个重点领域的特征。
 
 *   **艺术歌曲：** **拉尔夫·沃恩·威廉姆斯 – 《旅行之歌》**

@@ -6,14 +6,7 @@ import { AbcRenderer } from './AbcRenderer';
 import { VexFlowRenderer } from './VexFlowRenderer';
 import { MusFretsRenderer } from './MusFretsRenderer';
 import { VexTabRenderer } from './VexTabRenderer';
-
-declare global {
-    interface Window {
-        marked: {
-            parse: (text: string) => string;
-        };
-    }
-}
+import { marked } from 'marked';
 
 interface Props {
     isWidget?: boolean;
@@ -180,12 +173,7 @@ export const ChatInterface: React.FC<Props> = ({ isWidget = false, initialContex
                 } else {
                     if (!part.trim()) return;
 
-                    let htmlContent = "";
-                    if (window.marked) {
-                        htmlContent = window.marked.parse(part);
-                    } else {
-                        htmlContent = `<p>${part}</p>`;
-                    }
+                    const htmlContent = marked.parse(part) as string;
 
                     contentElements.push(
                         <div
