@@ -13,7 +13,7 @@ export const musicForDanceAoS: SyllabusItem = {
   longDescription_zh: `这个领域全是关于为舞蹈创作的音乐。我们将学习三种不同的风格：来自阿根廷的探戈、来自拉丁美洲的萨尔萨，以及当今流行的电子舞曲（EDM）。您将了解它们独特的节奏、乐器，以及它们在社交活动和表演中的应用方式。`,
   children: [
     {
-      id: 'aos5-tango', title: 'Focus Area: Tango', title_zh: '重点领域：探戈', path: '/areas-of-study/aos5-music-for-dance/tango',
+      id: 'aos5-tango', title: 'Focus Area: Tango', title_zh: '重点领域：探戈', path: '/areas-of-study/dance/tango',
       content: 'Passionate dance music from Argentina.',
       content_zh: '来自阿根廷的充满激情的舞曲。',
       longDescription: `Tango is a dramatic and passionate dance and music style from Buenos Aires, Argentina. We will learn about its history, characteristic rhythms like the habanera, and important instruments like the bandoneon.`,
@@ -27,7 +27,7 @@ export const musicForDanceAoS: SyllabusItem = {
       longDescription_zh: `班多钮手风琴是一种六角手风琴（类似于用按钮代替键盘的手风琴），对探戈音乐的声音至关重要。它可以演奏旋律与和弦，并具有非常富有表现力的声音。`
     },
     {
-      id: 'aos5-salsa', title: 'Focus Area: Salsa', title_zh: '重点领域：萨尔萨', path: '/areas-of-study/aos5-music-for-dance/salsa',
+      id: 'aos5-salsa', title: 'Focus Area: Salsa', title_zh: '重点领域：萨尔萨', path: '/areas-of-study/dance/salsa',
       content: 'Lively dance music from Latin America.',
       content_zh: '来自拉丁美洲的活泼舞曲。',
       longDescription: `Salsa is energetic dance music that came from Cuban and Puerto Rican communities in New York. It has exciting rhythms, often uses call-and-response vocals, and features instruments like congas, timbales, and a horn section (trumpets and trombones).`,
@@ -41,7 +41,7 @@ export const musicForDanceAoS: SyllabusItem = {
       longDescription_zh: `音棒是两根木棍，在萨尔萨中演奏一种名为克拉维节奏的关键节奏型。四弦吉他是一种有十根弦的小型吉他类乐器，在影响了萨尔萨的波多黎各音乐中很常见。`
     },
     {
-      id: 'aos5-edm', title: 'Focus Area: EDM (Electronic Dance Music)', title_zh: '重点领域：电子舞曲 (EDM)', path: '/areas-of-study/aos5-music-for-dance/edm',
+      id: 'aos5-edm', title: 'Focus Area: EDM (Electronic Dance Music)', title_zh: '重点领域：电子舞曲 (EDM)', path: '/areas-of-study/dance/edm',
       content: 'Music made with computers for dancing.',
       content_zh: '用电脑制作的舞曲。',
       longDescription: `Electronic Dance Music (EDM) is made using electronic instruments like synthesisers, drum machines, and computers. It has many subgenres (like House, Techno, Trance) and features like a strong beat ("four-to-the-floor"), builds, and drops to create energy on the dancefloor.`,
@@ -55,7 +55,7 @@ export const musicForDanceAoS: SyllabusItem = {
       longDescription_zh: `合成器创造电子声音。数字音频工作站（DAW）是用于录制、编辑和制作电子舞曲曲目的计算机程序。这些是电子舞曲艺术家的关键工具。`
     },
     {
-      id: 'aos5-starting-points', title: 'Starting Points (Wider Listening)', title_zh: '起点 (扩展聆听)', path: '/areas-of-study/aos5-music-for-dance/starting-points',
+      id: 'aos5-starting-points', title: 'Starting Points (Wider Listening)', title_zh: '起点 (扩展聆听)', path: '/areas-of-study/dance/starting-points',
       content: 'Examples of dance music to listen to.',
       content_zh: '可供聆听的舞曲范例。',
       longDescription: `Listen to these examples: Piazzolla's "Libertango" (Tango), Hector Lavoe's "El Cantante" (Salsa), and F-777's "Viking Arena" (EDM).`,

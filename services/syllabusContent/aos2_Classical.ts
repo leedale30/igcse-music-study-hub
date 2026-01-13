@@ -20,7 +20,7 @@ export const classicalMusicAoS: SyllabusItem = {
       id: 'aos2-introduction',
       title: 'Introduction',
       title_zh: '简介',
-      path: '/areas-of-study/aos2-classical-music/introduction',
+      path: '/areas-of-study/classical/introduction',
       content: 'An Introduction to the Classical Era (c. 1750 – c. 1820).',
       content_zh: '古典时代简介 (约 1750 – 约 1820)。',
       longDescription: `**The Classical Era: An Age of Elegance, Clarity, and Reason (c. 1750 – c. 1820)**
@@ -108,7 +108,7 @@ The Classical era emphasized elegance, clarity, formal balance, and emotional re
       quiz: classicalIntroductionQuiz
     },
     {
-      id: 'aos2-mozart', title: 'Focus Work: Mozart (1756–1791)', title_zh: '重点作品：莫扎特 (1756–1791)', path: '/areas-of-study/aos2-classical-music/mozart',
+      id: 'aos2-mozart', title: 'Focus Work: Mozart (1756–1791)', title_zh: '重点作品：莫扎特 (1756–1791)', path: '/areas-of-study/classical/mozart',
       content: 'Learn about Wolfgang Amadeus Mozart.',
       content_zh: '了解沃尔夫冈·阿玛多伊斯·莫扎特。',
       longDescription: `Wolfgang Amadeus Mozart was a brilliant composer of the Classical period. We will study his "Quintet for piano and winds, K. 452" to understand his style for chamber music, and also explore his extraordinary life.`,
@@ -118,7 +118,7 @@ The Classical era emphasized elegance, clarity, formal balance, and emotional re
           id: 'aos2-mozart-background',
           title: 'Mozart: Life and Times',
           title_zh: '莫扎特：生平与时代',
-          path: '/areas-of-study/aos2-classical-music/mozart/background',
+          path: '/areas-of-study/classical/mozart/background',
           content: 'Explore the extraordinary life of Wolfgang Amadeus Mozart, from child prodigy to master composer.',
           content_zh: '探索沃尔夫冈·阿玛多伊斯·莫扎特的非凡一生，从神童到作曲大师。',
           longDescription: `Wolfgang Amadeus Mozart (1756–1791) is one of the most famous and influential composers of the Classical period, and indeed, in all of Western music history. His life, though short, was filled with extraordinary musical achievements.
@@ -178,14 +178,14 @@ Though his life was cut short, Wolfgang Amadeus Mozart left an indelible mark on
           quiz: mozartLifeQuiz
         },
         {
-          id: 'aos2-mozart-quintet', title: 'Quintet for piano and winds in E flat major, K. 452', title_zh: '降E大调钢琴与管乐五重奏, K. 452', path: '/areas-of-study/aos2-classical-music/mozart/quintet-k452',
+          id: 'aos2-mozart-quintet', title: 'Quintet for piano and winds in E flat major, K. 452', title_zh: '降E大调钢琴与管乐五重奏, K. 452', path: '/areas-of-study/classical/mozart/quintet-k452',
           content: 'Study Mozart\'s Quintet.',
           content_zh: '学习莫扎特的五重奏。',
           longDescription: `This section is about Mozart's Quintet for piano, oboe, clarinet, horn, and bassoon. We will look at its movements and how Mozart writes for these instruments together.`,
           longDescription_zh: `本节关于莫扎特的钢琴、双簧管、单簧管、圆号和巴松管五重奏。我们将探讨其乐章以及莫扎特如何为这些乐器共同谱曲。`,
           children: [
             {
-              id: 'aos2-mozart-quintet-mvt1', title: 'Movement 1 (Largo – Allegro moderato)', title_zh: '第一乐章 (广板 – 中庸的快板)', path: '/areas-of-study/aos2-classical-music/mozart/quintet-k452/movement-1',
+              id: 'aos2-mozart-quintet-mvt1', title: 'Movement 1 (Largo – Allegro moderato)', title_zh: '第一乐章 (广板 – 中庸的快板)', path: '/areas-of-study/classical/mozart/quintet-k452/movement-1',
               content: 'The first part of the Quintet. Largo means slow, Allegro moderato means moderately fast.',
               content_zh: '五重奏的第一部分。Largo意为缓慢，Allegro moderato意为中速的快板。',
               longDescription: `Let's explore the first movement of Mozart's Quintet. It starts with a slow introduction (Largo) and then moves to a faster main section (Allegro moderato). We will study its structure, especially Sonata Form.`,
@@ -210,7 +210,7 @@ Though his life was cut short, Wolfgang Amadeus Mozart left an indelible mark on
       longDescription_zh: `室内乐是为一小组音乐家创作的音乐，通常每个声部只有一名演奏者。例子有弦乐四重奏（两把小提琴、一把中提琴、一把大提琴）和钢琴三重奏（钢琴、小提琴、大提琴）。它在古典时期非常流行，适合在小房间里演奏，而不是在大型音乐厅。`
     },
     {
-      id: 'aos2-key-features', title: 'Key Classical Features', title_zh: '主要古典特征', path: '/areas-of-study/aos2-classical-music/key-features',
+      id: 'aos2-key-features', title: 'Key Classical Features', title_zh: '主要古典特征', path: '/areas-of-study/classical/key-features',
       content: 'Important musical ideas from the Classical period.',
       content_zh: '古典时期的重要音乐理念。',
       longDescription: `Classical music has its own special features. This includes balanced melodies (tunes), clear structures, and more use of gradual changes in dynamics (like crescendo and diminuendo) compared to Baroque music.`,
@@ -218,7 +218,7 @@ Though his life was cut short, Wolfgang Amadeus Mozart left an indelible mark on
       children: []
     },
     {
-      id: 'aos2-wider-listening', title: 'Wider Listening', title_zh: '扩展聆听', path: '/areas-of-study/aos2-classical-music/wider-listening',
+      id: 'aos2-wider-listening', title: 'Wider Listening', title_zh: '扩展聆听', path: '/areas-of-study/classical/wider-listening',
       content: 'More Classical music to listen to.',
       content_zh: '更多可供聆听的古典音乐。',
       longDescription: `To understand Classical music better, listen to different pieces. This page suggests works by Haydn, Mozart, and Beethoven. This will help you hear the style in different types of music like symphonies and concertos.`,

@@ -13,7 +13,7 @@ export const smallEnsembleAoS: SyllabusItem = {
   longDescription_zh: `合奏团是一群音乐家。这个领域着眼于来自不同文化的小型团体音乐。我们将学习中国的丝竹乐团、北印度的印度斯坦古典音乐，以及阿拉伯的塔赫特乐团。您将发现它们独特的乐器、音乐特征，以及音乐是如何演奏和传承的。`,
   children: [
     {
-      id: 'aos6-silk-bamboo', title: 'Focus Area: Silk and Bamboo Ensembles (China)', title_zh: '重点领域：丝竹乐团 (中国)', path: '/areas-of-study/aos6-small-ensemble/silk-bamboo',
+      id: 'aos6-silk-bamboo', title: 'Focus Area: Silk and Bamboo Ensembles (China)', title_zh: '重点领域：丝竹乐团 (中国)', path: '/areas-of-study/small-ensemble/silk-bamboo',
       content: 'Traditional Chinese ensembles.',
       content_zh: '中国传统乐团。',
       longDescription: `Sizhu, meaning "silk and bamboo," refers to Chinese ensembles using instruments made from these materials. Silk string instruments include the erhu and pipa. Bamboo wind instruments include the dizi. We will explore their music from the Jiangnan region.`,
@@ -27,7 +27,7 @@ export const smallEnsembleAoS: SyllabusItem = {
       longDescription_zh: `笛子是一种竹制长笛。二胡是一种双弦的提琴。琵琶是一种梨形的琉特琴。这些都是丝竹乐团中重要的旋律乐器。`
     },
     {
-      id: 'aos6-hindustani', title: 'Focus Area: Hindustani Classical Music (North India)', title_zh: '重点领域：印度斯坦古典音乐 (北印度)', path: '/areas-of-study/aos6-small-ensemble/hindustani',
+      id: 'aos6-hindustani', title: 'Focus Area: Hindustani Classical Music (North India)', title_zh: '重点领域：印度斯坦古典音乐 (北印度)', path: '/areas-of-study/small-ensemble/hindustani',
       content: 'Classical music from North India.',
       content_zh: '来自北印度的古典音乐。',
       longDescription: `Hindustani classical music is from North India. It involves improvisation based on a rāga (a melodic framework) and tāla (a rhythmic cycle). Key instruments include the sitār, sarōd, tablā, and tambūrā.`,
@@ -41,7 +41,7 @@ export const smallEnsembleAoS: SyllabusItem = {
       longDescription_zh: `西塔琴是一种长颈琉特琴。塔布拉鼓是一对手鼓。拉格像一个音阶，有特定的旋律模式和情绪。塔拉是一个节拍循环。这些都是印度斯坦音乐表演的要素。`
     },
     {
-      id: 'aos6-arab-takht', title: 'Focus Area: Arab Takht Ensembles', title_zh: '重点领域：阿拉伯塔赫特乐团', path: '/areas-of-study/aos6-small-ensemble/arab-takht',
+      id: 'aos6-arab-takht', title: 'Focus Area: Arab Takht Ensembles', title_zh: '重点领域：阿拉伯塔赫特乐团', path: '/areas-of-study/small-ensemble/arab-takht',
       content: 'Traditional Arab music groups.',
       content_zh: '传统阿拉伯音乐团体。',
       longDescription: `A Takht is a small ensemble in Arab music. It usually includes instruments like the ud (lute), qanun (zither), nay (flute), and riqq (tambourine). Music is often based on a maqam (melodic mode) and iqa (rhythmic mode).`,
@@ -62,7 +62,7 @@ export const smallEnsembleAoS: SyllabusItem = {
       longDescription_zh: `异音织体是一种音乐织体，其中两个或多个音乐家同时演奏相同的旋律，但每个人都添加了自己细微的变化或装饰。这在许多类型的传统合奏音乐中很常见，包括丝竹乐和阿拉伯塔赫特音乐。`
     },
     {
-      id: 'aos6-starting-points', title: 'Starting Points (Wider Listening)', title_zh: '起点 (扩展聆听)', path: '/areas-of-study/aos6-small-ensemble/starting-points',
+      id: 'aos6-starting-points', title: 'Starting Points (Wider Listening)', title_zh: '起点 (扩展聆听)', path: '/areas-of-study/small-ensemble/starting-points',
       content: 'Examples of small ensemble music.',
       content_zh: '小型合奏音乐的范例。',
       longDescription: `Listen to: "San Liu" (Chinese National Orchestra), "Rāga khamāj" (Ravi Shankar - Hindustani), and "Wasla en sabâ" (Al-Kindî Ensemble - Arab Takht).`,

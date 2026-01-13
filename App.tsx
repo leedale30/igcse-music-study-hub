@@ -175,6 +175,7 @@ const App: React.FC = () => {
                       {/* <Route path="/aos/stage-screen/*" element={<StageScreenRoutes />} /> */}
                       {/* AOS generic content routes */}
                       <Route path="/aos/:aosId/*" element={<AosContentPage />} />
+                      <Route path="/areas-of-study/:aosId/*" element={<AosContentPage />} />
 
                       {/* RPG Routes */}
                       <Route path="/rpg" element={<LobbyView />} />

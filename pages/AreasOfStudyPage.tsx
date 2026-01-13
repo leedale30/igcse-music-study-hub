@@ -8,7 +8,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Baroque Music',
             icon: '🎻',
             description: 'Explore the ornate and expressive music of the 17th-18th centuries (c.1600-1750).',
-            path: '/aos/baroque',
+            path: '/areas-of-study/baroque',
             color: 'bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800'
         },
         {
@@ -16,7 +16,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Classical Music',
             icon: '🎹',
             description: 'Study the refined elegance, balance, and formal structures of the Classical period (c.1750-1820).',
-            path: '/aos/classical',
+            path: '/areas-of-study/classical',
             color: 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800'
         },
         {
@@ -24,7 +24,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Romantic Music',
             icon: '🎼',
             description: 'Discover the emotional depth, expanded orchestras, and programmatic storytelling of the 19th century.',
-            path: '/aos/romantic',
+            path: '/areas-of-study/romantic',
             color: 'bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800'
         },
         {
@@ -32,7 +32,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Music and Words',
             icon: '📖',
             description: 'Examine the relationship between lyrics and melody in Lieder, Musicals, and other vocal genres.',
-            path: '/aos/music-and-words',
+            path: '/areas-of-study/music-and-words',
             color: 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
         },
         {
@@ -40,7 +40,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Music for Dance',
             icon: '💃',
             description: 'Learn how music drives movement, rhythm, and choreography across cultures and time periods.',
-            path: '/aos/dance',
+            path: '/areas-of-study/dance',
             color: 'bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800'
         },
         {
@@ -48,7 +48,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Small Ensemble',
             icon: '🎺',
             description: 'Study the interplay and textures of intimate chamber music groups and small ensembles.',
-            path: '/aos/small-ensemble',
+            path: '/areas-of-study/small-ensemble',
             color: 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800'
         },
         {
@@ -56,7 +56,7 @@ const AreasOfStudyPage: React.FC = () => {
             name: 'Stage & Screen',
             icon: '🎬',
             description: 'Explore the dramatic role of music in theatre, film, video games, and multimedia.',
-            path: '/aos/stage-and-screen',
+            path: '/areas-of-study/stage-and-screen',
             color: 'bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800'
         },
     ];

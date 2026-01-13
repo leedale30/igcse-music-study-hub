@@ -359,7 +359,7 @@ export const baroqueMusicAoS: SyllabusItem = {
   id: 'aos1-baroque-music',
   title: 'Area of Study 1: Baroque Music',
   title_zh: '学习领域一：巴洛克音乐',
-  path: '/areas-of-study/aos1-baroque-music',
+  path: '/areas-of-study/baroque',
   content: 'Music from a long time ago, about 1600 to 1750.',
   content_zh: '很久以前的音乐，大约从1600年到1750年。',
   longDescription: `Baroque music is a style from many years ago, from around 1600 to 1750. In this section, we will study special pieces called "focus works". This will help you learn to read music scores and understand how the music is made (this is called analysis).`,

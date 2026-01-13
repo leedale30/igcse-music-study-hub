@@ -8,13 +8,13 @@ import { Quiz } from '../types';
 
 // AOS metadata for navigation and titles
 const aosData = [
-    { id: 'aos01-baroque-music', title: 'Baroque Music', emoji: '🎻', shortTitle: 'AOS1' },
-    { id: 'aos02-classical-music', title: 'Classical Music', emoji: '🎹', shortTitle: 'AOS2' },
-    { id: 'aos03-romantic-music', title: 'Romantic Music', emoji: '🎼', shortTitle: 'AOS3' },
-    { id: 'aos04-music-and-words', title: 'Music and Words', emoji: '📖', shortTitle: 'AOS4' },
-    { id: 'aos05-music-for-dance', title: 'Music for Dance', emoji: '💃', shortTitle: 'AOS5' },
-    { id: 'aos06-music-for-small-ensemble', title: 'Music for Small Ensemble', emoji: '🎺', shortTitle: 'AOS6' },
-    { id: 'aos07-music-for-stage-and-screen', title: 'Music for Stage and Screen', emoji: '🎬', shortTitle: 'AOS7' },
+    { id: 'baroque', fullId: 'aos1-baroque-music', title: 'Baroque Music', emoji: '🎻', shortTitle: 'AOS1' },
+    { id: 'classical', fullId: 'aos2-classical-music', title: 'Classical Music', emoji: '🎹', shortTitle: 'AOS2' },
+    { id: 'romantic', fullId: 'aos3-romantic-music', title: 'Romantic Music', emoji: '🎼', shortTitle: 'AOS3' },
+    { id: 'music-and-words', fullId: 'aos4-music-and-words', title: 'Music and Words', emoji: '📖', shortTitle: 'AOS4' },
+    { id: 'dance', fullId: 'aos5-music-for-dance', title: 'Music for Dance', emoji: '💃', shortTitle: 'AOS5' },
+    { id: 'small-ensemble', fullId: 'aos6-music-for-small-ensemble', title: 'Music for Small Ensemble', emoji: '🎺', shortTitle: 'AOS6' },
+    { id: 'stage-and-screen', fullId: 'aos7-music-for-stage-and-screen', title: 'Music for Stage and Screen', emoji: '🎬', shortTitle: 'AOS7' },
 ];
 
 const AosContentPage: React.FC = () => {
@@ -29,11 +29,19 @@ const AosContentPage: React.FC = () => {
     const contentRef = useRef<HTMLDivElement>(null);
 
     // Build the file path from the URL - memoized to prevent infinite loops
-    const pathAfterAos = location.pathname.replace('/aos/', '');
+    const pathAfterAos = useMemo(() => {
+        return location.pathname
+            .replace('/aos/', '')
+            .replace('/areas-of-study/', '');
+    }, [location.pathname]);
+
     const pathParts = useMemo(() => pathAfterAos.split('/').filter(Boolean), [pathAfterAos]);
 
     // Find AOS info
-    const currentAos = aosData.find(aos => pathAfterAos.startsWith(aos.id));
+    const currentAos = useMemo(() => {
+        const firstPart = pathParts[0];
+        return aosData.find(aos => aos.id === firstPart || aos.fullId === firstPart);
+    }, [pathParts]);
 
     useEffect(() => {
         const fetchContent = async () => {
