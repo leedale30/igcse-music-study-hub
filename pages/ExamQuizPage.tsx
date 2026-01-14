@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Link as LinkIcon } from 'lucide-react';
+import { marked } from 'marked';
+import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Link as LinkIcon, Loader2 } from 'lucide-react';
 import { AbcRenderer } from '../components/tutor/AbcRenderer';
 import { mock1Quizzes } from '../services/syllabusContent/mock1Quizzes';
 import { mock1BaroqueQuizzes } from '../services/syllabusContent/mock1BaroqueQuizzes';
@@ -156,7 +157,7 @@ const ExamQuizPage: React.FC = () => {
                             </div>
                             <div
                                 className="p-6 prose prose-indigo dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-indigo-900 dark:prose-headings:text-indigo-100 prose-p:text-gray-700 dark:prose-p:text-gray-300"
-                                dangerouslySetInnerHTML={{ __html: quiz.revisionNotes }}
+                                dangerouslySetInnerHTML={{ __html: marked.parse(quiz.revisionNotes) as string }}
                             />
                         </div>
                     )}
@@ -340,22 +341,5 @@ const ExamQuizPage: React.FC = () => {
     );
 };
 
-// Simple loader component
-const Loader2 = ({ className }: { className?: string }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-    >
-        <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-    </svg>
-);
 
 export default ExamQuizPage;
