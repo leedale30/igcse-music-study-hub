@@ -6,6 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 interface SidebarItemProps {
   item: SyllabusItem;
   level: number;
+  onNavigate?: () => void;
 }
 
 const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -27,7 +28,7 @@ const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ item, level, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(level < 1); // Auto-open top levels
   const { language } = useLanguage();
 
@@ -55,7 +56,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
           {isOpen && (
             <ul className="mt-1">
               {item.children?.map(child => (
-                <SidebarItem key={child.id} item={child} level={level + 1} />
+                <SidebarItem key={child.id} item={child} level={level + 1} onNavigate={onNavigate} />
               ))}
             </ul>
           )}
@@ -70,6 +71,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
               className="block px-2 py-2.5 text-sm rounded-md transition-colors duration-150 truncate text-gray-300 hover:bg-slate-700 hover:text-gray-100"
               style={{ paddingLeft }} // eslint-disable-line react-native/no-inline-styles -- dynamic indent
               title={displayTitle}
+              onClick={onNavigate}
             >
               <div className="flex items-center">
                 <span className="truncate">{displayTitle}</span>
@@ -87,6 +89,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ item, level }) => {
               }
               style={{ paddingLeft }} // eslint-disable-line react-native/no-inline-styles -- dynamic indent
               title={displayTitle}
+              onClick={onNavigate}
             >
               {displayTitle}
             </NavLink>
@@ -105,6 +108,14 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
+  // Close sidebar on mobile when navigating
+  const handleNavigate = () => {
+    // Only close on mobile (when sidebar is in overlay mode)
+    if (window.innerWidth < 1024) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <>
       {/* Overlay for mobile */}
@@ -125,7 +136,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
           <nav>
             <ul>
               {structure.filter(item => !(item.isTerm && item.path.includes(':termId'))).map(item => (
-                <SidebarItem key={item.id} item={item} level={0} />
+                <SidebarItem key={item.id} item={item} level={0} onNavigate={handleNavigate} />
               ))}
               <li className="mt-4 pt-4 border-t border-slate-700">
                 <NavLink
@@ -136,6 +147,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="Instruments"
+                  onClick={handleNavigate}
                 >
                   Instruments
                 </NavLink>
@@ -149,6 +161,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="Listening Exams"
+                  onClick={handleNavigate}
                 >
                   Listening Exams
                 </NavLink>
@@ -162,6 +175,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="Music Theory"
+                  onClick={handleNavigate}
                 >
                   Music Theory
                 </NavLink>
@@ -175,6 +189,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="Presentations"
+                  onClick={handleNavigate}
                 >
                   Presentations
                 </NavLink>
@@ -188,6 +203,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="My Dashboard"
+                  onClick={handleNavigate}
                 >
                   📊 My Dashboard
                 </NavLink>
@@ -201,6 +217,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="Achievements"
+                  onClick={handleNavigate}
                 >
                   🏆 Achievements
                 </NavLink>
@@ -214,6 +231,7 @@ const Sidebar: React.FC<SidebarProps> = ({ structure, isOpen, setIsOpen }) => {
                   }
                   style={{ paddingLeft: '1rem' }}
                   title="Battle Arena"
+                  onClick={handleNavigate}
                 >
                   ⚔️ Battle Arena (RPG)
                 </NavLink>
