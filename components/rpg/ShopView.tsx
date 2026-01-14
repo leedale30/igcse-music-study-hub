@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
 import { useAuth } from '../../contexts/AuthContext';
 import { ShoppingBag, Coins, Shield, Sword, Zap, Package, AlertCircle } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
+import { supabase } from '../../src/lib/supabase';
 
 interface ShopItem {
     id: string;
@@ -187,8 +187,8 @@ export const ShopView: React.FC = () => {
                                         }}
                                         disabled={purchasing || gold < item.price}
                                         className={`w-full py-2 rounded-lg font-bold text-sm transition-all ${gold >= item.price
-                                                ? 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-lg shadow-yellow-500/20'
-                                                : 'bg-white/5 text-white/20 cursor-not-allowed'
+                                            ? 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-lg shadow-yellow-500/20'
+                                            : 'bg-white/5 text-white/20 cursor-not-allowed'
                                             }`}
                                     >
                                         {gold >= item.price ? 'BUY NOW' : 'NOT ENOUGH GOLD'}

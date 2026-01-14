@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
 import { useAuth } from '../../contexts/AuthContext';
 import { Shield, Sword, Zap, Package, Info, Search } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
+import { supabase } from '../../src/lib/supabase';
 
 interface InventoryItem {
     id: string;

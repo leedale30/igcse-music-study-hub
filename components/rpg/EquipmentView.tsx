@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
 import { useAuth } from '../../contexts/AuthContext';
 import { Shield, Sword, Zap, Heart, User, ArrowRight } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
+import { supabase } from '../../src/lib/supabase';
 
 interface EquipmentSlot {
     id: string; // item id
