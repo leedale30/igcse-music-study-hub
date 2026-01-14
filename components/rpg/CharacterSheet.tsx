@@ -12,7 +12,7 @@ import {
     ATTRIBUTE_INFO, CLASS_INFO, CURRENCY_INFO
 } from '../../types/rpg_classes';
 import { getPlayerStats, getClasses, selectClass, allocateAttributePoint } from '../../services/classService';
-import { supabase } from '../../lib/supabase';
+import { supabase } from '../../src/lib/supabase';
 
 export const CharacterSheet: React.FC = () => {
     const { user } = useAuth();

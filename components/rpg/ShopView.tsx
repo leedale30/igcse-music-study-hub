@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RPGLayout } from './RPGLayout';
 import { useAuth } from '../../contexts/AuthContext';
 import { ShoppingBag, Coins, Shield, Sword, Zap, Package, AlertCircle } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
+import { supabase } from '../../src/lib/supabase';
 
 interface ShopItem {
     id: string;
