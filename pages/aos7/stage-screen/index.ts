@@ -54,4 +54,7 @@ export { default as StageScreen0604PoliticalSocialCommentaryPage } from './Stage
 export { default as StageScreen0605GeographicInfluencePage } from './StageScreen0605GeographicInfluencePage';
 export { default as StageScreen06AnalyticalDomainsPage } from './StageScreen06AnalyticalDomainsPage';
 export { default as StageScreen07GlossaryPage } from './StageScreen07GlossaryPage';
+export { default as StageScreen0308BalletPage } from './StageScreen0308BalletPage';
+export { default as StageScreen0309FilmMusicPage } from './StageScreen0309FilmMusicPage';
+export { default as StageScreen0310GameMusicPage } from './StageScreen0310GameMusicPage';
 export { default as StageScreenMusicForStageAndScreenPage } from './StageScreenMusicForStageAndScreenPage';

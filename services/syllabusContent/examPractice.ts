@@ -22,13 +22,124 @@ export const examPractice: SyllabusItem = {
             children: [
                 {
                     id: '1st-year-mock-1',
-                    title: 'Mock 1',
-                    title_zh: '模拟一',
+                    title: 'Mock 1 - Baroque Era',
+                    title_zh: '模拟一 - 巴洛克时期',
                     path: '/exam-practice/1st-year/mock-1',
-                    content: 'First mock exam for 1st Year.',
-                    content_zh: '一年级第一次模拟考试。',
-                    longDescription: 'Full mock exam paper 1.',
-                    longDescription_zh: '第一份完整模拟试卷。',
+                    content: 'Comprehensive review of the Baroque Era (1600-1750).',
+                    content_zh: '巴洛克时期 (1600-1750) 的综合复习。',
+                    /*
+                    ## Phase 1: ABC Notation Sections (Priority)
+                    - [x] Create `mock1BaroqueQuizzes.ts` with data structure
+                    - [x] Section 3: Purcell - Dido's Lament (20 MCQs + ABC)
+                    - [x] Section 4: Vivaldi - Spring (20 MCQs + ABC)
+                    - [x] Section 5: Bach - Brandenburg No. 2 (20 MCQs + ABC)
+                    - [x] Section 6: The Fugue (20 MCQs + ABC)
+                    - [x] Section 7: Handel - Hallelujah Chorus (20 MCQs + ABC)
+                    
+                    ## Phase 2: Text-Only Sections
+                    - [x] Section 1: Historical Context (20 MCQs)
+                    - [x] Section 2: Musical Language (20 MCQs)
+                    - [x] Section 8: Baroque Instruments (20 MCQs)
+                    - [x] Section 9: Theory & Notation (20 MCQs)
+                    
+                    ## Integration
+                    - [/] Update `examPractice.ts` with 1st year mock routes
+                    - [/] Update `ExamQuizPage.tsx` to import baroque quizzes
+                    */
+                    longDescription: 'Topic-based revision quizzes for AOS1: Western Classical Music.',
+                    longDescription_zh: 'AOS1: 西方古典音乐的主题复习测验。',
+                    children: [
+                        {
+                            id: 'baroque-historical-context',
+                            title: '1. Historical Context',
+                            title_zh: '1. 历史背景',
+                            path: '/exam-practice/1st-year/mock-1/historical-context',
+                            content: 'Dates, aesthetic, and professional life of the Baroque composer.',
+                            content_zh: '巴洛克作曲家的年代、审美和职业生活。',
+                            longDescription: '10 MCQ questions on the social and aesthetic world of the Baroque.',
+                            longDescription_zh: '10道关于巴洛克社会和审美世界的选择题。',
+                        },
+                        {
+                            id: 'baroque-musical-language',
+                            title: '2. Musical Language',
+                            title_zh: '2. 音乐语言',
+                            path: '/exam-practice/1st-year/mock-1/musical-language',
+                            content: 'Basso Continuo, Figured Bass, and Dynamics.',
+                            content_zh: '数字低音、通奏低音和力度。',
+                            longDescription: '10 MCQ questions on the syntax and language of Baroque music.',
+                            longDescription_zh: '10道关于巴洛克音乐语法和语言的选择题。',
+                        },
+                        {
+                            id: 'baroque-dido-lament',
+                            title: "3. Purcell: Dido's Lament",
+                            title_zh: '3. 普赛尔：狄多的哀歌',
+                            path: '/exam-practice/1st-year/mock-1/dido-lament',
+                            content: 'Recitative and Ground Bass analysis.',
+                            content_zh: '宣叙调和固定低音分析。',
+                            longDescription: '20 MCQ questions with ABC notation on Purcell’s masterpiece.',
+                            longDescription_zh: '20道关于普赛尔杰作的选择题，包含ABC乐谱。',
+                        },
+                        {
+                            id: 'baroque-vivaldi-spring',
+                            title: '4. Vivaldi: Spring',
+                            title_zh: '4. 维瓦尔第：春',
+                            path: '/exam-practice/1st-year/mock-1/vivaldi-spring',
+                            content: 'Ritornello form and Program Music.',
+                            content_zh: '回旋曲式和标题音乐。',
+                            longDescription: '20 MCQ questions with ABC notation on Vivaldi’s concerto.',
+                            longDescription_zh: '20道关于维瓦尔第协奏曲的选择题，包含ABC乐谱。',
+                        },
+                        {
+                            id: 'baroque-brandenburg',
+                            title: '5. Bach: Brandenburg No. 2',
+                            title_zh: '5. 巴赫：勃兰登堡协奏曲第二号',
+                            path: '/exam-practice/1st-year/mock-1/brandenburg',
+                            content: 'Concerto Grosso and Clarino Trumpet.',
+                            content_zh: '大协奏曲和高音小号。',
+                            longDescription: '20 MCQ questions with ABC notation on Bach’s concerto.',
+                            longDescription_zh: '20道关于巴赫协奏曲的选择题，包含ABC乐谱。',
+                        },
+                        {
+                            id: 'baroque-fugue',
+                            title: '6. The Art of the Fugue',
+                            title_zh: '6. 赋格的艺术',
+                            path: '/exam-practice/1st-year/mock-1/fugue',
+                            content: 'Subjects, Answers, and Polyphony.',
+                            content_zh: '主题、答句和复调。',
+                            longDescription: '20 MCQ questions on the mechanics of fugal structure.',
+                            longDescription_zh: '20道关于赋格结构力学的选择题。',
+                        },
+                        {
+                            id: 'baroque-hallelujah',
+                            title: '7. Handel: Hallelujah Chorus',
+                            title_zh: '7. 亨德尔：哈利路亚大合唱',
+                            path: '/exam-practice/1st-year/mock-1/hallelujah',
+                            content: 'Oratorio and Mixed Textures.',
+                            content_zh: '清唱剧和混合织体。',
+                            longDescription: '20 MCQ questions with ABC notation on Handel’s chorus.',
+                            longDescription_zh: '20道关于亨德尔合唱的选择题，包含ABC乐谱。',
+                        },
+                        {
+                            id: 'baroque-instruments',
+                            title: '8. Baroque Instruments',
+                            title_zh: '8. 巴洛克乐器',
+                            path: '/exam-practice/1st-year/mock-1/instruments',
+                            content: 'Harpsichord, Organ, and Natural Trumpet.',
+                            content_zh: '羽管键琴、管风琴和自然小号。',
+                            longDescription: '10 MCQ questions on the technology of Baroque instruments.',
+                            longDescription_zh: '10道关于巴洛克乐器技术的选择题。',
+                        },
+                        {
+                            id: 'baroque-theory-notation',
+                            title: '9. Theory & Notation',
+                            title_zh: '9. 理论与记谱',
+                            path: '/exam-practice/1st-year/mock-1/theory-notation',
+                            content: 'ABC Notation and MusGlyphs basics.',
+                            content_zh: 'ABC记谱法和MusGlyphs基础。',
+                            longDescription: '10 MCQ questions on music theory and notation systems.',
+                            longDescription_zh: '10道关于音乐理论和记谱系统的选择题。',
+                        },
+                    ],
                 },
                 {
                     id: '1st-year-mock-2',

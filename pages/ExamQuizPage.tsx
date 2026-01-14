@@ -1,28 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Link as LinkIcon } from 'lucide-react';
 import { AbcRenderer } from '../components/tutor/AbcRenderer';
 import { mock1Quizzes } from '../services/syllabusContent/mock1Quizzes';
+import { mock1BaroqueQuizzes } from '../services/syllabusContent/mock1BaroqueQuizzes';
+import { useAuth } from '../contexts/AuthContext';
+import { useProgress } from '../contexts/ProgressContext';
+
+// Combine all quiz data
+const allQuizData = { ...mock1Quizzes, ...mock1BaroqueQuizzes };
 
 const ExamQuizPage: React.FC = () => {
+    const { quizId } = useParams<{ quizId: string }>();
     const location = useLocation();
     const navigate = useNavigate();
-    const [templateId, setTemplateId] = useState<string | null>(null);
+    const { user } = useAuth();
+    const { addQuizResult } = useProgress();
 
-    // Extract the last segment of the path to match with quiz IDs
+    const [templateId, setTemplateId] = useState<string | null>(null);
+    const [quizStartTime] = useState<Date>(new Date());
+
+    // Find the matching quiz ID from all available data
     useEffect(() => {
-        const pathSegments = location.pathname.split('/');
-        const id = pathSegments[pathSegments.length - 1]; // e.g., 'tonality'
-        // Map path segment to quiz ID if needed, or ensure IDs match path segments
-        // In our case, paths are like .../tonality, but IDs are quiz-tonality
-        // Let's find the matching quiz
-        const foundId = Object.keys(mock1Quizzes).find(key => key.endsWith(id));
+        if (!quizId) return;
+
+        // 1. Direct match
+        if (allQuizData[quizId]) {
+            setTemplateId(quizId);
+            return;
+        }
+
+        // 2. Prefix match (e.g., 'vivaldi-spring' -> 'baroque-vivaldi-spring')
+        const foundId = Object.keys(allQuizData).find(key =>
+            key === quizId || key.endsWith(`-${quizId}`) || key === `quiz-${quizId}`
+        );
+
         if (foundId) {
             setTemplateId(foundId);
+        } else {
+            console.error(`Quiz not found for ID: ${quizId}`);
         }
-    }, [location]);
+    }, [quizId]);
 
-    const quiz = templateId ? mock1Quizzes[templateId] : null;
+    const quiz = templateId ? (allQuizData as any)[templateId] : null;
 
     const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,16 +65,39 @@ const ExamQuizPage: React.FC = () => {
         }));
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         let newScore = 0;
         quiz.questions.forEach(q => {
             if (userAnswers[q.id] === q.correctAnswer) {
                 newScore++;
             }
         });
+
         setScore(newScore);
         setIsSubmitted(true);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Save progress to Supabase for logged-in users
+        if (user && quiz) {
+            const timeSpent = Math.floor((new Date().getTime() - quizStartTime.getTime()) / 1000);
+            const percentage = (newScore / quiz.questions.length) * 100;
+
+            try {
+                addQuizResult({
+                    quizId: quiz.id,
+                    quizTitle: quiz.title,
+                    sectionId: location.pathname.split('/')[2] || 'general', // e.g., '1st-year'
+                    score: newScore,
+                    totalQuestions: quiz.questions.length,
+                    percentage,
+                    timeSpent,
+                    answers: userAnswers
+                });
+                console.log('Quiz progress saved to Supabase');
+            } catch (error) {
+                console.error('Failed to save quiz progress:', error);
+            }
+        }
     };
 
     const getScoreColor = () => {

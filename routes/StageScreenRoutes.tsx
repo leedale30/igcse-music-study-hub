@@ -55,66 +55,73 @@ import {
   StageScreen0605GeographicInfluencePage,
   StageScreen06AnalyticalDomainsPage,
   StageScreen07GlossaryPage,
+  StageScreen0308BalletPage,
+  StageScreen0309FilmMusicPage,
+  StageScreen0310GameMusicPage,
   StageScreenMusicForStageAndScreenPage,
 } from '../pages/aos7/stage-screen';
 
 export const StageScreenRoutes = (
   <>
-    <Route path="/aos/stage-screen/core-musical-elements/dynamics" element={<StageScreen0101DynamicsPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/rhythm" element={<StageScreen0102RhythmPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/metre" element={<StageScreen0103MetrePage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/tempo" element={<StageScreen0104TempoPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/melody" element={<StageScreen0105MelodyPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/harmony" element={<StageScreen0106HarmonyPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/tonality" element={<StageScreen0107TonalityPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/texture" element={<StageScreen0108TexturePage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/timbre" element={<StageScreen0109TimbrePage />} />
-    <Route path="/aos/stage-screen/core-musical-elements/structure-form" element={<StageScreen0110StructureFormPage />} />
-    <Route path="/aos/stage-screen/core-musical-elements" element={<StageScreen01CoreMusicalElementsPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques/instrumentation" element={<StageScreen0201InstrumentationPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques/organology" element={<StageScreen0202OrganologyPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques/vocal-techniques" element={<StageScreen0203VocalTechniquesPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques/extended-techniques" element={<StageScreen0204ExtendedTechniquesPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques/improvisation" element={<StageScreen0205ImprovisationPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques/composition-techniques" element={<StageScreen0206CompositionTechniquesPage />} />
-    <Route path="/aos/stage-screen/sound-sources-and-techniques" element={<StageScreen02SoundSourcesAndTechniquesPage />} />
-    <Route path="/aos/stage-screen/ritual" element={<StageScreen030101RitualPage />} />
-    <Route path="/aos/stage-screen/celebration" element={<StageScreen030102CelebrationPage />} />
-    <Route path="/aos/stage-screen/work-protest" element={<StageScreen030103WorkProtestPage />} />
-    <Route path="/aos/stage-screen/healing" element={<StageScreen030104HealingPage />} />
-    <Route path="/aos/stage-screen/social-identity" element={<StageScreen030105SocialIdentityPage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/cultural-function" element={<StageScreen0301CulturalFunctionPage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/historical-background" element={<StageScreen0302HistoricalBackgroundPage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/movement-and-dance" element={<StageScreen0303MovementAndDancePage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/economics-and-patronage" element={<StageScreen0304EconomicsAndPatronagePage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/key-works-pieces" element={<StageScreen0305KeyWorksPiecesPage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/key-composers-artists" element={<StageScreen0306KeyComposersArtistsPage />} />
-    <Route path="/aos/stage-screen/staging" element={<StageScreen030701StagingPage />} />
-    <Route path="/aos/stage-screen/performer-audience-relationship" element={<StageScreen030702PerformerAudienceRelationshipPage />} />
-    <Route path="/aos/stage-screen/attire" element={<StageScreen030703AttirePage />} />
-    <Route path="/aos/stage-screen/ritualistic-elements" element={<StageScreen030704RitualisticElementsPage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context/performance-practice" element={<StageScreen0307PerformancePracticePage />} />
-    <Route path="/aos/stage-screen/cultural-and-historical-context" element={<StageScreen03CulturalAndHistoricalContextPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory/specific-terminology" element={<StageScreen0401SpecificTerminologyPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory/lyrics-and-text-analysis" element={<StageScreen0402LyricsAndTextAnalysisPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory/lyrics-and-text-analysis" element={<StageScreen0402LyricsTextAnalysisPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory/notation-system" element={<StageScreen0403NotationSystemPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory/oral-aural-tradition" element={<StageScreen0404OralAuralTraditionPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory/music-theory-framework" element={<StageScreen0405MusicTheoryFrameworkPage />} />
-    <Route path="/aos/stage-screen/language-literacy-and-theory" element={<StageScreen04LanguageLiteracyAndTheoryPage />} />
-    <Route path="/aos/stage-screen/technology-and-innovation/music-technology" element={<StageScreen0501MusicTechnologyPage />} />
-    <Route path="/aos/stage-screen/technology-and-innovation/recording-and-production" element={<StageScreen0502RecordingAndProductionTechniquesPage />} />
-    <Route path="/aos/stage-screen/technology-and-innovation/distribution-and-media" element={<StageScreen0503DistributionAndMediaPage />} />
-    <Route path="/aos/stage-screen/technology-and-innovation/hybridization" element={<StageScreen0504HybridizationPage />} />
-    <Route path="/aos/stage-screen/technology-and-innovation" element={<StageScreen05TechnologyAndInnovationPage />} />
-    <Route path="/aos/stage-screen/analytical-domains/genre-and-style" element={<StageScreen0601GenreAndStylePage />} />
-    <Route path="/aos/stage-screen/analytical-domains/aesthetic-values" element={<StageScreen0602AestheticValuesPage />} />
-    <Route path="/aos/stage-screen/analytical-domains/audience-reception" element={<StageScreen0603AudienceReceptionPage />} />
-    <Route path="/aos/stage-screen/analytical-domains/political-social-commentary" element={<StageScreen0604PoliticalSocialCommentaryPage />} />
-    <Route path="/aos/stage-screen/analytical-domains/geographic-influence" element={<StageScreen0605GeographicInfluencePage />} />
-    <Route path="/aos/stage-screen/analytical-domains" element={<StageScreen06AnalyticalDomainsPage />} />
-    <Route path="/aos/stage-screen/glossary" element={<StageScreen07GlossaryPage />} />
-    <Route path="/aos/stage-screen/music-for-stage-and-screen" element={<StageScreenMusicForStageAndScreenPage />} />
+    <Route path="core-musical-elements/dynamics" element={<StageScreen0101DynamicsPage />} />
+    <Route path="core-musical-elements/rhythm" element={<StageScreen0102RhythmPage />} />
+    <Route path="core-musical-elements/metre" element={<StageScreen0103MetrePage />} />
+    <Route path="core-musical-elements/tempo" element={<StageScreen0104TempoPage />} />
+    <Route path="core-musical-elements/melody" element={<StageScreen0105MelodyPage />} />
+    <Route path="core-musical-elements/harmony" element={<StageScreen0106HarmonyPage />} />
+    <Route path="core-musical-elements/tonality" element={<StageScreen0107TonalityPage />} />
+    <Route path="core-musical-elements/texture" element={<StageScreen0108TexturePage />} />
+    <Route path="core-musical-elements/timbre" element={<StageScreen0109TimbrePage />} />
+    <Route path="core-musical-elements/structure-form" element={<StageScreen0110StructureFormPage />} />
+    <Route path="core-musical-elements" element={<StageScreen01CoreMusicalElementsPage />} />
+    <Route path="sound-sources-and-techniques/instrumentation" element={<StageScreen0201InstrumentationPage />} />
+    <Route path="sound-sources-and-techniques/organology" element={<StageScreen0202OrganologyPage />} />
+    <Route path="sound-sources-and-techniques/vocal-techniques" element={<StageScreen0203VocalTechniquesPage />} />
+    <Route path="sound-sources-and-techniques/extended-techniques" element={<StageScreen0204ExtendedTechniquesPage />} />
+    <Route path="sound-sources-and-techniques/improvisation" element={<StageScreen0205ImprovisationPage />} />
+    <Route path="sound-sources-and-techniques/composition-techniques" element={<StageScreen0206CompositionTechniquesPage />} />
+    <Route path="sound-sources-and-techniques" element={<StageScreen02SoundSourcesAndTechniquesPage />} />
+    <Route path="ritual" element={<StageScreen030101RitualPage />} />
+    <Route path="celebration" element={<StageScreen030102CelebrationPage />} />
+    <Route path="work-protest" element={<StageScreen030103WorkProtestPage />} />
+    <Route path="healing" element={<StageScreen030104HealingPage />} />
+    <Route path="social-identity" element={<StageScreen030105SocialIdentityPage />} />
+    <Route path="cultural-and-historical-context/cultural-function" element={<StageScreen0301CulturalFunctionPage />} />
+    <Route path="cultural-and-historical-context/historical-background" element={<StageScreen0302HistoricalBackgroundPage />} />
+    <Route path="cultural-and-historical-context/movement-and-dance" element={<StageScreen0303MovementAndDancePage />} />
+    <Route path="cultural-and-historical-context/economics-and-patronage" element={<StageScreen0304EconomicsAndPatronagePage />} />
+    <Route path="cultural-and-historical-context/key-works-pieces" element={<StageScreen0305KeyWorksPiecesPage />} />
+    <Route path="cultural-and-historical-context/key-composers-artists" element={<StageScreen0306KeyComposersArtistsPage />} />
+    <Route path="ballet" element={<StageScreen0308BalletPage />} />
+    <Route path="film-music" element={<StageScreen0309FilmMusicPage />} />
+    <Route path="computer-game" element={<StageScreen0310GameMusicPage />} />
+    <Route path="staging" element={<StageScreen030701StagingPage />} />
+    <Route path="performer-audience-relationship" element={<StageScreen030702PerformerAudienceRelationshipPage />} />
+    <Route path="attire" element={<StageScreen030703AttirePage />} />
+    <Route path="ritualistic-elements" element={<StageScreen030704RitualisticElementsPage />} />
+    <Route path="cultural-and-historical-context/performance-practice" element={<StageScreen0307PerformancePracticePage />} />
+    <Route path="cultural-and-historical-context" element={<StageScreen03CulturalAndHistoricalContextPage />} />
+    <Route path="language-literacy-and-theory/specific-terminology" element={<StageScreen0401SpecificTerminologyPage />} />
+    <Route path="language-literacy-and-theory/lyrics-and-text-analysis" element={<StageScreen0402LyricsAndTextAnalysisPage />} />
+    <Route path="language-literacy-and-theory/lyrics-and-text-analysis" element={<StageScreen0402LyricsTextAnalysisPage />} />
+    <Route path="language-literacy-and-theory/notation-system" element={<StageScreen0403NotationSystemPage />} />
+    <Route path="language-literacy-and-theory/oral-aural-tradition" element={<StageScreen0404OralAuralTraditionPage />} />
+    <Route path="language-literacy-and-theory/music-theory-framework" element={<StageScreen0405MusicTheoryFrameworkPage />} />
+    <Route path="language-literacy-and-theory" element={<StageScreen04LanguageLiteracyAndTheoryPage />} />
+    <Route path="technology-and-innovation/music-technology" element={<StageScreen0501MusicTechnologyPage />} />
+    <Route path="technology-and-innovation/recording-and-production" element={<StageScreen0502RecordingAndProductionTechniquesPage />} />
+    <Route path="technology-and-innovation/distribution-and-media" element={<StageScreen0503DistributionAndMediaPage />} />
+    <Route path="technology-and-innovation/hybridization" element={<StageScreen0504HybridizationPage />} />
+    <Route path="technology-and-innovation" element={<StageScreen05TechnologyAndInnovationPage />} />
+    <Route path="analytical-domains/genre-and-style" element={<StageScreen0601GenreAndStylePage />} />
+    <Route path="analytical-domains/aesthetic-values" element={<StageScreen0602AestheticValuesPage />} />
+    <Route path="analytical-domains/audience-reception" element={<StageScreen0603AudienceReceptionPage />} />
+    <Route path="analytical-domains/political-social-commentary" element={<StageScreen0604PoliticalSocialCommentaryPage />} />
+    <Route path="analytical-domains/geographic-influence" element={<StageScreen0605GeographicInfluencePage />} />
+    <Route path="analytical-domains" element={<StageScreen06AnalyticalDomainsPage />} />
+    <Route path="glossary" element={<StageScreen07GlossaryPage />} />
+    <Route path="music-for-stage-and-screen" element={<StageScreenMusicForStageAndScreenPage />} />
+    <Route path="" element={<StageScreenMusicForStageAndScreenPage />} />
   </>
 );
 

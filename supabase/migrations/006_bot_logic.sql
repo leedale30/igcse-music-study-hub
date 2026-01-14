@@ -105,7 +105,7 @@ BEGIN
     VALUES (
         auth.uid(),
         bot_id,
-        1,
+        0,
         5,
         'active',
         100,

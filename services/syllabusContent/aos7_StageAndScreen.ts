@@ -16,15 +16,15 @@ export const stageAndScreenAoS: SyllabusItem = {
       id: 'aos7-ballet', title: 'Focus Area: Ballet Music', title_zh: '重点领域：芭蕾音乐', path: '/areas-of-study/stage-and-screen/ballet',
       content: 'Music written for ballet dance.',
       content_zh: '为芭蕾舞创作的音乐。',
-      longDescription: `Ballet music is written to be danced to. Composers like Stravinsky and Copland wrote famous ballets. The music needs to match the dance steps and help tell the story of the ballet.`,
-      longDescription_zh: `芭蕾音乐是为舞蹈而创作的。像斯特拉文斯基和科普兰这样的作曲家写了著名的芭蕾舞剧。音乐需要与舞步相匹配，并帮助讲述芭蕾舞的故事。`
+      longDescription: `Ballet music is meticulously crafted to support choreography. This section explores the Romantic traditions of Tchaikovsky and the modernist shifts of Stravinsky, focusing on how orchestral color and rhythmic precision drive the narrative on stage.`,
+      longDescription_zh: `芭蕾音乐是为支持编舞而精心创作的。本节探讨了柴可夫斯基的浪漫主义传统和斯特拉文斯基的现代主义转变，重点关注管弦乐色彩和节奏精度如何驱动舞台上的叙事。`
     },
     {
       id: 'aos7-film-music', title: 'Focus Area: Film Music', title_zh: '重点领域：电影音乐', path: '/areas-of-study/stage-and-screen/film-music',
       content: 'Music in films.',
       content_zh: '电影中的音乐。',
-      longDescription: `Film music is a very important part of films. It can create excitement, sadness, or tension. Composers like John Williams use techniques like leitmotifs (themes for characters or ideas) and match the music to the action on screen.`,
-      longDescription_zh: `电影音乐是电影中非常重要的一部分。它可以营造兴奋、悲伤或紧张的氛围。像约翰·威廉姆斯这样的作曲家使用主导动机（代表角色或思想的主题）等技巧，并将音乐与屏幕上的动作相匹配。`
+      longDescription: `Film music is a cornerstone of modern storytelling. This area examines how composers like John Williams and Hans Zimmer use leitmotifs, underscore, and hybrid orchestration to create emotional resonance and build cinematic worlds.`,
+      longDescription_zh: `电影音乐是现代叙事的核心。本节探讨约翰·威廉姆斯和汉斯·季默等作曲家如何利用主导动机、背景音乐和混合管弦乐来营造情感共鸣并构建电影世界。`
     },
     {
       id: 'leitmotif', title: 'Leitmotif', title_zh: '主导动机', path: '/term/leitmotif', isTerm: true,
@@ -37,8 +37,8 @@ export const stageAndScreenAoS: SyllabusItem = {
       id: 'aos7-computer-game-music', title: 'Focus Area: Computer Game Music', title_zh: '重点领域：电脑游戏音乐', path: '/areas-of-study/stage-and-screen/computer-game',
       content: 'Music in video games.',
       content_zh: '视频游戏中的音乐。',
-      longDescription: `Computer game music has become very advanced. It can be orchestral, electronic, or a mix. Good game music makes the game more immersive (makes you feel like you are in the game) and can change depending on what the player is doing (this is called adaptive music).`,
-      longDescription_zh: `电脑游戏音乐已经变得非常先进。它可以是管弦乐、电子乐或两者的混合。好的游戏音乐能让游戏更具沉浸感（让你感觉身临其境），并且可以根据玩家的行为而改变（这被称为自适应音乐）。`
+      longDescription: `Video game music has evolved from simple chiptunes to complex, adaptive scores. Learn how composers like Koji Kondo and Nobuo Uematsu use modular structures and vertical layering to create music that reacts to player choices.`,
+      longDescription_zh: `视频游戏音乐已从简单的电子音效演变为复杂的自适应配乐。学习近藤浩治和植松伸夫等作曲家如何利用模块化结构和垂直分层来创作与玩家选择互动的音乐。`
     },
     {
       id: 'mickey-mousing', title: 'Mickey Mousing', title_zh: '米老鼠音效', path: '/term/mickey-mousing', isTerm: true,
