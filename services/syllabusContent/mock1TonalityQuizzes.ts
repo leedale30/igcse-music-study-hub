@@ -36,27 +36,108 @@ V:2 clef=bass
 % Section 4: Return to Tonic
 [V:1] f2 d2 B2 G2 | e2 g2 c'2 g2 | f2 a2 d2 b2 | c'4 c'4 |]
 [V:2] G,4 F,4 | E,4 C,4 | F,4 G,4 | C,4 C,,4 |]`,
-        revisionNotes: `## Topic: Understanding Key Relationships and Modulation
+        revisionNotes: `## Understanding Key Relationships and Modulation  
 
-In Western tonal music, pieces rarely stay in one key from start to finish. Composers move between keys to create contrast, tension, and structure. This process is called **Modulation**.
+In Western tonal music, pieces rarely stay in one key from start to finish. Composers move between keys to create contrast, tension, and structure. This process is called **modulation**.
 
-At the IGCSE level, you are expected to recognize modulations to “closely related keys.” These are keys that share the same key signature or differ by only one # (sharp) or b (flat).
+At IGCSE level, you are expected to recognise modulations to **closely related keys**. These are keys that:
+- share the same key signature, or  
+- differ by only **one sharp or one flat**
 
-### The Four Main Relationships:
-1.  **Tonic (I or i):** The “Home” key.
-2.  **Dominant (V):** The most common modulation. It builds tension. It is found on the 5th degree of the scale.
-3.  **Subdominant (IV):** Often feels like a “relaxation.” It is found on the 4th degree of the scale.
-4.  **Relative Key (vi or III):** The key that shares the exact same key signature but changes mode (Major -> Minor, or Minor -> Major).
+---
 
-### How to Spot the Modulation:
-When looking at a score, look for **Accidentals** that do not belong to the current key signature.
+### 🎵 Tonic (I or i)
+The **home key**. Music usually begins and ends here.
 
-*   **1. Moving to the Dominant (V):** Look for a **raised 4th degree** of the scale.
-    *   *Example (C Major to G Major):* C Major has no sharps. G Major has one sharp (F#). Look for the accidental **F#**.
-*   **2. Moving to the Subdominant (IV):** Look for a **flattened 7th degree** of the scale.
-    *   *Example (C Major to F Major):* C Major has no flats. F Major has one flat (Bb). Look for the accidental **Bb**.
-*   **3. Moving to the Relative Minor (vi):** Look for the **raised 7th** of the minor key (the accidental required to make it Harmonic Minor).
-    *   *Example (C Major to A Minor):* Both share a key signature (blank). However, A Minor raises its 7th note (G) to **G#**.`,
+\`\`\`abc
+K:C
+C D E F G A B c
+\`\`\`
+
+---
+
+### 🎵 Dominant (V)
+The **most common modulation**. It increases tension and prepares a return to the tonic.  
+The dominant key is built on the **5th degree** of the scale.
+
+#### How to spot it
+Look for a **raised 4th degree** of the original key  
+(this becomes the **leading note of the new dominant key**).
+
+#### Example: C major → G major
+- C major has no sharps
+- G major has **F♯**
+
+\`\`\`abc
+K:C
+C D E F G A B c |
+^F G A B c d e f |
+\`\`\`
+
+The accidental **F# (^F)** signals the modulation.
+
+---
+
+### 🎵 Subdominant (IV)
+Often feels like a **broadening or relaxation away from the tonic**.  
+The subdominant key is built on the **4th degree** of the scale.
+
+#### How to spot it
+Look for a **flattened 7th degree** of the original key.
+
+#### Example: C major → F major
+- F major has **B♭**
+
+\`\`\`abc
+K:C
+C D E F G A B c |
+B _B A G F E D C |
+\`\`\`
+
+The accidental **Bb (_B)** indicates the new key.
+
+---
+
+### 🎵 Relative Minor (vi)
+The relative major and minor share the **same key signature** but change **mode**.
+
+#### How to spot it
+Look for the **raised 7th of the minor key** (Harmonic Minor).
+
+#### Example: C major → A minor
+- Both have no sharps or flats
+- A minor raises **G to G♯**
+
+\`\`\`abc
+K:C
+C D E F G A B c |
+A B c d e f ^g a |
+\`\`\`
+
+The **G# (^g)** confirms the modulation.
+
+---
+
+### 🎵 Relative Major (III)
+Look for the **removal of the raised 7th** and a clear emphasis on the major tonic.
+
+#### Example: A minor → C major
+
+\`\`\`abc
+K:Am
+A B c d e f ^g a |
+c B A G F E D C |
+\`\`\`
+
+The disappearance of **G# (^g)** signals the return to C major.
+
+---
+
+## Exam Tip: How to Identify Modulation Quickly
+- Ignore single passing accidentals
+- Look for **repeated accidentals**
+- Check whether they match a **closely related key**
+- Confirm with cadences or tonal emphasis`,
         questions: [
             { id: 1, question: "Look at the tempo marking at the start of the score. What Italian term describes this speed?", options: ["Adagio", "Andante", "Allegro", "Presto"], correctAnswer: 2, rationale: "'Allegro' is the Italian term shown in the tempo header of the score." },
             { id: 2, question: "Based on the tempo marking, how many beats per minute (BPM) should the crotchet (quarter note) be played at?", options: ["60", "100", "120", "144"], correctAnswer: 2, rationale: "The score header indicates 1/4=120, meaning 120 beats per minute." },

@@ -3,6 +3,7 @@ import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { marked } from 'marked';
 import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Link as LinkIcon, Loader2 } from 'lucide-react';
 import { AbcRenderer } from '../components/tutor/AbcRenderer';
+import abcjs from 'abcjs';
 import { mock1Quizzes } from '../services/syllabusContent/mock1Quizzes';
 import { mock1BaroqueQuizzes } from '../services/syllabusContent/mock1BaroqueQuizzes';
 import { mock1TonalityQuizzes } from '../services/syllabusContent/mock1TonalityQuizzes';
@@ -11,6 +12,21 @@ import { useProgress } from '../contexts/ProgressContext';
 
 // Combine all quiz data
 const allQuizData = { ...mock1Quizzes, ...mock1BaroqueQuizzes, ...mock1TonalityQuizzes };
+
+// Custom renderer for ABC blocks
+const renderer = new marked.Renderer();
+const originalCodeRenderer = renderer.code.bind(renderer);
+renderer.code = (code: string | any, language: string | undefined): any => {
+    // Some versions of marked pass an object, others pass a string
+    const codeText = typeof code === 'object' ? code.text : code;
+    const lang = typeof code === 'object' ? code.lang : language;
+
+    if (lang === 'abc') {
+        return `<div class="abc-revision-score shadow-md my-6 rounded-lg bg-white p-2 overflow-hidden border border-gray-200" data-abc="${encodeURIComponent(codeText)}"></div>`;
+    }
+    return originalCodeRenderer(code, language);
+};
+marked.setOptions({ renderer });
 
 const ExamQuizPage: React.FC = () => {
     const { quizId } = useParams<{ quizId: string }>();
@@ -54,6 +70,39 @@ const ExamQuizPage: React.FC = () => {
     const previousResult = progress?.quizResults.find(r =>
         r.quizId === templateId || r.quizId === quizId
     );
+
+    // Effect to render ABC scores in revision notes
+    useEffect(() => {
+        if (!quiz?.revisionNotes) return;
+
+        // Small delay to ensure DOM is updated by marked
+        const timer = setTimeout(() => {
+            const elements = document.querySelectorAll('.abc-revision-score');
+            elements.forEach((el) => {
+                // Skip if already rendered
+                if (el.querySelector('svg')) return;
+
+                const abc = decodeURIComponent(el.getAttribute('data-abc') || '');
+                if (abc) {
+                    try {
+                        abcjs.renderAbc(el as HTMLElement, abc, {
+                            responsive: 'resize',
+                            paddingtop: 0,
+                            paddingbottom: 0,
+                            paddingright: 0,
+                            paddingleft: 0,
+                            staffwidth: 600,
+                            add_classes: true
+                        });
+                    } catch (err) {
+                        console.error('Failed to render embedded ABC score:', err);
+                    }
+                }
+            });
+        }, 150);
+
+        return () => clearTimeout(timer);
+    }, [quiz?.revisionNotes, templateId, isSubmitted]);
 
     if (!quiz) {
         return (
