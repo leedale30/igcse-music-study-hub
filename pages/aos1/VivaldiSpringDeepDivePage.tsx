@@ -38,6 +38,7 @@ X:1
 T:Episode 1: The Song of the Birds
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -63,6 +64,7 @@ X:1
 T:Ritornello 2: Transition
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -78,6 +80,7 @@ X:1
 T:Episode 2: Murmuring Streams
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -98,6 +101,7 @@ X:1
 T:Ritornello 3: Dominant Key
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -113,6 +117,7 @@ X:1
 T:Episode 3: The Storm
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -133,6 +138,7 @@ X:1
 T:Ritornello 4: The Minor Mode
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -148,6 +154,7 @@ X:1
 T:Episode 4: The Birds Return
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
@@ -163,6 +170,7 @@ X:1
 T:Finale: Ritornello 5 and Final Solo
 M:4/4
 L:1/16
+Q:1/4=100
 K:E
 V:1 name="Solo Violin"
 V:2 name="Orch. Violins"
