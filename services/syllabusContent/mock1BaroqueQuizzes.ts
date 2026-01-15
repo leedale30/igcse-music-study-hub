@@ -861,27 +861,240 @@ c4 z2 cc c4 z2 cc | c4 z2 cc c4 z4 |!p! (f2f2f2f2) (f2f2f2f2) | (g2g2g2g2) (g2g2
 !f! g2c2g2g2 c'2g2g2c2 |!p! A2A2A2A2 A2A2A2A2 | A2A2A2A2 A2A2A2A2 | F2F2F2F2 F2F2F2F2 |$ 
 !f! c2gf g2c2 c2c'b c'2c2 | c2gf g2c2 c2c'b c'2fg | f2c2c2A2 A2F2F2f2 | f2c2c2A2 A2F2 F2cc | 
 c4 z2 cc c4 z2 cc |$ c2fc AFc2 A6 |]`,
-        revisionNotes: `# Section 5: J.S. Bach and The Brandenburg Concertos
+        revisionNotes: `## Section 5: J.S. Bach and *The Brandenburg Concertos*  
+*(with detailed ABC notation breakdowns)*
 
-## 5.1 Focus Work: Brandenburg Concerto No. 2 in F Major
-*   **Composer:** J.S. Bach (1685–1750).
-*   **Genre:** Concerto Grosso (Small group vs. Large group).
+---
+
+## 5.1 Focus Work: *Brandenburg Concerto No. 2 in F Major*
+
+**Composer**  
+Johann Sebastian Bach (1685–1750)
+
+**Genre**  
+Concerto Grosso — contrast between:
+- **Concertino** (small solo group)
+- **Ripieno** (full ensemble)
+
+Unlike later Classical concertos, Bach treats the soloists as **equal contrapuntal voices**, not a single featured instrument.
+
+---
 
 ## 5.2 Instrumentation
-*   **Concertino (Soloists):** 
-    1.  **Natural Trumpet in F:** Played in the high **Clarino** register.
-    2.  **Recorder (Flauto dolce):** Soft woodwind.
-    3.  **Oboe:** Nasal, piercing agility.
-    4.  **Violin:** Virtuosic string voice.
-*   **Ripieno (Full Orchestra):** Strings and Basso Continuo (Harpsichord/Cello).
 
-## 5.3 Analysis of Movement 1 (Allegro)
-*   **Form:** Ritornello Form.
-*   **Texture:** Complex Polyphony. Bach weaves the soloists together in dense counterpoint.
+### Concertino (Solo Group)
 
-## 5.4 Analysis of Movement 3 (Allegro Assai)
-*   **Form:** Fugue.
-*   **Interaction:** The subject is introduced by the Trumpet, then Oboe, then Violin, then Recorder. High virtuosity required for the natural trumpet.`,
+Each solo instrument has a **distinct timbral and technical role**.
+
+---
+
+### 🎺 Natural Trumpet in F (Clarino Register)
+
+- No valves → limited to harmonic series
+- Extremely high register
+- Brilliant, ceremonial sound
+- Technically demanding
+
+### ABC Illustration: Clarino-style trumpet writing
+\`\`\`abc
+X:1
+T:Trumpet Clarino Style
+L:1/8
+K:F
+c' a f c' | d' c' a f |
+\`\`\`
+*Wide leaps and high tessitura reflect harmonic-series writing.*
+
+---
+
+### 🎶 Recorder (Flauto dolce)
+
+- Soft, breathy tone
+- Agile but less powerful
+- Often used for lyrical contrast
+
+### ABC Illustration: Recorder line
+\`\`\`abc
+X:2
+T:Recorder Line
+L:1/8
+K:F
+a g f g | a c' a g |
+\`\`\`
+*Stepwise motion suits the recorder’s gentle tone.*
+
+---
+
+### 🎵 Oboe
+
+- Penetrating, nasal timbre
+- Highly agile
+- Cuts through texture clearly
+
+### ABC Illustration: Oboe articulation
+\`\`\`abc
+X:3
+T:Oboe Figure
+L:1/8
+K:F
+f g a f | g a c' a |
+\`\`\`
+
+---
+
+### 🎻 Violin
+
+- Most virtuosic string voice
+- Rapid passagework and wide range
+- Often bridges wind and brass textures
+
+### ABC Illustration: Violin figuration
+\`\`\`abc
+X:4
+T:Violin Passagework
+L:1/16
+K:F
+f g a c' d' c' a g |
+\`\`\`
+
+---
+
+### Ripieno (Full Orchestra)
+
+- String section
+- **Basso continuo** (harpsichord + cello)
+- Provides harmonic foundation and structural stability
+
+### ABC Illustration: Continuo bass
+\`\`\`abc
+X:5
+T:Basso Continuo
+L:1/4
+K:F
+F, C, D, A, | B, C D C |
+\`\`\`
+
+---
+
+## 5.3 Movement 1 (Allegro)
+
+### Form: Ritornello Form
+
+- Full orchestra presents a **ritornello**
+- Soloists enter in episodes
+- Ritornello returns in whole or in fragments
+
+---
+
+### Texture: Complex Polyphony
+
+- Multiple independent melodic lines
+- No clear “solo vs accompaniment”
+- Bach interweaves the concertino instruments in **dense counterpoint**
+
+### ABC Illustration: Polyphonic interaction
+\`\`\`abc
+X:6
+T:Polyphonic Texture
+L:1/8
+K:F
+V:Trumpet clef=treble
+V:Oboe clef=treble
+V:Violin clef=treble
+[V:Trumpet] c' a f c' |
+[V:Oboe] a g f g |
+[V:Violin] f g a c' |
+\`\`\`
+*Each line is melodically independent yet harmonically coordinated.*
+
+---
+
+## 5.4 Movement 3 (Allegro Assai)
+
+### Form: Fugue
+
+A fugue is a **strict contrapuntal form** built from:
+- A **subject**
+- Successive **entries** in different voices
+- Overlapping imitation
+
+---
+
+### Order of Subject Entries
+
+1. Trumpet  
+2. Oboe  
+3. Violin  
+4. Recorder  
+
+Each entry overlaps the previous one, increasing density.
+
+---
+
+### ABC Illustration: Fugue subject (simplified)
+\`\`\`abc
+X:7
+T:Fugue Subject
+L:1/8
+K:F
+f g a c' | a g f e |
+\`\`\`
+
+---
+
+### ABC Illustration: Staggered entries
+\`\`\`abc
+X:8
+T:Fugue Entries
+L:1/8
+K:F
+V:Trumpet
+V:Oboe
+V:Violin
+V:Recorder
+[V:Trumpet] f g a c' |
+[V:Oboe]   a g f e |
+[V:Violin] f g a c' |
+[V:Recorder] a g f e |
+\`\`\`
+*Entries overlap, creating continuous contrapuntal motion.*
+
+---
+
+### Trumpet Virtuosity
+
+- Fugue writing in the **extreme high register**
+- No rests to recover embouchure
+- One of the most demanding Baroque trumpet parts ever written
+
+### ABC Illustration: Sustained high trumpet writing
+\`\`\`abc
+X:9
+T:Trumpet Endurance
+L:1/8
+K:F
+c' c' a f | c' a f c' |
+\`\`\`
+
+---
+
+## Summary of Bach’s Style in the Brandenburgs
+
+| Feature | Description |
+|------|------------|
+| Genre | Concerto Grosso |
+| Texture | Dense polyphony |
+| Form | Ritornello (Mvt 1), Fugue (Mvt 3) |
+| Solo Writing | Equal contrapuntal voices |
+| Trumpet Role | Extreme virtuosity |
+| Overall Effect | Intellectual brilliance and energy |
+
+---
+
+This section now:
+- Shows **how concerto grosso differs from solo concerto**
+- Makes Bach’s **polyphonic thinking visible**
+- Uses ABC to demonstrate **counterpoint, imitation, and texture**`,
         questions: [
             {
                 id: 1,
