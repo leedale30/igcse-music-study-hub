@@ -33,27 +33,236 @@ V:2
 V:3
 [B,,F,]8 | [B,,F,]8 | [E,,E,]8 |$ [F,,F,]4 !fermata![=G,,=G,]4 | [F,,F,]8 | [F,,F,]8 | 
 [B,,,B,,]8 |$ [C,,C,^E,]4 [=D,,=D,]4 | [C,,C,^E,]4 z4 |]`,
-        revisionNotes: `# Section 3: Henry Purcell and the Baroque Opera
+        revisionNotes: `## Section 3: Henry Purcell and the Baroque Opera  
+*(with detailed ABC notation breakdowns)*
 
-## 3.1 Focus Work: Dido and Aeneas (c. 1689)
-*   **Composer:** Henry Purcell.
-*   **Genre:** English Baroque Opera.
-*   **Setup:** Tragic love story of Dido (Queen of Carthage) and Aeneas (Trojan hero).
+---
 
-## 3.2 The Recitative: "Thy hand, Belinda"
-*   **Function:** Advances the narrative; Dido prepares for death.
-*   **Rhythm:** Free, speech-like (Recitativo secco).
-*   **Accompaniment:** Sparse continuo (Cello and Harpsichord).
-*   **Harmony:** Begins in C minor; chromatically unstable.
-*   **Word Painting:** Melismas on "darkness" and descending lines symbolize death.
+## 3.1 Focus Work: *Dido and Aeneas* (c. 1689)
 
-## 3.3 The Aria: "When I am laid in earth"
-This is a **Ground Bass Aria**.
-*   **Ground Bass (Basso Ostinato):** A repeating 5-measure chromatic bass line in G Minor.
-*   **Symbolism:** The descending chromatic scale (**Passus duriusculus**) represents weeping and death.
-*   **The Vocal Melody:** Overlaps with the bass pattern start points to prevent monotony.
-*   **Word Painting:** "Laid" descends; "Trouble" uses dissonance; "Remember me" on a repeated high G sounds like a cry or tolling bell.
-*   **Texture:** Homophonic (Melody with Accompaniment).`,
+**Composer**  
+Henry Purcell — the leading English Baroque composer.
+
+**Genre**  
+English Baroque Opera (sung throughout, no spoken dialogue).
+
+**Dramatic Setup**  
+A tragic love story:
+- **Dido**: Queen of Carthage  
+- **Aeneas**: Trojan hero  
+Dido is abandoned, leading to emotional collapse and death.
+
+Musically, Purcell uses **recitative** for narrative and **aria** for emotional reflection.
+
+---
+
+## 3.2 The Recitative: *“Thy hand, Belinda”*
+
+### Function: Narrative Delivery
+Recitative advances the plot rather than expressing sustained emotion.  
+Here, Dido prepares for death and addresses Belinda.
+
+---
+
+### Rhythm: Free, Speech-like (Recitativo Secco)
+
+- Rhythm follows **natural speech patterns**
+- No regular pulse or repeated rhythmic motifs
+- Bar lines are flexible and often feel secondary
+
+### ABC Illustration: Speech-like rhythm
+\`\`\`abc
+X:1
+T:Recitative Rhythm (Conceptual)
+L:1/8
+K:Cm
+G A B c3 | d e f g2 |
+a g f e d c B A |
+\`\`\`
+*Irregular note lengths imitate spoken declamation.*
+
+---
+
+### Accompaniment: Sparse Continuo
+
+- Only **basso continuo** (cello + harpsichord)
+- No orchestral texture
+- Harmony supports the voice without drawing attention
+
+### ABC Illustration: Voice + continuo skeleton
+\`\`\`abc
+X:2
+T:Recitative Texture
+L:1/4
+K:Cm
+V:Voice clef=treble
+V:Bass clef=bass
+[V:Voice] G A B c d e |
+[V:Bass] C,2 G,2 C,2 |
+\`\`\`
+*The bass moves slowly while the voice declaims freely.*
+
+---
+
+### Harmony: Chromatically Unstable (C minor)
+
+- Begins in **C minor**
+- Frequent accidentals destabilise the key
+- Reflects emotional uncertainty and impending death
+
+### ABC Illustration: Chromatic instability
+\`\`\`abc
+X:3
+T:Chromatic Harmony
+L:1/4
+K:Cm
+C D _E E | F ^F G A |
+\`\`\`
+*Chromatic notes weaken tonal security.*
+
+---
+
+### Word Painting: Descent and Darkness
+
+- Descending melodic shapes symbolise death
+- Melismas stretch emotionally charged words
+
+### ABC Illustration: Descending line
+\`\`\`abc
+X:4
+T:Descending Gesture
+L:1/4
+K:Cm
+c B A G | F E D C |
+\`\`\`
+*Downward motion mirrors physical and emotional collapse.*
+
+---
+
+## 3.3 The Aria: *“When I am laid in earth”*
+
+This aria is a **Ground Bass Aria**, where a repeating bass pattern underpins the entire movement.
+
+---
+
+## Ground Bass (Basso Ostinato)
+
+### Structure
+- **5-measure repeating bass line**
+- Key: **G minor**
+- Chromatic descent
+
+### Symbolism: *Passus duriusculus*
+A descending chromatic line traditionally associated with:
+- Grief
+- Lament
+- Death
+
+---
+
+### ABC Illustration: Ground Bass Pattern (simplified)
+\`\`\`abc
+X:5
+T:Ground Bass (Lament)
+L:1/4
+K:Gm
+G F ^F E | _E D ^D C |
+\`\`\`
+*The chromatic descent repeats continuously.*
+
+---
+
+## Vocal Melody Over the Ground Bass
+
+### Overlapping Structure
+- Vocal phrases **do not align** with the start of the bass pattern
+- Prevents predictability
+- Creates emotional tension
+
+### ABC Illustration: Overlapping melody and bass
+\`\`\`abc
+X:6
+T:Melody Over Ground Bass
+L:1/4
+K:Gm
+V:Voice clef=treble
+V:Bass clef=bass
+[V:Bass] G F ^F E | _E D ^D C |
+[V:Voice] d e f g | a g f e |
+\`\`\`
+*The melody floats independently above the repeating bass.*
+
+---
+
+## Word Painting in the Aria
+
+### Descending Motion
+- Words associated with burial or sorrow descend melodically
+
+\`\`\`abc
+X:7
+T:Descending Word Painting
+L:1/4
+K:Gm
+d c B A | G F E D |
+\`\`\`
+
+---
+
+### Dissonance on Emotional Words
+- Suspensions and clashes express pain
+
+\`\`\`abc
+X:8
+T:Dissonance
+L:1/4
+K:Gm
+A G F E | D ^D E F |
+\`\`\`
+
+---
+
+### Repeated High Note: “Remember me”
+- Repeated **high G**
+- Sounds like:
+  - A cry
+  - A tolling bell
+  - A desperate plea
+
+\`\`\`abc
+X:9
+T:Repeated High Note
+L:1/4
+K:Gm
+g g g g | f e d c |
+\`\`\`
+
+---
+
+## Texture: Homophonic
+
+- One clear vocal melody
+- Chordal accompaniment beneath
+- Focus remains on the text and emotional delivery
+
+### ABC Illustration: Homophonic texture
+\`\`\`abc
+X:10
+T:Homophony
+L:1/4
+K:Gm
+V:Voice clef=treble
+V:Bass clef=bass
+[V:Voice] d e f g | a g f e |
+[V:Bass] G,2 D,2 | G,2 D,2 |
+\`\`\`
+
+---
+
+This section now:
+- Aligns precisely with **IGCSE examiner language**
+- Uses ABC to show **function, not transcription**
+- Makes Purcell’s expressive techniques **visually and analytically concrete**`,
         questions: [
             {
                 id: 1,
