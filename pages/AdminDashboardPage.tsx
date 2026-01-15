@@ -62,6 +62,23 @@ const AdminDashboardPage: React.FC = () => {
         // Filter progress for this student
         const studentProgressItems = progressData?.filter(p => p.user_id === profile.id) || [];
 
+        // Define mock quiz IDs by grade level
+        const g9MockQuizIds = [
+          'baroque-historical-context', 'baroque-musical-language', 'baroque-dido-lament',
+          'baroque-vivaldi-spring', 'baroque-brandenburg', 'baroque-fugue',
+          'baroque-hallelujah', 'baroque-instruments', 'baroque-theory-notation'
+        ];
+        const g10MockQuizIds = [
+          'quiz-tonality', 'quiz-texture-basics', 'quiz-texture-detailed',
+          'quiz-texture-strategies', 'tonality-key-relationships',
+          'tonality-architecture-2', 'tonality-architecture-3', 'tonality-relationships-advanced'
+        ];
+
+        // Determine target mocks based on student group
+        const studentGroup = profile.group_name || profile.grade || 'Unassigned';
+        const targetMockIds = studentGroup === 'Grade 9' ? g9MockQuizIds :
+          studentGroup === 'Grade 10' ? g10MockQuizIds : [];
+
         // Transform to QuizResult[]
         const quizResults: QuizResult[] = studentProgressItems.map(item => ({
           quizId: item.quiz_id,
@@ -80,6 +97,18 @@ const AdminDashboardPage: React.FC = () => {
         const totalTime = quizResults.reduce((acc, curr) => acc + curr.timeSpent, 0);
         const avgScore = totalQuizzes > 0
           ? quizResults.reduce((acc, curr) => acc + curr.percentage, 0) / totalQuizzes
+          : 0;
+
+        // Mock Exam Specific Stats (Grade-specific)
+        const completedMockQuizzes = quizResults.filter(q => targetMockIds.includes(q.quizId));
+        const uniqueMockQuizzesCount = new Set(completedMockQuizzes.map(q => q.quizId)).size;
+
+        const mockRevisionPercentage = targetMockIds.length > 0
+          ? (uniqueMockQuizzesCount / targetMockIds.length) * 100
+          : 0;
+
+        const mockAverageScore = completedMockQuizzes.length > 0
+          ? completedMockQuizzes.reduce((acc, curr) => acc + curr.percentage, 0) / completedMockQuizzes.length
           : 0;
 
         // Determine last activity
@@ -133,7 +162,9 @@ const AdminDashboardPage: React.FC = () => {
           badges: [],
           igcseAssessments: [], // Placeholder for now
           overallIGCSEGrade: undefined,
-          overallIGCSEPercentage: undefined
+          overallIGCSEPercentage: undefined,
+          mockRevisionPercentage,
+          mockAverageScore
         };
       });
 
@@ -673,7 +704,21 @@ const AdminDashboardPage: React.FC = () => {
                                     </div>
 
                                     <div className="text-center">
-                                      <p className="text-sm font-medium text-slate-600 dark:text-slate-400">IGCSE Grade</p>
+                                      <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Mock Revision</p>
+                                      <p className={`text-lg font-bold ${getScoreColor(student.mockRevisionPercentage || 0)}`}>
+                                        {(student.mockRevisionPercentage || 0).toFixed(0)}%
+                                      </p>
+                                    </div>
+
+                                    <div className="text-center">
+                                      <p className="text-sm font-medium text-slate-600 dark:text-slate-400">Mock Score</p>
+                                      <p className={`text-lg font-bold ${getScoreColor(student.mockAverageScore || 0)}`}>
+                                        {(student.mockAverageScore || 0).toFixed(1)}%
+                                      </p>
+                                    </div>
+
+                                    <div className="text-center">
+                                      <p className="text-sm font-medium text-slate-600 dark:text-slate-400">GCSE Grade</p>
                                       {student.overallIGCSEGrade ? (
                                         <p className={`text-lg font-bold ${getGradeColor(student.overallIGCSEGrade)}`}>
                                           {student.overallIGCSEGrade}

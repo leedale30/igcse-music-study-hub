@@ -5,11 +5,12 @@ import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Lin
 import { AbcRenderer } from '../components/tutor/AbcRenderer';
 import { mock1Quizzes } from '../services/syllabusContent/mock1Quizzes';
 import { mock1BaroqueQuizzes } from '../services/syllabusContent/mock1BaroqueQuizzes';
+import { mock1TonalityQuizzes } from '../services/syllabusContent/mock1TonalityQuizzes';
 import { useAuth } from '../contexts/AuthContext';
 import { useProgress } from '../contexts/ProgressContext';
 
 // Combine all quiz data
-const allQuizData = { ...mock1Quizzes, ...mock1BaroqueQuizzes };
+const allQuizData = { ...mock1Quizzes, ...mock1BaroqueQuizzes, ...mock1TonalityQuizzes };
 
 const ExamQuizPage: React.FC = () => {
     const { quizId } = useParams<{ quizId: string }>();

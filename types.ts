@@ -106,6 +106,8 @@ export interface StudentSummary {
   igcseAssessments: IGCSEAssessment[];
   overallIGCSEGrade?: string;
   overallIGCSEPercentage?: number;
+  mockRevisionPercentage?: number;
+  mockAverageScore?: number;
 }
 
 // Progress Tracking Types
