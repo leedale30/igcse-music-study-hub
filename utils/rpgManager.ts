@@ -46,6 +46,12 @@ export class RPGManager {
     this.eventListeners[event].push(callback);
   }
 
+  public off(event: string, callback: Function): void {
+    if (this.eventListeners[event]) {
+      this.eventListeners[event] = this.eventListeners[event].filter(cb => cb !== callback);
+    }
+  }
+
   private emit(event: string, data?: any): void {
     if (this.eventListeners[event]) {
       this.eventListeners[event].forEach(callback => callback(data));
