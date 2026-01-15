@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { marked } from 'marked';
 import { ArrowLeft, CheckCircle, XCircle, AlertCircle, Award, BookOpen, Bot, Link as LinkIcon, Loader2 } from 'lucide-react';
@@ -39,6 +39,7 @@ const ExamQuizPage: React.FC = () => {
     const { user } = useAuth();
     const { addQuizResult, progress } = useProgress();
 
+    const revisionNotesRef = useRef<HTMLDivElement>(null);
     const [templateId, setTemplateId] = useState<string | null>(null);
     const [quizStartTime] = useState<Date>(new Date());
 
@@ -75,31 +76,25 @@ const ExamQuizPage: React.FC = () => {
         r.quizId === templateId || r.quizId === quizId
     );
 
-    // Effect to render ABC scores in revision notes
+    // Effect to render ABC scores in revision notes using MutationObserver
     useEffect(() => {
         if (!quiz?.revisionNotes) return;
 
-        console.log(`[ExamQuizPage] Revision notes changed for ${templateId}. Seeking scores...`);
+        console.log(`[ExamQuizPage] Setting up render logic for ${templateId}`);
 
-        // Small delay to ensure DOM is updated by dangerouslySetInnerHTML
-        const timer = setTimeout(() => {
+        const renderScores = () => {
             const elements = document.querySelectorAll('.abc-revision-score');
-            console.log(`[ExamQuizPage] Found ${elements.length} score containers to render.`);
+            if (elements.length === 0) return;
 
+            console.log(`[ExamQuizPage] Found ${elements.length} score containers.`);
             elements.forEach((el, idx) => {
-                // Skip if already rendered (has an SVG)
-                if (el.querySelector('svg')) {
-                    console.log(`[ExamQuizPage] Score ${idx} already rendered.`);
-                    return;
-                }
+                if (el.querySelector('svg')) return;
 
                 const abc = decodeURIComponent(el.getAttribute('data-abc') || '');
                 if (abc) {
                     try {
                         console.log(`[ExamQuizPage] Rendering score ${idx}...`);
-                        // Clear the "Rendering..." placeholder
                         el.innerHTML = '';
-
                         abcjs.renderAbc(el as HTMLElement, abc, {
                             responsive: 'resize',
                             paddingtop: 10,
@@ -109,18 +104,34 @@ const ExamQuizPage: React.FC = () => {
                             staffwidth: 600,
                             add_classes: true
                         });
-                        console.log(`[ExamQuizPage] Score ${idx} rendered successfully.`);
                     } catch (err) {
-                        console.error(`[ExamQuizPage] Failed to render score ${idx}:`, err);
+                        console.error(`[ExamQuizPage] Render failed for score ${idx}:`, err);
                         el.innerHTML = `<div class="text-red-500 text-xs p-2">Error rendering notation</div>`;
                     }
-                } else {
-                    console.warn(`[ExamQuizPage] Score ${idx} has no ABC data attribute.`);
                 }
             });
-        }, 300); // Increased timeout to 300ms for safety
+        };
 
-        return () => clearTimeout(timer);
+        // 1. Immediate attempt
+        renderScores();
+
+        // 2. Setup observer to catch dangerouslySetInnerHTML updates
+        const observer = new MutationObserver((mutations) => {
+            console.log('[ExamQuizPage] Mutation detected in notes container');
+            renderScores();
+        });
+
+        if (revisionNotesRef.current) {
+            observer.observe(revisionNotesRef.current, { childList: true, subtree: true });
+        }
+
+        // 3. Fallback poll
+        const fallbackTimer = setTimeout(renderScores, 500);
+
+        return () => {
+            observer.disconnect();
+            clearTimeout(fallbackTimer);
+        };
     }, [quiz?.revisionNotes, templateId, isSubmitted]);
 
     if (!quiz) {
@@ -242,6 +253,7 @@ const ExamQuizPage: React.FC = () => {
                             </div>
                             <div
                                 className="p-6 prose prose-indigo dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-indigo-900 dark:prose-headings:text-indigo-100 prose-p:text-gray-700 dark:prose-p:text-gray-300"
+                                ref={revisionNotesRef}
                                 dangerouslySetInnerHTML={{ __html: marked.parse(quiz.revisionNotes) as string }}
                             />
                         </div>
