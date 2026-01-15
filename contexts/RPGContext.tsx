@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback, useMemo } from 'react';
 import { RPGGameState, RPGCharacter, CharacterClass, RPGNotification } from '../types/rpg';
 import { StudentProgress, QuizResult } from '../types';
 import { useAuth } from './AuthContext';
@@ -30,6 +30,40 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
   const [notifications, setNotifications] = useState<RPGNotification[]>([]);
   const [isInitialized, setIsInitialized] = useState(false);
 
+  const loadRPGState = useCallback((userId: string) => {
+    try {
+      // Check if RPG is enabled for this user
+      const rpgEnabled = localStorage.getItem(`rpg-enabled-${userId}`);
+      if (rpgEnabled === 'true') {
+        const existingState = rpgManager.loadGameState(userId);
+        if (existingState) {
+          setGameState(existingState);
+          setIsRPGEnabled(true);
+        } else {
+          // RPG was enabled but no state found, reset
+          setIsRPGEnabled(false);
+          localStorage.removeItem(`rpg-enabled-${userId}`);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading RPG state:', error);
+      setIsRPGEnabled(false);
+    } finally {
+      setIsInitialized(true);
+    }
+  }, []);
+
+  const saveRPGState = useCallback((state: RPGGameState) => {
+    if (user) {
+      try {
+        localStorage.setItem(`rpg-enabled-${user.id}`, 'true');
+        // The rpgManager handles saving the actual game state
+      } catch (error) {
+        console.error('Error saving RPG state:', error);
+      }
+    }
+  }, [user]);
+
   // Load RPG state when user changes
   useEffect(() => {
     if (user) {
@@ -40,11 +74,14 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
       setNotifications([]);
       setIsInitialized(false);
     }
-  }, [user]);
+  }, [user, loadRPGState]);
 
   // Set up RPG manager event listeners
   useEffect(() => {
     const handleNotification = (notification: RPGNotification) => {
+      // Accessing state directly inside the callback if needed via ref or functional updates?
+      // Actually here we depend on gameState?.settings.notifications which is in the dependency array
+      // So this effect re-runs when settings change.
       if (gameState?.settings.notifications) {
         setNotifications(prev => [...prev, notification]);
       }
@@ -87,45 +124,19 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
     rpgManager.on('newRunStarted', handleStateChange);
 
     return () => {
-      // Cleanup event listeners if we had a proper cleanup system
+      // Cleanup event listeners
+      rpgManager.off('notification', handleNotification);
+      rpgManager.off('levelUp', handleLevelUp);
+      rpgManager.off('experienceGained', handleStateChange);
+      rpgManager.off('goldGained', handleStateChange);
+      rpgManager.off('itemFound', handleItemFound);
+      rpgManager.off('challengeCompleted', handleStateChange);
+      rpgManager.off('characterDeath', handleCharacterDeath);
+      rpgManager.off('newRunStarted', handleStateChange);
     };
-  }, [gameState?.settings.notifications]);
+  }, [gameState?.settings.notifications, saveRPGState]);
 
-  const loadRPGState = (userId: string) => {
-    try {
-      // Check if RPG is enabled for this user
-      const rpgEnabled = localStorage.getItem(`rpg-enabled-${userId}`);
-      if (rpgEnabled === 'true') {
-        const existingState = rpgManager.loadGameState(userId);
-        if (existingState) {
-          setGameState(existingState);
-          setIsRPGEnabled(true);
-        } else {
-          // RPG was enabled but no state found, reset
-          setIsRPGEnabled(false);
-          localStorage.removeItem(`rpg-enabled-${userId}`);
-        }
-      }
-    } catch (error) {
-      console.error('Error loading RPG state:', error);
-      setIsRPGEnabled(false);
-    } finally {
-      setIsInitialized(true);
-    }
-  };
-
-  const saveRPGState = (state: RPGGameState) => {
-    if (user) {
-      try {
-        localStorage.setItem(`rpg-enabled-${user.id}`, 'true');
-        // The rpgManager handles saving the actual game state
-      } catch (error) {
-        console.error('Error saving RPG state:', error);
-      }
-    }
-  };
-
-  const enableRPG = async (characterClass: CharacterClass): Promise<boolean> => {
+  const enableRPG = useCallback(async (characterClass: CharacterClass): Promise<boolean> => {
     if (!user) return false;
 
     try {
@@ -154,9 +165,9 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
       console.error('Error enabling RPG:', error);
       return false;
     }
-  };
+  }, [user, saveRPGState]);
 
-  const disableRPG = () => {
+  const disableRPG = useCallback(() => {
     if (!user) return;
 
     try {
@@ -170,9 +181,25 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
     } catch (error) {
       console.error('Error disabling RPG:', error);
     }
-  };
+  }, [user]);
 
-  const processQuizResult = (quizResult: QuizResult) => {
+  const processQuizResult = useCallback((quizResult: QuizResult) => {
+    // Note: We need to access the current value of isRPGEnabled and gameState.
+    // But since this function is recreated only when dependencies change, and we need latest state?
+    // Actually, isRPGEnabled and gameState are in the closure.
+    // If we include them in dependencies, the function recreates often.
+    // However, if we don't, it uses stale values.
+    // Given that we want to avoid re-renders of consumers, we should include them.
+    // But changing gameState recreates this function, which recreates the context value.
+    // So memoization helps if only SOME props change.
+    // BUT here `gameState` changes frequently (xp gain, etc).
+    // So `processQuizResult` will change frequently.
+
+    // To avoid `processQuizResult` changing when `gameState` changes, we could use a ref for `gameState`
+    // or rely on `rpgManager` which holds the state singleton.
+
+    // `rpgManager.processQuizResult` checks internal state, but the wrapper checks `isRPGEnabled`.
+
     if (!isRPGEnabled || !gameState) return;
 
     try {
@@ -181,25 +208,37 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
     } catch (error) {
       console.error('Error processing quiz result in RPG:', error);
     }
-  };
+  }, [isRPGEnabled, gameState]);
 
-  const dismissNotification = (notificationId: string) => {
+  const dismissNotification = useCallback((notificationId: string) => {
     rpgManager.removeNotification(notificationId);
     setNotifications(prev => prev.filter(n => n.id !== notificationId));
-  };
+  }, []);
 
-  const clearAllNotifications = () => {
+  const clearAllNotifications = useCallback(() => {
+    // We need 'notifications' state here to iterate?
+    // Or we can just clear in manager and clear local state.
+    // But manager.removeNotification takes ID.
+    // If we use 'notifications' in dependency, it updates every time notifications change.
+    // Better to use functional update or rely on manager if it had 'clearAll'.
+    // Manager doesn't have clearAll.
+    // So we need notifications in dependency.
+
+    // Wait, let's look at the original code:
+    // notifications.forEach(...)
+    // So yes, it depends on notifications.
+
     notifications.forEach(notification => {
       rpgManager.removeNotification(notification.id);
     });
     setNotifications([]);
-  };
+  }, [notifications]);
 
-  const getCharacter = (): RPGCharacter | null => {
+  const getCharacter = useCallback((): RPGCharacter | null => {
     return gameState?.character || null;
-  };
+  }, [gameState]);
 
-  const value: RPGContextType = {
+  const value: RPGContextType = useMemo(() => ({
     gameState,
     isRPGEnabled,
     notifications,
@@ -210,7 +249,18 @@ export const RPGProvider: React.FC<RPGProviderProps> = ({ children }) => {
     clearAllNotifications,
     getCharacter,
     isInitialized
-  };
+  }), [
+    gameState,
+    isRPGEnabled,
+    notifications,
+    enableRPG,
+    disableRPG,
+    processQuizResult,
+    dismissNotification,
+    clearAllNotifications,
+    getCharacter,
+    isInitialized
+  ]);
 
   return (
     <RPGContext.Provider value={value}>
