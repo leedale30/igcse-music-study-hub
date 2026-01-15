@@ -70,8 +70,11 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
     // Initialize Inline Rendering
     useEffect(() => {
+        console.log(`[AbcRenderer] Initializing for ID: ${id}`);
         if (!paperRef.current || !abcjs) {
-            setRenderError('ABC.js library not loaded');
+            const error = !paperRef.current ? 'paperRef is null' : 'abcjs not loaded';
+            console.error(`[AbcRenderer] Initialization failed: ${error}`);
+            setRenderError(error);
             return;
         }
 
@@ -82,6 +85,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
 
         try {
             const cleanedAbc = cleanAbc(abc);
+            console.log(`[AbcRenderer] Rendering ABC for ${id}...`);
 
             const vObj = abcjs.renderAbc(paperRef.current, cleanedAbc, {
                 responsive: 'resize',
@@ -99,14 +103,17 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
             });
 
             if (!vObj || vObj.length === 0) {
+                console.error(`[AbcRenderer] Render returned no visual objects for ${id}`);
                 setRenderError('Could not parse ABC notation');
                 return;
             }
 
+            console.log(`[AbcRenderer] Render successful for ${id}`);
             setVisualObj(vObj[0]);
 
-            // Initialize audio
+            // Initialize audio - separate from visual rendering to prevent blocking
             if (abcjs.synth && abcjs.synth.supportsAudio()) {
+                console.log(`[AbcRenderer] Initializing audio for ${id}...`);
                 const synth = new abcjs.synth.CreateSynth();
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -122,15 +129,18 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     15000, // 15 second timeout for longer pieces
                     'Audio loading timed out'
                 ).then(() => {
+                    console.log(`[AbcRenderer] Audio ready for ${id}`);
                     setSynthControl(synth);
                     setIsAudioReady(true);
                 }).catch((error: any) => {
-                    console.warn("Audio problem:", error);
+                    console.warn(`[AbcRenderer] Audio problem for ${id}:`, error);
                     setAudioError(true);
                 });
+            } else {
+                console.log(`[AbcRenderer] Audio not supported or not present for ${id}`);
             }
         } catch (e: any) {
-            console.error("ABC Render error:", e);
+            console.error(`[AbcRenderer] Exception during render for ${id}:`, e);
             setRenderError(e.message || 'Error rendering notation');
         }
 
@@ -139,7 +149,7 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                 try { synthControl.stop(); } catch (e) { }
             }
         };
-    }, [abc]);
+    }, [abc, id]);
 
     // Initialize Fullscreen Rendering when active
     useEffect(() => {

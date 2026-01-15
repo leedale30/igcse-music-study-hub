@@ -14,19 +14,23 @@ import { useProgress } from '../contexts/ProgressContext';
 const allQuizData = { ...mock1Quizzes, ...mock1BaroqueQuizzes, ...mock1TonalityQuizzes };
 
 // Custom renderer for ABC blocks
-const renderer = new marked.Renderer();
-const originalCodeRenderer = renderer.code.bind(renderer);
-renderer.code = (code: string | any, language: string | undefined): any => {
-    // Some versions of marked pass an object, others pass a string
-    const codeText = typeof code === 'object' ? code.text : code;
-    const lang = typeof code === 'object' ? code.lang : language;
+marked.use({
+    renderer: {
+        code(code: string | any, language: string | undefined): any {
+            // Some versions of marked pass an object, others pass a string
+            const codeText = typeof code === 'object' ? code.text : code || '';
+            const lang = typeof code === 'object' ? code.lang : language;
 
-    if (lang === 'abc') {
-        return `<div class="abc-revision-score shadow-md my-6 rounded-lg bg-white p-2 overflow-hidden border border-gray-200" data-abc="${encodeURIComponent(codeText)}"></div>`;
+            if (lang === 'abc') {
+                console.log('[MarkedRenderer] Detected ABC block in notes');
+                return `<div class="abc-revision-score shadow-md my-6 rounded-lg bg-white p-4 overflow-hidden border border-gray-200 min-h-[100px] flex items-center justify-center" data-abc="${encodeURIComponent(codeText)}">
+                    <div class="text-xs text-gray-400 font-mono animate-pulse">Rendering score...</div>
+                </div>`;
+            }
+            return false; // Fall back to default
+        }
     }
-    return originalCodeRenderer(code, language);
-};
-marked.setOptions({ renderer });
+});
 
 const ExamQuizPage: React.FC = () => {
     const { quizId } = useParams<{ quizId: string }>();
@@ -75,31 +79,46 @@ const ExamQuizPage: React.FC = () => {
     useEffect(() => {
         if (!quiz?.revisionNotes) return;
 
-        // Small delay to ensure DOM is updated by marked
+        console.log(`[ExamQuizPage] Revision notes changed for ${templateId}. Seeking scores...`);
+
+        // Small delay to ensure DOM is updated by dangerouslySetInnerHTML
         const timer = setTimeout(() => {
             const elements = document.querySelectorAll('.abc-revision-score');
-            elements.forEach((el) => {
-                // Skip if already rendered
-                if (el.querySelector('svg')) return;
+            console.log(`[ExamQuizPage] Found ${elements.length} score containers to render.`);
+
+            elements.forEach((el, idx) => {
+                // Skip if already rendered (has an SVG)
+                if (el.querySelector('svg')) {
+                    console.log(`[ExamQuizPage] Score ${idx} already rendered.`);
+                    return;
+                }
 
                 const abc = decodeURIComponent(el.getAttribute('data-abc') || '');
                 if (abc) {
                     try {
+                        console.log(`[ExamQuizPage] Rendering score ${idx}...`);
+                        // Clear the "Rendering..." placeholder
+                        el.innerHTML = '';
+
                         abcjs.renderAbc(el as HTMLElement, abc, {
                             responsive: 'resize',
-                            paddingtop: 0,
-                            paddingbottom: 0,
-                            paddingright: 0,
-                            paddingleft: 0,
+                            paddingtop: 10,
+                            paddingbottom: 10,
+                            paddingright: 10,
+                            paddingleft: 10,
                             staffwidth: 600,
                             add_classes: true
                         });
+                        console.log(`[ExamQuizPage] Score ${idx} rendered successfully.`);
                     } catch (err) {
-                        console.error('Failed to render embedded ABC score:', err);
+                        console.error(`[ExamQuizPage] Failed to render score ${idx}:`, err);
+                        el.innerHTML = `<div class="text-red-500 text-xs p-2">Error rendering notation</div>`;
                     }
+                } else {
+                    console.warn(`[ExamQuizPage] Score ${idx} has no ABC data attribute.`);
                 }
             });
-        }, 150);
+        }, 300); // Increased timeout to 300ms for safety
 
         return () => clearTimeout(timer);
     }, [quiz?.revisionNotes, templateId, isSubmitted]);
