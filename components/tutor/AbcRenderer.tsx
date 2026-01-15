@@ -386,8 +386,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                     </div>
                 </div>
 
-                <div className="p-4 bg-gray-850 flex justify-center overflow-x-auto overflow-y-auto max-h-[400px]">
-                    <div ref={paperRef} id={`paper-${id}`} className="min-w-[200px] text-gray-200" />
+                <div className="p-4 bg-white flex justify-center overflow-x-auto overflow-y-auto max-h-[400px]">
+                    <div ref={paperRef} id={`paper-${id}`} className="min-w-[200px] text-black" />
                 </div>
             </div>
 
@@ -453,8 +453,8 @@ export const AbcRenderer: React.FC<Props> = ({ abc, id }) => {
                         </div>
 
                         {/* Modal Content */}
-                        <div className="flex-1 overflow-auto p-8 bg-gray-950 flex justify-center items-start">
-                            <div className="w-full flex justify-center">
+                        <div className="flex-1 overflow-auto p-8 bg-white flex justify-center items-start">
+                            <div className="w-full flex justify-center text-black">
                                 <div ref={modalPaperRef} className="w-full max-w-5xl" />
                             </div>
                         </div>

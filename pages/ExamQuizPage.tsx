@@ -259,9 +259,9 @@ const ExamQuizPage: React.FC = () => {
                         </div>
                     )}
 
-                    <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
-                        <div className="bg-gray-950 px-4 py-3 border-b border-gray-800 flex items-center gap-2">
-                            <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">Audio Stimulus</span>
+                    <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-inner">
+                        <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
+                            <span className="text-xs font-bold text-indigo-600 uppercase tracking-widest">Audio Stimulus</span>
                         </div>
                         <div className="p-1">
                             <AbcRenderer abc={quiz.abcNotation} id={`quiz-${quiz.id}`} />
