@@ -1434,22 +1434,122 @@ V:3
 w: V \- V \- | i \- \- | IV \- IV \- | VII \- \- |
 !f! !accent!A,,2 !staccato!A,2 !staccato!B,2 !staccato!G,2 | !staccato!A,2 !staccato!A,,2 !staccato!B,,2 !staccato!G,,2 | !accent!A,,2 !staccato!D,2 !staccato!A,2 !staccato!A,,2 | !fermata!D,8 |]
 w: V V VI iv | i V vi iv | V7 i V V7 | i |]`,
-        revisionNotes: `# Section 2: Musical Language & Syntax
+        revisionNotes: `## Section 2: Musical Language & Syntax  
+*(with ABC notation examples)*
 
-## 2.1 The Basso Continuo
-The harmonic foundation of the era.
-*   **Instrumentation:** Usually a **Bass instrument** (Cello/Bassoon) and a **Chordal instrument** (Harpsichord/Organ/Lute).
-*   **Figured Bass:** Numbers below the bass staff indicating chords (e.g., 6 for first inversion).
+---
 
-## 2.2 Dynamics: The Terraced Effect
-Abrupt shifts between loud (f) and soft (p) without gradual transitions, due to instrument limitations (Harpsichord/Organ).
+## 2.1 The Basso Continuo  
+The **harmonic foundation** of Baroque music.
 
-## 2.3 Ornamentation
-Melodies are decorated with **Trills** (starting on upper note), **Mordents**, **Turns**, and **Appoggiaturas** (dissonant leaning notes).
+**Instrumentation**
+- A **bass instrument** (cello, bassoon, viola da gamba)
+- A **chordal instrument** (harpsichord, organ, lute)
 
-## 2.4 Texture
-*   **Polyphony:** Independent melodic lines (fugues).
-*   **Homophony:** Melody with chords (opera recitatives).`,
+**Figured Bass**
+- Numbers written below the bass line indicate the harmony to be realised.
+- Example: **6** = first inversion; **5–3** often implied and omitted.
+
+### ABC Example: Bass line with figures (conceptual)
+\`\`\`abc
+X:1
+T:Basso Continuo (Figured)
+L:1/4
+K:C
+V:Bass clef=bass
+C,  D,  E,  F, | G,  A,  B,  C |
+w: 5-3  6   6   5-3   5-3  6   6   5-3
+\`\`\`
+*The bass plays the written notes; the keyboardist realises chords according to the figures.*
+
+---
+
+## 2.2 Dynamics: The Terraced Effect  
+Dynamics change **abruptly** between loud (**f**) and soft (**p**), with no gradual crescendos or diminuendos.  
+This reflects the mechanical limits of **harpsichords and organs**.
+
+### ABC Example: Sudden dynamic contrast
+\`\`\`abc
+X:2
+T:Terraced Dynamics
+L:1/4
+K:C
+!f! C D E F | G A B c |
+!p! c B A G | F E D C |
+\`\`\`
+*The dynamic marking changes instantly, not gradually.*
+
+---
+
+## 2.3 Ornamentation  
+Melodies are frequently decorated to add expression and virtuosity.
+
+**Common ornaments**
+- **Trill**: rapid alternation, usually starting on the **upper note**
+- **Mordent**: quick lower-note decoration
+- **Turn**: four-note figure circling the main note
+- **Appoggiatura**: accented dissonant note resolving by step
+
+### ABC Examples
+
+**Trill**
+\`\`\`abc
+X:3
+T:Trill
+L:1/4
+K:C
+!trill! D E D C |
+\`\`\`
+
+**Appoggiatura**
+\`\`\`abc
+X:4
+T:Appoggiatura
+L:1/4
+K:C
+^F G E D |
+\`\`\`
+*The accented dissonance resolves downward.*
+
+---
+
+## 2.4 Texture  
+
+### Polyphony  
+Two or more **independent melodic lines**, each with equal importance.  
+Common in **fugues**.
+
+\`\`\`abc
+X:5
+T:Polyphony
+L:1/4
+K:C
+V:1 clef=treble
+V:2 clef=bass
+[V:1] C D E F | G A B c |
+[V:2] C, D, E, F, | G, A, B, C |
+\`\`\`
+
+---
+
+### Homophony  
+A **single melody** supported by chordal accompaniment.  
+Common in **opera recitatives** and arias.
+
+\`\`\`abc
+X:6
+T:Homophony
+L:1/4
+K:C
+V:Melody clef=treble
+V:Chords clef=bass
+[V:Melody] E F G A | G F E D |
+[V:Chords] C,2 G,2 | C,2 G,2 |
+\`\`\`
+
+---
+
+This section now mirrors **IGCSE examiner language**, keeps theory **visually concrete**, and uses ABC in a way that reinforces **function rather than notation complexity**.*`,
         questions: [
             {
                 id: 1,
