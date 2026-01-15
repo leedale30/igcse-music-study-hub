@@ -1292,50 +1292,7 @@ e8[Q:1/4=75]"^Prestissimo" (3ce^c (3BcB (3cec (3BcB |$
 [Bdg]4 z4[Q:1/4=50] [A^ceg]4 z4 |$ 
 [Q:1/4=48] z4[Q:1/4=48] z2[Q:1/4=48] z[Q:1/4=48] [A^c] [FAd]2[Q:1/4=48]F2 E4[Q:1/4=48] | 
 [Q:1/4=30] D8 z8 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z8 z aga faea |$ 
-da^ca daea faAa =Ba^ca |$ da^ca daea faea da=ca |$ Baca dgBg egdg cgBg |$ AgBg cfAf dfcf BfAf |$ 
-GfAf BeGe ^ceBe AeGe |$ FeGe AdFd EeEe FdFd |$ B^cBc AdFd EeEe FdFd |$ z d^cd =Bd^cB c4 z4 |$ 
-z d^cd fd^c=B c4 e4- |$ e2d2- d2^c2 =c4 _B4 |$ A4 A4 G4 G4 |$ ^F2 A4 _e2 d4 z2 g2- |$ 
-g2^f2 g4 B2d2d2d2 |$ d2d2d2d2 d2d2d2d2 |$ dg=fg efde caga fgef |$ dbab gafg ec'bc' abga |$ 
-f_edc dcBA BdBA GBGF |$ EFGA BdcB A4 c2B2 |$ A2G2A2B2 c2E2F2G2 |$ A2G2A2B2 cBAG F x x2 |$ 
-dcBA G x x2 edcB A x x2 |$ fedc B x x2 gfed c x x2 |$ afef cfef afef cfef |$ 
-gede cede gede cede |$ afef cfef afef cfef |$ gede cede gede cede |$ fgfe d x x2 x4 fafd |$ 
-x4 fafd x4 egec |$ x4 egec x4 dfdB |$ x4 dfdB x3 x ^cecB |$ x3 x ^cecB z aga faea |$ 
-da^ca daea faAa =Ba^ca |$ da^ca d2e2 d2=c2 B2A2 |$ 
-BAG=F ED^C=B,[I:staff +1] A,[I:staff -1] x x2[I:staff +1] G,_B,G,E, |$ 
-[I:staff -1] x4[I:staff +1] G,B,G,E,[I:staff -1] x4[I:staff +1] A,DA,F, |$ 
-[I:staff -1] x4[I:staff +1] A,DA,F,[I:staff -1] x4[I:staff +1] G,B,G,E, |$ 
-[I:staff -1] x4[I:staff +1] G,B,G,E,[I:staff -1] x4[I:staff +1] A,DA,F, |$ 
-[I:staff -1] x4[I:staff +1] A,DA,F,[I:staff -1] x4[I:staff +1] B,^CB,G, |$ 
-[I:staff -1] x4[I:staff +1] B,^CB,G,[I:staff -1] x4 DFD[I:staff +1]A, |$ 
-[I:staff -1] x4 DFD[I:staff +1]A,[I:staff -1] x4[I:staff +1] B,^CB,G, |$ 
-[I:staff -1] x4[I:staff +1] B,^CB,G,[I:staff -1] x4 DFD[I:staff +1]A, |$ 
-[I:staff -1] x4 DFD[I:staff +1]A,[I:staff -1] x4 ^CECB, |$ x4 ^CECB, x4 DFD x |$ 
-x[I:staff +1] DB,[I:staff -1] x2[I:staff +1] A,F,[I:staff -1] x2[I:staff +1] D,A,,[I:staff -1] x2[I:staff +1] D,^C,=B,, |$ 
-[I:staff -1] x[I:staff +1] _B,A,G,[I:staff -1] x[I:staff +1] G,F,E,[I:staff -1] x[I:staff +1] B,A,G,[I:staff -1] x[I:staff +1] G,F,E, |$ 
-[I:staff -1] x4 x FED A x3 z ed^c |$ d_e/d/=c/_B/A/G/ ^F2A2- A2G2c2=B2 |$ _e2d2e2=B2 c2B2c2d2 |$ 
-_e2d2e2f2 !trill(!Tg8- |$ g16- |$ !trill)!g8- ggfg _efde |$ cf_ef decd _B_ede cdBc |$ 
-Adcd BcAB GBAB cBAG |$ ^F2A2 dGc^F BGdA BGA^F |$ Gd^Fd GdAd BGdA BGcA |$ dcBA BABG ABcd _edcd |$ 
-BcAB G2=B2 c_efg _agfg |$ _efde c2_B2 A2B2- B2A2- |$ A2G2- G2^F2 =F2_E2- E2DB |$ 
-ABAG ^F_edc Bag^f g2>=f2 |$ _efde ^c4 d4 =c4 |$ B4 A2^c2 d2=e2 f4 |$ e8 d6 f2 |$ 
-g2d2^c2d2 e2d2^c2d2 |$ e2d2^c2d2 e2g2f2e2 |$ B2e2d2d2 ^c4 d2e2 |$ f2e2f2^c2 d2c2d2e2 |$ 
-f2e2f2g2 abga fgef |$ dA^cA dAeA fAeA fAgA |$ aAeA fAgA a4 z4 |$ z16 |$ z8 z ed^c d2 z f |$ 
-efga baga f2e2 def_e |$ dcBA GABc A4 z2 c2- |$ c2B2 z2 g2 _efde cBAG |$ 
-A4[I:staff +1] A,DA,G,[I:staff -1] x4[I:staff +1] A,DA,^F, |$ 
-[I:staff -1] x4[I:staff +1] B,DB,A,[I:staff -1] x4[I:staff +1] B,DCB, |$ 
-[I:staff -1] x4 C_ECB, x4 CECB, |$ x4 GBGD x4 GBGD |$ x4 ^FAF_E x4 FAFE |$ D2 z2 d2c2 B4 c2d2 |$ 
-_e4 f2g2 a4 f2_e2 |$ d_edc BcBA GcBA GAG^F |$ G=F=ED ^C2E2 FGA=B ^cdef |$ g2fe d2^c2 d2e2f2g2 |$ 
-a2^c2d2e2 f2e2f2d2 | e2d2d2^c2[Q:1/4=70] d2f2[Q:1/4=70] e4[Q:1/4=70] |$ 
-[Q:1/4=40] !fermata!d8 z/[Q:1/4=75]"_Recitativo" f/g/a/ b/ x3/2 z/ c/d/_e/ f/ x3/2 |$ 
-z/ A/B/c/ d/ x3/2 z/ G/A/B/ c/ x3/2 z/ F/G/A/ B/ x3/2 z/ C/D/_E/ F/ x3/2 |$ 
-z/[I:staff +1] A,/B,/C/ D/[I:staff -1] x3/2 z/ B,/C/D/ _E/ x3/2 z/ C/D/=E/ ^F/ x3/2 z/[Q:1/4=60] ^F/G/A/ z/ c/[Q:1/4=60]d/G/ |$ 
-[Q:1/4=52]"^Adagissimo" [B=e]8- [Be]4 d4- | d8 z8 |$ z4 z2 [=Bd]2 c8-[Q:1/4=20] | 
-[Q:1/4=30] !fermata!c8 z/[Q:1/4=75]"^Presto" G/F/G/ E/ x3/2 z/ A/G/A/ F/ x3/2 |$ 
-z/ =B/A/B/ G/ x3/2 z/ c/=B/c/ z/ d/c/d/ z/ e/d/e/ z/ f/e/f/ z/ g/e/g/ e/ x3/2 |$ 
-z/ d/c/d/ =B/ x3/2 z/ c/=B/c/ A/ x3/2 z/ =B/A/B/ z/ A/=G/A/ z/ ^G/^F/G/ E/ x3/2 |$ 
-z/ D/C/=B,/ z/ E/D/C/ z/ F/E/D/ z/ =G/F/E/ z/ A/G/F/ z/[Q:1/4=57] G/A/=B/[Q:1/4=35]"^Adagio" c4 |$ 
-[Q:1/4=75]"^Vivace" ^c2 x2 c2c2 d2 x2 d2d2 |$ =B2 x3/2 x/4 x/4 =B2B2 c2 x2 c2c2 | 
-A2 x2 A2A2 _B2 x2 B2B2 |$ B2 x2 B2B2 A2 x2 A2A2- |[Q:1/4=30]"^Molto adagio" A4 G8 =F4 | 
-E8[Q:1/4=25] D8- | !fermata![A,D]16 |] 
+da^ca daea faAa =Ba^ca |]
 V:2
 [I:staff -1] !fermata!MA2[I:staff +1] z/[I:staff -1] G/4F/4E/4D/4^C/ D[I:staff +1] !fermata!z z2 !fermata!MA,2 z/ E,/F,/^C,/ D, !fermata!z z2 |$ 
 !fermata!MA,,2 z/ G,,/4F,,/4E,,/4D,,/4^C,,/ D,, !fermata!z z2 (7:2:5z4 ^C,4- E,4- G,4- x12 |$ 
@@ -1363,58 +1320,7 @@ E4 z4 z8 |$[K:treble] G8 (3EGE (3^CEC (3EGE (3CEC |$
 z4 z2 z A, A,2A,2- A,2>G,2- | G,2F,E, F,4[K:treble]"^Fuga" z AGA FAEA |$ 
 DA^CA DAEA FAA,A =B,A^CA |$ DA^CA DAEA F2^F2G2=C2 |$[K:bass] B,2A,2B,2C2 D2^F,2G,2A,2 |$ 
 B,2A,2B,2^F,2 G,GG,G DGDG |$ C_ECE CECE CFCF CFCF |$ B,DB,D B,DB,D B,=EB,E B,EB,E |$ 
-A,^CA,C A,CA,C F,DF,D F,DF,D |$ E,B,E,B, E,B,E,B, D,A,D,A, D,A,D,A, |$ 
-E,G,E,G, E,G,E,G, A,2A,2A,2A,2 |$ A,2A,2A,2A,2 A,2A,2A,2A,2 |$ A,2A,2A,2A,2 A,4 D4 |$ 
-D4 z4 C4 C4 |$ C4 z4 B,4 B,4 |$ B,4 z4 A,4 A,4 |$ A,4 z2 D2 ^C2C2D2D2 |$ E4 z2 D2 ^C2C2D2D2 |$ 
-E4 z4 z8 |$[I:staff -1] F4 D4[I:staff +1] A,[I:staff -1]=AGA ^CGFE |$ 
-[I:staff +1] z D^CD A,A,G,A, ^F,D^CD G,=F_ED |$ ^C=EA,C D,_ED=C =B,DG,B, C,DC_B, |$ 
-A,C^F,A, D,CB,A,[K:treble] B,AG^F GB,A,G, |$ D4 z2[K:bass] D2 D2D2D2C2 |$ B,2D2D2C2 B,2D2D2C2 |$ 
-B,4 z4 z8 |$ z16 |$ z16 |$ z8 z CB,C A,CG,C |$ F,CE,C F,CG,C A,CC,C D,CE,C |$ 
-F,CE,C F,CG,C A,4 x[I:staff -1] _EDC |$ 
-B,2[I:staff +1] x2 x[I:staff -1] F=ED C2[I:staff +1] x2 x[I:staff -1] GFE |$ 
-D2[I:staff +1] x2 x[I:staff -1] AGF E2[I:staff +1] x2 x[I:staff -1] BAG |$ 
-F2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2[I:staff -1] F2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2 |$ 
-[I:staff -1] E2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2[I:staff -1] E2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2 |$ 
-[I:staff -1] F2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2[I:staff -1] F2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2 |$ 
-[I:staff -1] E2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2[I:staff -1] E2[I:staff +1] z2[I:staff -1] c2[I:staff +1] z2 |$ 
-[I:staff -1] D2[I:staff +1] x3[I:staff -1] c=BA BGBd[I:staff +1] x4 |$ 
-[I:staff -1] =BGBd[I:staff +1] x3 x[I:staff -1] _BGBc[I:staff +1] x4 |$ 
-[I:staff -1] BGBc[I:staff +1] x4[I:staff -1] AFAc[I:staff +1] x4 |$ 
-[I:staff -1] AFAc[I:staff +1] x4[I:staff -1] GEGB[I:staff +1] x4 |$ 
-[I:staff -1] GEGB[I:staff +1] x4[K:treble][I:staff -1] A2[I:staff +1]^c2d2G2 |$ 
-F2A2=B2^c2 d2c2d2e2 |$ f2e2f2[I:staff -1]^c2[I:staff +1] z ^FEF[K:bass] z D=CD |$ 
-B,CB,A, G,=F,E,D, ^C,A,,C,E, x4 |$ ^C,A,,C,E, x4 D,A,,D,F, x4 |$ D,A,,D,F, x3 x ^C,A,,C,E, x4 |$ 
-^C,A,,C,E, x4 D,A,,D,F, x4 |$ D,A,,D,F, x4 E,^C,E,G, x4 |$ E,^C,E,G, x4 F,D,F,A, x4 |$ 
-F,D,F,A, x4 E,^C,E,G, x4 |$ E,^C,E,G, x4 F,D,F,A, x4 |$ F,D,F,A, x4 G,E,G,B, x4 |$ 
-G,E,G,B, x4 A,F,A,^C x3 A, |$ B, x2 G,F, x2 D,A,, x2 F,,D,, x3 |$ ^C, x3 F, x3 D, x3 F, x3 |$ 
-D,E,/F,/G,/A,/=B,/^C/ D x3[K:treble] A,=B,/^C/D/E/F/G/ AGFE |$ F2 z2 z _ED=C B,2=B,2C2G2 |$ 
-!trill(!TG16- |$ !trill)!G8- GGFG _EGDG |$ CG=B,G CGDG _EGG,G A,G=B,G |$ 
-CG=B,G CGDG _E2D2 G_AFG |$ _E2C2 FGEF D2_B,2 EFDE |$ C2^F2 GA=FG _EG^FG AGFE |$ 
-[K:bass] z DCD B,DA,D G,D^F,D G,DA,D |$ B,DD,D E,D^F,D G,DF,D G,DA,D |$ B,2A,2 G,8 ^F,4 |$ 
-G,2A,2 B,A,G,=F, _E,2_E2 D4 |$ C2D2 _EFDE CEDF GFEF |$ DB,_ED ^CA,D=C A,G,C_B, A,F,B,D |$ 
-CDCB, A,CB,A, G,CB,A, B,CB,A, |$ G,A,F,G, =E,4 z _ED=C DCB,A, |$ G,4 A,B,A,G, =F,G,E,A, D,4 |$ 
-[I:staff -1] GAGA BAGA FGEF D[I:staff +1]=CB,A, |$ B,A,G,F, E,F,E,D, ^C,A,,D,A,, E,A,,F,A,, |$ 
-G,A,,F,A,, E,A,,D,A,, ^C,A,A,,A, D,A,F,D |$ G,DE,^C F,DD,D[K:treble] EAGA FAEA |$ 
-DA^CA DAEA FAA,A =B,A^CA |$ DA^CA DAEA F2E2D2G2 |$ F2E2F2^C2 D2C2D2=B,2 |$ ^C2G2F2D2 ^C4 z4 |$ 
-z16 |$ z8 z GFE F^CD2- |$ D4 ^C4 DA=B^c d2=c2 |$ F6[K:bass] _E2- ECA,F, A,CEC |$ 
-DB,G,D, G,B,DG CDB,C A,G,^F,=E, |$ ^F,D,F,G, x4 F,D,F,G, x4 |$ G,D,G,A, x4 G,D,G,A, x4 |$ 
-A,^F,A,B, x4 A,F,A,B, x4 |$ A,B,D^F x4 B,G,B,D x4 |$ CA,C_E x4 CA,CE x4 |$ 
-^F,2 z2 G,2A,2 B,4 _E2=B,2 |$ G,4 C2_B,2 A,4 B,2C2 |$ DGF_E DEDC B,EDC B,CB,A, |$ 
-B,A,G,F, =E,2G,2 A,=B,^CD[K:treble] EFGA |$ _B2AG FAEA DA^CA DAEA |$ FAA,A =B,A^CA DACA DA=B,A | 
-^C2D2G2E2 F2A2B2A2 |$ 
-[K:bass] !fermata!D8 x2 z/[I:staff -1] A/B/c/ d/[I:staff +1] x/ x z/[I:staff -1] F/G/A/ |$ 
-B/[I:staff +1] x3/2 z/[I:staff -1] A/G/F/ _E/[I:staff +1] x3/2 z/[I:staff -1] G/F/_E/ D/[I:staff +1] x3/2 z/ A,/B,/C/ D/ x3/2 z/ F,/G,/A,/ |$ 
-B,/ x3/2 z/ C/B,/A,/ G,/ x3/2 z/ D/C/B,/ A,/ x3/2 z/[I:staff -1] _E/D/C/ B,/[I:staff +1] x3/2 z G, |$ 
-^C8- C4 D4 | =B,8 z8 |$ z4 z2 [^G,=B,]2 C8- | 
-!fermata!C8 x2 z/[I:staff -1] E/D/E/ C/[I:staff +1] x/ x z/[I:staff -1] F/E/F/ |$ 
-D/[I:staff +1] x3/2 z/[I:staff -1] G/F/G/ E/[I:staff +1] x3/2[I:staff -1] A/[I:staff +1] x3/2[I:staff -1] =B/[I:staff +1] x3/2[I:staff -1] c/[I:staff +1] x3/2[I:staff -1] d/[I:staff +1] x3/2 z/[I:staff -1] c/=B/c/ |$ 
-A/[I:staff +1] x3/2 z/[I:staff -1] ^G/^F/G/ E/[I:staff +1] x3/2 z/[I:staff -1] =F/E/F/ D/[I:staff +1] x3/2[I:staff -1] C/[I:staff +1] x3/2[I:staff -1] =B,/[I:staff +1] x3/2 z/ C/=B,/A,/ |$ 
-^G,/ x3/2 A,/ x3/2 =B,/ x3/2 C/ x3/2[I:staff -1] D/[I:staff +1] x3/2[I:staff -1] E/[I:staff +1] x3/2 z2 =G,2 |$ 
-A,2 A,/[I:staff -1]^C/E/ A/[I:staff +1] z2 A,2 A,2 A,/[I:staff -1]D/F/ A/[I:staff +1] z2 A,2 |$ 
-=B,2 G,/=B,/[I:staff -1]D/ G/[I:staff +1] z2 G,2 G,2 G,/[I:staff -1]C/E/ G/[I:staff +1] z2 G,2 | 
-A,2 F,/A,/[I:staff -1]C/ F/[I:staff +1] z2 F,2 F,2 F,/_B,/[I:staff -1]E/ F/[I:staff +1] z2 F,2 |$ 
-E,2 E,/G,/B,/[I:staff -1] ^C/[I:staff +1] z2 E,2 ^F,2 D,/A,/[I:staff -1]D/ ^F/[I:staff +1] z2 ^F,2 | 
-G,8 B,4 A,4 | A,8 F,4 G,4 | !fermata!F,16 |] 
+A,^CA,C A,CA,C F,DF,D F,DF,D |]
 V:3
 z16 |$ z8 D,,8- |$ D,,8 z8 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z8 D,,8- |$ D,,4 z4 z8 |$ 
 !fermata!D,,4 z4 z8 |$ z16 |$ z16 |$ z16 |$ z8 z2 D,2C,2B,,2 |$ A,,2 z2 z4 z2 D,2C,2B,,2 |$ 
@@ -1423,25 +1329,7 @@ z16 |$ z16 |$ z16 |$ z16 |$ z8 G,4 F,4 | B,6 A,G, A,2>E,2 F,D,E,^C, |$
 D,=B,,^C,A,, _B,,^G,,A,,=G, F,2D,2 A,,4 | D,,8 z8 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ 
 z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ 
 z16 |$ z D,C,D, B,,D,A,,D, G,,D,^F,,D, G,,D,A,,D, |$ 
-B,,D,D,,D, E,,D,^F,,D, G,,D,F,,D, G,,D,A,,D, |$ B,,4 z2 =B,,2 C,4 z2 ^C,2 |$ 
-D,4 z2 D,2 E,4 z2 E,2 |$ F,2A,,2B,,2D,2 G,,4 z2 B,,2- |$ B,,2A,,2G,,2C,2 F,,4 z4 |$ z16 |$ z16 |$ 
-z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ 
-z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ 
-z8 z G,=F,G, _E,G,D,G, |$ C,G,=B,,G, C,G,D,G, _E,G,G,,G, A,,G,=B,,G, |$ 
-C,G,=B,,G, C,G,D,G, _E,2D,2C,2=B,,2 |$ C,2D,2_E,2F,2 G,2=B,,2C,2D,2 |$ 
-_E,2D,2E,2F,2 G,2=B,,2C,2D,2 |$ _E,2=A,,2_B,,2C,2 D,2G,,2A,,2B,,2 |$ 
-C,2D,2G,2D,2 _E,2B,,2A,,2C,2 |$ D,16- |$ D,16- |$ D,4 z2 G,,2 C,2A,,2D,2D,,2 |$ 
-G,,4 z2 G,,2 C,6 =B,,2 |$ C,4 z4 z8 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ z16 |$ 
-z16 |$ z16 |$ z16 |$ z8 z A,G,A, F,A,E,A, |$ D,A,^C,A, D,A,E,A, F,A,A,,A, =B,,A,^C,A, |$ 
-D,A,^C,A, D,A,E,A, F,4 z2 F,2 |$ G,2E,2A,2A,,2 D,4 z2 A,,2 |$ B,,2G,,2C,2C,,2 F,,4 z2 A,,2 |$ 
-B,,4 z2 B,,2 C,4 z2 A,,2 |$ D,4 z4 D,4 z4 |$ D,4 z4 D,4 z4 |$ D,4 z4 D,4 z4 |$ D,4 z4 D,4 z4 |$ 
-D,4 z4 D,4 z4 |$ z D,C,D, _B,,D,A,,D, G,,G,=F,G, _E,G,D,G, |$ 
-C,C,_B,,C, A,,C,G,,C, F,,F,_E,F, D,F,C,F, |$ B,,2_E,2F,2F,,2 G,,2C,2D,2D,,2 |$ 
-G,,4 z A,,G,,A,, F,,2D,,2 A,,4 |$ D,,16- |$ D,,8 z4 z2 D,2 | A,,2F,,2G,,2A,,2 F,,2D,,2G,,2A,,2 |$ 
-!fermata!B,,8 z8 |$ z16 |$ z16 |$ (^C,8 F,6) D,2 | ^G,,8 z ^G,=B,F, G,D,F,=B,, |$ 
-D,^G,,A,,2 E,,12- | !fermata!E,,8 z8 |$ z16 |$ z16 |$ z8 z4 z2 E,2 |$ 
-G,2 z2 z2 G,2 F,2 z2 z2 F,2 |$ F,2 z2 z2 F,2 E,2 z2 z2 E,2 | E,2 z2 z2 E,2 D,2 z2 z2 D,2 |$ 
-^C,2 z2 z2 C,2 =C,2 z2 z2 C,2 | G,,4 B,,4 E,,4 F,,4 | A,,8 B,,4 G,,4 | !fermata![D,,D,]16 |]`,
+B,,D,D,,D, E,,D,^F,,D, G,,D,F,,D, G,,D,A,,D, |$ B,,4 |]`,
         revisionNotes: `## Section 6: J.S. Bach and the Fugue  
 
 
