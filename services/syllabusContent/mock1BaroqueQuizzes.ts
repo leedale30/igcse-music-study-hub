@@ -446,25 +446,215 @@ b2b2 b2ba g2g2 g2ga :| b2b2 b2ag (fB)(cB) (dc)(ed) | (fe)(gf) (ag)(ba) (BA)(cB) 
 c'2d'2 e'4 (e'b)(e'b) (c'b)(e'b) |$ (c'b)(e'b) (c'b)(e'b) e'2e2 Tf4 | e2>g2 a2b2 c'2 b4 e2 | 
 b2ag a2b2 c'2 b4 e2 |$ c'2 b4 a2 g2fe Tf4 | e4 z2 e2 b2ag a2b2 | c'2 b4 e2 b2ag a2b2 |$ 
 c'2 b4 e2 c'2 b4 c'2 | g2fe Tf4 !fermata!e8 |]`,
-        revisionNotes: `# Section 4: Antonio Vivaldi and The Concerto
+        revisionNotes: `## Section 4: Antonio Vivaldi and the Concerto  
+*(with detailed ABC notation breakdowns)*
 
-## 4.1 Focus Work: The Four Seasons ("Spring")
-*   **Composer:** Antonio Vivaldi (1678–1741).
-*   **Genre:** Solo Violin Concerto.
-*   **Set Work:** Concerto No. 1 in E Major, Op. 8, RV 269, "La Primavera".
+---
+
+## 4.1 Focus Work: *The Four Seasons* — “Spring” (La Primavera)
+
+**Composer**  
+Antonio Vivaldi (1678–1741)
+
+**Genre**  
+Solo Violin Concerto
+
+**Set Work**  
+Concerto No. 1 in E major, Op. 8, RV 269
+
+**Forces**
+- **Solo violin** (concertino)
+- **String orchestra + continuo** (ripieno)
+
+The contrast between **soloist** and **orchestra** is central to concerto writing.
+
+---
 
 ## 4.2 Program Music
-Instrumental music intended to depict a story, poem, or scene. Vivaldi published Sonnets alongside the music.
+
+**Definition**  
+Instrumental music intended to depict a **story, poem, or scene**.
+
+Vivaldi published **sonnets** alongside *The Four Seasons*, explaining:
+- birds singing  
+- flowing streams  
+- storms and thunder  
+
+The music mirrors these images through **rhythm, texture, register, and articulation**.
+
+---
 
 ## 4.3 Form: Ritornello Form
-*   **Ritornello (Tutti):** The "Little Return." Recurring theme played by the full orchestra (Ripieno).
-*   **Episodes (Solo):** Virtuosic sections for the soloist, often programmatic.
+
+### Core Structure
+- **Ritornello (Tutti)**  
+  - Played by the full orchestra  
+  - Returns multiple times  
+  - Usually in the **home key**  
+- **Episodes (Solo)**  
+  - Played by the solo violin  
+  - Modulate to related keys  
+  - Highly virtuosic and descriptive  
+
+### Simplified Layout
+\`\`\`text
+Ritornello – Episode – Ritornello – Episode – Ritornello
+\`\`\`
+
+---
+
+### ABC Illustration: Ritornello vs Episode
+
+**Ritornello (strong, rhythmic, stable)**
+\`\`\`abc
+X:1
+T:Ritornello Theme (Conceptual)
+L:1/4
+K:E
+E F# G# A | B A G# F# |
+E E B B | E4 |
+\`\`\`
+
+**Episode (lighter, more decorative)**
+\`\`\`abc
+X:2
+T:Solo Episode
+L:1/8
+K:E
+e f# g# a b a g# f# |
+e g# b a g# f# e d# |
+\`\`\`
+
+---
 
 ## 4.4 Analysis of Movement 1 (Allegro)
-1.  **Opening Ritornello:** Joyful, dance-like theme in E Major. Repeats piano (echo effect).
-2.  **Episode 1 (The Birds):** High-pitched trills and staccato notes mimic bird calls.
-3.  **Episode 2 (The Streams):** Flowing, legato semiquavers moving stepwise.
-4.  **Episode 3 (The Thunderstorm):** Rapid repeated notes (tremolo) in low strings (thunder) and fast scales/arpeggios in solo violin (lightning). Brief shift to E Minor.`,
+
+---
+
+## Opening Ritornello
+
+### Musical Character
+- Bright and joyful
+- Dance-like rhythms
+- Strong sense of **E major**
+
+### Echo Effect
+- Phrase repeated **piano** after **forte**
+- Creates spatial contrast
+
+### ABC Illustration: Echo effect
+\`\`\`abc
+X:3
+T:Echo Effect
+L:1/4
+K:E
+!f! E F# G# A |
+!p! E F# G# A |
+\`\`\`
+
+---
+
+## Episode 1: *The Birds*
+
+### Musical Devices
+- High register
+- Short staccato notes
+- Trills and repeated notes
+
+### ABC Illustration: Bird calls
+\`\`\`abc
+X:4
+T:Birdsong
+L:1/8
+K:E
+!trill! b a b a | g# g# a b |
+e' d'# e' d'# | b a g# f# |
+\`\`\`
+
+*Rapid alternation and light articulation imitate birdsong.*
+
+---
+
+## Episode 2: *The Streams*
+
+### Musical Devices
+- Smooth, legato semiquavers
+- Stepwise motion
+- Continuous flow
+
+### ABC Illustration: Flowing water
+\`\`\`abc
+X:5
+T:Flowing Streams
+L:1/16
+K:E
+e f# g# a b a g# f# |
+e f# g# a b a g# f# |
+\`\`\`
+
+*Even rhythm and stepwise motion suggest gentle movement.*
+
+---
+
+## Episode 3: *The Thunderstorm*
+
+### Musical Devices
+**Thunder**
+- Low register
+- Repeated notes (tremolo)
+- Heavy articulation
+
+**Lightning**
+- Fast scales and arpeggios
+- Wide leaps
+- Solo violin virtuosity
+
+**Harmony**
+- Brief modulation to **E minor**
+- Darkens the sound world
+
+---
+
+### ABC Illustration: Thunder (low strings)
+\`\`\`abc
+X:6
+T:Thunder
+L:1/8
+K:Em
+E, E, E, E, | D, D, D, D, |
+\`\`\`
+
+---
+
+### ABC Illustration: Lightning (solo violin)
+\`\`\`abc
+X:7
+T:Lightning
+L:1/16
+K:Em
+e g b e' d' b g e |
+f# a c' f' e' c' a f# |
+\`\`\`
+
+---
+
+## Summary of Musical Language
+
+| Feature | Technique |
+|------|---------|
+| Form | Ritornello |
+| Texture | Alternation of tutti and solo |
+| Melody | Virtuosic, descriptive |
+| Harmony | Mostly E major, brief E minor |
+| Rhythm | Energetic, motor-driven |
+| Programmatic Devices | Register, articulation, repetition |
+
+---
+
+This section now:
+- Shows **how concerto form works in sound**
+- Links **programmatic ideas directly to musical techniques**
+- Uses ABC to demonstrate **texture, register, rhythm, and harmony**`,
         questions: [
             {
                 id: 1,
