@@ -1240,9 +1240,9 @@ This section now:
     },
     'baroque-fugue': {
         id: 'baroque-fugue',
-        title: "The Art of the Fugue",
+        title: "Bach: Fugue (Toccata and Fugue in D Minor)",
         topicCode: 'BAROQUE_FUGUE',
-        description: "Explore the structural components of the fugue, including subjects, answers, and episodes.",
+        description: "Focus on Bach's iconic organ work and the structural components of fugal writing.",
         abcNotation: `X:565
 T:Toccata and Fugue in D Minor
 C:Johann Sebastian Bach(1685 - 1750)
@@ -1442,27 +1442,282 @@ G,,4 z A,,G,,A,, F,,2D,,2 A,,4 |$ D,,16- |$ D,,8 z4 z2 D,2 | A,,2F,,2G,,2A,,2 F,
 D,^G,,A,,2 E,,12- | !fermata!E,,8 z8 |$ z16 |$ z16 |$ z8 z4 z2 E,2 |$ 
 G,2 z2 z2 G,2 F,2 z2 z2 F,2 |$ F,2 z2 z2 F,2 E,2 z2 z2 E,2 | E,2 z2 z2 E,2 D,2 z2 z2 D,2 |$ 
 ^C,2 z2 z2 C,2 =C,2 z2 z2 C,2 | G,,4 B,,4 E,,4 F,,4 | A,,8 B,,4 G,,4 | !fermata![D,,D,]16 |]`,
-        revisionNotes: `# Section 6: J.S. Bach and The Fugue
+        revisionNotes: `## Section 6: J.S. Bach and the Fugue  
+
+
+---
 
 ## 6.1 Focus Concept: The Fugue
-A **Fugue** is a polyphonic composition based on one main theme, called a **Subject**. It is the most sophisticated form of Baroque counterpoint.
+
+A **fugue** is a highly structured **polyphonic composition** built from a single musical idea called the **subject**.  
+It represents the **peak of Baroque contrapuntal technique**, where multiple independent voices interact according to strict rules.
+
+Key idea:
+- Every voice is **melodically important**
+- No voice is merely accompaniment
+- Complexity comes from **imitation, overlap, and harmonic control**
+
+---
 
 ## 6.2 Structural Components of a Fugue
-1.  **Exposition:** The opening section where each voice enters with the subject.
-2.  **Subject:** The main theme presented in the Tonic key.
-3.  **Answer:** The Subject repeated a 5th higher (Dominant key).
-    *   **Real Answer:** Exact transposition.
-    *   **Tonal Answer:** Adjusted slightly to stay in the key.
-4.  **Countersubject:** The melodic line played by one voice while another plays the Answer.
-5.  **Episode:** Transitional sections between subject entries. Uses **Sequences** to modulate. No complete Subject is heard.
-6.  **Stretto:** Close succession of overlapping subject entries (like a canon).
-7.  **Pedal Point:** A sustained bass note over which harmonies change.
 
-## 6.3 Focus Work: Toccata and Fugue in D Minor (BWV 565)
-*   **Instrument:** Pipe Organ.
-*   **Style:** Stylus Phantasticus (Free, improvisatory style).
-*   **Toccata:** Famous opening mordent; descending diminished 7th arpeggios (drama); massive chords.
-*   **Fugue:** Subject is "violinistic" (rapid 16th notes); implied polyphony.`,
+Each component below is shown conceptually using **ABC notation** to illustrate *function*, not transcription.
+
+---
+
+## Exposition
+
+The **opening section** of the fugue.
+- Each voice enters **one at a time**
+- All voices present the **subject or answer**
+- Establishes the tonal framework
+
+### ABC Illustration: Exposition entries
+\`\`\`abc
+X:1
+T:Fugue Exposition
+L:1/8
+K:Dm
+V:1 clef=treble
+V:2 clef=treble
+[V:1] d e f a g f e d |
+[V:2]           a b c' e' d' c' b a |
+\`\`\`
+*The second voice enters after the first, creating imitation.*
+
+---
+
+## Subject
+
+The **main theme** of the fugue.
+- First heard in the **tonic key**
+- Rhythmically distinctive
+- Designed to work contrapuntally
+
+### ABC Illustration: Subject (D minor)
+\`\`\`abc
+X:2
+T:Fugue Subject
+L:1/16
+K:Dm
+d e f a g f e d |
+\`\`\`
+*Compact, energetic, and suitable for imitation.*
+
+---
+
+## Answer
+
+The subject restated a **perfect 5th higher** (dominant key).
+
+---
+
+### Real Answer
+An **exact transposition** of the subject.
+
+\`\`\`abc
+X:3
+T:Real Answer
+L:1/16
+K:Dm
+a b c' e' d' c' b a |
+\`\`\`
+
+---
+
+### Tonal Answer
+Slightly adjusted to **preserve the sense of key**.
+
+\`\`\`abc
+X:4
+T:Tonal Answer
+L:1/16
+K:Dm
+a b c' d' c' b a g |
+\`\`\`
+*Intervals are altered to avoid unwanted modulation.*
+
+---
+
+## Countersubject
+
+A **secondary melody** that consistently accompanies the subject or answer.
+- Must work **invertibly**
+- Appears repeatedly throughout the fugue
+
+### ABC Illustration: Subject + Countersubject
+\`\`\`abc
+X:5
+T:Subject and Countersubject
+L:1/8
+K:Dm
+V:Subject
+V:Counter
+[V:Subject] d e f a g f e d |
+[V:Counter] a g f e d e f g |
+\`\`\`
+*Both lines remain melodically independent.*
+
+---
+
+## Episode
+
+A **connecting passage** between subject entries.
+- No complete subject
+- Uses **sequences**
+- Often modulates to new keys
+
+### ABC Illustration: Sequential episode
+\`\`\`abc
+X:6
+T:Episode Sequence
+L:1/8
+K:Dm
+d e f g | e f g a |
+f g a b | g a b c' |
+\`\`\`
+*Repeating patterns move the harmony forward.*
+
+---
+
+## Stretto
+
+Subject entries occur in **close succession**, overlapping like a canon.
+- Increases tension
+- Often used near the climax
+
+### ABC Illustration: Stretto
+\`\`\`abc
+X:7
+T:Stretto
+L:1/8
+K:Dm
+V:1
+V:2
+[V:1] d e f a g f e d |
+[V:2]     d e f a g f e d |
+\`\`\`
+*The second entry begins before the first finishes.*
+
+---
+
+## Pedal Point
+
+A **sustained bass note** while harmonies change above it.
+- Creates tension
+- Common near endings
+
+### ABC Illustration: Pedal point
+\`\`\`abc
+X:8
+T:Pedal Point
+L:1/4
+K:Dm
+V:Upper
+V:Bass clef=bass
+[V:Bass] D,4 D,4 |
+[V:Upper] f g a g | f e d c |
+\`\`\`
+*The bass remains fixed while harmony shifts.*
+
+---
+
+## 6.3 Focus Work: *Toccata and Fugue in D Minor* (BWV 565)
+
+---
+
+## Instrument: Pipe Organ
+
+- Multiple manuals and pedals
+- Capable of:
+  - Sustained sound
+  - Massive chords
+  - Implied polyphony
+
+---
+
+## Style: *Stylus Phantasticus*
+
+A free, improvisatory style characterised by:
+- Sudden contrasts
+- Virtuosic gestures
+- Dramatic harmonic shifts
+
+---
+
+## The Toccata
+
+### Musical Features
+- Dramatic opening **mordent**
+- Descending **diminished 7th arpeggios**
+- Powerful chordal writing
+
+### ABC Illustration: Opening mordent
+\`\`\`abc
+X:9
+T:Toccata Mordent
+L:1/8
+K:Dm
+!mordent! a g a d' |
+\`\`\`
+
+---
+
+### ABC Illustration: Diminished 7th descent
+\`\`\`abc
+X:10
+T:Diminished Arpeggio
+L:1/16
+K:Dm
+d f _a b | a f d c |
+\`\`\`
+*Unstable harmony heightens drama.*
+
+---
+
+## The Fugue
+
+### Subject Character
+- Rapid semiquavers
+- “Violinistic” in style
+- Suggests multiple voices on a single instrument
+
+### ABC Illustration: Fugue subject
+\`\`\`abc
+X:11
+T:Fugue Subject (BWV 565 style)
+L:1/16
+K:Dm
+d e f g a g f e |
+\`\`\`
+
+---
+
+### Implied Polyphony
+
+Even with one performer, Bach suggests **multiple voices** through register and contour.
+
+\`\`\`abc
+X:12
+T:Implied Polyphony
+L:1/8
+K:Dm
+d a f d | g e c a |
+\`\`\`
+*Leaps imply separate melodic strands.*
+
+---
+
+## Summary of Fugue Technique
+
+| Feature | Purpose |
+|------|--------|
+| Subject | Core musical idea |
+| Answer | Tonal balance |
+| Countersubject | Continuous counterpoint |
+| Episode | Modulation and contrast |
+| Stretto | Climactic intensity |
+| Pedal Point | Harmonic tension |`,
         questions: [
             {
                 id: 1,
