@@ -42,7 +42,13 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
 
   const { handleError } = useErrorHandler();
   const { user } = useAuth();
-  const { addQuizResult } = useProgress();
+  const { addQuizResult, progress } = useProgress();
+
+  // Get previous result for this quiz
+  const previousResult = progress?.quizResults.find(r =>
+    r.quizId === quizData.id ||
+    r.quizId === `quiz-${quizData.title.toLowerCase().replace(/\s+/g, '-')}`
+  );
 
   // Use the ABC Player hook
   const { visualRef, audioRef, visualId, audioId } = useAbcPlayer({
@@ -253,7 +259,21 @@ const QuizComponent: React.FC<QuizProps> = ({ quizData }) => {
 
   return (
     <div className="mt-8 p-4 sm:p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700">
-      <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center">{quizData.title}</h2>
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-slate-100 text-center sm:text-left">{quizData.title}</h2>
+
+        {previousResult && !showResults && (
+          <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/30 px-4 py-2 rounded-full border border-green-100 dark:border-green-800 self-center sm:self-auto">
+            <CheckCircleIcon className="text-green-600 dark:text-green-400" />
+            <div className="flex flex-col items-start leading-tight">
+              <span className="text-[10px] font-bold text-green-600 dark:text-green-400 uppercase tracking-wider">Done</span>
+              <span className="text-sm font-bold text-gray-800 dark:text-white">
+                {previousResult.percentage.toFixed(0)}%
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* ABCJS Container */}
       {quizData.abcNotation && (

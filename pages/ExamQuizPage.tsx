@@ -17,7 +17,7 @@ const ExamQuizPage: React.FC = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { user } = useAuth();
-    const { addQuizResult } = useProgress();
+    const { addQuizResult, progress } = useProgress();
 
     const [templateId, setTemplateId] = useState<string | null>(null);
     const [quizStartTime] = useState<Date>(new Date());
@@ -49,6 +49,11 @@ const ExamQuizPage: React.FC = () => {
     const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [score, setScore] = useState(0);
+
+    // Get previous result for this quiz
+    const previousResult = progress?.quizResults.find(r =>
+        r.quizId === templateId || r.quizId === quizId
+    );
 
     if (!quiz) {
         return (
@@ -131,6 +136,17 @@ const ExamQuizPage: React.FC = () => {
                             </p>
                         </div>
                     </div>
+                    {!isSubmitted && previousResult && (
+                        <div className="flex items-center gap-2 bg-green-50 dark:bg-green-900/30 px-4 py-2 rounded-full border border-green-100 dark:border-green-800">
+                            <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                            <div className="flex flex-col items-start leading-tight">
+                                <span className="text-[10px] font-bold text-green-600 dark:text-green-400 uppercase tracking-wider">Done</span>
+                                <span className="text-sm font-bold text-gray-900 dark:text-white">
+                                    {previousResult.percentage.toFixed(0)}%
+                                </span>
+                            </div>
+                        </div>
+                    )}
                     {isSubmitted && (
                         <div className="flex items-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 px-4 py-2 rounded-full border border-indigo-100 dark:border-indigo-800">
                             <Award className={`w-5 h-5 ${getScoreColor()}`} />
