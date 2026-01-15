@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AbcDisplayComponent from '../../components/AbcDisplayComponent';
+import QuizComponent from '../../components/QuizComponent';
+import { Quiz } from '../../types';
 
 // ABC Notation Strings
 const RITORNELLO_1_ABC = `X:1
@@ -455,6 +457,260 @@ const VivaldiSpringDeepDivePage: React.FC = () => {
                         Antonio Vivaldi's 'Spring' Allegro stands as a monument to the Baroque imagination. Through this analysis, we have visualized the mechanics of the masterpiece: the "terrace" of the dynamics, the "mimicry" of the birds, and the "architecture" of the keys.
                     </p>
                 </div>
+            </section>
+
+            {/* Quiz Section */}
+            <section className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Test Your Knowledge</h2>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                    Complete this 20-question quiz to test your understanding of Vivaldi's Spring Allegro.
+                </p>
+                <QuizComponent quizData={{
+                    id: 'vivaldi-spring-deep-dive-quiz',
+                    title: "Vivaldi's Spring (Allegro) Quiz",
+                    questions: [
+                        {
+                            id: 'vsq1',
+                            text: 'What key is the opening Ritornello of Spring written in?',
+                            options: [
+                                { id: 'a', text: 'E Major' },
+                                { id: 'b', text: 'B Major' },
+                                { id: 'c', text: 'C# Minor' },
+                                { id: 'd', text: 'A Major' }
+                            ],
+                            correctAnswerId: 'a',
+                            explanation: 'The entire movement is in E Major, a bright key suitable for depicting the joy of spring.'
+                        },
+                        {
+                            id: 'vsq2',
+                            text: 'What is the name of the structural form used in the fast movements of Baroque concertos?',
+                            options: [
+                                { id: 'a', text: 'Sonata Form' },
+                                { id: 'b', text: 'Ritornello Form' },
+                                { id: 'c', text: 'Binary Form' },
+                                { id: 'd', text: 'Rondo Form' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'Ritornello Form alternates between a recurring theme (ritornello) played by the tutti and contrasting solo episodes.'
+                        },
+                        {
+                            id: 'vsq3',
+                            text: 'What technique does Vivaldi use in Episode 1 to depict birdsong?',
+                            options: [
+                                { id: 'a', text: 'Tremolo' },
+                                { id: 'b', text: 'Pizzicato' },
+                                { id: 'c', text: 'Trills on high notes' },
+                                { id: 'd', text: 'Glissando' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'The solo violin uses trills (trillo) on high B to simulate the warbling of birds.'
+                        },
+                        {
+                            id: 'vsq4',
+                            text: 'What is the term for the dramatic shift between loud and soft dynamics without gradual change?',
+                            options: [
+                                { id: 'a', text: 'Crescendo' },
+                                { id: 'b', text: 'Diminuendo' },
+                                { id: 'c', text: 'Terraced Dynamics' },
+                                { id: 'd', text: 'Sforzando' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'Terraced dynamics (forte then piano "echo") is a hallmark of Baroque music, heard clearly in the opening Ritornello.'
+                        },
+                        {
+                            id: 'vsq5',
+                            text: 'What happens to the basso continuo during the Bird Episode (Episode 1)?',
+                            options: [
+                                { id: 'a', text: 'It plays a walking bass line' },
+                                { id: 'b', text: 'It drops out completely (rests)' },
+                                { id: 'c', text: 'It plays tremolo' },
+                                { id: 'd', text: 'It plays the main theme' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'The lower strings and continuo drop out, creating a light, airy texture appropriate for birds flying in the sky.'
+                        },
+                        {
+                            id: 'vsq6',
+                            text: 'What key does Ritornello 3 establish?',
+                            options: [
+                                { id: 'a', text: 'E Major (Tonic)' },
+                                { id: 'b', text: 'B Major (Dominant)' },
+                                { id: 'c', text: 'C# Minor (Relative Minor)' },
+                                { id: 'd', text: 'F# Minor' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'Ritornello 3 confirms the modulation to B Major, the dominant key, which is standard in Baroque forms.'
+                        },
+                        {
+                            id: 'vsq7',
+                            text: 'How does Vivaldi depict thunder in Episode 3 (The Storm)?',
+                            options: [
+                                { id: 'a', text: 'Loud brass fanfares' },
+                                { id: 'b', text: 'Timpani rolls' },
+                                { id: 'c', text: 'Tremolo in the lower strings' },
+                                { id: 'd', text: 'Pizzicato bass notes' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'The strings execute a tremolo (rapid repetition of a note) to create a rumbling thunder effect.'
+                        },
+                        {
+                            id: 'vsq8',
+                            text: 'How does Vivaldi depict lightning in Episode 3?',
+                            options: [
+                                { id: 'a', text: 'Sustained high notes' },
+                                { id: 'b', text: 'Rapid ascending scales' },
+                                { id: 'c', text: 'Slow descending arpeggios' },
+                                { id: 'd', text: 'Silence' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'The solo violin plays rapid ascending scales that shoot upwards like flashes of lightning.'
+                        },
+                        {
+                            id: 'vsq9',
+                            text: 'What key does Ritornello 4 use, representing the aftermath of the storm?',
+                            options: [
+                                { id: 'a', text: 'E Major' },
+                                { id: 'b', text: 'B Major' },
+                                { id: 'c', text: 'C# Minor' },
+                                { id: 'd', text: 'A Major' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'C# Minor is the relative minor of E Major, and its darker character represents the post-storm atmosphere.'
+                        },
+                        {
+                            id: 'vsq10',
+                            text: 'What type of music is "Spring" an early example of?',
+                            options: [
+                                { id: 'a', text: 'Absolute Music' },
+                                { id: 'b', text: 'Program Music' },
+                                { id: 'c', text: 'Sacred Music' },
+                                { id: 'd', text: 'Dance Music' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'Program Music tells a story or depicts scenes. Vivaldi published sonnets with the score describing each season.'
+                        },
+                        {
+                            id: 'vsq11',
+                            text: 'What is the role of the basso continuo in Baroque music?',
+                            options: [
+                                { id: 'a', text: 'To play the main melody' },
+                                { id: 'b', text: 'To provide the harmonic foundation' },
+                                { id: 'c', text: 'To play only during solo sections' },
+                                { id: 'd', text: 'To improvise virtuosic passages' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'The continuo provides the harmonic foundation upon which melodic lines float, typically played by cello and keyboard.'
+                        },
+                        {
+                            id: 'vsq12',
+                            text: 'Episode 2 depicts what natural element according to the sonnet?',
+                            options: [
+                                { id: 'a', text: 'Birds singing' },
+                                { id: 'b', text: 'Thunder and lightning' },
+                                { id: 'c', text: 'Murmuring streams' },
+                                { id: 'd', text: 'Wind in the trees' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'Episode 2 depicts brooks flowing with a sweet murmur, represented by flowing semiquaver patterns.'
+                        },
+                        {
+                            id: 'vsq13',
+                            text: 'What institution did Vivaldi work at for most of his career?',
+                            options: [
+                                { id: 'a', text: "St. Mark's Basilica, Venice" },
+                                { id: 'b', text: 'The Ospedale della Pietà, Venice' },
+                                { id: 'c', text: 'The Court of Mantua' },
+                                { id: 'd', text: 'The Vatican, Rome' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'Vivaldi taught at the Ospedale della Pietà, a music school for orphaned girls famous for its excellent orchestra.'
+                        },
+                        {
+                            id: 'vsq14',
+                            text: 'What type of concerto is "Spring"?',
+                            options: [
+                                { id: 'a', text: 'Concerto Grosso' },
+                                { id: 'b', text: 'Solo Concerto' },
+                                { id: 'c', text: 'Double Concerto' },
+                                { id: 'd', text: 'Orchestral Concerto' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'A Solo Concerto features one virtuoso soloist (the violin) against the orchestra, as championed by Vivaldi.'
+                        },
+                        {
+                            id: 'vsq15',
+                            text: 'What cadence type is used at the very end of the movement to create closure?',
+                            options: [
+                                { id: 'a', text: 'Plagal Cadence (IV-I)' },
+                                { id: 'b', text: 'Imperfect Cadence (I-V)' },
+                                { id: 'c', text: 'Perfect Authentic Cadence (V-I)' },
+                                { id: 'd', text: 'Interrupted Cadence (V-vi)' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'A perfect authentic cadence (V-I) in E Major provides a strong sense of finality and closure.'
+                        },
+                        {
+                            id: 'vsq16',
+                            text: 'What was Vivaldi\'s nickname?',
+                            options: [
+                                { id: 'a', text: 'Il Maestro di Venezia' },
+                                { id: 'b', text: 'Il Prete Rosso (The Red Priest)' },
+                                { id: 'c', text: 'Il Virtuoso' },
+                                { id: 'd', text: 'Il Compositore' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'Vivaldi was called "The Red Priest" due to his red hair and his ordination as a Catholic priest.'
+                        },
+                        {
+                            id: 'vsq17',
+                            text: 'During the Bird Episode, what technique do the orchestral violins use to imitate the solo?',
+                            options: [
+                                { id: 'a', text: 'Unison playing' },
+                                { id: 'b', text: 'Call and response (imitation)' },
+                                { id: 'c', text: 'Pedal notes' },
+                                { id: 'd', text: 'Ostinato' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'The first and second violins engage in call-and-response, mimicking a flock of birds calling to each other.'
+                        },
+                        {
+                            id: 'vsq18',
+                            text: 'What larger collection is "Spring" the first concerto of?',
+                            options: [
+                                { id: 'a', text: 'L\'Estro Armonico' },
+                                { id: 'b', text: 'La Stravaganza' },
+                                { id: 'c', text: 'Il cimento dell\'armonia e dell\'inventione' },
+                                { id: 'd', text: 'Concerti a cinque' }
+                            ],
+                            correctAnswerId: 'c',
+                            explanation: 'The Four Seasons form the first four concertos of "Il cimento dell\'armonia e dell\'inventione" (The Contest Between Harmony and Invention).'
+                        },
+                        {
+                            id: 'vsq19',
+                            text: 'What is the purpose of an abbreviated Ritornello (like Ritornello 2)?',
+                            options: [
+                                { id: 'a', text: 'To introduce new thematic material' },
+                                { id: 'b', text: 'To act as a punctuation mark between episodes' },
+                                { id: 'c', text: 'To modulate to a distant key' },
+                                { id: 'd', text: 'To showcase the soloist\'s cadenza' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'Abbreviated ritornellos serve as punctuation marks, closing one episode and confirming the key before the next.'
+                        },
+                        {
+                            id: 'vsq20',
+                            text: 'What term describes the Baroque principle of projecting a single dominant emotion within a movement?',
+                            options: [
+                                { id: 'a', text: 'Leitmotif' },
+                                { id: 'b', text: 'Affekt (Doctrine of Affections)' },
+                                { id: 'c', text: 'Sturm und Drang' },
+                                { id: 'd', text: 'Empfindsamkeit' }
+                            ],
+                            correctAnswerId: 'b',
+                            explanation: 'The Affektenlehre (Doctrine of Affections) held that music\'s purpose was to move the passions of the soul.'
+                        }
+                    ]
+                } as Quiz} />
             </section>
         </div>
     );
