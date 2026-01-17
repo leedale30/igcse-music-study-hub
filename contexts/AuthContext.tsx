@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback, useMemo } from 'react';
 import { User, AuthContextType } from '../types';
 import { supabase, isSupabaseConfigured } from '../src/lib/supabase';
 import { dataBackupManager } from '../utils/dataBackup';
@@ -9,22 +9,54 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
+// Timeout wrapper to prevent infinite loading
+const withTimeout = <T,>(promise: Promise<T>, timeoutMs: number): Promise<T> => {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
+    )
+  ]);
+};
+
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Fetch user profile from Supabase
+  const fetchUserProfile = useCallback(async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .single();
 
+      if (error) throw error;
 
-  // Timeout wrapper to prevent infinite loading
-  const withTimeout = <T,>(promise: Promise<T>, timeoutMs: number): Promise<T> => {
-    return Promise.race([
-      promise,
-      new Promise<T>((_, reject) =>
-        setTimeout(() => reject(new Error('Request timed out')), timeoutMs)
-      )
-    ]);
-  };
+      if (data) {
+        const userProfile: User = {
+          id: data.id,
+          email: data.email,
+          name: data.name,
+          firstName: data.first_name,
+          lastName: data.last_name,
+          nickname: data.nickname,
+          role: data.role as 'student' | 'teacher' | 'admin',
+          group: data.group_name,
+          profileCompleted: data.profile_completed,
+          createdAt: new Date(data.created_at),
+          lastLoginAt: new Date(data.last_login_at)
+        };
+        setUser(userProfile);
+      }
+    } catch (err) {
+      console.error('Error fetching user profile:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
 
   // Initialize auth state
   useEffect(() => {
@@ -33,8 +65,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setIsLoading(false);
       return;
     }
-
-
 
     // Get initial session with timeout
     const initializeSession = async () => {
@@ -75,44 +105,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     });
 
     return () => subscription.unsubscribe();
-  }, []);
-
-  // Fetch user profile from Supabase
-  const fetchUserProfile = async (userId: string) => {
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', userId)
-        .single();
-
-      if (error) throw error;
-
-      if (data) {
-        const userProfile: User = {
-          id: data.id,
-          email: data.email,
-          name: data.name,
-          firstName: data.first_name,
-          lastName: data.last_name,
-          nickname: data.nickname,
-          role: data.role as 'student' | 'teacher' | 'admin',
-          group: data.group_name,
-          profileCompleted: data.profile_completed,
-          createdAt: new Date(data.created_at),
-          lastLoginAt: new Date(data.last_login_at)
-        };
-        setUser(userProfile);
-      }
-    } catch (err) {
-      console.error('Error fetching user profile:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  }, [fetchUserProfile]);
 
   // Login function
-  const login = async (email: string, password: string): Promise<boolean> => {
+  const login = useCallback(async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
     setError(null);
 
@@ -164,10 +160,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [fetchUserProfile]);
 
   // Signup function
-  const signup = async (email: string, password: string, name: string): Promise<boolean> => {
+  const signup = useCallback(async (email: string, password: string, name: string): Promise<boolean> => {
     setIsLoading(true);
     setError(null);
 
@@ -212,10 +208,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [fetchUserProfile]);
 
   // Update profile
-  const updateProfile = async (profileData: Partial<User>): Promise<boolean> => {
+  const updateProfile = useCallback(async (profileData: Partial<User>): Promise<boolean> => {
     if (!user) return false;
     setIsLoading(true);
     setError(null);
@@ -249,10 +245,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user, fetchUserProfile]);
 
   // Update password
-  const updatePassword = async (currentPassword: string, newPassword: string): Promise<boolean> => {
+  const updatePassword = useCallback(async (currentPassword: string, newPassword: string): Promise<boolean> => {
     if (!user) return false;
     setIsLoading(true);
     setError(null);
@@ -275,10 +271,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user]);
 
   // Update email
-  const updateEmail = async (newEmail: string): Promise<boolean> => {
+  const updateEmail = useCallback(async (newEmail: string): Promise<boolean> => {
     if (!user) return false;
     setIsLoading(true);
     setError(null);
@@ -316,10 +312,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user, fetchUserProfile]);
 
   // Logout
-  const logout = async () => {
+  const logout = useCallback(async () => {
     if (isSupabaseConfigured) {
       await supabase.auth.signOut();
     }
@@ -328,9 +324,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     localStorage.removeItem('igcse-music-user');
     localStorage.removeItem('sb-access-token'); // Clear Supabase token if stored manually (though Supabase client handles this)
     setError(null);
-  };
+  }, []);
 
-  const value: AuthContextType = {
+  const value: AuthContextType = useMemo(() => ({
     user,
     login,
     signup,
@@ -340,7 +336,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     logout,
     isLoading,
     error
-  };
+  }), [user, login, signup, updateProfile, updatePassword, updateEmail, logout, isLoading, error]);
 
   return (
     <AuthContext.Provider value={value}>
